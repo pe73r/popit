@@ -1,7 +1,7 @@
 <tail-tabs class="relative">
-  <tabs-buttons class="sticky top-0 z-50 justify-start gap-4 px-5 pt-5 pb-3 mb-4 bg-white">
+  <tabs-buttons class="z-50 p-5 justify-start gap-3 mb-4 bg-white border-b border-gray-300">
     {% for tab in elements %}
-      <div class="block relative mr-10 group transition-all !border-[0] cursor-pointer selected:border-b-2 selected:after:content-[''] text-ecorce  selected:text-ecorce selected:after:block selected:after:bg-ecorce selected:after:w-full selected:after:h-[1px] selected:after:absolute selected:after:bottom-[-5px] selected:after:left-[50%] selected:after:translate-x-[-50%] selected:after:mx-auto">
+      <div class="block relative group transition-all cursor-pointer selected:font-bold hover:text-green link-item">
         <p class="text-sm uppercase">{{ tab.settings.title }}</p>
       </div>
     {% endfor %}
@@ -22,7 +22,8 @@
                 endif
               -%}
               {% if links.links.size > 0 %}
-                <accordion-element class="text-chataigne w-full{% unless forloop.last %} mb-4{% endunless %} {% if previous == 'link' %}mt-6{% endif %}">
+                <accordion-element
+                  class="w-full{% unless forloop.last %} mb-4{% endunless %} {% if previous == 'link' %}mt-6{% endif %}">
                   <accordion-trigger class="group">
                     <accordion-header class="flex flex-row items-center justify-between">
                       <div class="flex-1">
@@ -68,3 +69,22 @@
     {% endfor %}
   </tabs-panels>
 </tail-tabs>
+<style>
+  .selected\:font-bold[aria-selected="true"] {
+    font-weight: 700;
+    color: #4B9B7D;
+  }
+
+  .selected\:font-bold[aria-selected="true"]::after {
+    content: '';
+    display: block;
+    width: 90%;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4B9B7D;
+    border-radius: 3px;
+  }
+</style>
