@@ -2,11 +2,11 @@
   "current": {
     "colors_text": "#201a1c",
     "colors_heading": "#201a1c",
-    "colors_background_1": "#f8f2e7",
-    "accent": "#f84c55",
-    "button_bg_primary": "#f84c55",
+    "colors_background_1": "#fff",
+    "accent": "#4b9b7d",
+    "button_bg_primary": "#4b9b7d",
     "button_bg_secondary": "#201a1c",
-    "type_header_font": "playfair_display_n7",
+    "type_header_font": "sans-serif",
     "type_body_font": "lato_n4",
     "social_twitter_link": "https:\/\/twitter.com\/vins.etonnants",
     "social_facebook_link": "https:\/\/www.facebook.com\/vins.etonnants",
@@ -245,7 +245,7 @@
       "logo": {
         "type": "logo",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/Image.png",
+          "logo": "shopify:\/\/shop_images\/logo-popit-noir.png",
           "logo_svg": ""
         }
       },
@@ -313,28 +313,28 @@
             "type": "link_list",
             "settings": {
               "heading": "NOS PRODUITS",
-              "menu": "nos-produits"
+              "menu": ""
             }
           },
           "a60a8e48-011b-433c-a9a4-ab46efd57ef9": {
             "type": "link_list",
             "settings": {
               "heading": "BLOG",
-              "menu": "blog"
+              "menu": ""
             }
           },
           "2f5128fc-ab49-4c8b-ad3d-d0240c1916a7": {
             "type": "link_list",
             "settings": {
               "heading": "A PROPOS",
-              "menu": "a-propos"
+              "menu": ""
             }
           },
           "9f4aa598-1549-4004-8a0b-04b27f1eab98": {
             "type": "link_list",
             "settings": {
               "heading": "CONTACT",
-              "menu": "contact"
+              "menu": ""
             }
           }
         },
@@ -345,15 +345,15 @@
           "9f4aa598-1549-4004-8a0b-04b27f1eab98"
         ],
         "settings": {
+          "logo": "shopify:\/\/shop_images\/popit-logo.png",
           "logo_svg": "",
           "title": "Les news étonnantes !",
           "subtext": "<p>Parce que chaque femme est différente, et que chaque moment nécessite que l’on imagine des produits spécifiques<\/p>",
           "show_newsletter": true,
           "show_social": true,
           "mention-legal": "<p>Mentions légales — Privacy Policy ©Vins étonnants<\/p>",
-          "image-reviews": "shopify:\/\/shop_images\/Capture_d_ecran_2022-09-21_a_10.49_1.png",
-          "bg_color": "#201a1c",
-          "color": "#ffffff"
+          "bg_color": "#e3f2ed",
+          "color": "#1d1d1d"
         }
       },
       "reinsurance": {
@@ -363,7 +363,7 @@
             "type": "block",
             "settings": {
               "svg": "",
-              "image": "shopify:\/\/shop_images\/aa1130bad5b0c5380f492b253cad63be.png",
+              "image": "shopify:\/\/shop_images\/Group_1362.png",
               "title": "Livraison express",
               "text_desktop": "En point relais ou à domicile",
               "text_mobile": "En point relais ou à\ndomicile"
@@ -373,7 +373,7 @@
             "type": "block",
             "settings": {
               "svg": "",
-              "image": "shopify:\/\/shop_images\/1.png",
+              "image": "shopify:\/\/shop_images\/Group_1361.png",
               "title": "Paiement sécurisé",
               "text_desktop": "Carte bancaire, visa, mastercard, choozeo, paypal ...",
               "text_mobile": "Carte bancaire, visa, mastercard, choozeo, paypal ..."
@@ -383,7 +383,7 @@
             "type": "block",
             "settings": {
               "svg": "",
-              "image": "shopify:\/\/shop_images\/2.png",
+              "image": "shopify:\/\/shop_images\/Group_1360.png",
               "title": "Frais de port",
               "text_desktop": "A partir de 250 € d’achat en France continentale",
               "text_mobile": "A partir de 250 € d’achat en France continentale"
@@ -393,7 +393,7 @@
             "type": "block",
             "settings": {
               "svg": "",
-              "image": "shopify:\/\/shop_images\/aa1130bad5b0c5380f492b253cad63be_f7e65736-8658-415c-8f02-e3a474ce3b68.png",
+              "image": "shopify:\/\/shop_images\/Group_1363.png",
               "title": "Une équipe à votre écoute",
               "text_desktop": "Du lundi au vendredi de 9h à 18h",
               "text_mobile": "Du lundi au vendredi de 9h à 18h"
@@ -408,9 +408,9 @@
         ],
         "settings": {
           "add_margin": 0,
-          "header": "On s’occupe de tout pour vous !",
-          "bg_color": "#ffffff",
-          "text_color": "#000000"
+          "header": "",
+          "bg_color": "#4b9b7d",
+          "text_color": "#fff"
         }
       }
     },

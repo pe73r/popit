@@ -9,8 +9,6 @@
         "show_collection_description": true,
         "show_collection_size": true,
         "show_secondary_image": true,
-        "show_vendor": true,
-        "show_quick_add": true,
         "enable_filtering": true,
         "enable_sorting": true
       }
