@@ -1,0 +1,31 @@
+<a href="/" class="">
+    {% if section.settings.logo_svg != blank %}
+          <img src="{{ section.settings.logo_svg }} " alt="{{ section.settings.logo_svg.alt }}">
+    {% elsif section.settings.logo != blank %}
+          <img class="max-w-[150px]" src="{{ section.settings.logo | img_url: 'master' }}" loading="lazy" alt="{{ section.settings.logo.alt }}">
+    {% else %}
+        <span class="text-xl uppercase">{{ shop.name }}</span>
+    {% endif %}
+</a>
+
+
+{% schema %}
+{
+  "name": "Logo",
+  "settings": [
+
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Header Logo"
+    },
+    {
+      "type": "text",
+      "id": "logo_svg",
+      "label": "Header Logo SVG",
+      "default": "https://cdn.shopify.com/s/files/1/0636/1966/2070/files/logo.svg?v=1662912874",
+      "info": "Paste the url from files"
+    }
+  ]
+}
+{% endschema %}

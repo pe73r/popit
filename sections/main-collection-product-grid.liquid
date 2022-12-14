@@ -1,0 +1,351 @@
+
+
+    {% assign results = collection %}
+    {% assign resultsItems = collection.products %}
+    {% assign isSearch = false %}
+ {% if request.page_type == "search" %}
+    {% assign results = search  %}
+    {% assign resultsItems = search.results %}
+    {% assign isSearch = true %}
+ {% endif %}
+
+
+ {{ 'facets.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+
+<section class="w-11/12 max-w-7xl mx-auto main-collection">
+    {%- if section.settings.show_breadcrumbs -%}
+      <div class="my-5">
+        {% render 'breadcrumbs' %}
+      </div>
+    {% endif %}
+    <!-- collection image -->
+    {%- assign image_mobile = collection.metafields.global.image_collection.value -%}
+
+    {%- if section.settings.show_collection_image and collection.image and isSearch == false  -%}
+          <div class="w-full {%- if image_mobile != blank -%} md:block hidden {% endif %}">
+            <img
+              srcset="{%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
+                {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
+                {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {{ collection.image | image_url }} {{ collection.image.width }}w"
+              src="{{ collection.image | image_url: width: 750 }}"
+              alt="{{ collection.title | escape }}"
+              width="{{ collection.image.width }}"
+              height="{{ collection.image.height }}"
+              class="w-full max-h-[200px] object-cover rounded-md"
+              loading="lazy"
+            >
+          </div>
+    {%- endif -%}
+
+    <!-- collection image mobile -->
+    {%- if image_mobile != blank -%}
+      <img class="md:hidden w-full lazy" src="{{ image_mobile.image | img_url: 'master' }}" alt="{{ image_mobile.alt }}" loading="lazy">
+    {%- endif -%}
+
+      <!-- collection title and description -->
+      <div class="text-center max-w-2xl mx-auto mt-5">
+        {%- if section.settings.show_collection_title and isSearch == false -%}
+            <h1 class="text-[28px] leading-[37px] mb-3">
+              {{- collection.title | escape -}}
+            </h1>
+            <hr class="block border-b w-[40px] mx-auto border-[#201A1C] mb-5">
+        {% endif %}
+
+        {%- if collection.description contains "<!--split-->" and isSearch == false  -%}
+          {%- assign collection_description = collection.description | split: "<!--split-->" -%}
+          <tail-details class="text-sm">
+            <details-part >
+               <div class="text-sm">
+                 {{ collection_description | first }}
+               </div>
+            </details-part>
+            <details-part>
+                <div class="text-sm mt-3">
+                  {{ collection_description | last }}
+                </div>
+            </details-part>
+            <see-more class="block mt-5 text-sm underline capitalize accent-color">Lire plus</see-more>
+            <div class="text-center mt-3">
+              <see-less class="hidden justify-center mt-5 text-sm underline capitalize accent-color">Lire moins</see-less>
+            </div>
+          </tail-details>
+
+        {% elsif section.settings.show_collection_description and isSearch == false -%}
+            <div class="text-base mt-5">
+              {{ collection.description }}
+              </div>
+        {%- endif -%}   
+    </div>
+
+    <!-- collection size -->
+    <div>
+      {% assign all_products = 0 %}
+          {% assign available_products = 0 %}
+
+          {% for product in collection.products %}
+            {%- assign all_products = all_products | plus: 1 -%}
+            {% if product.available %}
+              {% assign available_products = available_products | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+
+      {%- if section.settings.show_collection_size -%}
+            {%- if all_products == 0 -%}
+              <div class="text-center mt-10 mb-20">
+                <p class="text-sm">La collection est vide</p>
+                <a href="/collections/all" class="block px-7 py-3 mt-5 text-base rounded-full text-white bg-acajou w-fit mx-auto">Découvrir nos produits</a>
+              </div>
+            {%- elsif all_products == 1 -%}
+              <p class="hidden md:block md:my-8 text-sm text-center">{{ all_products }} produit</p>
+            {%- else -%}
+              <p class="hidden md:block md:my-8 text-sm text-center">{{ all_products }} produits</p>
+            {%- endif -%}
+      {%- endif -%}
+    </div>
+
+   {%- unless all_products == 0 -%}
+      <div class="my-10">
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- filters and sorting side -->
+          {% if section.settings.enable_filtering or section.settings.enable_sorting %}
+            <div class="hidden w-full md:block md:w-3/12 lg:w-1/4 rounded-md p-4 h-[fit-content]" id="main-collection-filters" data-id="{{ section.id }}" style="background-color: {{ section.settings.filters_background }}">
+              <!-- filters -->
+              {% if section.settings.enable_filtering %}
+                <div class="h-[fit-content]">
+                  {% render 'facets', results: results, show_links:section.settings.show_links %}
+                </div>
+              {% endif %}
+
+              <!-- Sorting -->
+                {% if section.settings.enable_sorting %}
+                  <div class="h-[fit-content] mt-10">
+                    {% render 'sorting',  results: results %}
+                  </div>
+                {% endif %}
+            </div>
+          {% endif %}
+
+        <!-- products grid -->
+         <div class="w-full {% if section.settings.enable_filtering or section.settings.enable_sorting %} md:w-9/12 lg:w-3/4 {% endif %}">
+
+          <!-- filters mobile -->
+          {% render "mobile-filters", results: results %}
+
+          {%- if isSearch == true -%}
+            {%- paginate search.results by section.settings.products_per_page -%}
+              <ul id="product-grid" data-id="{{ section.id }}" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+                  {%- for product in search.results -%}
+                    <!-- product_card -->
+                    <li class="">
+                      {% render 'card-product',
+                        card_product: product,
+                        show_secondary_image: section.settings.show_secondary_image,
+                        show_vendor: section.settings.show_vendor,
+                        lazy_load: true,
+                        show_quick_add: section.settings.show_quick_add
+                      %}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+                {%- if paginate.pages > 1 -%}
+                  {% render 'pagination', paginate: paginate %}
+                {%- endif -%}
+              {%- endpaginate -%}
+            {%- else -%}
+              {%- paginate collection.products by section.settings.products_per_page -%}
+                <ul id="product-grid" data-id="{{ section.id }}" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+                  {%- for product in collection.products -%}
+                      <!-- product-dumie -->
+                      {% if forloop.index == 7 and section.settings.show_product_dumie %}
+                        <li class="">
+                          {% render "product-dumie" %}
+                        </li>
+                      {% endif %}
+                        <!-- product_card -->
+                        <li class="">
+                          {% render 'card-product',
+                            card_product: product,
+                            show_secondary_image: section.settings.show_secondary_image,
+                            show_vendor: section.settings.show_vendor,
+                            lazy_load: true,
+                            show_quick_add: section.settings.show_quick_add
+                          %}
+                        </li>
+                  {%- endfor -%}
+                  <script>
+                    dataLayer.push({
+                      'event': 'view_item_list',
+                      'ecommerce': {
+                        'currency': '{{ shop.currency }}',
+                        'items': [
+                          {% for product in collection.products %}
+                            {
+                            'item_id': '{{ product.id }}',
+                            'item_name': '{{ product.title }}',
+                            'quantity': 1,
+                            'item_category': "{{ collection.title }}",
+                            'price': {{ product.price | divided_by: 100.00 }},
+                            'item_discount' : {% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | divided_by: 100.00 }}{% else %}0.00{% endif %},
+                            }{% unless forloop.last %},{% endunless %}
+                          {% endfor %}
+                        ]
+                      }
+                    });
+                  </script>
+                </ul>
+                {%- if paginate.pages > 1 -%}
+                  <div class="relative md:left-[-20%] mt-10">
+                    {% render 'pagination', paginate: paginate %}
+                  </div>
+                  
+                {%- endif -%}
+              {%- endpaginate -%}
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    {%- endunless -%}
+</section>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 24,
+      "step": 4,
+      "default": 16,
+      "label": "Products per page"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": true,
+      "label": "Show collection image ?"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_title",
+      "default": true,
+      "label": "Show title ?"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "default": true,
+      "label": "Show breadcrumbs ?"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "Show description ?"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_size",
+      "default": true,
+      "label": "Show number of products ?"
+    },
+    {
+      "type": "header",
+      "content": "Grid"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "Show secondary image on hover"
+    },
+    {
+      "type": "header",
+      "content": "Filters"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filtering",
+      "default": true,
+      "label": "Enable filtering"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "default": true,
+      "label": "Enable sorting"
+    },
+    {
+      "type": "header",
+      "content": "COLORS"
+    },
+    {
+     "type": "color",
+     "id": "filters_background",
+     "label": "Filters background",
+     "default": "#fcf9f3"
+    },
+    {
+      "type": "header",
+      "content": "CARD"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_dumie",
+      "label": "Show card",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "product_dumie_title",
+      "label": "Text",
+      "default": "Le coup de projecteur vigneron"
+    },
+    {
+      "type": "richtext",
+      "id": "product_dumie_text",
+      "label": "Text",
+      "default": "<p>LOREM IPSUM DOLOR SIT AMET CONSECTEUR AMET SED DO EIUSMOD TEMPORINCIDIDUNT UT LABORE</p>"
+    },
+    {
+      "type": "text",
+      "id": "product_dumie_link",
+      "label": "Link",
+      "default": "<p>Je découvre</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_dumie_image",
+      "label": "Product dumie image"
+    },
+   {
+    "type": "header",
+    "content": "colors"
+   },
+   {
+    "type": "color",
+    "id": "color_dumie_link",
+    "label": "Link dumie",
+    "default": "#FFFFFF"
+    },
+    {
+     "type": "color",
+     "id": "text_dumie_color",
+     "label": "Subtitle color",
+     "default": "#FFFFFF"
+    },
+    {
+     "type": "color",
+     "id": "header-image-footer-color",
+     "label": "Text color",
+     "default": "#FFFFFF"
+    }
+  ]
+}
+{% endschema %}

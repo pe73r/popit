@@ -1,0 +1,160 @@
+<section class="py-10 md:pt-10 md:pb-20">
+  <div class="w-11/12 max-w-[840px] mx-auto">
+   <div class="flex flex-col md:flex-row gap-7 {% if block.settings.layout == 'text_first' %} flex-row-reverse {% endif %}">
+      <div class="w-full md:basis-5/12 {% if section.settings.hide_image_mobile %} hidden {% endif %} md:block">
+        {% if section.settings.image != blank  %}
+            {% render "image" image: section.settings.image , class:"w-full object-cover rounded-tl-[100px] rounded-tr-[5px] md:min-h-[424px]" %}
+        {% else %}
+           {{ 'image' | placeholder_svg_tag }}
+        {% endif %}
+      </div>
+      <div class="flex flex-col justify-center items-center p-0 sm:px-[10px] md:basis-7/12 text-center"
+        style=" background-color: {{ section.settings.background_color }}">
+        <p class="GroteskBold font-[900] text-base uppercase mb-5" style="color: {{ section.settings.subtitle_color }}">
+          {{ section.settings.subtitle }}
+        </p>
+        <h2 class="py-2 font-extrabold text-4xl sm:pb-4" style="color: {{ section.settings.title_color}}">
+          {{ section.settings.title }}
+        </h2>
+        <div class="text-base newsletter__text" style="color: {{ section.settings.text_color}}">
+          {{ section.settings.text }}
+        </div>
+        <div class="text-center">
+          {% form 'customer' , class: 'w-full' %}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <div class="display flex-col mt-3">
+                  <input
+                    id="NewsletterForm--{{ section.id }}"
+                    type="email"
+                    name="contact[email]"
+                    class="border-b-[1.5px] border-acajou text-[15px] block w-full mx-auto placeholder-chataigne bg-transparent appearance-none outline-none pb-1"
+                    size="40"
+                    value="{{ form.email }}"
+                    aria-required="true"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    autocomplete="email"
+                    {% if form.errors %}
+                      autofocus
+                      aria-invalid="true"
+                      aria-describedby="Newsletter-error--{{ section.id }}"
+                    {% elsif form.posted_successfully? %}
+                      aria-describedby="Newsletter-success--{{ section.id }}"
+                    {% endif %}
+                    placeholder="laplusjolly@gmail.com"
+                    required
+                  >
+                
+                  <button type="submit" data-newsletter
+                    class="px-7 py-3 mt-5 text-base rounded-full text-white"
+                    style="background-color: {{ section.settings.button_color }}"
+                    name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
+                    {{ section.settings.text_button }}
+                  </button>
+                </div>
+
+                {%- if form.errors -%}
+                  <h3 class="flex text-base items-center text-red-700 mt-3" id="Newsletter-error--{{ section.id }}">
+                    <span class="max-w-[80px] mr-2">{% render 'icon-error' %}</span>
+                    <span> {{ form.errors.translated_fields['email'] | capitalize }}
+                      {{ form.errors.messages['email'] }}</span>
+                  </h3>
+                {%- endif -%}
+
+              {%- if form.posted_successfully? -%}
+                <h3 class="text-green-800 flex text-base items-center mt-3" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>
+                  <span class="max-w-[80px] mr-2">{% render 'icon-success' %}</span>
+                  <span>{{ 'newsletter.success' | t }}</span>
+                </h3>
+              {%- endif -%}
+            {% endform %}
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</section>
+<style>
+  .section-newsletter strong {
+    font-family: "GroteskBold";
+     font-weight: 700;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Newsletter shopify",
+  "class": "section-newsletter",
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "subtitle",
+      "default": "LA JOLLY NEWSLETTER",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "RECEVEZ DES NEWS À CROQUER",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "default": "<p>Inscrivez-vous à notre newsletter pour être au courant de nos derniers lancements, recettes éphémères, promos, et autres good stuff et recevoir -10% sur VOTRE première commande ! </p>",
+      "label": "Text"
+    },{
+      "type": "text",
+      "id": "text_button",
+      "default": "Je m'inscris",
+      "label": "Button"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_image_mobile",
+      "label": "Hide image on mobile",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "colors"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#E8E2DB"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#733E2B"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#927254"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#3A0F00"
+    }
+
+  ],
+  "presets": [
+    {
+      "name": "Newsletter shopify"
+    }
+  ]
+}
+{% endschema %}

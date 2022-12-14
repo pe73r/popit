@@ -1,0 +1,31 @@
+{% assign allText = '' %}
+{% assign articleReadTime = '' %}
+{% assign articleContent = article.content | strip_html | split: ' '%}
+
+{% for i in (1..4) %}
+
+  {% assign titleKey_rt = 'title_richtext_' | append: i %}
+  {% assign metafieldPathTitle_rt = article.metafields.custom[titleKey_rt] %}
+
+  {% assign paragraphKey_rt = 'paragraph_richtext_' | append: i%}
+  {% assign metafieldPathParagraph_rt = article.metafields.custom[paragraphKey_rt] %}
+
+  {% assign titleKey_iwt = 'title_imagewithtext_' | append: i %}
+  {% assign metafieldPathTitle_iwt = article.metafields.custom[titleKey_iwt] %}
+
+  {% assign paragraphKey_iwt = 'paragraph_imagewithtext_' | append: i%}
+  {% assign metafieldPathParagraph_iwt = article.metafields.custom[paragraphKey_iwt] %}
+
+  {% assign contentTitle_rt = metafieldPathTitle_rt | strip_html | split: ' ' %}
+  {% assign contentParagraph_rt = metafieldPathParagraph_rt | strip_html | split: ' ' %}
+  {% assign contentTitle_iwt = metafieldPathTitle_iwt | strip_html | split: ' ' %}
+  {% assign contentParagraph_iwt = metafieldPathParagraph_iwt | strip_html | split: ' ' %}
+
+  {% capture newAllText %} {{allText}} {{contentTitle_rt}} {{contentParagraph_rt}}  {{contentTitle_iwt}} {{contentParagraph_iwt}}{% endcapture %}
+  {% assign allText = newAllText %}
+{% endfor%}
+
+{%- assign totalArticle = allText.size | plus: articleContent.size -%}
+
+  {%- assign articleReadTime = totalArticle| divided_by: 250 | round | at_least: 1 -%}
+  {{ articleReadTime }}

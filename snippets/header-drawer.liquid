@@ -1,0 +1,26 @@
+<tail-drawer class="lg:hidden" data-full-height="true">
+    <drawer-overlay class="p-0 bg-transparent overflow-visible top-[60px]">
+        <drawer-content class="w-full bg-transparent relative">
+            <drawer-close class="absolute px-4 py-4 bg-white left-2 z-10 top-[-50px]">{% render 'icon-close' %}</drawer-close>
+            <drawer-inner class="bg-white ">
+                {%- liquid
+                    assign bands = section.blocks | where: "type", "mobile_band"
+                    assign bubbles = section.blocks | where: "type", "mobile_rounded"
+                    assign links = section.blocks | where: "type", "mobile_inner"
+                    assign tabs = section.blocks | where: "type", "mobile_tabs"
+                    assign bottoms = section.blocks | where: "type", "mobile_bottom"
+                -%}
+                <div class="flex flex-col h-auto">
+                    {% render "header-drawer-bands", elements: bands %}
+                    {% render "header-drawer-bubbles", elements: bubbles %}
+                    {% render "header-drawer-links", elements: links %}
+                    {% render "header-drawer-tabs", elements: tabs %}
+                </div>
+                {% render "header-drawer-bottom-nav", elements: bottoms %}
+            </drawer-inner>
+        </drawer-content>
+    </drawer-overlay>
+    <drawer-trigger class="flex items-center justify-center w-10 h-10 p-2 cursor-pointer">
+        {% render 'icon-hamburger' %}
+    </drawer-trigger>
+</tail-drawer>

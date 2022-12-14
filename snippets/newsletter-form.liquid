@@ -1,0 +1,47 @@
+{% form 'customer' , class: 'w-full lg:max-w-[80%] mt-6' %}
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    <div class="flex justify-between items-center border border-white font-normal px-5 py-5">
+        <input
+          id="NewsletterForm--{{ section.id }}"
+          type="email"
+          name="contact[email]"
+          class="text-xs placeholder-#ACACAF placeholder-font-normal bg-transparent appearance-none outline-none pl-2 text-white"
+          size="40"
+          value="{{ form.email }}"
+          aria-required="true"
+          autocorrect="off"
+          autocapitalize="off"
+          autocomplete="email"
+          {% if form.errors %}
+            autofocus
+            aria-invalid="true"
+            aria-describedby="Newsletter-error--{{ section.id }}"
+          {% elsif form.posted_successfully? %}
+            aria-describedby="Newsletter-success--{{ section.id }}"
+          {% endif %}
+          placeholder="vinsentreamis@gmail.com"
+          required
+        >
+      
+        <button type="submit" data-newsletter
+          style="background-color: {{ section.settings.button_color }}"
+          name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
+           {% render 'icon-arrow-right-white' %}
+        </button>
+      </div>
+
+      {%- if form.errors -%}
+        <h3 class="flex text-base items-center text-red-700 mt-3" id="Newsletter-error--{{ section.id }}">
+          <span class="max-w-[80px] mr-2">{% render 'icon-error' %}</span>
+          <span> {{ form.errors.translated_fields['email'] | capitalize }}
+            {{ form.errors.messages['email'] }}</span>
+        </h3>
+      {%- endif -%}
+
+    {%- if form.posted_successfully? -%}
+      <div class="text-green-800 flex text-base items-center mt-3" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>
+        <span class="max-w-[80px] mr-2">{% render 'icon-success' %}</span>
+        <span class="font-bold">{{ 'newsletter.success' | t }}</span>
+      </div>
+    {%- endif -%}
+  {% endform %}

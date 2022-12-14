@@ -1,0 +1,57 @@
+{% if elements.size > 0%}
+    <div class="grid grid-cols-3 gap-2 my-3" >
+        {% for bubble in elements %}
+        <tail-modal hideOverlay class="aspect-square" >
+                <modal-overlay class="!absolute w-full h-[calc(100%-87px)] !p-0 overflow-x-hidden bg-opacity-0">
+                    <modal-content from="right" class="min-w-full min-h-full rounded-none" >
+                        <modal-header class="relative !p-0" >
+                            <img  src="{{bubble.settings.bubble_image | image_url: width: 1000}}" alt="" class="w-full aspect-[3/1] object-cover"  >
+                            <div class="absolute top-0 bottom-0 left-0 right-0 m-auto text-4xl text-white w-fit h-fit ">
+                                {{ bubble.settings.menu.title }}
+                            </div>
+                            <drawer-close class="absolute w-4 h-4 text-white top-4 right-4">{% render "icon-close" %}</drawer-close>
+                        </modal-header>
+                        <div class="flex items-center justify-between px-2 mt-2">
+                            <modal-close >{% render "icon-arrow-left" %}</modal-close>
+                            <div class="flex-1">
+                                {% render "search-box" %}
+                            </div>
+                        </div>
+                        <div class="px-4">
+                        <!-- LINKS -->
+                        <div class="text-sm">
+                            {% for link in bubble.settings.menu.links %}
+                                <a href="{{ link.url }}" class="block p-1   {% if link.links != blank %} uppercase text-xs {% endif %} {% if forloop.index == 1 %} text-capucine font-bold mt-4 {% endif %}">{{ link.title }}</a>
+                                {% if link.links != blank %}
+                                    <div class="pl-3">
+                                        {% for link in link.links %}
+                                            <a href="{{ link.url }}" class="block p-1">{{ link.title }}</a>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                {% if forloop.index == 1 %}
+                                    <hr class="w-full h-[1px] mb-4 mt-2 bg-sable" >
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <!-- LINKS -->
+
+                        <!-- FEATURED ARTICLE -->
+                        <div class="grid">
+                            <p class="my-4  text-4xl " >Article conseillé</p>
+                            {% render 'article-card', light:true, blog: bubble.settings.article.blog, article: bubble.settings.article, media_aspect_ratio: 1.66, show_image: true, show_date: true, show_author: false, show_excerpt: true, show_button: true %}
+                        </div>
+                        <!-- FEATURED ARTICLE -->
+                    </div>
+                    </modal-content>
+                </modal-overlay>
+                <modal-trigger class="block w-full h-full">
+                    <button class="relative flex items-center justify-center w-full h-full">
+                        <div class=" z-[1] text-2xl text-center text-white" > {{ bubble.settings.menu.title }} </div>
+                        <img src="{{bubble.settings.bubble_image | image_url: width: 100}}" alt="caca" class="absolute top-0 left-0 object-cover w-full rounded-full aspect-square">
+                    </button>
+                </modal-trigger>
+            </tail-modal>
+        {% endfor %}
+    </div>
+{% endif %}

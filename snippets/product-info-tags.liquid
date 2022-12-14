@@ -1,0 +1,185 @@
+
+{%- assign number_of_tags = 0 -%}
+{%- for tag in product.tags -%}
+{% assign okTags = "vegan,made-in-france,bio,sans-sucres-raffinés,sans-conservateurs,compatible-allaitement,compatible-grossesse,sans-gluten,sans-gluten2,test-labo,sans-nanoparticules,naturel,gourmand,expert,faible-valeur-énergétique,pauvre-sel,pot-verre,zéro-plastique,sans-lait,nutriments-biodisponibles,sans-sel-ajouté,sans-sucres-ajoutés,pauvre-en-sel" | split: ',' %}
+
+  {% if okTags contains tag %}
+    {% assign text = blank %}
+    {% if tag == 'vegan' and number_of_tags < 6 %}
+      <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+        {% render 'icon-vegan' %}
+        {% assign text = "Vegan" %}
+        {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+        <span class="not-italic">{{text}}</span>
+      </div>
+
+    {% elsif tag contains 'made-in-france' and number_of_tags < 6%}
+      <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+        {% render 'icon-france'%}
+        {% assign text = "Fait en France" %}
+        {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+        <span class="not-italic">{{text}}</span>
+      </div>
+
+      {% elsif tag contains 'bio' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+          {% render 'icon-bio'%}
+          {% assign text = "Bio" %}
+          {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+            <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'sans-sucres-raffinés' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+        {% render 'icon-sugar'%}
+        {% assign text = "Sans sucres raffinés" %}
+        {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+          <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'sans-conservateurs' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+        {% render 'icon-conservateur' %}
+        {% assign text = "Sans conservateurs" %}
+        {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+          <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'compatible-allaitement' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+        {% render 'icon-coeur'%}
+        {% assign text = "Compatible allaitement"%}
+        {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+          <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'compatible-grossesse' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+        {% render 'icon-coeur-point'%}
+        {% assign text = "Compatible grossesse" %}
+        {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+          <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'sans-gluten' or tag contains "sans-gluten2" and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+          {% render 'icon-gluten'%}
+          {% assign text = "Sans gluten" %}
+          {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+            <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'test-labo' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+        {% render 'icon-labo'%}
+        {% assign text = "Testé par un laboratoire indépendant" %}
+        {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+          <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'sans-nanoparticules' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+        {% render 'icon-nano'%}
+        {% assign text = "Sans nanoparticules" %}
+        {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+          <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'naturel' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+          {% render 'icon-naturel'%}
+          {% assign text = "Naturel" %}
+          {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+            <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'gourmand' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+        {% render 'icon-soleil'%}
+        {% assign text = "Gourmand" %}
+        {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+          <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'expert' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+        {% render 'icon-experts'%}
+        {% assign text = "Conçus avec nos experts" %}
+        {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+          <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'faible-valeur-énergétique' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+      {% render 'icon-faible'%}
+      {% assign text = "Faible valeur énergétique" %}
+      {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+        <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'pauvre-sel' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+      {% render 'icon-sel'%}
+      {% assign text = "Pauvre en sel" %}
+      {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+        <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'pot-verre' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+      {% render 'icon-pot-verre'%}
+      {% assign text = "Pot en verre" %}
+      {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+        <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'zéro-plastique' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+      {% render 'icon-zero-plastique' %}
+      {% assign text = "Zéro plastique" %}
+      {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+        <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'sans-lait' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+      {% render 'icon-sans-lait' %}
+      {% assign text = "Sans lait" %}
+      {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+        <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'nutriments-biodisponibles' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+      {% render 'icon-apple' %}
+      {% assign text = "Nutriments biodisponibles" %}
+      {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+        <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'sans-sel-ajouté' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+      {% render 'icon-sel-ajoute' %}
+      {% assign text = "Sans sel ajouté" %}
+      {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+        <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'sans-sucres-ajoutés' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+      {% render 'icon-sucre-ajoute' %}
+      {% assign text = "Sans sucre ajouté" %}
+      {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+        <span class="not-italic">{{text}}</span>
+        </div>
+
+      {% elsif tag contains 'pauvre-en-sel' and number_of_tags < 6 %}
+       <div class="flex flex-col items-center justify-center gap-2 px-2 py-6 text-sm italic text-chataigne md:justify-start">
+        {% render 'icon-sucre-ajoute' %}
+        {% assign text = "Pauvre en sel" %}
+        {%- assign number_of_tags = number_of_tags | plus: 1 -%}
+        <span class="not-italic">{{text}}</span>
+      </div>
+  {% endif %}
+{% endif %}
+{%- endfor -%}

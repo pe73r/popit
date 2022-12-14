@@ -1,0 +1,49 @@
+{% assign limitOnSmallScreen = 3 %}
+{% if limit != blank %}
+  {% assign limitOnSmallScreen = limit %}
+{% endif %}
+
+<div class="grid gap-4">
+  {% for i in (1..3) %}
+    {%- liquid
+      capture linkPath
+        echo 'featured_link_' | append: i
+      endcapture
+
+      capture imagePath
+        echo 'featured_link_image_' | append: i
+      endcapture
+
+      capture titlePath
+        echo 'featured_link_title_' | append: i
+      endcapture
+
+      capture  subtitlePath
+        echo 'featured_link_subtitle_' | append: i
+      endcapture
+
+      assign link = block[linkPath]
+      assign image = block[imagePath]
+      assign title = block[titlePath]
+      assign subtitle = block[subtitlePath]
+    -%}
+    {% if image != blank and title != blank and link != blank %}
+      <a class="relative z-0 lg:block rounded-md bg-black {% if forloop.index > limitOnSmallScreen %} hidden {% endif %}" href="{{ link.url }}">
+        {{ image | image_url: width: 200 | image_tag: loading: 'lazy', class: "w-full rounded-md opacity-90" }}
+        <div
+          class="absolute z-0 px-[10px] inset-0 flex flex-col justify-center items-center text-white uppercase text-center text-base">
+          {% if subtitle != blank %}
+            <p class="font-[RebondGrotesque] text-base">{{ subtitle }}</p>
+          {% endif %}
+          <div class="hmfl text-[28px] GroteskBold font-bold mt-3 leading-[37px] tracking-[0.02em]">{{ title }}</div>
+        </div>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style>
+  .hmfl strong {
+    color: #F4FFAF;
+  }
+</style>

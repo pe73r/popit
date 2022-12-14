@@ -1,0 +1,175 @@
+<section class="pt-10 md:py-10">
+    <div class="mx-auto max-w-[860px]">
+      <!-- section header -->
+      <div class="text-center text-[28px] md:text-[34px] uppercase mb-10 px-5">
+            <h2>{{ section.settings.title }}</h2>
+      </div>
+      <!-- section desktop carousel -->
+        <tail-carousel class="hidden md:block px-5 md:px-0 w-full" slidesToShow="sm:2 md:3 lg:3">
+            <carousel-container>
+                <carousel-content class="w-full">
+                 {%- for block in section.blocks -%}
+                    <carousel-panel class="w-full">
+                    <div class="flex flex-col justify-evenly items-center text-center p-5 h-[333px] lg:min-w-[280px] rounded-[5px] border border-gray-200 " style=" background-color:{{ block.settings.background_color }}">
+                          {%- if block.settings.image != blank -%}
+                            {% render "image" image: block.settings.image , class: "max-w-[67px] h-[60px] object-cover lazy " %}
+                          {%- endif -%}
+                          <div class="text-base uppercase GroteskBold" style="color:{{ block.settings.text_color }}">
+                            {{ block.settings.text }}
+                            </div>
+                                <div class="mt-4 " style="color:{{ block.settings.subtexts_color }}">
+                              {%- if block.settings.subtext != blank -%}
+                                    <div class="text-sm font-extrabold">
+                                      {{ block.settings.subtext }}
+                                    </div>
+                              {%- endif -%}
+                              {%- if block.settings.date != blank -%}
+                                    <div class="text-sm Grotesque my-2" style="color:{{ block.settings.date_color }} ">
+                                      {{ block.settings.date }}
+                                    </div>
+                              {%- endif -%}
+                              {%- if block.settings.date != blank -%}
+                                    <div class="text-sm font-extrabold GroteskBold">
+                                      {{ block.settings.rating }}
+                                    </div>
+                              {%- endif -%}
+                            </div>
+                        </div>
+                    </carousel-panel>
+                  {% endfor %}
+                </carousel-content>
+            </carousel-container>
+            <carousel-next class=" flex absolute z-[1] right-1 items-center justify-center h-8 p-2 my-auto cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+              {% render 'icon-arrow-right' %}
+            </carousel-next>
+            <carousel-prev class="flex absolute left-1 z-[1] items-center justify-center h-8 p-2 my-auto  cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+              {% render 'icon-arrow-left' %}
+            </carousel-prev>
+            <carousel-dots class="relative flex justify-center mt-3">
+                <carousel-dot class="w-[7px] h-[7px] m-1 transition-all bg-sable border-[1px] border-sable rounded-full selected:bg-ecorce selected:border-ecorce selected:border-[5px]"></carousel-dot>
+            </carousel-dots>
+        </tail-carousel>
+    </div>
+    <!-- section desktop carousel end -->
+
+    <!-- section mobile (snap-carousel) -->
+    <div class="md:hidden mb-10 Rebond Grotesque">
+       <div class="">
+          <div class="flex relative overflow-hidden overflow-x-scroll snap-mandatory snap-x mx-4 gap-2">
+            {% for block in section.blocks %}
+                 <div class="flex flex-col justify-evenly items-center text-center p-5 h-[333px] min-w-[280px] rounded-[5px] border border-gray-200 snap-center" style=" background-color:{{ block.settings.background_color }}">
+                        {%- if block.settings.image != blank -%}
+                          {% render "image" image: block.settings.image , class: "max-w-[67px] h-[60px] object-cover lazy " %}
+                        {%- endif -%}
+                          <div class="text-base uppercase GroteskBold" style="color:{{ block.settings.text_color }}">
+                            {{ block.settings.text }}
+                          </div>
+                          <div class="mt-4 " style="color:{{ block.settings.subtexts_color }}">
+                        {%- if block.settings.subtext != blank -%}
+                          <div class="text-sm font-extrabold">
+                           {{ block.settings.subtext }}
+                          </div>
+                        {%- endif -%}
+                        {%- if block.settings.date != blank -%}
+                           <div class="text-sm Grotesque my-2" style="color:{{ block.settings.date_color }} ">
+                            {{ block.settings.date }}
+                           </div>
+                        {%- endif -%}
+                        {%- if block.settings.date != blank -%}
+                           <div class="text-sm font-extrabold GroteskBold">
+                            {{ block.settings.rating }}
+                          </div>
+                        {%- endif -%}
+                     </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- End section mobile (snap-carousel) -->
+  </section>
+
+  {%- schema -%}
+    {
+      "name": " Review carousel",
+      "settings": [
+        {
+              "type": "text",
+              "id": "title",
+              "label": "Subtitle",
+              "default": "Ce que disent nos jolly mamas"
+            }
+      ],
+      "blocks": [
+        {
+          "type": "block",
+          "name": "Image text block",
+          "settings": [
+
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            },
+            {
+              "type": "richtext",
+              "id": "text",
+              "label": "text",
+              "default": "<p>LES Carrés de céréales SONT super bons et calent bien quand on a un ptit creux !</p>"
+            },
+            {
+              "type": "text",
+              "id": "subtext",
+              "label": "text",
+              "default": "Marie"
+            },
+            {
+              "type": "richtext",
+              "id": "date",
+              "label": "Text",
+              "default": "<p> 15 Déc. 2021 </p>"
+            },
+            {
+              "type": "textarea",
+              "id": "rating",
+              "label": "Text",
+              "default": "4,7/5"
+            },
+            {
+              "type": "header",
+              "content": "Colors"
+            },
+            {
+              "type": "color",
+              "id": "background_color",
+              "label": "background color",
+              "default": "#E8E2DB"
+            },
+            {
+              "type": "color",
+              "id": "text_color",
+              "label": "Text color",
+              "default": "#927254"
+
+            },
+            {
+              "type": "color",
+              "id": "date_color",
+              "label": "Date color",
+              "default": "#733E2B"
+            },
+            {
+              "type": "color",
+              "id": "subtexts_color",
+              "label": "Subtitle color",
+              "default": "#733E2B"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Reviews carousel"
+        }
+      ]
+    }
+  {% endschema %}

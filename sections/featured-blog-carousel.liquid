@@ -1,0 +1,167 @@
+{%- assign blog = blogs[section.settings.blog] -%}
+<div class="max-w-{{ section.settings.container }} mx-auto my-10 md:my-20">
+  {%- if section.settings.heading != blank -%}
+    <div class="w-11/12 mx-auto text-center mb-10">
+      <h2 class="text-[28px] md:text-[32px] leading-[37px] md:leading-[42px]">
+        {{ section.settings.heading }}
+      </h2>
+    </div>
+  {%- endif -%}
+  
+  
+    <!-- carousel desktop -->
+    <div class="hidden md:block md:w-11/12 mx-auto"> 
+     <tail-carousel slidesToShow="xs:1 md:3 lg:4">
+      <carousel-container>
+        <carousel-content class="w-full">
+          {%- for article in blog.articles limit: section.settings.post_limit -%}
+            <carousel-panel class="px-2 w-full max-w-[280px] md:max-w-full !min-w-[280px] md:!min-w-[25%]">
+              {% render 'article-card', 
+                blog: section.settings.blog, 
+                article: article, 
+                show_image: section.settings.show_image, 
+                show_title: section.settings.show_title, 
+                show_content: section.settings.show_content, 
+                show_author: section.settings.show_author, 
+                show_button: section.settings.show_button, 
+                show_tag: section.settings.show_tag, 
+                show_date: section.settings.show_date 
+              %}
+            </carousel-panel>
+          {%- endfor -%}
+        </carousel-content>
+      </carousel-container>
+        {% if section.settings.show_dots %}
+            <carousel-dots class="relative flex justify-center mt-10">
+                <carousel-dot class="w-full h-[3px] transition-all bg-sable border-[1px] border-sable selected:bg-black selected:border-black selected:w-1/2">
+                </carousel-dot>
+            </carousel-dots>
+        {% endif %}
+    </tail-carousel>
+  </div> 
+   
+   <!-- carousel mobile -->
+   <div class="block md:hidden ml-6 mr-0">
+      <div class="flex relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-2 scrollbar pb-6">
+           {%- for article in blog.articles limit: section.settings.post_limit -%}
+              <div class="w-[200px] min-w-[200px]">
+                {% render 'article-card', 
+                  blog: section.settings.blog, 
+                  article: article, 
+                  show_image: section.settings.show_image, 
+                  show_title: section.settings.show_title, 
+                  show_content: section.settings.show_content, 
+                  show_author: section.settings.show_author, 
+                  show_button: section.settings.show_button, 
+                  show_tag: section.settings.show_tag, 
+                  show_date: section.settings.show_date 
+                %}
+              </div>
+          {% endfor %}
+      </div>
+   </div>
+</div>
+{% schema %}
+  {
+    "name": "Featured Blog carousel",
+    "tag": "section",
+    "settings": [
+        {
+        "type": "select",
+        "id": "container",
+        "options": [
+          {
+            "value": "7xl",
+            "label": "large"
+          },
+          {
+            "value": "5xl",
+            "label": "medium"
+          },
+          {
+            "value": "3xl",
+            "label": "small" 
+          }
+        ],
+        "default": "5xl",
+        "label": "Container desktop"
+      }, 
+      {
+        "type": "header",
+        "content": "Blog"
+      },
+      {
+        "type": "blog",
+        "id": "blog",
+        "label": "Choix du blog"
+      },
+      {
+        "type": "range",
+        "id": "post_limit",
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "default": 4,
+        "label": "Nombre d'articles de blog à afficher en desktop"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_dots",
+        "label": "Show carousel bar",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "header"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "default": "À LIRE...",
+        "label": "Titre"
+      },
+      {
+        "type": "header",
+        "content": "Contenu des articles"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_title",
+        "default": false,
+        "label": "Show title"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_content",
+        "default": true,
+        "label": "Show content"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_author",
+        "default": false,
+        "label": "Show author"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_date",
+        "default": true,
+        "label": "Show date"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_button",
+        "default": true,
+        "label": "Show button"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured blog carousel",
+        "settings": {
+          "blog": "Main Blog"
+        }
+      }
+    ]
+  }
+{% endschema %}

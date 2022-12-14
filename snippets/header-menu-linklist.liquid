@@ -1,0 +1,51 @@
+<div class="{{ class }} ">
+    {% for link in menuMain.links %}
+        <a href="{{ link.url }}" class="flex p-1 mt-4 text-base font-sans font-bold uppercase">{{ link.title }}</a>
+        {% if link.links != blank %}
+            <div class="pl-3">
+                {% for link in link.links %}
+                    <a href="{{ link.url }}" class="block p-1 font-serif text-acajou text-base">{{ link.title }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="{{ class }} ">
+    {% for link in menu2.links %}
+        <a href="{{ link.url }}" class="flex p-1 mt-4 text-base font-sans font-bold uppercase">{{ link.title }}</a>
+        {% if link.links != blank %}
+            <div class="pl-3">
+                {% for link in link.links %}
+                    <a href="{{ link.url }}" class="block p-1 font-serif text-acajou text-base">{{ link.title }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="{{ class }} ">
+    {% for link in menu3.links %}
+        <a href="{{ link.url }}" class="flex p-1 mt-4 text-base font-sans font-bold uppercase">{{ link.title }}</a>
+        {% if link.links != blank %}
+            <div class="pl-3">
+                {% for link in link.links %}
+                    <a href="{{ link.url }}" class="block p-1 font-serif text-acajou text-base">{{ link.title }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="{{ class }} ">
+    {% for link in menu4.links %}
+        <a href="{{ link.url }}" class="flex p-1 mt-4 text-base font-sans font-bold uppercase">{{ link.title }}</a>
+        {% if link.links != blank %}
+            <div class="pl-3">
+                {% for link in link.links %}
+                    <a href="{{ link.url }}" class="block p-1 font-serif text-acajou text-base">{{ link.title }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>

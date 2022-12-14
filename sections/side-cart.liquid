@@ -1,0 +1,259 @@
+{% assign item_count = cart.item_count %}
+{% assign s = section.settings %}
+
+
+{% assign item_count = cart.item_count %}
+
+<tail-side-cart class="group" data-transition="out" data-full-height="true">
+  <side-cart-overlay class="group-in:opacity-100 group-exiting:opacity-0 group-out:hidden group-entering:block group-entering:opacity-0 z-[50]">
+    <side-cart-content class="w-[430px] overflow-x-hidden group-entering:block group-entering:translate-x-full group-in:translate-x-0 group-in:opacity-100 group-exiting:d-block group-exiting:translate-x-full group-exiting:opacity-0 group-out:opacity-0 group-out:hidden">
+      <side-cart-header class="flex justify-between px-5 py-2 bg-theme">
+        <div class="flex items-center">
+          <h5 class="text-base font-bold">
+            {% if item_count == 0 %}
+              {{ section.settings.cart_title_when_empty }}
+            {% else %}
+              {{ section.settings.cart_title }}
+            {% endif %}
+          </h5>
+          <span class="block ml-2 text-sm">{{ item_count }}
+            {% if item_count > 1 %}
+              articles
+            {% else %}
+              article
+            {% endif %}
+          </span>
+        </div>
+        <side-cart-close class="w-8 h-8 p-2 mb-2">
+          {% render 'icon-cart-close' %}
+        </side-cart-close>
+      </side-cart-header>
+
+      <side-cart-inner class="pt-4 px-6 pb-6 bg-theme overflow-x-hidden">
+        {% if item_count == 0 %}
+          {% render "side-cart-empty" %}
+        {% else %}
+          <div>
+            {% render "side-cart-carousel" %}
+          </div>
+          <div id="line-items">
+            {% render "side-cart" %}
+          </div>
+        {% endif %}
+      </side-cart-inner>
+
+      {% unless item_count == 0 %}
+        <side-cart-footer class="flex flex-col bg-beige pb-4">
+          <div class="px-3 pt-4 pb-2">
+            {% render "side-cart-progress" %}
+          </div>
+          
+          {% if section.settings.upSellCollection %}
+            <div class="px-3 bg-beige">
+              {% render "side-cart-upsell-carousel", collection: section.settings.upSellCollection, title: section.settings.upSellTitle %}
+            </div>
+          {% endif %}
+          <div class="px-3 bg-beige relative">
+            {% render "side-cart-footer" %}
+          </div>
+        </side-cart-footer>
+      {% endunless %}
+
+    </side-cart-content>
+  </side-cart-overlay>
+  <side-cart-trigger class="relative flex items-center justify-center w-10 h-10" data-cart-indicator>
+    {% render "icon-cart" %}
+    {% if section.settings.show_counter %}
+      <div class="absolute px-1 font-bold rounded-full -bottom-0 text-white text-center text-xs right-0.5 bg-accent">
+         <span class="relative left-[0.5px] top-[0.5px]">{{ item_count }}</span>  
+      </div>
+    {% endif %}
+  </side-cart-trigger>
+</tail-side-cart>
+<style>
+  side-cart-footer{
+    box-shadow: 0px -2px 10px 0px #0000000F;
+  }
+</style>
+
+{% schema %}
+
+  {
+    "name": "Side cart",
+    "class": "shopify-section--mini-cart",
+    "settings": [
+
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "cart_title",
+        "label": "Cart title",
+        "default": "Panier"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_counter",
+        "label": "Show counter in picto ?",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Footer"
+      }, {
+        "type": "richtext",
+        "id": "sub_total_text",
+        "default": "<p>📦 Livraison offerte dès 59€ - 💰 3x sans frais</p>",
+        "label": "Sub total text"
+      }, {
+        "type": "text",
+        "id": "validate_text",
+        "default": "Commander",
+        "label": "Button"
+      }, 
+      {
+        "type": "text",
+        "id": "extra_text",
+        "default": "🚚 Livraison prévue entre 3 et 6 jours",
+        "label": "Extra text"
+      },
+      {
+        "type": "text",
+        "id": "extra_text_2",
+        "default": "Frais de livraison et code promo à l’étape suivante.",
+        "label": "Extra text"
+      },  
+      {
+        "type": "header",
+        "content": "CODE PROMO"
+      }, {
+        "type": "checkbox",
+        "id": "show_code_promo",
+        "label": "Show code promo ?",
+        "default": false
+      }, 
+      {
+        "type": "header",
+        "content": "Carousel reasurance"
+      }, 
+      { 
+        "type": "checkbox",
+        "id": "show_carousel_reassurance",
+        "label": " show_carousel ?",
+        "default": true
+      },  
+      {
+        "type": "header",
+        "content": "Empty cart behavior"
+      }, 
+      {
+        "type": "text",
+        "id": "cart_title_when_empty",
+        "label": "Empty cart title",
+        "default": "Panier"
+      }, {
+        "type": "collection",
+        "id": "collection_when_empty",
+        "label": "Collection to display"
+      }, {
+        "type": "collection",
+        "id": "collection_when_empty_2",
+        "label": "Collection to display"
+      }, {
+        "type": "text",
+        "id": "empty_subtext",
+        "label": "Subtext",
+        "default": " Recommandés par des médecins"
+      }, {
+        "type": "text",
+        "id": "empty_subtext_2",
+        "label": "Subtext",
+        "default": "Et élaborés avec des experts"
+      }, {
+        "type": "header",
+        "content": "Up sell"
+      }, {
+        "type": "text",
+        "id": "upSellTitle",
+        "label": "Up sell carousel title",
+        "default": "Complétez avec..."
+      }, {
+        "type": "collection",
+        "id": "upSellCollection",
+        "label": "Up sell collection"
+      }, {
+        "type": "header",
+        "content": "Shipping bar"
+      }, {
+        "type": "number",
+        "id": "free_shipping_limit",
+        "label": "Free shipping limit",
+        "default": 59
+      }, {
+        "type": "text",
+        "id": "free_shipping_text_before",
+        "default": "Plus que ((rest)) pour une livraison en point relais offerte.",
+        "label": "Free shipping text before"
+      }, {
+        "type": "text",
+        "id": "free_shipping_text_after",
+        "default": "Vous bénéficiez de la livraison en point relais offerte.",
+        "label": "Free shipping text success"
+      }, {
+        "type": "number",
+        "id": "product_1_limit",
+        "label": "Free product 1 limit",
+        "default": 79
+      }, {
+        "type": "text",
+        "id": "product_1_text_before",
+        "default": "Plus que ((rest)) pour un cadeau.",
+        "label": "Free product 1 text before"
+      }, {
+        "type": "text",
+        "id": "product_1_text_after",
+        "default": "Vous bénéficiez du cadeau offert.",
+        "label": "Free product 1 text success"
+      }, {
+        "type": "number",
+        "id": "product_2_limit",
+        "label": "Free product 2 limit",
+        "default": 100
+      }, {
+        "type": "text",
+        "id": "product_2_text_before",
+        "default": "Plus que ((rest)) pour un deuxième cadeau.",
+        "label": "Free product 2 text before"
+      }, {
+        "type": "text",
+        "id": "product_2_text_after",
+        "default": "Vous bénéficiez du cadeau offert.",
+        "label": "Free product 2 text success"
+      }
+    ],
+    "blocks": [ 
+      {
+        "type": "reassurances",
+        "name": "Reassurances",
+        "settings": [
+          
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "🎁 Une bouteille offerte à partir de 65€"
+          }, 
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Une bouteille de la sélection du mois dans votre colis</p>"
+          }
+        ]
+      }
+    ]
+
+  }
+{% endschema %}

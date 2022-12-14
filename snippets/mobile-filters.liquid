@@ -1,0 +1,65 @@
+
+{% assign hasFilters = false %}
+{% assign filtersCount = 0 %}
+
+
+{%- for filter in results.filters -%}
+  {% if filter.active_values.size > 0 %}
+      {% assign filtersCount = filtersCount | plus: filter.active_values.size %}
+      {% assign hasFilters = true %}
+  {% endif %}
+{%- endfor -%}
+
+
+<div class="w-1/2 mx-auto flex gap-5 justify-center md:hidden mb-6">
+  <!-- filters  -->
+  <tail-filters class="w-full" data-is-mobile="true">
+   <tail-drawer data-full-height="true" class="w-full">
+    <drawer-overlay class="pr-0">
+      <drawer-content class="!w-full">
+        <drawer-header class="w-11/12 mx-auto flex justify-start pt-4 pb-2 border-b border-gray-300"> 
+          <drawer-close class="w-5 h-5 max-w-fit mr-5">{% render 'icon-close' %}</drawer-close>
+          <h5 class="text-[20px]">FILTRER PAR {% if filtersCount > 0 %}({{ filtersCount }}){% endif %}</h5>
+        </drawer-header>
+        <drawer-inner class="bg-theme">
+          {% render 'mobile-filters-facets', results: results %}
+        </drawer-inner>
+        <drawer-footer class="grid" style="justify-content: initial ;">
+          <mobile-apply-filters class="w-full block cursor-pointer hidden text-center text-xs lg:text-sm {% render "button", color: "primary"  %} " >
+            Appliquer les filtres
+          </mobile-apply-filters>
+        {% if hasFilters == true %}
+          <tail-filters class="block w-full !ml-0 px-3 py-4 mt-5 text-xs lg:text-sm font-extrabold text-center border border-black rounded-md cursor-pointer">
+            <remove-filters>
+              Supprimer les sélections
+            </remove-filters>
+          </tail-filters>
+        {% endif %}
+        </drawer-footer>
+      </drawer-content>
+    </drawer-overlay>
+        <drawer-trigger data-filter-trigger class="flex justify-center items-center cursor-pointer">
+      <h5 class="block text-[20px] font-bold">Filtrer</h5>
+      <div class="ml-2">{%- render 'icon-circle-plus' -%}</div>
+    </drawer-trigger>
+   </tail-drawer>
+  </tail-filters>
+   <!-- sorting -->
+   <tail-drawer class="w-full bg-creme">
+     <drawer-overlay>
+        <drawer-content class="w-full">
+          <drawer-header class="flex justify-start w-11/12 pt-4 pb-2  m-auto border-b first-element:flex-none">
+            <drawer-close class="mr-5 max-w-fit">{% render 'icon-close' %}</drawer-close>
+            <h5 class="text-base font-bold">TRIER PAR</h5>
+          </drawer-header>
+          <drawer-inner class="bg-theme">
+            {% render 'mobile-filters-sort', results: results %}
+          </drawer-inner>
+        </drawer-content>
+     </drawer-overlay>
+        <drawer-trigger class="flex justify-center items-center cursor-pointer">
+      <h5 class="block text-[20px] font-bold">Trier</h5>
+      <div class="ml-2"> {%- render 'icon-circle-plus' -%} </div>
+    </drawer-trigger>
+ </tail-drawer>
+</div>

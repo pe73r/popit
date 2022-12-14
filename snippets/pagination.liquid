@@ -1,0 +1,50 @@
+{% comment %}
+    Renders a set of links for paginated results. Must be used within paginate tags.
+
+    Usage:
+    {% paginate results by 2 %}
+      {% render 'pagination', paginate: paginate, anchor: '#yourID' %}
+    {% endpaginate %}
+
+    Accepts:
+    - paginate: {Object}
+    - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
+{% endcomment %}
+
+{%- if paginate.parts.size > 0 -%}
+  <div class="flex justify-center">
+    <nav role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+      <ul class="flex items-center" role="list">
+      {%- if paginate.previous -%}
+        <li>
+          <a href="{{ paginate.previous.url }}{{ anchor }}" class="block font-bold text-[#ACACAF] mx-3 text-sm" aria-label="{{ 'general.pagination.previous' | t }}">
+              <
+          </a>
+        </li>
+      {%- endif -%}
+
+      {%- for part in paginate.parts -%}
+        <li>
+          {%- if part.is_link -%}
+            <a href="{{ part.url }}{{ anchor }}" class="px-2 font-bold text-[#F84C55]" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</a>
+          {%- else -%}
+            {%- if part.title == paginate.current_page -%}
+              <span class="font-bold py-1 px-2 bg-[#F84C55] text-white text-base rounded-sm" aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</span>
+            {%- else -%}
+              <span class="font-bold px-3 text-base text-[#F84C55]">{{ part.title }}</span>
+            {%- endif -%}
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+
+      {%- if paginate.next -%}
+        <li>
+          <a href="{{ paginate.next.url }}{{ anchor }}" class="block font-bold text-[#F84C55] mx-3 text-sm" aria-label="{{ 'general.pagination.next' | t }}" >
+           >
+          </a>
+        </li>
+      {%- endif -%}
+      </ul>
+    </nav>
+  </div>
+{%- endif -%}

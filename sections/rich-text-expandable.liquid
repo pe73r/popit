@@ -1,0 +1,101 @@
+<div class="mx-5 md:max-w-3xl md:mx-auto py-10 md:py-10" style="color:{{ section.settings.text_color }}">
+  <div class="text-center">
+      <h2 class="font-bold text-[20px] leading-[26px]">{{ section.settings.title}}</h2>
+      <tail-details class="mt-4 text-sm">
+          <details-part >
+             <div class="{% if section.settings.text_mobile != blank %} hidden md:block {% endif %}">
+               {{ section.settings.text }}
+             </div>
+             {% if section.settings.text_mobile != blank %}
+              <div class="block md:hidden ">
+                {{ section.settings.text_mobile }}
+              </div>
+             {% endif %}
+          </details-part>
+          <details-part>
+              <div class="{% if section.settings.text_mobile != blank %} hidden md:block {% endif %}">
+                {{ section.settings.more_text }}
+              </div>
+              {% if section.settings.text_mobile != blank %}
+                <div class="block md:hidden">
+                  {{ section.settings.more_text_mobile }}
+                </div>
+               {% endif %}
+          </details-part>
+          <see-more class="block mt-5 text-sm underline capitalize accent-color">{{ section.settings.text_link}}</see-more>
+          <div class="text-center mt-3">
+            <see-less class="hidden justify-center mt-5 text-sm underline capitalize accent-color">{{ section.settings.text_less }}</see-less>
+          </div>
+        </tail-details>
+  </div>
+</div>
+{% schema %}
+  {
+  "name": "Rich Text Expandable",
+  "tag": "section",
+  "settings": [
+      
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#201A1C"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "default": "Que signigie l’appelation bio ?",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+        "content": "content desktop"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+        "label": "Paragraph"
+      },
+      {
+        "type": "richtext",
+        "id": "more_text",
+        "default": "<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+        "label": "More paragraph"
+      },
+      {
+        "type": "header",
+        "content": "content mobile"
+      },
+      {
+        "type": "richtext",
+        "id": "text_mobile",
+        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+        "label": "Paragraph"
+      },
+      {
+        "type": "richtext",
+        "id": "more_text_mobile",
+        "default": "<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+        "label": "More paragraph"
+      },
+      {
+        "type": "text",
+        "id": "text_link",
+        "default": "Lire plus",
+        "label": "Text button more"
+      },
+      {
+        "type": "text",
+        "id": "text_less",
+        "default": "Lire moins",
+        "label": "Text button less"
+      }
+      ],
+      "presets": [
+          {
+            "name": "Rich Text Expandable"
+          }
+      ]
+  }
+{% endschema %}

@@ -1,0 +1,73 @@
+
+
+{% assign variantsInCarts = cart.items | map: "variant_id" %}
+{% assign variantsInCarts = variantsInCarts | join: ', '   %}
+
+<div class="flex flex-col items-center w-full">
+<tail-carousel log="true" slidesToShow="xs:1 sm:1 lg:1 xl:1"  class="flex-1 w-full py-0">
+    <carousel-container class="">
+        <carousel-content class="w-full">
+            {% for product in collection.products limit:10 %}
+            <carousel-panel class="p-2 px-6 max-w-[200px]">
+              <a href="{{ product.url }}">
+                <div class="rounded-lg flex gap-2 bg-white">
+                    <img src="{{product.featured_image | image_url: width: 400 }}" alt="{{product.featured_image.alt}}" class="max-w-[60px] object-fit rounded-tl-lg rounded-bl-lg">
+                    <div class="flex-1 flex items-center justify-between pr-2">
+                      <div class="mr-2">
+                        <!-- TITLE -->
+                        <h5 class="mb-1 text-sm line-clamp-1 font-body-text font-bold">{{ product.title }}</h5>
+
+                         <!-- Metafield region -->
+                        <div class="my-1 text-xs line-clamp-1 h-[15px]">
+                            {{ product.metafields.global.region }}
+                        </div>
+
+                        <!-- PRICE -->
+                        <div class="text-xs mb-1">
+                            {% if product.compare_at_price == nil %}
+                                <span class="font-bold">
+                                    {{ product.price | money_with_currency }}
+                                </span>
+                            {% else %}
+                                <span class="font-bold accent-color"> 
+                                    {{ product.price | money_with_currency }}
+                                </span>
+                                <span class="line-through text-[-1px]">
+                                    {{ product.compare_at_price | money_with_currency }}
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- ADDTOCART -->
+                     <add-to-cart
+                        data-max-quantity="{{product.selected_or_first_available_variant.inventory_quantity}}"
+                        data-product="{{ product.id }}"
+                        data-title="{{ product.title }}{% unless product.selected_or_first_available_variant.title contains 'Default' %} - {{ product.selected_or_first_available_variant.title }}{% endunless %}"
+                        data-discount="{% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}{{ product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | divided_by: 100.00 }}{% else %}0.00{% endif %}"
+                        data-price="{{ product.selected_or_first_available_variant.price | divided_by: 100.00 }}"
+                        data-lightReRender="true"
+                        data-variant="{{ product.selected_or_first_available_variant.id}}">
+                            <button class="my-1 rounded-md w-[30px] h-[30px] flex justify-center items-center text-center bg-orange">
+                                {% render 'icon-add-2-cart' class: 'w-[8px] h-[8px]' %}
+                            </button>
+                        </add-to-cart>
+                    </div>
+                </div>
+               </a>
+            </carousel-panel>
+
+            {% endfor %}
+
+        </carousel-content>
+    </carousel-container>
+
+  {% comment %}
+    <carousel-dots class="relative flex justify-center">
+        <carousel-dot class="w-[8px] h-[8px] m-1 transition-all bg-sable rounded-full selected:w-[10px] selected:h-[10px] selected:bg-ecorce"></carousel-dot>
+    </carousel-dots>
+  {% endcomment %}
+
+</tail-carousel>
+
+</div>

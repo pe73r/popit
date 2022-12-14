@@ -1,0 +1,40 @@
+
+{%- assign marketing_title = collection.metafields.global.card_marketing_title.value -%}
+{%- assign marketing_text = collection.metafields.global.card_marketing_text.value -%}
+{%- assign marketing_link = collection.metafields.global.card_marketing_link -%}
+{%- assign marketing_image = collection.metafields.global.card_marketing_image.value -%}
+
+{% if section.settings.product_dumie_image != blank %}
+    <div class="flex h-full product-dumie min-h-[260px]">
+      <div class="flex flex-col justify-center px-3 items-center w-full rounded-md text-center bg-center bg-cover bg-no-repeat" 
+       {% if marketing_image != blank %}
+          style="background-image: url({{ marketing_image | img_url: 'master' }});" 
+       {% elsif section.settings.product_dumie_image != blank %}
+         style="background-image: url({{ section.settings.product_dumie_image | img_url: 'master' }});" 
+       {% else %} 
+         style="background-image: url {{ 'product_dumie_image' | placeholder_svg_tag }}" 
+       {% endif %}>
+        <h4 class="font-bold text-[28px] leading-[37px] md:text-[32px] md:leading-[42px] mb-4" style="color: {{section.settings.text_dumie_color}};"> 
+          {% if marketing_title != blank %}
+            {{ marketing_title | remove: '<p>' | remove: '</p>' }}
+          {% else %}  
+            {{ section.settings.product_dumie_title }}
+          {% endif %}
+        </h4>
+        <hr class="block border-b w-[40px] mx-auto border-white mb-5">
+        <div class="text-sm" style="color: {{section.settings.text_dumie_color}};">
+          {% if marketing_text != blank %}
+            {{ marketing_text | remove: '<p>' | remove: '</p>' }}
+          {% else %}  
+            {{ section.settings.product_dumie_text | remove: '<p>' | remove: '</p>' }}
+          {% endif %}
+        </div>
+        {%- if section.settings.color_dumie_link != blank -%}
+          <a data-product-dumie {% if marketing_link != blank %} href="{{ marketing_link }}" {% endif %} class="block text-sm border rounded-md px-2 py-3 mt-8" style="color:{{ section.settings.color_dumie_link }}; border-color:{{ section.settings.color_dumie_link }}">
+            {{ section.settings.product_dumie_link }}
+          </a>
+        {%- endif -%} 
+      </div>
+    </div>
+{% endif %}
+

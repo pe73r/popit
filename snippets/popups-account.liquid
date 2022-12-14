@@ -1,0 +1,566 @@
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded",()=>{
+    const popupRecoverForm = document.querySelector("#popupRecover form")
+    console.log({popupRecoverForm});
+    popupRecoverForm.addEventListener("submit", ()=>{
+      console.log("submit");
+      toggleMessages(true)
+    })
+  })
+
+  const toggleMessages = (toggle)=>{
+    const success =  document.querySelector("#popupRecover [data-recover-success]");
+    const message =  document.querySelector("#popupRecover [data-recover-success]");
+      success.style.display = toggle ? "block" : "none";
+      message.style.display = !toggle ? "block" : "none";
+  }
+
+  const onClose  = ()=>{
+    toggleMessages(false)
+    resetPopup()
+  }
+</script> -->
+
+
+<tail-modal onClose="resetPopup()" data-customer-popup class="group" data-transition="out">
+  <modal-overlay class="p-5 md:p-20 group-out:hidden group-entering:block z-[50]">
+    <modal-content class="modal-account rounded-md w-full h-fit max-w-[320px] overflow-y-auto lg:overflow-y-hidden p-5 md:max-w-[400px] md:p-[15px] group-entering:block group-entering:opacity-0 group-entering:scale-95 group-in:scale-100 group-in:opacity-100 group-exiting:block group-exiting:scale-90 group-exiting:opacity-0 group-out:opacity-0 group-out:hidden pb-10 md:pb-5">
+      <modal-close class="flex justify-end p-0">
+        {% render 'icon-close' %}
+      </modal-close>
+      <div class="text-center">
+        <div data-password class="hidden"> 
+          <div data-password-retrieve class="hidden !block md:p-[35px] md:mt-[30px]"> 
+            <div class="GroteskBold text-[18.5px] mb-[9px] text center font-bold uppercase text-acajou">
+              {{ 'customer.recover_password.title' | t }}
+            </div>
+            <p data-recover-pending class="text-[13px] text-center mb-7">
+              {{ 'customer.recover_password.subtext' | t }}
+            </p>
+            {%- form 'recover_customer_password' -%}
+            <div style="display: none;" data-recover-success  class="text-[13px] text-center mb-7">
+              Nous vous avons envoyé un e-mail contenant un lien pour mettre à jour votre mot de passe.
+            </div>
+
+              <div id="here" class="mb-[23px] text-left">
+                <label for="RecoverEmail" class="block relative text-[11px] leading-[15px] tracking-[0.02em] uppercase">
+                  {{ 'customer.login_page.email' | t }}*
+                </label>
+                <input type="email"
+                  value=""
+                  name="email"
+                  id="RecoverEmail"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  autocomplete="email"
+                  {% if form.errors %}
+                    aria-invalid="true"
+                    aria-describedby="RecoverEmail-email-error"
+                    autofocus
+                  {% endif %}
+                  required
+                  placeholder="Email"
+                  class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full outline-none appearance-none">
+              </div>
+
+              <div data-password-errors class="hidden">
+                <small id="RecoverEmail-email-error" class="text-sm text-capucine my-2"></small>
+              </div>
+
+              <button type="submit" class="border-acajou tracking-wider border mb-[10px] border-solid px-5 py-2 font-semibold text-base rounded-3xl bg-acajou hover:bg-transparent text-white hover:text-acajou cursor-pointer">
+                {{ 'customer.recover_password.button' | t }}
+              </button>
+
+              <button data-cancel class="block text-center cursor-pointer m-auto text-sm underline mb-[10px]">
+                {{ 'customer.recover_password.cancel' | t }}
+              </button>
+
+            {%- endform -%}
+          </div>
+          <div data-password-success class="hidden md:px-[35px] md:pb-[17px] md:pt-[17px]">
+            <div class="GroteskBold text-[18.5px] mb-4 text center font-bold uppercase text-acajou">
+              {{ 'customer.recover_password.success_title' | t }}
+            </div>
+            <p class="text-sm text-center mb-5">
+              {{ 'customer.recover_password.success_html' | t }}
+            </p>
+          </div>
+        </div>
+        <div data-login class="hidden md:px-[35px] md:pt-[25px] {% unless handle contains 'reset' %}!block{% endunless %}">
+          <p class="GroteskBold text-[18.5px] mb-[44px] md:mb-5 font-bold uppercase text-acajou tracking-wider">{{ 'customer.login_page.welcome' | t }}</p>
+          {%- form 'customer_login' -%}
+            <!-- errors -->
+
+            <div data-login-errors class="text-sm text-red-400 my-2" tabindex="-1" style="display: none;">
+              <span data-form-errors>
+                {{ form.errors | default_errors }}
+              </span>
+            </div>
+
+            <div class="mb-7 md:mb-[18px] text-left">
+              <!-- email -->
+              <label for="CustomerEmail" class="block relative text-[11px] leading-[15px] tracking-[0.02em] uppercase">
+                {{ 'customer.login_page.email' | t }}*
+              </label>
+              <input
+                type="email"
+                name="customer[email]"
+                id="CustomerEmail"
+                autocomplete="email"
+                autocorrect="off"
+                autocapitalize="off"
+                required
+                {% if form.errors contains 'form' %}
+                  aria-invalid="true"
+                {% endif %}
+                {% if form.email %}value="{{ form.email }}"{% endif %}
+                placeholder="{{ 'customer.login_page.email' | t }}"
+                class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold appearance-none outline-none w-full">
+            </div>
+
+            <!-- Password -->
+            {%- if form.password_needed -%}
+              <div class="text-left mb-1">
+                <label for="CustomerPassword" class="block relative text-[11px] leading-[15px] tracking-[0.02em] uppercase">
+                  {{ 'customer.login_page.password' | t }}*
+                </label>
+                <input
+                  type="password"
+                  value=""
+                  required
+                  name="customer[password]"
+                  id="CustomerPassword"
+                  autocomplete="current-password"
+                  {% if form.errors contains 'form' %} aria-invalid="true" {% endif %}
+                  placeholder="{{ 'customer.login_page.password' | t }}"
+                  class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold appearance-none outline-none w-full">
+              </div>
+            {%- endif -%}
+            <p data-password-recover-button class="mt-2 block cursor-pointer text-left underline italic text-[13px]">
+              {{ 'customer.login_page.forgot_password' | t }}
+            </p>
+            <!-- Button -->
+            <div class="flex flex-col mt-5">
+              <button type="submit" class="border-acajou tracking-wider border mb-5 border-solid px-5 py-2 font-semibold text-base rounded-3xl bg-acajou hover:bg-transparent text-white hover:text-acajou cursor-pointer">
+                {{ 'customer.login_page.sign_in' | t }}
+              </button>
+              <div data-create-account-button class="tracking-wider px-5 mb-6 underline font-semibold text-base text-acajou cursor-pointer">
+                {{ 'customer.login_page.create_account' | t }}
+              </div>
+            </div>
+          {%- endform -%}
+        </div>
+        <div data-create-account class="hidden md:p-[35px]">
+          <p class="GroteskBold text-[18.5px] mb-[10px] md:mb-2 font-bold uppercase text-acajou">{{ 'customer.register.title' | t }}</p>
+          <p class="max-w-[280px] ml-auto mr-auto text-[13px] mb-3 font-medium text-acajou text-center">{{ 'customer.register.text' | t }}</p>
+          {%- form 'create_customer' -%}
+
+            <div data-errors-container class="hidden text-red-800">
+              {%- if form.errors -%}
+                <h2 data-errors class="form__message text-xs text-red-800 mb-1" tabindex="-1" autofocus>
+                  {{ 'templates.contact.form.error_heading' | t }}
+                </h2>
+                <ul class="mb-5 text-red-400">
+                <ul class="mb-5 text-red-400">
+                  {%- for field in form.errors -%}
+                    <li>
+                      {%- if field == 'form' -%}
+                        <div class="text-xs">
+                          {{ form.errors.messages[field] }}
+                        </div>
+                      {%- else -%}
+                        <a class="text-xs" href="#RegisterForm-{{ field }}">
+                          {{ form.errors.translated_fields[field] | capitalize }}
+                          {{ form.errors.messages[field] }}
+                        </a>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </div>
+
+            <div class="flex text-base justify-start gap-4 mb-5">
+              <div class="flex flex-row items-center cursor-pointer">
+                <div class="relative w-4 h-4">
+                  <input type="radio" id="Mr" name="customer[note][Genre]" value="mr" class="relative z-10 opacity-0 h-4 w-4 cursor-pointer">
+                  <span class="rounded-full absolute h-4 w-4 border-acajou border-solid border left-0 top-0 p-1"></span>
+                </div>
+                <label for="Mr" class="pl-[6px] cursor-pointer">Mr.</label>
+              </div>
+              <div class="flex flex-row items-center cursor-pointer">
+                <div class="relative w-4 h-4">
+                  <input type="radio" id="Mme" name="customer[note][Genre]" value="mme" class="relative z-10 opacity-0 h-4 w-4 cursor-pointer" checked>
+                  <span class="rounded-full absolute h-4 w-4 border-acajou border-solid border left-0 top-0 p-1"></span>
+                </div>
+                <label for="Mme" class="pl-[6px] cursor-pointer">Mme.</label>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:mb-7">
+              <!-- First name -->
+              <div class="md:w-1/2 mb-7 md:mb-0 md:pr-[10px] flex flex-col text-left">
+                <label for="RegisterForm-FirstName" class="block relative text-[11px] leading-[15px] tracking-[0.02em] uppercase">
+                  {{ 'customer.register.first_name' | t }}*
+                </label>
+                <input
+                  type="text"
+                  name="customer[first_name]"
+                  class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full"
+                  id="RegisterForm-FirstName"
+                  required
+                  {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
+                  autocomplete="given-name"
+                  placeholder="{{ 'customer.register.first_name' | t }}"
+                >
+              </div>
+              <!-- Last name -->
+              <div class="md:w-1/2 mb-7 md:mb-0 md:pl-[10px] flex flex-col text-left">
+                <label for="RegisterForm-LastName" class="block relative text-[11px] leading-[15px] tracking-[0.02em] uppercase">
+                  {{ 'customer.register.last_name' | t }}*
+                </label>
+                <input
+                  type="text"
+                  name="customer[last_name]"
+                  required
+                  class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full"
+                  id="RegisterForm-LastName"
+                  {% if form.last_name %}value="{{ form.last_name }}"{% endif %}
+                  autocomplete="family-name"
+                  placeholder="{{ 'customer.register.last_name' | t }}"
+                >
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:mb-5">
+              <div class="md:w-1/2 mb-7 md:mb-0 md:pr-[10px] flex flex-col text-left">
+                <!-- Email -->
+                <label for="RegisterForm-email" class="block relative text-[11px] leading-[15px] tracking-[0.02em] uppercase">
+                  {{ 'customer.register.email' | t }}*
+                </label>
+                <input
+                  type="email"
+                  name="customer[email]"
+                  required
+                  class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full"
+                  id="RegisterForm-email"
+                  {% if form.email %} value="{{ form.email }}"{% endif %}
+                  spellcheck="false"
+                  autocapitalize="off"
+                  autocomplete="email"
+                  aria-required="true"
+                  {% if form.errors contains 'email' %}
+                    aria-invalid="true"
+                    aria-describedby="RegisterForm-email-error"
+                  {% endif %}
+                  placeholder="{{ 'customer.register.email' | t }}"
+                >
+              </div>
+              <!-- Password -->
+              <div class="md:w-1/2 mb-7 md:mb-0 md:pl-[10px] flex flex-col text-left">
+                <label for="RegisterForm-password" class="block relative text-[11px] leading-[15px] tracking-[0.02em] uppercase">
+                  {{ 'customer.register.password' | t }}
+                </label>
+                <input
+                  type="password"
+                  name="customer[password]"
+                  required
+                  class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full"
+                  id="RegisterForm-password"
+                  aria-required="true"
+                  {% if form.errors contains 'password' %}
+                    aria-invalid="true"
+                    aria-describedby="RegisterForm-password-error"
+                  {% endif %}
+                  placeholder="{{ 'customer.register.password' | t }}">
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:mb-8 md:items-end">
+              <div class="md:w-1/2 mb-7 md:mb-0 md:pr-[10px] flex flex-col text-left">
+                <!-- Phone -->
+                <label for="RegisterPhone_{{ form.id }}" class="hidden" aria-hidden="true">
+                  {{ 'customer.addresses.phone' | t }}*
+                </label>
+                <input type="phone_number"
+                  id="RegisterPhone_{{ form.id }}"
+                  class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full"
+                  name="customer[note][phone]"
+                  value="{{ form.phone }}"
+                  autocomplete="tel"
+                  required
+                  placeholder="{{ 'customer.addresses.phone' | t }}*">
+              </div>
+              <!-- country -->
+              <div class="md:w-1/2 mb-7 md:mb-0 md:pr-[10px] flex flex-col text-left md:pl-[10px]">
+                <label class="text-xs" for="AddressCountry_{{ form.id }}">
+                  {{ 'customer.addresses.country' | t }}
+                </label>
+                <div class="select border-b border-acajou border-solid">
+                  <select
+                    id="AddressCountry_{{ form.id }}"
+                    class="w-full {{ form_class }} max-w-[100%] text-[17px]"
+                    name="customer[note][country]"
+                    required
+                    data-address-country-select
+                    data-default="{{ form.country }}"
+                    data-form-id="{{ form.id }}"
+                    autocomplete="country"
+                  >
+                    {{ all_country_option_tags }}
+                  </select>
+                </div>
+              </div>
+              <div class="flex flex-col text-left mb-7 md:pl-[14px] md:w-1/2" id="AddressProvinceContainer_{{ form.id }}" style="display:none;">
+                <label class="mb-1 text-[15.5px]" for="AddressProvince_{{ form.id }}">
+                  {{ 'customer.addresses.province' | t }}
+                </label>
+                <div class="select">
+                  <select
+                    id="AddressProvince_{{ form.id }}"
+                    name="customer[note][province]"
+                    class="w-full {{ form_class }}"
+                    data-default="{{ form.province }}"
+                    autocomplete="address-level1">
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- Parainnage
+            <div class="md:w-1/2 mb-7 md:mb-0 md:pl-[10px] flex flex-col text-left">
+              <label for="RegisterForm-Parrainage" class="hidden">
+                {{ 'customer.register.parrainage' | t }}
+              </label>
+              <input
+                type="text"
+                name="customer[note][CodeParainnage]"
+                class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full"
+                id="RegisterForm-Parrainage"
+                autocomplete="given-name"
+                placeholder="{{ 'customer.register.parrainage' | t }}"
+              >
+            </div> -->
+
+            <!-- Checkbox -->
+            <div class="flex-row flex items-center text-left default--filters text-xs cursor-pointer mb-[10px]">
+              <div class="relative w-4 h-4">
+                <input type="checkbox" id="checkbox_newsletter" name="customer[accepts_marketing]" class="relative z-10 opacity-0 h-4 w-4 cursor-pointer">
+                <span class="rounded-full absolute h-4 w-4 border-acajou border-solid border left-0 top-0 p-1"></span>
+              </div>
+              <label for="checkbox_newsletter" class="pl-[6px] cursor-pointer">Je souhaite recevoir des offres et des nouvelles exclusives</label>
+            </div>
+
+            <div class="flex items-center text-left default--filters text-xs">
+              <div class="relative w-4 h-4">
+                <input type="checkbox" id="checkbox_legal" value="legal" class="relative z-10 opacity-0 h-4 w-4 cursor-pointer" required>
+                <span class="rounded-full absolute h-4 w-4 border-acajou border-solid border left-0 top-0 p-1"></span>
+              </div>
+              <label for="checkbox_legal" class="pl-[6px] cursor-pointer">J'ai lu et j'accepte les <a class="underline" target="_blank" href="/pages/cgv">Conditions générales de vente</a></label>
+            </div>
+
+            {%- if form.errors contains 'password' -%}
+              <span id="RegisterForm-password-error" class="form__message">
+                <svg aria-hidden="true" focusable="false" role="presentation">
+                  <use href="#icon-error" />
+                </svg>
+                {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
+              </span>
+            {%- endif -%}
+
+            <!-- Button -->
+            <div class="flex flex-col mt-5 md:mt-10">
+              <button type="submit" class="border-acajou tracking-wider w-full max-w-xs m-auto border mb-5 border-solid px-5 py-2 font-semibold text-base rounded-3xl bg-acajou hover:bg-transparent text-white hover:text-acajou cursor-pointer">
+                {{ 'customer.register.submit' | t }}
+              </button>
+              <div data-login-button class="tracking-wider px-5 underline font-semibold text-base text-acajou cursor-pointer">
+                {{ 'customer.login_page.sign_in' | t }}
+              </div>
+            </div>
+          {%- endform -%}
+        </div>
+        <style>
+          [data-create-account] input[type="radio"]:checked + span:before,
+          [data-create-account] input[type="checkbox"]:checked + span:before {
+            background: rgb(115 62 43);
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            border-radius: 100%;
+          }
+        </style>
+        <script defer>
+          let customer_modal = document.querySelector('[data-customer-popup]'),
+              password_recover = document.querySelector('[data-password]'),
+              password_recover_button = document.querySelector('[data-password-recover-button]'),
+              password_recover_cancel = document.querySelector('[data-cancel]'),
+              password_recover_form = document.querySelector('[data-password] form'),
+              password_reset = document.querySelector('[data-password-reset]'),
+              password_reset_form = document.querySelector('[data-password-reset] form'),
+              password_reset_input = document.querySelector('[data-password-reset-input]'),
+              password_reset_success = document.querySelector('[data-password-reset-success]'),
+              password_reset_errors = document.querySelector('[data-reset-errors]'),
+              password_recover_retrieve = document.querySelector('[data-password] [data-password-retrieve]'),
+              password_recover_success = document.querySelector('[data-password] [data-password-success]'),
+              login = document.querySelector('[data-login]'),
+              login_form = document.querySelector('[data-login] form'),
+              login_transit_button = document.querySelector('[data-login-button]'),
+              create_account = document.querySelector('[data-create-account]'),
+              create_account_form = document.querySelector('[data-create-account] form'),
+              create_account_transit_button = document.querySelector('[data-create-account-button]');
+
+          password_recover_button.onclick = function() {
+            login.classList.toggle('!block');
+            password_recover.classList.toggle('!block');
+          }
+
+          password_recover_cancel.onclick = function() {
+            login.classList.toggle('!block');
+            password_recover.classList.toggle('!block');
+          }
+
+          create_account_transit_button.onclick = () => {
+            login.classList.toggle('!block');
+            create_account.classList.toggle('!block');
+            customer_modal.querySelector('modal-content').classList.remove('md:max-w-[400px]', 'max-w-[320px]', 'h-[402px]')
+            customer_modal.querySelector('modal-content').classList.add('md:max-w-[640px]', 'max-w-full', 'h-full', 'md:h-auto')
+          }
+
+          login_transit_button.onclick = () => {
+            login.classList.toggle('!block');
+            create_account.classList.toggle('!block');
+            customer_modal.querySelector('modal-content').classList.add('md:max-w-[400px]', 'max-w-[320px]', 'h-[402px]')
+            customer_modal.querySelector('modal-content').classList.remove('md:max-w-[640px]', 'max-w-full', 'h-full', 'md:h-auto')
+          }
+
+          const resetPopup = () => {
+            if(password_recover_success.classList.contains('!block')){
+              password_recover_retrieve.classList.toggle('!block');
+              password_recover_retrieve.classList.toggle('!block');
+              password_recover_success.classList.remove('!block');
+              login.classList.toggle('!block');
+              customer_modal.querySelector('modal-content').classList.add('md:max-w-[400px]', 'max-w-[320px]', 'h-fit')
+              customer_modal.querySelector('modal-content').classList.remove('md:max-w-[640px]', 'max-w-full', 'h-full', 'md:h-auto')
+            }
+          }
+
+          password_recover_form.addEventListener('submit', function(e){
+            if(!this.checkValidity()) return;
+            e.preventDefault();
+
+            const body = new FormData(this);
+
+            fetch(`${this.getAttribute('action')}`, { method: "post", body: body })
+            .then(function(){
+              password_recover_retrieve.classList.toggle('!block');
+              password_recover_success.classList.toggle('!block');
+              dataLayer.push({
+                'event': 'Account',
+                'eventCategory': 'Engagement',
+                'eventAction': 'Password_retrieval',
+                'eventLabel': ''
+              });
+            })
+            .catch((e) => {
+              console.error(e);
+            })
+          })
+
+          document.addEventListener("DOMContentLoaded", function() {
+            login_form.addEventListener('submit', function(e){
+              if(!this.checkValidity()) return;
+              e.preventDefault();
+              const body = new FormData(this);
+              login_form.querySelector('[data-login-errors]').style.display = "none"
+              fetch(`${this.getAttribute('action')}`, { method: "post", body: body })
+              .then((response) => response.text())
+              .then((responseText) => {
+                const newDom = new DOMParser().parseFromString(responseText, "text/html");
+                const customer = newDom.querySelector('[data-logged]').dataset.logged == "true" ? true : false;
+                if(customer){
+                  document.querySelector('[data-logged]').classList.remove('hidden'),
+                  customer_modal.querySelector('modal-trigger').classList.add('hidden');
+                  customer_modal.querySelector('modal-close').click()
+                  dataLayer.push({
+                    'event': 'Account',
+                    'eventCategory': 'Engagement',
+                    'eventAction': 'Login',
+                    'eventLabel': ''
+                  });
+                } else {
+                  const loginErrors = login_form.querySelector('[data-login-errors]');
+                  loginErrors.style.display = "block";
+                  loginErrors.querySelector("[data-form-errors]").innerHTML = newDom.querySelector('[data-login-errors] [data-form-errors]').innerHTML;
+                  login_form.querySelectorAll('input').forEach((input) => {
+                    input.setAttribute('style', 'border-color: red; color: red !important; -webkit-text-fill-color: red;')
+                    input.addEventListener('change', function(){
+                      input.removeAttribute('style')
+
+                    });
+                  })
+                }
+              });
+            });
+
+            create_account_form.addEventListener('submit', function(e){
+              if(!this.checkValidity()) return;
+              e.preventDefault();
+              const body = new FormData(this);
+              create_account_form.querySelector('[data-errors-container]').innerHTML = '';
+              create_account_form.querySelector('[data-errors-container]').classList.remove('!block');
+
+              fetch(`${this.getAttribute('action')}`, { method: "post", body: body })
+              .then((response) => response.text())
+              .then((responseText) => {
+                const newDom = new DOMParser().parseFromString(responseText, "text/html");
+                const customer = newDom.querySelector('[data-logged]').dataset.logged == "true" ? true : false;
+                if(customer){
+                  document.querySelector('[data-logged]').classList.remove('hidden'),
+                  customer_modal.querySelector('modal-trigger').classList.add('hidden');
+                  customer_modal.querySelector('modal-close').click()
+                  dataLayer.push({
+                    'event': 'Account',
+                    'eventCategory': 'Engagement',
+                    'eventAction': 'Sign_up',
+                    'eventLabel': ''
+                  });
+                } else {
+                  create_account_form.querySelector('[data-errors-container]').innerHTML = '';
+                  create_account_form.querySelector('[data-errors-container]').classList.remove('!block');
+                  if(newDom.querySelector('[data-create-account] [data-errors]')){
+                    create_account_form.querySelector('[data-errors-container]').innerHTML = newDom.querySelector('[data-create-account] [data-errors-container]').innerHTML;
+                    create_account_form.querySelector('[data-errors-container]').classList.add('!block');
+                  }
+
+                  newDom.querySelectorAll('[data-create-account] input').forEach((input) => {
+                    if(input.getAttribute('aria-invalid')) {
+                      let input_error = create_account_form.querySelector(`[name="${input.getAttribute('name')}`)
+                      input_error.setAttribute('style', 'border-color: red; color: red !important; -webkit-text-fill-color: red;')
+                      input_error.addEventListener('change', function(){
+                        input_error.removeAttribute('style')
+                      });
+                    }
+                  })
+                }
+              });
+            });
+          });
+        </script>
+      </div>
+    </modal-content>
+  </modal-overlay>
+  <modal-trigger class="{% if customer %}hidden{% endif %}">
+    {% render 'icon-account' %}
+  </modal-trigger>
+</tail-modal>
+<style>
+  .modal-account::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+
+
+

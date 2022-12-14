@@ -1,0 +1,156 @@
+<div class="py-10 md:py-10">
+  <div class="w-11/12 mx-auto md:max-w-{{ section.settings.container }}">
+    <div class="flex flex-col gap-3 md:gap-5 lg:gap-8 md:flex-row">
+      <!-- Images part -->
+      <div class="py-10 pl-5 lg:pl-10 rounded-[8px] md:w-1/2 lg:w-7/12" style="background-color:{{ section.settings.background_left_color }};">
+        <h2 class="text-[20px] lg:text-[28px] leading-8 lg:leading-10 mb-5" style="color:{{ section.settings.header_color }};">{{ section.settings.title }}</h2>
+        <!-- quote -->
+        {% if section.settings.text != blank %}
+          <div class="text-[24px] lg:text-[28px] leading-[28px] md:leading-[33px] italic mb-10" style="color:{{ section.settings.text_color }};">{{ section.settings.text }}</div>
+        {% endif %} 
+        <!-- carousel -->
+        <div class="flex relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 scrollbar pb-6"> 
+          {% for block in section.blocks %}
+            {%- if block.type == "block" -%}
+            <img class="rounded-md w-[220px] h-[250px] object-cover" src="{{ block.settings.image | img_url:'master' }}" alt="">
+            {% endif %}
+          {%- endfor -%} 
+        </div>
+      </div>
+      <!--Accordion part-->
+      <div class="w-full md:w-1/2 lg:w-5/12">
+        <accordion-group class="group">
+          {% for block in section.blocks %}
+            {%- if block.type == "informations" -%}
+                <accordion-element class="p-6 bg-white rounded-[8px] mb-2 w-full">
+                  <accordion-trigger class="group">
+                    <accordion-header class="flex justify-between items-center">
+                      <h4 class="text-[20px]">
+                        {{ block.settings.information_icon }}
+                      </h4>
+                      <h4 class="text-[20px]">
+                        {{ block.settings.information_title }}
+                      </h4>
+                      <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
+                        <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                        <span class="icon-minus hidden">{% render 'icon-accordion-minus' %}</span>
+                      </accordion-icon>
+                    </accordion-header>
+                  </accordion-trigger>
+                  <accordion-content>
+                    <div class="text-base mt-4">
+                      {%- if block.settings.information_text != blank -%}
+                        {{ block.settings.information_text }}
+                      {% endif %}
+                    </div>
+                  </accordion-content>
+                </accordion-element>
+            {% endif %}
+          {% endfor %}
+        </accordion-group>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product infos",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "select",
+        "id": "container",
+        "options": [
+            {
+            "value": "7xl",
+            "label": "large"
+            },
+            {
+            "value": "5xl",
+            "label": "medium"
+            },
+            {
+            "value": "3xl",
+            "label": "small" 
+            }
+        ],
+        "default": "7xl",
+        "label": "Container desktop"
+      }, 
+      {
+        "type": "text",
+        "id": "title",
+        "default": "Le profil du vin 🍷",
+        "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "picto",
+        "label": "Picto title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "default": "<p>'Délicieusement mordante, sur la griotte, la grenade et la fumée, avec une pointe d'épices”</p>",
+        "label": "Text"
+      },
+      {
+        "type": "header",
+        "content": "colors"
+      }, {
+        "type": "color",
+        "id": "header_color",
+        "label": "Text color",
+        "default": "#201A1C"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#F84C55"
+      }, {
+        "type": "color",
+        "id": "background_left_color",
+        "label": "Background color",
+        "default": "#FFFFFE"
+      }
+
+    ],
+    "blocks": [
+      {
+        "name": "Image snap",
+        "type": "block",
+        "limit": 12,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }, {
+        "name": "Informations",
+        "type": "informations",
+        "limit": 6,
+        "settings": [
+          {
+            "type": "text",
+            "id": "information_title",
+            "default": "Caractéristiques",
+            "label": "Information title"
+          }, {
+            "type": "text",
+            "id": "information_icon",
+            "default": "📝",
+            "label": "Information icon"
+          }, {
+            "type": "richtext",
+            "id": "information_text",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>",
+            "label": "Information text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

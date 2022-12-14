@@ -1,0 +1,151 @@
+
+<!-- <script>
+    window.fetch = new Proxy(window.fetch, {
+        async apply(fetch, that, args) {
+            const result = fetch.apply(that, args);
+            result.then( async (response) => {
+                const [endpoint, { body }] = args;
+                const isUpdate = endpoint.endsWith("/cart/update.js");
+                const isAdd = endpoint.endsWith("/cart/add.js");
+                const isRemove = endpoint.endsWith("/cart/remove.js");
+
+                if( isUpdate || isAdd || isRemove) {
+                    console.log("fetch completed!", {body, endpoint,isUpdate,isAdd, isRemove});
+                    const {total_price, items} = await(await fetch("/cart.js")).json()
+                    const steps = [["auto", 40], ["auto", 80], [44438635806966, 100]];
+                    const hasFreeItem = (id) => {
+                        return items.some((item) => item.variant_id === id && item.properties.is === "free");
+                    };
+                    const f = async (mode, data) =>{
+                        return (await fetch(`/cart/${mode}.js`, {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json",
+                              Accept: "application/json"
+                            },
+                            body: JSON.stringify({
+                              [mode=== "add" ? "items": "updates"]: data,
+                              sections: ["side-cart"],
+                              sections_url: window.location.pathname
+                            })
+                          })).json()
+                    }
+
+                    let add = [];
+                    let remove = {};
+
+                    steps.forEach(([id, threshold])=>{
+                        if(id === "auto"){
+                            return
+                        }
+                        console.log({ total_price });
+                        if(threshold <= total_price / 100){
+                            if(hasFreeItem(id)){
+                               Object.assign(remove, {[id]: 0})
+                            }
+                        } else {
+                            if(!hasFreeItem(id)){
+                                add.push({ id, properties:{ is: "free" } })
+                            }
+                        }
+                    });
+                    let fetchers = []
+
+                    if(Object.keys(remove).length > 0){
+                        fetchers.push(f("update", remove))
+                    }
+                    if(add.length > 0){
+                        fetchers.push(f("add", add))
+                    }
+                    if(fetchers.length){
+                        const [{ sections }] = await Promise.all(fetchers)
+                        console.log({ sections })
+                        reRenderCartIndicators(sections);
+                    }
+                }
+            });
+
+            return result;
+        }
+    });
+</script> -->
+
+
+{% assign steps = section.blocks | map: 'settings' | sort: "limit" | where: "limit" %}
+{% assign firstStep = steps | map: 'limit' | first | floor %}
+{% assign lastStep = steps | map: 'limit' | last | floor %}
+{% assign stepWidth = 100 | divided_by: steps.size %}
+{% assign currentStepIndex = false %}
+
+{% assign start = 0 %}
+{% assign end = 100 %}
+{%- assign cartTotal = cart.original_total_price -%}
+{% assign progression = 18 %}
+{% assign firstStep = false %}
+{% assign secondStep = false %}
+{% assign total = cartTotal | divided_by: 100 %}
+
+{% if total >= 100 %}
+    {% assign progression = 55 %}
+    {% assign firstStep = true %}
+
+{% endif %}
+
+{% if total >= 150 %}
+    {% assign progression = 90 %}
+    {% assign secondStep = true %}
+{% endif %}
+
+
+<div data-cart-indicator class="w-full p-2">
+
+    <div class="text-sm text-center text-sauge mb-2">
+
+        {% if firstStep == false %}
+            <span>Plus que <b class="text-md">{{ 100 | minus: total }}€</b> pour la livraison gratuite</span>
+        {% endif %}
+
+        {% if firstStep == true and secondStep == false %}
+            <span>Plus que <b class="text-md">{{ 150 | minus: total }}€</b>  pour obtenir 10%</span>
+        {% endif %}
+
+        {% if firstStep == true and secondStep == true %}
+        <span class="font-bold">Vous avez débloqué votre cadeau ! </span>
+    {% endif %}
+    </div>
+    <div class="w-full relative  flex items-center">
+        <div class="w-full bg-white rounded-md overflow-hidden relative h-1">
+            <div class="absolute w-full h-1 origin-left rounded-md bg-[#201A1C] progress-bar" style="transform: scaleX({{progression}}%);" ></div>
+        </div>
+        <div class="flex w-full absolute items-center justify-around">
+        </div>
+            <div  style="left: {{progression}}%;" class="rounded-full -translate-x-2 absolute  bg-[#201A1C] border-[1px] border-[#201A1C] w-3.5 h-3.5" ></div>
+    </div>
+    <div class="w-full text-center pt-2 text-xs flex justify-around items-center">
+
+        <div class="relative opacity-0 hidden">
+             <div style="background: {% if firstStep == true %}  #201A1C {% else %} #E8E2DB {% endif %}; border-color: {% if firstStep == true %}  #201A1C {% else %} #F9F8F6 {% endif %};" class=" m-auto left-0 right-0 top-[-16px] absolute rounded-full selected:border-marron border-2  w-3.5 h-3.5"></div>
+            <b class="text-sm font-bold" >100€</b> <br>
+            Livraison offerte
+        </div>
+      
+        <div class="relative opacity-0 hidden">
+              <div style="background: {% if secondStep == true %}  #201A1C {% else %} #E8E2DB {% endif %};border-color: {% if secondStep == true %}  #201A1C {% else %} #F9F8F6 {% endif %};"  class=" absolute  m-auto left-0 right-0 top-[-16px]  rounded-full border-2 w-3.5 h-3.5"></div>
+           <b class="text-sm font-bold">150€</b><br>
+           <span class="">bouteille gratuite</span>
+        </div>
+    </div>
+</div>
+<style>
+  /*  .progress-bar::after{
+    content: '';
+    width: 13px;
+    height: 13px;
+    background-color: #F4FFAF;
+    border: 1px solid #927254;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+  }*/
+</style>

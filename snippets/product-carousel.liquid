@@ -1,0 +1,50 @@
+{%- for media in product.media -%}
+  {%- assign product_media_size  = product.media.size  -%}
+{% endfor %}
+
+<div class="flex items-center md:max-h-[630px]">
+    <!-- carousel desktop -->
+    <div class="hidden w-full md:block">
+      <tail-carousel class="relative" slidesToShow="md:1" data-auto-dots="false">
+        <carousel-dots class="hidden md:flex flex-col absolute z-10 gap-1 {% if product_media_size >= 8 %} bottom-[5%]  {% else %} bottom-[10%] {% endif %} left-[3%]">
+          {%- for media in product.media -%}
+            <carousel-dot class="py-2 text-center transition-all cursor-pointer group" href="{{ media }}">
+                <div class="{% if product_media_size >= 8 %} w-[40px] h-[40px]  {% else %} w-[60px] h-[60px] {% endif %} rounded-full ring-white ring-3 lg:hover:ring-capucine lg:hover:ring-2 group-selected:ring-capucine group-selected:ring-2 transition-all flex justify-center ">
+                  <img class="rounded-full" src="{{ media  | image_url: width: 52, height: 52 }}">
+                </div>
+            </carousel-dot>
+          {%- endfor-%}
+        </carousel-dots>
+        <carousel-container>
+            <carousel-content>
+              {%- for media in product.media -%}
+                <carousel-panel class="p-0 md:max-h-[630px] 2xl:max-h-[800px] object-center">
+                    {% render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants, class: 'object-top object-cover'%}
+                </carousel-panel>
+              {% endfor %}
+            </carousel-content>
+        </carousel-container>
+      </tail-carousel>
+  </div>
+
+<!-- carousel mobile -->
+  <div class="w-full md:hidden">
+    <tail-carousel slidesToShow="xs:1 sm:1">
+      <carousel-container>
+          <carousel-content class="max-w-[90%]">
+            {%- for media in product.media -%}
+              <carousel-panel class="p-0 pr-2 max-h-[650px]">
+                   <img class="w-full lazy" data-src="{{ media | img_url:'master' }}" alt="{{ media.alt }}" loading="lazy">
+              </carousel-panel>
+              {% endfor %}
+          </carousel-content>
+      </carousel-container>
+
+      {% if show_dots %}
+        <carousel-dots class="relative flex justify-center mt-3 md:hidden">
+            <carousel-dot class="w-3 h-3 m-1 transition-all bg-transparent border rounded-full border-acajou selected:bg-acajou selected:border-acajou selected:scale-110"></carousel-dot>
+        </carousel-dots>
+      {% endif %}
+    </tail-carousel>
+  </div>
+</div>

@@ -1,0 +1,240 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'customer.js' | asset_url }}" defer></script>
+
+<section class="font-[RebondGrotesque] bg-[#F5F5F5]">
+  <div class="relative flex flex-col w-full">
+    <div class="relative w-full md:h-64">
+      <img src="{{ settings.account_image_2 | image_url: width: 1800 }}" loading="eager" width="821" height="285" class="object-cover w-full h-full">
+      <div class="absolute inset-0 flex items-center justify-center w-full h-full">
+        <h2 class="GroteskBold text-white text-xl leading-8 md:leading-10 md:text-3xl font-extrabold uppercase tracking-wider">
+          {{ 'customer.account.orders_title' | t }}
+        </h2>
+      </div>
+    </div>
+    <details class="text-sm font-extrabold uppercase cursor-pointer bg-sable text-acajou md:hidden">
+      <summary class="p-5 GroteskBold flex items-center">
+        <span>{{ 'customer.account.orders_link' | t }}</span>
+        <div class="ml-auto border-t-8 border-b-0 border-solid border-t-acajou border-x-transparent border-x-8"></div>
+      </summary>
+      <a href="{{ routes.account_addresses_url }}" class="p-5 text-acajou GroteskBold opacity-30 block">
+        <span>{{ 'customer.account.informations_link' | t }}</span>
+      </a>
+    </details>
+    <div class="w-full px-5 pt-2 bg-[#F5F5F5] mb-5 md:hidden">
+      <a href="{{ routes.account_url }}" class="text-xs uppercase">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6" class="inline w-3 align-middle rotate-90">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+        </svg>
+        <span class="inline ml-1 align-middle text-[11px]">{{ 'customer.account.back_to_account' | t }}</span>
+      </a>
+    </div>
+  </div>
+  <div class="flex flex-row bg-[#F5F5F5]">
+    <div class="flex-col hidden min-w-[320px] max-w-[320px] h-auto bg-sable md:flex py-10 px-[54px]">
+      <div class="w-full mb-[30px]">
+        <a href="{{ routes.account_url }}" class="text-xs uppercase cursor-pointer">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6" class="inline w-3 align-middle rotate-90">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+          </svg>
+          <span class="inline ml-1 align-middle text-[11px]">{{ 'customer.account.back_to_account' | t }}</span>
+        </a>
+      </div>
+      <div class="flex flex-col text-base font-extrabold uppercase bg-sable text-acajou">
+        <a href="{{ routes.account_addresses_url }}" class="GroteskBold mb-5 text-acajou opacity-30 cursor-pointer">
+          <span>{{ 'customer.account.informations_link' | t }}</span>
+        </a>
+        <div class="GroteskBold flex items-center">
+          <span>{{ 'customer.account.orders_link' | t }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="Wagner bg-[#F5F5F5] w-full max-w-[1120px] md:w-4-6 md:py-10 md:px-16">
+      <div class="px-5 md:px-0">
+        <h2 class="font-[RebondGrotesque] font-medium text-xl mb-4 md:text-2xl">
+          {{ 'customer.orders.title' | t }}
+        </h2>
+      </div>
+      <div class="flex flex-col gap-5 text-chataigne px-4 md:px-0">
+        {% paginate customer.orders by 20 %}
+          {%- if customer.orders.size > 0 -%}
+            <accordion-group data-orders>
+              {%- for order in customer.orders -%}
+                <accordion-element class="bg-white rounded-lg mb-6" {% if forloop.first %}data-open="true"{% endif %}>
+                  <accordion-trigger class="group">
+                    <accordion-header class="flex flex-col justify-between px-3 pt-8 md:p-8">
+                      <div class="w-full flex">
+                        <div class="flex flex-col md:flex-row md:gap-5 md:items-center mb-2 md:mb-0">
+                          <p class="text-lg font-[RebondGrotesque] font-semibold uppercase">{{ 'customer.orders.order_number' | t: number: order.name }}</p>
+                          {% liquid
+                            if order.fulfillment_status == "complete"
+                              assign bg = 'bg-sable'
+                              assign text = "customer.orders.complete" | t
+                            elsif order.fulfillment_status = "unfulfilled"
+                              assign bg = 'bg-sable'
+                              assign text = "customer.orders.unfulfilled" | t
+                            elsif order.fulfillment_status == "partial"
+                              assign bg = 'bg-sable'
+                              assign text = "customer.orders.partial_fulfilled" | t
+                            elsif order.fulfillment_status = "fulfilled"
+                              assign bg = 'bg-lime-100'
+                              assign text = "customer.orders.fulfilled" | t
+                            elsif order.financial_status == "refunded" or order.financial_status == "voided"
+                              assign bg = 'bg-red-100'
+                              assign text = "customer.orders.cancelled" | t
+                            else
+                              assign bg = 'bg-sable'
+                              assign text = "customer.orders.over" | t
+                            endif
+                          %}
+                          <div class="px-3 py-1 w-fit text-xs {{ bg }} font-bold uppercase">
+                            {{ text }}
+                          </div>
+                        </div>
+                        <accordion-icon class="ml-auto group-expanded:rotate-180 transition-all origin-center h-[fit-content]">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="10" viewBox="0 0 21 13" fill="none">
+                            <path d="M1 1L10.5 11L20 1" stroke="#733E2B" stroke-width="1.5"/>
+                          </svg>
+                        </accordion-icon>
+                      </div>
+                      <div class="w-full mt-2 flex flex-row items-center pb-2 gap-5 uppercase md:w-3/5 border-solid border-b border-sable">
+                        {% assign date = order.created_at | date: "%d/%m/%y" %}
+                        <p class="text-xs">{{ 'customer.orders.created_at' | t: date: date }}</p>
+                        {% assign total = order.total_price | money %}
+                        <p class="text-xs uppercase">{{ 'customer.orders.total_price' | t: money: total }}</p>
+                      </div>
+                      <div class="pt-6 hidden md:flex flex-row gap-8">
+                        <a href="{{ order.order_status_url }}" class="underline text-sm">
+                          {{ 'customer.orders.tracking' | t }}
+                        </a>
+                        <a href="https://lequipe-jolly-mama.gorgias.help/fr-FR" class="underline text-sm">
+                          {{ 'customer.orders.help' | t }}
+                        </a>
+                      </div>
+                    </accordion-header>
+                  </accordion-trigger>
+                  <accordion-content>
+                    <div class="px-3 md:px-16 md:pb-8 pt-13 border-solid border-t border-sable">
+                      <table class="w-full">
+                        <thead>
+                          <tr class="uppercase font-bold text-sm text-chataigne opacity-50">
+                            <th class="py-4 text-left w-3/5 md:w-2/5" width="40">{{ 'customer.orders.head_products' | t }}</th>
+                            <th class="py-4 text-center w-1/5" width="20">
+                              <span class="hidden md:block">{{ 'customer.orders.head_quantity' | t }}</span>
+                              <span class="md:hidden">{{ 'customer.orders.head_qty' | t }}</span></th>
+                            </th>
+                            <th class="py-4 text-center w-1/5 hidden md:table-cell" width="20">
+                              <span>{{ 'customer.orders.head_unit_price' | t }}</span>
+                            </th>
+                            <th class="py-4 text-right w-1/5" width="20">
+                              <span class="hidden md:block">{{ 'customer.orders.head_total_price' | t }}</span>
+                              <span class="md:hidden">{{ 'customer.orders.head_price' | t }}</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {%- for line_item in order.line_items -%}
+                            <tr class="border-b border-sable border-solid">
+                              <td class="py-4 w-3/5 md:w-2/5" width="40">
+                                {% if line_item.image %}
+                                  <a href="{{ line_item.product.url }}" class="flex flex-row gap-4">
+                                    <img src="{{ line_item.image | image_url: width: 300 }}"
+                                      class="w-16 h-16 object-cover"
+                                      alt="{{ line_item.image.alt | escape }}"
+                                      loading="lazy"
+                                      width="150"
+                                      height="{{ 150 | divided_by: line_item.image.aspect_ratio | ceil }}">
+                                    <div class="flex-1 flex-col">
+                                      <p class="text-sm font-extrabold">{{ line_item.product.title | strip_html }}</p>
+                                      <p class="text-sm uppercase">{{ 'customer.orders.sku' | t: sku: line_item.product.sku }}</p>
+                                    </div>
+                                  </a>
+                                {% endif %}
+                              </td>
+                              <td class="py-4 text-center text-sm w-1/5" width="20">
+                                <p>{{ line_item.quantity }}</p>
+                              </td>
+                              <td class="py-4 text-center text-sm hidden w-1/5 md:table-cell" width="20">
+                                {%- if line_item.original_price != line_item.final_price -%}
+                                  <span class="line-through font-light w-full block opacity-50">{{ line_item.original_price | money }}</span>
+                                  <span class="text-capucine font-extrabold w-full block">{{ line_item.final_price | money }}</span>
+                                {% else %}
+                                  <span class="font-extrabold">{{ line_item.final_price | money }}</span>
+                                {% endif %}
+                              </td>
+                              <td class="py-4 text-right text-sm w-1/5" width="20">
+                                {%- if line_item.original_line_price != line_item.final_line_price -%}
+                                  <span class="line-through font-light w-full block opacity-50">{{ line_item.original_line_price | money }}</span>
+                                  <span class="text-capucine font-extrabold w-full block">{{ line_item.final_line_price | money }}</span>
+                                {% else %}
+                                  <span class="font-extrabold">{{ line_item.final_line_price | money }}</span>
+                                {% endif %}
+                              </td>
+                            </tr>
+                          {%- endfor -%}
+                        </tbody>
+                        <tfoot class="text-sm">
+                          {% for discount in order.cart_level_discount_applications %}
+                            <tr>
+                              <td class="py-2" colspan="2">
+                                <span>{{ 'customer.orders.discount' | t: discount: discount.title }}</span>
+                              </td>
+                              <td class="py-2 text-right" colspan="2">-{{ discount.total_allocated_amount | money }}</td>
+                            </tr>
+                          {% endfor %}
+                          {% for shipping_method in order.shipping_methods %}
+                            <tr>
+                              <td class="py-2" colspan="2">{{ 'customer.orders.shipping' | t: shipping: shipping_method.title }}</td>
+                              <td class="py-2 text-right" colspan="2">{{ shipping_method.price | money }}</td>
+                            </tr>
+                          {% endfor %}
+                          <tr class="font-bold uppercase text-acajou">
+                            <td class="py-2" colspan="2">
+                              {{ 'customer.orders.total' | t }}
+                            </td>
+                            <td class="text-right py-2" colspan="2">
+                              {{ order.total_price | money }}
+                            </td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                      <div class="w-full flex flex-col md:flex-row gap-5 text-sm mt-5">
+                        <div class="h-full p-0 flex flex-col w-full md:w-1/2 border-sable border-solid border p-[25px] rounded-sm">
+                          <p class="font-bold">{{ 'customer.orders.shipping_address' | t }}</p>
+                          <div class="mt-2">
+                            {{ order.shipping_address | format_address }}
+                          </div>
+                        </div>
+                        <div class="h-full p-0 flex flex-col w-full md:w-1/2 border-sable border-solid border p-[25px] rounded-sm">
+                          <p class="font-bold">{{ 'customer.orders.billing_address' | t }}</p>
+                          <div class="mt-2">
+                            {{ order.billing_address | format_address }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </accordion-content>
+                  <div class="px-3 pt-4 pb-6 flex flex-row gap-8 md:hidden">
+                    <a href="{{ order.order_status_url }}" class="underline text-sm">
+                      {{ 'customer.orders.tracking' | t }}
+                    </a>
+                    <a href="https://lequipe-jolly-mama.gorgias.help/fr-FR" class="underline text-sm">
+                      {{ 'customer.orders.help' | t }}
+                    </a>
+                  </div>
+                </accordion-element>
+              {%- endfor -%}
+            </accordion-group> 
+          {%- else -%}
+            <div class="mt-5">
+              <p class="text-base">{{ 'customer.orders.none' | t }}</p>
+            </div>
+          {%- endif -%}
+
+          {%- if paginate.pages > 1 -%}
+            {% render 'pagination', paginate: paginate %}
+          {%- endif -%}
+        {% endpaginate %}
+      </div>
+    </div>
+  </div>
+</section>

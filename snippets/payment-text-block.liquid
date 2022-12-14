@@ -1,0 +1,22 @@
+{%- for block in section.blocks -%}
+    {%- if block.type == "payment" -%}
+       <div class="bg-white rounded-md p-4 md:p-5 text-center">
+         <tail-details class="text-sm">
+           <details-part >
+              <div class="font-bold">
+                {{ block.settings.text }}
+              </div>
+           </details-part>
+           <details-part>
+               <div class="my-2">
+                 {{ block.settings.more_text }}
+               </div>
+           </details-part>
+           <see-more class="block mt-2 text-sm underline capitalize accent-color">En savoir plus</see-more>
+           <div class="text-center">
+             <see-less class="hidden justify-center mt-5 text-sm underline capitalize accent-color">Voir moins</see-less>
+           </div>
+         </tail-details>
+       </div>
+    {%- endif -%}
+ {%- endfor -%}

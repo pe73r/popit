@@ -1,0 +1,39 @@
+<tail-tabs class="block">
+  <tabs-buttons class="pl-4 gap-2 py-4 mb-4 text-sm flex flex-row flex-nowrap overflow-x-auto bg-white">
+    {%- for filter in results.filters -%}
+      <span class="text-sm selected:font-bold selected:bg-creme whitespace-nowrap rounded-md p-2">
+          {{ filter.label | remove: 'filter_' | prepend: 'Par ' }}
+      </span>
+    {% endfor %}
+  </tabs-buttons>
+  <tabs-panels class="bg-theme"> 
+      {%- for filter in results.filters -%}
+        {%- if filter.type == 'boolean' or filter.type == 'list' -%}
+          <apply-filter class="mt-4">
+            <!-- default checkbox filters -->
+              <ul class="default--filters mobile px-4">
+                {%- for filter_value in filter.values -%}
+                  <li class="relative mb-2">
+                      <label class="flex items-center text-sm first-letter:capitalize" for="m-Filter-{{ filter.param_name }}-{{ forloop.index }}">
+                      <input type="checkbox"
+                        class="mr-2 uppercase"
+                        name="{{ filter_value.param_name }}"
+                        value="{{ filter_value.value }}"
+                        id="m-Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                        {% if filter_value.active -%}checked{%- endif %}
+                        {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                      >
+                      {{ filter_value.label | remove: 'filter_' }}
+                    </label>
+                  </li>
+                {%- endfor -%}
+              </ul>
+          </apply-filter>
+        {% elsif filter.type == 'price_range' %}
+           <apply-filter>
+             Price filter
+           </apply-filter>  
+        {%- endif-%}
+      {% endfor %}
+  </tabs-panels>
+</tail-tabs>

@@ -1,0 +1,950 @@
+<section class="mt-10 mb-16 md:my-20">
+  <div class="w-11/12 max-w-5xl m-auto">
+    <!-- desktop -->
+    <tail-tabs data-products-tab class="hidden md:block">
+      <tabs-buttons class="justify-center gap-4 mb-8 bg-sable p-2">
+        {%- if product.metafields.global.ingredients_list == blank -%}
+          {%- assign block_limit = 3 -%}
+        {% else %}
+          {%- assign block_limit = 4 -%}
+        {% endif %}
+        {% for block in section.blocks limit: block_limit %}
+          <div class="block relative group transition-all !border-[0] cursor-pointer selected:border-b-2 selected:after:content-[''] text-chataigne  selected:text-ecorce selected:after:block selected:after:bg-ecorce selected:after:w-[70px] selected:after:h-[3px] selected:after:absolute selected:after:bottom-[5px] selected:after:left-[50%] selected:after:translate-x-[-50%] selected:after:mx-auto">
+            <h2 class="font-[GroteskBold] px-8 py-4 mr-4 text-base last:mr-0 group:selected:text-ecorce">{{ block.settings.title }}</h2>
+          </div>
+        {% endfor %}
+      </tabs-buttons>
+      <tabs-panels>
+        {% for block in section.blocks %}
+          {% if block.type == 'description' %}
+            <div class="block mt-4">
+              <div class="text-sm">{{ product.description }}</div>
+            </div>
+          {% elsif block.type == 'who' %}
+            <div class="block mt-4">
+              <div class="flex items-center gap-8">
+                {%- if product.metafields.custom.who_image_principale -%}
+                  <img class="w-[280px] min-w-[280px] hidden md:block rounded-tl-[130px]" style="aspect-ratio: 4 / 5" src="{{ product.metafields.custom.who_image_principale }}" alt="{{ product.metafields.custom.who_image_principale.alt }}" loading="lazy">
+                {%- elsif block.settings.image != blank  %}
+                  <img class="w-[280px] min-w-[280px] hidden md:block" style="aspect-ratio: 4 / 5" src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}" loading="lazy">
+                {% endif %}
+                <div>
+
+                  {%- if product.metafields.global.who_title_1 != blank -%}
+
+                    {%- assign title = product.metafields.global.who_title_1.value -%}
+                    <div class="flex items-center">
+                      {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                        {% render 'icon-line-curved' %}
+                      {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                        {% render 'icon-brown-dot' %}
+                      {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "SOPK" or title contains "Sopk"%}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "PMA" or title contains "pma"%}
+                        {% render 'icon-medical'%}
+                      {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                        {% render 'icon-cycle-line' %}
+                      {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                        {% render 'icon-medical' %}
+                      {% elsif title contains "Traitement médical" or title contains "Traitement médical"%}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                        {% render 'icon-cycle-heureux' %}
+                      {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                        {% render 'icon-femmes' %}
+                      {% endif %}
+                      <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_1.value }}</span>
+                    </div>
+                  {%- endif -%}
+
+                  {%- if product.metafields.global.who_title_2 != blank -%}
+                    {%- assign title = product.metafields.global.who_title_2 -%}
+                    <div class="flex items-center mt-4">
+                      {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                        {% render 'icon-line-curved' %}
+                      {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                        {% render 'icon-brown-dot' %}
+                      {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "SOPK" or title contains "Sopk"%}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "PMA" or title contains "pma"%}
+                        {% render 'icon-medical'%}
+                      {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                        {% render 'icon-cycle-line' %}
+                      {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                        {% render 'icon-medical' %}
+                      {% elsif title contains "Traitement médical" or title contains "Traitement médical"%}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                        {% render 'icon-cycle-heureux' %}
+                      {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                        {% render 'icon-femmes' %}
+                      {% endif %}
+                      <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_2 }}</span>
+                    </div>
+                  {% endif %}
+
+                  {%- if product.metafields.global.who_text_1.value != blank -%}
+                    <p class="text-sm mb-2">{{ product.metafields.global.who_text_1.value }}</p>
+                  {% endif %}
+
+                  {%- if product.metafields.global.who_text_2 != blank -%}
+                    <p class="text-sm mb-2">{{ product.metafields.global.who_text_2 }}</p>
+                  {% endif %}
+
+                  {%- if product.metafields.global.who_title_3 != blank -%}
+                    {%- assign title = product.metafields.global.who_title_3 -%}
+                    <div class="flex items-center mt-4">
+                      {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                        {% render 'icon-line-curved' %}
+                      {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                        {% render 'icon-brown-dot' %}
+                      {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "SOPK" or title contains "Sopk"%}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "PMA" or title contains "pma"%}
+                        {% render 'icon-medical'%}
+                      {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                        {% render 'icon-cycle-line' %}
+                      {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                        {% render 'icon-medical' %}
+                      {% elsif title contains "Traitement médical" or title contains "Traitement médical"%}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                        {% render 'icon-cycle-heureux' %}
+                      {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                        {% render 'icon-femmes' %}
+                      {% endif %}
+                      <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_3 }}</span>
+                    </div>
+                  {% endif %}
+
+                  {%- if product.metafields.global.who_text_3 != blank -%}
+                    <p class="text-sm">{{ product.metafields.global.who_text_3 }}</p>
+                  {% endif %}
+
+                  {% if product.metafields.global.who_title_4 != blank %}
+                    <div class="flex items-center mt-4">
+                      {%- assign title = product.metafields.global.who_title_4 -%}
+                      {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                        {% render 'icon-line-curved' %}
+                      {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                        {% render 'icon-brown-dot' %}
+                      {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "SOPK" or title contains "Sopk"%}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "PMA" or title contains "pma"%}
+                        {% render 'icon-medical'%}
+                      {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                        {% render 'icon-cycle-line' %}
+                      {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                        {% render 'icon-medical' %}
+                      {% elsif title contains "Traitement médical" or title contains "Traitement médical"%}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                        {% render 'icon-cycle-heureux' %}
+                      {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                        {% render 'icon-femmes' %}
+                      {% endif %}
+                      <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_4 }}</span>
+                    </div>
+                  {% endif %}
+
+                  {% if product.metafields.global.who_text_4 != blank %}
+                    <p class="text-sm">{{ product.metafields.global.who_text_4 }}</p>
+                  {% endif %}
+
+
+                  {% if product.metafields.global.who_title_5 != blank %}
+                    <div class="flex items-center mt-4">
+                      {%- assign title = product.metafields.global.who_title_5 -%}
+                      {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                        {% render 'icon-line-curved' %}
+                      {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                        {% render 'icon-brown-dot' %}
+                      {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "SOPK" or title contains "Sopk"%}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "PMA" or title contains "pma"%}
+                        {% render 'icon-medical'%}
+                      {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                        {% render 'icon-cycle-line' %}
+                      {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                        {% render 'icon-medical' %}
+                      {% elsif title contains "Traitement médical" or title contains "Traitement médical"%}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                        {% render 'icon-cycle-heureux' %}
+                      {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                        {% render 'icon-femmes' %}
+                      {% endif %}
+                      <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_5 }}</span>
+                    </div>
+                  {% endif %}
+
+                  {% if product.metafields.global.who_text_5 != blank %}
+                    <p class="text-sm">{{ product.metafields.global.who_text_5 }}</p>
+                  {% endif %}
+
+                  {% if product.metafields.global.who_title_6 != blank %}
+                    <div class="flex items-center mt-4">
+                      {%- assign title = product.metafields.global.who_title_6 -%}
+                      {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                        {% render 'icon-line-curved' %}
+                      {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                        {% render 'icon-brown-dot' %}
+                      {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "SOPK" or title contains "Sopk"%}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "PMA" or title contains "pma"%}
+                        {% render 'icon-medical'%}
+                      {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                        {% render 'icon-cycle-line' %}
+                      {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                        {% render 'icon-medical' %}
+                      {% elsif title contains "Traitement médical" or title contains "Traitement médical"%}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                        {% render 'icon-cycle-heureux' %}
+                      {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                        {% render 'icon-femmes' %}
+                      {% endif %}
+                      <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_6 }}</span>
+                    </div>
+                  {% endif %}
+
+                  {% if product.metafields.global.who_text_6 != blank %}
+                    <p class="text-sm">{{ product.metafields.global.who_text_6 }}</p>
+                  {% endif %}
+
+                  {% if product.metafields.global.who_title_7 != blank %}
+                    <div class="flex items-center mt-4">
+                      {%- assign title = product.metafields.global.who_title_7 -%}
+                      {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                        {% render 'icon-line-curved' %}
+                      {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                        {% render 'icon-brown-dot' %}
+                      {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "SOPK" or title contains "Sopk"%}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "PMA" or title contains "pma"%}
+                        {% render 'icon-medical'%}
+                      {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                        {% render 'icon-cycle-line' %}
+                      {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                        {% render 'icon-medical' %}
+                      {% elsif title contains "Traitement médical" or title contains "Traitement médical"%}
+                        {% render 'icon-pilule' %}
+                      {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                        {% render 'icon-filled-drop' %}
+                      {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                        {% render 'icon-drop' %}
+                      {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                        {% render 'icon-carreau' %}
+                      {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                        {% render 'icon-cycle-heureux' %}
+                      {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                        {% render 'icon-femmes' %}
+                      {% endif %}
+                      <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_7 }}</span>
+                    </div>
+                  {% endif %}
+                  {% if product.metafields.global.who_text_7 != blank %}
+                    <p class="text-sm">{{ product.metafields.global.who_text_7 }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% elsif block.type == 'tips' %}
+            <div class="block mt-4">
+              <div class="flex items-center gap-8">
+                {%- if product.metafields.global.image_use != blank -%}
+                  <img class="lazy w-[280px] min-w-[280px] hidden md:block rounded-tl-[130px]" src="{{ product.metafields.global.image_use }}" alt="{{ product.metafields.custom.image_use.alt }}" loading="lazy">
+                {%- elsif block.settings.image != blank  %}
+                  <img class="lazy w-[280px] min-w-[280px] hidden md:block" src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}" loading="lazy">
+                {% endif %}
+
+                <div class="text-sm Grotesque-strong">
+                  {% if product.metafields.global.text_use != blank %}
+                    {{ product.metafields.global.text_use }}
+                  {% else %}
+                    {{ block.settings.content }}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% elsif block.type == 'benefits' %}
+            <div class="block mt-4">
+              <div class="flex items-center gap-8">
+                {%- if product.metafields.global.benefites_image != blank -%}
+                  <img class="w-[280px] min-w-[280px] hidden md:block rounded-tl-[130px]" style="aspect-ratio: 4 / 5" src="{{ product.metafields.global.benefites_image }}" alt="{{ product.metafields.custom.benefites_image.alt }}" loading="lazy">
+                {%- elsif block.settings.image != blank  %}
+                  <img class="w-[280px] min-w-[280px] hidden md:block" style="aspect-ratio: 4 / 5" src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}" loading="lazy">
+                {% endif %}
+                <div class="text-sm Grotesque-strong">
+                  {% if product.metafields.global.benefites != blank %}
+                    {{ product.metafields.global.benefites }}
+                  {% else %}
+                    {{ block.settings.content }}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% elsif block.type == 'ingredients' %}
+            {%- if product.metafields.global.ingredients_list != blank -%}
+              <div class="block mt-4 ingredients-list">
+                <div class="text-sm Grotesque-strong">
+                {%- if product.metafields.custom.title_ingredients.value != blank -%}
+                  <h5 class="uppercase mb-4"> {{ product.metafields.custom.title_ingredients.value }} </h5>
+                {%- else -%}
+                  <h5 class="uppercase mb-4">Des ingrédients gourmands & réconfortants</h5>
+                {% endif %}
+                  <ul class="flex flex-wrap gap-5">
+                    {% render 'product-tag-ingredients', product:product %}
+                  </ul>
+                  {%- if product.metafields.global.ingredients_list != blank -%}
+                    <div class="mt-6">
+                      <h5 class="mb-2">Liste complète des ingrédients :</h5>
+                      <div>
+                        {{ product.metafields.global.ingredients_list }}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                  {% if product.metafields.global.ingredients_tableau_desktop != blank %}
+                    <h5 class="mb-2 mt-6">Tableau nutritionnel :</h5>
+                    <div>{{ product.metafields.global.nutritionnal_first_text }}</div>
+                    <img class="hidden md:block my-2" loading="lazy" src="{{  product.metafields.global.ingredients_tableau_desktop }}" alt="">
+                  {% endif %}
+                  <div>{{ product.metafields.global.nutritionnal_second_text }}</div>
+                </div>
+              </div>
+            {% endif %}
+          {% else %}
+            <div class="block mt-8 text-sm">
+              <span class="text-sm">{{ block.settings.text }}</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </tabs-panels>
+    </tail-tabs>
+    <!-- mobile -->
+    <accordion-group class="block md:hidden">
+      {% for block in section.blocks %}
+        {% if block.type == 'description' %}
+          <accordion-element class="border-b border-chataigne py-6">
+            <accordion-trigger class="group">
+              <accordion-header class="flex justify-between">
+                <div class="flex-1">
+                  <h2 class="text-sm font-extrabold uppercase">DESCRIPTION</h2>
+                </div>
+                <accordion-icon class="transition-all origin-center h-[fit-content]">
+                  <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                  <span class="icon-minus hidden relative top-2">{% render 'icon-accordion-minus' %}</span>
+                </accordion-icon>
+              </accordion-header>
+            </accordion-trigger>
+            <accordion-content>
+              <div class="text-sm mt-4">{{ product.description }}</div>
+            </accordion-content>
+          </accordion-element>
+        {% elsif block.type == 'who' %}
+          <accordion-element class="border-b border-chataigne py-6">
+            <accordion-trigger class="group">
+              <accordion-header class="flex justify-between">
+                <div class="flex-1">
+                  <h2 class="text-sm font-extrabold uppercase">{{ block.settings.title }}</h2>
+                </div>
+                <accordion-icon class="transition-all origin-center h-[fit-content]">
+                  <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                  <span class="icon-minus hidden relative top-2">{% render 'icon-accordion-minus' %}</span>
+                </accordion-icon>
+              </accordion-header>
+            </accordion-trigger>
+            <accordion-content>
+              <div class="flex flex-col mt-4">
+
+                {%- if product.metafields.global.who_title_1 != blank -%}
+                  <div class="flex items-center">
+                    {%- assign title = product.metafields.global.who_title_1 -%}
+                    {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                      {% render 'icon-drop' %}
+                    {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                      {% render 'icon-line-curved' %}
+                    {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                      {% render 'icon-brown-dot' %}
+                    {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                      {% render 'icon-carreau' %}
+                    {% elsif title contains "SOPK" or title contains "Sopk"%}
+                      {% render 'icon-filled-drop' %}
+                    {% elsif title contains "PMA" or title contains "pma"%}
+                      {% render 'icon-medical'%}
+                    {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                      {% render 'icon-cycle-line' %}
+                    {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                      {% render 'icon-pilule' %}
+                    {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                      {% render 'icon-medical' %}
+                    {% elsif title contains "Traitement médical : attention" or title contains "Traitement médical : oui mais "%}
+                      {% render 'icon-pilule' %}
+                    {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                      {% render 'icon-filled-drop' %}
+                    {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                      {% render 'icon-drop' %}
+                    {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                      {% render 'icon-carreau' %}
+                    {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                      {% render 'icon-cycle-heureux' %}
+                    {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                      {% render 'icon-femmes' %}
+                    {% endif %}
+
+                    <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_1 }}</span>
+                  </div>
+                {%- endif -%}
+
+                {%- if product.metafields.global.who_title_2 != blank -%}
+                  <div class="flex items-center mt-4">
+                    {%- assign title = product.metafields.global.who_title_2 -%}
+
+                    {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                      {% render 'icon-drop' %}
+                    {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                      {% render 'icon-line-curved' %}
+                    {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                      {% render 'icon-brown-dot' %}
+                    {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                      {% render 'icon-carreau' %}
+                    {% elsif title contains "SOPK" or title contains "Sopk"%}
+                      {% render 'icon-filled-drop' %}
+                    {% elsif title contains "PMA" or title contains "pma"%}
+                      {% render 'icon-medical'%}
+                    {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                      {% render 'icon-cycle-line' %}
+                    {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                      {% render 'icon-pilule' %}
+                    {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                      {% render 'icon-medical' %}
+                    {% elsif title contains "Traitement médical : attention" or title contains "Traitement médical : oui mais "%}
+                      {% render 'icon-pilule' %}
+                    {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                      {% render 'icon-filled-drop' %}
+                    {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                      {% render 'icon-drop' %}
+                    {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                      {% render 'icon-carreau' %}
+                    {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                      {% render 'icon-cycle-heureux' %}
+                    {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                      {% render 'icon-femmes' %}
+                    {% endif %}
+                    <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_2 }}</span>
+                  </div>
+                {% endif %}
+
+                {%- if product.metafields.global.who_text_2 != blank -%}
+                  <p class="text-sm mb-2">{{ product.metafields.global.who_text_2 }}</p>
+                {% endif %}
+
+                {%- if product.metafields.global.who_title_3 != blank -%}
+                  <div class="flex items-center mt-4">
+                    {%- assign title = product.metafields.global.who_title_3 -%}
+
+                    {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                      {% render 'icon-drop' %}
+                    {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                      {% render 'icon-line-curved' %}
+                    {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                      {% render 'icon-brown-dot' %}
+                    {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                      {% render 'icon-carreau' %}
+                    {% elsif title contains "SOPK" or title contains "Sopk"%}
+                      {% render 'icon-filled-drop' %}
+                    {% elsif title contains "PMA" or title contains "pma"%}
+                      {% render 'icon-medical'%}
+                    {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                      {% render 'icon-cycle-line' %}
+                    {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                      {% render 'icon-pilule' %}
+                    {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                      {% render 'icon-medical' %}
+                    {% elsif title contains "Traitement médical : attention" or title contains "Traitement médical : oui mais "%}
+                      {% render 'icon-pilule' %}
+                    {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                      {% render 'icon-filled-drop' %}
+                    {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                      {% render 'icon-drop' %}
+                    {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                      {% render 'icon-carreau' %}
+                    {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                      {% render 'icon-cycle-heureux' %}
+                    {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                      {% render 'icon-femmes' %}
+                    {% endif %}
+
+                    <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_3 }}</span>
+                  </div>
+                {% endif %}
+
+                {%- if product.metafields.global.who_text_3 != blank -%}
+                  <p class="text-sm">{{ product.metafields.global.who_text_3 }}</p>
+                {% endif %}
+
+                {% if product.metafields.global.who_title_4 != blank %}
+                  <div class="flex items-center mt-4">
+                    {%- assign title = product.metafields.global.who_title_4 -%}
+
+                    {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                      {% render 'icon-drop' %}
+                    {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                      {% render 'icon-line-curved' %}
+                    {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                      {% render 'icon-brown-dot' %}
+                    {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                      {% render 'icon-carreau' %}
+                    {% elsif title contains "SOPK" or title contains "Sopk"%}
+                      {% render 'icon-filled-drop' %}
+                    {% elsif title contains "PMA" or title contains "pma"%}
+                      {% render 'icon-medical'%}
+                    {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                      {% render 'icon-cycle-line' %}
+                    {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                      {% render 'icon-pilule' %}
+                    {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                      {% render 'icon-medical' %}
+                    {% elsif title contains "Traitement médical : attention" or title contains "Traitement médical : oui mais "%}
+                      {% render 'icon-pilule' %}
+                    {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                      {% render 'icon-filled-drop' %}
+                    {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                      {% render 'icon-drop' %}
+                    {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                      {% render 'icon-carreau' %}
+                    {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                      {% render 'icon-cycle-heureux' %}
+                    {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                      {% render 'icon-femmes' %}
+                    {% endif %}
+                    <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_4 }}</span>
+                  </div>
+                {% endif %}
+
+                {% if product.metafields.global.who_text_4 != blank %}
+                  <p class="text-sm">{{ product.metafields.global.who_text_4 }}</p>
+                {% endif %}
+
+                {% if product.metafields.global.who_title_5 != blank %}
+                  <div class="flex items-center mt-4">
+                    {%- assign title = product.metafields.global.who_title_5 -%}
+
+                    {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                      {% render 'icon-drop' %}
+                    {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                      {% render 'icon-line-curved' %}
+                    {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                      {% render 'icon-brown-dot' %}
+                    {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                      {% render 'icon-carreau' %}
+                    {% elsif title contains "SOPK" or title contains "Sopk"%}
+                      {% render 'icon-filled-drop' %}
+                    {% elsif title contains "PMA" or title contains "pma"%}
+                      {% render 'icon-medical'%}
+                    {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                      {% render 'icon-cycle-line' %}
+                    {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                      {% render 'icon-pilule' %}
+                    {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                      {% render 'icon-medical' %}
+                    {% elsif title contains "Traitement médical : attention" or title contains "Traitement médical : oui mais "%}
+                      {% render 'icon-pilule' %}
+                    {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                      {% render 'icon-filled-drop' %}
+                    {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                      {% render 'icon-drop' %}
+                    {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                      {% render 'icon-carreau' %}
+                    {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                      {% render 'icon-cycle-heureux' %}
+                    {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                      {% render 'icon-femmes' %}
+                    {% endif %}
+                    <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_5 }}</span>
+                  </div>
+                {% endif %}
+
+                {% if product.metafields.global.who_text_5 != blank %}
+                  <p class="text-sm">{{ product.metafields.global.who_text_5 }}</p>
+                {% endif %}
+
+                {% if product.metafields.global.who_title_6 != blank %}
+                  <div class="flex items-center mt-4">
+                    {%- assign title = product.metafields.global.who_title_6 -%}
+
+                    {% if title contains "ALLAITEMENT" or title contains "Allaitement" %}
+                      {% render 'icon-drop' %}
+                    {% elsif title contains "POST-PARTUM" or title contains "Postpartum" %}
+                      {% render 'icon-line-curved' %}
+                    {% elsif title contains "GROSSESSE" or title contains "Grossesse" or title contains "grossesse" %}
+                      {% render 'icon-brown-dot' %}
+                    {% elsif title contains "Projet bébé" or title contains "projet bébé" or title contains "PROJECT BÉBÉ" %}
+                      {% render 'icon-carreau' %}
+                    {% elsif title contains "SOPK" or title contains "Sopk"%}
+                      {% render 'icon-filled-drop' %}
+                    {% elsif title contains "PMA" or title contains "pma"%}
+                      {% render 'icon-medical'%}
+                    {% elsif title contains "PILULE" or title contains "Pilule" or title contains "pilule"%}
+                      {% render 'icon-cycle-line' %}
+                    {% elsif title contains "Après la pilule" or title contains "après la pilule" %}
+                      {% render 'icon-pilule' %}
+                    {% elsif title contains "Médical : ATTENTION" or title contains "MÉDICAL : ATTENTION" or title contains "médical : attention"%}
+                      {% render 'icon-medical' %}
+                    {% elsif title contains "Traitement médical : attention" or title contains "Traitement médical : oui mais "%}
+                      {% render 'icon-pilule' %}
+                    {% elsif title contains "Endométriose" or title contains "endométriose" %}
+                      {% render 'icon-filled-drop' %}
+                    {% elsif title contains "Pendant l’allaitement" or title contains "PENDANT L’ALLAITEMENT" %}
+                      {% render 'icon-drop' %}
+                    {% elsif title contains "Désir d’enfant" or title contains "DÉSIR D’ENFANT" %}
+                      {% render 'icon-carreau' %}
+                    {% elsif title contains "Cycle heureux" or title contains "CYCLE HEUREUX" %}
+                      {% render 'icon-cycle-heureux' %}
+                    {% elsif title contains "Pour toutes les femmes" or title contains "POUR TOUTES LES FEMMES" %}
+                      {% render 'icon-femmes' %}
+                    {% endif %}
+                    <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_6 }}</span>
+                  </div>
+                {% endif %}
+
+                {% if product.metafields.global.who_text_6 != blank %}
+                  <p class="text-sm">{{ product.metafields.global.who_text_6 }}</p>
+                {% endif %}
+
+                {% if product.metafields.global.who_title_7 != blank %}
+                  <div class="flex items-center mt-4">
+
+                    <span class="text-sm GrotesqueBold font-bold ml-2">{{ product.metafields.global.who_title_7 }}</span>
+                  </div>
+                {% endif %}
+
+                {% if product.metafields.global.who_text_7 != blank %}
+                  <p class="text-sm">{{ product.metafields.global.who_text_7 }}</p>
+                {% endif %}
+
+              </div>
+            </accordion-content>
+          </accordion-element>
+        {% elsif block.type == 'tips' %}
+          <accordion-element class="border-b border-chataigne py-6">
+            <accordion-trigger class="group">
+              <accordion-header class="flex justify-between">
+                <div class="flex-1">
+                  <h2 class="text-sm font-extrabold uppercase">{{ block.settings.title }}</h2>
+                </div>
+                <accordion-icon class="transition-all origin-center h-[fit-content]">
+                  <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                  <span class="icon-minus hidden relative top-2">{% render 'icon-accordion-minus' %}</span>
+                </accordion-icon>
+              </accordion-header>
+            </accordion-trigger>
+            <accordion-content>
+              <div class="text-sm mt-4 Grotesque-strong">
+                {% if product.metafields.global.text_use != blank %}
+                  {{ product.metafields.global.text_use }}
+                {% else %}
+                  {{ block.settings.content }}
+                {% endif %}
+              </div>
+            </accordion-content>
+          </accordion-element>
+        {% elsif block.type == 'benefits' %}
+          <accordion-element class="border-b border-chataigne py-6">
+            <accordion-trigger class="group">
+              <accordion-header class="flex justify-between">
+                <div class="flex-1">
+                  <h2 class="text-sm font-extrabold uppercase">{{ block.settings.title }}</h2>
+                </div>
+                <accordion-icon class="transition-all origin-center h-[fit-content]">
+                  <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                  <span class="icon-minus hidden relative top-2">{% render 'icon-accordion-minus' %}</span>
+                </accordion-icon>
+              </accordion-header>
+            </accordion-trigger>
+            <accordion-content>
+              <div class="block">
+                <div class="text-sm mt-4 Grotesque-strong">
+                  {% if product.metafields.global.benefites != blank %}
+                    {{ product.metafields.global.benefites }}
+                  {% else %}
+                    {{ block.settings.content }}
+                  {% endif %}
+                </div>
+              </div>
+            </accordion-content>
+          </accordion-element>
+        {% elsif block.type == 'ingredients' %}
+          <accordion-element class="border-b border-chataigne py-6">
+            <accordion-trigger class="group">
+              <accordion-header class="flex justify-between">
+                <div class="flex-1">
+                  <h2 class="text-sm font-extrabold uppercase">{{ block.settings.title }}</h2>
+                </div>
+
+                <accordion-icon class="transition-all origin-center h-[fit-content]">
+                  <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                  <span class="icon-minus hidden relative top-2">{% render 'icon-accordion-minus' %}</span>
+                </accordion-icon>
+              </accordion-header>
+            </accordion-trigger>
+            <accordion-content class="ingredients-list">
+              <div class="block">
+                <div class="text-sm mt-10 Grotesque-strong">
+                  <h5 class="uppercase mb-4">Des ingrédients gourmands & réconfortants</h5>
+                  <ul class="flex flex-wrap gap-5">
+                    {% render 'product-tag-ingredients', product:product %}
+                  </ul>
+                  {%- if product.metafields.global.ingredients_list != blank -%}
+                    <div class="mt-4">
+                      <h5 class="mb-2">Liste complète des ingrédients :</h5>
+                      <div>
+                        {{ product.metafields.global.ingredients_list }}
+                      </div>
+                    </div>
+                  {%- endif -%}
+
+                  {% if product.metafields.global.ingredients_tableau_mobile != blank %}
+                    <h5 class="mt-4 mb-2">Tableau nutritionnel :</h5>
+                    <div>{{ product.metafields.global.nutritionnal_first_text }}</div>
+                    <img class="block md:hidden my-2" src="{{  product.metafields.global.ingredients_tableau_mobile }}" alt="">
+                  {% endif %}
+                  <div>{{ product.metafields.global.nutritionnal_second_text }}</div>
+                </div>
+              </div>
+            </accordion-content>
+          </accordion-element>
+        {% endif %}
+      {% endfor %}
+    </accordion-group>
+  </div>
+</section>
+<style>
+
+  .ingredients-list li {
+    display: flexbox;
+    flex-direction: column;
+    justify-items: center;
+    width: 100px;
+
+  }
+
+  .ingredients-list li > img {
+    margin: auto auto 10px;
+    border-radius: 50%;
+    max-width: 60px;
+  }
+
+  .ingredients-list span {
+    display: block;
+    text-align: center;
+  }
+
+  .selected\:text-ecorce[aria-selected="true"] h4 {
+    color: #3A0F00;
+  }
+
+  accordion-element[data-open="true"] .icon-plus {
+    display: none;
+  }
+  accordion-element[data-open="true"] .icon-minus {
+    display: block;
+  }
+  .Grotesque-strong b {
+    font-family: "RebondGrotesqueBold";
+    font-weight: 600;
+  }
+</style>
+{% schema %}
+  {
+    "name": "Product tabs",
+    "max_blocks": 4,
+    "settings": [],
+    "blocks": [
+      {
+        "type": "description",
+        "name": "product description",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Tab title",
+            "default": "Description"
+          }
+        ]
+      },
+      {
+        "type": "who",
+        "name": "Pour qui ?",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Tab title",
+            "default": "POUR QUI ?"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
+            "info": "Text by default if metafield is empty"
+          }
+        ]
+      },
+      {
+        "type": "benefits",
+        "name": "Benefices",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Tab title",
+            "default": "BÉNÉFICES"
+          }, {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Lorem o eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
+            "info": "Text by default if metafield is empty"
+          }
+        ]
+      },
+      {
+        "type": "tips",
+        "name": "Conseil d'utilisation",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Tab title",
+            "default": "CONSEIL D'UTILISATION"
+          }, {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
+            "info": "Text by default if metafield is empty"
+          }
+        ]
+      }, {
+        "type": "ingredients",
+        "name": "Ingredients",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Tab title",
+            "default": "INGRÉDIENTS"
+          }, {
+            "type": "paragraph",
+            "content": "Block of product tags"
+          }
+        ]
+      }, {
+        "type": "tab",
+        "name": "tab",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Tab title",
+            "default": "TAB"
+          }, {
+            "type": "richtext",
+            "id": "text",
+            "label": "Content",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,84 @@
+{%- if tag contains "cycle" -%}
+    <div class="flex items-center py-2">
+      {% render 'icon-drop' %}
+      <span class="block font-bold text-[11px] ml-2 Rebond Grotesque">
+        {{ tag }}
+      </span>
+    </div>
+  {%- elsif tag contains "POST-PARTUM" -%}
+    <div class="flex items-center py-2">
+      {% render 'icon-line-curved' %}
+      <span class="block font-bold text-[11px] ml-2 Rebond Grotesque">
+        {{ tag }}
+      </span>
+    </div>
+  {%- elsif tag contains "Fertilité" -%}
+    <div class="flex items-center py-2">
+      {% render 'icon-carreau' %}
+      <span class="block font-bold text-[11px] ml-2 Rebond Grotesque">
+        {{ tag }}
+      </span>
+    </div>
+  {%- elsif tag contains "Fausse couche" -%}
+    <div class="flex items-center py-2">
+      {% render 'icon-cycle' %}
+      <span class="block font-bold text-[11px] ml-2 Rebond Grotesque">
+        {{ tag }}
+      </span>
+    </div>
+  {%- elsif tag contains "Grossesse" -%}
+    <div class="flex items-center py-2">
+      {% render 'icon-filled-cycle' %}
+      <span class="block font-bold text-[11px] ml-2 Rebond Grotesque">
+        {{ tag }}
+      </span>
+    </div>
+  {%- elsif tag contains "Cycle" -%}
+    <div class="flex items-center py-2">
+      {% render 'icon-filled-drop' %}
+      <span class="block font-bold text-[11px] ml-2 Rebond Grotesque">
+        {{ tag }}
+      </span>
+    </div>
+  {%- elsif tag contains "Accouchement" -%}
+    <div class="flex items-center py-2">
+      {% render 'icon-double-cycle' %}
+      <span class="block font-bold text-[11px] ml-2 Rebond Grotesque">
+        {{ tag }}
+      </span>
+    </div>
+  {%- elsif tag contains "Allaitement" -%}
+    <div class="flex items-center py-2">
+      {% render 'icon-drop' %}
+      <span class="block font-bold text-[11px] ml-2 Rebond Grotesque">
+        {{ tag }}
+      </span>
+    </div>
+  {%- elsif tag contains "Accouchement" -%}
+    <div class="flex items-center py-2">
+      {% render 'icon-double-cycle' %}
+      <span class="block font-bold text-[11px] ml-2 Rebond Grotesque">
+        {{ tag }}
+      </span>
+    </div>
+  {%- elsif tag contains "Recettes" -%}
+    <div class="flex items-center py-2">
+      {% render 'icon-soleil' %}
+      <span class="block font-bold text-[11px] ml-2 Rebond Grotesque">
+        {{ tag }}
+      </span>
+    </div>
+  {%- elsif tag contains "Nutriments" -%}
+    <div class="flex items-center py-2">
+      {% render 'icon-soin' %}
+      <span class="block font-bold text-[11px] ml-2 Rebond Grotesque">
+        {{ tag }}
+      </span>
+    </div>
+  {%- endif -%}
+
+  <style>
+    .article-tags svg{
+       max-width: 15px;
+    }
+  </style>

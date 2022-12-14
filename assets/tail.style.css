@@ -1,0 +1,16 @@
+tail-header {
+  @apply bg-white shadow-lg;
+}
+
+.article_content h1,
+.article_content h2,
+.article_content h3,
+.article_content h3,
+.article_content h4,
+.article_content h5,
+.article_content h6 {
+  @apply font-bold;
+  @apply text-4xl;
+  @apply leading-[24px];
+  @apply mt-5;
+}

@@ -1,0 +1,54 @@
+<section class="pb-5 md:py-10">
+  <div class="w-full max-w-[1200px] mx-auto">
+    <div class="flex flex-col md:flex-row">
+      <div class="w-full md:w-[339px] md:mr-10 flex flex-row gap-10">
+        <div class="bg-sable pt-0 flex flex-col">
+          <div class="py-16 px-14 text-center">
+            <div class="rounded-full bg-acajou w-20 h-20 flex justify-center items-center ml-auto mr-auto mb-7 text-white">
+              {{ customer.first_name | slice: 0 -}}
+              {{- customer.last_name | slice: 0 }}
+            </div>
+            <h3 class="font-[RebondGrotesque] text-[17px] mb-11 font-semibold">{{ settings.welcome_text_1 }}</h3>
+            <p class="text-[13px]">
+              {{ settings.welcome_text_2 }}
+            </p>
+          </div>
+          <div class="hidden md:flex flex-col mt-auto">
+            <a href="https://lequipe-jolly-mama.gorgias.help/fr-FR" class="w-full cursor-pointer text-center border-y border-b-0 border-acajou font-semibold border-solid pt-4 pb-4">
+              <span class="text-base block ml-2">{{ 'customer.account.need_help' | t }}</span>
+            </a>
+            <a href="{{ routes.account_logout_url }}" class="w-full cursor-pointer text-center font-semibold border-y border-b-0 border-acajou border-solid pt-4 pb-4">
+              <span class="text-base block ml-2">{{ 'customer.account.logout' | t }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mx-5 my-5 md:w-[821px] md:mx-0 md:my-0 flex flex-col gap-5">
+        <a href="{{ routes.account_addresses_url }}" class="w-full flex-1 cursor-pointer relative">
+          <img src="{{ settings.account_image_1 | image_url: width: 1800 }}" loading="eager" width="821" height="285" class="w-full h-full cover">
+          <div class="absolute bottom-5 left-5">
+            <h2 class="GroteskBold text-white text-[28px] leading-8 md:leading-10 md:text-[34px] font-extrabold uppercase tracking-wider">
+              {{ 'customer.account.informations_title' | t }}
+            </h2>
+          </div>
+        </a>
+        <a href="{{ routes.account_url }}?orders=true" class="w-full flex-1 cursor-pointer relative">
+          <img src="{{ settings.account_image_2 | image_url: width: 1800 }}" loading="eager" width="821" height="285" class="w-full h-full cover">
+          <div class="absolute bottom-5 left-5">
+            <h2 class="GroteskBold text-white text-[28px] leading-8 md:leading-10 md:text-[34px] font-extrabold uppercase tracking-wider">
+              {{ 'customer.account.orders_title' | t }}
+            </h2>
+          </div>
+        </a>
+      </div>
+      <div class="flex w-full md:hidden flex-col mt-auto bg-sable">
+        <a href="https://help.jollymama.com" class="w-full cursor-pointer text-center leading-10 md:border-y border-b-0 border-acajou font-semibold border-solid pt-4 pb-4">
+          <span class="text-base block ml-2">{{ 'customer.account.need_help' | t }}</span>
+        </a>
+        <a href="{{ routes.account_logout_url }}" class="w-full cursor-pointer text-center font-semibold border-y border-b-0 border-acajou border-solid pt-4 pb-4">
+          <span class="text-base block ml-2">{{ 'customer.account.logout' | t }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

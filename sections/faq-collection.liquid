@@ -1,0 +1,152 @@
+
+{%- if collection.metafields.collection.question_1 != blank-%}
+    <section>
+      <div class="my-10 md:my-20 text-left w-11/12 max-w-5xl mx-auto">
+        <div class="text-center text-[15px] mx-5 md:mx-36 mt-[62px] ">
+            {% if section.settings.title != blank %}
+              <h2 class="font-[GroteskBold] mt-5 text-[32px] font-medium" style="color:{{ section.settings.title_color }}"> {{ section.settings.title }} </h2>
+            {% endif %}
+        </div>
+          <accordion-group>
+             {% assign i = 1 %}
+             {% for block in section.blocks %}
+              
+                      {% assign question = 'question_' | append: i %}
+                      {% assign metafield_question = collection.metafields.collection[question] %}
+  
+                      {% assign answer = 'answer_' | append: i %}
+                      {% assign metafield_answer = collection.metafields.collection[answer] %}
+     
+                  {% assign i = i | plus: 1 %}  
+                     {% if metafield_question != blank %}
+                        <accordion-element class="py-6 border-b border-[#927254] last:border-none">
+                          <accordion-trigger class="group">
+                          <accordion-header class="flex justify-between items-center">
+                              <div class="flex-1 mr-2">
+                                  <h3 class="text-sm md:text-base font-bold first-letter:uppercase" style="color:{{ section.settings.title_accordion_color }}">
+                                  {{ metafield_question }}
+                                  </h3>
+                              </div>
+                              <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
+                                  <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                                  <span class="icon-minus hidden">{% render 'icon-accordion-minus' %}</span>
+                              </accordion-icon>
+                          </accordion-header>
+                          </accordion-trigger>
+                          <accordion-content>
+                          <div class="text-base mt-4" style="color:{{ section.settings.content_accordion_color }}" >
+                              {{ metafield_answer }}
+                          </div>
+                      </accordion-content>
+                    </accordion-element>
+                 {% endif %}
+             {% endfor %}
+           </accordion-group>
+         </div>
+     </section>
+      {% if section.blocks.size > 0 %}
+        <script type="application/ld+json">
+          {
+            "@context":"https://schema.org",
+            "@type":"FAQPage",
+            "mainEntity":[
+              {% assign i = 1 %}
+              {% for block in section.blocks -%}
+                {% liquid 
+                  assign question = 'question_' | append: i
+                  assign metafield_question = collection.metafields.collection[question]
+  
+                  assign answer = 'answer_' | append: i
+                  assign metafield_answer = collection.metafields.collection[answer]
+                  assign i = i | plus: 1
+                -%}
+                {
+                  "@type":"Question",
+                  "name":"{{ metafield_question }}",
+                  "acceptedAnswer":
+                  {
+                    "@type":"Answer",
+                    "text":"{{ metafield_answer }}"
+                  }
+                },
+              {%- endfor %}
+            ]
+          }
+        </script>
+      {% endif %}
+    {%- endif -%}
+     
+     <style>
+      accordion-element[data-open="true"] .icon-plus{
+       display: none;
+      } 
+      accordion-element[data-open="true"] .icon-minus{
+       display: block;
+      } 
+    </style>
+     
+     {% schema %}
+     {
+      "name": "FAQ collection",
+       "settings": [
+         {
+           "type": "text",
+           "id": "title",
+           "default": "FAQ",
+           "label": "Title FAQ"
+         },
+         {
+               "type": "header",
+               "content": "colors"
+             },
+             {
+               "type": "color",
+               "id": "title_color",
+               "label": "Title color",
+               "default": "#733E2B"
+             },
+             {
+               "type": "color",
+               "id": "title_accordion_color",
+               "label": "Title accordion color",
+               "default": "#733E2B"
+             },
+             {
+             "type": "color",
+             "id": "content_accordion_color",
+             "label": "Text accordion color",
+             "default": "#927254"
+             }
+        ],
+        "blocks": [
+          {
+         "name": "FAQ Accordion",
+         "type": "block",
+         "settings": [
+            {
+             "type": "paragraph", 
+             "content": "Every block corresponds to collection.metafields.global.question and collection.metafields.global.answer"
+            }
+           ]
+          }
+        ],
+        "presets": [
+         {
+           "name": "FAQ Collection",
+           "blocks": [
+             {
+               "type": "block"
+             },
+             {
+               "type": "block"
+             },
+             {
+               "type": "block"
+             }
+     
+           ]
+         }
+       ]
+     }
+     {% endschema %}
+     

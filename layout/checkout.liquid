@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+  <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+      <meta name="referrer" content="origin">
+  
+      <title>{{ page_title }}</title>
+  
+      {{ content_for_header }}
+  
+      {{ checkout_stylesheets }}
+      {{ checkout_scripts }}
+      
+      <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-5PGRZQC');
+      </script>
+
+      <script>
+        (function(){
+          window.dataLayer = window.dataLayer || [];
+          var items = [];
+
+          if(sessionStorage.getItem("referrer_url") == null) sessionStorage.setItem("referrer_url", document.referrer);
+
+          let template_name = '';
+
+        
+          {% liquid
+            assign discount = 0
+            assign coupons_items = checkout.discount_applications | where: 'target_type', 'line_item'
+            assign coupons_shipping = checkout.discount_applications | where: 'target_type', 'shipping_line'
+            assign shipping_discount = 0.00
+            if coupons_shipping.size > 0
+              assign shipping_discount = checkout.discounts_amount | divided_by: 100.00
+            endif
+          %}
+        
+          {% for line_item in checkout.line_items %}
+            {%- liquid
+              assign product = line_item.product
+              assign total_discount = 0.00
+              assign categories = "Boissons et infusions,Coaching,Compléments alimentaires,Ebook,Granolas et porridges,Gummies,Lots et packs,Pâte à tartiner,Snacks et Moonies" | split: ','
+              for product_collection in product.collections
+                for categorie in categories
+                  if product_collection.title contains categorie
+                    assign product_categorie = categorie
+                    break
+                  endif
+                endfor 
+              endfor
+              if product.compare_at_price > product.price
+                assign product_discount = product.compare_at_price | minus: line_item.final_price
+              else
+                assign product_discount = 0.00
+              endif
+              assign total_discount = total_discount | plus: product_discount
+            -%}
+            items.push({
+                item_id: '{{ line_item.sku }}',
+                item_name: '{{ line_item.title | remove: "'" | remove: '"' }}',
+                price: {{ line_item.final_price | divided_by: 100.00 }},
+                item_category: '{{ product_categorie }}',
+                quantity: {{ line_item.quantity }},
+                discount: {{ product_discount | divided_by: 100.00 }}
+            });
+          {% endfor %}
+
+          //Event add_shipping_info
+          function contact_info(){
+            dataLayer.push({
+              'event': 'begin_checkout',
+              'ecommerce': {
+                'currency': 'EUR',
+                'value' : {{ checkout.total_price | divided_by: 100.00 }},
+                'discount' : {{ total_discount | divided_by: 100.00 }},
+                'items': items
+              }
+            });
+          }
+
+          //Event add_shipping_info
+          function add_shipping_info(){
+            dataLayer.push({
+              'event': 'add_shipping_info',
+              'ecommerce': {
+                'currency': 'EUR',
+                'value' : {{ checkout.total_price | divided_by: 100.00 }},
+                'discount' : {{ total_discount | divided_by: 100.00 }},
+                'location_country' : '{{ checkout.shipping_address.country_code }}',
+                'location_city' : '{{ checkout.shipping_address.city }}',
+                'shipup_costs' : {{ checkout.shipping_price | divided_by: 100.00 }},
+                'shipup_discount' : 0.00,
+                'items': items
+              }
+            });
+          }
+        
+          //Event add_payment_info
+          function add_payment_info (){
+            dataLayer.push({
+              'event': 'add_payment_info',
+              'ecommerce': {
+                'currency': 'EUR',
+                'value' : {{ checkout.total_price | divided_by: 100.00 }},
+                'discount' : {{ total_discount | divided_by: 100.00 }},
+                'location_country' : '{{ checkout.shipping_address.country_code }}',
+                'location_city' : '{{ checkout.shipping_address.city }}',
+                'shipup_costs' : {{ checkout.shipping_price | divided_by: 100.00 }},
+                'shipup_discount' : {{ shipping_discount }},
+                'payment_type' : '{{ checkout.transactions[0].gateway_display_name }}',
+                'coupon_name' : '{% for discount in checkout.discount_applications %}{{ discount.title }}{% unless forloop.last %} / {% endunless %}{% endfor %}',
+                'coupon_discount' : {{ checkout.discounts_amount | divided_by: 100.00 }},
+                'tax' : {{ checkout.tax_price | divided_by: 100.00 }},
+                'items': items
+              }
+            });
+          }
+
+          //Event add_payment_info
+          function review (){
+            dataLayer.push({
+              'event': 'view_cart',
+              'ecommerce': {
+                'currency': 'EUR',
+                'value' : {{ checkout.total_price | divided_by: 100.00 }},
+                'discount' : {{ total_discount | divided_by: 100.00 }},
+                'location_country' : '{{ checkout.shipping_address.country_code }}',
+                'location_city' : '{{ checkout.shipping_address.city }}',
+                'shipup_costs' : {{ checkout.shipping_price | divided_by: 100.00 }},
+                'shipup_discount' : {{ shipping_discount }},
+                'payment_type' : '{{ checkout.transactions[0].gateway_display_name }}',
+                'coupon_name' : '{% for discount in checkout.discount_applications %}{{ discount.title }}{% unless forloop.last %} / {% endunless %}{% endfor %}',
+                'coupon_discount' : {{ checkout.discounts_amount | divided_by: 100.00 }},
+                'tax' : {{ checkout.tax_price | divided_by: 100.00 }},
+                'items': items
+              }
+            });
+          }
+
+
+          if(Shopify.Checkout.step == "contact_information"){
+            template_name = "Delivery page";
+            contact_info();
+          } else if(Shopify.Checkout.step == "shipping_method"){
+            template_name = "Checkout shipping page";
+            add_shipping_info();
+          } else if(Shopify.Checkout.step == "payment_method"){
+            template_name = "Checkout payment page";
+            add_payment_info();
+          } else if(Shopify.Checkout.step == "review"){
+            template_name = "Checkout review page";
+            review();
+          }
+
+          if(template_name != ''){
+            //Event page_view
+            dataLayer.push({
+              'event': 'page_view',
+              'user_data': {
+                'login_status': '{% if customer %}TRUE{% else %}FALSE{% endif %}',
+                'newsletter_subscriber': {% if customer.accepts_marketing %}1{% else %}0{% endif %},
+                'email': '{% if customer.email %}{{ customer.email }}{% endif %}',
+              },
+              'page_data': {
+                'template': 'checkout',
+                'url': '{{ shop.url }}{{ request.path }}',
+                'referrer': sessionStorage.getItem("referrer_url"),
+                'name': template_name,
+                'title': template_name,
+                'language': '{{ request.locale.iso_code | upcase }}',
+                'country': '{{ request.locale.iso_code | upcase }}'
+              }
+            });
+          }
+        })();
+      </script>
+    </head>
+    {% render 'crosslog' %}
+    <body>
+      {{ skip_to_content_link }}
+  
+      <header class="banner" data-header role="banner">
+        <div class="wrap">
+          {{ content_for_logo }}
+        </div>
+      </header>
+  
+      {{ order_summary_toggle }}
+      <div class="content" data-content>
+        <div class="wrap">
+          <div class="main">
+            <header class="main__header" role="banner">
+              {{ content_for_logo }}
+              <style>
+                @media (max-width: 999px){
+                  .breadcrumb__flex > *:not(nav) {
+                    padding-bottom: 1.75em;
+                    font-size: 0.8571428571em
+                  }
+                }
+              </style>
+              <div class="breadcrumb__flex">
+                <a class="breadcrumb__link-home" href="/">Accueil</a> 
+                <svg class="icon-svg icon-svg--color-adaptive-light icon-svg--size-10 breadcrumb__chevron-icon" aria-hidden="true" focusable="false"> <use xlink:href="#chevron-right"></use> </svg>
+                {{ breadcrumb }}
+              </div>
+              
+              {{ alternative_payment_methods }}
+            </header>
+            
+            <main class="main__content" role="main">
+              {{ content_for_layout }}
+            </main>
+            <footer class="main__footer" role="contentinfo">
+              {{ content_for_footer }}
+            </footer>
+          </div>
+          <aside class="sidebar" role="complementary">
+            <div class="sidebar__header">
+              {{ content_for_logo }}
+            </div>
+            <div class="sidebar__content">
+              {{ content_for_order_summary }}
+            </div>
+          </aside>
+        </div>
+      </div>
+  
+      {{ tracking_code }}
+      <style>
+        .step__footer__previous-link{
+          display: none;
+        }
+        .breadcrumb > .breadcrumb__item:first-child {
+          display: none;
+      }
+
+      .breadcrumb{
+        margin-top: 0 !important;
+      }
+      .breadcrumb__flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .breadcrumb__link-home{
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      </style> 
+    </body>
+  </html>
+  

@@ -1,0 +1,27 @@
+
+{% assign renderedTag = 0 %}
+{% for tag in tags %}
+        {% assign color = nil %}
+        {% assign content = nil %}
+        {% if tag == "promotion" %}
+            {% assign color = "text-capucine border-capucine" %}
+            {% assign content = "Promotion" %}
+        {% elsif tag == "nouveau" %}
+            {% assign color = "text-peche border-peche" %}
+            {% assign content = "Nouveau" %}
+         {% elsif tag == "edition" %}
+            {% assign color = "text-sauge border-sauge" %}
+            {% assign content = "Édition limitée" %}
+         {% elsif tag == "coeur" %}
+            {% assign color = "text-ananas border-ananas" %}
+            {% assign content = "Coup de coeur" %}
+        {% endif %}
+
+        {% if color != nil and  content != nil  %}
+            {% unless renderedTag > 1 and onlyOneTag == true %}
+              <div class="px-4 py-0.5 text-xs border-[1px] w-fit rounded-full {{ color }}">
+                  {{ content }}
+              </div>
+            {% endunless %}
+        {% endif %}
+{% endfor %}

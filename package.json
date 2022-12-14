@@ -1,0 +1,19 @@
+{
+  "name": "tail",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "minify": "node minify.js",
+    "tailwind": "tailwindcss --config  './assets/tailwind.config.js'  -i 'assets/tail.layout.css' -o './assets/tailwind.apply.min.css' -m && tailwindcss --config  './assets/tailwind.config.js' -o ./assets/tailwind.min.css -m",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "nowmad-studio",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.14.38"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.0.24"
+  }
+}

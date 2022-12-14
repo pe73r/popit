@@ -1,0 +1,11 @@
+.github
+.gitignore
+node_modules/*/**
+node_modules
+package.json
+.pnpm-debug.log
+pnpm-lock.yaml
+.liquidrc
+.prettierignore
+.vscode
+package-lock.json

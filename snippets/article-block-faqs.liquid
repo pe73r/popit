@@ -1,0 +1,180 @@
+<accordion-group>
+  {%- if question_1 != blank -%}
+    <accordion-element class="py-6 border-b border-[#927254] last:border-none">
+            <accordion-trigger class="group">
+            <accordion-header class="flex justify-center items-center">
+                <div class="min-w[240px] mr-5">
+                    <p class="GroteskBold text-sm md:text-base font-bold uppercase text-center">
+                    {{ question_1 }}
+                    </p>
+                </div>
+                <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
+                    <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                    <span class="icon-minus hidden">{% render 'icon-accordion-minus' %}</span>
+                </accordion-icon>
+            </accordion-header>
+            </accordion-trigger>
+            <accordion-content>
+            <div class="text-base mt-4">
+                {{ answer_1 }}
+            </div>
+        </accordion-content>
+  </accordion-element>
+ {% endif %}
+ {%- if question_2 != blank -%}
+    <accordion-element class="py-6 border-b border-[#927254] last:border-none">
+        <accordion-trigger class="group">
+        <accordion-header class="flex justify-center items-center">
+            <div class="min-w[240px] mr-5">
+                <p class="GroteskBold text-sm md:text-base font-bold uppercase text-center">
+                {{ question_2 }}
+                </p>
+            </div>
+            <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
+                <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                <span class="icon-minus hidden">{% render 'icon-accordion-minus' %}</span>
+            </accordion-icon>
+        </accordion-header>
+        </accordion-trigger>
+        <accordion-content>
+        <div class="text-base mt-4">
+            {{ answer_2 }}
+        </div>
+      </accordion-content>
+   </accordion-element>
+ {%- endif -%}
+ {%- if question_3 != blank -%}
+    <accordion-element class="py-6 border-b border-[#927254] last:border-none">
+        <accordion-trigger class="group">
+        <accordion-header class="flex justify-center items-center">
+            <div class="min-w[240px] mr-5">
+                <p class="GroteskBold text-sm md:text-base font-bold uppercase text-center">
+                {{ question_3 }}
+                </p>
+            </div>
+            <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
+                <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                <span class="icon-minus hidden">{% render 'icon-accordion-minus' %}</span>
+            </accordion-icon>
+        </accordion-header>
+        </accordion-trigger>
+        <accordion-content>
+        <div class="text-base mt-4">
+            {{ answer_3 }}
+        </div>
+      </accordion-content>
+   </accordion-element>
+ {%- endif -%}
+ {%- if question_4 != blank -%}
+    <accordion-element class="py-6 border-b border-[#927254] last:border-none">
+        <accordion-trigger class="group">
+        <accordion-header class="flex justify-center items-center">
+            <div class="min-w[240px] mr-5">
+                <p class="GroteskBold text-sm md:text-base font-bold uppercase text-center">
+                {{ question_4 }}
+                </p>
+            </div>
+            <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
+                <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                <span class="icon-minus hidden">{% render 'icon-accordion-minus' %}</span>
+            </accordion-icon>
+        </accordion-header>
+        </accordion-trigger>
+        <accordion-content>
+        <div class="text-base mt-4">
+            {{ answer_4 }}
+        </div>
+      </accordion-content>
+   </accordion-element>
+ {%- endif -%}
+ {%- if question_5 != blank -%}
+    <accordion-element class="py-6 border-b border-[#927254] last:border-none">
+        <accordion-trigger class="group">
+        <accordion-header class="flex justify-center items-center">
+            <div class="min-w[240px] mr-5">
+                <p class="GroteskBold text-sm md:text-base font-bold uppercase text-center">
+                {{ question_5 }}
+                </p>
+            </div>
+            <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
+                <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                <span class="icon-minus hidden">{% render 'icon-accordion-minus' %}</span>
+            </accordion-icon>
+        </accordion-header>
+        </accordion-trigger>
+        <accordion-content>
+        <div class="text-base mt-4">
+            {{ answer_5 }}
+        </div>
+      </accordion-content>
+   </accordion-element>
+ {%- endif -%}
+  
+</accordion-group>
+
+
+{% if question_1 != blank or question_2 != blank or question_3 != blank or question_4 != blank or question_5 != blank %}
+    <script type="application/ld+json">
+      {
+        "@context":"https://schema.org",
+        "@type":"FAQPage",
+        "mainEntity":[
+          {% if question_1 != blank -%}
+            {
+              "@type":"Question",
+              "name":"{{ question_1 }}",
+              "acceptedAnswer":
+              {
+                "@type":"Answer",
+                "text":"{{ answer_1 }}"
+              }
+            },
+          {%- endif %}
+          {% if question_2 != blank -%}
+            {
+              "@type":"Question",
+              "name":"{{ question_2 }}",
+              "acceptedAnswer":
+              {
+                "@type":"Answer",
+                "text":"{{ answer_2 }}"
+              }
+            },
+          {%- endif %}
+          {% if question_3 != blank -%}
+            {
+              "@type":"Question",
+              "name":"{{ question_3 }}",
+              "acceptedAnswer":
+              {
+                "@type":"Answer",
+                "text":"{{ answer_3 }}"
+              }
+            },
+          {%- endif %}
+          {% if question_4 != blank -%}
+            {
+              "@type":"Question",
+              "name":"{{ question_4 }}",
+              "acceptedAnswer":
+              {
+                "@type":"Answer",
+                "text":"{{ answer_4 }}"
+              }
+            },
+          {%- endif %}
+          {% if question_5 != blank -%}
+            {
+              "@type":"Question",
+              "name":"{{ question_5 }}",
+              "acceptedAnswer":
+              {
+                "@type":"Answer",
+                "text":"{{ answer_5 }}"
+              }
+            },
+          {%- endif %}
+        ]
+      }
+    </script>
+{% endif %}

@@ -1,0 +1,60 @@
+{% assign collection = section.settings.collection_when_empty %}
+{% assign collection_2 = section.settings.collection_when_empty_2 %}
+
+
+<div class="flex flex-col justify-center flex-1 p-1">
+  <h3 class="mb-[60px] leading-[22px] text-base text-center">VOTRE PANIER EST VIDE</h3>
+  <tail-carousel slidesToShow="xs:1 sm:1 lg:1 xl:1" class="w-full py-0">
+    <carousel-container class="py-1 overflow-visible snap-x">
+      <carousel-content class="w-full max-w-full">
+        {%- if collection != blank -%}
+          <carousel-panel>
+            <div class="relative overflow-hidden rounded-lg group-scoped h-[200px] w-full flex flex-col items-center justify-center bg-cover bg-no-repeat bg-center mb-8 p-4" style="background-image:url('{{ collection.featured_image | img_url:'master' }}')">
+              <p class="mb-2 text-sm text-white">À DÉCOUVRIR</p>
+              <h4 class="text-3xl font-bold text-center text-white uppercase">{{ collection.title }}</h4>
+              <a class="mt-4 text-sm text-white underline" href="{{ collection.url }}">Voir la gamme</a>
+            </div>
+          </carousel-panel>
+        {%- endif -%}
+
+        {%- if collection_2 != blank -%}
+          <carousel-panel class="">
+            <div class="relative overflow-hidden rounded-lg group-scoped h-[200px] w-full flex flex-col items-center justify-center bg-cover bg-no-repeat bg-center p-4" style="background-image:url('{{ collection_2.featured_image | img_url:'master' }}')">
+              <p class="mb-2 text-sm text-white">À DÉCOUVRIR</p>
+              <h4 class="text-3xl font-bold text-center text-white uppercase">{{ collection_2.title }}</h4>
+              <a class="mt-4 text-sm text-white underline" href="{{ collection_2.url }}">Voir la gamme</a>
+            </div>
+          </carousel-panel>
+        {%- endif -%}
+      </carousel-content>
+    </carousel-container>
+  </tail-carousel>
+
+
+  {%- if section.blocks.size > 0 -%}
+    <tail-carousel
+      data-auto-play="5000"
+      slidesToShow="xs:1 sm:1 lg:1 xl:1"
+      class="w-full py-0 border-t border-b border-white">
+      <carousel-container class="py-1">
+        <carousel-content class="w-full">
+          {% for block in section.blocks %}
+            <carousel-panel class="">
+              <div class="py-3 text-sm">
+                <div class="flex justify-center">
+                  {{ block.settings.icon }}
+                  <div class="ml-2">
+                    <h6
+                      class="text-sm text-acajou GrotesqueBold">{{ block.settings.title }}</h6>
+                    <p
+                      class="mt-1 text-sm">{{ block.settings.note }}</p>
+                  </div>
+                </div>
+              </div>
+            </carousel-panel>
+          {% endfor %}
+        </carousel-content>
+      </carousel-container>
+    </tail-carousel>
+  {%- endif -%}
+</div>

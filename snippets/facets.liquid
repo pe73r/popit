@@ -1,0 +1,120 @@
+
+
+
+{% assign hasFilters = false %}
+{% assign filtersCount = 0 %}
+
+
+{%- for filter in results.filters -%}
+
+  {% if filter.active_values.size > 0 %}
+      {% assign filtersCount = filtersCount | plus: filter.active_values.size %}
+      {% assign hasFilters = true %}
+  {% endif %}
+{%- endfor -%}
+
+
+<tail-filters class="collection-facets">
+  {%- comment -%} <p class="text-base uppercase">Filtre {% if hasFilters %}({{ filtersCount }}){% endif %} </p> {%- endcomment -%}
+  {%- for filter in results.filters -%}
+      <accordion-group>
+        <accordion-element class="py-4 border-b border-gray-300">
+            <accordion-trigger class="group">
+                <accordion-header class="flex justify-between">
+                    <div class="flex-1">
+                    <p class="GroteskBold text-xs uppercase"> 
+                        <span>{{ filter.label | remove: "filter_" }}</span>
+                    </p>
+                    </div>
+                    <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
+                      <span class="icon-plus">{% render 'icon-filters-accordion-plus' %}</span>
+                      <span class="icon-minus hidden">{% render 'icon-filters-accordion-minus' %}</span>
+                  </accordion-icon>
+                </accordion-header>
+            </accordion-trigger>
+            <accordion-content>
+              <div class="mt-4">
+                {%- case filter.type -%}
+                  {%- when 'boolean' or 'list' -%}   
+                    <!-- default checkbox filters -->
+                      <ul class="default--filters">
+                        {%- for filter_value in filter.values -%}
+                        {% unless filter_value.count == 0 and filter_value.active == false %}
+                          <apply-filter>
+                            <li class="relative mb-2">
+                                <label class="flex text-sm first-letter:capitalize items-center {% if filter_value.active -%}font-bold{%- endif %}" for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+                                <input type="checkbox"
+                                  class="mr-2"
+                                  name="{{ filter_value.param_name }}"
+                                  value="{{ filter_value.value }}"
+                                  id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                                  {% if filter_value.active -%}checked{%- endif %}
+                                >
+                                {{ filter_value.label }}
+                              </label>
+                            </li>
+                            </apply-filter>
+                          {% endunless %}
+                        {%- endfor -%}
+                      </ul>
+                  <!-- price filters -->
+                  {%- when 'price_range' -%}
+    
+                    <div class="filter-group-display__price-range">
+                      <div class="filter-group-display__price-range-from">
+                        
+                        <label for="Filter-{{ filter.min_value.param_name }}">From</label>
+                        <input name="{{ filter.min_value.param_name }}"
+                          id="Filter-{{ filter.min_value.param_name }}"
+                          {% if filter.min_value.value -%}
+                            value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                          {%- endif %}
+                          type="number"
+                          placeholder="0"
+                          min="0"
+                          max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                        >
+                          <span>{{ cart.currency.symbol }}</span>
+                        
+                      </div>
+                      <div class="filter-group-display__price-range-to">
+                        
+        
+                        <label for="Filter-{{ filter.max_value.param_name }}">To</label>
+                        <input name="{{ filter.max_value.param_name }}"
+                          id="Filter-{{ filter.max_value.param_name }}"
+                          {% if filter.max_value.value -%}
+                            value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                          {%- endif %}
+                          type="number"
+                          placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                          min="0"
+                          max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                        >
+                          <span>{{ cart.currency.symbol }}</span>  
+                      </div>
+                    </div>
+        
+                    <div class="filter-group-display__submit">
+                      <input type="submit" value="Apply">
+                    </div>
+                    
+                 {%- endcase -%}
+            </div>
+              <!-- Aply filters -->
+              <!-- <button class="w-full my-2 cursor-pointer {% render "button", size:"small", color:"sauge" %}">
+                <input type="submit" value="APPLIQUER">
+              </button> -->
+            </accordion-content>
+        </accordion-element>
+      </accordion-group>
+  {%- endfor -%}
+
+  {% if hasFilters == true %}
+    <remove-filters class="block w-full px-3 py-4 mt-5 text-xs lg:text-sm font-extrabold text-center border border-black rounded-md cursor-pointer " >
+      Supprimer les sélections
+    </remove-filters>
+  {% endif %}
+</tail-filters>
+
+

@@ -1,0 +1,45 @@
+<section class="w-full {% if section.settings.container == "narrow" %} px-8 {% endif %}">
+   <img src="{{ section.settings.image | img_url:'master' }}" class="w-full object-cover object-center {% if section.settings.image_mobile != blank  %} hidden md:block {% endif %}" alt="{{ section.settings.image_mobile.alt }}" loading="lazy">
+  {% if section.settings.image_mobile != blank  %}
+   <img src="{{ section.settings.image_mobile | img_url:'master' }}" class="w-full object-cover object-center" alt="{{ section.settings.image_mobile.alt }}" loading="lazy">
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Image banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Banner image mobile"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full width"
+        },
+        {
+          "value": "narrow",
+          "label": "Narrow"
+        }
+      ],
+      "default": "full",
+      "label": "Choose banner size"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Banner"
+    }
+  ]
+}
+{% endschema %}

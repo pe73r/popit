@@ -1,0 +1,56 @@
+{% assign s = section.settings %}
+
+<div class="bg-sable py-5">
+    <div class="flex gap-8 md:gap-32 overflow-auto snap-mandatory py-2.5 md:justify-center">
+        {%- for block in section.blocks -%}
+          <div class="snap-start shrink-0 first:ml-5 md:first:ml-0 last:mr-8 md:last:mr-0">
+            {% render "image" image: block.settings.image, class:"m-auto max-h-[24px]" %}
+          </div>
+        {%- endfor-%}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Carousel Media",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+  ],
+	"blocks": [
+     {
+       "name": "Block",
+       "type": "block",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         }
+       ]
+     }
+   ],
+   "presets": [
+    {
+      "name": "Carousel Media",
+      "blocks": [
+        {
+          "type": "block"
+        },
+        {
+          "type": "block"
+        },
+        {
+          "type": "block"
+        },
+        {
+          "type": "block"
+        },
+        {
+          "type": "block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

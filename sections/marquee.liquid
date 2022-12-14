@@ -1,0 +1,130 @@
+{% assign s = section.settings %}
+
+<tail-marquee class="flex relative overflow-hidden" style="min-height:{{ section.settings.height }}; color: {{ section.settings.text_color }}; background-color: {{ section.settings.background_color }}; {% if section.settings.border %} border-top: 2px solid {{ section.settings.text_color }}; border-bottom: 2px solid {{ section.settings.text_color }} {% endif %}">
+  <marquee-content style="animation-duration:{{section.settings.animationDuration}}s; max-height:{{ section.settings.height }}" class="items-center flex py-3 animate-marquee whitespace-nowrap gap-10 pr-10">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'text' -%}
+          <div class="flex items-center gap-3">
+              {% if block.settings.svg != blank %}
+                <img src="{{ block.settings.svg }}" class="object-contain !max-w-max" alt="{{ block.settings.svg.alt }}">
+            {% else %}
+              <img data-src="{{ block.settings.image | img_url: 'master' }}" class="lazyload object-contain !max-w-[160px] mx-5" alt="{{ block.settings.image.alt }}"/>
+              {% endif %}
+            {% if block.settings.url != blank %}
+              <a href="{{ block.settings.url }}">
+                <h4 class="text-[20px]" style="color:{{ section.settings.text_color }}">{{ block.settings.text }}</h4>
+              </a>
+            {% else %}
+              <h4 class="text-[20px]" style="color:{{ section.settings.text_color }}">{{ block.settings.text }}</h4>
+            {% endif %}
+         </div>
+        {%- when 'image' -%}
+          {% if block.settings.svg != blank %}
+              <img src="{{ block.settings.svg }}" class="object-contain !max-w-max" alt="{{ block.settings.svg.alt }}">
+          {% else %}
+             <img data-src="{{ block.settings.image | img_url: 'master' }}" class="lazyload object-contain !max-w-[160px]" alt="{{ block.settings.image.alt }}"/>
+          {% endif %}
+      {%- endcase -%} 
+    {%- endfor -%}
+  </marquee-content>
+</tail-marquee>
+{% schema %}
+{
+  "name": "Marquee",
+  "class" : "section-marquee",
+  "settings": [
+    {
+      "type": "number",
+      "id": "animationDuration",
+      "label": "Animation duration in seconds",
+      "default": 30
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "options": [
+        {
+          "value": "68px",
+          "label": "medium"
+        },
+        {
+          "value": "110px",
+          "label": "large"
+        }
+      ],
+      "default": "68px",
+      "label": "Height"
+    },
+    {
+        "type": "checkbox",
+        "id": "border",
+        "label": "Add border ?",
+        "default": false
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "text color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#201A1C"
+    }
+
+  ],
+	"blocks": [
+    {
+        "name": "Text and image",
+        "type":"text",
+        "settings": [
+        {
+          "type": "text",
+          "id": "svg",
+          "label": "Image SVG",
+          "default": "https://cdn.shopify.com/s/files/1/0682/9126/4826/files/verre.svg?v=1669311694"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Image SVG field has to be empty to display this image"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+        }
+      ]
+     }
+   ],
+   "presets": [
+   {
+     "name": "Marquee slider",
+     "blocks": [
+       {
+         "type": "text"
+       }, 
+       {
+         "type": "text"
+       },
+       {
+        "type": "text"
+      }
+     ]
+   }
+ ]
+}
+{% endschema %}

@@ -1,0 +1,209 @@
+<section>
+  <div class="w-full py-10" style="background-color: {{ section.settings.bg-color }}">
+    <div class="max-w-[500px] flex flex-col mx-auto">
+      {% if section.settings.image != blank or product.metafields.global.image_desktop_decouverte != blank or collection.metafields.collection.image_desktop_decouverte != blank %}
+        <div class="lazy w-full object-cover rounded-[4px]">
+          {% if product.metafields.global.image_desktop_decouverte != blank %}
+             <div class="grid-product-image flex flex-col text-center justify-center bg-cover bg-center rounded mx-auto mb-[10px] min-h-[200px] max-w-[320px] md:max-w-[500px] md:min-h-[240px]"" style="background-image: url({{ product.metafields.global.image_desktop_decouverte | img_url: 'master' }});">
+         
+         {% elsif collection.metafields.collection.image_desktop_decouverte  != blank %}
+              <div class="grid-collection-image flex flex-col text-center justify-center bg-cover bg-center rounded mx-auto mb-[10px] min-h-[200px] max-w-[320px] md:max-w-[500px] md:min-h-[240px]"" style="background-image: url({{ collection.metafields.collection.image_desktop_decouverte | img_url: 'master' }});">
+          
+          {% elsif section.settings.image != blank %}
+            <div class="flex flex-col text-center justify-center bg-cover bg-center rounded mx-auto mb-[10px] min-h-[200px] max-w-[320px] md:max-w-[500px] md:min-h-[240px]"" style="background-image: url({{ section.settings.image | img_url: 'master' }});">
+          {% endif %}
+            <div class="px-3 md:px-24">
+
+              <span class="text-base font-extralight uppercase mb-3" style="color: {{section.settings.subtitle-color}}"> {{ section.settings.subtitle }} </span>
+              {% if product.metafields.global.title_decouverte != blank %}
+                <h2 class="grid-product-title font-extrabold uppercase text-[28px] text-center" style="color:{{ section.settings.header-color }}">{{ product.metafields.global.title_decouverte }}</h2>  
+              {% elsif collection.metafields.collection.title_decouverte != blank %}
+                  <h2 class="grid-collection-title font-extrabold uppercase text-[28px] text-center" style="color:{{ section.settings.header-color }}">{{ collection.metafields.collection.title_decouverte }}</h2>
+              {% else %}  
+               <h2 class="font-extrabold uppercase text-[28px] text-center" style="color:{{ section.settings.header-color }}">{{ section.settings.header }}</h2>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% else %}
+        {{ 'image' | placeholder_svg_tag }}
+      {% endif %}
+
+      <div class="flex relative overflow-hidden overflow-x-scroll md:overflow-x-hidden snap-mandatory snap-x ml-[-10%] sm:ml-0">
+        {% case section.blocks.size %}
+          {% when 3 %}
+            {% assign max = '160.66' %}
+          {% else %}
+            {% assign max = '120' %}
+        {% endcase %}
+
+       {%- if template.name == "product" -%} 
+          {%- assign related_collection = product.metafields.global.link_collection.value -%}
+            {%- for product in related_collection.products -%} 
+                <div class="snap-center mx-[5px] md:mx-[3px]">
+                  {% capture class %} 
+                    lazy max-h-[100px] max-w-[100px] rounded-[4px] object-cover aspect-square md:max-h-[{{ max }}px] md:max-w-[{{ max }}px]
+                  {% endcapture %}
+                  {% render "image" image: product.featured_image, class: class %}
+                </div> 
+            {%- endfor -%}
+
+       {% elsif template.name == "collection" %}   
+            {%- if collection.metafields.collection.link_collection != blank -%}  
+                {%- assign related_collection = collection.metafields.collection.link_collection.value -%}
+                {%- for product in related_collection.products -%} 
+                    <div class="snap-center mx-[5px] md:mx-[3px] collection-grid-images">
+                      {% capture class %} 
+                        lazy max-h-[100px] max-w-[100px] rounded-[4px] object-cover aspect-square md:max-h-[{{ max }}px] md:max-w-[{{ max }}px]
+                      {% endcapture %}
+                      {% render "image" image: product.featured_image, class: class %}
+                    </div> 
+                {%- endfor -%}
+           {% else %}
+               {%- for block in section.blocks -%}
+                {%- if block.settings.image-product != blank -%}
+                  <div class="snap-center mx-[5px] md:mx-[3px]">
+                    {% capture class %} 
+                      lazy max-h-[100px] max-w-[100px] rounded-[4px] object-cover aspect-square md:max-h-[{{ max }}px] md:max-w-[{{ max }}px]
+                    {% endcapture %}
+                    {% render "image" image: block.settings.image-product, class: class %}
+                  </div>
+                {% else %}
+                    {{ 'image' | placeholder_svg_tag }}
+                  {% endif %}
+              {%- endfor-%} 
+          {% endif %}
+
+       {% else %}  <!-- no product/no collection -->
+            {%- for block in section.blocks -%}
+              {%- if block.settings.image-product != blank -%}
+                <div class="snap-center mx-[5px] md:mx-[3px]">
+                  {% capture class %} 
+                    lazy max-h-[100px] max-w-[100px] rounded-[4px] object-cover aspect-square md:max-h-[{{ max }}px] md:max-w-[{{ max }}px]
+                  {% endcapture %}
+                  {% render "image" image: block.settings.image-product, class: class %}
+                </div>
+              {% else %}
+                  {{ 'image' | placeholder_svg_tag }}
+                {% endif %}
+            {%- endfor-%} 
+       {%- endif -%}
+            
+      </div>
+      {%- assign collection_metafield = product.metafields.global.link_collection.value -%}
+      {%- assign collection_link = collection_metafield.url -%}
+
+      {%- assign collection_metafield_2 = collection.metafields.collection.link_collection.value -%}
+      {%- assign collection_link_2 = collection_metafield_2.url -%}
+
+      {% if collection_metafield != blank %}
+        {%- assign link = collection_link -%}
+      {% elsif collection_metafield_2 != blank %}
+          {%- assign link = collection_link_2 -%}  
+      {% else %}
+        {%- assign link = section.settings.link_url -%}
+      {% endif %}
+      <a href="{{ link }}" class="block cursor-pointer underline text-sm font-bold mt-[10px] text-center" style="color:{{ section.settings.link-color }} "> {{ section.settings.link }} </a>
+    </div>
+  </div>
+</section>
+<style>
+  .snap-mandatory::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Images grid",
+  "max_blocks": 12,
+  "settings": [
+   {
+      "type": "text",
+      "id": "subtitle",
+      "default": "À TESTER",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "header",
+      "default": "LA GAMME ESSENTIELLE",
+      "label": "Header"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "image"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Button Url"
+    },
+    {
+      "type": "text",
+      "id": "link",
+      "default": "Voir toute la gamme",
+      "label": "Button"
+    },
+    {
+    "type": "header",
+    "content": "colors"
+    },
+    {
+    "type": "color",
+    "id": "bg-color",
+    "label": "Background color",
+    "default": "#E8E2DB"
+    },
+    {
+    "type": "color",
+    "id": "subtitle-color",
+    "label": "Subtitle color",
+    "default": "#FFFFFF"
+    },
+    {
+     "type": "color",
+     "id": "header-color",
+     "label": "Header color",
+     "default": "#FFFFFF"
+    }
+  ],
+	"blocks": [
+     {
+       "name": "Block",
+       "type": "block",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image-product",
+           "label": "Images produit"
+         }
+       ]
+     }
+   ],
+   "presets": [
+    {
+      "name": "Images grid",
+      "blocks": [
+        {
+          "type": "block"
+        },
+        {
+          "type": "block"
+        },
+        {
+          "type": "block"
+        },
+        {
+          "type": "block"
+        },
+        {
+          "type": "block"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

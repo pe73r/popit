@@ -1,0 +1,11 @@
+<div class="max-w-6xl mt-5 mx-6 md:mx-auto md:px-12">
+    <div class="md:flex md:items-center md:gap-10 {% if imagePosition == 'right' %} md:flex-row-reverse {% endif %}">
+        {% render "image" image:  image, class:"h-[320px] w-[320px] object-cover"%}
+        <div class="text-left flex-1">
+            <h3 class="font-bold text-4xl leading-[24px] mt-5 md:mt-0">{{ title}}</h3>
+            <div class="text-sm mt-5 leading-[20px]">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</div>

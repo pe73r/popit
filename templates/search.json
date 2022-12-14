@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "show_collection_image": true,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_size": true,
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_quick_add": true,
+        "enable_filtering": true,
+        "enable_sorting": true
+      }
+    }
+  },
+  "order": [
+    "product-grid"
+  ]
+}

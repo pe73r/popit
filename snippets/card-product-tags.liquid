@@ -1,0 +1,51 @@
+{% assign find = false %}
+{% assign class = 'min-w-[13px] max-w-[13px] md:min-w-[18px] md:max-w-[18px]' %}
+
+{% for tag in product.tags %}
+    {%- liquid
+        assign tag = tag | downcase
+        capture icons
+            if tag contains 'pre-postnatal' or tag contains 'pre-natal' or tag == 'grossesse'
+                render 'icon-filled-cycle' class: class
+            if tag contains 'pre-postnatal'
+                    render 'icon-line-curved' class: class
+            endif
+                assign find = true
+            elsif tag contains 'postpartum'
+                render 'icon-line-curved' class: class
+                assign find = true
+            elsif tag == 'allaitement'
+                render 'icon-drop' class: class
+                assign find = true
+            elsif tag contains 'cycle' or tag contains 'confort-mensuel'
+                render 'icon-filled-drop'
+                assign find = true
+            elsif tag contains 'vegan1'
+                render 'icon-vegan' class: class
+                assign find = true
+            elsif tag contains 'fertilité' or tag contains 'désir-enfant'
+                render 'icon-carreau' class: class
+                assign find = true
+            elsif tag contains 'essentiels'
+                render 'icon-soleil' class: class
+                assign find = true
+            elsif tag contains 'boost'
+                render 'icon-tag-boost' class: class
+                assign find = true
+            elsif tag contains 'coach'
+                render 'icon-bulb' class: 'min-w-[18px] max-w-[18px] h-[16px]'
+            elsif tag contains 'sans-gluten1'
+                render 'icon-gluten' class: class
+                assign find = true
+            endif
+        endcapture
+    -%}
+    {% if find == true %}
+        <div class="flex justify-center items-center mb-3 h-full">
+            {{ icons }}
+            <span class="ml-2 line-clamp-1 whitespace-nowrap GrotesqueBold text-[10px] md:text-sm">{{ tag }}</span>
+        </div>
+        {% break %}
+    {% else %}
+    {% endif %}
+{% endfor %}

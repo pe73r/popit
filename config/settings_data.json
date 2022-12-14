@@ -1,0 +1,535 @@
+{
+  "current": {
+    "colors_text": "#201a1c",
+    "colors_heading": "#201a1c",
+    "colors_background_1": "#f8f2e7",
+    "accent": "#f84c55",
+    "button_bg_primary": "#f84c55",
+    "button_bg_secondary": "#201a1c",
+    "type_header_font": "playfair_display_n7",
+    "type_body_font": "lato_n4",
+    "social_twitter_link": "https:\/\/twitter.com\/vins.etonnants",
+    "social_facebook_link": "https:\/\/www.facebook.com\/vins.etonnants",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/vins.etonnants\/",
+    "social_tiktok_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "social_linkedin_link": "https:\/\/www.linkedin.com\/company\/vins-etonnants\/?originalSubdomain=fr",
+    "favicon": "shopify:\/\/shop_images\/logo_transparent.png",
+    "account_image_1": "shopify:\/\/shop_images\/Banner-page-compte-client-1-desktop.jpg",
+    "account_image_2": "shopify:\/\/shop_images\/Banner-page-compte-client-2-desktop.jpg",
+    "welcome_text_1": "Bienvenue dans votre espace personnel. Modifiez les informations de votre compte et accédez à l'historique de vos commandes.",
+    "welcome_text_2": "Disponible prochainement : \nCumulez vos points pour débloquer des offres avantages livraison et accès en avant-première aux nouveautés",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo.webp",
+    "checkout_logo_position": "center",
+    "checkout_body_background_color": "#fcfaf8",
+    "checkout_sidebar_background_color": "#fcfaf8",
+    "checkout_accent_color": "#927254",
+    "checkout_button_color": "#927254",
+    "heading_scale": 150,
+    "body_scale": 130,
+    "cart_title": "PANIER",
+    "cart_title_when_empty": "PANIER",
+    "logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0636\/1966\/2070\/files\/logo-simple.svg?v=1661947522",
+    "colors_solid_button_labels": "#ffffff",
+    "colors_accent_1": "#121212",
+    "gradient_accent_1": "",
+    "colors_accent_2": "#334fb4",
+    "gradient_accent_2": "",
+    "colors_outline_button_labels": "#121212",
+    "gradient_background_1": "",
+    "colors_background_2": "#f3f3f3",
+    "gradient_background_2": "",
+    "tag_france_image": "shopify:\/\/shop_images\/Frame_8305_1.png",
+    "tag_vegan_image": "shopify:\/\/shop_images\/Frame_8305_4.png",
+    "tag_no_animal_image": "shopify:\/\/shop_images\/Frame_8306.png",
+    "tag_mama_image": "shopify:\/\/shop_images\/Frame_8306_445e89a1-9209-40c5-933d-a187813c0a43.png",
+    "page_width": 1200,
+    "spacing_sections": 0,
+    "spacing_grid_horizontal": 8,
+    "spacing_grid_vertical": 8,
+    "buttons_border_thickness": 1,
+    "buttons_border_opacity": 100,
+    "buttons_radius": 0,
+    "buttons_shadow_opacity": 0,
+    "buttons_shadow_horizontal_offset": 0,
+    "buttons_shadow_vertical_offset": 4,
+    "buttons_shadow_blur": 5,
+    "variant_pills_border_thickness": 1,
+    "variant_pills_border_opacity": 55,
+    "variant_pills_radius": 40,
+    "variant_pills_shadow_opacity": 0,
+    "variant_pills_shadow_horizontal_offset": 0,
+    "variant_pills_shadow_vertical_offset": 4,
+    "variant_pills_shadow_blur": 5,
+    "inputs_border_thickness": 1,
+    "inputs_border_opacity": 55,
+    "inputs_radius": 0,
+    "inputs_shadow_opacity": 0,
+    "inputs_shadow_horizontal_offset": 0,
+    "inputs_shadow_vertical_offset": 4,
+    "inputs_shadow_blur": 5,
+    "card_style": "standard",
+    "card_image_padding": 0,
+    "card_text_alignment": "left",
+    "card_color_scheme": "background-2",
+    "card_border_thickness": 0,
+    "card_border_opacity": 10,
+    "card_corner_radius": 0,
+    "card_shadow_opacity": 0,
+    "card_shadow_horizontal_offset": 0,
+    "card_shadow_vertical_offset": 4,
+    "card_shadow_blur": 5,
+    "text_boxes_border_thickness": 0,
+    "text_boxes_border_opacity": 10,
+    "text_boxes_radius": 0,
+    "text_boxes_shadow_opacity": 0,
+    "text_boxes_shadow_horizontal_offset": 0,
+    "text_boxes_shadow_vertical_offset": 4,
+    "text_boxes_shadow_blur": 5,
+    "media_border_thickness": 1,
+    "media_border_opacity": 5,
+    "media_radius": 0,
+    "media_shadow_opacity": 0,
+    "media_shadow_horizontal_offset": 0,
+    "media_shadow_vertical_offset": 4,
+    "media_shadow_blur": 5,
+    "popup_border_thickness": 1,
+    "popup_border_opacity": 10,
+    "popup_corner_radius": 0,
+    "popup_shadow_opacity": 0,
+    "popup_shadow_horizontal_offset": 0,
+    "popup_shadow_vertical_offset": 4,
+    "popup_shadow_blur": 5,
+    "drawer_border_thickness": 1,
+    "drawer_border_opacity": 10,
+    "drawer_shadow_opacity": 0,
+    "drawer_shadow_horizontal_offset": 0,
+    "drawer_shadow_vertical_offset": 4,
+    "drawer_shadow_blur": 5,
+    "badge_position": "bottom left",
+    "badge_corner_radius": 40,
+    "sale_badge_color_scheme": "accent-2",
+    "sold_out_badge_color_scheme": "inverse",
+    "accent_icons": "text",
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "currency_code_enabled": true,
+    "aloe_image": "shopify:\/\/shop_images\/Frame_8305_1.png",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "text_color": "#000000"
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "bbc724c6-30ab-4e7f-b250-da0bc7ceacfc": {
+            "type": "megamenu",
+            "settings": {
+              "megamenu": "",
+              "featured_link_1": "shopify:\/\/products\/baby-bump",
+              "featured_link_subtitle_1": "NOUVEAU",
+              "featured_link_title_1": "<p>COMPLÉMENT GROSSESSE<\/p><p><strong>3 en 1 <\/strong><\/p>",
+              "featured_link_2": "",
+              "featured_link_subtitle_2": "",
+              "featured_link_title_2": ""
+            }
+          },
+          "9361598a-ff81-4f8d-a8a3-71f39892e985": {
+            "type": "megamenu",
+            "settings": {
+              "megamenu": "",
+              "featured_link_1": "shopify:\/\/blogs\/guide\/l-alimentation-en-postpartum-en-quoi-est-elle-essentielle",
+              "featured_link_subtitle_1": "POSTPARTUM",
+              "featured_link_title_1": "<p>EN QUOI L'<strong>ALIMENTATION EN POSTPARTUM<\/strong> EST ESSENTIELLE ?<\/p>",
+              "featured_link_2": "shopify:\/\/blogs\/guide\/acide-folique-ou-folates-quelle-difference",
+              "featured_link_subtitle_2": "DERNIER ARTICLE",
+              "featured_link_title_2": "<p>ACIDE FOLIQUE OU FOLATE, <strong>QUELLE DIFFÉRENCE<\/strong> ?<\/p>"
+            }
+          },
+          "9fa1b736-166f-4ace-9c2a-464a277ad13f": {
+            "type": "megamenu",
+            "settings": {
+              "megamenu": "",
+              "featured_link_1": "shopify:\/\/pages\/ebooks-gratuits",
+              "featured_link_subtitle_1": "EBOOK CYCLE",
+              "featured_link_title_1": "<p>NOS CONSEILS POUR <strong>UN CYCLE EN DOUCEUR<\/strong><\/p>",
+              "featured_link_2": "shopify:\/\/collections\/coaching",
+              "featured_link_subtitle_2": "COACHING",
+              "featured_link_title_2": "<p><strong>FAITES-VOUS ACCOMPAGNER <\/strong>PAR NOS EXPERTS ? <\/p>"
+            }
+          },
+          "6330de6b-0c75-4f1c-b01e-c913d3b7be38": {
+            "type": "mobile_tabs",
+            "settings": {
+              "title": "Produits",
+              "menu": "",
+              "featured_link_1": "shopify:\/\/products\/baby-bump",
+              "featured_link_subtitle_1": "NOUVEAU",
+              "featured_link_title_1": "<p>COMPLÉMENT GROSSESSE<\/p><p><strong>3 en 1 <\/strong><\/p>",
+              "featured_link_2": "",
+              "featured_link_subtitle_2": "",
+              "featured_link_title_2": ""
+            }
+          },
+          "88838b44-682b-443b-95f8-b0f4e0dc4926": {
+            "type": "mobile_tabs",
+            "settings": {
+              "title": "Blog",
+              "menu": "",
+              "featured_link_1": "shopify:\/\/blogs\/guide\/l-alimentation-en-postpartum-en-quoi-est-elle-essentielle",
+              "featured_link_subtitle_1": "POSTPARTUM",
+              "featured_link_title_1": "<p>EN QUOI L'<strong>ALIMENTATION EN POSTPARTUM<\/strong> EST ESSENTIELLE ?<\/p>",
+              "featured_link_2": "shopify:\/\/blogs\/guide\/acide-folique-ou-folates-quelle-difference",
+              "featured_link_subtitle_2": "DERNIER ARTICLE",
+              "featured_link_title_2": "<p>ACIDE FOLIQUE OU FOLATE, <strong>QUELLE DIFFÉRENCE<\/strong> ?<\/p>"
+            }
+          },
+          "71f5eb72-b019-4a03-8e19-59b3b90d90b8": {
+            "type": "mobile_tabs",
+            "settings": {
+              "title": "Conseil",
+              "menu": "",
+              "featured_link_1": "shopify:\/\/pages\/ebooks-gratuits",
+              "featured_link_subtitle_1": "EBOOK CYCLE",
+              "featured_link_title_1": "<p>NOS CONSEILS POUR UN CYCLE EN DOUCEUR<\/p>",
+              "featured_link_2": "shopify:\/\/collections\/coaching",
+              "featured_link_subtitle_2": "COACHING",
+              "featured_link_title_2": "<p>FAITES-VOUS ACCOMPAGNER PAR NOS EXPERTS<\/p>"
+            }
+          },
+          "d078ac29-3acc-4a33-88c8-85f12a06fbdd": {
+            "type": "mobile_bottom",
+            "settings": {
+              "menu": ""
+            }
+          }
+        },
+        "block_order": [
+          "bbc724c6-30ab-4e7f-b250-da0bc7ceacfc",
+          "9361598a-ff81-4f8d-a8a3-71f39892e985",
+          "9fa1b736-166f-4ace-9c2a-464a277ad13f",
+          "6330de6b-0c75-4f1c-b01e-c913d3b7be38",
+          "88838b44-682b-443b-95f8-b0f4e0dc4926",
+          "71f5eb72-b019-4a03-8e19-59b3b90d90b8",
+          "d078ac29-3acc-4a33-88c8-85f12a06fbdd"
+        ],
+        "settings": {
+          "sticky_header": true,
+          "dynamic_header": true,
+          "show_announce_when_down": true,
+          "menu_desktop": "main-menu",
+          "menu_mobile": "main-menu",
+          "feature_drawer_title": "",
+          "feature_drawer_subtitle": "",
+          "feature_drawer_link": ""
+        }
+      },
+      "products-carousel": {
+        "type": "products-carousel",
+        "settings": {
+          "collection": "",
+          "limit": 25,
+          "title": "NOTRE SÉLECTION",
+          "show_secondary_image": false,
+          "show_dots": true
+        }
+      },
+      "logo": {
+        "type": "logo",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/Image.png",
+          "logo_svg": ""
+        }
+      },
+      "side-cart": {
+        "type": "side-cart",
+        "blocks": {
+          "429d0e67-9527-40e3-909c-41a156b9cf9f": {
+            "type": "reassurances",
+            "settings": {
+              "title": "🎁 Une bouteille offerte à partir de 65€",
+              "text": "<p>Une bouteille de la sélection du mois dans votre colis<\/p>"
+            }
+          },
+          "1c9c5b5b-c1c9-4a69-9b95-8db25c19a069": {
+            "type": "reassurances",
+            "settings": {
+              "title": "🚚 Livraison prévue entre 3 et 6 jours",
+              "text": "<p>Frais de livraison gratuits a partir de 100 €<\/p>"
+            }
+          },
+          "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4": {
+            "type": "reassurances",
+            "settings": {
+              "title": "🍷  La meilleure sélection de vins",
+              "text": "<p>Une bouteille de la sélection du mois dans votre colis<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "429d0e67-9527-40e3-909c-41a156b9cf9f",
+          "1c9c5b5b-c1c9-4a69-9b95-8db25c19a069",
+          "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4"
+        ],
+        "settings": {
+          "cart_title": "Panier",
+          "show_counter": true,
+          "sub_total_text": "<p>📦 Livraison offerte dès 100€ - 💰 3x sans frais<\/p>",
+          "validate_text": "Commander",
+          "extra_text": "Code promo et frais de livraison à l’étape suivante",
+          "extra_text_2": "Frais de livraison et code promo à l’étape suivante.",
+          "show_code_promo": false,
+          "show_carousel_reassurance": true,
+          "cart_title_when_empty": "Panier",
+          "collection_when_empty": "",
+          "collection_when_empty_2": "",
+          "empty_subtext": "Recommandés par des médecins",
+          "empty_subtext_2": "Et élaborés avec des experts",
+          "upSellTitle": "COMPLÉTEZ AVEC...",
+          "upSellCollection": "frontpage",
+          "free_shipping_limit": 100,
+          "free_shipping_text_before": "Plus que ((rest)) pour une livraison en point relais offerte.",
+          "free_shipping_text_after": "Vous bénéficiez de la livraison en point relais offerte.",
+          "product_1_limit": 150,
+          "product_1_text_before": "Plus que ((rest)) pour un cadeau.",
+          "product_1_text_after": "Vous bénéficiez du cadeau offert.",
+          "product_2_limit": 0,
+          "product_2_text_before": "Plus que ((rest)) pour un deuxième cadeau.",
+          "product_2_text_after": "Vous bénéficiez du cadeau offert."
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "c30e5de2-0357-4258-aec3-1a38e7dfa88a": {
+            "type": "link_list",
+            "settings": {
+              "heading": "NOS PRODUITS",
+              "menu": "nos-produits"
+            }
+          },
+          "a60a8e48-011b-433c-a9a4-ab46efd57ef9": {
+            "type": "link_list",
+            "settings": {
+              "heading": "BLOG",
+              "menu": "blog"
+            }
+          },
+          "2f5128fc-ab49-4c8b-ad3d-d0240c1916a7": {
+            "type": "link_list",
+            "settings": {
+              "heading": "A PROPOS",
+              "menu": "a-propos"
+            }
+          },
+          "9f4aa598-1549-4004-8a0b-04b27f1eab98": {
+            "type": "link_list",
+            "settings": {
+              "heading": "CONTACT",
+              "menu": "contact"
+            }
+          }
+        },
+        "block_order": [
+          "c30e5de2-0357-4258-aec3-1a38e7dfa88a",
+          "a60a8e48-011b-433c-a9a4-ab46efd57ef9",
+          "2f5128fc-ab49-4c8b-ad3d-d0240c1916a7",
+          "9f4aa598-1549-4004-8a0b-04b27f1eab98"
+        ],
+        "settings": {
+          "logo_svg": "",
+          "title": "Les news étonnantes !",
+          "subtext": "<p>Parce que chaque femme est différente, et que chaque moment nécessite que l’on imagine des produits spécifiques<\/p>",
+          "show_newsletter": true,
+          "show_social": true,
+          "mention-legal": "<p>Mentions légales — Privacy Policy ©Vins étonnants<\/p>",
+          "image-reviews": "shopify:\/\/shop_images\/Capture_d_ecran_2022-09-21_a_10.49_1.png",
+          "bg_color": "#201a1c",
+          "color": "#ffffff"
+        }
+      },
+      "reinsurance": {
+        "type": "reinsurance",
+        "blocks": {
+          "471c3b55-e196-4cfd-b5a5-8e32a1f4d18f": {
+            "type": "block",
+            "settings": {
+              "svg": "",
+              "image": "shopify:\/\/shop_images\/aa1130bad5b0c5380f492b253cad63be.png",
+              "title": "Livraison express",
+              "text_desktop": "En point relais ou à domicile",
+              "text_mobile": "En point relais ou à\ndomicile"
+            }
+          },
+          "831c2bf6-b538-440b-b9a2-5990122efe3f": {
+            "type": "block",
+            "settings": {
+              "svg": "",
+              "image": "shopify:\/\/shop_images\/1.png",
+              "title": "Paiement sécurisé",
+              "text_desktop": "Carte bancaire, visa, mastercard, choozeo, paypal ...",
+              "text_mobile": "Carte bancaire, visa, mastercard, choozeo, paypal ..."
+            }
+          },
+          "def1b450-0a09-4f6f-a381-121033fc96e2": {
+            "type": "block",
+            "settings": {
+              "svg": "",
+              "image": "shopify:\/\/shop_images\/2.png",
+              "title": "Frais de port",
+              "text_desktop": "A partir de 250 € d’achat en France continentale",
+              "text_mobile": "A partir de 250 € d’achat en France continentale"
+            }
+          },
+          "fe310d27-2fae-4e6a-b658-13613bb25c68": {
+            "type": "block",
+            "settings": {
+              "svg": "",
+              "image": "shopify:\/\/shop_images\/aa1130bad5b0c5380f492b253cad63be_f7e65736-8658-415c-8f02-e3a474ce3b68.png",
+              "title": "Une équipe à votre écoute",
+              "text_desktop": "Du lundi au vendredi de 9h à 18h",
+              "text_mobile": "Du lundi au vendredi de 9h à 18h"
+            }
+          }
+        },
+        "block_order": [
+          "471c3b55-e196-4cfd-b5a5-8e32a1f4d18f",
+          "831c2bf6-b538-440b-b9a2-5990122efe3f",
+          "def1b450-0a09-4f6f-a381-121033fc96e2",
+          "fe310d27-2fae-4e6a-b658-13613bb25c68"
+        ],
+        "settings": {
+          "add_margin": 0,
+          "header": "On s’occupe de tout pour vous !",
+          "bg_color": "#ffffff",
+          "text_color": "#000000"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Default": {
+      "colors_solid_button_labels": "#ffffff",
+      "colors_accent_1": "#121212",
+      "gradient_accent_1": "",
+      "colors_accent_2": "#334fb4",
+      "gradient_accent_2": "",
+      "colors_text": "#121212",
+      "colors_outline_button_labels": "#121212",
+      "colors_background_1": "#ffffff",
+      "gradient_background_1": "",
+      "colors_background_2": "#f3f3f3",
+      "gradient_background_2": "",
+      "type_header_font": "assistant_n4",
+      "heading_scale": 100,
+      "type_body_font": "assistant_n4",
+      "body_scale": 100,
+      "page_width": 1200,
+      "spacing_sections": 0,
+      "spacing_grid_horizontal": 8,
+      "spacing_grid_vertical": 8,
+      "buttons_border_thickness": 1,
+      "buttons_border_opacity": 100,
+      "buttons_radius": 0,
+      "buttons_shadow_opacity": 0,
+      "buttons_shadow_horizontal_offset": 0,
+      "buttons_shadow_vertical_offset": 4,
+      "buttons_shadow_blur": 5,
+      "variant_pills_border_thickness": 1,
+      "variant_pills_border_opacity": 55,
+      "variant_pills_radius": 40,
+      "variant_pills_shadow_opacity": 0,
+      "variant_pills_shadow_horizontal_offset": 0,
+      "variant_pills_shadow_vertical_offset": 4,
+      "variant_pills_shadow_blur": 5,
+      "inputs_border_thickness": 1,
+      "inputs_border_opacity": 55,
+      "inputs_radius": 0,
+      "inputs_shadow_opacity": 0,
+      "inputs_shadow_horizontal_offset": 0,
+      "inputs_shadow_vertical_offset": 4,
+      "inputs_shadow_blur": 5,
+      "card_style": "standard",
+      "card_image_padding": 0,
+      "card_text_alignment": "left",
+      "card_color_scheme": "background-2",
+      "card_border_thickness": 0,
+      "card_border_opacity": 10,
+      "card_corner_radius": 0,
+      "card_shadow_opacity": 0,
+      "card_shadow_horizontal_offset": 0,
+      "card_shadow_vertical_offset": 4,
+      "card_shadow_blur": 5,
+      "text_boxes_border_thickness": 0,
+      "text_boxes_border_opacity": 10,
+      "text_boxes_radius": 0,
+      "text_boxes_shadow_opacity": 0,
+      "text_boxes_shadow_horizontal_offset": 0,
+      "text_boxes_shadow_vertical_offset": 4,
+      "text_boxes_shadow_blur": 5,
+      "media_border_thickness": 1,
+      "media_border_opacity": 5,
+      "media_radius": 0,
+      "media_shadow_opacity": 0,
+      "media_shadow_horizontal_offset": 0,
+      "media_shadow_vertical_offset": 4,
+      "media_shadow_blur": 5,
+      "popup_border_thickness": 1,
+      "popup_border_opacity": 10,
+      "popup_corner_radius": 0,
+      "popup_shadow_opacity": 0,
+      "popup_shadow_horizontal_offset": 0,
+      "popup_shadow_vertical_offset": 4,
+      "popup_shadow_blur": 5,
+      "drawer_border_thickness": 1,
+      "drawer_border_opacity": 10,
+      "drawer_shadow_opacity": 0,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_vertical_offset": 4,
+      "drawer_shadow_blur": 5,
+      "badge_position": "bottom left",
+      "badge_corner_radius": 40,
+      "sale_badge_color_scheme": "accent-2",
+      "sold_out_badge_color_scheme": "inverse",
+      "accent_icons": "text",
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tiktok_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "predictive_search_enabled": true,
+      "predictive_search_show_vendor": false,
+      "predictive_search_show_price": false,
+      "currency_code_enabled": true,
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+            "text_color": "#000",
+            "background_color": "#F4FFAF"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+          }
+        }
+      }
+    }
+  }
+}

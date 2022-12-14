@@ -1,0 +1,93 @@
+<div class="bg-white rounded-md pt-2 pb-4 px-4 md:px-5">
+     <!-- product title -->
+    <div class="flex gap-1 relative min-h-[60px] items-center">
+        <h1 class="font-body-text text-[20px] leading-[24px] md:text-[28px] md:leading-[33px] font-bold line-clamp-2 tracking-tight">
+            {{ product.title }}
+          </h1>
+        {%- if product.tags contains "rouge" -%}
+          <div class="relative ml-1">
+            {% render 'icon-drop-red' %}
+          </div>
+        {%- elsif product.tags contains "blanc" -%}
+            <div class="relative ml-1">
+              {% render 'icon-drop-yellow' %}
+            </div>  
+        {%- elsif product.tags contains "rose" -%}
+            <div class="relative ml-1">
+              {% render 'icon-drop-pink' %}
+            </div>     
+        {%- endif -%}
+    </div>
+
+    <div class="flex items-center justify-between">
+         <div class="w-7/12 text-left">
+           <!-- Avis verifiés  -->
+           <div class="min-h-[15px]">
+              <img src="https://cdn.shopify.com/s/files/1/0682/9126/4826/files/Frame_574.png?v=1670359326" alt="">
+           </div>
+           
+           <!-- Metafield producer -->
+           <div class="mt-5">
+             <p class="text-xs uppercase font-light">PRODUCTEUR</p>
+             <p class="text-base line-clamp-2 min-h-[32px]">Laguerre (Domaine)</p>
+             {%- comment -%} <p class="my-2 text-base line-clamp-1 max-h-[32px]">{{ product.metafields.product.producer  }}</p> {%- endcomment -%}
+           </div>
+
+           <!-- Metafield region -->
+           <div class="mt-3">
+             <p class="text-xs uppercase font-light">RÉGION</p>
+             <p class="text-base line-clamp-1">Bourgogne</p>
+             {%- comment -%} <p class="my-2 text-base line-clamp-1 max-h-[32px]">{{ product.metafields.product.region }}</p> {%- endcomment -%}
+           </div>
+
+           <!-- Metafield grade -->
+           <div class="mt-3">
+             <p class="text-xs uppercase font-light">CÉPAGE</p>
+             <p class="text-base line-clamp-1">Syrah</p>
+             {%- comment -%} <p class="my-2 text-base line-clamp-1 max-h-[32px]">{{ product.metafields.product.grade }}</p> {%- endcomment -%}
+           </div>  
+           
+           <!-- Metafield style -->
+           <div class="mt-3">
+            <p class="text-xs uppercase font-light">STYLE DE VIN</p>
+            <p class="text-base line-clamp-1">Complexe</p>
+            {%- comment -%} <p class="my-2 text-base line-clamp-1 max-h-[32px]">{{ product.metafields.product.style }}</p> {%- endcomment -%}
+          </div>   
+       </div>
+
+         <!-- product image -->
+        <div class="w-5/12 relative group">
+           {%- if product.featured_media -%}
+                <tail-carousel class="relative max-w-[160px] float-right" slidesToShow="md:1" data-auto-dots="false">
+                    <carousel-container>
+                        <carousel-content>
+                        {%- for media in product.media -%}
+                            <carousel-panel class="p-0 max-w-[160px] md:max-h-[630px] 2xl:max-h-[800px] object-center">
+                                {% render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants, class: 'object-top object-cover'%}
+                            </carousel-panel>
+                        {% endfor %}
+                        </carousel-content>
+                    </carousel-container>
+                    {% if show_dots and product.media.size > 1 %}
+                        <carousel-dots class="relative flex justify-center items-center mt-3">
+                          {%- for media in product.media -%}
+                            <carousel-dot class="w-[8px] h-[8px] m-1 transition-all bg-transparent border rounded-full border-black selected:bg-black selected:border-black selected:w-[12px] selected:h-[12px]"></carousel-dot>
+                          {%- endfor-%}
+                        </carousel-dots>
+                      {% endif %}
+                </tail-carousel>
+           {% endif %}
+       </div>
+     </div> <!-- close flex -->
+
+     <!-- price mobile -->
+     <div class="md:hidden flex items-center mt-4" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+      {%- if product.compare_at_price > product.price -%}
+          <span class="block text-[20px] font-extrabold accent">{{ product.price | money }}</span>
+          <span class="ml-2 text-base font-light line-through">{{ product.compare_at_price | money }}</span>
+      {% else %}
+         <span class="block text-xl font-extrabold tracking-tight">{{ product.price | money }}</span>
+      {% endif %}
+      <span class="block text-xs font-bold ml-3 tracking-tight">Prix par bouteille 75 cl</span>
+    </div>
+</div>

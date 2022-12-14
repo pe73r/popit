@@ -1,0 +1,13 @@
+
+{% assign sort_by = results.sort_by | default: results.default_sort_by %}
+<ul id="sort-by-mobile" class="sorting-facets w-11/12 mx-auto pt-8">
+    {% for option in results.sort_options %}
+    <sort-by>
+      <li class="flex items-center mb-4 text-xs">
+        <label for="sort_by-value={{ option.value }}" class="flex flex-row-reverse text-xs">{{ option.name }}
+          <input class="mr-1 " type="radio" name="sort_by" id="sort_by-value={{ option.value }}" value="{{ option.value }}" {% if option.value == sort_by %} checked {% endif %}>
+        </label>
+      </li>
+    </sort-by>
+    {% endfor %}
+</ul>

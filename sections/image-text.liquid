@@ -1,0 +1,122 @@
+<div class="py-10 md:py-16 lg:py-20" style=" background-color: {{ section.settings.background_color }}">
+    <div class="w-11/12 max-w-[840px] mx-auto">
+     <div class="flex flex-col items-center md:flex-row md:gap-10 {% if section.settings.layout == 'image_right' %} md:flex-row-reverse {% endif %}">
+        <div class="w-full md:basis-5/12 {% if section.settings.hide_image_mobile %} hidden {% endif %} md:block">
+          {% if section.settings.image != blank  %}
+              {% render "image" image: section.settings.image , class:"w-full" %}
+          {% else %}
+             {{ 'image' | placeholder_svg_tag }}
+          {% endif %}
+        </div>
+        <div class="md:basis-7/12 text-center md:text-left mt-8 md:mt-0">
+            {%- if section.settings.subtitle != blank -%} 
+                <h5 class="font-[GroteskBold] text-sm uppercase mb-2" style="color: {{ section.settings.subtitle_color }}">
+                {{ section.settings.subtitle }}
+                </h5>
+            {%- endif -%}
+
+            {%- if section.settings.title != blank -%}
+                <h2 class="py-2 Grotesque text-4xl mb-6" style="color: {{ section.settings.title_color}}">
+                    {{ section.settings.title }}
+                </h2>
+            {%- endif -%}
+
+            {%- if section.settings.text != blank -%}
+                <div class="text-base" style="color: {{ section.settings.text_color}}">
+                {{ section.settings.text }}
+                </div>
+            {%- endif -%} 
+        </div>
+       </div>
+      </div>
+    </div> 
+</div>
+  <style>
+    .section-image-text .text-base strong {
+      font-family: "GroteskBold";
+       font-weight: 700;
+    }
+  </style>
+  
+  {% schema %}
+  {
+    "name": "Image-Text",
+    "tag": "section",
+    "class": "section-image-text",
+    "settings": [
+        {
+        "type": "select",
+        "id": "layout",
+        "options": [
+            {
+            "value": "image_right",
+            "label": "Image right"
+            },
+            {
+            "value": "image_left",
+            "label": "Image left"
+            }
+        ],
+        "default": "image_right",
+        "label": "Layout"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_image_mobile",
+        "label": "Hide image on mobile",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "default": "NUTRILICIOUS",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "default": "L’art de la nutrition",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "default": "<p>Nos snacks sont “boostés” de nutriments, et nos compléments alimentaires sont uniques, et issus pour la plupart d’aliments bio. Comme nous avons voulu le meilleur pour nous et nos enfants, nous sommes devenues des passionnées de nutrition, accompagnées par les meilleurs experts. Nous passons des heures et des heures à éplucher les dernières recherches.</p>",
+        "label": "Text"
+      },    
+      {
+        "type": "header",
+        "content": "colors"
+      },
+      {
+        "type": "color",
+        "id": "subtitle_color",
+        "label": "Subtitle color",
+        "default": "#713F2E"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title color",
+        "default": "#733E2B"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#927254"
+      }
+     
+    ],
+    "presets": [
+      {
+        "name": "Image Text"
+      }
+    ]
+  }
+  {% endschema %}

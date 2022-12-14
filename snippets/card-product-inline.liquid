@@ -1,0 +1,58 @@
+<a href=" {{ product.url }}">
+ <div class="{{ class }} rounded-lg flex gap-2 bg-white">
+
+    <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{product.featured_image.alt}}" class="max-w-[70px] object-cover rounded-tl-lg rounded-bl-lg lazy" loading="lazy">
+
+    <div class="flex items-center justify-between flex-1 pr-2">
+      <div class="py-2 mr-2">
+        <!-- Title -->
+        <p class="mb-1 text-sm font-bold line-clamp-1">{{ product.title }}</p>
+         
+        {% comment %}
+            <!-- Metafield description -->
+            <div class="my-1 text-xs line-clamp-2 h-[32px]">
+                {% if product.metafields.global.sub_title.value != blank %}
+                {{ product.metafields.global.sub_title.value }}
+                {% else %} 
+                {{ product.description }}
+                {% endif %}
+            </div>
+        {% endcomment %}
+
+         <!-- Metafield contenance -->
+        {% if product.metafields.global.contenance.value %}
+            <div class="mt-1 text-base">
+                {{ product.metafields.global.contenance.value }}
+            </div>
+        {% endif %}
+        <!-- PRICE -->
+        {% unless no_price %}
+            <div class="text-sm">
+                {% if product.compare_at_price == nil %}
+                    <span class="font-bold">
+                        {{ product.price | money_without_trailing_zeros }}
+                    </span>
+                {% else %}
+                    <span class="font-bold accent-color">
+                        {{ product.price | money }}
+                    </span>
+                    <span class="line-through text-[-1px] ml-1">
+                        {{ product.compare_at_price | money }}
+                    </span>
+                {% endif %}
+            </div>
+        {% endunless %}
+    </div>
+
+    <!-- ADDTOCART -->
+    {% if show_quick_add %}
+        <add-to-cart  data-variant={{product.selected_or_first_available_variant.id}} >
+            <button class="text-center btn-primary {% render "button", size:"small" %}">
+                Ajouter
+            </button>
+        </add-to-cart>
+     {% endif %}
+
+    </div>
+ </div>
+</a>

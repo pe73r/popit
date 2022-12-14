@@ -1,0 +1,33 @@
+{% assign item_count = cart.item_count %}
+{% assign count_behavior = section.settings.count_behavior %}
+{% style %}
+[aria-label="cart-count"]{    {% case count_behavior %}
+{% when 'top_left' %}
+   top:1px;
+   left:1px;
+{% when 'top_right' %}
+    top:1px;
+    right:1px;
+{% when 'bottom_right' %}
+    bottom:2px;
+    right:1px;
+{% when 'bottom_left' %}
+    bottom:2px;
+    left:1px; {% endcase %}
+}
+{% endstyle %}
+
+{%- liquid if item_count == 0
+      render 'icon-cart-empty'
+    else
+      render 'icon-cart'
+    endif
+  -%}
+
+  {% unless item_count == 0 or count_behavior == "hide" %}
+    <div aria-label="cart-count" class="absolute flex items-center justify-end w-8 h-8 text-base text-white bg-blue-500 rounded-full ">
+        <div class="m-auto">
+            {{item_count }}
+        </div>
+    </div>
+  {% endunless %}

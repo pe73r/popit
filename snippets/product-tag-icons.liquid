@@ -1,0 +1,146 @@
+
+{%- assign tag_number = 0 -%}
+{%- if variant.compare_at_price != blank or product.compare_at_price != blank -%}
+  {%- assign product_with_discount = true -%}
+{% endif %}
+
+{% if product.tags contains 'allaitement' %}
+  <div class="flex items-center py-2 px-3 bg-jaune rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+    {% render 'icon-drop' %}
+    <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">Allaitement</span>
+  </div>
+  {%- assign tag_number = tag_number | plus: 1 -%}
+{% endif %}
+
+{% if product.tags contains 'grossesse' %}
+  {%- unless product_with_discount and tag_number >= 1 -%}
+    <div class="flex items-center py-2 px-3 bg-jaune rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+      {% render 'icon-filled-cycle' %}
+      <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">Grossesse</span>
+    </div>
+    {%- assign tag_number = tag_number | plus: 1 -%}
+  {%- endunless -%}
+{% endif %}
+
+{% if product.tags contains 'postpartum' %}
+  {%- unless product_with_discount and  tag_number >= 1 -%}
+    <div class="flex items-center py-2 px-3 bg-jaune rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+      {% render 'icon-line-curved' %}
+      <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">Post partum</span>
+    </div>
+ {% endunless  %}
+  {%- assign tag_number = tag_number | plus: 1 -%}
+{% endif %}
+
+{% if product.tags contains 'cycle' %}
+  {%- unless product_with_discount and  tag_number > 1 -%}
+    <div class="flex items-center py-2 px-3 bg-jaune rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+      {% render 'icon-filled-drop' %}
+      <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">Cycle</span>
+    </div>
+  {% endunless %}
+  {%- assign tag_number = tag_number | plus: 1 -%}
+{% endif %}
+
+{% if product.tags contains 'vegan1' %}
+  {%- unless product_with_discount and  tag_number >= 1 -%}
+  <div class="flex items-center py-2 px-3 bg-sable rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+    {% render 'icon-vegan' %}
+    <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">VEGAN</span>
+  </div>
+  {% endunless %}
+  {%- assign tag_number = tag_number | plus: 1 -%}
+{% endif %}
+
+{% if product.tags contains 'fertilité' %}
+  {%- unless product_with_discount and tag_number >= 1 -%}
+  <div class="flex items-center py-2 px-3 bg-jaune rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+    {% render 'icon-carreau' %}
+    <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">Fertilité</span>
+  </div>
+{% endunless %}
+  {%- assign tag_number = tag_number | plus: 1 -%}
+{% endif %}
+
+{% if product.tags contains 'essentiels' %}
+  {%- unless product_with_discount and  tag_number >= 1 -%}
+  <div class="flex items-center py-2 px-3 bg-jaune rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+    {% render 'icon-soleil' %}
+    <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">Essentiels</span>
+  </div>
+{% endunless %}
+  {%- assign tag_number = tag_number | plus: 1 -%}
+{% endif %}
+
+{% if product.tags contains 'boost' %}
+  {%- unless product_with_discount and tag_number >= 1 -%}
+  <div class="flex items-center py-2 px-3 bg-jaune rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+    {% render 'icon-tag-boost' %}
+    <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">Boost</span>
+  </div>
+{% endunless %}
+  {%- assign tag_number = tag_number | plus: 1 -%}
+{% endif %}
+
+{% if product.tags contains 'sans-gluten1' %}
+  {%- unless product_with_discount and  tag_number >= 1 -%}
+  <div class="flex items-center py-2 px-3 bg-jaune rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+    {% render 'icon-gluten' %}
+    <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">Sans gluten</span>
+  </div>
+ {% endunless %}
+ {%- assign tag_number = tag_number | plus: 1 -%}
+{% endif %}
+
+{% if product.tags contains 'pre-postnatal' %}
+  {%- unless product_with_discount and  tag_number >= 1 -%}
+  <div class="flex items-center py-2 px-3 bg-jaune rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+    {% render 'icon-filled-cycle' %}
+    {% render 'icon-line-curved' %}
+    <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">Pré et post natal</span>
+  </div>
+{% endunless %}
+  {%- assign tag_number = tag_number | plus: 1 -%}
+{% endif %}
+
+{% if product.tags contains 'confort-menstruel' %}
+  {%- unless product_with_discount and  tag_number >= 1 -%}
+    <div class="flex items-center py-2 px-3 bg-jaune rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+      {% render 'icon-filled-drop' %}
+      <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">Confort menstruel</span>
+    </div>
+  {% endunless %}
+  {%- assign tag_number = tag_number | plus: 1 -%}
+{% endif %}
+
+{% if product.tags contains 'désir-enfant' %}
+  {%- unless product_with_discount and  tag_number >= 1 -%}
+  <div class="flex items-center py-2 px-3 bg-jaune rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+    {% render 'icon-carreau' %}
+    <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">Désir d’enfant</span>
+  </div>
+{% endunless %}
+  {%- assign tag_number = tag_number | plus: 1 -%}
+{% endif %}
+
+{% if product.tags contains 'pre-natal' %}
+  {%- unless product_with_discount and  tag_number >= 1 -%}
+    <div class="flex items-center py-2 px-3 bg-jaune rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+      {% render 'icon-filled-cycle' %}
+      <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %}font-bold ml-2 uppercase">Pré natal</span>
+    </div>
+  {% endunless %}
+  {%- assign tag_number = tag_number | plus: 1 -%}
+{% endif %}
+
+{%- if variant.compare_at_price != blank or product.compare_at_price != blank-%}
+{% assign percentage = 0 %}
+{% for variant in product.variants %}
+  {% assign saving = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price | round %}
+  {% assign percentage = saving | at_least: percentage %}
+{% endfor %}
+<div class="flex items-center py-2 px-3 bg-sable text-[#733E2B] rounded-md {% if size == small %} max-h-[30px] {% endif %}">
+  {% render 'icon-star' %}
+  <span class="{% if size == small %} text-[10px] {% else %} text-xs {% endif %} font-bold ml-2 uppercase">Économisez - {{ percentage }}%</span>
+   </div>
+{% endif %}

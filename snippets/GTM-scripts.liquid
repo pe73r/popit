@@ -1,0 +1,470 @@
+{%- liquid
+  if template contains 'index'
+    assign template_name = 'Homepage'
+  elsif template contains 'collection'
+    assign template_name = 'Collection page'
+  elsif template contains 'product'
+    assign template_name = 'Product page'
+  elsif template contains 'blog' or template contains 'article'
+    assign template_name = 'Blog page'
+  elsif template contains 'account'
+    assign template_name = 'Account'
+  elsif template contains 'ebooks'
+    assign template_name = 'ebook Page'
+  else
+    assign template_name = "other pages"
+  endif
+-%}
+
+<!-- Google Tag Manager -->
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5PGRZQC');
+  <!-- End Google Tag Manager -->
+
+if(sessionStorage.getItem("referrer_url") == null) sessionStorage.setItem("referrer_url", document.referrer);
+
+//Event page_view
+dataLayer.push({
+  'event': 'page_view',
+  'user_data': {
+    'login_status': '{% if customer %}TRUE{% else %}FALSE{% endif %}',
+    'newsletter_subscriber': {% if customer.accepts_marketing %}1{% else %}0{% endif %},
+    'email': '{% if customer.email %}{{ customer.email }}{% endif %}',
+  },
+  'page_data': {
+    'template': '{{ template }}',
+    'url': '{{ shop.url }}{{ request.path }}',
+    'referrer': sessionStorage.getItem("referrer_url"),
+    'name': '{{ template_name }}',
+    'title': '{{ page_title }}',
+    'language': '{{ request.locale.iso_code | upcase }}',
+    'country': '{{ request.locale.iso_code | upcase }}'
+  }
+});
+
+
+function conversionGTMEvents (){
+  //Event add_to_cart & remove_from_cart
+  {% if template contains 'product' %}
+    dataLayer.push({
+      'event': 'view_item',
+      'ecommerce': {
+        'currency': '{{ shop.currency }}',
+        'value' : {{ product.price | divided_by: 100.00 }},
+        'items': [
+          {
+            'item_id': '{{ product.id }}',
+            'item_name': '{{ product.title }}',
+            'quantity': 1,
+            'item_category': "{{ collection.title }}",
+            'price': {{ product.price | divided_by: 100.00 }},
+            'discount' : {% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | divided_by: 100.00 | times: 1.00 }}{% else %}0.00{% endif %}
+          }
+        ]
+      }
+    });
+  {% endif %}
+  function eventATC(event, quantity, price, discount, id, title){
+    dataLayer.push({
+      'event': event,
+      'ecommerce': { 
+        'currency': '{{ shop.currency }}',
+        'value' : price * quantity,
+        'discount' : discount * quantity,
+        'items': [
+          {
+            'item_id': id,
+            'item_name': title,
+            'quantity': quantity,
+            'item_category': "{{ collection.title }}",
+            'price': price,
+            'discount' : discount
+          }
+        ]
+      }
+    });
+  }
+
+  const ATCs = document.querySelectorAll('add-to-cart:not([data-atc-product])');
+  const plus_ATCs = document.querySelectorAll('cart-item-quantity button[name="plus"]');
+  const minus_ATCs = document.querySelectorAll('cart-item-quantity button[name="minus"]');
+
+  ATCs.forEach((atc) => {
+    atc.addEventListener('click', function(){
+      document.addEventListener('reRenderEnd', () => {
+        listen_new_item(this.dataset.product)
+      });
+      eventATC('add_to_cart', 1, this.dataset.price, this.dataset.discount, this.dataset.product, this.dataset.title);
+    })
+  });
+
+  plus_ATCs.forEach((atc) => {
+    atc.addEventListener('click', function(){
+      var self = this;
+      document.addEventListener('reRenderEnd', () => {
+        listen_new_item(self.parentElement.dataset.product)
+      });
+      setTimeout(function(){
+        eventATC('add_to_cart', self.previousElementSibling.value, self.parentElement.dataset.price, self.parentElement.dataset.discount, self.parentElement.dataset.product, self.parentElement.dataset.title);
+      }, 2000)
+    })
+  });
+
+  minus_ATCs.forEach((atc) => {
+    atc.addEventListener('click', function(){
+      var self = this;
+      setTimeout(function(){
+        eventATC('remove_from_cart', self.nextElementSibling.value, self.parentElement.dataset.price, self.parentElement.dataset.discount, self.parentElement.dataset.product, self.parentElement.dataset.title);
+      }, 2000)
+    })
+  });
+
+  function listen_new_item(id){
+    let plus = document.querySelector(`side-cart-overlay cart-item-quantity[data-product="${id}"] button[name="plus"]`);
+    let minus = document.querySelector(`side-cart-overlay cart-item-quantity[data-product="${id}"] button[name="minus"]`);
+
+    plus.addEventListener('click', function(){
+      var self = this;
+      setTimeout(function(){
+        eventATC('add_to_cart', self.previousElementSibling.value, self.parentElement.dataset.price, self.parentElement.dataset.discount, self.parentElement.dataset.product, self.parentElement.dataset.title);
+      }, 2000)
+    })
+
+    minus.addEventListener('click', function(){
+      var self = this;
+      setTimeout(function(){
+        eventATC('remove_from_cart', self.nextElementSibling.value, self.parentElement.dataset.price, self.parentElement.dataset.discount, self.parentElement.dataset.product, self.parentElement.dataset.title);
+      }, 2000)
+    })
+  }
+
+  //Event begin_checkout
+  const checkout_buttons = document.querySelectorAll('form[action="/cart"] button[name="submit"]');
+  checkout_buttons.forEach((btn) => {
+    btn.addEventListener('click', function(e){
+      if(this.dataset.send == "false"){
+        e.preventDefault();
+        const items = document.querySelectorAll('[data-line-item-variant]');
+        let total = 0, discount = 0, itemsArray = [];
+
+        items.forEach((item) => {
+          const container = item.querySelector('cart-item-quantity');
+          total += container.dataset.price * item.querySelector('cart-item-quantity input').value
+          discount += container.dataset.discount * item.querySelector('cart-item-quantity input').value
+          itemsArray.push({
+            'item_id': container.dataset.product,
+            'item_name': container.dataset.title,
+            'quantity': item.querySelector('cart-item-quantity input').value,
+            'item_category': '',
+            'price': container.dataset.price,
+            'discount' : container.dataset.discount,
+          });
+        });
+
+        dataLayer.push({
+          'event': 'begin_checkout',
+          'ecommerce': {
+            'currency': '{{ shop.currency }}',
+            'value' : total,
+            'discount' : discount,
+            'items': itemsArray
+          }
+        });
+
+        this.dataset.send = true;
+        this.click();
+      }
+    });
+  });
+}
+
+function interactionGTMEvents() {
+  //Event Menu_click
+  const menusLink = document.querySelectorAll('tail-header header a');
+  menusLink.forEach((link) => {
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      dataLayer.push({
+        'event': '{{ template_name }}',
+        'eventCategory': 'Engagement',
+        'eventAction': 'Menu_click',
+        'eventLabel': ''
+      });
+
+      window.location = this.href;
+    });
+  });
+
+  //Event Account_click
+  const AccountPopup = document.querySelector('[data-customer-popup] modal-trigger');
+  AccountPopup.addEventListener('click', function(){
+    dataLayer.push({
+      'event': '{{ template_name }}',
+      'eventCategory': 'Engagement',
+      'eventAction': 'Account_click',
+      'eventLabel': ''
+    });
+  });
+
+  const AccountLink = document.querySelector('[data-logged]');
+  AccountLink.addEventListener('click', function(e){
+    e.preventDefault();
+    dataLayer.push({
+      'event': '{{ template_name }}',
+      'eventCategory': 'Engagement',
+      'eventAction': 'Account_click',
+      'eventLabel': ''
+    });
+    window.location = this.href;
+  });
+
+  //Event Basket_click
+  const BasketLink = document.querySelector('side-cart-trigger');
+  BasketLink.addEventListener('click', function(){
+    dataLayer.push({
+      'event': '{{ template_name }}',
+      'eventCategory': 'Engagement',
+      'eventAction': 'Basket_click',
+      'eventLabel': ''
+    });
+  });
+
+  //Event Scroll_50%
+  function getDocHeight() {
+    return Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    )
+  }
+  let scrollHalf = false, docheight = getDocHeight();
+  
+  document.addEventListener('scroll', function(){
+    var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    if(scrollTop > docheight / 2 && !scrollHalf){
+      dataLayer.push({
+        'event': '{{ template_name }}',
+        'eventCategory': 'Engagement',
+        'eventAction': 'Scroll_50%',
+        'eventLabel': ''
+      });
+      scrollHalf = true;
+    }
+  });
+  
+  function waitForElm(selector) {
+    return new Promise(resolve => {
+      if (document.querySelector(selector)) {
+        return resolve();
+      }
+
+      const observer = new MutationObserver(mutations => {
+        if (document.querySelector(selector)) {
+          resolve();
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    });
+  }
+
+  //Event NL_subscription
+  waitForElm('[data-klavyio-form] form').then(() => {
+    const elm = document.querySelector('[data-klavyio-form] form button');
+    elm.addEventListener('click', function(){
+      dataLayer.push({
+        'event': '{{ template_name }}',
+        'eventCategory': 'Engagement',
+        'eventAction': 'Newsletter_subscription',
+        'eventLabel': ''
+      });
+    });
+  });
+
+  {% if template contains 'index' %}
+    //Event Shop_click
+    const ShopLink = document.querySelector('a#link--16635863695bdbafb2-0');
+    if(ShopLink){
+      ShopLink.addEventListener('click', function(){
+        dataLayer.push({
+          'event': '{{ template_name }}',
+          'eventCategory': 'Engagement',
+          'eventAction': 'Shop_click',
+          'eventLabel': ''
+        });
+      });
+    }
+
+    //Event See_all_click
+    const SeeAllLink1 = document.querySelector('#link--template--16655166046454__16635873693adb99c0');
+    const SeeAllLink2 = document.querySelector('#link--template--16655166046454__16635883764512535c');
+    if(SeeAllLink1){
+      SeeAllLink1.addEventListener('click', function(){
+        dataLayer.push({
+          'event': '{{ template_name }}',
+          'eventCategory': 'Engagement',
+          'eventAction': 'Shop_click',
+          'eventLabel': 'Position1'
+        });
+      });
+    }
+
+    if(SeeAllLink2){
+      SeeAllLink1.addEventListener('click', function(){
+        dataLayer.push({
+          'event': '{{ template_name }}',
+          'eventCategory': 'Engagement',
+          'eventAction': 'Shop_click',
+          'eventLabel': 'Position2'
+        });
+      });
+    }
+
+    //Event Choix_besoin_click
+    const ChoixBesoinLink = document.querySelector('[data-besoin]');
+    let ChoixBesoinReach = false;
+    document.addEventListener("scroll", (e) => {
+      var scrolled = document.scrollingElement.scrollTop;
+      var position = ChoixBesoinLink.offsetTop;
+      if(scrolled > position + 100 && !ChoixBesoinReach){
+        dataLayer.push({
+          'event': '{{ template_name }}',
+          'eventCategory': 'Engagement',
+          'eventAction': 'Besoin_click',
+          'eventLabel': ''
+        });
+        ChoixBesoinReach = true;
+      }
+    });
+  {% else %}
+    {% unless template contains 'account' %}
+      //Event BackHP
+      const BackHP_button = document.querySelector('#shopify-section-logo a');
+      if(BackHP_button){
+        BackHP_button.addEventListener('click', function(){
+          dataLayer.push({
+            'event': '{{ template_name }}',
+            'eventCategory': 'Engagement',
+            'eventAction': 'Back_click',
+            'eventLabel': ''
+          });
+        });
+      }
+    {% endunless %}
+    {% if template contains 'collection' %}
+      //Event BackHP
+      const filters = document.querySelectorAll('apply-filter');
+      const filter_mob = document.querySelector('[data-filter-trigger]');
+      filters.forEach((filter) => {
+        filter.addEventListener('click', function(){
+          dataLayer.push({
+            'event': '{{ template_name }}',
+            'eventCategory': 'Engagement',
+            'eventAction': 'Filter_click',
+            'eventLabel': ''
+          });
+        });
+      });
+      if(filter_mob){
+        filter_mob.addEventListener('click', function(){
+          dataLayer.push({
+            'event': '{{ template_name }}',
+            'eventCategory': 'Engagement',
+            'eventAction': 'Filter_click',
+            'eventLabel': ''
+          });
+        });
+      }
+
+      const productsDumie = document.querySelectorAll('[data-product-dumie]');
+      productsDumie.forEach((product) => {
+        product.addEventListener('click', function(){
+          dataLayer.push({
+            'event': '{{ template_name }}',
+            'eventCategory': 'Engagement',
+            'eventAction': 'Product_push_Click',
+            'eventLabel': ''
+          });
+        })
+      })
+    {% elsif template contains 'product' %}
+      //Event Who_click
+      const Who_click = document.querySelector('[data-products-tab] tabs-buttons [data-tab-index="0"]');
+      if(Who_click){
+        Who_click.addEventListener('click', function(){
+          dataLayer.push({
+            'event': '{{ template_name }}',
+            'eventCategory': 'Engagement',
+            'eventAction': 'Who_click',
+            'eventLabel': ''
+          });
+        });
+      }
+
+      //Event Benefits_click
+      const Benefits_click = document.querySelector('[data-products-tab] tabs-buttons [data-tab-index="1"]');
+      if(Benefits_click){
+        Benefits_click.addEventListener('click', function(){
+          dataLayer.push({
+            'event': '{{ template_name }}',
+            'eventCategory': 'Engagement',
+            'eventAction': 'Benefits_click',
+            'eventLabel': ''
+          });
+        });
+      }
+
+      //Event Use_click
+      const Use_click = document.querySelector('[data-products-tab] tabs-buttons [data-tab-index="2"]');
+      if(Use_click){
+        Use_click.addEventListener('click', function(){
+          dataLayer.push({
+            'event': '{{ template_name }}',
+            'eventCategory': 'Engagement',
+            'eventAction': 'Use_click',
+            'eventLabel': ''
+          });
+        });
+      }
+
+      //Event Ingredient_click
+      const Ingredient_click = document.querySelector('[data-products-tab] tabs-buttons [data-tab-index="3"]');
+      if(Ingredient_click){
+        Ingredient_click.addEventListener('click', function(){
+          dataLayer.push({
+            'event': '{{ template_name }}',
+            'eventCategory': 'Engagement',
+            'eventAction': 'Ingredient_click',
+            'eventLabel': ''
+          });
+        });
+      }
+
+      setTimeout(function(){
+        const reviewLinks = document.querySelectorAll('.yotpo-pager a:not([data-page="1"])');
+        reviewLinks.forEach((link) => {
+          link.addEventListener('click', function(){
+            dataLayer.push({
+              'event': '{{ template_name }}',
+              'eventCategory': 'Engagement',
+              'eventAction': 'Reviews_click',
+              'eventLabel': ''
+            });
+          });
+        })
+      }, 4000)
+    {% endif %}
+  {% endif %}
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  conversionGTMEvents();
+  interactionGTMEvents();
+})

@@ -1,0 +1,181 @@
+{% assign s = section.settings %}
+{% assign collection = section.settings.collection %}
+
+<div class="py-10 md:py-10">
+    <!-- section header -->
+    <div class="w-11/12 mx-auto">
+          <div class="text-left md:text-center mb-4 md:mb-8 relative">
+              <h2 class="ml-3 md:ml-0 text-[20px] md:text-[32px] font-bold">
+                  {% if s.title != blank  %}
+                  {{ s.title }}
+                  {% endif %}
+              </h2>
+              
+              {% if s.collection_link != blank %}
+                  <a href="{{ s.url }}" class="text-sm underline accent-color absolute right-0 top-[5px] md:top-[20px]">{{ s.collection_link }}</a>
+              {% endif %}
+          </div>
+    </div>
+    
+    {% if collection %}
+        <!-- carousel desktop -->
+        <div class="hidden md:block md:w-11/12 md:max-w-{{ section.settings.container }} mx-auto">
+          <tail-carousel slidesToShow="xs:1 md:2 lg:2 xl:3">
+            <carousel-container class="w-11/12 mx-auto">
+                <carousel-content class="w-full">
+                  {% for product in collection.products %}
+                    <carousel-panel class="px-2">
+                      {% render 'card-product'
+                        collection: collection,
+                        product: product,
+                        card_product: product,
+                        show_secondary_image: section.settings.show_secondary_image,
+                        show_quick_add: true
+                      %}
+                    </carousel-panel>
+                  {% endfor %}
+                </carousel-content>
+            </carousel-container>
+            {% if s.show_arrows %}
+              <carousel-next class="hidden md:block absolute right-[-6px] top-[50%] translate-y-[-50%] z-[1] cursor-pointer disabled:opacity-50 disabled:cursor-auto">
+                  {% render 'icon-arrow-right' %}
+              </carousel-next>
+              <carousel-prev class="hidden md:block absolute left-[-6px] top-[50%] translate-y-[-50%] z-[1] cursor-pointer disabled:opacity-50 disabled:cursor-auto">
+                  {% render 'icon-arrow-left' %}
+              </carousel-prev>
+              {% endif %}  
+
+              {% if s.show_dots %}
+              <carousel-dots class="relative flex justify-center mt-10">
+                  <carousel-dot class="w-full h-[3px] transition-all bg-sable border-[1px] border-sable selected:bg-black selected:border-black selected:w-1/2">
+                  </carousel-dot>
+              </carousel-dots>
+              {% endif %}
+       </tail-carousel>
+     </div>
+      <!-- carousel mobile -->
+      <div class="block md:hidden">
+        <div class="flex relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-2 scrollbar pb-6 ml-6">
+          {% for product in collection.products %}
+              <div>
+                {% render 'card-product'
+                  collection: collection,
+                  product: product,
+                  card_product: product,
+                  show_secondary_image: section.settings.show_secondary_image,
+                  show_quick_add: true
+                %}
+              </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <script defer>
+        dataLayer.push({
+          'event': 'view_item_list',
+          'ecommerce': {
+            'currency': '{{ shop.currency }}',
+            'items': [
+              {% for product in collection.products %}
+                {
+                'item_id': '{{ product.id }}',
+                'item_name': '{{ product.title }}',
+                'quantity': 1,
+                'item_category': "{{ collection.title }}",
+                'price': {{ product.price | divided_by: 100.00 }},
+                'item_discount' : {% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | divided_by: 100.00 }}{% else %}0.00{% endif %},
+                }{% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            ]
+          }
+        });
+      </script>
+    {% endif %}
+</div>
+
+
+{% schema %}
+{
+
+    "name": "Products carousel",
+    "tag": "section",
+    "settings": [
+      {
+      "type": "select",
+      "id": "container",
+      "options": [
+        {
+          "value": "7xl",
+          "label": "large"
+        },
+        {
+          "value": "5xl",
+          "label": "medium"
+        },
+        {
+          "value": "3xl",
+          "label": "small" 
+        }
+      ],
+      "default": "7xl",
+      "label": "Container desktop"
+    }, 
+    {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection to display"
+    },
+    {
+        "type": "range",
+        "id": "limit",
+        "min": 0,
+        "max": 25,
+        "step": 1,
+        "default": 6,
+        "label": "Maximum products to show"
+     },
+     {
+      "type": "text",
+      "id": "title",
+      "label": "Collection title",
+      "default": "Nos vins bio",
+      "info": "if empty it will show the collection title"
+     },
+     {
+      "type": "text",
+      "id": "collection_link",
+      "label": "Link",
+      "default": "Voir tout"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "url"
+    },
+    {
+         "type": "checkbox",
+         "id": "show_secondary_image",
+         "label": "Show secondary image on hover?",
+         "default": false
+      },
+      {
+          "type": "checkbox",
+          "id": "show_arrows",
+          "label": "Show arrows",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_dots",
+          "label": "Show bar",
+          "default": true
+        }
+
+    ],
+    "presets": [
+    {
+      "name": "Product Carousel"
+    }
+  ]
+}
+{% endschema %}

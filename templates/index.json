@@ -1,0 +1,397 @@
+{
+  "sections": {
+    "16635875657e00a7a6": {
+      "type": "announcement-bar",
+      "blocks": {
+        "f798bfbf-f191-4238-afc1-18a73b6cbc35": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>OFFRE : -20% à partir de 100€ d'achat avec le code ETONNANTS20<\/strong><\/p>",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "f798bfbf-f191-4238-afc1-18a73b6cbc35"
+      ],
+      "settings": {
+        "text_color": "#f8f2e7",
+        "background_color": "#f84c55"
+      }
+    },
+    "1663586369b92a04be": {
+      "type": "slideshow",
+      "blocks": {
+        "16635863695bdbafb2-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_41.png",
+            "image_mobile": "shopify:\/\/shop_images\/Rectangle_41_78b4c930-97d1-4c84-82cb-0f261638a3f4.png",
+            "title": "Les vins bio",
+            "title_mobile": "Les vins bio",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <\/p>",
+            "cta": "Je découvre",
+            "button_link": "shopify:\/\/collections\/jolly-days-jusqua-40",
+            "text_color": "#ffffff",
+            "button_color": "#fcfaf8",
+            "button_bg": "rgba(0,0,0,0)"
+          }
+        },
+        "c5415137-2df9-4722-ac77-c9afd3473e5d": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_41_c3972c16-0683-4f91-abf3-b6aae7ee0f7b.png",
+            "image_mobile": "shopify:\/\/shop_images\/Rectangle_41_c3972c16-0683-4f91-abf3-b6aae7ee0f7b.png",
+            "title": "Nouveautés",
+            "title_mobile": "Nouveautés",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <\/p>",
+            "cta": "Je découvre",
+            "button_link": "shopify:\/\/collections",
+            "text_color": "#ffffff",
+            "button_color": "#fcfaf8",
+            "button_bg": "rgba(0,0,0,0)"
+          }
+        },
+        "be81d616-6b1a-4ea6-9fb4-6da40f8b3482": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kelsey-knight-udj2tD3WKsY-unsplash.jpg",
+            "title": "NUTRITION POUR LES <br>FEMMES.<br>SCIENTIFIQUEMENT PROUVÉ",
+            "title_mobile": "NUTRITION POUR <br>LES FEMMES.<br>SCIENTIFIQUEMENT <br>PROUVÉ",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <\/p>",
+            "cta": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_color": "#201a1c",
+            "button_bg": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "16635863695bdbafb2-0",
+        "c5415137-2df9-4722-ac77-c9afd3473e5d",
+        "be81d616-6b1a-4ea6-9fb4-6da40f8b3482"
+      ],
+      "settings": {
+      }
+    },
+    "aff41a44-f2a7-4e24-9afc-a8f7f4cdfa70": {
+      "type": "marquee",
+      "blocks": {
+        "template--17096559362362__aff41a44-f2a7-4e24-9afc-a8f7f4cdfa70-166971495940a8728a-0": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "text": "<p>Vins étonnants<\/p>",
+            "url": ""
+          }
+        },
+        "template--17096559362362__aff41a44-f2a7-4e24-9afc-a8f7f4cdfa70-166971495940a8728a-1": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/stars.svg?v=1669648221",
+            "text": "<p>une occasion de vous surprendre<\/p>",
+            "url": ""
+          }
+        },
+        "template--17096559362362__aff41a44-f2a7-4e24-9afc-a8f7f4cdfa70-166971495940a8728a-2": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "text": "<p>Vins étonnants<\/p>",
+            "url": ""
+          }
+        },
+        "b6586e3b-95bd-4010-bc1a-1ea4425db19f": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/stars.svg?v=1669648221",
+            "text": "<p>une occasion de vous surprendre<\/p>",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17096559362362__aff41a44-f2a7-4e24-9afc-a8f7f4cdfa70-166971495940a8728a-0",
+        "template--17096559362362__aff41a44-f2a7-4e24-9afc-a8f7f4cdfa70-166971495940a8728a-1",
+        "template--17096559362362__aff41a44-f2a7-4e24-9afc-a8f7f4cdfa70-166971495940a8728a-2",
+        "b6586e3b-95bd-4010-bc1a-1ea4425db19f"
+      ],
+      "settings": {
+        "animationDuration": 30,
+        "height": "68px",
+        "border": false,
+        "text_color": "#ffffff",
+        "background_color": "#201a1c"
+      }
+    },
+    "1db7442e-0ee1-495a-96a1-01f3969e95f2": {
+      "type": "banner-intro",
+      "blocks": {
+        "93825112-b67c-4bcc-9c67-e5aefb3c9a2a": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ellipse_74.png",
+            "text_desktop": "Des producteurs <br>\npassionnés",
+            "text_mobile": "Des producteurs <br>\npassionnés"
+          }
+        },
+        "f7ec02ea-7e45-4959-a5f8-a49876ccab60": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ellipse_74_1.png",
+            "text_desktop": "Une équipes d’experts à <br>\nvotre service",
+            "text_mobile": "Une équipes <br>\nd’experts <br>\nà votre service"
+          }
+        },
+        "7c7cb104-dd56-4c7a-944b-cbe2c63bdfe6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ellipse_74_2.png",
+            "text_desktop": "Naturalité et respect des<br>\nvignes",
+            "text_mobile": "Naturalité et<br>\nrespect des <br>\nvignes"
+          }
+        },
+        "3dc98c99-4d6b-4bf4-ac0d-a895c79edd86": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_41_78b4c930-97d1-4c84-82cb-0f261638a3f4.png",
+            "text_desktop": "Naturalité et respect des<br>\nvignes",
+            "text_mobile": "Des producteurs passionnés"
+          }
+        }
+      },
+      "block_order": [
+        "93825112-b67c-4bcc-9c67-e5aefb3c9a2a",
+        "f7ec02ea-7e45-4959-a5f8-a49876ccab60",
+        "7c7cb104-dd56-4c7a-944b-cbe2c63bdfe6",
+        "3dc98c99-4d6b-4bf4-ac0d-a895c79edd86"
+      ],
+      "settings": {
+        "title": "À propos",
+        "subtitle": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
+        "cta": "En savoir plus",
+        "ctaLink": "",
+        "show_hr": true
+      }
+    },
+    "ec1c9248-3ca2-483d-8370-8f7e3ce48d01": {
+      "type": "products-carousel",
+      "settings": {
+        "container": "7xl",
+        "collection": "frontpage",
+        "limit": 25,
+        "title": "Nos vins bio",
+        "collection_link": "Voir tout",
+        "url": "",
+        "show_secondary_image": true,
+        "show_arrows": true,
+        "show_dots": true
+      }
+    },
+    "a2af813b-b2b8-4547-ab03-9b058d70bbea": {
+      "type": "home-cards",
+      "blocks": {
+        "e78e4e02-5e5f-46b4-ade6-f97fe885a068": {
+          "type": "card",
+          "settings": {
+            "card_width": "3\/5",
+            "image": "shopify:\/\/shop_images\/5eec4b4341370ca7fc4654c0b3cbdb33.jpg",
+            "title": "Notre sélection de vins d’exception !",
+            "show_hr": true,
+            "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
+            "cta": "Je découvre",
+            "button_link": ""
+          }
+        },
+        "3b35f979-2212-4301-9d49-79f08d3f6160": {
+          "type": "card",
+          "settings": {
+            "card_width": "2\/5",
+            "image": "shopify:\/\/shop_images\/72aa89ac54c8985e8268196747c5552d.png",
+            "title": "Le coup de projecteur vigneron",
+            "show_hr": true,
+            "text": "<p>Chaque mois, nous mettons en avant un de nos producteurs pour vous raconter son histoire.<\/p>",
+            "cta": "Je découvre",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "e78e4e02-5e5f-46b4-ade6-f97fe885a068",
+        "3b35f979-2212-4301-9d49-79f08d3f6160"
+      ],
+      "settings": {
+        "container": "7xl",
+        "color": "#ffffff"
+      }
+    },
+    "4dc3e657-6ceb-433f-8455-055959184db0": {
+      "type": "carousel-cards",
+      "blocks": {
+        "3075a099-7546-41fa-96d5-985af6994d04": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_304_47d0ca59-3975-44a8-abbb-45e6139946d0.png",
+            "title": "Vins rouges",
+            "collection_link": "Je décrouve",
+            "url": "shopify:\/\/collections"
+          }
+        },
+        "b85bcbca-29d6-48aa-b0bb-c0c9ccfd33cb": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_304_1.png",
+            "title": "Vins blancs",
+            "collection_link": "Je décrouve",
+            "url": ""
+          }
+        },
+        "597a64e8-0135-4bc4-a1f5-3c99ba04cf2a": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_304_2.png",
+            "title": "Vins<br>\neffervescents",
+            "collection_link": "Je décrouve",
+            "url": ""
+          }
+        },
+        "319a33b3-1253-41dd-8239-26cd9e53c9ba": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/clarinta-subrata-kL5Ir1r9Ws0-unsplash.jpg",
+            "title": "Spiritueux",
+            "collection_link": "Je décrouve",
+            "url": ""
+          }
+        },
+        "143676e5-587b-4650-858d-517ed153a446": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kelsey-knight-udj2tD3WKsY-unsplash.jpg",
+            "title": "Vins",
+            "collection_link": "Je décrouve",
+            "url": ""
+          }
+        },
+        "da01d2da-c3f0-45a8-99f6-08e92824c387": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_41_78b4c930-97d1-4c84-82cb-0f261638a3f4.png",
+            "title": "Vins",
+            "collection_link": "Je décrouve",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "3075a099-7546-41fa-96d5-985af6994d04",
+        "b85bcbca-29d6-48aa-b0bb-c0c9ccfd33cb",
+        "597a64e8-0135-4bc4-a1f5-3c99ba04cf2a",
+        "319a33b3-1253-41dd-8239-26cd9e53c9ba",
+        "143676e5-587b-4650-858d-517ed153a446",
+        "da01d2da-c3f0-45a8-99f6-08e92824c387"
+      ],
+      "settings": {
+        "container": "7xl",
+        "title": "Nos catégories",
+        "collection_link": "Voir tout",
+        "url": "",
+        "show_title": true,
+        "show_arrows": true,
+        "show_dots": true,
+        "color": "#ffffff"
+      }
+    },
+    "704f44dd-a6c3-4bad-93ce-650afe5aedf6": {
+      "type": "marquee",
+      "blocks": {
+        "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-0": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/Forbes_Logo.png",
+            "text": "",
+            "url": ""
+          }
+        },
+        "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-1": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/Capture_d_ecran_2022-11-30_a_15.18.35.png",
+            "text": "",
+            "url": ""
+          }
+        },
+        "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-2": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/logo-vin-autan.png",
+            "text": "",
+            "url": ""
+          }
+        },
+        "8fddc1e7-6755-4acb-869d-87833df99be8": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/Plan-de-travail-1_2x_c8fdf4ba-3b08-46a0-912b-642f16bc02da.png",
+            "text": "",
+            "url": ""
+          }
+        },
+        "8404415b-2f5f-4ad3-883b-3c66dbea862e": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/frenchie-caviste-logo-noir.png",
+            "text": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-0",
+        "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-1",
+        "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-2",
+        "8fddc1e7-6755-4acb-869d-87833df99be8",
+        "8404415b-2f5f-4ad3-883b-3c66dbea862e"
+      ],
+      "settings": {
+        "animationDuration": 30,
+        "height": "110px",
+        "border": true,
+        "text_color": "#201a1c",
+        "background_color": "#ffffff"
+      }
+    },
+    "59445fe2-2d28-4270-94b2-48f55adf293b": {
+      "type": "featured-blog-carousel",
+      "settings": {
+        "container": "5xl",
+        "blog": "infos",
+        "post_limit": 5,
+        "show_dots": true,
+        "heading": "Tout savoir sur le vins avec nos articles",
+        "show_title": false,
+        "show_content": true,
+        "show_author": false,
+        "show_date": false,
+        "show_button": true
+      }
+    }
+  },
+  "order": [
+    "16635875657e00a7a6",
+    "1663586369b92a04be",
+    "aff41a44-f2a7-4e24-9afc-a8f7f4cdfa70",
+    "1db7442e-0ee1-495a-96a1-01f3969e95f2",
+    "ec1c9248-3ca2-483d-8370-8f7e3ce48d01",
+    "a2af813b-b2b8-4547-ab03-9b058d70bbea",
+    "4dc3e657-6ceb-433f-8455-055959184db0",
+    "704f44dd-a6c3-4bad-93ce-650afe5aedf6",
+    "59445fe2-2d28-4270-94b2-48f55adf293b"
+  ]
+}

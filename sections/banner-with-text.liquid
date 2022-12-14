@@ -1,0 +1,116 @@
+{% assign s = section.settings %}
+
+<div class="flex justify-center items-center relative min-h-[517px] md:min-h-[320px] bg-cover bg-center max-h-full w-full iwt">
+    <div class="absolute flex flex-col justify-center items-center text-center mx-5 md:mx-auto md:max-w-[75%]">
+        <div class="uppercase text-white leading-[18px] text-sm font-bold">{{s.subtitle}}</div>
+        <h2 class="iwtText text-[28px] leading-[37px] mt-5 text-white {% if s.title != blank  %} hidden md:block {% endif %}">{{ s.title }}</h2>
+        {% if s.title != blank  %}
+          <h2 class="block md:hidden iwtText text-[28px] leading-[37px] mt-5 text-white">{{ s.title_mobile }}</h2>
+        {% endif %}
+
+        <div class="mt-5 mx-auto">
+            <a class="!text-base text-white {% render "button", color: "primary", size: "small" %} font-bold" href="{{ s.ctaLink }}">
+            {{ s.cta}}
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .iwtText strong {
+     color: #F4FFAF;
+    }
+
+    .iwt{
+        background-image: url({{section.settings.imageMobile | img_url: '1000x' }});
+    }
+
+    @media only screen and (min-width : 1224px) {
+        .iwt{
+            background-image: url({{section.settings.image | img_url: '1000x' }});
+        }
+    }
+  
+</style>
+
+{% schema %}
+{
+  "name": "Image banner With Text",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "default": "<p>la GAMME ESSENTIELLE</p>",
+      "label": "Subtitle"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "default": "<p>DÉCOUVREZ LES PRODUITS LES PLUS ADAPTÉS À VOTRE SITUATION</p>",
+      "label": "Title desktop"
+    },
+    {
+      "type": "header",
+      "content": "mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "imageMobile",
+      "label": "Banner image for mobile"
+    },
+    {
+      "type": "textarea",
+      "id": "title_mobile",
+      "default": "<p>DÉCOUVREZ LES PRODUITS LES PLUS ADAPTÉS À VOTRE SITUATION</p>",
+      "label": "Title mobile"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "cta",
+      "label": "Button label", 
+      "default" : "Je découvre le gamme"
+    },
+    {
+      "type": "url",
+      "id": "ctaLink",
+      "label": "Link "
+    },
+    {
+      "type": "select",
+      "id": "button_type",
+      "label": "Button type",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Banner with Text"
+    }
+  ]
+}
+{% endschema %}

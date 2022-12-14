@@ -1,0 +1,125 @@
+<!--CrosslogStart><CrosslogStart-->
+
+
+
+  <script>
+    
+      ////////////// BEGIN PARAMS //////////////
+  
+    var xlClient = '1c8a39df-4ef3-46fa-83ca-6abeefbadd73';
+    var xlPointRelais = ['Point relais'];
+    var dpr = '1';
+    var buttonColor = '000000';
+    var couleur = '000000,000000,fff';
+    var choosepptMessage = "Modifier le point relais";
+    var loc = '{{ shop.locale }}';
+    if (loc == 'en') {
+      choosepptMessage = "Update my pickup point";
+    }
+    
+      ////////////// END PARAMS //////////////
+  
+  </script>
+
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"
+    integrity="sha512-b4rL1m5b76KrUhDkj2Vf14Y0l1NtbiNXwV+SzOzLGv6Tz1roJHa70yr8RmTUswrauu2Wgb/xBJPR8v80pQYKtQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lg-fb-comment-box.min.css"
+    integrity="sha512-JeQRe3W6dq6H+AAnkomgU8XWGCTM53GmkoYb/R8nmHNOk8xWLwt8bzQmT2cr1Ra0I/WaSTiBOmQOkj7iHXi//w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lg-transitions.min.css"
+    integrity="sha512-/kdQdrZJ0rc181QhzXU6oIknhyr5NIuZlv4VzvhdDsiEzEbW9mckFGTqat8CM8FlGDCHMMUYity1gXIgjHJ58A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"
+    integrity="sha512-kwJUhJJaTDzGp6VTPBbMQWBFUof6+pv0SM3s8fo+E6XnPmVmtfwENK0vHYup3tsYnqHgRDoBDTJWoq7rnQw2+g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"
+    integrity="sha512-kwJUhJJaTDzGp6VTPBbMQWBFUof6+pv0SM3s8fo+E6XnPmVmtfwENK0vHYup3tsYnqHgRDoBDTJWoq7rnQw2+g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+@media only screen and (min-width:570px) {
+    #mapIframeContainerButton {
+        margin-right: 15px;
+        margin-bottom: 5px;
+    }
+
+    .lg-outer .lg-video {
+        height: 580px;
+        padding-bottom: unset;
+    }
+}
+
+@media only screen and (max-width:569px) {
+    #mapIframeContainerButton {
+        margin-right: 0px;
+        margin-bottom: 0px;
+    }
+
+    .lg-outer .lg-video {
+        padding-bottom: 100%;
+        height: 580px;
+    }
+}
+
+.lg-backdrop.in {
+    opacity: 0.5 !important;
+}
+
+.lg-backdrop {
+    visibility: hidden;
+}
+
+.lg-outer {
+    visibility: hidden;
+}
+
+
+</style>
+
+  
+  <script>
+    
+    ////////////// BEGIN LIQUID + JS //////////////
+    
+    var Token = '{{checkout.id}}';
+    var country = '{{checkout.shipping_address.country_code}}';
+    var address = '{{checkout.shipping_address.address1}}';
+    var city = '{{checkout.shipping_address.city}}';
+    var zipCode = '{{checkout.shipping_address.zip}}';
+    
+    
+  function updatePaymentDeliveryAddress() {
+      var attributeName ="";
+      var attributeValue ="";
+      {% for attribute in checkout.attributes %}
+        var attributeName = "{{ attribute.first }}";
+        var attributeValue = "{{ attribute.last }}";
+        if(attributeName=="Adresse PR Crosslog" && attributeValue!=""){
+          var pptName = attributeValue.split('|')[0];
+          var pptAddress = attributeValue.split('|')[1];
+         var pptZipCode = attributeValue.split('|')[2];
+         var pptCity = attributeValue.split('|')[3];
+          $('.address').eq(0).text(pptName +"," + pptAddress + " "+ pptZipCode + " "+ pptCity);
+         }    
+      {% endfor %}
+    }
+    
+    
+      ////////////// END LIQUID + JS //////////////
+  
+  </script>
+  
+ <script src="https://wscartography.crossdesk.com/Cms/Javascript/Shopify/Front/shopifyplusLG.js" cros-sorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <!--CrosslogEND></CrosslogEND-->

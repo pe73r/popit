@@ -1,0 +1,105 @@
+{% assign s = section.settings %}
+
+<div class="py-10 md:py-12">
+    <div class="w-11/12 mx-auto text-center"> 
+        {% if s.title %}
+         <h2 class="text-[28px] leading-[37px] md:text-[32px] md:leading-[42px] mb-5">{{ s.title }}</h2>
+        {% endif %}
+
+        {% if s.show_hr %}
+          <hr class="block border-b w-[40px] mx-auto border-black mb-5">
+        {% endif %}
+
+        {% if s.subtitle %}
+          <div class="text-base">{{ s.subtitle }}</div>
+        {% endif %}  
+
+        {% if s.cta != blank  %}
+          <a class="block mt-2 accent-color underline font-bold text-sm" href="{{ s.ctaLink }}">{{ s.cta }}</a>
+        {% endif %}
+    </div>
+     <!-- blocks -->
+     {%- if section.blocks.size > 0 -%}
+      <div class="mt-10 flex md:justify-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-3 md:gap-10 scrollbar-none px-4">
+         {%- for block in section.blocks -%}
+            <div class="min-w-[110px] md:min-w-0">
+               <img class="w-[80px] h-[80px] rounded-full mx-auto lazy" src="{{ block.settings.image | img_url: '80x'}}" alt="{{ block.settings.image.alt }}" loading="lazy">
+                <div class="hidden md:block text-center text-sm mt-3 leading-4">
+                  {{ block.settings.text_desktop }}
+                </div>
+                <div class="block md:hidden text-center text-sm mt-3 leading-4">
+                    {{ block.settings.text_mobile }}
+                </div>
+            </div>
+        {%- endfor -%}
+     </div>
+   {%- endif -%}
+</div>
+
+{% schema %} 
+{
+  "name": "Banner intro",
+  "tag": "section",
+  "settings": [   
+    {
+      "type": "text",
+      "id": "title",
+      "default": "À propos",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "default": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.</p>",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "cta",
+      "label": "Button label", 
+      "default" : "En savoir plus"
+    },
+    {
+      "type": "url",
+      "id": "ctaLink",
+      "label": "Link "
+    },
+    {
+      "type": "checkbox",
+      "id": "show_hr",
+      "default": true,
+      "label": "Show separator"
+    }
+  ],
+  "blocks": [
+     {
+       "name": "Block",
+       "type": "block",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         },
+         {
+            "type": "textarea",
+            "id": "text_desktop",
+            "default": "Des producteurs passionnés",
+            "label": "text desktop"
+        },
+        {
+            "type": "textarea",
+            "id": "text_mobile",
+            "default": "Des producteurs passionnés",
+            "label": "text mobile"
+        }
+       ]
+     }
+   ],
+  "presets": [
+    {
+      "name": "Banner intro"
+    }
+  ]
+}
+{% endschema %}

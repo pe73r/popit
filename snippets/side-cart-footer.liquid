@@ -1,0 +1,20 @@
+{% if section.settings.extra_text != blank %}
+    <div data-sidecart-footer-text class="py-3 text-center">
+        <p class="text-xs font-bold">{{ section.settings.extra_text }}</p>
+        <p class="text-xs mt-1">{{ section.settings.extra_text_2 }}</p>
+    </div>
+{% endif %}
+
+<form action="/cart" novalidate method="post">
+    <button data-send="false" name="checkout" type="submit" class="mt-1 btn-primary bg-orange {% render "button", size:"large", fullWidth: true %}">
+       {{ section.settings.validate_text}} - <span data-cart-indicator >{{ cart.total_price | money_without_trailing_zeros }}</span>
+    </button>
+</form>
+<style>
+    accordion-element[data-open="true"] .icon-plus{
+        display: none;
+       }
+       accordion-element[data-open="true"] .icon-minus{
+        display: block;
+       }
+</style>

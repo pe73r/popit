@@ -1,0 +1,161 @@
+ 
+  {%- assign pack_products = 0 -%}
+  {%- if product.metafields.global.pack_product_1 != blank -%}
+    {%- assign product_1 = product.metafields.global.pack_product_1 -%}
+    {% assign pack_products = pack_products | plus: 1 %}
+  {%- endif -%}
+
+  {%- if product.metafields.global.pack_product_2 != blank -%}
+    {%- assign product_2 = product.metafields.global.pack_product_2 -%}
+    {% assign pack_products = pack_products | plus: 1 %}
+  {%- endif -%}
+
+  {%- if product.metafields.global.pack_product_3 != blank -%}
+    {%- assign product_3 = product.metafields.global.pack_product_3 -%}
+    {% assign pack_products = pack_products | plus: 1 %}
+  {%- endif -%}
+
+  {%- if product.metafields.global.pack_product_4 != blank -%}
+    {%- assign product_4 = product.metafields.global.pack_product_4 -%}
+    {% assign pack_products = pack_products | plus: 1 %}
+  {%- endif -%}
+
+  {%- if product.metafields.global.pack_product_5 != blank -%}
+    {%- assign product_5 = product.metafields.global.pack_product_5 -%}
+    {% assign pack_products = pack_products | plus: 1 %}
+  {%- endif -%}
+
+  {%- if product.metafields.global.pack_product_6 != blank -%}
+    {%- assign product_6 = product.metafields.global.pack_product_6 -%}
+    {% assign pack_products = pack_products | plus: 1 %}
+  {%- endif -%} 
+
+
+{%- assign product_1_handle = product_1 | remove: 'gid://shopify/Product/' -%}
+{%- assign product_2_handle = product_2 | remove: 'gid://shopify/Product/' -%}
+
+{%- unless product_1_handle == product_2_handle -%}
+  {%- if pack_products > 0 -%}
+   <div class="hidden md:block mt-8">
+    <h3 class="uppercase text-base mb-3">CE KIT CONTIENT</h3>
+    <p class="text-sm mb-3">{{ pack_products }} produits différents</p>
+      {% for i in (1..pack_products) %}
+          {% assign metafield_name = 'pack_product_' | append: i %}
+          {% assign metafield_product = product.metafields.global[metafield_name] %}
+          {% assign metafield_product_in_stock = all_products[metafield_product].available %}
+
+          {%- if all_products[metafield_product].tags contains "consultation" -%}
+             {%- assign card_consultion = true -%}
+          {%- endif -%}
+
+         {%- if metafield_product != blank -%}         
+            {% render 'card-product-inline'
+              product: all_products[metafield_product],
+              contenance: true,
+              no_price: true,
+              show_vendor: false,
+              show_quick_add: false,
+              card_consultion: card_consultion
+              class: 'mb-3' %}   
+         {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="block md:hidden">
+      <accordion-group>
+            <accordion-element class="py-6 border-b border-[#927254] last:border-none">
+                      <accordion-trigger class="group">
+                        <accordion-header class="flex justify-between items-center">
+                             <div class="flex-1 mr-2">
+                                 <h2 class="text-sm md:text-base font-bold first-letter:uppercase">
+                                  CE KIT CONTIENT
+                                 </h2>
+                             </div>
+                             <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
+                                 <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                                 <span class="icon-minus hidden">{% render 'icon-accordion-minus' %}</span>
+                             </accordion-icon>
+                         </accordion-header>
+                         </accordion-trigger>
+                         <accordion-content>
+                         <div class="text-base mt-4">
+                           {% for i in (1..pack_products) %}
+                            {% assign metafield_name = 'pack_product_' | append: i %}
+                            {% assign metafield_product = product.metafields.global[metafield_name] %}
+                   
+                            {%- if all_products[metafield_product].tags contains "consultation" -%}
+                              {%- assign card_consultion = true -%}
+                           {%- endif -%}
+                           
+                           {%- if metafield_product != blank -%}
+                                {% render 'card-product-inline'
+                                  product: all_products[metafield_product],
+                                  contenance: true,
+                                  no_price: true,
+                                  show_vendor: false,
+                                  show_quick_add: false,
+                                  card_consultion: card_consultion
+                                  class: 'mb-3' %}  
+                              {% endif %}
+                            {% endfor %}
+                         </div>
+                     </accordion-content>
+               </accordion-element>
+      </accordion-group>
+    </div>
+  {%- endif -%}
+{%- endunless -%}
+  {% comment %}  
+    <!-- pack products with product-list metafield -->
+    {% assign pack_products = product.metafields.custom.pack_products.value %}
+         {% if pack_products %}
+            <div class="hidden md:block mt-8">
+                <h3 class="uppercase text-base mb-4">CE KIT CONTIENT</h3>
+                <div>
+                    {% for product in pack_products %}
+                            {% render 'card-product-inline'
+                                product: product,
+                                contenance: true,
+                                no_price: true,
+                                show_vendor: false,
+                                show_quick_add: false,
+                                class: 'mb-3'
+                            %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="block md:hidden">
+              <accordion-group>
+                    <accordion-element class="py-6 border-b border-[#927254] last:border-none">
+                              <accordion-trigger class="group">
+                                <accordion-header class="flex justify-between items-center">
+                                     <div class="flex-1 mr-2">
+                                         <h2 class="text-sm md:text-base font-bold first-letter:uppercase">
+                                          CE KIT CONTIENT
+                                         </h2>
+                                     </div>
+                                     <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
+                                         <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+                                         <span class="icon-minus hidden">{% render 'icon-accordion-minus' %}</span>
+                                     </accordion-icon>
+                                 </accordion-header>
+                                 </accordion-trigger>
+                                 <accordion-content>
+                                 <div class="text-base mt-4">
+                                      {% for product in pack_products %}
+                                            {% render 'card-product-inline'
+                                                product: product,
+                                                contenance: true,
+                                                no_price: true,
+                                                show_vendor: false,
+                                                show_quick_add: false,
+                                                class: 'mb-3'
+                                            %}
+                                    {% endfor %}
+                                 </div>
+                             </accordion-content>
+                       </accordion-element>
+              </accordion-group>
+            </div>
+        {%endif%}
+      {% endcomment %}  

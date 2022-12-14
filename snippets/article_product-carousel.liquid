@@ -1,0 +1,18 @@
+{% if collection %}
+  <div class="flex flex-col items-center w-full xs:w-[400px] md:w-[600px] mx-auto mt-5 md:mt-10 md:max-w-6xl md:px-10">
+    <tail-carousel slidesToShow="xs:2 md:2"  class="flex-1 w-full pb-7 md:px-12">
+        <carousel-container>
+            <carousel-content class="w-full">
+              {% for product in collection.products %}
+                <carousel-panel class="p-2 px-6">
+                  {% render 'card-product'
+                    collection: collection,
+                    card_product: product,
+                  %}
+                </carousel-panel>
+              {% endfor %}
+            </carousel-content>
+        </carousel-container>
+    </tail-carousel>
+  </div>
+{% endif %}

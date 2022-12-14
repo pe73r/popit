@@ -1,0 +1,144 @@
+<section class="py-10" style="background-color: {{ section.settings.bg_color}}">
+  <div class="w-full md:w-11/12 mx-auto max-w-7xl">
+
+    <!-- section header -->
+    {% if section.settings.header != blank %}
+      <div class="text-center mb-8">
+        <h2 class="text-[28px] px-5 leading-9" style="color: {{ section.settings.text_color }}">{{ section.settings.header }}</h2>
+      </div>
+   {% endif %}
+
+    <!-- carousel -->
+    <tail-carousel class="px-5 md:px-0 w-full" slidesToShow="xs:2 sm:3 md:3 lg:4 xl:4">
+      <carousel-container>
+        <carousel-content class="w-full">
+          {%- for block in section.blocks -%}
+            <carousel-panel class="w-full">
+                <div class="min-h-[40px] flex items-center">
+                {% if block.settings.svg != blank or block.settings.image != blank %}
+                  {% if block.settings.svg != blank %}
+                    <img class="m-auto" src="{{ block.settings.svg }} " alt="{{ block.settings.svg.alt }}">
+                  {% else %}
+                    {% render "image" image: block.settings.image , class: "m-auto" %}
+                  {% endif %}
+                {% else %}
+                  {{ 'image' | placeholder_svg_tag }}
+                {% endif %}
+              </div>
+             <p class="mt-2.5 text-base text-center font-bold" style="color: {{ section.settings.text_color }}">{{ block.settings.title }}</p>
+             <p class="my-2 text-base text-center hidden md:block" style=" color: {{ section.settings.text_color }} ;">{{ block.settings.text_desktop }}</p>
+             <p class="my-2 text-base text-center block md:hidden" style=" color: {{ section.settings.text_color }} ;">{{ block.settings.text_mobile }}</p>
+            </carousel-panel>
+          {% endfor %}
+          </carousel-content>
+        </carousel-container>
+
+        <carousel-dots class="relative flex lg:hidden justify-center mt-3">
+          <carousel-dot class="w-[8px] h-[8px] m-1 transition-all bg-white border-[1px] border-black rounded-full selected:bg-black selected:border-black selected:border-[5px]"></carousel-dot>
+        </carousel-dots>
+      </tail-carousel>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Reinsurance",
+    "max_blocks": 4,
+    "settings": [
+
+      {
+        "type": "range",
+        "id": "add_margin",
+        "label": "Margin",
+        "unit": "px",
+        "min": 0,
+        "max": 10,
+        "step": 2,
+        "default": 0
+      },
+      {
+       "type": "text",
+       "id": "header",
+       "label": "Header",
+       "default": "On s’occupe de tout pour vous !"
+       },
+      {
+          "type": "header",
+          "content": "colors"
+        },
+        {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#fff"
+      },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#000"
+        }
+    ],
+    "blocks": [
+      {
+        "name": "Block",
+        "type": "block",
+        "settings": [
+          {
+            "type": "header",
+            "content": "image"
+          },
+          {
+            "type": "text",
+            "id": "svg",
+            "label": "SVG image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "SVG field has to be empty"
+          },
+          {
+            "type": "header",
+            "content": "text"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Livraison rapide et gratuite"
+          },
+          {
+            "type": "textarea",
+            "id": "text_desktop",
+            "label": "Text",
+            "default": "dès 59€ d'achat en France métropolitaine"
+          },
+          {
+            "type": "textarea",
+            "id": "text_mobile",
+            "label": "Text",
+            "default": "dès 59€ d'achat en France métropolitaine"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Reinsurance",
+        "blocks": [
+          {
+            "type": "block"
+          }, {
+            "type": "block"
+          }, {
+            "type": "block"
+          }
+
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,436 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'customer.js' | asset_url }}" defer></script>
+
+<section class="font-[RebondGrotesque]">
+  <div class="relative flex flex-col w-full">
+    <div class="relative w-full md:h-64">
+      <img src="{{ settings.account_image_1 | image_url: width: 1800 }}" loading="eager" width="821" height="285" class="object-cover w-full h-full">
+      <div class="absolute inset-0 flex items-center justify-center w-full h-full">
+        <h2 class="GroteskBold text-white text-xl leading-8 md:leading-10 md:text-3xl font-extrabold uppercase tracking-wider">
+          {{ 'customer.account.informations_title' | t }}
+        </h2>
+      </div>
+    </div>
+    <details class="text-sm font-extrabold uppercase cursor-pointer bg-sable text-acajou md:hidden">
+      <summary class="p-5 GroteskBold flex items-center">
+        <span>{{ 'customer.account.informations_link' | t }}</span>
+        <div class="ml-auto border-t-8 border-b-0 border-solid border-t-acajou border-x-transparent border-x-8"></div>
+      </summary>
+      <a href="{{ routes.account_url }}?orders=true" class="p-5 text-acajou GroteskBold opacity-30 block">
+        <span>{{ 'customer.account.orders_link' | t }}</span>
+      </a>
+    </details>
+    <div class="w-full px-5 pt-2 bg-[#F5F5F5] mb-5 md:hidden">
+      <a href="{{ routes.account_url }}" class="text-xs uppercase">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6" class="inline w-3 align-middle rotate-90">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+        </svg>
+        <span class="inline ml-1 align-middle text-[11px]">{{ 'customer.account.back_to_account' | t }}</span>
+      </a>
+    </div>
+  </div>
+  <div class="flex flex-row bg-white">
+    <div class="flex-col hidden min-w-[320px] max-w-[320px] h-auto bg-sable md:flex py-10 px-[54px]">
+      <div class="w-full mb-[30px]">
+        <a href="{{ routes.account_url }}" class="text-xs uppercase cursor-pointer">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6" class="inline w-3 align-middle rotate-90">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+          </svg>
+          <span class="inline ml-1 align-middle text-[11px]">{{ 'customer.account.back_to_account' | t }}</span>
+        </a>
+      </div>
+      <div class="flex flex-col text-base font-extrabold uppercase bg-sable text-acajou">
+        <div class="GroteskBold flex items-center mb-5">
+          <span>{{ 'customer.account.informations_link' | t }}</span>
+        </div>
+        <a href="{{ routes.account_url }}?orders=true" class="GroteskBold text-acajou opacity-30 cursor-pointer">
+          <span>{{ 'customer.account.orders_link' | t }}</span>
+        </a>
+      </div>
+    </div>
+    <div class="Wagner bg-white w-full max-w-[1120px] md:w-4-6 md:py-10 md:px-16">
+      <div class="max-w-2xl py-2 border-t-0 border-solid border-y border-sable">
+        <div class="px-5 md:px-0">
+          <h2 class="font-[RebondGrotesque] font-medium text-xl mb-4 md:text-2xl">
+            {{ 'customer.addresses.coordonates' | t }}
+          </h2>
+          <div class="flex flex-col items-center md:flex-row">
+            <div class="flex flex-col w-full mb-6 md:w-1/2">
+              <span class="mb-1 text-xs text-chataigne">{{ 'customer.addresses.first_name' | t }}</span>
+              <span class="text-base font-semibold h-6">{{ customer.first_name }}</span>
+            </div>
+            <div class="flex flex-col w-full mb-6 md:w-1/2">
+              <span class="mb-1 text-xs text-chataigne">{{ 'customer.addresses.last_name' | t }}</span>
+              <span class="text-base font-semibold h-6">{{ customer.last_name }}</span>
+            </div>
+          </div>
+          <div class="flex flex-col items-center md:flex-row">
+            <div class="flex flex-col w-full mb-6 md:w-1/2">
+              <span class="mb-1 text-xs text-chataigne">{{ 'customer.addresses.email' | t }}</span>
+              <span class="text-base font-semibold h-6">{{ customer.email }}</span>
+            </div>
+            <div class="flex flex-col w-full mb-6 md:w-1/2">
+              <span class="mb-1 text-xs text-chataigne">{{ 'customer.addresses.phone' | t }}</span>
+              <span class="text-base font-semibold h-6">{{ customer.phone }}</span>
+            </div>
+          </div>
+          <div class="flex flex-col mb-6">
+            <span class="mb-1 text-xs text-chataigne">{{ 'customer.addresses.country' | t }}</span>
+            <span class="text-base font-semibold h-6">{{ customer.addresses[0].country }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="px-5 py-5 md:px-0">
+        <h2 class="font-[RebondGrotesque] font-medium text-xl mb-4 md:text-2xl">
+          {{ 'customer.addresses.favorites' | t }}
+        </h2>
+
+        {% assign form_class = "border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-[15px] placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full" %}
+
+        <div class="flex flex-col-reverse w-full">
+          <div data-customer-addresses class="flex flex-row w-full gap-4 space-x-4 overflow-x-auto flex-nowrap snap-mandatory snap-x">
+            {%- for address in customer.addresses -%}
+              <div data-address class="flex flex-col h-auto p-6 border border-solid rounded-sm basis-3/4 shrink-0 md:max-w-xs md:w-full border-sable">
+                <div class="mb-3 text-sm">
+                  {{ address | format_address }}
+                </div>
+                <div class="flex flex-row items-center mt-auto text-xs">
+                  <tail-modal>
+                    <modal-overlay class="p-5 md:p-20">
+                      <modal-content class="w-full rounded-none md:w-2/3 max-w-[720px]">
+                        <modal-header class="items-center justify-end p-3 border-none">
+                          <modal-close>
+                            <div class="flex justify-end">
+                              {% render 'icon-close' %}
+                            </div>
+                          </modal-close>
+                        </modal-header>
+                        <div class="max-w-3xl px-[25px] pt-0 pb-6 m-auto text-center md:px-8">
+                          <h2 class="mb-4 text-2xl font-bold uppercase">
+                            {{ 'customer.addresses.edit_address' | t }}
+                          </h2>
+                          {%- form 'customer_address', address -%}
+                            <div class="flex flex-col md:flex-row">
+                              <div class="flex flex-col text-left mb-7 md:pr-[14px] md:w-1/2">
+                                <label class="mb-1 text-[15.5px]" for="AddressFirstName_{{ form.id }}">{{ 'customer.addresses.first_name' | t }}*</label>
+                                <input type="text" id="AddressFirstName_{{ form.id }}"
+                                  class="{{ form_class }}"
+                                  name="address[first_name]"
+                                  required
+                                  value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
+                              </div>
+                              <div class="flex flex-col text-left mb-7 md:pl-[14px] md:w-1/2">
+                                <label class="mb-1 text-[15.5px]" for="AddressLastName_{{ form.id }}">{{ 'customer.addresses.last_name' | t }}*</label>
+                                <input type="text" id="AddressLastName_{{ form.id }}"
+                                  class="{{ form_class }}"
+                                  required
+                                  name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name" placeholder="{{ 'customer.addresses.last_name' | t }}">
+                              </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row">
+                              <div class="flex flex-col text-left mb-7 md:pr-[14px] md:w-1/2">
+                                <label class="mb-1 text-[15.5px]" for="AddressCompany_{{ form.id }}">{{ 'customer.addresses.company' | t }}</label>
+                                <input type="text" id="AddressCompany_{{ form.id }}"
+                                  class="{{ form_class }}"
+                                  name="address[company]" value="{{ form.company }}" autocomplete="organization" placeholder="{{ 'customer.addresses.company' | t }}">
+                              </div>
+                              <div class="flex flex-col text-left mb-7 md:pl-[14px] md:w-1/2">
+                                <label class="mb-1 text-[15.5px]" for="AddressAddress1_{{ form.id }}">{{ 'customer.addresses.address1' | t }}*</label>
+                                <input type="text" id="AddressAddress1_{{ form.id }}"
+                                  class="{{ form_class }}" name="address[address1]"
+                                  required
+                                  value="{{ form.address1 }}" autocomplete="address-line1" placeholder="{{ 'customer.addresses.address1' | t }}">
+                              </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row">
+                              <div class="flex flex-col text-left mb-7 md:pr-[14px] md:w-1/2">
+                                <label class="mb-1 text-[15.5px]" for="AddressAddress2_{{ form.id }}">{{ 'customer.addresses.address2' | t }}</label>
+                                <input type="text" id="AddressAddress2_{{ form.id }}"
+                                  class="{{ form_class }}" name="address[address2]"
+                                  value="{{ form.address2 }}" autocomplete="address-line2" placeholder="{{ 'customer.addresses.address2' | t }}">
+                              </div>
+                              <div class="flex flex-col text-left mb-7 md:pl-[14px] md:w-1/2">
+                                <label class="mb-1 text-[15.5px]" for="AddressCity_{{ form.id }}">{{ 'customer.addresses.city' | t }}*</label>
+                                <input type="text" id="AddressCity_{{ form.id }}"
+                                  class="{{ form_class }}" name="address[city]"
+                                  required
+                                  value="{{ form.city }}" autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
+                              </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row">
+                              <div class="flex flex-col text-left mb-7 md:pr-[14px] md:w-1/2">
+                                <label class="mb-1 text-[15.5px]" for="AddressZip_{{ form.id }}">{{ 'customer.addresses.zip' | t }}*</label>
+                                <input type="text" id="AddressZip_{{ form.id }}"
+                                  class="{{ form_class }}"
+                                  required
+                                  name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code" placeholder="{{ 'customer.addresses.zip' | t }}">
+                              </div>
+                              <div class="flex flex-col text-left mb-7 md:pl-[14px] md:w-1/2">
+                                <label class="mb-1 text-[15.5px]" for="AddressPhone_{{ form.id }}">{{ 'customer.addresses.phone' | t }}</label>
+                                <input type="tel" id="AddressPhone_{{ form.id }}"
+                                  class="{{ form_class }}"
+                                  name="address[phone]" value="{{ form.phone }}" autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
+                              </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row">
+                              <div class="flex flex-col text-left mb-7 md:pr-[14px] md:w-1/2">
+                                <label class="mb-1 text-[15.5px]" for="AddressCountry_{{ form.id }}">
+                                  {{ 'customer.addresses.country' | t }}*
+                                </label>
+                                <div class="select max-w-fit">
+                                  <select
+                                    id="AddressCountry_{{ form.id }}"
+                                    class="w-full {{ form_class }} max-w-[100%]"
+                                    name="address[country]"
+                                    required
+                                    data-address-country-select
+                                    data-default="{{ form.country }}"
+                                    data-form-id="{{ form.id }}"
+                                    autocomplete="country"
+                                  >
+                                    {{ all_country_option_tags }}
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="flex flex-col text-left mb-7 md:pl-[14px] md:w-1/2" id="AddressProvinceContainer_{{ form.id }}" style="display:none;">
+                                <label class="mb-1 text-[15.5px]" for="AddressProvince_{{ form.id }}">
+                                  {{ 'customer.addresses.province' | t }}
+                                </label>
+                                <div class="select">
+                                  <select
+                                    id="AddressProvince_{{ form.id }}"
+                                    name="address[province]"
+                                    class="w-full {{ form_class }}"
+                                    data-default="{{ form.province }}"
+                                    autocomplete="address-level1">
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="flex flex-row gap-1 text-left md:w-1/2">
+                              {{ form.set_as_default_checkbox }}
+                              <label for="address_default_address_{{ form.id }}">
+                                {{ 'customer.addresses.set_default' | t }}
+                              </label>
+                            </div>
+                            <div class="flex flex-row gap-5 mt-4">
+                              <button class="px-5 py-3 text-base font-semibold text-white border border-solid cursor-pointer border-acajou rounded-3xl bg-acajou hover:bg-transparent hover:text-acajou">{{ 'customer.addresses.update' | t }}</button>
+                              <modal-close class="flex items-center">
+                                <button class="underline" type="reset">{{ 'customer.addresses.cancel' | t }}</button>
+                              </modal-close>
+                            </div>
+                          {%- endform -%}
+                        </div>
+                      </modal-content>
+                    </modal-overlay>
+                    <modal-trigger class="mr-3 underline cursor-pointer text-acajou">
+                      {{ 'customer.addresses.edit_address' | t }}
+                    </modal-trigger>
+                  </tail-modal>
+                  <tail-modal>
+                    <modal-overlay class="p-5 md:p-20">
+                      <modal-content class="w-full rounded-none md:w-1/4">
+                        <modal-header class="items-center justify-end p-3 border-none">
+                          <modal-close>
+                            <div class="flex justify-end">
+                              {% render 'icon-close' %}
+                            </div>
+                          </modal-close>
+                        </modal-header>
+                        <div class="max-w-2xl px-6 pb-6 m-auto text-center md:px-0">
+                          <h2 class="font-[RebondGrotesque] text-2xl mb-4">{{ 'customer.addresses.delete_confirm' | t }}</h2>
+                          <form class="address-delete-form"
+                            method="post"
+                            action="/account/addresses/{{ address.id }}">
+                            <input type="hidden" name="_method" value="delete">
+                            <div class="flex flex-row justify-center gap-5 mt-4">
+                              <button type="submit"
+                                class="px-5 py-3 text-base font-semibold text-white border border-solid cursor-pointer border-acajou rounded-3xl bg-acajou hover:bg-transparent hover:text-acajou"
+                                aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
+                                data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">{{ 'customer.addresses.delete' | t }}</button>
+                              <modal-close class="flex items-center text-sm">
+                                <button class="underline" type="reset">
+                                  {{ 'customer.addresses.cancel' | t }}
+                                </button>
+                              </modal-close>
+                            </div>
+                          </form>
+                        </div>
+                      </modal-content>
+                    </modal-overlay>
+                    <modal-trigger class="underline cursor-pointer">
+                      {{ 'customer.addresses.delete' | t }}
+                    </modal-trigger>
+                  </tail-modal>
+                </div>
+              </div>
+            {%- endfor-%}
+          </div>
+        </div>
+        <!--
+        <tail-carousel data-auto-dots="false" slidesToShow="xs:1.5 sm:3 lg:3 xl:4"  class="flex flex-col-reverse w-full">
+          <carousel-container class="overflow-visible">
+            <carousel-content class="w-full space-x-4">
+              {%- for address in customer.addresses -%}
+                <carousel-panel class="flex flex-col h-full max-w-xs p-6 border border-solid rounded-sm border-sable">
+                  <div class="mb-3 text-sm">
+                    {{ address | format_address }}
+                  </div>
+                  <div class="flex flex-row items-center mt-auto text-[15.5px]">
+                    <tail-modal>
+                      <modal-overlay>
+                        <modal-content class="rounded-none min-h-fit group-entering:-translate-x-full group-in:translate-x-0 group-exiting:-translate-x-full">
+                          <modal-header class="items-center justify-start p-3 border-none">
+                            <modal-close>
+                              <div class="flex">
+                                {% render 'icon-close' %}
+                              </div>
+                            </modal-close>
+                          </modal-header>
+                          <div class="text-center">
+                            <h3 class="mt-2 mb-5 text-5xl leading-5">Fidéliboucles</h3>
+                          </div>
+                          <div class="w-11/12 m-auto mt-10">
+                          </div>
+                        </modal-content>
+                      </modal-overlay>
+                      <modal-trigger class="mr-3 underline cursor-pointer text-acajou">
+                        Modifier
+                      </modal-trigger>
+                    </tail-modal>
+                    <tail-popup>
+                      <popup-trigger class="mr-3 underline cursor-pointer text-acajou">
+                         Supprimer
+                      </popup-trigger>
+                      <popup-content class="bg-acajou top-0 left-[0] translate-x-[-50%] p-5 min-w-max shadow-sm">
+                      </popup-content>
+                    </tail-popup>
+                  </div>
+                </carousel-panel>
+              {%- endfor-%}
+            </carousel-content>
+          </carousel-container>
+        </tail-carousel>-->
+        <div class="mt-5 mb-2">
+          <tail-modal>
+            <modal-overlay class="p-5 md:p-20">
+              <modal-content class="w-full rounded-none md:w-2/3 md:p-8 max-w-[720px]">
+                <modal-header class="items-center justify-end p-3 border-none">
+                  <modal-close>
+                    <div class="flex justify-end">
+                      {% render 'icon-close' %}
+                    </div>
+                  </modal-close>
+                </modal-header>
+                <div class="max-w-3xl px-[25px] pt-0 pb-6 m-auto text-center md:px-8">
+                  <h2 id="AddressNewHeading" class="mb-4 text-2xl font-bold uppercase">{{ 'customer.addresses.add_new' | t }}</h2>
+                  {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading' -%}
+                    <div class="flex flex-col md:flex-row">
+                      <div class="flex flex-col mb-7 md:pr-[14px] text-left md:w-1/2">
+                        <label class="mb-1 text-[15.5px]" for="AddressFirstName_{{ form.id }}">{{ 'customer.addresses.first_name' | t }}*</label>
+                        <input type="text" id="AddressFirstName_{{ form.id }}" class="{{ form_class }}" required name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
+                      </div>
+                      <div class="flex flex-col mb-7 md:pl-[14px] text-left md:w-1/2">
+                        <label class="mb-1 text-[15.5px]" for="AddressLastName_{{ form.id }}">{{ 'customer.addresses.last_name' | t }}*</label>
+                        <input type="text" id="AddressLastName_{{ form.id }}" class="{{ form_class }}" required name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name" placeholder="{{ 'customer.addresses.last_name' | t }}">
+                      </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row">
+                      <div class="flex flex-col mb-7 md:pr-[14px] text-left md:w-1/2">
+                        <label class="mb-1 text-[15.5px]" for="AddressCompany_{{ form.id }}">{{ 'customer.addresses.company' | t }}</label>
+                        <input type="text" id="AddressCompany_{{ form.id }}" class="{{ form_class }}" name="address[company]" value="{{ form.company }}" autocomplete="organization" placeholder="{{ 'customer.addresses.company' | t }}">
+                      </div>
+                      <div class="flex flex-col mb-7 md:pl-[14px] text-left md:w-1/2">
+                        <label class="mb-1 text-[15.5px]" for="AddressAddress1_{{ form.id }}">{{ 'customer.addresses.address1' | t }}*</label>
+                        <input type="text" id="AddressAddress1_{{ form.id }}" class="{{ form_class }}" required name="address[address1]" value="{{ form.address1 }}" autocomplete="address-line1" placeholder="{{ 'customer.addresses.address1' | t }}">
+                      </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row">
+                      <div class="flex flex-col mb-7 md:pr-[14px] text-left md:w-1/2">
+                        <label class="mb-1 text-[15.5px]" for="AddressAddress2_{{ form.id }}">{{ 'customer.addresses.address2' | t }}</label>
+                        <input type="text" id="AddressAddress2_{{ form.id }}" class="{{ form_class }}" name="address[address2]" value="{{ form.address2 }}" autocomplete="address-line2" placeholder="{{ 'customer.addresses.address2' | t }}">
+                      </div>
+                      <div class="flex flex-col mb-7 md:pl-[14px] text-left md:w-1/2">
+                        <label class="mb-1 text-[15.5px]" for="AddressCity_{{ form.id }}">{{ 'customer.addresses.city' | t }}*</label>
+                        <input type="text" id="AddressCity_{{ form.id }}" class="{{ form_class }}" required name="address[city]" value="{{ form.city }}" autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
+                      </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row">
+                      <div class="flex flex-col mb-7 md:pr-[14px] text-left md:w-1/2">
+                        <label class="mb-1 text-[15.5px]" for="AddressZip_{{ form.id }}">{{ 'customer.addresses.zip' | t }}*</label>
+                        <input type="text" id="AddressZip_{{ form.id }}" class="{{ form_class }}" required name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code" placeholder="{{ 'customer.addresses.zip' | t }}">
+                      </div>
+                      <div class="flex flex-col mb-7 md:pl-[14px] text-left md:w-1/2">
+                        <label class="mb-1 text-[15.5px]" for="AddressPhone_{{ form.id }}">{{ 'customer.addresses.phone' | t }}*</label>
+                        <input type="tel" id="AddressPhone_{{ form.id }}" class="{{ form_class }}" required name="address[phone]" value="{{ form.phone }}" autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
+                      </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row">
+                      <div class="flex flex-col mb-7 md:pr-[14px] text-left md:w-1/2">
+                        <label class="mb-1 text-[15.5px]" for="AddressCountry_{{ form.id }}">
+                          {{ 'customer.addresses.country' | t }}
+                        </label>
+                        <div class="select max-w-fit">
+                          <select
+                            id="AddressCountry_{{ form.id }}"
+                            name="address[country]"
+                            required
+                            data-address-country-select
+                            data-default="{{ form.country }}"
+                            data-form-id="{{ form.id }}"
+                            autocomplete="country"
+                            class="max-w-[100%]"
+                          >
+                            {{ all_country_option_tags }}
+                          </select>
+                        </div>
+                      </div>
+                      <div class="flex flex-col mb-7 md:pl-[14px] text-left md:w-1/2" id="AddressProvinceContainer_{{ form.id }}" style="display:none;">
+                        <label class="mb-1 text-[15.5px]" for="AddressProvince_{{ form.id }}">
+                          {{ 'customer.addresses.province' | t }}
+                        </label>
+                        <div class="select">
+                          <select
+                            id="AddressProvince_{{ form.id }}"
+                            name="address[province]"
+                            class="w-full {{ form_class }}"
+                            data-default="{{ form.province }}"
+                            autocomplete="address-level1">
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-row gap-1 mb-7 text-sm text-left md:w-1/2">
+                      {{ form.set_as_default_checkbox }}
+                      <label for="address_default_address_{{ form.id }}">
+                        {{ 'customer.addresses.set_default' | t }}
+                      </label>
+                    </div>
+                    <div class="flex flex-row gap-5 mt-4">
+                      <button class="px-5 py-3 text-base font-semibold text-white border border-solid cursor-pointer border-acajou rounded-3xl bg-acajou hover:bg-transparent hover:text-acajou">{{ 'customer.addresses.add' | t }}</button>
+                      <modal-close class="flex items-center text-sm">
+                        <button class="underline" type="reset">{{ 'customer.addresses.cancel' | t }}</button>
+                      </modal-close>
+                    </div>
+                  {%- endform -%}
+                </div>
+              </modal-content>
+            </modal-overlay>
+            <modal-trigger class="px-5 py-3 text-base font-semibold text-white border border-solid cursor-pointer border-acajou rounded-3xl bg-acajou hover:bg-transparent hover:text-acajou"
+              aria-expanded="false"
+              aria-controls="AddAddress">
+              {{ 'customer.addresses.add_new' | t }}
+            </modal-trigger>
+          </tail-modal>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.onload = () => {
+    typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
+  }
+</script>

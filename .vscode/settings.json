@@ -1,0 +1,11 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "tail.js": "tail.*.js, tail.*.css, critical.css",
+    "*.config.js": "$(capture).*.min.css, $(capture).*.css, $(capture).*.js",
+    "package.json": ".gitignore,.pnpm-debug.log,.prettierignore,minify.js,.liquidrc,.pnpm-lock.yaml,.shopifyignore,pnpm-lock.yaml",
+    "*.liquid": "$(capture)-*.liquid"
+  },
+  "liquid.format.enable": true
+}

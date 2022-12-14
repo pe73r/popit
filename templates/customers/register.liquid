@@ -1,0 +1,108 @@
+<div class="w-11/12 max-w-screen-sm m-auto my-10 md:my-16">
+  <h1 class="text-3xl md:text-4xl text-center mb-5">
+    Inscription
+  </h1>
+  {%- form 'create_customer' -%}
+    {%- if form.errors -%}
+      <ul class="text-sm text-red-400">
+        {%- for field in form.errors -%}
+          <li>
+            {%- if field == 'form' -%}
+              {{ form.errors.messages[field] }}
+            {%- else -%}
+              <a class="text-capucine" href="#RegisterForm-{{ field }}">
+                {{ form.errors.translated_fields[field] | capitalize }}
+                {{ form.errors.messages[field] }}
+              </a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    <!-- First name -->
+    <div class="mb-5 text-left">
+      <label for="RegisterForm-FirstName" class="block relative left-1 mb-1 text-sm">
+        Prénom
+      </label> 
+      <input
+        type="text"
+        name="customer[first_name]"
+        class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full"
+        id="RegisterForm-FirstName"
+        {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
+        autocomplete="given-name"
+        placeholder="{{ 'customer.register.first_name' | t }}"
+      >
+    </div>
+
+    <!-- Last name -->
+    <div class="mb-5 text-left">
+      <label for="RegisterForm-LastName" class="block relative left-1 mb-1 text-sm">
+        Nom
+      </label>
+      <input
+        type="text"
+        name="customer[last_name]"
+        class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full"
+        id="RegisterForm-LastName"
+        {% if form.last_name %}value="{{ form.last_name }}"{% endif %}
+        autocomplete="family-name"
+        placeholder="{{ 'customer.register.last_name' | t }}"
+      >
+    </div>
+
+    <!-- Email -->
+    <div class="mb-5">
+      <label for="RegisterForm-email" class="block relative left-1 mb-1 text-sm">
+        Adresse mail
+      </label>   
+      <input
+        type="email"
+        name="customer[email]"
+        class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full"
+        id="RegisterForm-email"
+        {% if form.email %} value="{{ form.email }}"{% endif %}
+        spellcheck="false"
+        autocapitalize="off"
+        autocomplete="email"
+        aria-required="true"
+        {% if form.errors contains 'email' %}
+        aria-invalid="true"
+        aria-describedby="RegisterForm-email-error"
+        {% endif %}
+        placeholder="{{ 'customer.register.email' | t }}">
+    </div>
+
+    <!-- Password -->
+    <div class="mb-5">
+      <label for="RegisterForm-password" class="block relative left-1 mb-1 text-sm">
+        {{ 'customer.register.password' | t }}
+      </label>
+      <input
+        type="password"
+        name="customer[password]"
+        class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full"
+        id="RegisterForm-password"
+        aria-required="true"
+        {% if form.errors contains 'password' %}
+        aria-invalid="true"
+        aria-describedby="RegisterForm-password-error"
+        {% endif %}
+        placeholder="{{ 'customer.register.password' | t }}">
+    </div>
+
+    <!-- Checkbox -->
+    <div class="py-4 flex items-center default--filters text-xs">
+      <input type="checkbox" id="checkbox_legal" value="legal" required>
+      <label class="ml-2" for="checkbox_legal">En créant votre compte, vous acceptez l'intégralité de nos cgv et
+        <a class="underline" target="_blank" href="/pages/cgv">notre politique de protection des données personnelles.</a>
+      </label>
+    </div>
+
+    <!-- Button -->
+    <button class="w-full mx-auto my-2 border-acajou tracking-wider border mt-5 mb-5 border-solid px-5 py-2 font-semibold text-base rounded-3xl bg-acajou hover:bg-transparent text-white hover:text-acajou cursor-pointer">
+      Créer mon compte
+    </button>
+  {%- endform -%}
+</div>

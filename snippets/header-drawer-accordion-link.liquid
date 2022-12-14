@@ -1,0 +1,4 @@
+<a class="block w-full px-4 py-2 text-xl hover:bg-slate-200 {% if childLink.current %} text-blue-500 {% endif %}"
+    {% if childLink.current %} aria-active="true" aria-current="page" {% endif %} href="{{ childLink.url }}">
+ {{ childLink.title | escape }}
+</a>

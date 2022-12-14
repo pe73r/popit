@@ -1,0 +1,33 @@
+<!-- related products -->
+{% assign product_related_1 = product.metafields.global.upsell_product_1  %}
+{% assign product_related_2 = product.metafields.global.upsell_product_2 %}
+{% assign upsell_1_in_stock = all_products[product_related_1].available %}
+
+{% if product_related_1 != blank and upsell_1_in_stock == true %}
+   <div class="bg-white rounded-md p-4 md:p-5">
+         <p class="mb-4 text-base">
+           NOS ACHETEURS AIMENT AUSSI
+         </p>
+         <div>
+             {% render 'card-product-inline'
+                 product: all_products[product_related_1],
+                 show_secondary_image: false,
+                 show_vendor: false,
+                 show_quick_add: true
+             %}
+        </div>
+     {% assign upsell_2_in_stock = all_products[product_related_2].available %}
+     {% if product_related_2 != blank and upsell_2_in_stock == true %}
+         <div class="mt-5 border-t border-gray-300">
+              <div class="">
+                   {% render 'card-product-inline'
+                       product: all_products[product_related_2],
+                       show_secondary_image: false,
+                       show_vendor: false,
+                       show_quick_add: true
+                     %}
+             </div>
+         </div>
+     {% endif %}
+   </div>
+ {% endif %}

@@ -1,0 +1,280 @@
+<script>function makeId(type) {
+  return `${type}-${parseInt(
+    Math.ceil(Math.random() * Date.now())
+      .toPrecision(6)
+      .toString()
+      .replace(".", "")
+  )}`;
+}
+class Dialog extends HTMLElement {
+  constructor(type, withOverlay) {
+    super();
+    this.id = makeId(type);
+    this.classList.add("group");
+    this.content = this.querySelector(`${type}-content`) || this.querySelector(`[is="${type}-content"]`);
+    this.setTransitionState("out", false);
+
+    this.trigger = this.querySelector(`${type}-trigger`) || this.querySelector(`[is="${type}-trigger"]`);
+    this.trigger && this.trigger.addEventListener("click", this.toggle);
+
+    this.closeButton = this.querySelector(`${type}-close`) || this.querySelector(`[is="${type}-close"]`);
+
+    if (withOverlay) {
+      this.overlay = this.querySelector(`${type}-overlay`);
+      if (!this.overlay) {
+        this.overlay = document.createElement(`${type}-overlay`);
+        this.append(this.overlay);
+      }
+      this.overlay.addEventListener("click", this.toggle);
+    }
+
+    this.setContentAttributes();
+  }
+  setContentAttributes = () => {
+    this.content.setAttribute("aria-hidden", "true");
+    this.content.setAttribute("aria-modal", "true");
+    this.content.setAttribute("aria-labelledby", this.id);
+    this.content.setAttribute("role", "dialog");
+
+    if (this.closeButton) {
+      this.closeButton.addEventListener("click", this.toggle);
+      this.closeButton.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          this.toggle();
+        }
+      });
+      this.closeButton.setAttribute("role", "button");
+      this.closeButton.setAttribute("tabindex", "0");
+      this.closeButton.setAttribute("aria-pressed", "false");
+      this.closeButton.setAttribute("aria-labelledby", this.id);
+      this.closeButton.setAttribute("aria-label", "Close modal");
+    }
+  };
+
+  setTransitionState = (state, open) => {
+    this.setAttribute("data-transition", state);
+    this.content.setAttribute("aria-hidden", String(!open));
+    this.isOpen = open;
+
+    // Lock scroll if needed
+    if (this.lockScroll) {
+      document.body.style.overflow = open ? "hidden" : "auto";
+      document.body.style.marginRight = open ? "15px" : "0px";
+    }
+
+    // On clickoutside the thing
+    if (this.closeOnClickOutside) {
+      document[open ? "addEventListener" : "removeEventListener"]("click", this.onClickOutside);
+    }
+    // On escape close the thing
+    document[open ? "addEventListener" : "removeEventListener"]("keyup", this.onKeyUp);
+    // TODO ADD FOCUS TRAP
+  };
+
+  toggle = () => {
+    if (this.isOpen) {
+      this.setTransitionState("exiting");
+      setTimeout(() => this.setTransitionState("out", false), 150);
+    } else {
+      this.setTransitionState("entering");
+      setTimeout(() => this.setTransitionState("in", true));
+    }
+  };
+
+  onKeyUp = (event) => {
+    if (event.code.toUpperCase() === "ESCAPE") this.toggle();
+  };
+  onClickOutside = (event) => {
+    if (this.contains(event.target)) {
+      return;
+    }
+    this.toggle();
+  };
+}
+
+customElements.define(
+  "modal-dialog",
+  class ModalDialog extends Dialog {
+    lockScroll = true;
+    constructor() {
+      super("modal", true);
+    }
+  }
+);
+
+customElements.define(
+  "modal-content",
+  class ModalContent extends HTMLElement {
+    constructor() {
+      super();
+      this.classList.add(
+        "group-entering:block",
+        "group-entering:opacity-0",
+        "group-entering:scale-95",
+        "group-in:scale-100",
+        "group-in:opacity-100",
+        "group-exiting:d-block",
+        "group-exiting:scale-90",
+        "group-exiting:opacity-0",
+        "group-out:opacity-0",
+        "group-out:hidden"
+      );
+    }
+  }
+);
+
+customElements.define(
+  "modal-overlay",
+  class ModalOverlay extends HTMLElement {
+    constructor() {
+      super();
+      this.setAttribute("tabindex", "-1");
+      this.classList.add(
+        "group-in:opacity-70",
+        "group-exiting:opacity-0",
+        "group-out:hidden",
+        "group-entering:block",
+        "group-entering:opacity-0",
+        "z-[19]"
+      );
+    }
+  }
+);
+
+customElements.define(
+  "modal-header",
+  class ModalHeader extends HTMLElement {
+    constructor() {
+      super();
+      this.classList.add("first-element:flex-1");
+    }
+  }
+);
+
+customElements.define("modal-footer", class ModalFooter extends HTMLElement {});
+customElements.define("modal-trigger", class ModalTrigger extends HTMLElement {});
+
+customElements.define("modal-close", class CloseButton extends HTMLButtonElement {}, { extends: "button" });
+
+customElements.define(
+  "accordion-group",
+  class Popup extends HTMLElement {
+    constructor() {
+      super();
+      this.elements = this.querySelectorAll("accordion-element");
+      this.addEventListener("click", this.onClick);
+      this.oneAtATime = this.getAttribute("oneAtATime") !== "false";
+    }
+
+    onClick = (e) => {
+      const trigger = e.composedPath().find((element) => element.tagName?.toLowerCase() === "accordion-trigger");
+      if (!trigger) return;
+      const accordion = trigger.parentElement;
+      const isOpen = accordion.getAttribute("data-open") === "true";
+
+      if (!this.oneAtATime) {
+        trigger.parentElement.setAttribute("data-open", String(!isOpen));
+      } else {
+        this.elements.forEach((element) => {
+          element.setAttribute("data-open", String(element === accordion && !isOpen));
+        });
+      }
+    };
+  }
+);
+
+customElements.define(
+  "accordion-element",
+  class PopupContent extends HTMLElement {
+    static get observedAttributes() {
+      return ["data-open"];
+    }
+
+    constructor() {
+      super();
+      this.setAttribute("data-open", "false");
+      this.trigger = this.querySelector("accordion-trigger");
+      this.trigger.id = makeId("accordion-trigger");
+      this.trigger.setAttribute("aria-expanded", "false");
+      this.trigger.setAttribute("role", "button");
+      this.trigger.setAttribute("tabindex", "0");
+      this.trigger.setAttribute("aria-pressed", "false");
+      this.trigger.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          this.trigger.click();
+        }
+      });
+
+      this.content = this.querySelector("accordion-content");
+      this.content.id = makeId("accordion-content");
+      this.content.setAttribute("role", "region");
+      this.content.style.height = `0px`;
+
+      this.trigger.setAttribute("aria-controls", this.content.id);
+      this.content.setAttribute("aria-labelledby", this.trigger.id);
+    }
+
+    attributeChangedCallback(_name, oldValue, newValue) {
+      console.log({ oldValue });
+      if (oldValue === newValue) {
+        return;
+      }
+      if (newValue === "true") {
+        this.content.removeAttribute("hidden");
+        this.content.style.height = `${this.content.scrollHeight}px`;
+        setTimeout(() => {
+          this.content.style.height = "auto";
+        }, 150);
+      } else {
+        this.content.style.height = `${this.content.scrollHeight}px`;
+        setTimeout(() => {
+          this.content.style.height = `0px`;
+        });
+        setTimeout(() => {
+          this.content.setAttribute("hidden", "true");
+        }, 150);
+      }
+    }
+  }
+);
+
+customElements.define("accordion-content", class PopupContent extends HTMLElement {});
+customElements.define("accordion-header", class PopupTrigger extends HTMLElement {});
+customElements.define("accordion-trigger", class PopupTrigger extends HTMLElement {});
+customElements.define("accordion-icon", class PopupTrigger extends HTMLElement {});
+
+customElements.define(
+  "popup-dialog",
+  class Popup extends Dialog {
+    closeOnClickOutside = true;
+    constructor() {
+      super("popup", false);
+    }
+  }
+);
+
+customElements.define(
+  "popup-content",
+  class PopupContent extends HTMLElement {
+    constructor() {
+      super();
+      this.classList.add(
+        "group-entering:block",
+        "group-entering:opacity-0",
+        "group-entering:scale-95",
+        "group-in:scale-100",
+        "group-in:opacity-100",
+        "group-exiting:d-block",
+        "group-exiting:scale-90",
+        "group-exiting:opacity-0",
+        "group-out:opacity-0",
+        "group-out:hidden"
+      );
+    }
+  }
+);
+
+customElements.define("popup-trigger", class PopupTrigger extends HTMLElement {});
+</script>

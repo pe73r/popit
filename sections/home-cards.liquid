@@ -1,0 +1,136 @@
+
+<div class="py-10 md:py-16">
+    <div class="w-11/12 mx-auto md:max-w-{{ section.settings.container }}">
+     <div class="flex flex-col md:flex-row gap-5 md:gap-6 lg:gap-10">
+       {%- for block in section.blocks -%}
+          <div class="w-full md:1/2 bg-cover bg-no-repeat flex items-center justify-center rounded-md h-[370px] md:h-[500px] text-center p-5 {% if block.settings.card_width == "3/5" %} md:w-3/5 {% elsif block.settings.card_width == "2/5" %} md:w-2/5 {% endif %}" 
+            style="background-image: url({{block.settings.image | img_url: '1000x' }});">
+            <div>
+                <h3 class="text-[28px] leading-8 md:text-[32px] md:leading-10 mb-5" style="color:{{ section.settings.color }};">{{ block.settings.title }}</h3>
+                {% if block.settings.show_hr %}
+                    <hr class="block border-b w-[40px] mx-auto border-white mb-5">
+                {% endif %}
+                {% if block.settings.text != blank  %}
+                    <div class="text-sm" style="color:{{ section.settings.color }};">
+                         {{ block.settings.text }} 
+                    </div>
+                {% endif %}
+                {% if block.settings.cta != blank  %}
+                    <a href="{{ block.settings.button_link }}"
+                        class="block mt-10 max-w-max mx-auto {% render "button" size: "small" %}"
+                        style="color: {{ section.settings.color }}; border: 1px solid {{ section.settings.color }}">
+                        {{ block.settings.cta }}
+                      </a>
+                {% endif %}
+            </div>
+          </div>
+       {%- endfor -%}
+     </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Home cards",
+    "tag": "section",
+    "settings": [
+        {
+        "type": "select",
+        "id": "container",
+        "options": [
+            {
+            "value": "7xl",
+            "label": "large"
+            },
+            {
+            "value": "5xl",
+            "label": "medium"
+            },
+            {
+            "value": "3xl",
+            "label": "small" 
+            }
+        ],
+        "default": "7xl",
+        "label": "Container desktop"
+      }, 
+      {
+        "type": "header",
+        "content": "colors"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Text color",
+        "default": "#fff"
+      }
+    ],
+    "blocks": [
+            {
+            "name": "card",
+            "type": "card",
+            "limit": 3,
+            "settings": [
+                {
+                "type": "select",
+                "id": "card_width",
+                "options": [
+                    {
+                    "value": "1/2",
+                    "label": "half"
+                    },
+                    {
+                    "value": "3/5",
+                    "label": "two-thirds"
+                    },
+                    {
+                    "value": "2/5",
+                    "label": "one-third" 
+                    }
+                ],
+                "default": "1/2",
+                "label": "Card width"
+            }, 
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "default": "Notre sélection de vins d’exception ! ",
+                "label": "Title"
+            },
+            {
+                "type": "checkbox",
+                "id": "show_hr",
+                "default": true,
+                "label": "show separator"
+            },
+            {
+                "type": "richtext",
+                "id": "text",
+                "default": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.</p>",
+                "label": "Text"
+            },
+            {
+                "type": "text",
+                "id": "cta",
+                "default": "Je découvre",
+                "label": "Button"
+            },
+            {
+                "type": "url",
+                "id": "button_link",
+                "label": "Link"
+            }
+       ]
+     }
+   ],
+    "presets": [
+      {
+        "name": "Home cards"
+      }
+    ]
+  }
+  {% endschema %}

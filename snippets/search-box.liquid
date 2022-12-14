@@ -1,0 +1,13 @@
+<a href="/collections/tous-nos-produits">
+    <button data-search-box class="relative items-center justify-center w-10 h-10 p-2 hidden md:block">
+        {% render "icon-search"  %}
+    </button>
+</a>
+{%- comment -%} <form class="relative flex items-center md:w-[320px]" action="{{ routes.search_url }}">
+    <input
+    name="q"
+    value="{{ search.terms | escape }}"
+    class="rounded-2xl w-full text-sm pl-3 py-1 pr-10 border-[0.5px] ring-0 border-gray-medium focus:outline-none transition-all focus:ring-1 ring-capucine" type="text" placeholder="Rechercher" />
+
+    <input type="submit" value="Search" class="hidden" tra>
+ </form> {%- endcomment -%}

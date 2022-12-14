@@ -1,0 +1,184 @@
+{% assign s = section.settings %}
+
+<div class="py-20 md:py-20">
+  <!-- section header -->
+  {%- if s.show_title -%}
+    <div class="w-11/12 mx-auto">
+        <div class="text-left md:text-center mb-4 md:mb-8 relative">
+            <h2 class="ml-3 md:ml-0 text-[20px] md:text-[32px] font-bold">
+                {% if s.title != blank  %}
+                {{ s.title }}
+                {% endif %}
+            </h2>
+            
+            {% if s.collection_link != blank %}
+                <a href="{{ s.url }}" class="text-sm underline accent-color absolute right-0 top-[5px] md:top-[20px]">{{ s.collection_link }}</a>
+            {% endif %}
+        </div>
+     </div>
+   {%- endif -%}
+
+      <!-- carousel desktop -->
+      <div class="hidden md:block md:w-11/12 md:max-w-{{ section.settings.container }} mx-auto">
+        <tail-carousel slidesToShow="xs:1 md:3 lg:4">
+            <carousel-container>
+            <carousel-content class="w-full">
+                {% for block in section.blocks %}
+                    <carousel-panel class="px-2">
+                        <div class="w-full py-6 h-[400px] flex flex-col justify-end bg-cover bg-no-repeat rounded-md" style="background-image: url({{block.settings.image | img_url: '1000x' }});">
+                            <div class="text-center">
+                                <h4 class="text-[28px] font-bold" style="color: {{ section.settings.color }}">{{ block.settings.title }}</h4>
+                                {% if block.settings.collection_link != blank %}
+                                    <a href="{{ block.settings.url }}" class="text-sm underline" style="color: {{ section.settings.color }}">{{ block.settings.collection_link }}</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </carousel-panel>
+                {% endfor %}
+            </carousel-content>
+            </carousel-container>
+            {% if s.show_arrows %}
+            <carousel-next class="hidden md:block absolute right-[-6px] top-[50%] translate-y-[-50%] z-[1] cursor-pointer disabled:opacity-50 disabled:cursor-auto">
+                {% render 'icon-arrow-right' %}
+            </carousel-next>
+            <carousel-prev class="hidden md:block absolute left-[-6px] top-[50%] translate-y-[-50%] z-[1] cursor-pointer disabled:opacity-50 disabled:cursor-auto">
+                {% render 'icon-arrow-left' %}
+            </carousel-prev>
+            {% endif %}  
+
+            {% if s.show_dots %}
+            <carousel-dots class="relative flex justify-center mt-10">
+                <carousel-dot class="w-full h-[3px] transition-all bg-sable border-[1px] border-sable selected:bg-black selected:border-black selected:w-1/2">
+                </carousel-dot>
+            </carousel-dots>
+            {% endif %}
+        </tail-carousel>
+     </div>
+
+     <!-- carousel mobile -->
+     <div class="block md:hidden">
+        <div class="flex relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-2 scrollbar pb-6 ml-6">
+            {% for block in section.blocks %}
+                <div class="w-[200px] min-w-[200px] py-6 h-[300px] flex flex-col justify-end bg-cover bg-no-repeat rounded-md" style="background-image: url({{block.settings.image | img_url: '1000x' }});">
+                    <div class="text-center">
+                      <h4 class="text-[28px] font-bold" style="color: {{ section.settings.color }}">{{ block.settings.title }}</h4>
+                        {% if block.settings.collection_link != blank %}
+                            <a href="{{ block.settings.url }}" class="text-sm underline" style="color: {{ section.settings.color }}">{{ block.settings.collection_link }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Carousel cards",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "options": [
+        {
+          "value": "7xl",
+          "label": "large"
+        },
+        {
+          "value": "5xl",
+          "label": "medium"
+        },
+        {
+          "value": "3xl",
+          "label": "small" 
+        }
+      ],
+      "default": "7xl",
+      "label": "Container desktop"
+    }, 
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Nos catégories"
+    },
+    {
+      "type": "text",
+      "id": "collection_link",
+      "label": "Link",
+      "default": "Voir tout"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "url"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show Title?",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show bar",
+      "default": true
+    },
+    {
+        "type": "header",
+        "content": "colors"
+    },
+    {
+         "type": "color",
+         "id": "color",
+         "label": "Text color",
+         "default": "#FFFFFF"
+    }
+
+  ],
+  "blocks": [
+     {
+       "name": "Card",
+       "type": "card",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         },
+         {
+           "type": "textarea",
+           "id": "title",
+           "label": "Title",
+           "default": "Vins"
+         },
+         {
+            "type": "text",
+            "id": "collection_link",
+            "label": "Collecion link",
+            "default": "Je décrouve",
+            "info": "link to collection"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "url"
+          }
+       ]
+     }
+   ],
+  "presets": [
+        {
+        "name": "Carousel cards"
+    }
+  ]
+}
+{% endschema %}

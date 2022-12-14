@@ -1,0 +1,28 @@
+
+
+<megamenu-sub class="grid grid-cols-12 gap-4 max-h-[80vh] overflow-y-auto overflow-y-auto-hidden ">
+    <div class="flex flex-col items-end col-span-2 px-2 lg:px-0" >
+        {% if submenu != blank %}
+            {% for links in submenu.links %}
+                <megamenu-sub-trigger  data-menu="{{links.title}}" class="group flex items-center justify-between lg:w-3/4 w-full lg:p-2 p-0.5 mt-2 cursor-pointer last:border-b-0 border-b-[1px] border-[#E0E0E0] ">
+                    <div class="lg:px-2 px-0.5 text-3xl">
+                        {{ links.title }}
+                    </div>
+                        <svg width="6"  class="relative icon-arrow-right group-expanded:text-black" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="stroke-1 group-expanded:stroke-2" d="M1.28571 1.28577L9 9.00005L1.28571 16.7143" stroke="currentColor"stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                </megamenu-sub-trigger>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="col-span-8 lg:col-span-7 ">
+        {% for links in submenu.links %}
+            <megamenu-sub-menu data-menu="{{links.title}}" class="z-0 hidden w-full py-4 transition-opacity opacity-0 pointer-events-none lg:pl-5 columns-3 expanded:opacity-100 expanded:block expanded:z-10 expanded:pointer-events-auto" >
+                        {% render "header-menu-sublinks", links: links %}
+            </megamenu-sub-menu>
+        {% endfor %}
+</div>
+    <div class="col-span-2 lg:col-span-3" >
+       {% render "header-menu-featured-links", block:block, limit:1 %}
+    </div>
+</megamenu-sub>

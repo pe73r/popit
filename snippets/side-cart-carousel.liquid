@@ -1,0 +1,21 @@
+{%- if section.settings.show_carousel_reassurance -%}
+    <tail-carousel log="true" slidesToShow="xs:1 sm:1 lg:1 xl:1"  class="flex-1 w-full p-2 bg-white bg-opacity-50 rounded-md">
+        <carousel-container class="">
+            <carousel-content class="w-full">
+                {% for block in section.blocks %}
+                    {%- if block.type == "reassurances" -%}
+                    <carousel-panel class="">
+                        <div class="max-w-[85%]">
+                            <span class="block font-bold text-sm">{{ block.settings.title }}</span>
+                            <div class="text-xs">{{ block.settings.text }}</div>
+                        </div>
+                    </carousel-panel>
+                    {%- endif -%}
+                {% endfor %}
+            </carousel-content>
+        </carousel-container> 
+        <carousel-dots class="absolute flex items-center justify-center right-3 top-[50%] translate-y-[-50%]">
+            <carousel-dot class="w-[4px] h-[4px] mr-1 transition-all bg-white border border-gray-dark rounded-full selected:w-[8px] selected:h-[8px] selected:bg-gray-dark"></carousel-dot>
+        </carousel-dots>
+    </tail-carousel>
+{%- endif -%}

@@ -1,0 +1,191 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="" name="theme-color">
+
+    {% if template contains 'search' %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
+    {% if handle contains 'products' %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
+    {% if handle contains 'collections' %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
+    {% if handle contains 'pages' %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
+    {% if handle contains 'blogs' %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
+    {% if handle contains 'account' %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link crossorigin href="https://cdn.shopify.com" rel="preconnect">
+    <script src="{{ 'global.js' | asset_url }}" async></script>
+    <script src="{{ 'lazysides.min.js' | asset_url }}" async></script>
+
+    <!-- shopify fonts -->
+    {% render 'css-variables' %}
+
+    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    <!-- TAILWIND CONFIGURATION -->
+    {% if theme.name != "staging" and theme.name != "production"  %}
+
+      {{ 'critical.css' | asset_url | stylesheet_tag }}
+      <script rel="preconnect" src="https://cdn.tailwindcss.com"></script>
+      <script preload>
+        (async () => {
+          const [configRes, layoutRes, styleRes] = await Promise.all([
+            fetch("{{ 'tailwind.config.js' | asset_url }}"),
+            fetch("{{ 'tail.layout.css' | asset_url }}"),
+            fetch("{{ 'tail.style.css' | asset_url }}")
+          ]);
+          const text = await configRes.text()
+          console.log({text});
+          tailwind.config = eval(`(${
+            text.replace("module.exports = ", "").replace("module.exports=", "").replace("};", "}")
+          })`);
+          const apply = document.createElement("style");
+          apply.setAttribute("type", "text/tailwindcss");
+          apply.innerHTML = `${
+            (await Promise.all([layoutRes.text(), styleRes.text()])).join("\n")
+          }`;
+          document.head.appendChild(apply);
+        })()
+      </script>
+
+
+
+      <script src="{{ 'tail.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.modal.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.drawer.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.cart.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.popup.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.accordion.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.carousel.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.header.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.marquee.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.details.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.tabs.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.atc.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.megamenu.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.filters.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.dropzone.js' | asset_url }}" preload></script>
+      <script src="{{ 'tail.account.js' | asset_url }}" preload></script>
+
+    {% else %}
+      {% render "styles" %}
+      {% render "scripts" %}
+    {% endif %}
+    <script>
+        const url = new URL(window.location.href);
+        const reset_password_url = decodeURIComponent(url.searchParams.get("reset_password_url"));
+      if (reset_password_url && reset_password_url !== "null") {
+        window.location.href = reset_password_url;
+      }
+    </script>
+    <!-- END OF TAILWIND CONFIGURATION -->
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+      <link crossorigin href="https://fonts.shopifycdn.com" rel="preconnect">
+    {%- endunless -%}
+
+    <title>
+      {{- page_title -}}{%- if current_tags %} | tagged "{{ current_tags | join: ', ' }}"{% endif -%}{%- if current_page != 1 %} | Page  {{ current_page }} {% endif -%}{%- unless page_title contains shop.name %} | {{ shop.name }}{% endunless -%}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags' %}
+
+    {{ content_for_header }}
+
+</head>
+  <body>
+    <tail-header class="shadow-none sticky top-0 z-50 py-1">
+      <div class="grid grid-cols-11 h-[60px] items-center gap-4">
+        <div class="col-span-3 md:col-span-5">
+          {% section "header" %}
+        </div>
+        <div class=" flex justify-center col-span-5 md:col-span-1">
+          {% section 'logo' %}
+        </div>
+        <div class="flex justify-end col-span-3 md:gap-4 md:col-span-5 pr-[20px] md:pr-10 lg:pr-20">
+            {% comment %}
+            {% render "search-box" %}
+            {% endcomment %}
+            {% render "customer-menu" %}
+            {% section 'side-cart' %}
+        </div>
+      </div>
+  </tail-header>
+
+
+    <main id="MainContent" role="main" tabindex="-1">
+      {%- assign page_url = content_for_header | split: '"pageurl":"' | last | split: '"' | first | split: request.host | last | replace: '\/','/' | replace: '%20',' ' | replace: '\u0026', '&' -%}
+      {% if template contains 'account' and page_url contains 'orders=true' %}
+        {% render 'account-orders' %}
+      {% else %}
+        {{ content_for_layout }}
+      {% endif %}
+    </main>
+
+
+    {% section 'reinsurance' %}
+    {% section 'footer' %}
+
+    <ul hidden>
+      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}
+      </li>
+    </ul>
+
+    <script>
+      window.shopUrl = '{{ request.origin }}';
+      window.routes = {
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}',
+        predictive_search_url: '{{ routes.predictive_search_url }}'
+      };
+
+      window.cartStrings = {
+        error: `{{ 'sections.cart.cart_error' | t }}`,
+        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`
+      }
+
+      window.variantStrings = {
+        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+        soldOut: `{{ 'products.product.sold_out' | t }}`,
+        unavailable: `{{ 'products.product.unavailable' | t }}`
+      }
+
+      window.accessibilityStrings = {
+        imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
+        shareSuccess: `{{ 'general.share.success_message' | t }}`,
+        pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
+        playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`
+      }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+{%- assign blog = blogs[section.settings.blog] -%}
+{%- assign handle = handle -%}  
+{%- assign handle_complete = 'guide/' | append: handle  -%}
+
+
+<div class="mt-10 md:w-11/12 max-w-screen-xl md:mx-auto md:mt-[50px]">
+  <h2 class="leading-[30px] mx-10 text-center uppercase">{{ section.settings.heading }}</h2>
+  <div class="mt-10 my-10">
+    <!-- desktop -->
+    <div class="hidden md:flex md:flex-wrap">
+       {%- assign post_limit = section.settings.post_limit -%}
+        {% if template == 'article' and handle_complete == article.handle %}
+           {%- assign post_limit = post_limit -%}
+        {% endif %}
+        {%- for article in blog.articles limit: post_limit -%}
+          {%- assign article_handle = article.handle -%}
+            {%- unless handle_complete == article_handle -%}
+              <div class="w-1/2 lg:w-1/4 block snap-start px-4 mb-6">
+                {% render 'article-card', blog: section.settings.blog, article: article, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author, show_author: section.settings.show_author, show_button: section.settings.show_button, show_tag: section.settings.show_tag, show_date: section.settings.show_date, show_button: section.settings.show_button  %}
+              </div>
+            {%- endunless -%}
+        {%- endfor -%} 
+      </div>
+      <!-- mobile-->
+      <div class="flex md:hidden relative overflow-hidden overflow-x-scroll snap-mandatory snap-x ml-5 gap-4 scroller"> 
+        {%- for article in blog.articles -%}
+          {%- assign article_handle = article.handle -%}
+          {%- unless handle_complete == article_handle -%}
+            <div class="min-w-[250px]">
+              {% render 'article-card', blog: section.settings.blog, article: article, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author, show_author: section.settings.show_author, show_button: section.settings.show_button, show_tag: section.settings.show_tag, show_date: section.settings.show_date, show_button: section.settings.show_button  %}
+            </div>
+          {% endunless %}
+        {%- endfor -%} 
+      </div>
+    </div>
+  </div> 
+  <style>
+    .scroller::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+{% schema %}
+{
+  "name": "Featured Blog Grid",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "Choix du blog"
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "À LIRE...",
+      "label": "Titre"
+    },
+    {
+      "type": "header",
+      "content": "Grille d'articles"
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Nombre d'articles de blog à afficher en desktop"
+    },
+    {
+      "type": "header",
+      "content": "Contenu des articles"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": false,
+      "label": "Afficher la date"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "Afficher l'auteur"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "default": true,
+      "label": "Afficher le bouton"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured blog grid",
+      "settings": {
+        "blog": "Main Blog"
+      }
+    }
+  ]
+}
+{% endschema %}

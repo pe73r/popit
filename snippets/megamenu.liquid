@@ -1,0 +1,91 @@
+<megamenu-sub class="grid grid-cols-5 gap-5 max-h-[80vh] overflow-y-auto overflow-y-auto-hidden ">
+  {%- assign submenu_columns = 0 -%}
+  {% if submenu != blank %}
+    {% for links in submenu.links  %}
+      {%- assign submenu_columns = submenu_columns | plus: 1 -%}
+      <div>
+        <a href="{{ links.url }}" class="flex flex-row items-center gap-2 text-base uppercase text-acajou font-rebond-bold">
+          {% assign title = links.title | handle %}
+          {% render 'icons-menu', title: title, submenu: submenu %}
+          {%- liquid
+            assign bold_uppercase = 'nouveautes,allaitement,actifs,tous-nos-e-books,kids' | split: ','
+            if bold_uppercase contains title
+              assign class = 'uppercase font-[GroteskBold] font-bold text-base text-chataigne'
+            else
+              assign class = ''
+            endif
+          -%}
+          <span class="{{ class }}">{{ links.title }}</span>
+        </a>
+        <div class=" {% if forloop.index == 1 %}
+          text-base GroteskBold
+          {% else  %}
+           text-sm
+        {% endif %} text-chataigne">
+          {% for sublinks in links.links %}
+            
+            <div class="mt-3">
+              <a href="{{ sublinks.url }}" class="flex flex-row items-center gap-2">
+                {% assign title = sublinks.title | handle %}
+                {% render 'icons-menu', title: title, submenu: submenu %}
+
+                {%- liquid
+                  assign bold = 'voir-tous-les-produits, voir-tous-les-articles'
+                  assign uppercase = 'nos-recettes'
+                  assign bold_uppercase = 'meilleures-ventes,nos-coffrets,les-modes-d-emploi,seances-coaching' | split: ','
+                  assign bold_uppercase_blog = 'cycle-heureux,desir-denfant,grossesse,postpartum,fausse-couche,kids,accouchement' | split: ','
+                  if bold_uppercase contains title or submenu.title == "Blog" and bold_uppercase_blog contains title
+                    assign class = 'text-base font-bold uppercase GroteskBold'
+                  elsif bold contains title
+                    assign class = 'text-base font-bold'
+                  elsif uppercase contains title
+                    assign class = 'uppercase'
+                  else
+                    assign class = ''
+                  endif
+                -%}
+
+
+                <span class="{{ class }}   {% if title == "nos-recettes" %} text-base {% endif  %}   {% if sublinks.url == "/collections/all" %} text-base font-rebond  {% endif  %}">{{ sublinks.title }}</span>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  {%- liquid
+    assign counter = 0
+    for i in (1..3)
+      capture linkPath
+        echo 'featured_link_' | append: i
+      endcapture
+
+      capture imagePath
+        echo 'featured_link_image_' | append: i
+      endcapture
+
+      capture titlePath
+        echo 'featured_link_title_' | append: i
+      endcapture
+
+      assign link = block[linkPath]
+      assign image = block[imagePath]
+      assign title = block[titlePath]
+
+      if image != blank and title != blank and link != blank
+        assign counter = counter | plus: 1
+      endif
+    endfor
+  -%}
+
+  {% if counter < 3  and submenu_columns < 3 %}
+    <!-- workaround to add a column a do a justify-content:between in case there's only 2 images -->
+   <div>
+   </div>
+  {% endif %}
+  <div class="w-full col-start-{{ 6 | minus: counter }} col-span-{{ counter }}">
+    {% render 'header-menu-featured-links', block: block, limit: 2, counter: counter %}
+  </div>
+</megamenu-sub>

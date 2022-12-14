@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rectangle_304.png",
+        "title": "Oups,",
+        "subtitle": "NOUS AVONS PERDU CETTE PAGE.",
+        "text": "Mais pas de problème, un de nos vins et ça repart :",
+        "cta": "Nos vins rouges",
+        "ctaLink": "shopify:\/\/collections\/la-gamme-essentielle",
+        "cta_2": "Nos vins blancs",
+        "ctaLink_2": "",
+        "cta_3": "Nouveautés",
+        "ctaLink_3": "shopify:\/\/collections\/nouveau"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

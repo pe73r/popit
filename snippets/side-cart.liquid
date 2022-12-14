@@ -1,0 +1,14 @@
+
+<div data-cart-indicator>
+    {% for i in cart.items %}
+        {% if i.properties.is == "free" or i.variant_id == 44584120910070 %}
+            {% render 'side-cart-items' item:i %}
+        {% endif %}
+    {% endfor %}
+</div>
+{% for i in cart.items %}
+    {% if i.properties.is != "free" and i.variant_id != 44584120910070 %}
+        {% render 'side-cart-items' item:i %}
+    {% endif %}
+{% endfor %}
+

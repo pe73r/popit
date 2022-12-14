@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 12,
+        "show_collection_image": true,
+        "show_collection_title": true,
+        "show_breadcrumbs": true,
+        "show_collection_description": true,
+        "show_collection_size": false,
+        "show_secondary_image": true,
+        "enable_filtering": true,
+        "enable_sorting": false,
+        "filters_background": "#fcf9f3",
+        "show_product_dumie": true,
+        "product_dumie_title": "Le coup de projecteur vigneron",
+        "product_dumie_text": "<p>Chaque mois, nous mettons en avant un de nos producteurs pour vous raconter son histoire.<\/p>",
+        "product_dumie_link": "Je découvre",
+        "product_dumie_image": "shopify:\/\/shop_images\/72aa89ac54c8985e8268196747c5552d.png",
+        "color_dumie_link": "#ffffff",
+        "text_dumie_color": "#ffffff",
+        "header-image-footer-color": "#ffffff"
+      }
+    },
+    "fc1b2bc3-12e8-4674-8c3d-e22344d81d0b": {
+      "type": "rich-text-expandable",
+      "settings": {
+        "text_color": "#201a1c",
+        "title": "Que signigie l’appelation bio ?",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+        "more_text": "<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>",
+        "text_mobile": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+        "more_text_mobile": "<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>",
+        "text_link": "Lire plus",
+        "text_less": "Lire moins"
+      }
+    }
+  },
+  "order": [
+    "product-grid",
+    "fc1b2bc3-12e8-4674-8c3d-e22344d81d0b"
+  ]
+}

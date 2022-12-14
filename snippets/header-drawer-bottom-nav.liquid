@@ -1,0 +1,11 @@
+<div class="flex flex-col p-5 mt-auto bg-sable">
+  {% for link in elements[0].settings.menu.links %}
+    <a href="{{ link.url }}" class="text-left p-2 text-sm font-semibold text-chataigne tracking-[0.03em]">
+      <span class="block mt-1">{{ link.title }}</span>
+    </a>
+  {% endfor %}
+  <hr class="w-full mx-2 mt-5 mb-5 border-chataigne">
+  <div class="h-10">
+    <p class="text-left p-2 text-sm font-semibold text-chataigne tracking-[0.03em] uppercase">Belgique (FR)</p>
+  </div>
+</div>

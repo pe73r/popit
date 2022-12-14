@@ -1,0 +1,39 @@
+<section class="w-full">
+  <div class="w-full flex justify-center items-center min-h-[180px] bg-cover bg-center bg-no-repeat " style="background-image: url({{ section.settings.image | img_url: 'master' }});"">
+    {% if section.settings.text != blank %}
+      <h3 class="text-center text-[28px] md:text-[34px] uppercase" style="color:{{ section.settings.text_color }}"> {{ section.settings.text }} </h3>
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Image banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image desktop"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text banner"
+    },
+    {
+      "type": "header",
+      "content": "colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text banner"
+    }
+  ]
+}
+{% endschema %}

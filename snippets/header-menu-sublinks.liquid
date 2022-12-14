@@ -1,0 +1,12 @@
+{% for sublinks in links.links %}
+    <div  {% if sublinks.links.size > 4 %} class="break-inside-avoid-column"{% endif %} >
+        <div class="{% if forloop.index > 1 %}mt-4 {% endif %}text-sm font-bold text-capucine">
+            {{sublinks.title}}
+        </div>
+        {% for subsublinks in sublinks.links %}
+        <a href="{{  subsublinks.url }}" class="block pl-3 mt-2 text-sm"  >
+            {{subsublinks.title}}
+        </a>
+    {% endfor %}
+    </div>
+{% endfor %}

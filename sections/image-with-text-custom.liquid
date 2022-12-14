@@ -1,0 +1,121 @@
+<section>
+  {% for block in section.blocks %}
+    <div class="w-full flex flex-wrap {% if block.settings.layout == 'text_first' %} flex-row-reverse {% endif %}">
+      <div class=" flex w-full md:basis-1/2 relative">
+        {% if block.settings.image != blank %}
+          {% render "image" image: block.settings.image , class:"w-full object-cover lazy md:max-h-[576px]" %}
+        {% else %}
+          {{ 'image' | placeholder_svg_tag }}
+        {% endif %}
+
+        {% if block.settings.logo != blank %}
+          {% render "image" image: block.settings.logo, class:"absolute top-[45%] left-[50%] translate-x-[-50%] m-auto
+             text-center max-w-[93px] sm:max-w-[142px]" %}
+        {% else %}
+          <img class="absolute top-[45%] left-[50%] translate-x-[-50%] max-w-[119px] sm:max-w-[183px] m-auto text-center" src="{{ block.settings.svg }}" alt="">
+        {% endif %}
+      </div>
+      <div class="flex flex-col justify-center p-6 text-sm md:p-12 lg:p-24 md:text-base md:basis-1/2" style=" background-color: {{ block.settings.background_color }}">
+        <p class="GroteskBold text-center font-[900] md:text-left text-base uppercase" style="color: {{ block.settings.subtitle_color }} ">
+          {{ block.settings.subtitle }}
+        </p>
+        <{% if template contains 'about' %}h2{% elsif template contains 'ingredients' %}h1{% else %}h3{% endif %} class="Grotesque text-3xl py-2 font-medium text-center sm:text-4xl md:text-left sm:pb-4" style="color: {{ block.settings.title_color}}">
+          {{ block.settings.title }}
+        </{% if template contains 'about' %}h2{% elsif template contains 'ingredients' %}h1{% else %}h3{% endif %}>
+        <div class=" text-[13px] font-thin text-center md:text-left" style="color: {{ block.settings.text_color}}">
+          {{ block.settings.text }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+{% schema %}
+
+
+  {
+    "name": "Image-text blocks",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Image text block",
+        "settings": [
+          {
+            "type": "select",
+            "id": "layout",
+            "label": "Layout",
+            "options": [
+              {
+                "value": "text_first",
+                "label": "Text left"
+              }, {
+                "value": "text_last",
+                "label": "Text right"
+              }
+            ]
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+          },
+          {
+            "type": "text",
+            "id": "svg",
+            "label": "Image svg",
+            "default": "https://cdn.shopify.com/s/files/1/0636/1966/2070/files/logo-soronity.svg?v=1662458580",
+            "info": "Paste the url from files"
+          }, {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "About us"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Une histoire de femmes"
+          }, {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Nous sommes 2 femmes qui ne trouvions pas les produits que nous cherchions alors nous les avons créés ! C’est au retour des US où Marie a vécu quelques années que nous nous sommes revues. Nous avons réalisé à quel point une bonne alimentation et un support avait fait la différence dans nos grossesses et allaitements respectifs. Notre inspiration c’est nos vies, nos bébés, nos enfants, nos sœurs, nos mères, c’est VOUS. </p>"
+          }, {
+            "type": "header",
+            "content": "Colors"
+          }, {
+            "type": "color",
+            "id": "background_color",
+            "label": "background color",
+            "default": "#E8E2DB"
+          }, {
+            "type": "color",
+            "id": "subtitle_color",
+            "label": "Subtitle color",
+            "default": "#733E2B"
+          }, {
+            "type": "color",
+            "id": "title_color",
+            "label": "Heading color",
+            "default": "#733E2B"
+          }, {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#927254"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image-text blocks"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,46 @@
+<div class="grid grid-cols-2 gap-2">
+   <div class=" bg-white p-3 text-center flex items-center justify-center rounded-md">
+      <div>
+        <img class="mx-auto" src="https://cdn.shopify.com/s/files/1/0682/9126/4826/files/Ellipse_72.png?v=1670359613" alt="">
+         <span class="text-xs">VINS BIO</span>
+      </div>
+   </div>
+
+   <div class=" bg-white p-3 text-center flex items-center justify-center rounded-md">
+    <div>
+      <img class="mx-auto" src="https://cdn.shopify.com/s/files/1/0682/9126/4826/files/Ellipse_72_2.png?v=1670359627" alt="">
+       <span class="text-xs">ROND & FRUITÉ</span>
+    </div>
+  </div>
+
+  {%- if product.tags contains "rose" -%}
+    <div class=" bg-white p-3 text-center flex items-center justify-center rounded-md">
+        <div>
+          <img class="mx-auto" src="https://cdn.shopify.com/s/files/1/0682/9126/4826/files/drop-rose.svg?v=1670359831" alt="">
+          <span class="text-xs">VIN ROSÉ</span>
+        </div>
+      </div>
+  {%- elsif product.tags contains "rouge" -%}   
+        <div class=" bg-white p-3 text-center flex items-center justify-center rounded-md">
+          <div>
+            <img class="mx-auto" src="https://cdn.shopify.com/s/files/1/0682/9126/4826/files/drop-red.svg?v=1670360714" alt="">
+            <span class="text-xs">VIN ROUGE</span>
+          </div>
+        </div>
+  {%- elsif product.tags contains "blanc" -%}   
+        <div class=" bg-white p-3 text-center flex items-center justify-center rounded-md">
+          <div>
+            <img class="mx-auto" src="https://cdn.shopify.com/s/files/1/0682/9126/4826/files/drop-white.png?v=1670360118" alt="">
+            <span class="text-xs">VIN BLANC</span>
+          </div>
+        </div>     
+  {%- endif -%}
+  
+
+  <div class=" bg-white p-3 text-center flex items-center justify-center rounded-md">
+    <div>
+      <img class="mx-auto" src="https://cdn.shopify.com/s/files/1/0682/9126/4826/files/Ellipse_72_1.png?v=1670359613" alt="">
+       <span class="text-xs">COMPLEXE</span>
+    </div>
+  </div>
+</div>

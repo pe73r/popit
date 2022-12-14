@@ -1,0 +1,2 @@
+{% capture class %}{% render "button-class", size: size, variation: variation, color: color, fullWidth: fullWidth %}{% endcapture %}
+{{ class | replace: '<!-- SIZE -->', '' | replace: '<!-- VARIATION -->', '' | replace: '<!-- COLOR OUTLINED-->', '' | replace: '<!-- END COLOR OUTLINED-->', '' | replace: '<!-- COLOR NORMAL -->', '' | replace: '<!-- END COLOR NORMAL-->', '' | replace: '<!-- END VARIATION -->', '' | replace: '<!-- COLOR & VARIATION -->', '' | strip | strip_newlines }}

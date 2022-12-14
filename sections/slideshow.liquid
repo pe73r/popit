@@ -1,0 +1,257 @@
+<section>
+  <tail-carousel data-auto-dots="false" slidesToShow="xs:1 sm:1 lg:1 xl:1"  class="flex flex-col-reverse w-full">
+    <carousel-container class="h-[70vh] relative">
+        <carousel-content class="w-full">
+          {%- for block in section.blocks -%}
+           {% if block.type == 'video'%}
+              <carousel-panel class="h-full p-0" id="block-{{ block.id }}">
+                <div class="relative flex flex-col justify-center h-full items-center" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) ,rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.55))">
+                  <video class="absolute z-[-1] w-full h-full object-cover" playsinline  autoplay muted loop>
+                      <source src="{{ block.settings.video }}" type="video/mp4">
+                      <source src="movie.ogg" type="video/ogg">
+                  </video>
+                  <div class="relative flex flex-col text-center justify-center w-11/12 mx-auto">
+                      <h1 style="color: {{ block.settings.text_color }}" class="text-[40px] leading-[37px] md:text-[50px] md:leading-[55px] {% if block.settings.title_mobile != blank %} hidden md:block {% endif%}">{{ block.settings.title }}</h1>
+                      {% if block.settings.title_mobile != blank %}
+                        <h2 style="color: {{ block.settings.text_color }}" class="text-[40px] leading-[37px] md:hidden">{{ block.settings.title_mobile }}</h2>
+                      {% endif %}
+                      
+                      {% if block.settings.text != blank %}
+                        <div style="color: {{ block.settings.text_color }}" class="mt-6">{{ block.settings.text }}</div>
+                      {% endif %}
+
+                      {% if block.settings.cta != blank %}
+                        <a href="{{ block.settings.button_link }}"
+                          class="mt-20 md:mt-20 max-w-max mx-auto {% render "button" size: "small" %}"
+                          style="color: {{ block.settings.button_color }}; border: 2px solid {{ block.settings.button_color }}; background-color: {{ block.settings.button_bg }}">
+                          {{ block.settings.cta }}
+                        </a>
+                     {% endif %}
+                  </div>
+                </div>
+            </carousel-panel>
+          {% else %}
+            <carousel-panel class="h-full p-0" id="block-{{ block.id }}">
+              <div class="relative flex flex-col justify-center h-full items-center" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.55))">
+                <img data-src="{{ block.settings.image | img_url: 'master'}}" class="lazyload absolute z-[-1] w-full h-full object-cover {% if block.settings.image_mobile != blank %} hidden md:block {% endif%}" loading="lazy"/>
+                {% if block.settings.image_mobile != blank %}
+                  <img data-src="{{ block.settings.image_mobile | img_url: 'master'}}" class="lazyload absolute z-[-1] w-full h-full object-cover block md:hidden" loading="lazy"/>
+                {% endif %}
+                <div class="relative flex flex-col text-center w-11/12 mx-auto">
+                    <h1 style="color: {{ block.settings.text_color }}" class="text-[40px] leading-[37px] md:text-[50px] md:leading-[55px] {% if block.settings.title_mobile != blank %} hidden md:block {% endif%}">{{ block.settings.title }}</h1>
+                    
+                    {% if block.settings.title_mobile != blank %}
+                     <h2 style="color: {{ block.settings.text_color }}" class="text-[40px] leading-[37px] md:hidden">{{ block.settings.title_mobile }}</h2>
+                    {% endif %}
+
+                    {% if block.settings.text != blank %}
+                      <div style="color: {{ block.settings.text_color }}" class="mt-6">{{ block.settings.text }}</div>
+                    {% endif %}
+
+                    {% if block.settings.cta != blank %}
+                      <a href="{{ block.settings.button_link }}"
+                        class="mt-20 md:mt-20 max-w-max mx-auto {% render "button" size: "small" %}"
+                        style="color: {{ block.settings.button_color }}; border: 2px solid {{ block.settings.button_color }}; background-color: {{ block.settings.button_bg }}">
+                        {{ block.settings.cta }}
+                      </a>
+                   {% endif %}
+                </div>
+              </div>
+          </carousel-panel>
+         {% endif %}
+        {%- endfor-%}
+      </carousel-content>
+    </carousel-container>
+    <carousel-dots class="absolute flex justify-center bottom-[20px] md:bottom-[40px] left-[50%] translate-x-[-50%]">
+      {%- for block in section.blocks -%}
+        <carousel-dot class="w-3 h-3 m-1 transition-all bg-transparent border rounded-full border-white selected:bg-white selected:border-white selected:scale-110"></carousel-dot>
+      {% endfor %}
+    </carousel-dots>
+  </tail-carousel>
+</section>
+
+{% schema %}
+{
+  "name": "Slideshow",
+  "settings": [
+
+  ],
+  "max_blocks": 6,
+	"blocks": [
+     {
+       "name": "Slide",
+       "type":"slide",
+       "settings": [
+       {
+        "type": "header",
+        "content": "Slide image"
+      },
+       {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image mobile"
+      },
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Title desktop",
+        "default": "Les vins bio"
+      },
+      {
+        "type": "textarea",
+        "id": "title_mobile",
+        "label": "Title mobile",
+        "default": "Les vins bio"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut </p>"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "text",
+        "id": "cta",
+        "label": "Call to action"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Link"
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "text color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button color",
+        "default": "#201A1C"
+      },
+      {
+        "type": "color",
+        "id": "button_bg",
+        "label": "Button background color",
+        "default": "#fff"
+      }
+
+    ]
+     },
+     {
+       "name": "Video",
+       "type":"video",
+       "settings": [
+        {
+         "type": "text",
+         "id": "video",
+         "label": "Video mp4",
+         "default": "https://cdn.shopify.com/videos/c/o/v/76c62d28cc8d4b1d9c172ad52a492e49.mp4"
+       },
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Title desktop",
+        "default": "Les vins bio"
+      },
+      {
+        "type": "textarea",
+        "id": "title_mobile",
+        "label": "Title mobile",
+        "default": "Les vins bio"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut </p>"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "text",
+        "id": "cta",
+        "label": "Call to action "
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Link"
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "text color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button color",
+        "default": "#201A1C"
+      },
+      {
+        "type": "color",
+        "id": "button_bg",
+        "label": "Button background color",
+        "default": "#fff"
+      }
+
+    ]
+     }
+   ],
+   "presets": [
+    {
+      "name": "Slideshow",
+      "blocks": [
+        {
+          "type": "slide",
+          "settings":{
+            "title":  "Les vins bio",
+            "cta":  "Je shop"
+          }
+        },
+        {
+          "type": "slide",
+          "settings":{
+            "title":  "Les vins bio",
+            "cta":  "Je shop"
+          }
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

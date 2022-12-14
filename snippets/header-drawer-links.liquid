@@ -1,0 +1,50 @@
+{% for element in elements %}
+    {% if element.settings.link != blank  %}
+        <a href="{{ element.settings.link.url }}" class="flex gap-2 p-2 text-sm {% if element.settings.text == "Nouveautés" %} font-bold {% endif %} " >
+            {% if element.settings.icon != blank %}
+                <img src="{{element.settings.icon | image_url: width: 20}}" alt="icon-{{band.settings.text}}" class="w-5 mt-4 object-fit first-of-type:mt-0" >
+            {% endif %}
+            {{ element.settings.text }}
+        </a>
+    {% else %}
+        <tail-modal>
+            <modal-overlay class="!absolute w-full h-[calc(100%-87px)] !p-0 overflow-x-hidden bg-opacity-0">
+                <modal-content from="right" class="min-w-full min-h-full rounded-none" >
+                    <modal-header class="relative !p-0" >
+                        <img src="{{element.settings.cover_image | image_url: width: 1000}}" alt="" class="w-full aspect-[3/1] object-cover"  >
+                        <div class="absolute top-0 bottom-0 left-0 right-0 m-auto text-4xl text-white w-fit h-fit ">
+                            {{ element.settings.text }}
+                        </div>
+                        <drawer-close class="absolute w-4 h-4 text-white top-4 right-4">{% render "icon-close" %}</drawer-close>
+                    </modal-header>
+                    <div class="flex items-center justify-between px-2 mt-2">
+                        <modal-close >{% render "icon-arrow-left" %}</modal-close>
+                        <div class="flex-1">
+                            {% render "search-box" %}
+                        </div>
+                    </div>
+                    <div class="px-4">
+                    <!-- LINKS -->
+                    <div class="text-sm">
+                        {% for link in element.settings.menu.links %}
+                            <a href="{{ link.url }}" class="block p-1 mt-4 text-xs font-bold uppercase text-capucine">{{ link.title }}</a>
+                            {% if link.links != blank %}
+                                <div class="pl-3">
+                                    {% for link in link.links %}
+                                        <a href="{{ link.url }}" class="block p-1">{{ link.title }}</a>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <!-- LINKS -->
+                </div>
+                </modal-content>
+            </modal-overlay>
+            <modal-trigger class="flex justify-between w-full p-2 text-sm">
+                {{ element.settings.text }}
+                {% render "icon-arrow-right", size:6 %}
+            </modal-trigger>
+        </tail-modal>
+    {% endif %}
+{% endfor %}

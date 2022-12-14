@@ -1,0 +1,41 @@
+{% assign sizeClass = "px-12 py-4 text-sm tracking-wider" %}
+
+<!-- SIZE -->
+{% if size == "extralarge" %}
+    {% assign sizeClass = "px-24 py-3 text-base md:px-24 md:py-3" %}
+{% elsif size == "large" %}
+    {% assign sizeClass = "px-4 py-3 text-sm md:px-16 md:py-3" %}
+{% elsif size == "medium"  %}
+    {% assign sizeClass = "px-2 py-3.5 text-sm md:px-4 md:py-3.5" %}    
+{% elsif size == "small"  %}
+    {% assign sizeClass = "px-[12px] py-[11px] text-sm" %}
+{% endif %}
+<!-- COLOR & VARIATION -->
+{% assign colorClass = "bg-white text-[#3A0F00]" %}
+
+<!-- VARIATION -->
+{% if variation == "outlined" %}
+<!-- COLOR OUTLINED-->
+{% if color == "primary" %}
+{% assign ring_color_primary = settings.button_text_primary %}
+{% assign ring_color = "ring-1 ring-[ring_color_primary] text-[ring_color_primary] hover:ring-2" %}
+{% elsif color == "secondary" %}
+{% assign ring_color_secondary = settings.button_text_secondary %}
+{% assign ring_color = "ring-1 text-[ring_color_secondary] hover:ring-2 hover:ring-[ring_color_secondary]" %}
+{% endif %}
+<!-- END COLOR OUTLINED-->
+{% else %}
+<!-- COLOR NORMAL -->
+{% if color == "primary" %}
+ {% assign color_bg = settings.button_bg_primary  %}
+ {% assign color_text = settings.button_text_primary  %}
+
+{% elsif color == "secondary" %}
+ {% assign color_bg = settings.button_bg_secondary %}
+ {% assign color_text = settings.button_text_secondary  %}
+
+{% endif %}
+<!-- END COLOR NORMAL-->
+{% endif %}
+<!-- END VARIATION -->
+{{ sizeClass }} {% if color == "secondary" %} ring-2 ring-[{{color_text }}] hover:ring-2 {% endif %} text-[{{ color_text}}] bg-[{{ color_bg }}] {% if fullWidth == true %} w-full {% endif %} transition-all rounded-md font-bold

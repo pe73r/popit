@@ -1,0 +1,103 @@
+<section class="w-11/12 max-w-screen-xl mx-auto">
+  <div class="color-{{ section.settings.color_scheme }} gradient">
+    <product-recommendations class="product-recommendations page-width section-{{ section.id }}-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4">
+        {% if recommendations.performed and recommendations.products_count > 0 %}
+        <h2 class="text-5xl text-center">{{ section.settings.heading | escape }}</h2>
+        <tail-carousel slidesToShow="xs:1 sm:2 md:2 lg:3 xl:4"  class="py-5">
+            <carousel-container class="py-2">
+                <carousel-content class="w-full">
+                    {% for recommendation in recommendations.products %}
+                      <carousel-panel class="px-2">
+                            {% render 'card-product',
+                            card_product: recommendation,
+                            media_aspect_ratio: section.settings.image_ratio,
+                            show_secondary_image: section.settings.show_secondary_image,
+                            show_vendor: section.settings.show_vendor,
+                            show_rating: section.settings.show_rating,
+                            show_quick_add: true,
+                            width_fit: true
+                            %}
+                        </carousel-panel>
+                    {% endfor %}
+
+                </carousel-content>
+            </carousel-container>
+            {% comment %} <carousel-next class=" md:flex hidden absolute top-0 bottom-0 z-[1] xl:-right-4 right-4 items-center justify-center w-8 h-8 p-2 my-auto bg-white rounded-full border-[1px]  cursor-pointer  disabled:opacity-50 disabled:cursor-not-allowed ">
+              {% render 'icon-arrow-right' %} 
+             </carousel-next>
+             <carousel-prev class=" md:flex hidden absolute top-0 bottom-0 xl:-left-4 left-4 z-[1] items-center justify-center w-8 h-8 p-2 my-auto bg-white rounded-full border-[1px] cursor-pointer  disabled:opacity-50 disabled:cursor-not-allowed">
+              {% render 'icon-arrow-left' %}
+            </carousel-prev>
+            {% endcomment %}
+            <carousel-dots class="md:hidden relative flex justify-center mt-3">
+              <carousel-dot class="w-[8px] h-[8px] m-1 transition-all bg-transparent border-[1px] border-gray-medium rounded-full selected:w-[10px] selected:h-[10px] selected:bg-black selected:border-black "></carousel-dot>
+          </carousel-dots> 
+        </tail-carousel>
+        {% endif %}
+    </product-recommendations>
+ </div>
+</section>
+{% javascript %}
+  class ProductRecommendations extends HTMLElement {
+    constructor() {
+      super();
+
+      const handleIntersection = (entries, observer) => {
+        if (!entries[0].isIntersecting) return;
+        observer.unobserve(this);
+
+        fetch(this.dataset.url)
+          .then(response => response.text())
+          .then(text => {
+            const html = document.createElement('div');
+            html.innerHTML = text;
+            const recommendations = html.querySelector('product-recommendations');
+
+            if (recommendations && recommendations.innerHTML.trim().length) {
+              this.innerHTML = recommendations.innerHTML;
+            }
+
+            if (html.querySelector('.grid__item')) {
+              this.classList.add('product-recommendations--loaded');
+            }
+          })
+          .catch(e => {
+            console.error(e);
+          });
+      }
+
+      new IntersectionObserver(handleIntersection.bind(this), {rootMargin: '0px 0px 200px 0px'}).observe(this);
+    }
+  }
+
+  customElements.define('product-recommendations', ProductRecommendations);
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Recommendations Carousel",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Complètez votre routine",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": true,
+      "label": "Show second image on hover"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": true,
+      "label": "Show vendor"
+    }
+  ]
+}
+{% endschema %}

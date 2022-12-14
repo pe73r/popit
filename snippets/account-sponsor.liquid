@@ -1,0 +1,16 @@
+<div class="w-full rounded-tr-lg rounded-tl-lg">
+   {% if settings.sponsor_image != blank %}
+     {% render "image" image: settings.sponsor_image, class:"w-full rounded-tr-lg rounded-tl-lg" %}
+   {% endif %}
+   <div class="bg-sand text-center py-5 md:py-8 px-5 rounded-br-lg rounded-bl-lg">
+     {% render 'icon-account-flower' %}
+     <h4 class="text-3xl leading-6 md:text-5xl md:leading-8">10€ pour toi, 10€ pour les boucles de tes amis</h4>
+     <button class="mx-auto bg-white mt-5 md:mt-10 {% render "button", size:"medium", color:"capucine", variation:"outlined", fullWidth: false %}">
+        Parrainer
+     </button>
+   </div>
+</div>
+<!-- No sponsor-->
+<div class="flex justify-center mt-10 text-center">
+  <h4 class="text-lg font-extrabold">Tu n’as parrainé personne jusqu’à présent.</h4>
+</div>

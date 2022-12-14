@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "main": {
+      "type": "section-faqs",
+      "blocks": {
+        "e46f0586-7ad7-4fa0-8c1c-43258a5d7051": {
+          "type": "generales",
+          "settings": {
+            "question": "Question 1",
+            "answer": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.<\/p>"
+          }
+        },
+        "dd6d4b0b-7a76-4c74-bcf8-3a78f430415d": {
+          "type": "generales",
+          "settings": {
+            "question": "Question 2",
+            "answer": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.<\/p>"
+          }
+        },
+        "d40c97bc-6598-4ff3-8e3d-25be233a0f2e": {
+          "type": "ingredients",
+          "settings": {
+            "question": "Question ingredient",
+            "answer": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.<\/p>"
+          }
+        },
+        "11f47efb-0ac6-4188-83d7-4dcee26f7989": {
+          "type": "produits_snacks",
+          "settings": {
+            "question": "Question Snack",
+            "answer": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.<\/p>"
+          }
+        },
+        "a18cc1b2-d91b-492d-bd79-08ebf3d91932": {
+          "type": "produits_snacks",
+          "settings": {
+            "question": "Question 2 Snack",
+            "answer": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.<\/p>"
+          }
+        },
+        "d37692dd-2a09-485e-ab15-b00409da3366": {
+          "type": "produits_granola",
+          "settings": {
+            "question": "Question Granola",
+            "answer": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.<\/p>"
+          }
+        },
+        "1918c352-d701-4fda-b48a-8f410b21d9f5": {
+          "type": "produits_complements",
+          "settings": {
+            "question": "Question complements",
+            "answer": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.<\/p>"
+          }
+        },
+        "db36dc28-a1e0-4209-b9c6-2b8c870dd0bb": {
+          "type": "produits_complements",
+          "settings": {
+            "question": "Question 2 complements",
+            "answer": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.<\/p>"
+          }
+        },
+        "da25e135-51c7-4364-9f80-1a66b953b765": {
+          "type": "produits_boissons",
+          "settings": {
+            "question": "Question Boisson",
+            "answer": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e46f0586-7ad7-4fa0-8c1c-43258a5d7051",
+        "dd6d4b0b-7a76-4c74-bcf8-3a78f430415d",
+        "d40c97bc-6598-4ff3-8e3d-25be233a0f2e",
+        "11f47efb-0ac6-4188-83d7-4dcee26f7989",
+        "a18cc1b2-d91b-492d-bd79-08ebf3d91932",
+        "d37692dd-2a09-485e-ab15-b00409da3366",
+        "1918c352-d701-4fda-b48a-8f410b21d9f5",
+        "db36dc28-a1e0-4209-b9c6-2b8c870dd0bb",
+        "da25e135-51c7-4364-9f80-1a66b953b765"
+      ],
+      "settings": {
+        "bg_color": "#f0ede8"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

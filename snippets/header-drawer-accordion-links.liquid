@@ -1,0 +1,25 @@
+
+<accordion-group class="mt-2 "  style="padding-left:{{padding}}px">
+    {%- for link in links -%}
+         <accordion-element data-open="true" >
+            {%- if link.links != blank -%}
+            <accordion-trigger class="group hover:bg-slate-200">
+                <accordion-header class="px-4 py-2 text-2xl">
+                    <div>
+                      {{ link.title }}
+                    </div>
+                </accordion-header>
+                <accordion-icon class="p-4 transition-all origin-center group-expanded:rotate-90">
+                    {% render "icon-arrow" %}
+                </accordion-icon>
+            </accordion-trigger>
+            <accordion-content>
+            {%  assign p = padding | plus: 10 %}
+                 {%- render "header-drawer-links", links: link.links, padding: p  -%}
+                </accordion-content>
+             {%- else -%}
+                 {%- render "header-drawer-link", childLink: link -%}
+            {%- endif -%}
+        </accordion-element>
+    {%- endfor -%}
+</accordion-group>

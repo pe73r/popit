@@ -1,0 +1,37 @@
+
+/* scrollbar */
+
+.scrollbar::-webkit-scrollbar {
+    width: 3px;  
+    height: 3px;      
+    padding-right: 50px;  
+  }
+  
+  .scrollbar::-webkit-scrollbar-track {
+    background: #b7b1aa;  
+    width: 90%;  
+    max-width: 200px;  
+    display: block;
+    padding-right: 50px;
+  }
+  
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: #201A1C;    /* color of the scroll thumb */     
+    border: 2px solid #201A1C;  
+    height: 5px;
+    width: 5px;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* accordion */
+
+accordion-element[data-open="true"] .icon-plus {
+  display: none;
+}
+accordion-element[data-open="true"] .icon-minus {
+  display: block;
+}

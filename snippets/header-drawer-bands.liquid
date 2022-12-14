@@ -1,0 +1,6 @@
+{% for band in elements %}
+    <a href="{{ band.settings.link.url }}"  class="{% if forloop.index > 1 %} mt-3 {% endif %} w-full px-2 py-4 bg-{{ band.settings.color }} bg-opacity-25 text-{{ band.settings.color }} font-bold rounded-md cursor-pointer flex gap-2 text-sm ">
+        <img src="{{band.settings.icon | image_url: width: 20}}" alt="icon-{{band.settings.text}}" class="w-5 mt-4 object-fit first-of-type:mt-0" >
+        <span>{{ band.settings.text }}</span>
+    </a>
+{% endfor %}
