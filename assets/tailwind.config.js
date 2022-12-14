@@ -40,6 +40,9 @@ module.exports = {
         beige: {
           DEFAULT: "#FFF7ED",
         },
+        green: {
+          DEFAULT: "#4B9B7D",
+        },
       },
 
       animation: {

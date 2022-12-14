@@ -1,37 +1,43 @@
 <div class="justify-center h-full items-center hidden overflow-visible lg:flex">
-    {% for link in links %}
-       <!-- GET THE SUBMENU -->
-       {% assign submenu = blank %}
-       {% assign block = blank %}
-       {% for block in section.blocks %}
-           {% if block.settings.megamenu.title == link.title %}
-               {% assign submenu = block.settings.megamenu %}
-               {% assign block = block.settings %}
-           {% endif %}
-       {% endfor %}
+  {% for link in links %}
+    <!-- GET THE SUBMENU -->
+    {% assign submenu = blank %}
+    {% assign block = blank %}
+    {% for block in section.blocks %}
+      {% if block.settings.megamenu.title == link.title %}
+        {% assign submenu = block.settings.megamenu %}
+        {% assign block = block.settings %}
+      {% endif %}
+    {% endfor %}
 
-       <div class="group h-full flex items-center">
-           <{% if submenu != blank %}div {% else %}a href="{{ link.url }}"{% endif %} class="link-item relative heading-color block lg:px-2.5 px-3 cursor-pointer text-sm uppercase hover:text-ecorce hover:font-bold" >
-               {{ link.title }}
-           </{% if submenu != blank %}div{% else %}a{% endif %}>
-           {% if submenu != blank %}
-               <div class="absolute left-0 top-[60px] w-screen py-10 px-20 bg-beige z-10 opacity-0 group-hover:block group-hover:opacity-100 overflow-hidden hidden">
-                   {% render 'megamenu' block: block, submenu: submenu, class: "grid gap-4 max-w-3xl grid-cols-3 px-20 mx-auto" %}
-               </div>
-           {% endif %}
-       </div>
-   {% endfor %}
+    <div class="group h-full flex items-center">
+      {% if submenu != blank %}
+        <div
+          class="relative heading-color block px-3 cursor-pointer text-xs xl:text-sm uppercase w-fit
+          {% unless link.title contains "pack" or link.title contains "PACK" %}
+            link-item hover:text-green hover:font-bold
+          {% endunless %}">
+          {{ link.title }}
+        </div>
+      {% else %}
+        <a
+          href="{{ link.url }}"
+          class="relative heading-color block px-3 cursor-pointer text-xs xl:text-sm uppercase w-fit
+          {% unless link.title contains "pack" or link.title contains "PACK" %}
+            link-item  hover:text-green hover:font-bold
+          {% endunless %}
+          {% if link.title contains "pack" or link.title contains "PACK" %}
+            link-pack rounded-lg p-1 hover:text-white
+          {% endif %}">
+          {{ link.title }}
+        </a>
+      {% endif %}
+
+      {% if submenu != blank %}
+        <div class="absolute left-0 top-[60px] w-screen py-10 px-20 bg-beige z-10 opacity-0 group-hover:block group-hover:opacity-100 overflow-hidden hidden">
+          {% render 'megamenu' block: block, submenu: submenu, class: "grid gap-4 max-w-3xl grid-cols-3 px-20 mx-auto" %}
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
 </div>
-<style> 
-    .link-item:hover::after {
-        content: '';
-        display: block;
-        width: 65%;
-        height: 2px;
-        position: absolute;
-        bottom: -4px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #3A0F00;
-      }
-</style>

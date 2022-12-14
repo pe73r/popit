@@ -35,3 +35,21 @@ accordion-element[data-open="true"] .icon-plus {
 accordion-element[data-open="true"] .icon-minus {
   display: block;
 }
+
+/* Gradient links */ 
+.link-pack{
+  background: linear-gradient(147.2deg, #4B9B7D 0%, rgba(75, 155, 125, 0.8) 22.03%, #D7E6AF 78.4%, rgba(215, 230, 175, 0.5) 100%); 
+}
+
+.link-item:hover::after {
+  content: '';
+  display: block;
+  width: 65%;
+  height: 2px;
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4B9B7D;
+  border-radius: 3px;
+}

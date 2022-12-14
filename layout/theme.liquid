@@ -31,7 +31,10 @@
     {% endif %}
 
     <link rel="canonical" href="{{ canonical_url }}">
-    <link crossorigin href="https://cdn.shopify.com" rel="preconnect">
+    <link
+      crossorigin
+      href="https://cdn.shopify.com"
+      rel="preconnect">
     <script src="{{ 'global.js' | asset_url }}" async></script>
     <script src="{{ 'lazysides.min.js' | asset_url }}" async></script>
 
@@ -39,35 +42,39 @@
     {% render 'css-variables' %}
 
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
-      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+      <link
+        rel="preconnect"
+        href="https://fonts.shopifycdn.com"
+        crossorigin>
     {%- endunless -%}
 
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
+
     <!-- TAILWIND CONFIGURATION -->
-    {% if theme.name != "staging" and theme.name != "production"  %}
+    {% if theme.name != "staging" and theme.name != "production" %}
 
       {{ 'critical.css' | asset_url | stylesheet_tag }}
       <script rel="preconnect" src="https://cdn.tailwindcss.com"></script>
       <script preload>
         (async () => {
-          const [configRes, layoutRes, styleRes] = await Promise.all([
-            fetch("{{ 'tailwind.config.js' | asset_url }}"),
-            fetch("{{ 'tail.layout.css' | asset_url }}"),
-            fetch("{{ 'tail.style.css' | asset_url }}")
-          ]);
-          const text = await configRes.text()
-          console.log({text});
-          tailwind.config = eval(`(${
-            text.replace("module.exports = ", "").replace("module.exports=", "").replace("};", "}")
-          })`);
-          const apply = document.createElement("style");
-          apply.setAttribute("type", "text/tailwindcss");
-          apply.innerHTML = `${
-            (await Promise.all([layoutRes.text(), styleRes.text()])).join("\n")
-          }`;
-          document.head.appendChild(apply);
-        })()
+        const [configRes, layoutRes, styleRes] = await Promise.all([
+                                                                                                                                                                                                                                            fetch("{{ 'tailwind.config.js' | asset_url }}"),
+        fetch("{{ 'tail.layout.css' | asset_url }}"),
+        fetch("{{ 'tail.style.css' | asset_url }}")
+        ]);
+                                                                                                                                                                                                                                          const text = await configRes.text()
+                                                                                                                                                                                                                                          console.log({text});
+                                                                                                                                                                                                                                          tailwind.config = eval(`(${
+                                                                                                                                                                                                                                            text.replace("module.exports = ", "").replace("module.exports=", "").replace("};", "}")
+                                                                                                                                                                                                                                          })`);
+                                                                                                                                                                                                                                          const apply = document.createElement("style");
+                                                                                                                                                                                                                                          apply.setAttribute("type", "text/tailwindcss");
+                                                                                                                                                                                                                                          apply.innerHTML = `${
+                                                                                                                                                                                                                                            (await Promise.all([layoutRes.text(), styleRes.text()])).join("\n")
+                                                                                                                                                                                                                                          }`;
+                                                                                                                                                                                                                                          document.head.appendChild(apply);
+                                                                                                                                                                                                                                        })()
       </script>
-
 
 
       <script src="{{ 'tail.js' | asset_url }}" preload></script>
@@ -92,8 +99,8 @@
       {% render "scripts" %}
     {% endif %}
     <script>
-        const url = new URL(window.location.href);
-        const reset_password_url = decodeURIComponent(url.searchParams.get("reset_password_url"));
+      const url = new URL(window.location.href);
+      const reset_password_url = decodeURIComponent(url.searchParams.get("reset_password_url"));
       if (reset_password_url && reset_password_url !== "null") {
         window.location.href = reset_password_url;
       }
@@ -101,15 +108,20 @@
     <!-- END OF TAILWIND CONFIGURATION -->
 
     {%- if settings.favicon != blank -%}
-      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+      <link
+        rel="icon"
+        type="image/png"
+        href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
 
-    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
-      <link crossorigin href="https://fonts.shopifycdn.com" rel="preconnect">
-    {%- endunless -%}
-
     <title>
-      {{- page_title -}}{%- if current_tags %} | tagged "{{ current_tags | join: ', ' }}"{% endif -%}{%- if current_page != 1 %} | Page  {{ current_page }} {% endif -%}{%- unless page_title contains shop.name %} | {{ shop.name }}{% endunless -%}
+      {{- page_title -}}{%- if current_tags %}
+        | tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %}
+        | Page {{ current_page }}
+      {% endif -%}
+      {%- unless page_title contains shop.name %}
+        | {{ shop.name }}{% endunless -%}
     </title>
 
     {% if page_description %}
@@ -120,28 +132,33 @@
 
     {{ content_for_header }}
 
-</head>
+  </head>
   <body>
+    {% section 'announcement-bar' %}
     <tail-header class="shadow-none sticky top-0 z-50 py-1">
-      <div class="grid grid-cols-11 h-[60px] items-center gap-4">
-        <div class=" flex justify-center col-span-5 md:col-span-1">
-          {% section 'logo' %}
+      <div class="flex justify-between lg:grid grid-cols-12 h-[60px] items-center gap-2 lg:gap-4 px-2 lg:px-8">
+        <div class="hidden lg:flex justify-center lg:col-span-1">
+          {% render 'logo' %}
         </div>
-        <div class="col-span-3 md:col-span-5">
+        <div class="md:ml-2 lg:col-span-8">
           {% section "header" %}
         </div>
-        <div class="flex justify-end col-span-3 md:gap-4 md:col-span-5 pr-[20px] md:pr-10 lg:pr-20">
-            {% comment %}
-            {% render "search-box" %}
-            {% endcomment %}
-            {% render "customer-menu" %}
-            {% section 'side-cart' %}
+        <div class="lg:hidden absolute left-[50%] translate-x-[-50%] flex justify-center col-span-8">
+          {% render 'logo' %}
+        </div>
+        <div class="flex items-center justify-end gap-2 md:gap-3 xl:gap-4 col-span-3">
+          {% render "search-box" %}
+          {% render "customer-menu" %}
+          {% section 'side-cart' %}
         </div>
       </div>
-  </tail-header>
+    </tail-header>
 
 
-    <main id="MainContent" role="main" tabindex="-1">
+    <main
+      id="MainContent"
+      role="main"
+      tabindex="-1">
       {%- assign page_url = content_for_header | split: '"pageurl":"' | last | split: '"' | first | split: request.host | last | replace: '\/','/' | replace: '%20',' ' | replace: '\u0026', '&' -%}
       {% if template contains 'account' and page_url contains 'orders=true' %}
         {% render 'account-orders' %}
@@ -185,7 +202,6 @@
         pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
         playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`
       }
-
     </script>
-</body>
+  </body>
 </html>

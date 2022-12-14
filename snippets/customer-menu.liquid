@@ -1,5 +1,8 @@
-<div class="relative flex items-center justify-center w-10 h-10 md:p-1 md:ml-2 cursor-pointer">
-  <a href="{{ routes.account_url }}" data-logged="{% if customer %}true{% else %}false{% endif %}" class="{% unless customer %}hidden {% endunless %}w-5 h-5 header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
-    {% render 'icon-account-connected' %}
+<div class="relative flex items-center justify-center w-2 lg:w-10 cursor-pointer">
+  <a
+    href="{{ routes.account_url }}"
+    data-logged="{% if customer %}true{% else %}false{% endif %}"
+    class="w-5 h-5 header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+    {% render 'icon-account' %}
   </a>
 </div>
