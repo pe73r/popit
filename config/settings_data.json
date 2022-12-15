@@ -376,9 +376,9 @@
             "settings": {
               "svg": "",
               "image": "shopify:\/\/shop_images\/Group_1362.png",
-              "title": "Livraison express",
-              "text_desktop": "En point relais ou à domicile",
-              "text_mobile": "En point relais ou à\ndomicile"
+              "image_width": 60,
+              "title": "Retours gratuits sous 14 jours",
+              "text": ""
             }
           },
           "831c2bf6-b538-440b-b9a2-5990122efe3f": {
@@ -386,29 +386,29 @@
             "settings": {
               "svg": "",
               "image": "shopify:\/\/shop_images\/Group_1361.png",
-              "title": "Paiement sécurisé",
-              "text_desktop": "Carte bancaire, visa, mastercard, choozeo, paypal ...",
-              "text_mobile": "Carte bancaire, visa, mastercard, choozeo, paypal ..."
+              "image_width": 80,
+              "title": "Expédition sous 48h",
+              "text": ""
             }
           },
           "def1b450-0a09-4f6f-a381-121033fc96e2": {
             "type": "block",
             "settings": {
               "svg": "",
-              "image": "shopify:\/\/shop_images\/Group_1360.png",
-              "title": "Frais de port",
-              "text_desktop": "A partir de 250 € d’achat en France continentale",
-              "text_mobile": "A partir de 250 € d’achat en France continentale"
+              "image": "shopify:\/\/shop_images\/Group_1363.png",
+              "image_width": 43,
+              "title": "Paiement 100 % sécurisé",
+              "text": ""
             }
           },
           "fe310d27-2fae-4e6a-b658-13613bb25c68": {
             "type": "block",
             "settings": {
               "svg": "",
-              "image": "shopify:\/\/shop_images\/Group_1363.png",
-              "title": "Une équipe à votre écoute",
-              "text_desktop": "Du lundi au vendredi de 9h à 18h",
-              "text_mobile": "Du lundi au vendredi de 9h à 18h"
+              "image": "shopify:\/\/shop_images\/Group_1360.png",
+              "image_width": 71,
+              "title": "Livraison gratuite à partir de 49 €",
+              "text": ""
             }
           }
         },
