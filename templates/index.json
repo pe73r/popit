@@ -63,7 +63,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/popit-sticker-vegan_1_2.png",
             "image_width": 80,
-            "title": "Title",
+            "title": "Vegan",
             "text": "Garanti cruelty-free et sans matières animales"
           }
         },
@@ -72,8 +72,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/image_40_1.png",
             "image_width": 50,
-            "title": "Title",
-            "text": "Garanti cruelty-free et sans matières animales"
+            "title": "Noté 4,8 sur 5",
+            "text": "Plus de 43566 avis clients vérifiés"
           }
         },
         "7c7cb104-dd56-4c7a-944b-cbe2c63bdfe6": {
@@ -81,7 +81,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/popit-sticker-vegan_1_1.png",
             "image_width": 80,
-            "title": "Title",
+            "title": "Sans sucre",
             "text": "Garanti cruelty-free et sans matières animales"
           }
         },
@@ -90,7 +90,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Ellipse_151.png",
             "image_width": 80,
-            "title": "Title",
+            "title": "Autre réassurance",
             "text": "Garanti cruelty-free et sans matières animales"
           }
         }
