@@ -7,9 +7,9 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/image_33.png",
-            "title": "Découvrez nos compléments alimentaires et leurs bénéfices.",
+            "title": "Découvrez nos compléments <br>\nalimentaires et leurs<br>\nbénéfices.",
             "title_mobile": "Découvrez nos compléments alimentaires et leurs bénéfices.",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <\/p>",
+            "text": "",
             "cta": "Je découvre",
             "button_link": "shopify:\/\/collections\/jolly-days-jusqua-40",
             "text_color": "#ffffff",
