@@ -1,24 +1,5 @@
 {
   "sections": {
-    "16635875657e00a7a6": {
-      "type": "announcement-bar",
-      "blocks": {
-        "f798bfbf-f191-4238-afc1-18a73b6cbc35": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>OFFRE : -20% à partir de 100€ d'achat avec le code ETONNANTS20<\/strong><\/p>",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "f798bfbf-f191-4238-afc1-18a73b6cbc35"
-      ],
-      "settings": {
-        "text_color": "#fff",
-        "background_color": "#1d1d1d"
-      }
-    },
     "1663586369b92a04be": {
       "type": "slideshow",
       "blocks": {
@@ -31,8 +12,8 @@
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <\/p>",
             "cta": "Je découvre",
             "button_link": "shopify:\/\/collections\/jolly-days-jusqua-40",
-            "text_color": "#fff",
-            "button_color": "#fff",
+            "text_color": "#ffffff",
+            "button_color": "#ffffff",
             "button_bg": "#4b9b7d"
           }
         },
@@ -129,10 +110,10 @@
         "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives !<\/p>",
         "text_button": "S’inscrire",
         "hide_image_mobile": true,
-        "subtitle_color": "#E8E2DB",
-        "title_color": "#733E2B",
+        "subtitle_color": "#e8e2db",
+        "title_color": "#733e2b",
         "text_color": "#927254",
-        "button_color": "#3A0F00"
+        "button_color": "#3a0f00"
       }
     },
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01": {
@@ -197,7 +178,6 @@
     }
   },
   "order": [
-    "16635875657e00a7a6",
     "1663586369b92a04be",
     "1db7442e-0ee1-495a-96a1-01f3969e95f2",
     "3a54f392-7fc6-4f91-85fd-bb9f86832a7c",
