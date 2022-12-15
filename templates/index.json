@@ -21,9 +21,10 @@
         "c5415137-2df9-4722-ac77-c9afd3473e5d": {
           "type": "slide",
           "settings": {
+            "image": "shopify:\/\/shop_images\/nicolas-solerieu-vHbw2pf8nbw-unsplash.jpg",
             "title": "Nouveautés",
             "title_mobile": "Nouveautés",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <\/p>",
+            "text": "",
             "cta": "Je découvre",
             "button_link": "shopify:\/\/collections",
             "text_color": "#ffffff",
@@ -34,9 +35,10 @@
         "be81d616-6b1a-4ea6-9fb4-6da40f8b3482": {
           "type": "slide",
           "settings": {
+            "image": "shopify:\/\/shop_images\/michele-blackwell-przZDqzZKpk-unsplash.jpg",
             "title": "NUTRITION POUR LES <br>FEMMES.<br>SCIENTIFIQUEMENT PROUVÉ",
             "title_mobile": "NUTRITION POUR <br>LES FEMMES.<br>SCIENTIFIQUEMENT <br>PROUVÉ",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <\/p>",
+            "text": "",
             "cta": "",
             "button_link": "",
             "text_color": "#ffffff",
