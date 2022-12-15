@@ -65,22 +65,22 @@
       <script preload>
         (async () => {
         const [configRes, layoutRes, styleRes] = await Promise.all([
-                                                                                                                                                                                                                                                            fetch("{{ 'tailwind.config.js' | asset_url }}"),
+                                                                                                                                                                                                                                                                                            fetch("{{ 'tailwind.config.js' | asset_url }}"),
         fetch("{{ 'tail.layout.css' | asset_url }}"),
         fetch("{{ 'tail.style.css' | asset_url }}")
         ]);
-                                                                                                                                                                                                                                                          const text = await configRes.text()
-                                                                                                                                                                                                                                                          console.log({text});
-                                                                                                                                                                                                                                                          tailwind.config = eval(`(${
-                                                                                                                                                                                                                                                            text.replace("module.exports = ", "").replace("module.exports=", "").replace("};", "}")
-                                                                                                                                                                                                                                                          })`);
-                                                                                                                                                                                                                                                          const apply = document.createElement("style");
-                                                                                                                                                                                                                                                          apply.setAttribute("type", "text/tailwindcss");
-                                                                                                                                                                                                                                                          apply.innerHTML = `${
-                                                                                                                                                                                                                                                            (await Promise.all([layoutRes.text(), styleRes.text()])).join("\n")
-                                                                                                                                                                                                                                                          }`;
-                                                                                                                                                                                                                                                          document.head.appendChild(apply);
-                                                                                                                                                                                                                                                        })()
+                                                                                                                                                                                                                                                                                          const text = await configRes.text()
+                                                                                                                                                                                                                                                                                          console.log({text});
+                                                                                                                                                                                                                                                                                          tailwind.config = eval(`(${
+                                                                                                                                                                                                                                                                                            text.replace("module.exports = ", "").replace("module.exports=", "").replace("};", "}")
+                                                                                                                                                                                                                                                                                          })`);
+                                                                                                                                                                                                                                                                                          const apply = document.createElement("style");
+                                                                                                                                                                                                                                                                                          apply.setAttribute("type", "text/tailwindcss");
+                                                                                                                                                                                                                                                                                          apply.innerHTML = `${
+                                                                                                                                                                                                                                                                                            (await Promise.all([layoutRes.text(), styleRes.text()])).join("\n")
+                                                                                                                                                                                                                                                                                          }`;
+                                                                                                                                                                                                                                                                                          document.head.appendChild(apply);
+                                                                                                                                                                                                                                                                                        })()
       </script>
 
 
@@ -143,7 +143,7 @@
   <body>
     {% section 'announcement-bar' %}
     <tail-header class="shadow-none sticky top-0 z-50 py-1">
-      <div class="flex justify-between lg:grid grid-cols-12 h-[60px] items-center gap-2 lg:gap-4 px-2 lg:px-8">
+      <div class="flex justify-between lg:grid grid-cols-12 h-[60px] items-center gap-2 lg:gap-4 px-2 sm:px-4 lg:px-8">
         <div class="hidden lg:flex justify-center lg:col-span-1">
           {% render 'logo' %}
         </div>

@@ -1,105 +1,136 @@
 {% assign s = section.settings %}
-
-<div class="py-10 md:py-12">
-    <div class="w-11/12 mx-auto text-center"> 
-        {% if s.title %}
-         <h2 class="text-[28px] leading-[37px] md:text-[32px] md:leading-[42px] mb-5">{{ s.title }}</h2>
+<div class="py-10 md:py-12" style="background-color: {{ section.settings.bg_color }}">
+  <div class="max-w-7xl mx-auto">
+    {% if s.title != blank or s.subtitle != blank %}
+      <div class="w-11/12 mx-auto text-center mb-10">
+        {% if s.title != blank %}
+          <h2 class="text-[28px] leading-[37px] md:text-[32px] md:leading-[42px] mb-5">{{ s.title }}</h2>
         {% endif %}
 
         {% if s.show_hr %}
           <hr class="block border-b w-[40px] mx-auto border-black mb-5">
         {% endif %}
 
-        {% if s.subtitle %}
+        {% if s.subtitle != blank %}
           <div class="text-base">{{ s.subtitle }}</div>
-        {% endif %}  
+        {% endif %}
 
-        {% if s.cta != blank  %}
+        {% if s.cta != blank %}
           <a class="block mt-2 accent-color underline font-bold text-sm" href="{{ s.ctaLink }}">{{ s.cta }}</a>
         {% endif %}
-    </div>
-     <!-- blocks -->
-     {%- if section.blocks.size > 0 -%}
-      <div class="mt-10 flex md:justify-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-3 md:gap-10 scrollbar-none px-4">
-         {%- for block in section.blocks -%}
-            <div class="min-w-[110px] md:min-w-0">
-               <img class="w-[80px] h-[80px] rounded-full mx-auto lazy" src="{{ block.settings.image | img_url: '80x'}}" alt="{{ block.settings.image.alt }}" loading="lazy">
-                <div class="hidden md:block text-center text-sm mt-3 leading-4">
-                  {{ block.settings.text_desktop }}
-                </div>
-                <div class="block md:hidden text-center text-sm mt-3 leading-4">
-                    {{ block.settings.text_mobile }}
-                </div>
-            </div>
+      </div>
+    {% endif %}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="flex md:justify-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-3 md:gap-5 lg:gap-10 scrollbar-none px-4">
+        {%- for block in section.blocks -%}
+          <div class="min-w-[150px] md:min-w-0 text-center">
+            <img
+              class="lazy mx-auto"
+              src="{{ block.settings.image | img_url: 'master'}}"
+              alt="{{ block.settings.image.alt }}"
+              loading="lazy"
+              style="max-width:{{ block.settings.image_width }}px">
+
+            {% if block.settings.title != blank %}
+              <h5 class="text-base font-bold mt-3">{{ block.settings.title }}</h5>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <div class="text-center text-sm mt-2 leading-4 font-light" style="color: {{ section.settings.color }}">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+          </div>
         {%- endfor -%}
-     </div>
-   {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
 </div>
 
-{% schema %} 
-{
-  "name": "Banner intro",
-  "tag": "section",
-  "settings": [   
-    {
-      "type": "text",
-      "id": "title",
-      "default": "À propos",
-      "label": "Title"
-    },
-    {
-      "type": "richtext",
-      "id": "subtitle",
-      "default": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.</p>",
-      "label": "Subtitle"
-    },
-    {
-      "type": "text",
-      "id": "cta",
-      "label": "Button label", 
-      "default" : "En savoir plus"
-    },
-    {
-      "type": "url",
-      "id": "ctaLink",
-      "label": "Link "
-    },
-    {
-      "type": "checkbox",
-      "id": "show_hr",
-      "default": true,
-      "label": "Show separator"
-    }
-  ],
-  "blocks": [
-     {
-       "name": "Block",
-       "type": "block",
-       "settings": [
-         {
-           "type": "image_picker",
-           "id": "image",
-           "label": "Image"
-         },
-         {
+{% schema %}
+  {
+    "name": "Banner intro",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "default": "À propos",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "subtitle",
+        "default": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.</p>",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "cta",
+        "label": "Button label",
+        "default": "En savoir plus"
+      },
+      {
+        "type": "url",
+        "id": "ctaLink",
+        "label": "Link "
+      }, {
+        "type": "checkbox",
+        "id": "show_hr",
+        "default": false,
+        "label": "Show separator"
+      }, {
+        "type": "header",
+        "content": "colors"
+      }, {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#FAF5EF"
+      }, {
+        "type": "color",
+        "id": "color",
+        "label": "Text color",
+        "default": "#1A1A1A"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Block",
+        "type": "block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "range",
+            "id": "image_width",
+            "min": 50,
+            "max": 150,
+            "step": 1,
+            "unit": "px",
+            "label": "Image size",
+            "default": 80
+          }, {
+            "type": "text",
+            "id": "title",
+            "default": "Title",
+            "label": "Title"
+          }, {
             "type": "textarea",
-            "id": "text_desktop",
-            "default": "Des producteurs passionnés",
-            "label": "text desktop"
-        },
-        {
-            "type": "textarea",
-            "id": "text_mobile",
-            "default": "Des producteurs passionnés",
-            "label": "text mobile"
-        }
-       ]
-     }
-   ],
-  "presets": [
-    {
-      "name": "Banner intro"
-    }
-  ]
-}
+            "id": "text",
+            "default": "Garanti cruelty-free et sans matières animales",
+            "label": "text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner intro"
+      }
+    ]
+  }
 {% endschema %}
