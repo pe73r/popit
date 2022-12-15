@@ -1,5 +1,6 @@
 {
   "current": {
+    "logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/logo.svg?v=1671026298",
     "colors_text": "#201a1c",
     "colors_heading": "#201a1c",
     "colors_background_1": "#fff",
@@ -33,7 +34,6 @@
     "body_scale": 130,
     "cart_title": "PANIER",
     "cart_title_when_empty": "PANIER",
-    "logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0636\/1966\/2070\/files\/logo-simple.svg?v=1661947522",
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
     "gradient_accent_1": "",
@@ -124,7 +124,9 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "text_color": "#000000"
+          "display": true,
+          "text_color": "#000000",
+          "background_color": "#F84C55"
         }
       },
       "header": {
@@ -245,8 +247,6 @@
       "logo": {
         "type": "logo",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/logo-popit-noir.png",
-          "logo_svg": ""
         }
       },
       "side-cart": {
@@ -410,7 +410,7 @@
           "add_margin": 0,
           "header": "",
           "bg_color": "#4b9b7d",
-          "text_color": "#fff"
+          "text_color": "#ffffff"
         }
       }
     },
