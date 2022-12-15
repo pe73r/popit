@@ -62,32 +62,36 @@
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/popit-sticker-vegan_1_2.png",
-            "text_desktop": "Des producteurs <br>\npassionnés",
-            "text_mobile": "Des producteurs <br>\npassionnés"
+            "image_width": 80,
+            "title": "Title",
+            "text": "Garanti cruelty-free et sans matières animales"
           }
         },
         "f7ec02ea-7e45-4959-a5f8-a49876ccab60": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/image_40_1.png",
-            "text_desktop": "Une équipes d’experts à <br>\nvotre service",
-            "text_mobile": "Une équipes <br>\nd’experts <br>\nà votre service"
+            "image_width": 50,
+            "title": "Title",
+            "text": "Garanti cruelty-free et sans matières animales"
           }
         },
         "7c7cb104-dd56-4c7a-944b-cbe2c63bdfe6": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/popit-sticker-vegan_1_1.png",
-            "text_desktop": "Naturalité et respect des<br>\nvignes",
-            "text_mobile": "Naturalité et<br>\nrespect des <br>\nvignes"
+            "image_width": 80,
+            "title": "Title",
+            "text": "Garanti cruelty-free et sans matières animales"
           }
         },
         "3dc98c99-4d6b-4bf4-ac0d-a895c79edd86": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/Ellipse_151.png",
-            "text_desktop": "Naturalité et respect des<br>\nvignes",
-            "text_mobile": "Des producteurs passionnés"
+            "image_width": 80,
+            "title": "Title",
+            "text": "Garanti cruelty-free et sans matières animales"
           }
         }
       },
@@ -102,7 +106,9 @@
         "subtitle": "",
         "cta": "",
         "ctaLink": "",
-        "show_hr": true
+        "show_hr": true,
+        "bg_color": "#FAF5EF",
+        "color": "#1A1A1A"
       }
     },
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01": {
