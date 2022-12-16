@@ -29,6 +29,10 @@
 
 /* accordion */
 
+accordion-element {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 accordion-element[data-open="true"] .icon-plus {
   display: none;
 }
