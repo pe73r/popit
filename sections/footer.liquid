@@ -1,207 +1,209 @@
-<footer id="footer" class="w-full" style="background-color: {{ section.settings.bg_color }}">
+<footer
+  id="footer"
+  class="py-10"
+  style="background-color: {{ section.settings.bg_color }}">
+  <div class="w-11/12 max-w-6xl mx-auto">
+    <!-- logo -->
 
-  <div class="flex gap-8 lg:gap-10 flex-col md:flex-row w-11/12 md:max-w-7xl mx-auto pt-10 md:pt-16 {% if section.settings.mention-legal == blank %} pb-10 md:pb-16 {% endif %}">
-    <!-- content side -->
-     <div class="w-full md:w-6/12 lg:w-5/12">
-        <div class="text-center md:text-left">
-            {% if section.settings.logo_svg != blank %}
-                <img class="mb-4 lazy" src="{{ section.settings.logo_svg }}" alt="">
-            {% elsif section.settings.logo != blank  %}
-                <img class="mb-4 lazy" src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ section.settings.logo.alt }}" loading="lazy">
-            {% endif %}
-
-          {%- if section.settings.title != blank -%}
-            <h2 class="text-[40px] leading-[53px] mb-6" style="color:{{ section.settings.color }}">{{ section.settings.title }}</h2>
-          {%- endif -%}
-          
-          {%- if section.settings.subtext != blank -%}
-            <div class="text-sm md:max-w-[90%] font-light" style="color:{{ section.settings.color }}">
-              {{ section.settings.subtext }}
-            </div>
-          {%- endif -%}
-        </div>
-       
-        <!-- newsletter  -->
-        {%- if section.settings.show_newsletter -%}
-          <div class="mt-4">
-            {% render 'newsletter-form' %}
-          </div>
-        {% endif %}
-
-        <!-- render social  -->
-        {%- if section.settings.show_social -%}
-          <div class="mt-10">
-            <ul class="flex items-center gap-3 justify-center md:justify-start" role="list">
+    <div class="text-center flex flex-row md:flex-col justify-between items-center">
+      {% if section.settings.logo_svg != blank %}
+        <img
+          class="lazy max-w-[110px] md:max-w-[160px] md:mx-auto"
+          src="{{ section.settings.logo_svg }}"
+          alt="{{ section.settings.logo_svg.alt }}">
+      {% elsif section.settings.logo != blank %}
+        <img
+          class="lazy max-w-[110px] max-w-[160px] md:mx-auto"
+          src="{{ section.settings.logo | img_url: 'master' }}"
+          alt="{{ section.settings.logo.alt }}"
+          loading="lazy">
+      {% endif %}
+      <!-- render social  -->
+      {%- if section.settings.show_social -%}
+        <div class="">
+          <ul class="flex md:hidden items-center gap-3 justify-center md:justify-start" role="list">
             {% render 'social' %}
-            </ul>
-          </div>
-        {% endif %}
-     </div>
-      <!-- menu side -->
-      <div class="w-full md:w-6/12 lg:w-7/12 pt-5">
-          <accordion-group class="group">
-            {% for block in section.blocks %}
-                <accordion-element class="mb-4 border-b border-white last:border-none">
-                  <accordion-trigger class="group">
-                    <accordion-header class="flex justify-between">
-                        <div class="flex-1">
-                          <p class="pb-4 text-xs font-bold uppercase" style="color:{{ section.settings.color }}">{{ block.settings.heading }}</p>
-                        </div>
-                        <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
-                          <span class="icon-plus">{% render 'icon-accordion-plus-white' %}</span>
-                          <span class="icon-minus hidden">{% render 'icon-accordion-minus-white' %}</span>
-                      </accordion-icon>
-                    </accordion-header>
-                  </accordion-trigger>
-                  <accordion-content>
-                    <ul class="mb-5 list-none">
-                      {%- for link in block.settings.menu.links -%}
-                        <li class="mb-2">
-                          <a href="{{ link.url }}" class="uppercase:first-letter text-sm font-light {% if link.active %} font-bold {% endif %}" style="color:{{ section.settings.color }}">
-                          {{ link.title }}
-                          </a>
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  </accordion-content>
-                </accordion-element>
-              {% endfor %}
-           </accordion-group>
-         </div>
-   </div> <!-- close flex -->
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Text mobile  -->
+    {% if section.settings.subtext != blank %}
+      <div class="my-6 block md:hidden text-sm font-light" style="color:{{ section.settings.color }}">
+        {{ section.settings.subtext }}
+      </div>
+    {% endif %}
+
+    <div class="flex justify-between pt-5 {% if section.settings.mention-legal == blank %} pb-10 md:pb-16 {% endif %}">
+      <!-- desktop menus -->
+      {% for block in section.blocks %}
+        <div class="hidden md:block">
+          <h4 class="pb-4 text-sm md:text-base font-bold" style="color:{{ section.settings.color }}">{{ block.settings.heading }}</h4>
+          <ul class="list-none">
+            {%- for link in block.settings.menu.links -%}
+              <li class="mb-1">
+                <a
+                  href="{{ link.url }}"
+                  class="uppercase:first-letter text-sm font-light {% if link.active %} font-bold {% endif %}"
+                  style="color:{{ section.settings.color }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {% endfor %}
+
+      <!-- mobile menus -->
+      <div class="block md:hidden w-full">
+        <accordion-group class="group">
+          {% for block in section.blocks %}
+            <accordion-element class="mb-4 border-b last:border-none" style="border-color:{{ section.settings.color }}">
+              <accordion-trigger class="group">
+                <accordion-header class="flex justify-between">
+                  <div class="flex-1">
+                    <p class="pb-4 text-xs font-bold uppercase" style="color:{{ section.settings.color }}">{{ block.settings.heading }}</p>
+                  </div>
+                  <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
+                    <span class="icon-plus">{% render 'icon-accordion-plus', color: section.settings.color %}</span>
+                    <span class="icon-minus hidden relative top-[7px]">{% render 'icon-accordion-minus', color: section.settings.color %}</span>
+                  </accordion-icon>
+                </accordion-header>
+              </accordion-trigger>
+              <accordion-content>
+                <ul class="mb-5 list-none">
+                  {%- for link in block.settings.menu.links -%}
+                    <li class="mb-2">
+                      <a
+                        href="{{ link.url }}"
+                        class="uppercase:first-letter text-sm font-light {% if link.active %} font-bold {% endif %}"
+                        style="color:{{ section.settings.color }}">
+                        {{ link.title }}
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </accordion-content>
+            </accordion-element>
+          {% endfor %}
+        </accordion-group>
+      </div>
+    </div>
+    <!-- close flex -->
 
     <!-- mentions legal -->
     {%- if section.settings.mention-legal != blank -%}
-      <div class="w-full mt-10 pb-6 text-xs text-center text-[#ACACAF]">
+      <div class="w-full mt-10 pb-6 text-xs text-center" style="color:{{ section.settings.color }}">
         {{ section.settings.mention-legal }}
       </div>
-    {% endif %} 
+    {% endif %}
 
-     <!-- image reviews -->
-     {%- if section.settings.image-reviews != blank -%}
-      <div class="mt-5 pb-6 max-w-[120px] mx-auto">
-        <img class="mb-4 lazy" src="{{ section.settings.image-reviews | img_url: 'master' }}" alt="{{ section.settings.logo.alt }}" loading="lazy">
-      </div>
-    {%- endif -%} 
+    {%- if section.settings.menu_legal != blank -%}
+      <ul class="list-none flex flex-col md:flex-row justify-center text-center">
+        {%- for link in section.settings.menu_legal.links -%}
+          <li class="mx-8">
+            <a
+              href="{{ link.url }}"
+              class="uppercase:first-letter text-xs md:text-sm font-light {% if link.active %} font-bold {% endif %}"
+              style="color:{{ section.settings.color }}">
+              {{ link.title }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {% endif %}
+  </div>
 </footer>
-<style>
-   accordion-element {
-   -webkit-tap-highlight-color: rgba(0,0,0,0);
-   }
-   accordion-element[data-open="true"] .icon-plus{
-    display: none;
-   } 
-   accordion-element[data-open="true"] .icon-minus{
-    display: block;
-   } 
-</style>
+
 {% schema %}
-{
-  "name": "Footer",
-  "max_blocks": 4,
-  "blocks": [
-    {
-      "type": "link_list",
-      "name": "Menu",
-      "settings": [
-        {
-          "type": "text",
-          "id": "heading",
-          "default": "Title",
-          "label": "Title"
-        },
-        {
-          "type": "link_list",
-          "id": "menu",
-          "default": "footer",
-          "label": "Menu",
-          "info": "Affiche uniquement les éléments de menu de niveau supérieur."
-        }
-      ]
-    }
-  ],
-  "settings": [
-        {
-           "type": "header",
-           "content": "Logo"
-        },
-        {
-          "type": "image_picker",
-          "id": "logo",
-          "label": "Logo"
-        },
-        {
-          "type": "text",
-          "id": "logo_svg",
-          "label": "Logo SVG",
-          "default": "https://cdn.shopify.com/s/files/1/0636/1966/2070/files/logo.svg?v=1662912874"
-        },
-        {
-          "type": "header",
-          "content": "content"
-       },
-        {
-          "type": "text",
-          "id": "title",
-          "default": "Les news étonnantes !",
-          "label": "Title"
-        },
-        {
-          "type": "richtext",
-          "id": "subtext",
-          "default": "<p>Tout sur le vin, nos vignerons et des offres exclusives.</p>",
-          "label": "Text"
-        },
-        {
-           "type": "checkbox",
-           "id": "show_newsletter",
-           "default": true,
-           "label": "Show newsletter ?"
-        },
-        {
-           "type": "checkbox",
-           "id": "show_social",
-           "default": true,
-           "label": "Show social ?"
-        },
-        {
-           "type": "header",
-           "content": "Mention legal"
-        },
-        {
-          "type": "richtext",
-          "id": "mention-legal",
-          "label": "Text mention legal",
-          "default": "<p>Mentions légales — Privacy Policy ©Vins étonnants</p>"
-        },
-        {
-          "type": "image_picker",
-          "id": "image-reviews",
-          "label": "Image reviews"
-        },
-        {
+  {
+    "name": "Footer",
+    "max_blocks": 5,
+    "blocks": [
+      {
+        "type": "link_list",
+        "name": "Menu",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "default": "Title",
+            "label": "Title"
+          }, {
+            "type": "link_list",
+            "id": "menu",
+            "default": "footer",
+            "label": "Menu",
+            "info": "Affiche uniquement les éléments de menu de niveau supérieur."
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "text",
+        "id": "logo_svg",
+        "label": "Logo SVG",
+        "default": "https://cdn.shopify.com/s/files/1/0636/1966/2070/files/logo.svg?v=1662912874"
+      },
+      {
+        "type": "header",
+        "content": "content"
+      }, {
+        "type": "richtext",
+        "id": "subtext",
+        "default": "<p>Texte descriptif de chaque collection. À ne pas dépasser sur plus de 3 lignes. Sinon CTA lire plus/lire moins...</p>",
+        "label": "Text"
+      }, {
+        "type": "checkbox",
+        "id": "show_social",
+        "default": true,
+        "label": "Show social ?"
+      }, {
+        "type": "header",
+        "content": "Mention legal"
+      }, {
+        "type": "richtext",
+        "id": "mention-legal",
+        "label": "Text mention legal",
+        "default": "<p>Copyright 2022</p>"
+      }, {
+        "type": "link_list",
+        "id": "menu_legal",
+        "default": "footer",
+        "label": "Menu legal",
+        "info": "Affiche uniquement les éléments de menu de niveau supérieur."
+      }, {
         "type": "header",
         "content": "colors"
-        },
-        {
+      }, {
         "type": "color",
         "id": "bg_color",
         "label": "Background color",
         "default": "#E8E2DB"
-        },
-        {
-         "type": "color",
-         "id": "color",
-         "label": "Text color",
-         "default": "#FFFFFF"
-        }
-      ],
-  "default": {
-    "blocks": [
-      {
-        "type": "link_list"
+      }, {
+        "type": "color",
+        "id": "color",
+        "label": "Text color",
+        "default": "#FFFFFF"
       }
-    ]
+    ],
+    "default": {
+      "blocks": [
+        {
+          "type": "link_list"
+        }
+      ]
+    }
   }
-}
 {% endschema %}
