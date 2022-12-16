@@ -107,8 +107,8 @@
         "cta": "",
         "ctaLink": "",
         "show_hr": true,
-        "bg_color": "#FAF5EF",
-        "color": "#1A1A1A"
+        "bg_color": "#faf5ef",
+        "color": "#1a1a1a"
       }
     },
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01": {
@@ -170,12 +170,24 @@
         "text_color": "#201a1c",
         "background_color": "#faf5ef"
       }
+    },
+    "a11b1585-0a12-4fa7-b722-9bd6997a108a": {
+      "type": "newsletter",
+      "settings": {
+        "title": "NEWSLETTER",
+        "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives !<\/p>",
+        "text_button": "S'inscrire",
+        "bg_color": "#FAF5EF",
+        "color": "#4B9B7D",
+        "button_color": "#4B9B7D"
+      }
     }
   },
   "order": [
     "1663586369b92a04be",
     "1db7442e-0ee1-495a-96a1-01f3969e95f2",
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01",
-    "704f44dd-a6c3-4bad-93ce-650afe5aedf6"
+    "704f44dd-a6c3-4bad-93ce-650afe5aedf6",
+    "a11b1585-0a12-4fa7-b722-9bd6997a108a"
   ]
 }
