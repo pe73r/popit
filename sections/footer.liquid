@@ -35,17 +35,17 @@
       </div>
     {% endif %}
 
-    <div class="flex justify-between pt-5 {% if section.settings.mention-legal == blank %} pb-10 md:pb-16 {% endif %}">
+    <div class="flex justify-between mt-10 {% if section.settings.mention-legal == blank %} pb-10 md:pb-16 {% endif %}">
       <!-- desktop menus -->
       {% for block in section.blocks %}
         <div class="hidden md:block">
-          <h4 class="pb-4 text-sm md:text-base font-bold" style="color:{{ section.settings.color }}">{{ block.settings.heading }}</h4>
+          <h4 class="pb-4 text-sm lg:text-base font-bold" style="color:{{ section.settings.color }}">{{ block.settings.heading }}</h4>
           <ul class="list-none">
             {%- for link in block.settings.menu.links -%}
-              <li class="mb-1">
+              <li class="">
                 <a
                   href="{{ link.url }}"
-                  class="uppercase:first-letter text-sm font-light {% if link.active %} font-bold {% endif %}"
+                  class="uppercase:first-letter md:text-xs lg:text-sm font-light {% if link.active %} font-bold {% endif %}"
                   style="color:{{ section.settings.color }}">
                   {{ link.title }}
                 </a>
@@ -102,10 +102,10 @@
     {%- if section.settings.menu_legal != blank -%}
       <ul class="list-none flex flex-col md:flex-row justify-center text-center">
         {%- for link in section.settings.menu_legal.links -%}
-          <li class="mx-8">
+          <li class="mx-2 lg:mx-4">
             <a
               href="{{ link.url }}"
-              class="uppercase:first-letter text-xs md:text-sm font-light {% if link.active %} font-bold {% endif %}"
+              class="uppercase:first-letter text-xs lg:text-sm font-light {% if link.active %} font-bold {% endif %}"
               style="color:{{ section.settings.color }}">
               {{ link.title }}
             </a>
