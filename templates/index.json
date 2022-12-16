@@ -129,6 +129,15 @@
       "type": "marquee",
       "disabled": true,
       "blocks": {
+        "8f4a9503-ada2-408b-971a-423aad148b13": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/popit-logo.png",
+            "text": "",
+            "url": ""
+          }
+        },
         "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-0": {
           "type": "text",
           "settings": {
@@ -158,6 +167,7 @@
         }
       },
       "block_order": [
+        "8f4a9503-ada2-408b-971a-423aad148b13",
         "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-0",
         "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-1",
         "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-2"
@@ -176,9 +186,9 @@
         "title": "NEWSLETTER",
         "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives !<\/p>",
         "text_button": "S'inscrire",
-        "bg_color": "#FAF5EF",
-        "color": "#4B9B7D",
-        "button_color": "#4B9B7D"
+        "bg_color": "#faf5ef",
+        "color": "#4b9b7d",
+        "button_color": "#4b9b7d"
       }
     }
   },
