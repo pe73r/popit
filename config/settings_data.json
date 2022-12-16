@@ -359,7 +359,7 @@
         "settings": {
           "logo": "shopify:\/\/shop_images\/popit-logo.png",
           "logo_svg": "",
-          "title": "Les news étonnantes !",
+          "title": "",
           "subtext": "<p>Parce que chaque femme est différente, et que chaque moment nécessite que l’on imagine des produits spécifiques<\/p>",
           "show_newsletter": true,
           "show_social": true,
