@@ -113,7 +113,6 @@
     },
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01": {
       "type": "products-carousel",
-      "disabled": true,
       "settings": {
         "container": "7xl",
         "collection": "frontpage",
