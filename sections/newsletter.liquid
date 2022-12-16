@@ -1,7 +1,7 @@
 <div class="py-4 md:py-8" style=" background-color: {{ section.settings.bg_color }}">
   <div class="w-11/12 mx-auto">
     <div class="text-left md:text-center">
-      <h2 class="text-lg md:text-xl lg:text-[4rem] lg:leading-9 font-bold pb-2 sm:pb-8" style="color: {{ section.settings.color }}">
+      <h2 class="text-lg md:text-3xl lg:text-[4rem] lg:leading-9 font-bold pb-2 md:pb-4 lg:pb-8" style="color: {{ section.settings.color }}">
         {{ section.settings.title }}
       </h2>
       {% if section.settings.text != blank %}
@@ -42,13 +42,13 @@
           <button
             type="submit"
             data-newsletter
-            class="px-4 py-3 text-base rounded-lg text-white flex justify-center items-center min-w-fit"
+            class="px-3 md:px-4 py-3 text-base rounded-lg text-white flex justify-center items-center min-w-fit"
             style="background-color: {{ section.settings.button_color }}"
-            name="commit" 
+            name="commit"
             id="Subscribe"
             aria-label="{{ 'newsletter.button_label' | t }}">
             <span class="block md:hidden">{% render 'icon-newsletter-arrow' %}</span>
-            <span class="hidden md:block"></span>{{ section.settings.text_button }}</span>
+            <span class="hidden md:block">{{ section.settings.text_button }}</span>
           </button>
         </div>
 
