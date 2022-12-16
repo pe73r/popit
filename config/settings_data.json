@@ -324,29 +324,36 @@
           "c30e5de2-0357-4258-aec3-1a38e7dfa88a": {
             "type": "link_list",
             "settings": {
-              "heading": "NOS PRODUITS",
-              "menu": ""
+              "heading": "NOS OFFRES",
+              "menu": "nos-offres"
             }
           },
           "a60a8e48-011b-433c-a9a4-ab46efd57ef9": {
             "type": "link_list",
             "settings": {
-              "heading": "BLOG",
-              "menu": ""
+              "heading": "BESOINS",
+              "menu": "besoins"
             }
           },
           "2f5128fc-ab49-4c8b-ad3d-d0240c1916a7": {
             "type": "link_list",
             "settings": {
-              "heading": "A PROPOS",
-              "menu": ""
+              "heading": "PRINCIPES ACTIFS",
+              "menu": "besoins"
             }
           },
           "9f4aa598-1549-4004-8a0b-04b27f1eab98": {
             "type": "link_list",
             "settings": {
-              "heading": "CONTACT",
-              "menu": ""
+              "heading": "SUPERFOOD",
+              "menu": "besoins"
+            }
+          },
+          "a5485402-f5d6-4184-b592-6a5bc153a500": {
+            "type": "link_list",
+            "settings": {
+              "heading": "À PROPOS",
+              "menu": "propos"
             }
           }
         },
@@ -354,18 +361,18 @@
           "c30e5de2-0357-4258-aec3-1a38e7dfa88a",
           "a60a8e48-011b-433c-a9a4-ab46efd57ef9",
           "2f5128fc-ab49-4c8b-ad3d-d0240c1916a7",
-          "9f4aa598-1549-4004-8a0b-04b27f1eab98"
+          "9f4aa598-1549-4004-8a0b-04b27f1eab98",
+          "a5485402-f5d6-4184-b592-6a5bc153a500"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/popit-logo.png",
           "logo_svg": "",
-          "title": "",
           "subtext": "<p>Parce que chaque femme est différente, et que chaque moment nécessite que l’on imagine des produits spécifiques<\/p>",
-          "show_newsletter": true,
           "show_social": true,
-          "mention-legal": "<p>Mentions légales — Privacy Policy ©Vins étonnants<\/p>",
+          "mention-legal": "<p>Copyright 2022, <strong>Popit<\/strong>.<\/p>",
+          "menu_legal": "menu-legal",
           "bg_color": "#e3f2ed",
-          "color": "#1d1d1d"
+          "color": "#4b9b7d"
         }
       },
       "reinsurance": {
