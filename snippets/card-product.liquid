@@ -1,56 +1,8 @@
 {%- if card_product and card_product != empty -%} 
-  <div class="card-product p-5 rounded-md bg-white shadow-md {% unless template contains "collection" or width_fit == true %} hehe min-w-[300px] md:min-w-[320px] {% endunless %}">
+  <div class="card-product p-5 rounded-md bg-white shadow-md">
     <a href="{{ card_product.url }}">
-      <div class="flex items-center">
-         <!-- card info -->
-          <div class="w-7/12 text-left">
-
-            <!-- Title and drop -->
-            <div class="flex gap-1 relative min-h-[60px]">
-              <{% if template contains 'collection' %}h2{% else %}h3{% endif %} class="font-body-text text-[20px] font-extrabold line-clamp-2">
-                {{ card_product.title }}
-              </{% if template contains 'collection' %}h2{% else %}h3{% endif %}>
-
-              {%- if card_product.tags contains "rouge" -%}
-                <div class="relative top-1">
-                  {% render 'icon-drop-red' %}
-                </div>
-              {%- elsif card_product.tags contains "blanc" -%}
-                  <div class="relative top-1">
-                    {% render 'icon-drop-yellow' %}
-                  </div>
-              {%- endif -%}
-            </div>
-
-            <!-- Avis verifiés  -->
-            <div class="min-h-[15px]">
-
-            </div>
-
-            <!-- Metafield producer -->
-            <div class="mt-5">
-              <p class="text-xs uppercase font-light">PRODUCTEUR</p>
-              <p class="text-base line-clamp-2 min-h-[32px]">Laguerre (Domaine)</p>
-              {%- comment -%} <p class="my-2 text-base line-clamp-1 max-h-[32px]">{{ card_product.metafields.product.producer  }}</p> {%- endcomment -%}
-            </div>
-
-            <!-- Metafield region -->
-            <div class="mt-3">
-              <p class="text-xs uppercase font-light">RÉGION</p>
-              <p class="text-base line-clamp-1">Bourgogne</p>
-              {%- comment -%} <p class="my-2 text-base line-clamp-1 max-h-[32px]">{{ card_product.metafields.product.region }}</p> {%- endcomment -%}
-            </div>
-
-            <!-- Metafield grade -->
-            <div class="mt-3">
-              <p class="text-xs uppercase font-light">CÉPAGE</p>
-              <p class="text-base line-clamp-1">Syrah</p>
-              {%- comment -%} <p class="my-2 text-base line-clamp-1 max-h-[32px]">{{ card_product.metafields.product.grade }}</p> {%- endcomment -%}
-            </div>
-        </div>
-
           <!-- product image -->
-         <div class="w-5/12 relative group">
+         <div class="relative group">
             {%- if card_product.featured_media -%}
                 <div class="w-full {% if card_product.media[1] != nil and show_secondary_image %} card_product__image transition-all md:group-hover:opacity-0 {% endif %}  ">
                     <img
@@ -64,7 +16,7 @@
                       src="{{ card_product.featured_media | image_url: width: 533 }}"
                       sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                       alt="{{ card_product.featured_media.alt | escape }}"
-                      class="motion-reduce"
+                      class="motion-reduce w-full"
                       {% unless lazy_load == false %}loading="lazy"{% endunless %}
                       width="{{ card_product.featured_media.width }}"
                       height="{{ card_product.featured_media.height }}"
@@ -83,7 +35,7 @@
                         src="{{ card_product.media[1] | image_url: width: 533 }}"
                         sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                         alt="{{ card_product.media[1].alt | escape }}"
-                        class="w-full h-full motion-reduce"
+                        class="w-full motion-reduce"
                         loading="lazy"
                         width="{{ card_product.media[1].width }}"
                         height="{{ card_product.media[1].height }}"
@@ -92,13 +44,15 @@
                 {%- endif -%}
            {%- endif -%}
         </div>
-      </div> <!-- close flex -->
     </a>
 
-
-    <div class="border-t pt-2 mt-4">
+    <div class="border-t pt-2 mt-4 text-center">
+      <!-- title -->
+      <{% if template contains 'collection' %}h2{% else %}h3{% endif %} class="font-body-text text-[20px] font-extrabold line-clamp-2">
+        {{ card_product.title }}
+       </{% if template contains 'collection' %}h2{% else %}h3{% endif %}>
       <!-- Price -->
-      <div class="flex items-center">
+      <div class="flex items-center justify-center">
         {% if card_product.compare_at_price == nil %}
             <span class="text-[20px] font-extrabold">
                 {{ card_product.price | money }}
@@ -114,7 +68,8 @@
       </div>
 
        <!-- cta  -->
-      {% if card_product.available %}
+      {% if section.settings.show_cta %}     
+        {% if card_product.available %}
           <div class="group relative mt-3 flex gap-1">
             <product-quantity
             data-max-quantity="{{card_product.selected_or_first_available_variant.inventory_quantity}}"
@@ -155,7 +110,8 @@
                 Rupture
               </div>
             </div>
-      {% endif %}
+       {% endif %}
+     {% endif %}
     </div>
 
   </div>
