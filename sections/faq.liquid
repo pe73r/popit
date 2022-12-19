@@ -1,111 +1,112 @@
-
-<section>
- <div class="my-10 text-left w-11/12 max-w-5xl mx-auto">
-   <div class="text-center text-[15px] mx-5 md:mx-36 mt-[62px] ">
-       {% if section.settings.title != blank  %}
-         <{% if template contains 'collection' %}h2{% else %}h1{% endif %} class="mt-5 text-[32px] font-medium" style="color:{{ section.settings.title_color }}"> {{ section.settings.title }} </{% if template contains 'collection' %}h2{% else %}h1{% endif %}>
-       {% endif %}
-   </div>
-     <accordion-group>
-        {% for block in section.blocks %}
-          {% render 'faq', block: block %}
-        {% endfor %}
-      </accordion-group>
+<section class="{% if section.settings.hide_in_mobile %} hidden md:block {% endif %}">
+  <div class="my-10 text-left w-11/12 max-w-4xl mx-auto">
+    <div class="text-center mb-5 md:mb-8">
+      {% if section.settings.title != blank %}
+        <h2 class="text-lg md:text-4xl xl:text-5xl" style="color:{{ section.settings.title_color }}">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
     </div>
-    {% if section.blocks.size > 0 %}
-      <script type="application/ld+json">
+    <accordion-group>
+      {% for block in section.blocks %}
+        {% render 'faq', block: block %}
+      {% endfor %}
+    </accordion-group>
+  </div>
+  {% if section.blocks.size > 0 %}
+    <script type="application/ld+json">
+      {
+      "@context":"https://schema.org",
+                                                          "@type":"FAQPage",
+                                                          "mainEntity":[
+      {% for block in section.blocks -%}
         {
-          "@context":"https://schema.org",
-          "@type":"FAQPage",
-          "mainEntity":[
-            {% for block in section.blocks -%}
-              {
-                "@type":"Question",
-                "name":"{{ block.settings.question }}",
-                "acceptedAnswer":
-                {
-                  "@type":"Answer",
-                  "text":"{{ block.settings.answer }}"
-                }
-              },
-            {%- endfor %}
-          ]
+        "@type":"Question",
+                                                                                "name":"{{ block.settings.question }}",
+        "acceptedAnswer":
+                                                                                {
+                                                                                  "@type":"Answer",
+                                                                                  "text":"{{ block.settings.answer }}"
         }
-      </script>
-    {% endif %}
+                                                                              },
+      {%- endfor %}
+      ]
+      }
+    </script>
+  {% endif %}
 </section>
 
 
-
 {% schema %}
-{
- "name": "FAQ",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "default": "FAQ",
-      "label": "Title FAQ"
-    },
-    {
-          "type": "header",
-          "content": "colors"
-        },
-        {
-          "type": "color",
-          "id": "title_color",
-          "label": "Title color",
-          "default": "#733E2B"
-        },
-        {
-          "type": "color",
-          "id": "title_accordion_color",
-          "label": "Title accordion color",
-          "default": "#733E2B"
-        },
-        {
+  {
+    "name": "FAQ",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hide_in_mobile",
+        "label": "Hide in mobile?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "default": "FAQ",
+        "label": "Title FAQ"
+      },
+      {
+        "type": "header",
+        "content": "colors"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title color",
+        "default": "#201A1C"
+      }, {
+        "type": "color",
+        "id": "title_accordion_color",
+        "label": "Title accordion color",
+        "default": "#201A1C"
+      }, {
         "type": "color",
         "id": "content_accordion_color",
         "label": "Text accordion color",
-        "default": "#927254"
-        }
-   ],
-   "blocks": [
-     {
-    "name": "FAQ Accordion",
-    "type": "block",
-    "settings": [
-        {
-        "type": "text",
-        "id": "question",
-        "default": "Est-ce que cette poudre est vegan ?",
-        "label": "FAQ Title"
-        },
-        {
-        "type": "text",
-        "id": "answer",
-        "default": "Non, cette poudre n'est pas vegan car nous avons mis du collagène marin issu de poissons.",
-        "label": "FAQ content"
-        }
-      ]
-     }
-   ],
-   "presets": [
-    {
-      "name": "FAQ",
-      "blocks": [
-        {
-          "type": "block"
-        },
-        {
-          "type": "block"
-        },
-        {
-          "type": "block"
-        }
+        "default": "#201A1C"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "FAQ Accordion",
+        "type": "block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "default": "Quelles sont les options de livraison ?",
+            "label": "FAQ Title"
+          }, {
+            "type": "text",
+            "id": "answer",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "label": "FAQ content"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "FAQ",
+        "blocks": [
+          {
+            "type": "block"
+          }, {
+            "type": "block"
+          }, {
+            "type": "block"
+          }
 
-      ]
-    }
-  ]
-}
+        ]
+      }
+    ]
+  }
 {% endschema %}

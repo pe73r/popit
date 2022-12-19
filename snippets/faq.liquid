@@ -1,26 +1,26 @@
-<accordion-element class="py-6 border-b border-[#927254] last:border-none">
-    <accordion-trigger class="group">
-      <accordion-header class="flex justify-between items-center">
-          <div class="flex-1">
-            <{% if template contains 'collection' %}h3{% else %}h2{% endif %} class="text-sm md:text-base font-bold first-letter:uppercase" style="color:{{ section.settings.title_accordion_color }}">{{ block.settings.question }}</{% if template contains 'collection' %}h3{% else %}h2{% endif %}>
-          </div>
-          <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
-            <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
-            <span class="icon-minus hidden">{% render 'icon-accordion-minus' %}</span>
-          </accordion-icon>
-      </accordion-header>
-    </accordion-trigger>
-    <accordion-content>
-     <div class="text-base mt-4" style="color:{{ section.settings.content_accordion_color }}" >
-        {{ block.settings.answer }}
+<accordion-element class="py-6 border-b last:border-none">
+  <accordion-trigger class="group">
+    <accordion-header class="flex justify-between items-center">
+      <div class="flex-1">
+        <h3 class="text-sm md:text-base font-bold first-letter:uppercase" style="color:{{ section.settings.title_accordion_color }}">{{ block.settings.question }}</h3>
       </div>
-   </accordion-content>
+      <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
+        <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
+        <span class="icon-minus hidden">{% render 'icon-accordion-minus' %}</span>
+      </accordion-icon>
+    </accordion-header>
+  </accordion-trigger>
+  <accordion-content>
+    <div class="text-base mt-4" style="color:{{ section.settings.content_accordion_color }}">
+      {{ block.settings.answer }}
+    </div>
+  </accordion-content>
 </accordion-element>
 <style>
-  accordion-element[data-open="true"] .icon-plus{
-   display: none;
-  } 
-  accordion-element[data-open="true"] .icon-minus{
-   display: block;
-  } 
+  accordion-element[data-open="true"] .icon-plus {
+    display: none;
+  }
+  accordion-element[data-open="true"] .icon-minus {
+    display: block;
+  }
 </style>
