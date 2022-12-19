@@ -1,5 +1,5 @@
 {%- if card_product and card_product != empty -%} 
-  <div class="card-product p-5 rounded-md bg-white shadow-md">
+  <div class="card-product p-2 rounded-md bg-white shadow-md">
     <a href="{{ card_product.url }}">
           <!-- product image -->
          <div class="relative group">
@@ -46,11 +46,19 @@
         </div>
     </a>
 
-    <div class="border-t pt-2 mt-4 text-center">
+    <!-- product-info -->
+    <div class="mt-4 text-center">  
       <!-- title -->
-      <{% if template contains 'collection' %}h2{% else %}h3{% endif %} class="font-body-text text-[20px] font-extrabold line-clamp-2">
+      <{% if template contains 'collection' %}h2{% else %}h3{% endif %} class="font-body-text text-[20px] font-extrabold line-clamp-1">
         {{ card_product.title }}
        </{% if template contains 'collection' %}h2{% else %}h3{% endif %}>
+
+      <!-- Description -->
+      {%- if card_product.metafields.global.description != blank -%}
+          <p class="my-2 text-sm line-clamp-2 max-h-[42px]">{{ card_product.metafields.global.description }}</p>
+      {% else %}
+        <p class="my-2 text-sm line-clamp-2 max-h-[42px]">{{ card_product.description | truncate: 100  }}</p>
+      {%- endif -%}
       <!-- Price -->
       <div class="flex items-center justify-center">
         {% if card_product.compare_at_price == nil %}
@@ -58,17 +66,17 @@
                 {{ card_product.price | money }}
             </span>
         {% else %}
-          <span class="text-[20px] font-extrabold">
-              {{ card_product.price | money }}
+           <span class="line-through text-base mr-2 text-gray-400 font-semibold">
+              {{ card_product.compare_at_price | money }}
           </span>
-            <span class="line-through text-base ml-2">
-                {{ card_product.compare_at_price | money }}
-            </span>
+          <h6 class="text-[20px] font-extrabold">
+              {{ card_product.price | money }}
+          </h6>   
         {% endif %}
       </div>
 
        <!-- cta  -->
-      {% if section.settings.show_cta %}     
+      {% if section.settings.show_cta %}      
         {% if card_product.available %}
           <div class="group relative mt-3 flex gap-1">
             <product-quantity

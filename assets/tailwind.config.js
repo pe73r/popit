@@ -42,6 +42,7 @@ module.exports = {
         },
         green: {
           DEFAULT: "#4B9B7D",
+          light: "#E3F2ED",
         },
       },
 
