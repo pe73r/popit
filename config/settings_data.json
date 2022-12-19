@@ -251,7 +251,6 @@
         "settings": {
           "collection": "",
           "limit": 25,
-          "title": "NOTRE SÉLECTION",
           "show_secondary_image": false,
           "show_dots": true
         }
