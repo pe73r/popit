@@ -1,10 +1,10 @@
 {%- if card_product and card_product != empty -%} 
-  <div class="card-product p-2 rounded-md bg-white shadow-md">
+  <div class="card-product p-1 md:p-2 rounded-lg bg-white shadow-md">
     <a href="{{ card_product.url }}">
           <!-- product image -->
          <div class="relative group">
             {%- if card_product.featured_media -%}
-                <div class="w-full {% if card_product.media[1] != nil and show_secondary_image %} card_product__image transition-all md:group-hover:opacity-0 {% endif %}  ">
+                <div class="w-full bg-beige rounded-lg {% if card_product.media[1] != nil and show_secondary_image %} card_product__image transition-all md:group-hover:opacity-0 {% endif %}  ">
                     <img
                       srcset="{%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
                         {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
@@ -35,7 +35,7 @@
                         src="{{ card_product.media[1] | image_url: width: 533 }}"
                         sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                         alt="{{ card_product.media[1].alt | escape }}"
-                        class="w-full motion-reduce"
+                        class="w-full motion-reduce bg-beige rounded-lg"
                         loading="lazy"
                         width="{{ card_product.media[1].width }}"
                         height="{{ card_product.media[1].height }}"
@@ -43,21 +43,33 @@
                   </div>
                 {%- endif -%}
            {%- endif -%}
+           
+           <div class="relative bottom-[15px] z-10">
+             {% if card_product.tags contains "60-gummies" %}
+                <div class="text-white bg-green-medium rounded-md p-1 sm:p-2 m-auto text-[10px] sm:text-xs w-fit text-center">
+                  60 gummies/2 mois
+                </div>
+             {% else %}
+                <div class="text-white bg-green-dark rounded-md p-1 sm:p-2 m-auto text-[10px] sm:text-xs w-fit text-center">
+                  120 gummies/4 mois
+                </div>
+             {% endif %}
+           </div>
         </div>
     </a>
 
     <!-- product-info -->
-    <div class="mt-4 text-center">  
+    <div class="text-center">  
       <!-- title -->
-      <{% if template contains 'collection' %}h2{% else %}h3{% endif %} class="font-body-text text-[20px] font-extrabold line-clamp-1">
+      <{% if template contains 'collection' %}h2{% else %}h3{% endif %} class="font-body-text text-base md:text-[20px] font-extrabold line-clamp-1">
         {{ card_product.title }}
        </{% if template contains 'collection' %}h2{% else %}h3{% endif %}>
 
       <!-- Description -->
       {%- if card_product.metafields.global.description != blank -%}
-          <p class="my-2 text-sm line-clamp-2 max-h-[42px]">{{ card_product.metafields.global.description }}</p>
+          <p class="my-1 md:my-2 text-xs md:text-sm line-clamp-2 max-h-[42px]">{{ card_product.metafields.global.description }}</p>
       {% else %}
-        <p class="my-2 text-sm line-clamp-2 max-h-[42px]">{{ card_product.description | truncate: 100  }}</p>
+        <p class="my-1 md:my-2 text-xs md:text-sm line-clamp-2 max-h-[42px]">{{ card_product.description | truncate: 100  }}</p>
       {%- endif -%}
       <!-- Price -->
       <div class="flex items-center justify-center">
@@ -66,10 +78,10 @@
                 {{ card_product.price | money }}
             </span>
         {% else %}
-           <span class="line-through text-base mr-2 text-gray-400 font-semibold">
+           <span class="line-through text-xs md:text-sm mr-1 md:mr-2 text-gray-400 font-semibold">
               {{ card_product.compare_at_price | money }}
           </span>
-          <h6 class="text-[20px] font-extrabold">
+          <h6 class="text-sm md:text-base font-extrabold">
               {{ card_product.price | money }}
           </h6>   
         {% endif %}
