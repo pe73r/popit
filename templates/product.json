@@ -24,6 +24,7 @@
         },
         "3d1604f2-041f-42ef-8b6a-3c0b480b05f1": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Vendu par Vins étonnants",
             "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/Image.svg?v=1670361219"
@@ -48,81 +49,27 @@
         "show_dots": true
       }
     },
-    "48846409-d24b-4d84-bbc2-57b29e52395c": {
-      "type": "marquee",
-      "blocks": {
-        "template--17096559460666__48846409-d24b-4d84-bbc2-57b29e52395c-167043006680281c41-0": {
-          "type": "text",
-          "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
-            "text": "<p>vins étonnants<\/p>",
-            "url": ""
-          }
-        },
-        "template--17096559460666__48846409-d24b-4d84-bbc2-57b29e52395c-167043006680281c41-1": {
-          "type": "text",
-          "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/stars.svg?v=1669648221",
-            "text": "<p>une occasion de vous surprendre<\/p>",
-            "url": ""
-          }
-        },
-        "template--17096559460666__48846409-d24b-4d84-bbc2-57b29e52395c-167043006680281c41-2": {
-          "type": "text",
-          "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
-            "text": "<p>vins étonnants<\/p>",
-            "url": ""
-          }
-        },
-        "bd6fef33-9b05-4912-9e76-0d47abd96dd6": {
-          "type": "text",
-          "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/stars.svg?v=1669648221",
-            "text": "<p>une occasion de vous surprendre<\/p>",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--17096559460666__48846409-d24b-4d84-bbc2-57b29e52395c-167043006680281c41-0",
-        "template--17096559460666__48846409-d24b-4d84-bbc2-57b29e52395c-167043006680281c41-1",
-        "template--17096559460666__48846409-d24b-4d84-bbc2-57b29e52395c-167043006680281c41-2",
-        "bd6fef33-9b05-4912-9e76-0d47abd96dd6"
-      ],
-      "settings": {
-        "animationDuration": 30,
-        "height": "68px",
-        "border": false,
-        "text_color": "#ffffff",
-        "background_color": "#201a1c"
-      }
-    },
     "product-informations-snap": {
       "type": "product-informations-snap",
       "blocks": {
         "e7c7ac71-36f4-4208-98b7-9b98fb3b93a3": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/5eec4b4341370ca7fc4654c0b3cbdb33.jpg"
           }
         },
         "c56fa692-cfa9-48a7-8a88-a79982f26b11": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_45.png"
           }
         },
         "121f98b8-be10-4647-9159-1add5913a182": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_304_1.png"
           }
         },
         "f87cb003-bd4e-4bfa-8d35-d4d8f1c55c4e": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/kym-ellis-aF1NPSnDQLw-unsplash.jpg"
           }
         },
         "8b357d0c-ab4b-4c86-b406-a28b2b690c5a": {
@@ -219,7 +166,7 @@
     "20c2f30e-d3b8-4c88-b885-f4760a1b1c1b": {
       "type": "rich-text-expandable",
       "settings": {
-        "text_color": "#201A1C",
+        "text_color": "#201a1c",
         "title": "Que signigie l’appelation bio ?",
         "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
         "more_text": "<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>",
@@ -232,7 +179,6 @@
   },
   "order": [
     "main",
-    "48846409-d24b-4d84-bbc2-57b29e52395c",
     "product-informations-snap",
     "product-recommendations-carousel",
     "c81556f9-1731-4da3-bee9-3ca8bc137f71",
