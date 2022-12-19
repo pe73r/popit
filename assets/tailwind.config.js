@@ -38,11 +38,13 @@ module.exports = {
           DEFAULT: "#927254",
         },
         beige: {
-          DEFAULT: "#FFF7ED",
+          DEFAULT: "#FAF5EF",
         },
         green: {
           DEFAULT: "#4B9B7D",
           light: "#E3F2ED",
+          dark: "#00555A",
+          medium: "#6EB3A8",
         },
       },
 
