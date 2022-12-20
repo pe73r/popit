@@ -15,6 +15,12 @@
             "show_quantity": true
           }
         },
+        "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
         "1e425230-6800-49eb-922c-18eab7fbfd55": {
           "type": "delivery_note",
           "settings": {
@@ -30,12 +36,6 @@
             "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/Image.svg?v=1670361219"
           }
         },
-        "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button"
-          }
-        },
         "b772b48a-9e88-44db-a874-d5d4fb97a412": {
           "type": "payment",
           "settings": {
@@ -47,9 +47,9 @@
       "block_order": [
         "e774b8d8-3d27-4e0a-8a21-0181dfe3ce03",
         "ce287ddd-56b4-4eae-92cf-5e6f08239886",
+        "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea",
         "1e425230-6800-49eb-922c-18eab7fbfd55",
         "3d1604f2-041f-42ef-8b6a-3c0b480b05f1",
-        "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea",
         "b772b48a-9e88-44db-a874-d5d4fb97a412"
       ],
       "settings": {
