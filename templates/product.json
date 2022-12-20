@@ -58,6 +58,7 @@
     },
     "product-informations-snap": {
       "type": "product-informations-snap",
+      "disabled": true,
       "blocks": {
         "e7c7ac71-36f4-4208-98b7-9b98fb3b93a3": {
           "type": "block",
