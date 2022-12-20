@@ -3,6 +3,16 @@
     <a href="{{ card_product.url }}">
           <!-- product image -->
          <div class="relative group">
+             <!-- discount % -->
+              {%- if variant.compare_at_price != blank or card_product.compare_at_price != blank-%}
+              {% assign percentage = 0 %}
+              {% for variant in card_product.variants %}
+                {% assign saving = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price | round %}
+                {% assign percentage = saving | at_least: percentage %}
+              {% endfor %}
+              <div class="absolute z-20 right-2 top-0 mt-2 text-xs text-white bg-orange font-bold rounded-lg py-1 px-2 whitespace-nowrap">-{{ percentage }}%</div>
+            {% endif %}
+
             {%- if card_product.featured_media -%}
                 <div class="w-full bg-beige rounded-lg {% if card_product.media[1] != nil and show_secondary_image %} card_product__image transition-all md:group-hover:opacity-0 {% endif %}  ">
                     <img
