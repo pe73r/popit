@@ -157,9 +157,21 @@
       "settings": {
         "hide_in_mobile": true,
         "title": "FAQ",
-        "title_color": "#201A1C",
-        "title_accordion_color": "#201A1C",
-        "content_accordion_color": "#201A1C"
+        "title_color": "#201a1c",
+        "title_accordion_color": "#201a1c",
+        "content_accordion_color": "#201a1c"
+      }
+    },
+    "801df341-54b5-4e52-9b09-68b370796d1f": {
+      "type": "home-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_9358.png",
+        "label": "JUSQU’À -25%",
+        "subtitle": "Personnalisez votre pack",
+        "title": "Économisez jusqu’à <span>-25%<\/span> en achetant un pack de 3, 4 ou 5 produits.",
+        "cta": "Personnaliser mon pack",
+        "ctaLink": "",
+        "color": "#201a1c"
       }
     },
     "704f44dd-a6c3-4bad-93ce-650afe5aedf6": {
@@ -234,6 +246,7 @@
     "1db7442e-0ee1-495a-96a1-01f3969e95f2",
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01",
     "0b6412c4-2e58-4ed2-beb0-443098854a8c",
+    "801df341-54b5-4e52-9b09-68b370796d1f",
     "704f44dd-a6c3-4bad-93ce-650afe5aedf6",
     "a11b1585-0a12-4fa7-b722-9bd6997a108a"
   ]
