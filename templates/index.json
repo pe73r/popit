@@ -138,7 +138,6 @@
     },
     "704f44dd-a6c3-4bad-93ce-650afe5aedf6": {
       "type": "marquee",
-      "disabled": true,
       "blocks": {
         "8f4a9503-ada2-408b-971a-423aad148b13": {
           "type": "text",
