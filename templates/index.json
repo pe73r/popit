@@ -150,7 +150,7 @@
         "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-1": {
           "type": "text",
           "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/popit-sticker-vegan_1.svg?v=1671536634",
             "text": "<p>Garanti cruelty-free et sans matières animales<\/p>",
             "url": ""
           }
@@ -158,7 +158,7 @@
         "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-2": {
           "type": "text",
           "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/popit-sticker-vegan_1.svg?v=1671536634",
             "text": "",
             "url": ""
           }
@@ -172,8 +172,8 @@
       "settings": {
         "animationDuration": 30,
         "border": false,
-        "text_color": "#fff",
-        "background_color": "#201A1C"
+        "text_color": "#201a1c",
+        "background_color": "#faf5ef"
       }
     },
     "a5b25d88-5d1b-4f30-95e2-ff5fdebef8b2": {
