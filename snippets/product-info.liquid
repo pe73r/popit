@@ -1,3 +1,7 @@
+{% if product.tags contains "sommeil" %}
+  {% assign product-color = "violet" %}
+{% endif %}
+
 <script>
   let stickyCart = document.querySelector('#sticktCart');
   let referenceMobile = document.querySelector('#referenceMobile');
@@ -56,7 +60,7 @@
           {% render "product-tag-icons", product: product, size: small %}
         </div>
       </div>
-      <div class="text-sm text-acajou line-clamp-2 h-[40px] mt-1">
+      <div class="text-sm text-{{ product-color }} line-clamp-2 h-[40px] mt-1">
         {{ product.metafields.global.weight }}
       </div>
     </div>
@@ -106,7 +110,7 @@
         data-price="{{ product.price | money_without_trailing_zeros }}"
         data-product="{{product.id}}"
         data-variant={{product.selected_or_first_available_variant.id}}>
-        <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="w-full my-2 GrotesqueBold text-white cursor-pointer !px-0 !py-0 {% render "button", size: "large", color:"primary" %}">
+        <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="w-full my-2 text-white cursor-pointer !px-0 !py-0 {% render "button", size: "large", color:"primary" %}">
           {% if product.available %}
             <div class="px-16 py-3 flex justify-center items-center">
               <span class="block">Ajouter au panier</span>
@@ -160,24 +164,23 @@
     </div>
   </div>
 </div>
+<!-- end sticky button -->
 
-<div class="pl-5 lg:pl-0 flex max-w-full gap-2 pt-5 overflow-auto">
-  <div class="flex gap-2 odd:whitespace-pre even:whitespace-pre">
-    {% render 'product-tag-icons', product: product %}
-  </div>
-</div>
+
 <div class="h-full px-5 lg:px-0 lg:pr-[10px] 2xl:max-w-[90%]">
-  <!-- tag-labels -->
-
 
   <!-- product blocks -->
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
       {%- when '@app' -%}
       {% render block %}
 
       {%- when 'subtitle' -%}
-        <p class="mb-2 text-sm md:block" {{ block.shopify_attributes }}> {{ product.metafields.global.product_subtitle.value }}
+        <p class="my-2 text-sm text-{{ product-color }} italic" {{ block.shopify_attributes }}>
+        {% comment %}
+          {{ product.metafields.global.product_subtitle.value }}
+        {% endcomment %}
+        Sportifs / Récupération musculaire
       </p>
       {%- when 'vendor' -%}
       <h5 class="my-2 text-sm uppercase md:block" {{ block.shopify_attributes }}>
@@ -185,47 +188,10 @@
       </h5>
 
       {%- when 'title' -%}
-        <div class="relative flex gap-2 mt-3">
-        <h1 class="uppercase text-[28px] leading-[37px] md:text-[34px] md:leading-[42px] font-extrabold" {{ block.shopify_attributes }}>
-          {{ product.title | escape }}
-        </h1>
 
-        <!-- discount % -->
-        {%- if variant.compare_at_price != blank or product.compare_at_price != blank -%}
-          {% assign percentage = 0 %}
-          {% for variant in product.variants %}
-            {% assign saving = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price | round %}
-            {% assign percentage = saving | at_least: percentage %}
-          {% endfor %}
-          <div class="mt-2 text-xs text-jaune border-acajou percentage GroteskBold whitespace-nowrap">
-            - {{ percentage }}%</div>
-        {% endif %}
-
-        {% if product.tags contains "new" and product.compare_at_price == blank %}
-          {% comment %}
-            {%  render 'icon-new'  %}
-          {% endcomment %}
-          <img
-            class="max-w-max w-fit h-fit"
-            src="{{ 'icon-new.png' | asset_url }}"
-            alt="new jollymama">
-        {% endif %}
-        {% if product.tags contains "edition-limitée" %}
-          {% comment %}
-            {%  render 'icon-limited-edition'  %}
-          {% endcomment %}
-        {% endif %}
-        {% if product.tags contains "précommande" %}
-          {% comment %}
-            {%  render 'icon-pre-order'  %}
-          {% endcomment %}
-        {% endif %}
-        {% if product.tags contains "rupture-stock" %}
-          {% comment %}
-            {%  render 'icon-no-stock'  %}
-          {% endcomment %}
-        {% endif %}
-      </div>
+      <h1 class="text-3xl font-bold text-{{ product-color }}" {{ block.shopify_attributes }}>
+        {{ product.title | escape }}
+      </h1>
 
       {%- when 'text' -%}
       <p class="product__text {% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
@@ -262,7 +228,7 @@
 
       {%- when 'stars' -%}
       <div>
-        stars
+        <img src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/Frame_8722.png?v=1671549363" alt="">
       </div>
 
       {%- when 'weight' -%}
@@ -296,10 +262,10 @@
           data-section="{{ section.id }}"
           data-url="{{ product.url }}">
           {%- for option in product.options_with_values -%}
-            <div class="mr-5 text-[15px] min-w-fit mb-2">{{ option.name }}:
-            </div>
+            {% comment %} <div class="mr-5 text-[15px] min-w-fit mb-2">{{ option.name }}:
+            </div> {% endcomment %}
 
-            <div class="flex flex-wrap">
+            <div class="flex flex-wrap my-4">
               {%- for value in option.values -%}
                 <input
                   data-position="{{ option.position }}"
@@ -353,7 +319,7 @@
       </noscript>
 
       {%- when 'buy_buttons' -%}
-      <div class="add-cart-2 hidden md:flex items-center justify-center gap-2 mt-5 md:mt-6">
+      <div class="add-cart-2 flex items-center justify-center gap-2 mt-5 md:mt-6">
         {% if block.settings.show_quantity and product.available == true %}
           <div class="border rounded-lg w-fit h-fit py-2 md:px-3 px-1.5" {{ block.shopify_attributes }}>
             <product-quantity
@@ -411,7 +377,7 @@
             id="referenceDesktop"
             data-product="{{ product.id }}"
             data-variant="{{ product.selected_or_first_available_variant.id }}">
-            <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="{% unless product.available %} hidden {% endunless %} w-full my-2 GrotesqueBold text-white cursor-pointer !px-0 !py-0 {% render "button", size: "large", color:"violet" %}">
+            <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="{% unless product.available %} hidden {% endunless %} w-full my-2 cursor-pointer !px-0 !py-0 {% render "button", size: "large", color:{{ product-color }} %}">
               {% if product.available %}
                 <div class="px-16 py-3 flex justify-center items-center">
                   <span class="block">Ajouter au panier</span>
@@ -471,324 +437,8 @@
 
       </div>
 
-      {%- when 'buy_buttons_mobile' -%}
-      <div class="add-cart-3 flex md:hidden items-center justify-center gap-2 mt-5 md:mt-6">
-        {% if block.settings.show_quantity and product.available == true %}
-          <div class="border-acajou border-2 rounded-[50px] w-fit h-fit py-2 md:px-3 px-1.5" {{ block.shopify_attributes }}>
-            <product-quantity
-              data-max-quantity={{product.selected_or_first_available_variant.inventory_quantity}}
-              data-product="{{product.id}}"
-              class="flex items-center justify-center m-auto quantity">
-              <button
-                class="p-2 no-js-hidden"
-                name="minus"
-                type="button">
-                {% render 'icon-minus' %}
-              </button>
-              <input
-                class="text-acajou bg-transparent text-xs  md:text-base font-bold md:max-w-[50px] max-w-[20px] text-center"
-                type="number"
-                name="quantity"
-                id="Quantity-{{ section.id }}"
-                min="1"
-                value="1"
-                form="{{ product_form_id }}">
-              <button
-                class="p-2 no-js-hidden"
-                name="plus"
-                type="button">
-                {% render 'icon-plus' %}
-              </button>
-            </product-quantity>
-          </div>
-        {% endif %}
-
-        <div
-          id="buy-buttons"
-          {{ block.shopify_attributes }}
-          class="flex-1 ">
-
-          <add-to-cart
-            {%- comment -%}Insertnotepourflyersurcertainsproduits{%- endcomment -%}
-            data-disabled="{% if product.available %}false{% else %}true{% endif %}"
-            data-price-stroke="{{ product.compare_at_price | money_without_trailing_zeros }}"
-            data-collection="{{ collection.title }}"
-            data-currency="{{ shop.currency }}"
-            data-title="{{ product.title }}"
-            data-product="{{ product.id }}"
-            data-discount="{% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}{{ product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | divided_by: 100.00 }}{% else %}0.00{% endif %}"
-            data-price="{{ product.selected_or_first_available_variant.price | divided_by: 100.00 }}"
-            id="referenceMobile"
-            data-product="{{ product.id }}"
-            data-variant="{{ product.selected_or_first_available_variant.id }}">
-            <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="{% unless product.available %} hidden {% endunless %}w-full my-2 GrotesqueBold text-white cursor-pointer !px-0 !py-0 {% render "button", size: "large", color:"primary" %}">
-              <div class="px-16 py-3 flex justify-center items-center">
-                {% if product.available %}
-                  <span>Ajouter au panier</span>
-                  <span class="px-1">-</span>
-                  <span
-                    data-price
-                    data-dynamic-price
-                    class="">{{ product.price | money_without_trailing_zeros }}</span>
-                  {%- if product.compare_at_price != blank -%}
-                    <span data-price-stroke class="ml-2 text-xs line-through Grotesque">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
-                  {%- endif -%}
-                {% else %}
-                  Stocks épuisés
-                {% endif %}
-              </div>
-            </button>
-          </add-to-cart>
-
-          <!-- Just Button  -->
-          <just-pay-button
-            theme="default"
-            default_variant="{{product.selected_or_first_available_variant.id}}"
-            default_available="{{product.selected_or_first_available_variant.available}}"
-            product_id="{{ product.id }}"
-            product_handle="{{ product.handle }}"
-            className="just-btn just-btn-product 3"
-            class="md:hidden"
-            app_id="ab609961-121b-405d-a916-79da052cce90"
-            quantity_selector="Quantity-{{ section.id }}"
-            domain="jollymama"
-            source="product"></just-pay-button>
-          <style>
-            .product-info just-pay-button::part(just-button) {
-              height: 44px;
-              border-radius: 40px;
-              font-size: 0.875rem;
-              font-family: "RebondGrotesqueBold";
-              text-transform: inherit;
-            }
-            .add-cart-3 {
-              align-items: baseline;
-            }
-            .add-cart-3 .border-acajou {
-              position: relative;
-              top: -2px;
-            }
-          </style>
-          <!-- End Of Just Button  -->
-          {% if block.settings.show_dynamic_checkout %}
-            {{ form | payment_button }}
-          {% endif %}
-
-          {% unless product.available %}
-            <a class="klaviyo-bis-trigger block !w-full !my-2 GrotesqueBold text-white mb-3 text-center {% render "button", size: "large", color:"primary" %}" href="#">Créer une alerte</a>
-          {% endunless %}
-        </div>
-
-      </div>
-
-
-      {%- when 'reinsurance' -%}
-      {%- if product.tags contains 'made-in-france' or product.tags contains 'vegan_2' or product.tags contains 'bio' or product.tags contains 'sans-sucres-raffinés' or product.tags contains 'gourmand' or product.tags contains 'experts' or product.tags contains 'faible-valeur-énergétique' or product.tags contains 'pauvre-sel' or product.tags contains 'pot-verre' or product.tags contains 'zéro-plastique' or product.tags contains 'sans-lait' or product.tags contains 'nutriments-biodisponibles' or product.tags contains 'sans-sel-ajouté' -%}
-        <div class="grid grid-custom-lines grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 bg-sable text-center text-acajou text-sm py-2 px-2 md:px-5 mt-4 md:mt-2.5">
-          {% render 'product-info-tags', product: product %}
-        </div>
-      {%- endif -%}
 
     {%- endcase -%}
   {%- endfor -%}
 
-  <!-- related products -->
-  {% assign product_related_1 = product.metafields.global.upsell_product_1.value %}
-  {% assign product_related_2 = product.metafields.global.upsell_product_2.value %}
-  {% if product_related_1 != blank or product_related_2 != blank %}
-    <div class="mt-8 mb-20">
-      {% assign isEbook = false %}
-      {% assign isCoaching = false %}
-
-      {% if product.tags contains "Ebook" %}
-        {% assign isEbook = true %}
-      {% endif %}
-      {% if product.tags contains "Coaching" %}
-        {% assign isCoaching = true %}
-
-      {% endif %}
-
-
-      {% assign upsell_1_in_stock = all_products[product_related_1].available %}
-
-      {% if product_related_1 != blank and upsell_1_in_stock == true %}
-        <p class="GroteskBold mb-4 text-base text-acajou">
-          {% if isCoaching == true %}
-            CE KIT CONTIENT ...
-          {% elsif isEbook == true %}
-            EN DUO AVEC ...
-          {% else %}
-            EN DUO AVEC ...
-          {% endif %}
-        </p>
-
-        {% if isCoaching %}
-          <p class="mb-4 text-sm text-chataigne">
-            {{ product.metafields.custom.number_product.value }} produit + 1 seance de coaching
-          </p>
-        {% endif %}
-
-        <div>
-          {% render 'card-product-inline'
-           product: all_products[product_related_1],
-           show_secondary_image: false,
-           show_vendor: false,
-           show_quick_add: true %}
-        </div>
-      {% endif %}
-
-      {% assign upsell_2_in_stock = all_products[product_related_2].available %}
-      {% if product_related_2 != blank and upsell_2_in_stock == true %}
-        <div class="mt-5">
-          <p class="GroteskBold mb-4 text-base text-acajou">
-            {% if isCoaching %}
-
-              {% elsif isEbook == true %}
-                ... OU BIEN LE PACK
-              {% else %}
-                ... OU BIEN LE PACK
-            {% endif %}
-          </p>
-          <div class="">
-            {% render 'card-product-inline'
-             product: all_products[product_related_2],
-             show_secondary_image: false,
-             show_vendor: false,
-             show_quick_add: true %}
-          </div>
-        </div>
-      {% endif %}
-    </div>
-  {% endif %}
-
-  <!-- pack products -->
-
-  {% render 'pack-products', product: product %}
-
 </div>
-
-
-<style>
-
-  input.radio-variant-circle[type="radio"]:checked + label > span {
-    background-color: #733E2B !important;
-    border: 2px solid #3A0F00;
-    color: white;
-    transition-duration: 0.3s;
-  }
-
-  .product-description b,
-  .product-description strong {
-    font-weight: bold;
-    font-family: "RebondGrotesqueBold";
-  }
-
-  .percentage {
-    -moz-text-fill-color: #F4FFAF;
-    -webkit-text-fill-color: #F4FFAF;
-    -moz-text-stroke-color: #733E2B;
-    -webkit-text-stroke-color: #733E2B;
-    -moz-text-stroke-width: 1px;
-    -webkit-text-stroke-width: 1px;
-  }
-  .grid-custom-lines > * {
-    position: relative;
-    overflow: visible;
-  }
-
-  /* Vertical lines to the left of cells in the top row */
-  .grid-custom-lines > :nth-child(2)::before,
-  .grid-custom-lines > :nth-child(3)::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    border-left: 1px solid #fff;
-  }
-
-  /* Vertical lines to the left of cells in all other rows */
-  .grid-custom-lines > :nth-child(3n + 5)::before,
-  .grid-custom-lines > :nth-child(3n + 6)::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 0;
-    height: calc(100% + 20px);
-    border-left: 1px solid #fff;
-  }
-
-  /* Horizontal lines above cells in the first column */
-  .grid-custom-lines > :nth-child(3n + 4)::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    border-top: 1px solid #fff;
-  }
-
-  /* Horizontal lines above cells in all other columns */
-  .grid-custom-lines > :nth-child(3n + 5)::after,
-  .grid-custom-lines > :nth-child(3n + 6)::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -20px;
-    width: calc(100% + 20px);
-    border-top: 1px solid #fff;
-  }
-
-  @media only screen and (max-width: 767px) {
-
-    .grid-custom-lines > :first-child::after {
-      content: '';
-      position: absolute;
-      bottom: 4px;
-      left: -6px;
-      width: calc(100% + 20px);
-      border-top: 1px solid #fff;
-    }
-
-    .grid-custom-lines > :nth-child(3)::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: -1px;
-      height: 100%;
-      border-right: 1px solid #fff;
-      border-left: none;
-    }
-
-    .grid-custom-lines > :nth-child(3n + 4)::after {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: 4px;
-      width: 100%;
-      border-top: 1px solid #fff;
-    }
-
-    .grid-custom-lines > :nth-child(5)::before {
-      display: none;
-    }
-
-    .grid-custom-lines > :nth-child(5)::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -6px;
-      width: calc(100% + 20px);
-      border-top: 1px solid #fff;
-    }
-
-  }
-
-  #footer {
-    margin-bottom: 76px;
-  }
-
-  .yotpo .yotpo-stars {
-    margin-right: 5px;
-  }
-</style>

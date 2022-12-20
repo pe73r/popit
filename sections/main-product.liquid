@@ -1,13 +1,8 @@
-<section class="main-product">
+<section class="main-product py-10">
   <div class="relative flex flex-col lg:flex-row lg:gap-6 max-w-7xl mx-auto">
-    {% comment %}
-      <!-- breadcrumbs -->
-      <div class="relative lg:absolute lg:top-4 lg:left-[80px] z-[4] p-4 lg:p-0">
-      {% render 'breadcrumbs', class: 'lg:text-white text-[10px]' %}
-      </div>
-    {% endcomment %}
     <!-- product carousel -->
-      <div class="w-full relative lg:sticky h-fit top-0 lg:top-5"> {% render 'product-carousel', product: product, show_dots: section.settings.show_dots_mobile %}
+    <div class="w-full relative lg:sticky h-fit top-0 lg:top-5">
+      {% render 'product-carousel', product: product, show_dots: section.settings.show_dots_mobile %}
     </div>
     <!-- product info -->
     <div class="w-full h-full">
@@ -18,7 +13,6 @@
 <style>
   .main-product {
     background: linear-gradient(168.52deg, rgba(79, 38, 116, 0.4) 0%, rgba(188, 134, 186, 0.8) 35.48%, #E9D2E7 59.33%, rgba(233, 210, 231, 0.5) 94.77%);
-
   }
 </style>
 
@@ -66,7 +60,7 @@
         ]
       }, {
         "type": "stars",
-        "name": "Yotpo stars",
+        "name": "Stars",
         "limit": 1,
         "settings": []
       }, {
@@ -78,48 +72,10 @@
             "type": "text",
             "id": "title_1",
             "label": "Title"
-          },
-          {
+          }, {
             "type": "textarea",
             "id": "icon_1",
             "label": "Icon"
-          },
-          {
-            "type": "richtext",
-            "id": "note_1",
-            "label": "Note",
-            "default": "<p>À partir de 70€ en France métropolitaine</p>"
-          },
-          {
-            "type": "text",
-            "id": "title_2",
-            "label": "Title",
-            "default": "Livraison offerte"
-          }, {
-            "type": "textarea",
-            "id": "icon_2",
-            "label": "Icon",
-            "default": "Livraison offerte"
-          }, {
-            "type": "richtext",
-            "id": "note_2",
-            "label": "Note",
-            "default": "<p>À partir de 70€ en France métropolitaine</p>"
-          }, {
-            "type": "text",
-            "id": "title_3",
-            "label": "Title",
-            "default": "Livraison offerte"
-          }, {
-            "type": "textarea",
-            "id": "icon_3",
-            "label": "Icon",
-            "default": "Livraison offerte"
-          }, {
-            "type": "richtext",
-            "id": "note_3",
-            "label": "Note",
-            "default": "<p>À partir de 70€ en France métropolitaine</p>"
           }
         ]
       }, {
@@ -174,37 +130,9 @@
           }
         ]
       }, {
-        "type": "buy_buttons_mobile",
-        "name": "CTA buttons mobile",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "checkbox",
-            "id": "show_dynamic_checkout",
-            "default": true,
-            "label": "CTA Button",
-            "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info"
-          }, {
-            "type": "checkbox",
-            "id": "show_quantity",
-            "default": true,
-            "label": "Show quantity"
-          }
-        ]
-      }, {
         "type": "description",
         "name": "Product description",
         "limit": 1
-      }, {
-        "type": "reinsurance",
-        "name": "Reinsurance",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "paragraph",
-            "content": "product tags"
-          }
-        ]
       }, {
         "type": "short_description",
         "name": "short description",
