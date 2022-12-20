@@ -31,54 +31,51 @@
     }
     console.log(checkVisible())
     if (checkVisible()) {
-      stickyCart.style.transform = "translate(-50%,100%)"
+      stickyCart.style.transform = "translateY(100%)"
     } else {
-      stickyCart.style.transform = "translate(-50%,-15%)"
+      stickyCart.style.transform = "translateY(-0%)"
     }
 
   }, {passive: true})
 </script>
 
-<!-- sticky button -->
+
 <div
   id="sticktCart"
-  style="z-index: 40; transform:translate(-50%,100%);"
-  class="fixed bottom-0 left-[50%] w-11/12 md:w-fit flex items-center justify-between gap-3 p-3 transition-all bg-white rounded-md max-w-[460px]">
-  <div
-    class="flex items-center gap-1">
+  style="z-index: 40; transform:translateY(100%);"
+  class="fixed bottom-0 left-0 flex items-center justify-between w-screen gap-5 px-2 py-2 transition-all bg-white shadow md:px-10">
+  <div class="items-center hidden gap-4 rounded-sm md:flex">
     <img
-      class="w-[60px]"
-      src="{{ product.featured_image | image_url }}"
-      alt="{{ product.featured_image.alt }}">
-    <div
-      class="">
-      <div
-        class="line-clamp-1">
-        <p
-          class="text-sm font-bold">{{ product.title }}</p>
+      class="aspect-square w-[68px] h-[68px]"
+      src="{{product.featured_image | image_url }}"
+      alt="product">
+    <div class="flex flex-col justify-center">
+      <div class="flex items-center gap-2">
+        <p class="GroteskBold text-sm uppercase">{{ product.title }}</p>
+        <div class="hidden gap-2 lg:flex ">
+          {% render "product-tag-icons", product: product, size: small %}
+        </div>
       </div>
-      <p>{{ product.metafields.global.contenance }}</p>
+      <div class="text-sm text-acajou line-clamp-2 h-[40px] mt-1">
+        {{ product.metafields.global.weight }}
+      </div>
     </div>
   </div>
-  <div
-    class="flex items-center justify-center gap-2">
-
+  <div class="flex items-center justify-center w-full max-w-full gap-2 pr-3 md:w-fit md:min-w-[450px]">
     {% if product.available == true %}
-      <div
-        class="border-gray-300 border rounded-md w-fit h-fit py-2 px-3 hidden md:block"
-        {{ block.shopify_attributes }}>
+      <div class="border-acajou border-2 rounded-[50px] w-fit h-fit py-2 px-3 hidden md:block" {{ block.shopify_attributes }}>
         <product-quantity
           data-max-quantity={{product.selected_or_first_available_variant.inventory_quantity}}
           data-product="{{product.id}}"
           class="flex items-center justify-center m-auto quantity">
           <button
-            class="no-js-hidden"
+            class="p-2 no-js-hidden"
             name="minus"
             type="button">
             {% render 'icon-minus' %}
           </button>
           <input
-            class="bg-transparent text-base font-bold max-w-[50px] text-center"
+            class="text-acajou bg-transparent text-base font-bold max-w-[50px] text-center"
             type="number"
             name="quantity"
             id="Quantity-{{ section.id }}"
@@ -86,7 +83,7 @@
             value="1"
             form="{{ product_form_id }}">
           <button
-            class="no-js-hidden"
+            class="p-2 no-js-hidden"
             name="plus"
             type="button">
             {% render 'icon-plus' %}
@@ -98,8 +95,9 @@
     <div
       id="buy-buttons"
       {{ block.shopify_attributes }}
-      class="min-w-fit">
+      class="flex-1 max-w-full ">
       <add-to-cart
+        data-product="{{ product.id }}"
         class="{% unless product.available %} hidden {% endunless %}"
         data-max-quantity={{ product.selected_or_first_available_variant.inventory_quantity }}
         data-disabled="{% if product.available %}false{% else %}true{% endif %}"
@@ -108,57 +106,87 @@
         data-price="{{ product.price | money_without_trailing_zeros }}"
         data-product="{{product.id}}"
         data-variant={{product.selected_or_first_available_variant.id}}>
-        <button
-          disabled="{% if product.available %}false{% else %}true{% endif %}"
-          class="cursor-pointer min-w-[145px] btn-primary {% render "button", size: "small" %}">
+        <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="w-full my-2 GrotesqueBold text-white cursor-pointer !px-0 !py-0 {% render "button", size: "large", color:"primary" %}">
           {% if product.available %}
-            <div
-              class="flex justify-center items-center">
-              <span
-                class="block">Ajouter</span>
-              <span
-                class="px-1">-</span>
+            <div class="px-16 py-3 flex justify-center items-center">
+              <span class="block">Ajouter au panier</span>
+              <span class="px-1">-</span>
               <span
                 data-price
+                data-dynamic-price
                 class="block">{{ product.price | money_without_trailing_zeros }}</span>
-              {%- comment -%} {%- if product.compare_at_price != blank -%}
-                <span data-price-stroke class="block ml-2 text-xs line-through">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
-              {%- endif -%} {%- endcomment -%}
+              {%- if product.compare_at_price != blank -%}
+                <span data-price-stroke class="block ml-2 text-xs line-through Grotesque">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+              {%- endif -%}
             </div>
           {% else %}
             Stocks épuisés
           {% endif %}
         </button>
       </add-to-cart>
+      <!-- Just Button  -->
+      <just-pay-button
+        theme="default"
+        default_variant="{{product.selected_or_first_available_variant.id}}"
+        default_available="{{product.selected_or_first_available_variant.available}}"
+        product_id="{{ product.id }}"
+        product_handle="{{ product.handle }}"
+        className="just-btn just-btn-product 1"
+        quantity_selector="Quantity-{{ section.id }}"
+        app_id="ab609961-121b-405d-a916-79da052cce90"
+        domain="jollymama"
+        source="product"></just-pay-button>
+      <style>
+        #buy-buttons just-pay-button::part(just-button) {
+          height: 44px;
+          border-radius: 40px;
+          letter-spacing: normal;
+          font-size: 0.875rem;
+          font-family: "RebondGrotesqueBold";
+          text-transform: inherit;
+        }
+        .px-16 {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      </style>
+      <!-- End Of Just Button  -->
       {% if block.settings.show_dynamic_checkout %}
         {{ form | payment_button }}
       {% endif %}
-
+      {% unless product.available %}
+        <a class="klaviyo-bis-trigger block !w-full !my-2 GrotesqueBold text-white mb-3 text-center {% render "button", size: "large", color:"primary" %}" href="#">Créer une alerte</a>
+      {% endunless %}
     </div>
   </div>
 </div>
 
-<!-- product info -->
-<div class="h-full bg-white rounded-md p-4 md:p-5">
+<div class="pl-5 lg:pl-0 flex max-w-full gap-2 pt-5 overflow-auto">
+  <div class="flex gap-2 odd:whitespace-pre even:whitespace-pre">
+    {% render 'product-tag-icons', product: product %}
+  </div>
+</div>
+<div class="h-full px-5 lg:px-0 lg:pr-[10px] 2xl:max-w-[90%]">
+  <!-- tag-labels -->
+
+
   <!-- product blocks -->
-  {%- for block in section.blocks -%}
-    {%- case block.type -%}
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
       {%- when '@app' -%}
       {% render block %}
 
+      {%- when 'subtitle' -%}
+        <p class="mb-2 text-sm md:block" {{ block.shopify_attributes }}> {{ product.metafields.global.product_subtitle.value }}
+      </p>
       {%- when 'vendor' -%}
-      <h5
-        class="font-body-text my-2 text-sm"
-        {{ block.shopify_attributes }}>
+      <h5 class="my-2 text-sm uppercase md:block" {{ block.shopify_attributes }}>
         {{ product.vendor }}
       </h5>
 
       {%- when 'title' -%}
-        <div
-        class="relative flex gap-2 mt-3">
-        <h1
-          class="font-body-text text-[20px] md:text-[28px] font-bold line-clamp-2"
-          {{ block.shopify_attributes }}>
+        <div class="relative flex gap-2 mt-3">
+        <h1 class="uppercase text-[28px] leading-[37px] md:text-[34px] md:leading-[42px] font-extrabold" {{ block.shopify_attributes }}>
           {{ product.title | escape }}
         </h1>
 
@@ -169,113 +197,139 @@
             {% assign saving = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price | round %}
             {% assign percentage = saving | at_least: percentage %}
           {% endfor %}
-          <div
-            class="mt-2 text-xs text-white border-black percentage whitespace-nowrap">
+          <div class="mt-2 text-xs text-jaune border-acajou percentage GroteskBold whitespace-nowrap">
             - {{ percentage }}%</div>
         {% endif %}
 
+        {% if product.tags contains "new" and product.compare_at_price == blank %}
+          {% comment %}
+            {%  render 'icon-new'  %}
+          {% endcomment %}
+          <img
+            class="max-w-max w-fit h-fit"
+            src="{{ 'icon-new.png' | asset_url }}"
+            alt="new jollymama">
+        {% endif %}
+        {% if product.tags contains "edition-limitée" %}
+          {% comment %}
+            {%  render 'icon-limited-edition'  %}
+          {% endcomment %}
+        {% endif %}
+        {% if product.tags contains "précommande" %}
+          {% comment %}
+            {%  render 'icon-pre-order'  %}
+          {% endcomment %}
+        {% endif %}
+        {% if product.tags contains "rupture-stock" %}
+          {% comment %}
+            {%  render 'icon-no-stock'  %}
+          {% endcomment %}
+        {% endif %}
       </div>
 
       {%- when 'text' -%}
-      <div
-        class="flex text-sm text-center mt-3 justify-center">
-        {%- if block.settings.svg != blank -%}
-          <img
-            class="mr-2"
-            src="{{ block.settings.svg }}"
-            alt="{{ block.settings.svg.alt }}">
-        {%- endif -%}
-        <span
-          class="block text-sm">{{- block.settings.text -}}</span>
-      </div>
+      <p class="product__text {% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
+        {{- block.settings.text -}}
+      </p>
 
       {%- when 'price' -%}
       <div
-        class="hidden md:flex items-center my-2"
+        class="flex items-center my-2"
         id="price-{{ section.id }}"
         role="status"
         {{ block.shopify_attributes }}>
         {%- if product.compare_at_price > product.price -%}
-          <span
-            class="block text-[20px] font-extrabold accent">{{ product.price | money }}</span>
-          <span
-            class="ml-2 text-base font-light line-through">{{ product.compare_at_price | money }}</span>
+          <h5 class="text-2xl font-extrabold">{{ product.price | money }}</h5>
+          <span class="ml-2 text-xl font-light line-through">{{ product.compare_at_price | money }}</span>
         {% else %}
-          <span
-            class="block text-xl font-extrabold tracking-tight">{{ product.price | money }}</span>
+          <h5 class="text-2xl font-extrabold">{{ product.price | money }}</h5>
         {% endif %}
-        <span
-          class="block text-xs font-bold ml-3 tracking-tight">Prix par bouteille 75 cl</span>
       </div>
 
       {%- when 'description' -%}
       {%- if product.description != blank -%}
-        <div
-          class="mt-2.5 md:mt-4 text-sm product-description">
+        <div class="mt-2.5 md:mt-4 text-sm product-description">
           {{ product.description }}
         </div>
       {%- endif -%}
 
-      {%- when 'delivery_note' -%}
-      <div
-        class="mt-5 text-center">
-        <span
-          class="block text-sm tracking-tight">{{ block.settings.title }}</span>
-        <div
-          class="text-sm font-bold mt-2 tracking-tight">
-          {{ block.settings.text }}
+      {%- when 'short_description' -%}
+      {% if product.metafields.global.short_description != blank %}
+        <div class="mt-2.5 md:mt-4 text-sm text-acajou">
+          {{ product.metafields.global.short_description }}
         </div>
+      {% endif %}
+
+      {%- when 'stars' -%}
+      <div>
+        stars
       </div>
+
+      {%- when 'weight' -%}
+      {% if product.metafields.global.weight != blank %}
+        <div class="my-2 md:my-1.5 text-xs">
+          <p>{{ product.metafields.global.weight }}</p>
+        </div>
+      {% else %}
+        <div class="my-2 md:my-1.5 text-xs">{{ block.settings.weight_text }}</div>
+      {% endif %}
+
+      {%- when 'contenance' -%}
+      {% if product.metafields.global.contenance != blank %}
+        <div class="flex items-center my-2 text-sm md:my-3">
+          {% render 'icon-bulb' %}
+          <p class="ml-2">{{ product.metafields.global.contenance }}</p>
+        </div>
+      {% endif %}
+
+      {%- when 'delivery_note' -%}
+      <div>
+        DELIVERY
+      </div>
+
 
       {%- when 'variant_picker' -%}
       {%- unless product.has_only_default_variant -%}
-        <variant-radios
-          class="mt-3 no-js-hidden variant-radios"
+        <tail-variants
+          data-product="{{product.id}}"
+          class="mt-3 no-js-hidden"
           data-section="{{ section.id }}"
           data-url="{{ product.url }}">
           {%- for option in product.options_with_values -%}
-            <fieldset
-              class="flex items-center">
-              <h4
-                class="mr-5 min-w-fit">{{ option.name }}:</h4>
-              <div
-                class="flex flex-wrap">
-                {%- for value in option.values -%}
-                  <label
-                    for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                    <input
-                      type="radio"
-                      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-                      name="{{ option.name }}"
-                      value="{{ value | escape }}"
-                      form="{{ product_form_id }}"
-                      class="radio-variant"
-                      {% if option.selected_value == value %}checked{% endif %}>
-                    <span
-                      class="block px-6 py-4 mb-5 mr-5 text-base border border-gray-300 rounded-md radio-variant-checked:border-sauge">{{ value }}</span>
-                  </label>
-                {%- endfor -%}
-              </div>
-            </fieldset>
+            <div class="mr-5 text-[15px] min-w-fit mb-2">{{ option.name }}:
+            </div>
+
+            <div class="flex flex-wrap">
+              {%- for value in option.values -%}
+                <input
+                  data-position="{{ option.position }}"
+                  type="radio"
+                  id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                  name="{{ option.name }}"
+                  value="{{ value | escape }}"
+                  form="{{ product_form_id }}"
+                  class="radio-variant-circle w-0 h-0 opacity-0 md:collapse "
+                  {% if option.selected_value == value %}checked{% endif %}>
+                <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="mr-2">
+                  <span class="block px-8 mb-2 py-2 bg-white text-acajou text-sm rounded-full cursor-pointer border-2 border-ecorce ">{{ value }}</span>
+                </label>
+              {%- endfor -%}
+            </div>
+
           {%- endfor -%}
-          <script
-            type="application/json">
+          <script id="product-variants" type="application/json">
             {{ product.variants | json }}
           </script>
-        </variant-radios>
+        </tail-variants>
 
-        <script
-          type="application/json">
+        <script type="application/json">
           {{ product.variants | json }}
         </script>
       {%- endunless -%}
 
-      <noscript
-        class="product-form__noscript-wrapper-{{ section.id }}">
-        <div
-          class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
-          <div
-            class="select">
+      <noscript class="product-form__noscript-wrapper-{{ section.id }}">
+        <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
+          <div class="select">
             <select
               name="id"
               id="Variants-{{ section.id }}"
@@ -299,12 +353,9 @@
       </noscript>
 
       {%- when 'buy_buttons' -%}
-      <div
-        class="flex items-center justify-center gap-2 mt-4">
+      <div class="add-cart-2 hidden md:flex items-center justify-center gap-2 mt-5 md:mt-6">
         {% if block.settings.show_quantity and product.available == true %}
-          <div
-            class="border-gray-300 border-2 rounded-md w-fit h-fit py-2 md:px-3 px-1.5"
-            {{ block.shopify_attributes }}>
+          <div class="border rounded-lg w-fit h-fit py-2 md:px-3 px-1.5" {{ block.shopify_attributes }}>
             <product-quantity
               data-max-quantity={{product.selected_or_first_available_variant.inventory_quantity}}
               data-product="{{product.id}}"
@@ -313,10 +364,10 @@
                 class="p-2 no-js-hidden"
                 name="minus"
                 type="button">
-                {% render 'icon-quantity-minus' %}
+                {% render 'icon-minus' %}
               </button>
               <input
-                class="text-black bg-transparent text-[16px] md:text-[20px] font-extrabold md:max-w-[50px] max-w-[20px] text-center"
+                class="bg-transparent text-xs  md:text-base font-bold md:max-w-[50px] max-w-[20px] text-center"
                 type="number"
                 name="quantity"
                 id="Quantity-{{ section.id }}"
@@ -327,7 +378,7 @@
                 class="p-2 no-js-hidden"
                 name="plus"
                 type="button">
-                {% render 'icon-quantity-plus' %}
+                {% render 'icon-plus' %}
               </button>
             </product-quantity>
           </div>
@@ -339,6 +390,15 @@
           class="flex-1">
           <add-to-cart
             class=""
+            {%- comment -%}
+            Insert
+            note
+            pour
+            flyer
+            sur
+            certains
+            produits
+            {%- endcomment -%}
             data-max-quantity={{product.selected_or_first_available_variant.inventory_quantity}}
             data-disabled="{% if product.available %}false{% else %}true{% endif %}"
             data-price-stroke="{{ product.compare_at_price | money_without_trailing_zeros }}"
@@ -351,27 +411,17 @@
             id="referenceDesktop"
             data-product="{{ product.id }}"
             data-variant="{{ product.selected_or_first_available_variant.id }}">
-            <button
-              disabled="{% if product.available %}false{% else %}true{% endif %}"
+            <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="{% unless product.available %} hidden {% endunless %} w-full my-2 GrotesqueBold text-white cursor-pointer !px-0 !py-0 {% render "button", size: "large", color:"violet" %}">
               {% if product.available %}
-              class="w-full cursor-pointer !px-0 btn-primary {% render "button", size: "medium" %}"
-              {% else %}
-              class="w-full text-white cursor-pointer !px-0 bg-gray-medium {% render "button", size: "medium", color:"gray-medium" %}"
-              {% endif %}>
-              {% if product.available %}
-                <div
-                  class="flex justify-center items-center">
-                  <span
-                    class="block">Ajouter au panier</span>
-                  <span
-                    class="px-1">-</span>
+                <div class="px-16 py-3 flex justify-center items-center">
+                  <span class="block">Ajouter au panier</span>
+                  <span class="px-1">-</span>
                   <span
                     data-price
+                    data-dynamic-price
                     class="block">{{ product.price | money_without_trailing_zeros }}</span>
                   {%- if product.compare_at_price != blank -%}
-                    <span
-                      data-price-stroke
-                      class="block ml-2 text-xs line-through">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+                    <span data-price-stroke class="block ml-2 text-xs line-through Grotesque">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
                   {%- endif -%}
                 </div>
               {% else %}
@@ -379,15 +429,366 @@
               {% endif %}
             </button>
           </add-to-cart>
+          <!-- Just Button  -->
+          <just-pay-button
+            theme="default"
+            default_variant="{{product.selected_or_first_available_variant.id}}"
+            default_available="{{product.selected_or_first_available_variant.available}}"
+            product_id="{{ product.id }}"
+            product_handle="{{ product.handle }}"
+            quantity_selector="Quantity-{{ section.id }}"
+            className="just-btn just-btn-product 2"
+            class="hidden md:flex"
+            app_id="ab609961-121b-405d-a916-79da052cce90"
+            domain="jollymama"
+            source="product"></just-pay-button>
+          <style>
+            #buy-buttons just-pay-button::part(just-button) {
+              height: 44px;
+              border-radius: 40px;
+              font-size: 0.875rem;
+              font-family: "RebondGrotesqueBold";
+              text-transform: inherit;
+            }
 
+            .add-cart-2 {
+              align-items: baseline;
+            }
+            .add-cart-2 .border-acajou {
+              position: relative;
+              top: -2px;
+            }
+          </style>
+          <!-- End Of Just Button  -->
           {% if block.settings.show_dynamic_checkout %}
-            {% form 'product', product %}
-              {{ form | payment_button }}
-            {% endform %}
+            {{ form | payment_button }}
           {% endif %}
+
+          {% unless product.available %}
+            <a class="klaviyo-bis-trigger block !w-full !my-2 GrotesqueBold text-white mb-3 text-center {% render "button", size: "large", color:"primary" %}" href="#">Créer une alerte</a>
+          {% endunless %}
         </div>
+
       </div>
+
+      {%- when 'buy_buttons_mobile' -%}
+      <div class="add-cart-3 flex md:hidden items-center justify-center gap-2 mt-5 md:mt-6">
+        {% if block.settings.show_quantity and product.available == true %}
+          <div class="border-acajou border-2 rounded-[50px] w-fit h-fit py-2 md:px-3 px-1.5" {{ block.shopify_attributes }}>
+            <product-quantity
+              data-max-quantity={{product.selected_or_first_available_variant.inventory_quantity}}
+              data-product="{{product.id}}"
+              class="flex items-center justify-center m-auto quantity">
+              <button
+                class="p-2 no-js-hidden"
+                name="minus"
+                type="button">
+                {% render 'icon-minus' %}
+              </button>
+              <input
+                class="text-acajou bg-transparent text-xs  md:text-base font-bold md:max-w-[50px] max-w-[20px] text-center"
+                type="number"
+                name="quantity"
+                id="Quantity-{{ section.id }}"
+                min="1"
+                value="1"
+                form="{{ product_form_id }}">
+              <button
+                class="p-2 no-js-hidden"
+                name="plus"
+                type="button">
+                {% render 'icon-plus' %}
+              </button>
+            </product-quantity>
+          </div>
+        {% endif %}
+
+        <div
+          id="buy-buttons"
+          {{ block.shopify_attributes }}
+          class="flex-1 ">
+
+          <add-to-cart
+            {%- comment -%}Insertnotepourflyersurcertainsproduits{%- endcomment -%}
+            data-disabled="{% if product.available %}false{% else %}true{% endif %}"
+            data-price-stroke="{{ product.compare_at_price | money_without_trailing_zeros }}"
+            data-collection="{{ collection.title }}"
+            data-currency="{{ shop.currency }}"
+            data-title="{{ product.title }}"
+            data-product="{{ product.id }}"
+            data-discount="{% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}{{ product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | divided_by: 100.00 }}{% else %}0.00{% endif %}"
+            data-price="{{ product.selected_or_first_available_variant.price | divided_by: 100.00 }}"
+            id="referenceMobile"
+            data-product="{{ product.id }}"
+            data-variant="{{ product.selected_or_first_available_variant.id }}">
+            <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="{% unless product.available %} hidden {% endunless %}w-full my-2 GrotesqueBold text-white cursor-pointer !px-0 !py-0 {% render "button", size: "large", color:"primary" %}">
+              <div class="px-16 py-3 flex justify-center items-center">
+                {% if product.available %}
+                  <span>Ajouter au panier</span>
+                  <span class="px-1">-</span>
+                  <span
+                    data-price
+                    data-dynamic-price
+                    class="">{{ product.price | money_without_trailing_zeros }}</span>
+                  {%- if product.compare_at_price != blank -%}
+                    <span data-price-stroke class="ml-2 text-xs line-through Grotesque">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+                  {%- endif -%}
+                {% else %}
+                  Stocks épuisés
+                {% endif %}
+              </div>
+            </button>
+          </add-to-cart>
+
+          <!-- Just Button  -->
+          <just-pay-button
+            theme="default"
+            default_variant="{{product.selected_or_first_available_variant.id}}"
+            default_available="{{product.selected_or_first_available_variant.available}}"
+            product_id="{{ product.id }}"
+            product_handle="{{ product.handle }}"
+            className="just-btn just-btn-product 3"
+            class="md:hidden"
+            app_id="ab609961-121b-405d-a916-79da052cce90"
+            quantity_selector="Quantity-{{ section.id }}"
+            domain="jollymama"
+            source="product"></just-pay-button>
+          <style>
+            .product-info just-pay-button::part(just-button) {
+              height: 44px;
+              border-radius: 40px;
+              font-size: 0.875rem;
+              font-family: "RebondGrotesqueBold";
+              text-transform: inherit;
+            }
+            .add-cart-3 {
+              align-items: baseline;
+            }
+            .add-cart-3 .border-acajou {
+              position: relative;
+              top: -2px;
+            }
+          </style>
+          <!-- End Of Just Button  -->
+          {% if block.settings.show_dynamic_checkout %}
+            {{ form | payment_button }}
+          {% endif %}
+
+          {% unless product.available %}
+            <a class="klaviyo-bis-trigger block !w-full !my-2 GrotesqueBold text-white mb-3 text-center {% render "button", size: "large", color:"primary" %}" href="#">Créer une alerte</a>
+          {% endunless %}
+        </div>
+
+      </div>
+
+
+      {%- when 'reinsurance' -%}
+      {%- if product.tags contains 'made-in-france' or product.tags contains 'vegan_2' or product.tags contains 'bio' or product.tags contains 'sans-sucres-raffinés' or product.tags contains 'gourmand' or product.tags contains 'experts' or product.tags contains 'faible-valeur-énergétique' or product.tags contains 'pauvre-sel' or product.tags contains 'pot-verre' or product.tags contains 'zéro-plastique' or product.tags contains 'sans-lait' or product.tags contains 'nutriments-biodisponibles' or product.tags contains 'sans-sel-ajouté' -%}
+        <div class="grid grid-custom-lines grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 bg-sable text-center text-acajou text-sm py-2 px-2 md:px-5 mt-4 md:mt-2.5">
+          {% render 'product-info-tags', product: product %}
+        </div>
+      {%- endif -%}
 
     {%- endcase -%}
   {%- endfor -%}
+
+  <!-- related products -->
+  {% assign product_related_1 = product.metafields.global.upsell_product_1.value %}
+  {% assign product_related_2 = product.metafields.global.upsell_product_2.value %}
+  {% if product_related_1 != blank or product_related_2 != blank %}
+    <div class="mt-8 mb-20">
+      {% assign isEbook = false %}
+      {% assign isCoaching = false %}
+
+      {% if product.tags contains "Ebook" %}
+        {% assign isEbook = true %}
+      {% endif %}
+      {% if product.tags contains "Coaching" %}
+        {% assign isCoaching = true %}
+
+      {% endif %}
+
+
+      {% assign upsell_1_in_stock = all_products[product_related_1].available %}
+
+      {% if product_related_1 != blank and upsell_1_in_stock == true %}
+        <p class="GroteskBold mb-4 text-base text-acajou">
+          {% if isCoaching == true %}
+            CE KIT CONTIENT ...
+          {% elsif isEbook == true %}
+            EN DUO AVEC ...
+          {% else %}
+            EN DUO AVEC ...
+          {% endif %}
+        </p>
+
+        {% if isCoaching %}
+          <p class="mb-4 text-sm text-chataigne">
+            {{ product.metafields.custom.number_product.value }} produit + 1 seance de coaching
+          </p>
+        {% endif %}
+
+        <div>
+          {% render 'card-product-inline'
+           product: all_products[product_related_1],
+           show_secondary_image: false,
+           show_vendor: false,
+           show_quick_add: true %}
+        </div>
+      {% endif %}
+
+      {% assign upsell_2_in_stock = all_products[product_related_2].available %}
+      {% if product_related_2 != blank and upsell_2_in_stock == true %}
+        <div class="mt-5">
+          <p class="GroteskBold mb-4 text-base text-acajou">
+            {% if isCoaching %}
+
+              {% elsif isEbook == true %}
+                ... OU BIEN LE PACK
+              {% else %}
+                ... OU BIEN LE PACK
+            {% endif %}
+          </p>
+          <div class="">
+            {% render 'card-product-inline'
+             product: all_products[product_related_2],
+             show_secondary_image: false,
+             show_vendor: false,
+             show_quick_add: true %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <!-- pack products -->
+
+  {% render 'pack-products', product: product %}
+
 </div>
+
+
+<style>
+
+  input.radio-variant-circle[type="radio"]:checked + label > span {
+    background-color: #733E2B !important;
+    border: 2px solid #3A0F00;
+    color: white;
+    transition-duration: 0.3s;
+  }
+
+  .product-description b,
+  .product-description strong {
+    font-weight: bold;
+    font-family: "RebondGrotesqueBold";
+  }
+
+  .percentage {
+    -moz-text-fill-color: #F4FFAF;
+    -webkit-text-fill-color: #F4FFAF;
+    -moz-text-stroke-color: #733E2B;
+    -webkit-text-stroke-color: #733E2B;
+    -moz-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 1px;
+  }
+  .grid-custom-lines > * {
+    position: relative;
+    overflow: visible;
+  }
+
+  /* Vertical lines to the left of cells in the top row */
+  .grid-custom-lines > :nth-child(2)::before,
+  .grid-custom-lines > :nth-child(3)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-left: 1px solid #fff;
+  }
+
+  /* Vertical lines to the left of cells in all other rows */
+  .grid-custom-lines > :nth-child(3n + 5)::before,
+  .grid-custom-lines > :nth-child(3n + 6)::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    height: calc(100% + 20px);
+    border-left: 1px solid #fff;
+  }
+
+  /* Horizontal lines above cells in the first column */
+  .grid-custom-lines > :nth-child(3n + 4)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #fff;
+  }
+
+  /* Horizontal lines above cells in all other columns */
+  .grid-custom-lines > :nth-child(3n + 5)::after,
+  .grid-custom-lines > :nth-child(3n + 6)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: calc(100% + 20px);
+    border-top: 1px solid #fff;
+  }
+
+  @media only screen and (max-width: 767px) {
+
+    .grid-custom-lines > :first-child::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: -6px;
+      width: calc(100% + 20px);
+      border-top: 1px solid #fff;
+    }
+
+    .grid-custom-lines > :nth-child(3)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -1px;
+      height: 100%;
+      border-right: 1px solid #fff;
+      border-left: none;
+    }
+
+    .grid-custom-lines > :nth-child(3n + 4)::after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 4px;
+      width: 100%;
+      border-top: 1px solid #fff;
+    }
+
+    .grid-custom-lines > :nth-child(5)::before {
+      display: none;
+    }
+
+    .grid-custom-lines > :nth-child(5)::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -6px;
+      width: calc(100% + 20px);
+      border-top: 1px solid #fff;
+    }
+
+  }
+
+  #footer {
+    margin-bottom: 76px;
+  }
+
+  .yotpo .yotpo-stars {
+    margin-right: 5px;
+  }
+</style>

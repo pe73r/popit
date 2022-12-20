@@ -46,6 +46,9 @@ module.exports = {
           dark: "#00555A",
           medium: "#6EB3A8",
         },
+        violet: {
+          DEFAULT: "#4F2674",
+        },
       },
 
       animation: {

@@ -17,10 +17,14 @@
 {% if variation == "outlined" %}
   {% if color == "green" %}
     {% assign colorClass = "ring-1 ring-green text-green hover:ring-2 bg-white " %}
+  {% elsif color == "violet" %}
+    {% assign colorClass = "ring-1 ring-violet text-green hover:ring-2 bg-white " %}
   {% endif %}
 {% else %}
   {% if color == "green" %}
     {% assign colorClass = "bg-green text-white" %}
+  {% elsif color == "violet" %}
+    {% assign colorClass = "bg-violet text-white" %}
   {% endif %}
 {% endif %}
 
