@@ -132,37 +132,6 @@
         "show_vendor": true
       }
     },
-    "c81556f9-1731-4da3-bee9-3ca8bc137f71": {
-      "type": "faq-product",
-      "blocks": {
-        "template--17096559460666__c81556f9-1731-4da3-bee9-3ca8bc137f71-16704295376a596d6c-0": {
-          "type": "block",
-          "settings": {
-          }
-        },
-        "template--17096559460666__c81556f9-1731-4da3-bee9-3ca8bc137f71-16704295376a596d6c-1": {
-          "type": "block",
-          "settings": {
-          }
-        },
-        "template--17096559460666__c81556f9-1731-4da3-bee9-3ca8bc137f71-16704295376a596d6c-2": {
-          "type": "block",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "template--17096559460666__c81556f9-1731-4da3-bee9-3ca8bc137f71-16704295376a596d6c-0",
-        "template--17096559460666__c81556f9-1731-4da3-bee9-3ca8bc137f71-16704295376a596d6c-1",
-        "template--17096559460666__c81556f9-1731-4da3-bee9-3ca8bc137f71-16704295376a596d6c-2"
-      ],
-      "settings": {
-        "title": "FAQ",
-        "title_color": "#201a1c",
-        "title_accordion_color": "#201a1c",
-        "content_accordion_color": "#201a1c"
-      }
-    },
     "20c2f30e-d3b8-4c88-b885-f4760a1b1c1b": {
       "type": "rich-text-expandable",
       "settings": {
@@ -181,7 +150,6 @@
     "main",
     "product-informations-snap",
     "product-recommendations-carousel",
-    "c81556f9-1731-4da3-bee9-3ca8bc137f71",
     "20c2f30e-d3b8-4c88-b885-f4760a1b1c1b"
   ]
 }
