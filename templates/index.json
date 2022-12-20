@@ -180,13 +180,13 @@
       "type": "banner-with-text",
       "settings": {
         "image": "shopify:\/\/shop_images\/image_44.png",
-        "subtitle": "<p>la GAMME ESSENTIELLE<\/p>",
-        "title": "<p>DÉCOUVREZ LES PRODUITS LES PLUS ADAPTÉS À VOTRE SITUATION<\/p>",
         "imageMobile": "shopify:\/\/shop_images\/image_43.png",
-        "title_mobile": "<p>DÉCOUVREZ LES PRODUITS LES PLUS ADAPTÉS À VOTRE SITUATION<\/p>",
+        "title": "Prenez soin de vous",
+        "text": "<p>Notre mission est de vous rendre heureux, en meilleure santé, sans dégrader la planète.<\/p>",
         "cta": "Je découvre le gamme",
         "ctaLink": "",
-        "button_type": "primary"
+        "bg_color": "#E3F2ED",
+        "color": "#4b9b7d"
       }
     },
     "704f44dd-a6c3-4bad-93ce-650afe5aedf6": {
