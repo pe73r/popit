@@ -24,6 +24,12 @@
           "settings": {
           }
         },
+        "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
         "ce287ddd-56b4-4eae-92cf-5e6f08239886": {
           "type": "buy_buttons",
           "settings": {
@@ -31,14 +37,9 @@
             "show_quantity": false
           }
         },
-        "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button"
-          }
-        },
         "1e425230-6800-49eb-922c-18eab7fbfd55": {
           "type": "delivery_note",
+          "disabled": true,
           "settings": {
             "title_1": "",
             "icon_1": ""
@@ -50,8 +51,8 @@
         "bb4f17d7-4ef4-4c4a-8040-e4d1ab5254ed",
         "2077e0aa-65e5-437c-a933-775b9bf1bc85",
         "b3a85ca9-b4e2-4b7f-9983-82552d95888e",
-        "ce287ddd-56b4-4eae-92cf-5e6f08239886",
         "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea",
+        "ce287ddd-56b4-4eae-92cf-5e6f08239886",
         "1e425230-6800-49eb-922c-18eab7fbfd55"
       ],
       "settings": {
