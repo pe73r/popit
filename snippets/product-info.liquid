@@ -1,5 +1,6 @@
 {% if product.tags contains "sommeil" %}
   {% assign product-color = "violet" %}
+  {% assign product_color = "#4F2674" %}
 {% endif %}
 
 <script>
@@ -277,7 +278,7 @@
                   class="radio-variant-circle w-0 h-0 opacity-0 md:collapse "
                   {% if option.selected_value == value %}checked{% endif %}>
                 <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="mr-2">
-                  <span class="block px-8 mb-2 py-2 bg-white text-acajou text-sm rounded-full cursor-pointer border-2 border-ecorce ">{{ value }}</span>
+                  <span class="variant-box block px-8 mb-2 py-2 bg-white text-sm rounded-lg cursor-pointer">{{ value }}</span>
                 </label>
               {%- endfor -%}
             </div>
@@ -413,7 +414,6 @@
               height: 44px;
               border-radius: 40px;
               font-size: 0.875rem;
-              font-family: "RebondGrotesqueBold";
               text-transform: inherit;
             }
 
@@ -442,3 +442,17 @@
   {%- endfor -%}
 
 </div>
+<style>
+
+
+  .variant-box {
+    background: linear-gradient(0deg, #BC86BA, #BC86BA), linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+  }
+
+  input.radio-variant-circle[type="radio"]:checked + label > span {
+    background: {{ product_color }}
+     !important;
+    color: white;
+    transition-duration: 0.3s;
+  }
+</style>
