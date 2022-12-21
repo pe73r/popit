@@ -2,14 +2,14 @@
   {%- assign product_media_size = product.media.size -%}
 {% endfor %}
 
-<div class="flex justify-center items-center w-[440px] h-[440px] bg-white rounded-full mx-auto">
+<div class="flex justify-center items-center md:w-[300px] md:h-[300px] xl:w-[440px] xl:h-[440px] md:bg-white rounded-full mx-auto">
   <!-- carousel desktop -->
   <div class="hidden md:block">
     <tail-carousel
       class="relative"
       slidesToShow="md:1"
       data-auto-dots="false">
-      <carousel-dots class="hidden md:flex flex-col absolute z-10 gap-1 top-[50%] left-[-100px] translate-y-[-50%]">
+      <carousel-dots class="hidden lg:flex flex-col absolute z-10 gap-1 top-[50%] md:left-0 translate-y-[-50%]">
         {%- for media in product.media -%}
           <carousel-dot class="py-2 text-center transition-all cursor-pointer group" href="{{ media }}">
             <div class="{% if product_media_size >= 8 %} w-[40px] h-[40px]  {% else %} w-[60px] h-[60px] {% endif %} rounded-full ring-white ring-3 lg:hover:ring-capucine lg:hover:ring-2 group-selected:ring-capucine group-selected:ring-2 transition-all flex justify-center ">
@@ -21,8 +21,8 @@
       <carousel-container>
         <carousel-content>
           {%- for media in product.media -%}
-            <carousel-panel class="p-0 object-center">
-              {% render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants, class: 'object-top object-cover' %}
+            <carousel-panel class="p-0 object-center flex ">
+              {% render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants, class: 'object-top object-cover max-w-[250px] mx-auto' %}
             </carousel-panel>
           {% endfor %}
         </carousel-content>
@@ -31,14 +31,14 @@
   </div>
 
   <!-- carousel mobile -->
-  <div class="w-full md:hidden">
-    <tail-carousel slidesToShow="xs:1 sm:1">
+  <div class="md:hidden bg-white w-[230px] h-[230px] mx-auto rounded-full">
+    <tail-carousel slidesToShow="xs:1 sm:1" class="relative top-[15px]">
       <carousel-container>
-        <carousel-content class="max-w-[90%]">
+        <carousel-content class="">
           {%- for media in product.media -%}
-            <carousel-panel class="p-0 pr-2 max-h-[650px]">
+            <carousel-panel class="flex">
               <img
-                class="w-full lazy"
+                class="w-full lazy max-w-[150px] mx-auto"
                 data-src="{{ media | img_url:'master' }}"
                 alt="{{ media.alt }}"
                 loading="lazy">
@@ -48,8 +48,10 @@
       </carousel-container>
 
       {% if show_dots %}
-        <carousel-dots class="relative flex justify-center mt-3 md:hidden">
-          <carousel-dot class="w-3 h-3 m-1 transition-all bg-transparent border rounded-full border-acajou selected:bg-acajou selected:border-acajou selected:scale-110"></carousel-dot>
+        <carousel-dots class="relative flex justify-center mt-6 lg:hidden">
+          {%- for media in product.media -%}
+            <carousel-dot class="w-2 h-2 m-1 transition-all bg-white border rounded-full border-white selected:bg-violet selected:border-violet selected:w-10 selected:scale-110"></carousel-dot>
+          {% endfor %}
         </carousel-dots>
       {% endif %}
     </tail-carousel>
