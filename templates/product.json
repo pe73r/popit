@@ -14,6 +14,11 @@
           "settings": {
           }
         },
+        "2077e0aa-65e5-437c-a933-775b9bf1bc85": {
+          "type": "subtitle",
+          "settings": {
+          }
+        },
         "b3a85ca9-b4e2-4b7f-9983-82552d95888e": {
           "type": "stars",
           "settings": {
@@ -43,6 +48,7 @@
       "block_order": [
         "e774b8d8-3d27-4e0a-8a21-0181dfe3ce03",
         "bb4f17d7-4ef4-4c4a-8040-e4d1ab5254ed",
+        "2077e0aa-65e5-437c-a933-775b9bf1bc85",
         "b3a85ca9-b4e2-4b7f-9983-82552d95888e",
         "ce287ddd-56b4-4eae-92cf-5e6f08239886",
         "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea",
