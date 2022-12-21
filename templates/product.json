@@ -12,7 +12,7 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
-            "show_quantity": true
+            "show_quantity": false
           }
         },
         "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea": {
@@ -25,14 +25,7 @@
           "type": "delivery_note",
           "settings": {
             "title_1": "",
-            "icon_1": "",
-            "note_1": "<p>À partir de 70€ en France métropolitaine<\/p>",
-            "title_2": "Livraison offerte",
-            "icon_2": "Livraison offerte",
-            "note_2": "<p>À partir de 70€ en France métropolitaine<\/p>",
-            "title_3": "Livraison offerte",
-            "icon_3": "Livraison offerte",
-            "note_3": "<p>À partir de 70€ en France métropolitaine<\/p>"
+            "icon_1": ""
           }
         }
       },
