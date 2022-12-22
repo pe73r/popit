@@ -64,12 +64,40 @@
           "type": "block",
           "settings": {
             "svg": "",
+            "image": "shopify:\/\/shop_images\/popit-sticker-mure.png",
+            "text": "Non testé sur des animaux"
+          }
+        },
+        "12cf3c52-8902-4443-9aeb-7135386f0b74": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/popit-sticker-gummies.png",
+            "text": "Non testé sur des animaux"
+          }
+        },
+        "1cf4349d-2518-41f7-a8b1-cbb19accbef3": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/popit-sticker-feuille.png",
+            "text": "Non testé sur des animaux"
+          }
+        },
+        "a2d9df4d-be4c-428a-bda7-b1e532f69b10": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/popit-sticker-gummies-sommeil.png",
             "text": "Non testé sur des animaux"
           }
         }
       },
       "block_order": [
-        "24f6925c-397e-4ce1-960a-2f2b8bdde503"
+        "24f6925c-397e-4ce1-960a-2f2b8bdde503",
+        "12cf3c52-8902-4443-9aeb-7135386f0b74",
+        "1cf4349d-2518-41f7-a8b1-cbb19accbef3",
+        "a2d9df4d-be4c-428a-bda7-b1e532f69b10"
       ],
       "settings": {
         "background_color": "#4F2674",
