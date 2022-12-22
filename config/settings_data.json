@@ -236,9 +236,6 @@
           "d078ac29-3acc-4a33-88c8-85f12a06fbdd"
         ],
         "settings": {
-          "sticky_header": true,
-          "dynamic_header": true,
-          "show_announce_when_down": true,
           "menu_desktop": "main-menu",
           "menu_mobile": "main-menu",
           "feature_drawer_title": "",
