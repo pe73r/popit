@@ -19,6 +19,7 @@ module.exports = {
         },
         orange: {
           DEFAULT: "#F84C55",
+          energy: "#EA5B0C",
         },
         sable: {
           DEFAULT: "#E8E2DB",
