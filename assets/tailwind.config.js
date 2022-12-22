@@ -51,6 +51,9 @@ module.exports = {
           DEFAULT: "#4F2674",
           light: "#BC86BA",
         },
+        blue: {
+          DEFAULT: "#2F52A0",
+        },
       },
 
       animation: {

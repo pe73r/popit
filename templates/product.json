@@ -104,82 +104,6 @@
         "color": "#fff"
       }
     },
-    "product-informations-snap": {
-      "type": "product-informations-snap",
-      "disabled": true,
-      "blocks": {
-        "e7c7ac71-36f4-4208-98b7-9b98fb3b93a3": {
-          "type": "block",
-          "settings": {
-          }
-        },
-        "c56fa692-cfa9-48a7-8a88-a79982f26b11": {
-          "type": "block",
-          "settings": {
-          }
-        },
-        "121f98b8-be10-4647-9159-1add5913a182": {
-          "type": "block",
-          "settings": {
-          }
-        },
-        "f87cb003-bd4e-4bfa-8d35-d4d8f1c55c4e": {
-          "type": "block",
-          "settings": {
-          }
-        },
-        "8b357d0c-ab4b-4c86-b406-a28b2b690c5a": {
-          "type": "informations",
-          "settings": {
-            "information_title": "Caractéristiques",
-            "information_icon": "📝",
-            "information_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <\/p>"
-          }
-        },
-        "a5a9271b-a999-40c3-81ee-8132d6f534fa": {
-          "type": "informations",
-          "settings": {
-            "information_title": "Le vigneron",
-            "information_icon": "👨‍🌾",
-            "information_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <\/p>"
-          }
-        },
-        "a11980ab-ebe8-465e-9bf1-af1ac2a7ba96": {
-          "type": "informations",
-          "settings": {
-            "information_title": "Accords mets & vins",
-            "information_icon": "🧀",
-            "information_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <\/p>"
-          }
-        },
-        "8a3aabf3-9e3d-41bc-9d66-68fe7b05adf4": {
-          "type": "informations",
-          "settings": {
-            "information_title": "Quelles occasions ?",
-            "information_icon": "💃",
-            "information_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "e7c7ac71-36f4-4208-98b7-9b98fb3b93a3",
-        "c56fa692-cfa9-48a7-8a88-a79982f26b11",
-        "121f98b8-be10-4647-9159-1add5913a182",
-        "f87cb003-bd4e-4bfa-8d35-d4d8f1c55c4e",
-        "8b357d0c-ab4b-4c86-b406-a28b2b690c5a",
-        "a5a9271b-a999-40c3-81ee-8132d6f534fa",
-        "a11980ab-ebe8-465e-9bf1-af1ac2a7ba96",
-        "8a3aabf3-9e3d-41bc-9d66-68fe7b05adf4"
-      ],
-      "settings": {
-        "container": "7xl",
-        "title": "Le profil du vin 🍷",
-        "text": "<p>'Délicieusement mordante, sur la griotte, la grenade et la fumée, avec une pointe d'épices”<\/p>",
-        "header_color": "#201a1c",
-        "text_color": "#f84c55",
-        "background_left_color": "#fffffe"
-      }
-    },
     "product-recommendations-carousel": {
       "type": "product-recommendations-carousel",
       "disabled": true,
@@ -193,7 +117,6 @@
   "order": [
     "main",
     "product-marquee",
-    "product-informations-snap",
     "product-recommendations-carousel"
   ]
 }
