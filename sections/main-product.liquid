@@ -1,22 +1,38 @@
+{% if product.tags contains "sommeil" %}
+  {% assign product-color = "violet" %}
+  {% assign product_color = "#4F2674" %}
+{% elsif product.tags contains "energie" %}
+  {% assign product-color = "orange-energy" %}
+  {% assign product_color = "#EA5B0C" %}
+{% endif %}
+
 <section class="main-product pt-24 lg:pt-28 pb-10">
   <div class="relative flex flex-col lg:flex-row gap-8 lg:gap-2 max-w-7xl mx-auto">
     <!-- product carousel -->
     <div class="w-full lg:w-1/2 relative">
       {% render 'product-carousel', product: product, show_dots: section.settings.show_dots_mobile %}
-      <div class="absolute top-[50%] translate-y-[-50%] right-[5%] lg:relative lg:top-0 lg:right-0 lg:translate-y-0 lg:mt-5">
+      <div
+        class="absolute top-[50%] translate-y-[-50%] right-[5%] lg:relative lg:top-0 lg:right-0 lg:translate-y-0 lg:mt-5">
         {% render 'product-icons' %}
       </div>
     </div>
     <!-- product info -->
     <div class="w-full lg:w-1/2">
-      {% render 'product-info', product: product %}
+      {% render 'product-info', product: product, product-color: product-color %}
+      {% render 'product-benefits', product: product, product-color: product-color %}
     </div>
   </div>
 </section>
 <style>
-  .main-product {
-    background: linear-gradient(168.52deg, rgba(79, 38, 116, 0.4) 0%, rgba(188, 134, 186, 0.8) 35.48%, #E9D2E7 59.33%, rgba(233, 210, 231, 0.5) 94.77%);
-  }
+  {% if product.tags contains "sommeil" %}
+    .main-product {
+      background: linear-gradient(168.52deg, rgba(79, 38, 116, 0.4) 0%, rgba(188, 134, 186, 0.8) 35.48%, #E9D2E7 59.33%, rgba(233, 210, 231, 0.5) 94.77%);
+    }
+  {% elsif product.tags contains "energie" %}
+    .main-product {
+      background: linear-gradient(168.52deg, rgba(234, 91, 12, 0.4) 0%, rgba(245, 162, 110, 0.8) 35.48%, #FEE5C6 59.33%, rgba(254, 229, 198, 0.5) 94.77%);
+    }
+  {% endif %}
 </style>
 
 {% schema %}

@@ -25,6 +25,27 @@
     ]
   },
   {
+    "name": "Product benefits images",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "benefits_stress",
+        "label": "Stress"
+      },
+      {
+        "type": "image_picker",
+        "id": "benefits_digestion",
+        "label": "Digestion"
+      },
+      {
+        "type": "image_picker",
+        "id": "benefits_yeux",
+        "label": "Yeux"
+      }
+      
+    ]
+  },
+  {
     "name": "Colors",
     "settings": [
       {
