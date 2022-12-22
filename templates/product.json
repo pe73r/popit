@@ -27,7 +27,6 @@
         "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button"
           }
         },
         "ce287ddd-56b4-4eae-92cf-5e6f08239886": {
@@ -39,10 +38,9 @@
         },
         "1e425230-6800-49eb-922c-18eab7fbfd55": {
           "type": "delivery_note",
-          "disabled": true,
           "settings": {
-            "title_1": "",
-            "icon_1": ""
+            "text": "<b>FREE SHIPPING<\/b> à partir de 45 €",
+            "text_2": "Livraison estimée au 15\/09"
           }
         }
       },
