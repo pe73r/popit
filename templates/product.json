@@ -36,6 +36,12 @@
             "show_quantity": false
           }
         },
+        "e7c38b55-666d-42db-a0e0-bc393527f6cc": {
+          "type": "klarna",
+          "settings": {
+            "text": "<b>18,33 € <\/b> aujourd’hui grâce au <italic><b>3x sans frais<\/b><\/italic>"
+          }
+        },
         "1e425230-6800-49eb-922c-18eab7fbfd55": {
           "type": "delivery_note",
           "settings": {
@@ -51,6 +57,7 @@
         "b3a85ca9-b4e2-4b7f-9983-82552d95888e",
         "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea",
         "ce287ddd-56b4-4eae-92cf-5e6f08239886",
+        "e7c38b55-666d-42db-a0e0-bc393527f6cc",
         "1e425230-6800-49eb-922c-18eab7fbfd55"
       ],
       "settings": {
