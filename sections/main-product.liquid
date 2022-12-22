@@ -1,5 +1,5 @@
 <section class="main-product pt-24 lg:pt-28 pb-10">
-  <div class="relative flex flex-col lg:flex-row gap-20 lg:gap-2 max-w-7xl mx-auto">
+  <div class="relative flex flex-col lg:flex-row gap-8 lg:gap-2 max-w-7xl mx-auto">
     <!-- product carousel -->
     <div class="w-full lg:w-1/2 relative">
       {% render 'product-carousel', product: product, show_dots: section.settings.show_dots_mobile %}
@@ -72,13 +72,24 @@
         "limit": 1,
         "settings": [
           {
-            "type": "text",
-            "id": "title_1",
-            "label": "Title"
+            "type": "textarea",
+            "id": "text",
+            "label": "Text"
           }, {
             "type": "textarea",
-            "id": "icon_1",
-            "label": "Icon"
+            "id": "text_2",
+            "label": "Text"
+          }
+        ]
+      }, {
+        "type": "klarna",
+        "name": "Klarna",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text"
           }
         ]
       }, {
@@ -97,26 +108,10 @@
         "type": "variant_picker",
         "name": "Variants",
         "limit": 1,
-        "settings": [
-          {
-            "type": "select",
-            "id": "picker_type",
-            "options": [
-              {
-                "value": "dropdown",
-                "label": "dropdown"
-              }, {
-                "value": "button",
-                "label": "Buttons"
-              }
-            ],
-            "default": "button",
-            "label": "Variant picker"
-          }
-        ]
+        "settings": []
       }, {
         "type": "buy_buttons",
-        "name": "CTA buttons desktop",
+        "name": "CTA buttons",
         "limit": 1,
         "settings": [
           {
@@ -154,7 +149,7 @@
       {
         "type": "checkbox",
         "id": "show_dots_mobile",
-        "default": false,
+        "default": true,
         "label": "Display dots in mobile carousel"
       }
     ]
