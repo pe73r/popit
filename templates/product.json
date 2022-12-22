@@ -141,10 +141,18 @@
         "show_secondary_image": true,
         "show_vendor": true
       }
+    },
+    "product-marquee": {
+      "type": "product-marquee",
+      "disabled": false,
+      "settings": {
+        
+      }
     }
   },
   "order": [
     "main",
+    "product-marquee",
     "product-informations-snap",
     "product-recommendations-carousel"
   ]
