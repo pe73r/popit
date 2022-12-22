@@ -19,7 +19,7 @@
         "type": "text",
         "id": "logo_svg",
         "label": "Header Logo SVG",
-        "default": "https://cdn.shopify.com/s/files/1/0681/5494/9926/files/logo.svg?v=1671026298",
+        "default": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/logo.svg?v=1671026298",
         "info": "Paste the url from files"
       }
     ]
@@ -42,7 +42,6 @@
         "id": "benefits_yeux",
         "label": "Yeux"
       }
-      
     ]
   },
   {

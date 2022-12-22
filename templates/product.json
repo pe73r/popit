@@ -57,6 +57,25 @@
         "show_dots_mobile": true
       }
     },
+    "product-marquee": {
+      "type": "product-marquee",
+      "blocks": {
+        "24f6925c-397e-4ce1-960a-2f2b8bdde503": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "text": "Non testé sur des animaux"
+          }
+        }
+      },
+      "block_order": [
+        "24f6925c-397e-4ce1-960a-2f2b8bdde503"
+      ],
+      "settings": {
+        "background_color": "#4F2674",
+        "color": "#fff"
+      }
+    },
     "product-informations-snap": {
       "type": "product-informations-snap",
       "disabled": true,
@@ -140,13 +159,6 @@
         "heading": "Nos vins bio",
         "show_secondary_image": true,
         "show_vendor": true
-      }
-    },
-    "product-marquee": {
-      "type": "product-marquee",
-      "disabled": false,
-      "settings": {
-        
       }
     }
   },
