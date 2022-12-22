@@ -1,8 +1,12 @@
-<div class="product-marquee w-full py-3">
-  <div class="flex md:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-8 lg:gap-10 scrollbar-none px-4">
+<div
+  class="product-marquee w-full py-3">
+  <div
+    class="flex md:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-8 lg:gap-10 scrollbar-none px-4">
     {%- for block in section.blocks -%}
-      <div class="min-w-fit md:min-w-0">
-        <div class="flex items-center gap-2">
+      <div
+        class="min-w-fit md:min-w-0">
+        <div
+          class="flex items-center gap-2">
           {% if block.settings.svg != blank %}
             <img
               src="{{ block.settings.svg }}"
@@ -14,7 +18,9 @@
               class="lazy object-contain !max-w-[30px]"
               alt="{{ block.settings.image.alt }}">
           {% endif %}
-          <p class="block text-sm" style="color:{{ section.settings.color }}">{{ block.settings.text }}</p>
+          <p
+            class="block text-sm"
+            style="color:{{ section.settings.color }}">{{ block.settings.text }}</p>
         </div>
       </div>
     {%- endfor -%}
@@ -47,7 +53,7 @@
         "content": "colors"
       }, {
         "type": "color",
-        "id": "background_color",
+        "id": "bg_color",
         "label": "background color",
         "default": "#4F2674"
       }, {
