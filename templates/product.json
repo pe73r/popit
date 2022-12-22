@@ -27,30 +27,13 @@
             "title": "🚚 LIVRAISON",
             "text": "<p>Livraison prévue entre 3 et 6 jours. Frais de livraison non inclus<\/p>"
           }
-        },
-        "3d1604f2-041f-42ef-8b6a-3c0b480b05f1": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "Vendu par Vins étonnants",
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/Image.svg?v=1670361219"
-          }
-        },
-        "b772b48a-9e88-44db-a874-d5d4fb97a412": {
-          "type": "payment",
-          "settings": {
-            "text": "Paiement 3x sans frais possible",
-            "more_text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
-          }
         }
       },
       "block_order": [
         "e774b8d8-3d27-4e0a-8a21-0181dfe3ce03",
         "ce287ddd-56b4-4eae-92cf-5e6f08239886",
         "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea",
-        "1e425230-6800-49eb-922c-18eab7fbfd55",
-        "3d1604f2-041f-42ef-8b6a-3c0b480b05f1",
-        "b772b48a-9e88-44db-a874-d5d4fb97a412"
+        "1e425230-6800-49eb-922c-18eab7fbfd55"
       ],
       "settings": {
         "show_dots": true
