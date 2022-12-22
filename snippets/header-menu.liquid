@@ -1,4 +1,4 @@
-<div class="justify-center h-full items-center hidden overflow-visible lg:flex">
+<div class="justify-center h-full items-center hidden overflow-visible lg:flex gap-2">
   {% for link in links %}
     <!-- GET THE SUBMENU -->
     {% assign submenu = blank %}
@@ -13,7 +13,7 @@
     <div class="group h-full flex items-center">
       {% if submenu != blank %}
         <div
-          class="relative heading-color block px-3 cursor-pointer text-center text-[11px] xl:text-sm uppercase w-fit
+          class="relative heading-color block px-1 xl:px-3 cursor-pointer text-center text-[11px] xl:text-sm uppercase w-fit
           {% unless link.title contains "pack" or link.title contains "PACK" %}
             link-item hover:text-green hover:font-bold
           {% endunless %}">
@@ -22,7 +22,7 @@
       {% else %}
         <a
           href="{{ link.url }}"
-          class="relative heading-color block px-3 cursor-pointer text-center text-[11px] xl:text-sm uppercase w-fit
+          class="relative heading-color block px-1 xl:px-3 cursor-pointer text-center text-[11px] xl:text-sm uppercase w-fit
           {% unless link.title contains "pack" or link.title contains "PACK" %}
             link-item  hover:text-green hover:font-bold
           {% endunless %}
