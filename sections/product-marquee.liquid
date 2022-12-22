@@ -1,0 +1,85 @@
+<div class="product-marquee w-full py-3">
+  <div class="flex md:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-8 lg:gap-10 scrollbar-none px-4">
+    {%- for block in section.blocks -%}
+      <div class="min-w-fit md:min-w-0">
+        <div class="flex items-center gap-2">
+          {% if block.settings.svg != blank %}
+            <img
+              src="{{ block.settings.svg }}"
+              class="object-contain !max-w-max"
+              alt="{{ block.settings.svg.alt }}">
+          {% else %}
+            <img
+              src="{{ block.settings.image | img_url: 'master' }}"
+              class="lazy object-contain !max-w-[30px]"
+              alt="{{ block.settings.image.alt }}">
+          {% endif %}
+          <p class="block text-sm" style="color:{{ section.settings.color }}">{{ block.settings.text }}</p>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+<style>
+  {% if product.tags contains "sommeil" %}
+    .product-marquee {
+      background-color: #4F2674;
+    }
+  {% elsif product.tags contains "energie" %}
+    .product-marquee {
+      background-color: #EA5B0C;
+    }
+  {% else %}
+    .product-marquee {
+      background-color: {{ section.settings.bg_color }}
+      ;
+    }
+  {% endif %}
+</style>
+{% schema %}
+
+  {
+    "name": "Product marquee",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "colors"
+      }, {
+        "type": "color",
+        "id": "background_color",
+        "label": "background color",
+        "default": "#4F2674"
+      }, {
+        "type": "color",
+        "id": "color",
+        "label": "Text color",
+        "default": "#fff"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "block",
+        "limit": 4,
+        "type": "block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "svg",
+            "label": "Image SVG"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "Image SVG field has to be empty to display this image"
+          }, {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Non testé sur des animaux"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
