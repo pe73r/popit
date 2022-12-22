@@ -100,7 +100,7 @@
         "a2d9df4d-be4c-428a-bda7-b1e532f69b10"
       ],
       "settings": {
-        "bg_color": "#4F2674",
+        "bg_color": "#4f2674",
         "color": "#ffffff"
       }
     },
@@ -133,7 +133,7 @@
       ],
       "settings": {
         "title": "Des ingrédients supérieurs",
-        "color": "#4F2674"
+        "color": "#4f2674"
       }
     },
     "product-recommendations-carousel": {
@@ -144,12 +144,84 @@
         "show_secondary_image": true,
         "show_vendor": true
       }
+    },
+    "03627885-530d-4c49-96db-d614a4787a49": {
+      "type": "faq",
+      "blocks": {
+        "template--17232714531110__03627885-530d-4c49-96db-d614a4787a49-16717315276cb4376a-0": {
+          "type": "block",
+          "settings": {
+            "question": "Quelles sont les options de livraison ?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          }
+        },
+        "template--17232714531110__03627885-530d-4c49-96db-d614a4787a49-16717315276cb4376a-1": {
+          "type": "block",
+          "settings": {
+            "question": "Quelles sont les options de livraison ?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          }
+        },
+        "template--17232714531110__03627885-530d-4c49-96db-d614a4787a49-16717315276cb4376a-2": {
+          "type": "block",
+          "settings": {
+            "question": "Quelles sont les options de livraison ?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          }
+        }
+      },
+      "block_order": [
+        "template--17232714531110__03627885-530d-4c49-96db-d614a4787a49-16717315276cb4376a-0",
+        "template--17232714531110__03627885-530d-4c49-96db-d614a4787a49-16717315276cb4376a-1",
+        "template--17232714531110__03627885-530d-4c49-96db-d614a4787a49-16717315276cb4376a-2"
+      ],
+      "settings": {
+        "hide_in_mobile": true,
+        "title": "FAQ",
+        "title_color": "#201A1C",
+        "title_accordion_color": "#201A1C",
+        "content_accordion_color": "#201A1C"
+      }
+    },
+    "9860ee38-0bab-4a03-80ec-d1bd84b87d98": {
+      "type": "faq-product",
+      "disabled": true,
+      "blocks": {
+        "template--17232714531110__9860ee38-0bab-4a03-80ec-d1bd84b87d98-16717315276459f0d6-0": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "template--17232714531110__9860ee38-0bab-4a03-80ec-d1bd84b87d98-16717315276459f0d6-1": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "template--17232714531110__9860ee38-0bab-4a03-80ec-d1bd84b87d98-16717315276459f0d6-2": {
+          "type": "block",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--17232714531110__9860ee38-0bab-4a03-80ec-d1bd84b87d98-16717315276459f0d6-0",
+        "template--17232714531110__9860ee38-0bab-4a03-80ec-d1bd84b87d98-16717315276459f0d6-1",
+        "template--17232714531110__9860ee38-0bab-4a03-80ec-d1bd84b87d98-16717315276459f0d6-2"
+      ],
+      "settings": {
+        "title": "FAQ",
+        "title_color": "#201A1C",
+        "title_accordion_color": "#201A1C",
+        "content_accordion_color": "#201A1C"
+      }
     }
   },
   "order": [
     "main",
     "product-marquee",
     "7d12314b-a9a4-42d2-8330-a732629f982b",
-    "product-recommendations-carousel"
+    "product-recommendations-carousel",
+    "03627885-530d-4c49-96db-d614a4787a49",
+    "9860ee38-0bab-4a03-80ec-d1bd84b87d98"
   ]
 }
