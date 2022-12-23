@@ -1,11 +1,11 @@
-<div class="py-4 md:py-10" style=" background-color: {{ section.settings.bg_color }}">
+<div class="py-4 md:py-10 {% if section.settings.section_style == 'boxed' %} md:max-w-3xl md:mx-auto md:my-10 rounded-lg {% endif %}" style=" background-color: {{ section.settings.bg_color }}">
   <div class="w-11/12 mx-auto">
     <div class="text-left md:text-center">
-      <h2 class="text-lg md:text-4xl xl:text-5xl xl:leading-9 font-bold pb-2 md:pb-4 lg:pb-8" style="color: {{ section.settings.color }}">
+      <h2 class="text-lg md:text-4xl xl:text-5xl xl:leading-9 font-bold pb-2 md:pb-4 lg:pb-6 xl:pb-8" style="color: {{ section.settings.color }}">
         {{ section.settings.title }}
       </h2>
       {% if section.settings.text != blank %}
-        <div class="text-sm lg:text-lg max-w-[600px] mx-auto" style="color: {{ section.settings.color }}">
+        <div class="text-sm lg:text-lg max-w-[600px] md:mx-auto" style="color: {{ section.settings.color }}">
           {{ section.settings.text }}
         </div>
       {% endif %}
@@ -17,7 +17,7 @@
           type="hidden"
           name="contact[tags]"
           value="newsletter">
-        <div class="flex items-center max-w-[480px] mx-auto bg-white rounded-lg border border-gray-300 p-2">
+        <div class="flex items-center max-w-[480px] md:mx-auto bg-white rounded-lg border border-gray-300 p-2">
           <input
             id="NewsletterForm--{{ section.id }}"
             type="email"
@@ -83,7 +83,21 @@
     "name": "Newsletter",
     "tag": "section",
     "settings": [
-
+      {
+        "type": "select",
+        "id": "section_style",
+        "options": [
+          {
+            "value": "boxed",
+            "label": "boxed"
+          }, {
+            "value": "default",
+            "label": "Full width"
+          }
+        ],
+        "default": "boxed",
+        "label": "Section style"
+      },
       {
         "type": "text",
         "id": "title",
@@ -101,8 +115,7 @@
         "id": "text_button",
         "default": "S'inscrire",
         "label": "Button"
-      },
-      {
+      }, {
         "type": "header",
         "content": "colors"
       }, {
