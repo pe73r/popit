@@ -139,7 +139,7 @@
     "product-recommendations-carousel": {
       "type": "product-recommendations-carousel",
       "settings": {
-        "heading": "Nos vins bio",
+        "heading": "Vous aimerez aussi",
         "show_secondary_image": true,
         "show_vendor": true
       }
