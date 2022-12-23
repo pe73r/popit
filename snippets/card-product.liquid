@@ -77,9 +77,9 @@
 
       <!-- Description -->
       {%- if card_product.metafields.global.description != blank -%}
-          <p class="my-1 md:my-2 text-xs md:text-sm line-clamp-2 max-h-[42px]">{{ card_product.metafields.global.description }}</p>
+          <p class="card-description my-1 md:my-2 text-xs md:text-sm line-clamp-2 max-h-[42px]">{{ card_product.metafields.global.description }}</p>
       {% else %}
-        <p class="my-1 md:my-2 text-xs md:text-sm line-clamp-2 max-h-[42px]">{{ card_product.description | truncate: 100  }}</p>
+        <p class="card-description my-1 md:my-2 text-xs md:text-sm line-clamp-2 max-h-[42px]">Facilite la digestion & le transit intestinal...</p>
       {%- endif -%}
       <!-- Price -->
       <div class="flex items-center justify-center">
