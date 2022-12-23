@@ -1,4 +1,4 @@
-<section class="w-11/12 max-w-screen-xl mx-auto">
+<section class="py-10 md:py-12 w-11/12 max-w-screen-xl mx-auto">
   <div class="color-{{ section.settings.color_scheme }} gradient">
     <product-recommendations class="product-recommendations page-width section-{{ section.id }}-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4">
         {% if recommendations.performed and recommendations.products_count > 0 %}
@@ -9,17 +9,16 @@
                     {% for recommendation in recommendations.products %}
                       <carousel-panel class="px-2">
                             {% render 'card-product',
-                            card_product: recommendation,
-                            media_aspect_ratio: section.settings.image_ratio,
-                            show_secondary_image: section.settings.show_secondary_image,
-                            show_vendor: section.settings.show_vendor,
-                            show_rating: section.settings.show_rating,
-                            show_quick_add: true,
-                            width_fit: true
-                            %}
+                              card_product: recommendation,
+                              media_aspect_ratio: section.settings.image_ratio,
+                              show_secondary_image: section.settings.show_secondary_image,
+                              show_vendor: section.settings.show_vendor,
+                              show_rating: section.settings.show_rating,
+                              show_quick_add: true,
+                              width_fit: true
+                            %} 
                         </carousel-panel>
                     {% endfor %}
-
                 </carousel-content>
             </carousel-container>
             {% comment %} <carousel-next class=" md:flex hidden absolute top-0 bottom-0 z-[1] xl:-right-4 right-4 items-center justify-center w-8 h-8 p-2 my-auto bg-white rounded-full border-[1px]  cursor-pointer  disabled:opacity-50 disabled:cursor-not-allowed ">
@@ -79,7 +78,22 @@
   "tag": "section",
   "class": "section",
   "settings": [
-    
+    {
+      "type": "select",
+      "id": "card-product",
+      "options": [
+        {
+          "value": "inline",
+          "label": "inline"
+        },
+        {
+          "value": "default",
+          "label": "default"
+        }
+      ],
+      "default": "inline",
+      "label": "Card product style"
+    },
     {
       "type": "text",
       "id": "heading",

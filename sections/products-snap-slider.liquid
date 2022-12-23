@@ -1,6 +1,6 @@
 {% assign collection = section.settings.collection %}
 <div class="products-slider w-full py-10 lg:py-14">
-  <div class="xl:w-11/12 lg:mx-auto max-w-7xl">
+  <div class="xl:w-11/12 xl:mx-auto max-w-7xl">
     <h2 class="text-2xl leading-8 lg:text-3xl lg:leading-10 mb-8 text-center product-ingredients-title" style="color:{{ section.settings.color }}">{{ section.settings.title }}</h2>
     <div class="flex xl:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 lg:gap-6 scrollbar-none px-4">
       {%- for product in collection.products limit: 3 -%}
@@ -9,7 +9,7 @@
          product: product,
          card_product: product,
          show_secondary_image: section.settings.show_secondary_image,
-         show_quick_add: true
+         show_quick_add: true,
          class: "min-w-[350px] xl:min-w-none" %}
       {%- endfor -%}
     </div>
@@ -62,21 +62,6 @@
         "id": "color",
         "label": "Text color",
         "default": "#fff"
-      }
-    ],
-    "blocks": [
-      {
-        "name": "block",
-        "limit": 3,
-        "type": "block",
-        "settings": [
-          {
-            "type": "text",
-            "id": "title",
-            "label": "Title",
-            "default": "Magnésium"
-          }
-        ]
       }
     ],
     "presets": [
