@@ -181,38 +181,6 @@
         "title_accordion_color": "#201a1c",
         "content_accordion_color": "#201a1c"
       }
-    },
-    "9860ee38-0bab-4a03-80ec-d1bd84b87d98": {
-      "type": "faq-product",
-      "disabled": true,
-      "blocks": {
-        "template--17232714531110__9860ee38-0bab-4a03-80ec-d1bd84b87d98-16717315276459f0d6-0": {
-          "type": "block",
-          "settings": {
-          }
-        },
-        "template--17232714531110__9860ee38-0bab-4a03-80ec-d1bd84b87d98-16717315276459f0d6-1": {
-          "type": "block",
-          "settings": {
-          }
-        },
-        "template--17232714531110__9860ee38-0bab-4a03-80ec-d1bd84b87d98-16717315276459f0d6-2": {
-          "type": "block",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "template--17232714531110__9860ee38-0bab-4a03-80ec-d1bd84b87d98-16717315276459f0d6-0",
-        "template--17232714531110__9860ee38-0bab-4a03-80ec-d1bd84b87d98-16717315276459f0d6-1",
-        "template--17232714531110__9860ee38-0bab-4a03-80ec-d1bd84b87d98-16717315276459f0d6-2"
-      ],
-      "settings": {
-        "title": "FAQ",
-        "title_color": "#201a1c",
-        "title_accordion_color": "#201a1c",
-        "content_accordion_color": "#201a1c"
-      }
     }
   },
   "order": [
@@ -220,7 +188,6 @@
     "product-marquee",
     "7d12314b-a9a4-42d2-8330-a732629f982b",
     "product-recommendations-carousel",
-    "03627885-530d-4c49-96db-d614a4787a49",
-    "9860ee38-0bab-4a03-80ec-d1bd84b87d98"
+    "03627885-530d-4c49-96db-d614a4787a49"
   ]
 }
