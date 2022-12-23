@@ -58,37 +58,50 @@
       </div>
     </div>
   </div>
-  <div class="flex items-center justify-center w-full max-w-full gap-2 pr-3 md:w-fit md:min-w-[450px]">
-    {% if product.available == true %}
+  <div class="flex items-center justify-center w-full max-w-full gap-3 pr-3 md:w-fit md:min-w-[450px]">
+    {% comment %}
+      {% if product.available == true %}
       <div class="border-violet border-2 rounded-md w-fit h-fit py-2 px-3 hidden md:block" {{ block.shopify_attributes }}>
-        <product-quantity
-          data-max-quantity={{product.selected_or_first_available_variant.inventory_quantity}}
-          data-product="{{product.id}}"
-          class="flex items-center justify-center m-auto quantity">
-          <button
-            class="p-2 no-js-hidden"
-            name="minus"
-            type="button">
-            {% render 'icon-minus' %}
-          </button>
-          <input
-            class="text-acajou bg-transparent text-base font-bold max-w-[50px] text-center"
-            type="number"
-            name="quantity"
-            id="Quantity-{{ section.id }}"
-            min="1"
-            value="1"
-            form="{{ product_form_id }}">
-          <button
-            class="p-2 no-js-hidden"
-            name="plus"
-            type="button">
-            {% render 'icon-plus' %}
-          </button>
-        </product-quantity>
+      <product-quantity
+      data-max-quantity={{product.selected_or_first_available_variant.inventory_quantity}}
+      data-product="{{product.id}}"
+      class="flex items-center justify-center m-auto quantity">
+      <button
+      class="p-2 no-js-hidden"
+      name="minus"
+      type="button">
+      {% render 'icon-minus' %}
+      </button>
+      <input
+      class="text-acajou bg-transparent text-base font-bold max-w-[50px] text-center"
+      type="number"
+      name="quantity"
+      id="Quantity-{{ section.id }}"
+      min="1"
+      value="1"
+      form="{{ product_form_id }}">
+      <button
+      class="p-2 no-js-hidden"
+      name="plus"
+      type="button">
+      {% render 'icon-plus' %}
+      </button>
+      </product-quantity>
       </div>
-    {% endif %}
-
+      {% endif %}
+    {% endcomment %}
+    <!-- sticky price -->
+      <div
+      class="flex items-center my-2"
+      id="price-{{ section.id }}"
+      role="status"
+      {{ block.shopify_attributes }}> {%- if product.compare_at_price > product.price -%}
+        <h5 class="text-lg font-extrabold text-{{ product-color }}">{{ product.price | money }}</h5>
+        <span class="ml-2 text-sm font-light line-through text-{{ product-color }}">{{ product.compare_at_price | money }}</span>
+      {% else %}
+        <h5 class="text-lg font-extrabold text-{{ product-color }}">{{ product.price | money }}</h5>
+      {% endif %}
+    </div>
     <div
       id="buy-buttons"
       {{ block.shopify_attributes }}
@@ -103,7 +116,7 @@
         data-price="{{ product.price | money_without_trailing_zeros }}"
         data-product="{{product.id}}"
         data-variant={{product.selected_or_first_available_variant.id}}>
-        <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="w-full my-2 cursor-pointer !px-0 !py-0 {% render "button", size: "large", color:"primary" %}">
+        <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="w-full my-2 cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }} {% render "button", size: "large" %}">
           {% if product.available %}
             <div class="px-0 lg:px-16 py-3 flex justify-center items-center">
               <span class="block">Ajouter au panier</span>

@@ -1,0 +1,88 @@
+{% assign collection = section.settings.collection %}
+<div class="products-slider w-full py-10 lg:py-14">
+  <div class="xl:w-11/12 lg:mx-auto max-w-7xl">
+    <h2 class="text-2xl leading-8 lg:text-3xl lg:leading-10 mb-8 text-center product-ingredients-title" style="color:{{ section.settings.color }}">{{ section.settings.title }}</h2>
+    <div class="flex xl:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 lg:gap-6 scrollbar-none px-4">
+      {%- for product in collection.products limit: 3 -%}
+        {% render 'card-product-inline'
+         collection: collection,
+         product: product,
+         card_product: product,
+         show_secondary_image: section.settings.show_secondary_image,
+         show_quick_add: true
+         class: "min-w-[350px] xl:min-w-none" %}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+<style>
+  {% if product.tags contains "sommeil" %}
+    .products-slider {
+      background-color: #4F2674;
+    }
+  {% elsif product.tags contains "energie" %}
+    .products-slider {
+      background-color: #EA5B0C;
+    }
+  {% else %}
+    .products-slider {
+      background-color: {{ section.settings.bg_color }}
+      ;
+    }
+  {% endif %}
+</style>
+{% schema %}
+
+  {
+    "name": "Products Slider",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection to display"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Ce produit existe aussi en gélules"
+      },
+      {
+        "type": "header",
+        "content": "colors"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#4F2674"
+      }, {
+        "type": "color",
+        "id": "color",
+        "label": "Text color",
+        "default": "#fff"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "block",
+        "limit": 3,
+        "type": "block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Magnésium"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Products slider"
+      }
+    ]
+  }
+{% endschema %}

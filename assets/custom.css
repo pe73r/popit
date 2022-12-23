@@ -57,3 +57,8 @@ accordion-element[data-open="true"] .icon-minus {
   background-color: #4B9B7D;
   border-radius: 3px;
 }
+
+/* card product */ 
+.card-description p{
+  font-size: 14px;
+}

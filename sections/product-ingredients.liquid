@@ -1,44 +1,24 @@
-<div
-  class="w-full py-10 lg:py-14 lg:w-11/12 lg:mx-auto max-w-7xl">
-  <h2
-    class="text-3xl md:text-4xl lg:text-6xl mb-8 text-center product-ingredients-title">{{ section.settings.title }}</h2>
-  <div
-    class="flex lg:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 lg:gap-6 xl:gap-8 scrollbar-none px-4">
+<div class="w-full py-10 lg:py-14 lg:w-11/12 lg:mx-auto max-w-7xl">
+  <h2 class="text-3xl md:text-4xl lg:text-6xl mb-8 text-center product-ingredients-title">{{ section.settings.title }}</h2>
+  <div class="flex lg:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 lg:gap-6 xl:gap-8 scrollbar-none px-4">
     {%- for block in section.blocks -%}
-      <div
-        class="min-w-[350px] lg:min-w-0 shadow-md pt-8 pb-4 px-4 mb-5 rounded-lg">
-        <div
-          class="">
-          <h5
-            class="block text-sm mb-8">{{ block.settings.title }}</h5>
-          <ul
-            class="product-ingredients-list">
-            <li
-              class="text-sm flex items-center mb-2">
-              <span
-                class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
-            <li
-              class="text-sm flex items-center mb-2">
-              <span
-                class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
-            <li
-              class="text-sm flex items-center mb-2">
-              <span
-                class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
-            <li
-              class="text-sm flex items-center mb-2">
-              <span
-                class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
-            <li
-              class="text-sm flex items-center mb-2">
-              <span
-                class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
+      <div class="min-w-[350px] lg:min-w-0 shadow-md pt-8 pb-4 px-4 mb-5 rounded-lg">
+        <div class="">
+          <h5 class="block text-sm mb-8">{{ block.settings.title }}</h5>
+          <ul class="product-ingredients-list">
+            <li class="text-sm flex items-center mb-2">
+              <span class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
+            <li class="text-sm flex items-center mb-2">
+              <span class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
+            <li class="text-sm flex items-center mb-2">
+              <span class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
+            <li class="text-sm flex items-center mb-2">
+              <span class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
+            <li class="text-sm flex items-center mb-2">
+              <span class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
           </ul>
-          <div
-            class="mt-4">
-            <a
-              href="{{ }}"
-              class="text-sm underline text-gray-300">En savoir plus</a>
+          <div class="mt-4">
+            <a href="{{ }}" class="text-sm underline text-gray-300">En savoir plus</a>
           </div>
         </div>
       </div>
