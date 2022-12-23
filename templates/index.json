@@ -185,7 +185,7 @@
         "text": "<p>Notre mission est de vous rendre heureux, en meilleure santé, sans dégrader la planète.<\/p>",
         "cta": "Je découvre le gamme",
         "ctaLink": "",
-        "bg_color": "#E3F2ED",
+        "bg_color": "#e3f2ed",
         "color": "#005f3b"
       }
     },
@@ -270,6 +270,7 @@
     "a11b1585-0a12-4fa7-b722-9bd6997a108a": {
       "type": "newsletter",
       "settings": {
+        "section_style": "default",
         "title": "NEWSLETTER",
         "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives !<\/p>",
         "text_button": "S'inscrire",
