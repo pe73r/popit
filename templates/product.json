@@ -138,7 +138,6 @@
     },
     "product-recommendations-carousel": {
       "type": "product-recommendations-carousel",
-      "disabled": true,
       "settings": {
         "heading": "Nos vins bio",
         "show_secondary_image": true,
@@ -178,9 +177,9 @@
       "settings": {
         "hide_in_mobile": true,
         "title": "FAQ",
-        "title_color": "#201A1C",
-        "title_accordion_color": "#201A1C",
-        "content_accordion_color": "#201A1C"
+        "title_color": "#201a1c",
+        "title_accordion_color": "#201a1c",
+        "content_accordion_color": "#201a1c"
       }
     },
     "9860ee38-0bab-4a03-80ec-d1bd84b87d98": {
@@ -210,9 +209,9 @@
       ],
       "settings": {
         "title": "FAQ",
-        "title_color": "#201A1C",
-        "title_accordion_color": "#201A1C",
-        "content_accordion_color": "#201A1C"
+        "title_color": "#201a1c",
+        "title_accordion_color": "#201a1c",
+        "content_accordion_color": "#201a1c"
       }
     }
   },
