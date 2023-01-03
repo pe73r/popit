@@ -13,6 +13,80 @@
     },
     "collection-links": {
       "type": "collection-links",
+      "blocks": {
+        "5504e0f6-90ab-4922-9493-68da2d254498": {
+          "type": "link",
+          "settings": {
+            "title": "Tous",
+            "link": "shopify:\/\/collections",
+            "bg_color": "#e3f2ed",
+            "color": "#4b9b7d"
+          }
+        },
+        "b66550d2-2594-46ea-ac78-8f45c0feb68a": {
+          "type": "link",
+          "settings": {
+            "title": "Sommeil",
+            "link": "",
+            "bg_color": "#e9d2e7",
+            "color": "#4f2674"
+          }
+        },
+        "e35c17b5-47be-4cd7-a9b5-830aba66e885": {
+          "type": "link",
+          "settings": {
+            "title": "Alimentation",
+            "link": "",
+            "bg_color": "#D9E6B1",
+            "color": "#3D925C"
+          }
+        },
+        "af33b9c9-b0cb-4368-9ff0-b0f921f2c4ff": {
+          "type": "link",
+          "settings": {
+            "title": "Mémoire \/ Focus",
+            "link": "",
+            "bg_color": "#c2e3df",
+            "color": "#00555a"
+          }
+        },
+        "84013011-9beb-4b47-ae1b-ca229d7fdb36": {
+          "type": "link",
+          "settings": {
+            "title": "Sport",
+            "link": "",
+            "bg_color": "#cbe7e6",
+            "color": "#2f52a0"
+          }
+        },
+        "b5258c83-0d53-4e2f-bcf0-7ca3823d5595": {
+          "type": "link",
+          "settings": {
+            "title": "Sommeil",
+            "link": "",
+            "bg_color": "#b7e1f5",
+            "color": "#2f2870"
+          }
+        },
+        "03783510-f23c-418d-ad0e-65b8f61594f6": {
+          "type": "link",
+          "settings": {
+            "title": "Féminin",
+            "link": "",
+            "bg_color": "#f9cddb",
+            "color": "#9d1553"
+          }
+        }
+      },
+      "block_order": [
+        "5504e0f6-90ab-4922-9493-68da2d254498",
+        "b66550d2-2594-46ea-ac78-8f45c0feb68a",
+        "e35c17b5-47be-4cd7-a9b5-830aba66e885",
+        "af33b9c9-b0cb-4368-9ff0-b0f921f2c4ff",
+        "84013011-9beb-4b47-ae1b-ca229d7fdb36",
+        "b5258c83-0d53-4e2f-bcf0-7ca3823d5595",
+        "03783510-f23c-418d-ad0e-65b8f61594f6"
+      ],
       "settings": {
       }
     },
