@@ -12,6 +12,100 @@
     },
     "collection-links": {
       "type": "collection-links",
+      "blocks": {
+        "d78b76bd-bfd5-4686-8bc3-2f7b415fa9d8": {
+          "type": "link",
+          "settings": {
+            "title": "Tous",
+            "link": "",
+            "bg_color": "#e3f2ed",
+            "color": "#4b9b7d"
+          }
+        },
+        "11b69bb8-9ab4-4301-92c4-00573aad36e0": {
+          "type": "link",
+          "settings": {
+            "title": "Sommeil",
+            "link": "",
+            "bg_color": "#e9d2e7",
+            "color": "#4f2674"
+          }
+        },
+        "c49ef8ab-847c-4816-896c-bf7586dee89f": {
+          "type": "link",
+          "settings": {
+            "title": "Alimentation",
+            "link": "",
+            "bg_color": "#D9E6B1",
+            "color": "#3D925C"
+          }
+        },
+        "87487d8f-15a5-407a-82b8-3ac2f4bd95f6": {
+          "type": "link",
+          "settings": {
+            "title": "Mémoire \/ Focus",
+            "link": "",
+            "bg_color": "#c2e3df",
+            "color": "#00555a"
+          }
+        },
+        "18664160-e607-446d-87c7-bfd186ac6a0c": {
+          "type": "link",
+          "settings": {
+            "title": "Sport",
+            "link": "",
+            "bg_color": "#cbe7e6",
+            "color": "#2f52a0"
+          }
+        },
+        "a2bb0450-b578-4217-b1a5-c48d0082c77f": {
+          "type": "link",
+          "settings": {
+            "title": "Stress",
+            "link": "",
+            "bg_color": "#b7e1f5",
+            "color": "#2f2870"
+          }
+        },
+        "514021bb-ded5-4de8-a40d-199880159fe9": {
+          "type": "link",
+          "settings": {
+            "title": "Féminin",
+            "link": "",
+            "bg_color": "#f9cddb",
+            "color": "#9d1553"
+          }
+        },
+        "b73bc100-1214-473a-b5ca-3f5a23892a94": {
+          "type": "link",
+          "settings": {
+            "title": "Peau",
+            "link": "",
+            "bg_color": "#fbdbdc",
+            "color": "#e4003a"
+          }
+        },
+        "3318605b-9cc8-45b0-9992-ce4c5fabfc23": {
+          "type": "link",
+          "settings": {
+            "title": "Énergie",
+            "link": "",
+            "bg_color": "#fee5c6",
+            "color": "#ea5b0c"
+          }
+        }
+      },
+      "block_order": [
+        "d78b76bd-bfd5-4686-8bc3-2f7b415fa9d8",
+        "11b69bb8-9ab4-4301-92c4-00573aad36e0",
+        "c49ef8ab-847c-4816-896c-bf7586dee89f",
+        "87487d8f-15a5-407a-82b8-3ac2f4bd95f6",
+        "18664160-e607-446d-87c7-bfd186ac6a0c",
+        "a2bb0450-b578-4217-b1a5-c48d0082c77f",
+        "514021bb-ded5-4de8-a40d-199880159fe9",
+        "b73bc100-1214-473a-b5ca-3f5a23892a94",
+        "3318605b-9cc8-45b0-9992-ce4c5fabfc23"
+      ],
       "settings": {
       }
     }
