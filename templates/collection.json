@@ -31,50 +31,11 @@
         "enable_sorting": false,
         "filters_background": "#fcf9f3"
       }
-    },
-    "fc1b2bc3-12e8-4674-8c3d-e22344d81d0b": {
-      "type": "rich-text-expandable",
-      "disabled": true,
-      "settings": {
-        "text_color": "#201a1c",
-        "title": "Que signigie l’appelation bio ?",
-        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
-        "more_text": "<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>",
-        "text_mobile": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
-        "more_text_mobile": "<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>",
-        "text_link": "Lire plus",
-        "text_less": "Lire moins"
-      }
-    },
-    "94813048-34ad-4cff-a2d6-86a465538695": {
-      "type": "products-carousel",
-      "settings": {
-        "container": "7xl",
-        "collection": "frontpage",
-        "limit": 6,
-        "collection_2": "",
-        "limit_2": 6,
-        "show_secondary_image": false,
-        "show_arrows": true,
-        "show_dots": true
-      }
-    },
-    "f7fc0dad-0a17-4b49-9ab5-802ce9e9bb9e": {
-      "type": "products-snap-slider",
-      "settings": {
-        "collection": "frontpage",
-        "title": "Ce produit existe aussi en gélules",
-        "bg_color": "#4f2674",
-        "color": "#ffffff"
-      }
     }
   },
   "order": [
     "collection-header",
     "collection-links",
-    "product-grid",
-    "fc1b2bc3-12e8-4674-8c3d-e22344d81d0b",
-    "94813048-34ad-4cff-a2d6-86a465538695",
-    "f7fc0dad-0a17-4b49-9ab5-802ce9e9bb9e"
+    "product-grid"
   ]
 }
