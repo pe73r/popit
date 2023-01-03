@@ -1,5 +1,17 @@
 {
   "sections": {
+    "collection-header": {
+      "type": "collection-header",
+      "settings": {
+  
+      }
+    },
+    "collection-links": {
+      "type": "collection-links",
+      "settings": {
+  
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -38,6 +50,8 @@
     }
   },
   "order": [
+    "collection-header",
+    "collection-links",
     "product-grid",
     "fc1b2bc3-12e8-4674-8c3d-e22344d81d0b"
   ]

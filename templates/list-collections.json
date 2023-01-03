@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "collection-list-header": {
+      "type": "collection-list-header",
+      "settings": {
+      }
+    },
+    "collection-links": {
+      "type": "collection-links",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "collection-list-header", 
+    "collection-links"
+  ]
+}
