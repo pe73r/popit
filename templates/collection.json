@@ -3,13 +3,17 @@
     "collection-header": {
       "type": "collection-header",
       "settings": {
-  
+        "display": true,
+        "show_breadcrumbs": true,
+        "title": "Tous nos produits",
+        "description": "",
+        "bg_color": "#E3F2ED",
+        "color": "#005F3B"
       }
     },
     "collection-links": {
       "type": "collection-links",
       "settings": {
-  
       }
     },
     "product-grid": {
@@ -21,17 +25,11 @@
         "show_breadcrumbs": true,
         "show_collection_description": true,
         "show_collection_size": false,
+        "show_collection_grid": true,
         "show_secondary_image": true,
-        "enable_filtering": true,
+        "enable_filtering": false,
         "enable_sorting": false,
-        "filters_background": "#fcf9f3",
-        "show_product_dumie": true,
-        "product_dumie_title": "Le coup de projecteur vigneron",
-        "product_dumie_text": "<p>Chaque mois, nous mettons en avant un de nos producteurs pour vous raconter son histoire.<\/p>",
-        "product_dumie_link": "Je découvre",
-        "color_dumie_link": "#ffffff",
-        "text_dumie_color": "#ffffff",
-        "header-image-footer-color": "#ffffff"
+        "filters_background": "#fcf9f3"
       }
     },
     "fc1b2bc3-12e8-4674-8c3d-e22344d81d0b": {
@@ -66,8 +64,8 @@
       "settings": {
         "collection": "frontpage",
         "title": "Ce produit existe aussi en gélules",
-        "bg_color": "#4F2674",
-        "color": "#fff"
+        "bg_color": "#4f2674",
+        "color": "#ffffff"
       }
     }
   },
