@@ -40,7 +40,7 @@
       "type": "products-carousel",
       "settings": {
         "container": "7xl",
-        "collection": "",
+        "collection": "frontpage",
         "limit": 6,
         "collection_2": "",
         "limit_2": 6,
@@ -48,11 +48,21 @@
         "show_arrows": true,
         "show_dots": true
       }
+    },
+    "f7fc0dad-0a17-4b49-9ab5-802ce9e9bb9e": {
+      "type": "products-snap-slider",
+      "settings": {
+        "collection": "frontpage",
+        "title": "Ce produit existe aussi en gélules",
+        "bg_color": "#4F2674",
+        "color": "#fff"
+      }
     }
   },
   "order": [
     "product-grid",
     "fc1b2bc3-12e8-4674-8c3d-e22344d81d0b",
-    "94813048-34ad-4cff-a2d6-86a465538695"
+    "94813048-34ad-4cff-a2d6-86a465538695",
+    "f7fc0dad-0a17-4b49-9ab5-802ce9e9bb9e"
   ]
 }
