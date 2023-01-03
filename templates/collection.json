@@ -76,6 +76,24 @@
             "bg_color": "#f9cddb",
             "color": "#9d1553"
           }
+        },
+        "cec790cc-a3d8-47f0-b127-45acf88de471": {
+          "type": "link",
+          "settings": {
+            "title": "Peau",
+            "link": "",
+            "bg_color": "#fbdbdc",
+            "color": "#e4003a"
+          }
+        },
+        "1cc249af-223a-4b50-9bfb-86b3cba596e7": {
+          "type": "link",
+          "settings": {
+            "title": "Énergie",
+            "link": "",
+            "bg_color": "#fee5c6",
+            "color": "#ea5b0c"
+          }
         }
       },
       "block_order": [
@@ -85,7 +103,9 @@
         "af33b9c9-b0cb-4368-9ff0-b0f921f2c4ff",
         "84013011-9beb-4b47-ae1b-ca229d7fdb36",
         "b5258c83-0d53-4e2f-bcf0-7ca3823d5595",
-        "03783510-f23c-418d-ad0e-65b8f61594f6"
+        "03783510-f23c-418d-ad0e-65b8f61594f6",
+        "cec790cc-a3d8-47f0-b127-45acf88de471",
+        "1cc249af-223a-4b50-9bfb-86b3cba596e7"
       ],
       "settings": {
       }
