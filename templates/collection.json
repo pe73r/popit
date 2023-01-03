@@ -17,7 +17,6 @@
         "product_dumie_title": "Le coup de projecteur vigneron",
         "product_dumie_text": "<p>Chaque mois, nous mettons en avant un de nos producteurs pour vous raconter son histoire.<\/p>",
         "product_dumie_link": "Je découvre",
-        "product_dumie_image": "shopify:\/\/shop_images\/72aa89ac54c8985e8268196747c5552d.png",
         "color_dumie_link": "#ffffff",
         "text_dumie_color": "#ffffff",
         "header-image-footer-color": "#ffffff"
@@ -25,6 +24,7 @@
     },
     "fc1b2bc3-12e8-4674-8c3d-e22344d81d0b": {
       "type": "rich-text-expandable",
+      "disabled": true,
       "settings": {
         "text_color": "#201a1c",
         "title": "Que signigie l’appelation bio ?",
@@ -35,10 +35,24 @@
         "text_link": "Lire plus",
         "text_less": "Lire moins"
       }
+    },
+    "94813048-34ad-4cff-a2d6-86a465538695": {
+      "type": "products-carousel",
+      "settings": {
+        "container": "7xl",
+        "collection": "",
+        "limit": 6,
+        "collection_2": "",
+        "limit_2": 6,
+        "show_secondary_image": false,
+        "show_arrows": true,
+        "show_dots": true
+      }
     }
   },
   "order": [
     "product-grid",
-    "fc1b2bc3-12e8-4674-8c3d-e22344d81d0b"
+    "fc1b2bc3-12e8-4674-8c3d-e22344d81d0b",
+    "94813048-34ad-4cff-a2d6-86a465538695"
   ]
 }
