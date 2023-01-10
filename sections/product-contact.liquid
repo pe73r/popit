@@ -1,0 +1,134 @@
+{% if product.tags contains "sommeil" %}
+  {% assign product_color = "#4F2674" %}
+  {% assign bg_color = "#E9D2E7" %}
+
+{% elsif product.tags contains "energie" %}
+  {% assign product_color = "#EA5B0C" %}
+  {% assign bg_color = "#FEE5C6" %}
+
+{% elsif product.tags contains "alimentation" %}
+  {% assign product_color = "#3D925C" %}
+  {% assign bg_color = "#D9E6B1" %}
+
+{% elsif product.tags contains "sport" %}
+  {% assign product_color = "#2F52A0" %}
+  {% assign bg_color = "#CBE7E6" %}
+
+{% elsif product.tags contains "stress" %}
+  {% assign product_color = "#2F2870" %}
+  {% assign bg_color = "#B7E1F5" %}
+
+{% elsif product.tags contains "feminim" %}
+  {% assign product_color = "#9D1553" %}
+  {% assign bg_color = "#F9CDDB" %}
+
+{% elsif product.tags contains "peau" %}
+  {% assign product_color = "#E4003A" %}
+  {% assign bg_color = "#FBDBDC" %}
+
+{% elsif product.tags contains "focus" %}
+  {% assign product_color = "#00555A" %}
+  {% assign bg_color = "#C2E3DF" %}
+{% else %}
+  {% assign product_color = section.settings.color %}
+  {% assign bg_color = section.settings.bg_color %}
+{% endif %}
+<div class="py-10 {% if section.settings.section_style == 'boxed' %} md:max-w-3xl md:mx-auto md:my-10 rounded-lg {% endif %}" style=" background-color: {{ bg_color }}">
+  <div class="w-11/12 mx-auto">
+    <div class="text-center">
+      <h2 class="text-lg md:text-2xl xl:text-3xl xl:leading-7 font-bold pb-2 md:pb-4 lg:pb-4 xl:pb-4" style="color: {{ product_color }}">
+        {{ section.settings.title }}
+      </h2>
+      {% if section.settings.text != blank %}
+        <div class="text-sm lg:text-lg max-w-[600px] mx-auto" style="color: {{ product_color }}">
+          {{ section.settings.text }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="flex justify-center items-center gap-3 md:gap-5 mt-5">
+        {% for block in section.blocks %}
+            <div class="max-w-[180px] rounded-lg p-5 bg-white flex items-center justify-center text-center">
+               <div>
+                {% if forloop.first %}
+                   {% render 'icon-telephone', product_color: product_color, class:"mx-auto" %}  
+                {% else %}   
+                 {% render 'icon-subtract', product_color: product_color, class:"mx-auto" %}  
+                {% endif %}
+                <p class="mt-2 text-xs md:text-sm" style="color: {{ product_color }}">{{ block.settings.text }}</p>
+               </div>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Product contact",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "select",
+        "id": "section_style",
+        "options": [
+          {
+            "value": "boxed",
+            "label": "boxed"
+          }, {
+            "value": "default",
+            "label": "Full width"
+          }
+        ],
+        "default": "boxed",
+        "label": "Section style"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "default": "Des questions sur ce produit ?",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "default": "<p>Contactez-nous pour en savoir plus !</p>",
+        "label": "Text"
+      },
+      {
+        "type": "header",
+        "content": "colors"
+      }, {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#FAF5EF" 
+      }, {
+        "type": "color",
+        "id": "color",
+        "label": "Text color",
+        "default": "#4B9B7D"
+      }
+    ], 
+    "blocks": [
+      {
+        "name": "block",
+        "type": "block",
+        "limit": 2,
+        "settings": [
+           
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Appelez-nous au +330678125521"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product contact"
+      }
+    ]
+  }
+{% endschema %}
