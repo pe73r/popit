@@ -1,21 +1,58 @@
+{% if product.tags contains "sommeil" %}
+  {% assign product_color = "#4F2674" %}
+  {% assign bg_color = "#E9D2E7" %}
+
+{% elsif product.tags contains "energie" %}
+  {% assign product_color = "#EA5B0C" %}
+  {% assign bg_color = "#FEE5C6" %}
+
+{% elsif product.tags contains "alimentation" %}
+  {% assign product_color = "#3D925C" %}
+  {% assign bg_color = "#D9E6B1" %}
+
+{% elsif product.tags contains "sport" %}
+  {% assign product_color = "#2F52A0" %}
+  {% assign bg_color = "#CBE7E6" %}
+
+{% elsif product.tags contains "stress" %}
+  {% assign product_color = "#2F2870" %}
+  {% assign bg_color = "#B7E1F5" %}
+
+{% elsif product.tags contains "feminim" %}
+  {% assign product_color = "#9D1553" %}
+  {% assign bg_color = "#F9CDDB" %}
+
+{% elsif product.tags contains "peau" %}
+  {% assign product_color = "#E4003A" %}
+  {% assign bg_color = "#FBDBDC" %}
+
+{% elsif product.tags contains "focus" %}
+  {% assign product_color = "#00555A" %}
+  {% assign bg_color = "#C2E3DF" %}
+{% else %}
+  {% assign product_color = section.settings.color %}
+  {% assign bg_color = section.settings.bg_color %}
+{% endif %}
+
 <div class="w-full py-10 lg:py-14 lg:w-11/12 lg:mx-auto max-w-7xl">
   <h2 class="text-3xl md:text-4xl lg:text-6xl mb-8 text-center product-ingredients-title">{{ section.settings.title }}</h2>
-  <div class="flex lg:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 lg:gap-6 xl:gap-8 scrollbar-none px-4">
+  <!-- mobile -->
+  <div class="flex lg:hidden lg:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 lg:gap-6 xl:gap-8 scrollbar-none px-4">
     {%- for block in section.blocks -%}
       <div class="min-w-[350px] lg:min-w-0 shadow-md pt-8 pb-4 px-4 mb-5 rounded-lg">
         <div class="">
           <h5 class="block text-sm mb-8">{{ block.settings.title }}</h5>
           <ul class="product-ingredients-list">
             <li class="text-sm flex items-center mb-2">
-              <span class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
+              <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
             <li class="text-sm flex items-center mb-2">
-              <span class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
+              <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
             <li class="text-sm flex items-center mb-2">
-              <span class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
+              <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
             <li class="text-sm flex items-center mb-2">
-              <span class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
+              <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
             <li class="text-sm flex items-center mb-2">
-              <span class="mr-3">{% render 'icon-check' %}</span>Explication du bénéfice de ce prinicpe actif</li>
+              <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
           </ul>
           <div class="mt-4">
             <a href="{{ }}" class="text-sm underline text-gray-300">En savoir plus</a>
@@ -24,31 +61,74 @@
       </div>
     {%- endfor -%}
   </div>
+
+  <!-- desktop -->
+  <div class="hidden lg:block">
+    <tail-carousel slidesToShow="xs:1 md:3 lg:3">
+      <carousel-container>
+        <carousel-content class="w-full">
+          {% for block in section.blocks %}
+            <carousel-panel class="px-2">
+              <div class="shadow-md pt-8 pb-4 px-4 mb-5 rounded-lg">
+                <div class="">
+                  <h5 class="block text-sm mb-8">{{ block.settings.title }}</h5>
+                  <ul class="product-ingredients-list">
+                    <li class="text-sm flex items-center mb-2">
+                      <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
+                    <li class="text-sm flex items-center mb-2">
+                      <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
+                    <li class="text-sm flex items-center mb-2">
+                      <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
+                    <li class="text-sm flex items-center mb-2">
+                      <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
+                    <li class="text-sm flex items-center mb-2">
+                      <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
+                  </ul>
+                  <div class="mt-4">
+                    <a href="{{ }}" class="text-sm underline text-gray-300">En savoir plus</a>
+                  </div>
+                </div>
+              </div>
+            </carousel-panel>
+          {% endfor %}
+        </carousel-content>
+      </carousel-container>
+      {% if section.settings.show_arrows %}
+        <div class="flex justify-center gap-5 items-center mt-5">
+          <carousel-prev class="arrow hidden md:flex justify-center items-center relative w-10 h-10 rounded-full z-[1] cursor-pointer disabled:opacity-50 disabled:cursor-auto">
+            {% render 'icon-carousel-left', product_color: product_color %}
+          </carousel-prev>
+          <carousel-next class="arrow hidden md:flex justify-center items-center relative w-10 h-10 rounded-full z-[1] cursor-pointer disabled:opacity-50 disabled:cursor-auto">
+            {% render 'icon-carousel-right', product_color: product_color %}
+          </carousel-next>
+        </div>
+      {% endif %}
+
+      {% if section.settings.show_dots %}
+        <carousel-dots class="relative flex justify-center mt-10">
+          <carousel-dot class="w-full h-[3px] transition-all bg-sable border-[1px] border-sable selected:bg-black selected:border-black selected:w-1/2"></carousel-dot>
+        </carousel-dots>
+      {% endif %}
+    </tail-carousel>
+  </div>
 </div>
 <style>
-  {% if product.tags contains "sommeil" %}
-    .product-ingredients-title {
-      color: #4F2674;
-    }
-  {% elsif product.tags contains "energie" %}
-    .product-ingredients-title {
-      color: #EA5B0C;
-    }
-  {% else %}
-    .product-ingredients-title {
-      color: {{ section.settings.color }}
-      ;
-    }
-  {% endif %}
-
-  {% comment %}
-    .product-ingredients-list li::before {
-      content: url('https://cdn.shopify.com/s/files/1/0681/5494/9926/files/check.svg?v=1671728061');
-      margin-right: 10px;
-      position: relative;
-      top: 7px;
-    }
-  {% endcomment %}
+  .product-ingredients-title {
+    color: {{ product_color }}
+    ;
+  }
+  .arrow {
+    background-color: {{ bg_color }}
+    ;
+  }
+  carousel-prev:disabled,
+  carousel-next:disabled {
+    opacity: .5;
+  }
+  carousel-prev[disabled],
+  carousel-next[disabled] {
+    opacity: .5;
+  }
 </style>
 {% schema %}
 
@@ -61,20 +141,33 @@
         "id": "title",
         "label": "Title",
         "default": "Des ingrédients supérieurs"
-      }, {
+      },
+      {
+        "type": "checkbox",
+        "id": "show_arrows",
+        "label": "Show arrows",
+        "default": true
+      },
+
+      {
         "type": "header",
         "content": "colors"
-      }, {
+      },
+      {
         "type": "color",
         "id": "color",
         "label": "Text color",
         "default": "#4F2674"
+      }, {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Pictos background color",
+        "default": "#E9D2E7"
       }
     ],
     "blocks": [
       {
         "name": "block",
-        "limit": 3,
         "type": "block",
         "settings": [
           {
