@@ -126,12 +126,26 @@
           "settings": {
             "title": "Magnésium"
           }
+        },
+        "83d65aac-f55d-45f7-bbff-1499ac599800": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "6a5766b7-5948-4131-a8fd-f1debb869707": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
         }
       },
       "block_order": [
         "9d7aeff1-7840-4d15-870e-19cf0f6854bc",
         "c5ed126c-a767-4384-b9b9-82bd852d7305",
-        "94b80e00-9c02-4c36-86b3-f6edfeb9b2ae"
+        "94b80e00-9c02-4c36-86b3-f6edfeb9b2ae",
+        "83d65aac-f55d-45f7-bbff-1499ac599800",
+        "6a5766b7-5948-4131-a8fd-f1debb869707"
       ],
       "settings": {
         "title": "Des ingrédients supérieurs",
