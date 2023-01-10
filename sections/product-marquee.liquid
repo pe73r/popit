@@ -1,31 +1,50 @@
-<div
-  class="product-marquee w-full py-3">
-  <div
-    class="flex md:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-8 lg:gap-10 scrollbar-none px-4">
-    {%- for block in section.blocks -%}
-      <div
-        class="min-w-fit md:min-w-0">
-        <div
-          class="flex items-center gap-2">
-          {% if block.settings.svg != blank %}
-            <img
-              src="{{ block.settings.svg }}"
-              class="object-contain !max-w-max"
-              alt="{{ block.settings.svg.alt }}">
-          {% else %}
-            <img
-              src="{{ block.settings.image | img_url: 'master' }}"
-              class="lazy object-contain !max-w-[30px]"
-              alt="{{ block.settings.image.alt }}">
-          {% endif %}
-          <p
-            class="block text-sm"
-            style="color:{{ section.settings.color }}">{{ block.settings.text }}</p>
+{% if section.settings.section_type == "snap" %}
+  <div class="product-marquee w-full py-3">
+    <div class="flex md:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-8 lg:gap-10 scrollbar-none px-4">
+      {%- for block in section.blocks -%}
+        <div class="min-w-fit md:min-w-0">
+          <div class="flex items-center gap-2">
+            {% if block.settings.svg != blank %}
+              <img
+                src="{{ block.settings.svg }}"
+                class="object-contain !max-w-max"
+                alt="{{ block.settings.svg.alt }}">
+            {% else %}
+              <img
+                src="{{ block.settings.image | img_url: 'master' }}"
+                class="lazy object-contain !max-w-[30px]"
+                alt="{{ block.settings.image.alt }}">
+            {% endif %}
+            <p class="block text-sm" style="color:{{ section.settings.color }}">{{ block.settings.text }}</p>
+          </div>
         </div>
-      </div>
-    {%- endfor -%}
+      {%- endfor -%}
+    </div>
   </div>
-</div>
+{% else %}
+  <tail-marquee class="product-marquee flex relative overflow-hidden" style="color: {{ section.settings.text_color }}; background-color: {{ section.settings.background_color }}; {% if section.settings.border %} border-top: 2px solid {{ section.settings.text_color }}; border-bottom: 2px solid {{ section.settings.text_color }} {% endif %}">
+    <marquee-content style="animation-duration:{{section.settings.animationDuration}}s " class="items-center flex py-3 animate-marquee whitespace-nowrap gap-10 pr-10">
+      {%- for block in section.blocks -%}
+        <div class="min-w-fit md:min-w-0">
+          <div class="flex items-center gap-2">
+            {% if block.settings.svg != blank %}
+              <img
+                src="{{ block.settings.svg }}"
+                class="object-contain !max-w-max"
+                alt="{{ block.settings.svg.alt }}">
+            {% else %}
+              <img
+                src="{{ block.settings.image | img_url: 'master' }}"
+                class="lazy object-contain !max-w-[30px]"
+                alt="{{ block.settings.image.alt }}">
+            {% endif %}
+            <p class="block text-sm" style="color:{{ section.settings.color }}">{{ block.settings.text }}</p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </marquee-content>
+  </tail-marquee>
+{% endif %}
 <style>
   {% if product.tags contains "sommeil" %}
     .product-marquee {
@@ -49,9 +68,31 @@
     "tag": "section",
     "settings": [
       {
+        "type": "select",
+        "id": "section_type",
+        "options": [
+          {
+            "value": "snap",
+            "label": "Snap carousel mobile"
+          }, {
+            "value": "marquee",
+            "label": "Marquee"
+          }
+        ],
+        "default": "marquee",
+        "label": "Section style"
+      },
+      {
+        "type": "number",
+        "id": "animationDuration",
+        "label": "Animation duration in seconds",
+        "default": 30
+      },
+      {
         "type": "header",
         "content": "colors"
-      }, {
+      },
+      {
         "type": "color",
         "id": "bg_color",
         "label": "background color",
