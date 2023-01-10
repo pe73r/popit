@@ -227,25 +227,46 @@
       {% endif %}
 
       {%- when 'delivery_note' -%}
-      <div class="flex justify-between gap-3 my-5">
+      {% comment %} <div class="flex justify-between gap-3 my-5">
         {% if block.settings.text != blank %}
-          <div class="flex items-center">
-            <div class="hidden md:block">
-              {% render 'icon-truck' %}
-            </div>
-            <div class="block md:hidden">
-              {% render 'icon-clock' %}
-            </div>
-            <p class="text-xs md:text-sm delivery-text ml-2">{{ block.settings.text }}</p>
-          </div>
+        <div class="flex items-center">
+        <div class="hidden md:block">
+        {% render 'icon-truck' %}
+        </div>
+        <div class="block md:hidden">
+        {% render 'icon-clock' %}
+        </div>
+        <p class="text-xs md:text-sm delivery-text ml-2">{{ block.settings.text }}</p>
+        </div>
         {% endif %}
         {% if block.settings.text_2 != blank %}
-          <div class="flex items-center">
-            {% render 'icon-lock' %}
-            <p class="text-xs md:text-sm delivery-text ml-2">{{ block.settings.text_2 }}</p>
-          </div>
+        <div class="flex items-center">
+        {% render 'icon-truck-2' %}
+        <p class="text-xs md:text-sm delivery-text ml-2">{{ block.settings.text_2 }}</p>
+        </div>
         {% endif %}
-      </div>
+      </div> {% endcomment %}
+      <tail-marquee class="flex relative overflow-hidden">
+        <marquee-content style="animation-duration:30s" class="items-center flex py-3 animate-marquee whitespace-nowrap gap-10 pr-10">
+          {% if block.settings.text != blank %}
+            <div class="flex items-center">
+              <div class="hidden md:block">
+                {% render 'icon-truck' %}
+              </div>
+              <div class="block md:hidden">
+                {% render 'icon-clock' %}
+              </div>
+              <p class="text-xs md:text-sm delivery-text ml-2">{{ block.settings.text }}</p>
+            </div>
+          {% endif %}
+          {% if block.settings.text_2 != blank %}
+            <div class="flex items-center">
+              {% render 'icon-truck-2' %}
+              <p class="text-xs md:text-sm delivery-text ml-2">{{ block.settings.text_2 }}</p>
+            </div>
+          {% endif %}
+        </marquee-content>
+      </tail-marquee>
 
       {%- when 'klarna' -%}
       <div class="flex justify-center items-center gap-1 my-3">
