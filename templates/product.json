@@ -151,7 +151,7 @@
         "title": "Des ingrédients supérieurs",
         "show_arrows": true,
         "color": "#4f2674",
-        "bg_color": "#E9D2E7"
+        "bg_color": "#e9d2e7"
       }
     },
     "ca7fac8e-53d2-41fb-9a5b-446c1b05dc60": {
@@ -211,6 +211,34 @@
         "color": "#4b9b7d"
       }
     },
+    "d473013e-7df7-4660-8bc9-eeeef9b1d75e": {
+      "type": "product-contact",
+      "blocks": {
+        "68559418-eb2e-4bf9-a79f-f97de8962e5b": {
+          "type": "block",
+          "settings": {
+            "text": "Appelez-nous au +330678125521"
+          }
+        },
+        "fdbe05cc-c480-4415-9f77-fbb6afcd0fda": {
+          "type": "block",
+          "settings": {
+            "text": "Envoyez-nous unmessage"
+          }
+        }
+      },
+      "block_order": [
+        "68559418-eb2e-4bf9-a79f-f97de8962e5b",
+        "fdbe05cc-c480-4415-9f77-fbb6afcd0fda"
+      ],
+      "settings": {
+        "section_style": "boxed",
+        "title": "Des questions sur ce produit ?",
+        "text": "<p>Contactez-nous pour en savoir plus !<\/p>",
+        "bg_color": "#FAF5EF",
+        "color": "#4B9B7D"
+      }
+    },
     "4e493477-ad97-4792-afc4-59313a83885d": {
       "type": "newsletter",
       "settings": {
@@ -231,6 +259,7 @@
     "ca7fac8e-53d2-41fb-9a5b-446c1b05dc60",
     "03627885-530d-4c49-96db-d614a4787a49",
     "product-recommendations",
+    "d473013e-7df7-4660-8bc9-eeeef9b1d75e",
     "4e493477-ad97-4792-afc4-59313a83885d"
   ]
 }
