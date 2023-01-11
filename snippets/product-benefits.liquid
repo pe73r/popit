@@ -1,27 +1,32 @@
 <div class="w-11/12 mx-auto lg:mx-0 lg:w-full pr-0 lg:pr-10 mt-6">
   <div class="bg-white bg-opacity-70 rounded-lg p-4 pb-6">
-    <h3 class="text-[2rem] text-center text-{{ product-color }} mb-4">Bénéfices</h3>
-    <div class="flex justify-center gap-4">
+    <h3 class="text-[2rem] text-center text-{{ product-color }} mb-4">Ce que vous en pensez</h3>
+    <div id="list-bubble-test-widget" style="margin: 5px 2px; min-height: 81px;"></div>
+    <script
+      src="https://popit.my.join-stories.com/widgets/test-widget/index.js"
+      data-join-widget-id="list-bubble-test-widget"
+      data-join-widget-alias="test-widget"
+      type="text/javascript"></script>
+
+    {% comment %} <h3 class="text-[2rem] text-center text-{{ product-color }} mb-4">Bénéfices</h3> {% endcomment %}
+    <div class="flex justify-center gap-4 mt-4">
       <div class="text-center">
-        <img
-          class="max-w-[64px] mx-auto"
-          src="{{ settings.benefits_stress | img_url:'master'}}"
-          alt="{{ settings.benefits_stress.alt }}">
+        <div class="w-20 h-20 rounded-full flex justify-center items-center" style="{{ bg_color }}">
+          {% render 'icon-brain', product_color: product_color %}
+        </div>
         <span class="block text-xs mt-2">Stress</span>
       </div>
       <div class="text-center">
-        <img
-          class="max-w-[64px] mx-auto"
-          src="{{ settings.benefits_digestion | img_url:'master' }}"
-          alt="{{ settings.benefits_digestion.alt }}">
+        <div class="w-20 h-20 rounded-full flex justify-center items-center" style="{{ bg_color }}">
+          {% render 'icon-digestion', product_color: product_color %}
+        </div>
         <span class="block text-xs mt-2">Digestion</span>
       </div>
       <div class="text-center">
-        <img
-          class="max-w-[64px] mx-auto"
-          src="{{ settings.benefits_yeux | img_url:'master' }}"
-          alt="{{ settings.benefits_yeux.alt }}">
-        <span class="block text-xs mt-2">Stress</span>
+        <div class="w-20 h-20 rounded-full flex justify-center items-center" style="{{ bg_color }}">
+          {% render 'icon-eyes', product_color: product_color %}
+        </div>
+        <span class="block text-xs mt-2">Yeux</span>
       </div>
     </div>
   </div>
