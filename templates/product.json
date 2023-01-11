@@ -5,19 +5,23 @@
       "blocks": {
         "bb4f17d7-4ef4-4c4a-8040-e4d1ab5254ed": {
           "type": "title",
-          "settings": {}
+          "settings": {
+          }
         },
         "2077e0aa-65e5-437c-a933-775b9bf1bc85": {
           "type": "subtitle",
-          "settings": {}
+          "settings": {
+          }
         },
         "b3a85ca9-b4e2-4b7f-9983-82552d95888e": {
           "type": "stars",
-          "settings": {}
+          "settings": {
+          }
         },
         "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea": {
           "type": "variant_picker",
-          "settings": {}
+          "settings": {
+          }
         },
         "ce287ddd-56b4-4eae-92cf-5e6f08239886": {
           "type": "buy_buttons",
@@ -104,7 +108,36 @@
     },
     "product-tabs": {
       "type": "product-tabs",
-      "settings": {}
+      "blocks": {
+        "2ee8f73b-9ef4-4477-a1b0-df5959f30eb5": {
+          "type": "description",
+          "settings": {
+            "title": "Description"
+          }
+        },
+        "f0707111-a8dd-450d-b9bb-56ac58f20cd3": {
+          "type": "use",
+          "settings": {
+            "title": "HOW TO USE",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
+          }
+        },
+        "1f939024-352b-461d-b3cd-534b112ecee0": {
+          "type": "composition",
+          "settings": {
+            "title": "Composition",
+            "text": "<p>Lorem o eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "2ee8f73b-9ef4-4477-a1b0-df5959f30eb5",
+        "f0707111-a8dd-450d-b9bb-56ac58f20cd3",
+        "1f939024-352b-461d-b3cd-534b112ecee0"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/image_43_5f6afd86-0d2e-45e6-860e-9db5eeb9124a.png"
+      }
     },
     "7d12314b-a9a4-42d2-8330-a732629f982b": {
       "type": "product-ingredients",
@@ -235,8 +268,8 @@
         "section_style": "boxed",
         "title": "Des questions sur ce produit ?",
         "text": "<p>Contactez-nous pour en savoir plus !<\/p>",
-        "bg_color": "#FAF5EF",
-        "color": "#4B9B7D"
+        "bg_color": "#faf5ef",
+        "color": "#4b9b7d"
       }
     },
     "4e493477-ad97-4792-afc4-59313a83885d": {
