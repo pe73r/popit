@@ -1,6 +1,51 @@
 {% if section.settings.section_type == "snap" %}
   <div class="product-marquee w-full py-3">
     <div class="flex md:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-8 lg:gap-10 scrollbar-none px-4">
+      {% if product.metafields.product.image_picto_1 != blank %}
+        <div class="min-w-fit md:min-w-0">
+          <div class="flex items-center gap-2">
+            <img
+              src="{{ product.metafields.product.image_picto_1.value | img_url: 'master' }}"
+              class="object-contain !max-w-max"
+              alt="{{ product.metafields.product.image_picto_1.alt }}">
+            <p class="block text-sm" style="color:{{ section.settings.color }}">{{ product.metafields.product.text_picto_1 }}</p>
+          </div>
+        </div>
+      {% endif %}
+      {% if product.metafields.product.image_picto_2 != blank %}
+        <div class="min-w-fit md:min-w-0">
+          <div class="flex items-center gap-2">
+            <img
+              src="{{ product.metafields.product.image_picto_2.value | img_url: 'master' }}"
+              class="object-contain !max-w-max"
+              alt="{{ product.metafields.product.image_picto_2.alt }}">
+            <p class="block text-sm" style="color:{{ section.settings.color }}">{{ product.metafields.product.text_picto_2 }}</p>
+          </div>
+        </div>
+      {% endif %}
+      {% if product.metafields.product.image_picto_3 != blank %}
+        <div class="min-w-fit md:min-w-0">
+          <div class="flex items-center gap-2">
+            <img
+              src="{{ product.metafields.product.image_picto_3.value | img_url: 'master' }}"
+              class="object-contain !max-w-max"
+              alt="{{ product.metafields.product.image_picto_3.alt }}">
+            <p class="block text-sm" style="color:{{ section.settings.color }}">{{ product.metafields.product.text_picto_3 }}</p>
+          </div>
+        </div>
+      {% endif %}
+      {% if product.metafields.product.image_picto_4 != blank %}
+        <div class="min-w-fit md:min-w-0">
+          <div class="flex items-center gap-2">
+            <img
+              src="{{ product.metafields.product.image_picto_4.value | img_url: 'master' }}"
+              class="object-contain !max-w-max"
+              alt="{{ product.metafields.product.image_picto_4.alt }}">
+            <p class="block text-sm" style="color:{{ section.settings.color }}">{{ product.metafields.product.text_picto_4 }}</p>
+          </div>
+        </div>
+      {% endif %}
+
       {%- for block in section.blocks -%}
         <div class="min-w-fit md:min-w-0">
           <div class="flex items-center gap-2">
@@ -24,6 +69,51 @@
 {% else %}
   <tail-marquee class="product-marquee flex relative overflow-hidden" style="color: {{ section.settings.text_color }}; background-color: {{ section.settings.background_color }}; {% if section.settings.border %} border-top: 2px solid {{ section.settings.text_color }}; border-bottom: 2px solid {{ section.settings.text_color }} {% endif %}">
     <marquee-content style="animation-duration:{{section.settings.animationDuration}}s " class="items-center flex py-3 animate-marquee whitespace-nowrap gap-10 pr-10">
+
+      {% if product.metafields.product.image_picto_1 != blank %}
+        <div class="min-w-fit md:min-w-0">
+          <div class="flex items-center gap-2">
+            <img
+              src="{{ product.metafields.product.image_picto_1.value | img_url: 'master' }}"
+              class="object-contain !max-w-max"
+              alt="{{ product.metafields.product.image_picto_1.alt }}">
+            <p class="block text-sm" style="color:{{ section.settings.color }}">{{ product.metafields.product.text_picto_1 }}</p>
+          </div>
+        </div>
+      {% endif %}
+      {% if product.metafields.product.image_picto_2 != blank %}
+        <div class="min-w-fit md:min-w-0">
+          <div class="flex items-center gap-2">
+            <img
+              src="{{ product.metafields.product.image_picto_2.value | img_url: 'master' }}"
+              class="object-contain !max-w-max"
+              alt="{{ product.metafields.product.image_picto_2.alt }}">
+            <p class="block text-sm" style="color:{{ section.settings.color }}">{{ product.metafields.product.text_picto_2 }}</p>
+          </div>
+        </div>
+      {% endif %}
+      {% if product.metafields.product.image_picto_3 != blank %}
+        <div class="min-w-fit md:min-w-0">
+          <div class="flex items-center gap-2">
+            <img
+              src="{{ product.metafields.product.image_picto_3.value | img_url: 'master' }}"
+              class="object-contain !max-w-max"
+              alt="{{ product.metafields.product.image_picto_3.alt }}">
+            <p class="block text-sm" style="color:{{ section.settings.color }}">{{ product.metafields.product.text_picto_3 }}</p>
+          </div>
+        </div>
+      {% endif %}
+      {% if product.metafields.product.image_picto_4 != blank %}
+        <div class="min-w-fit md:min-w-0">
+          <div class="flex items-center gap-2">
+            <img
+              src="{{ product.metafields.product.image_picto_4.value | img_url: 'master' }}"
+              class="object-contain !max-w-max"
+              alt="{{ product.metafields.product.image_picto_4.alt }}">
+            <p class="block text-sm" style="color:{{ section.settings.color }}">{{ product.metafields.product.text_picto_4 }}</p>
+          </div>
+        </div>
+      {% endif %}
       {%- for block in section.blocks -%}
         <div class="min-w-fit md:min-w-0">
           <div class="flex items-center gap-2">
@@ -42,6 +132,7 @@
           </div>
         </div>
       {%- endfor -%}
+
     </marquee-content>
   </tail-marquee>
 {% endif %}

@@ -67,29 +67,61 @@
     <tail-carousel slidesToShow="xs:1 md:3 lg:3">
       <carousel-container>
         <carousel-content class="w-full">
+          {% assign i = 0 %}
           {% for block in section.blocks %}
-            <carousel-panel class="px-2">
-              <div class="shadow-md pt-8 pb-4 px-4 mb-5 rounded-lg">
-                <div class="">
-                  <h5 class="block text-sm mb-8">{{ block.settings.title }}</h5>
-                  <ul class="product-ingredients-list">
-                    <li class="text-sm flex items-center mb-2">
-                      <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
-                    <li class="text-sm flex items-center mb-2">
-                      <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
-                    <li class="text-sm flex items-center mb-2">
-                      <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
-                    <li class="text-sm flex items-center mb-2">
-                      <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
-                    <li class="text-sm flex items-center mb-2">
-                      <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>Explication du bénéfice de ce prinicpe actif</li>
-                  </ul>
-                  <div class="mt-4">
-                    <a href="{{ }}" class="text-sm underline text-gray-300">En savoir plus</a>
+            {% assign i = i | plus: 1 %}
+
+            {% assign pre_title = '_title' | prepend: i %}
+            {% assign title = "ingredient_" | append: pre_title %}
+            {% assign metafield_title = product.metafields.product[title] %}
+
+            {% assign pre_bullet = '_bullet' | prepend: i %}
+            {% assign bullet = "ingredient_" | append: pre_bullet %}
+            {% assign bullet_1 = bullet | append: "_1" %}
+            {% assign bullet_2 = bullet | append: "_2" %}
+            {% assign bullet_3 = bullet | append: "_3" %}
+            {% assign bullet_4 = bullet | append: "_4" %}
+            {% assign bullet_5 = bullet | append: "_5" %}
+            {% assign metafield_bullet_1 = product.metafields.product[bullet_1] %}
+            {% assign metafield_bullet_2 = product.metafields.product[bullet_2] %}
+            {% assign metafield_bullet_3 = product.metafields.product[bullet_3] %}
+            {% assign metafield_bullet_4 = product.metafields.product[bullet_4] %}
+            {% assign metafield_bullet_5 = product.metafields.product[bullet_5] %}
+
+
+            {% assign pre_link = '_link' | prepend: i %}
+            {% assign link_name = "ingredient_" | append: pre_link %}
+            {% assign metafield_link = product.metafields.product[link_name] %}
+
+            {% if metafield_title != blank %}
+              <carousel-panel class="px-2">
+                <div class="shadow-md pt-8 pb-4 px-4 mb-5 rounded-lg">
+                  <div class="">
+                    <h5 class="block text-sm mb-8">{{ metafield_title }}</h5>
+                    <ul class="product-ingredients-list">
+                      <li class="text-sm flex items-center mb-2">
+                        <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>
+                        {{ metafield_bullet_1 }}</li>
+                      <li class="text-sm flex items-center mb-2">
+                        <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>
+                        {{ metafield_bullet_2 }}</li>
+                      <li class="text-sm flex items-center mb-2">
+                        <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>
+                        {{ metafield_bullet_3 }}</li>
+                      <li class="text-sm flex items-center mb-2">
+                        <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>
+                        {{ metafield_bullet_4 }}</li>
+                      <li class="text-sm flex items-center mb-2">
+                        <span class="mr-3">{% render 'icon-check', product_color: product_color, bg_color: bg_color %}</span>
+                        {{ metafield_bullet_5 }}</li>
+                    </ul>
+                    <div class="mt-4">
+                      <a href="{{ metafield_link }}" class="text-sm underline text-gray-300">En savoir plus</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </carousel-panel>
+              </carousel-panel>
+            {% endif %}
           {% endfor %}
         </carousel-content>
       </carousel-container>

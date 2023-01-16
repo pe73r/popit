@@ -154,11 +154,8 @@
       {% render block %}
 
       {%- when 'subtitle' -%}
-        <p class="my-2 text-sm text-{{ product-color }} italic" {{ block.shopify_attributes }}>
-        {% comment %}
-          {{ product.metafields.global.product_subtitle.value }}
-        {% endcomment %}
-        Sportifs / Récupération musculaire
+      <p class="my-2 text-sm text-{{ product-color }} italic" {{ block.shopify_attributes }}>
+        {{ product.metafields.product.sub_title }}
       </p>
       {%- when 'vendor' -%}
       <h5 class="my-2 text-sm uppercase md:block" {{ block.shopify_attributes }}>
