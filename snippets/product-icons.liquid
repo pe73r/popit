@@ -1,18 +1,20 @@
 <div class="flex flex-col lg:flex-row justify-center gap-5">
-  <img
-    class="max-w-[42px] md:max-w-none"
-    src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/popit-sticker-mure.svg?v=1671635389"
-    alt="">
-  <img
-    class="max-w-[42px] md:max-w-none"
-    src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/popit-sticker-gummies.svg?v=1671635388"
-    alt="">
-  <img
-    class="max-w-[42px] md:max-w-none"
-    src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/popit-sticker-feuille.svg?v=1671635389"
-    alt="">
-  <img
-    class="max-w-[42px] md:max-w-none"
-    src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/popit-sticker-gummies-sommeil.svg?v=1671635389"
-    alt="">
+  {% if product.metafields.product.sticker_1 != blank %}
+    <img
+      class="max-w-[42px] md:max-w-none"
+      src="{{ product.metafields.product.sticker_1 }}"
+      alt="{{ product.metafields.product.sticker_1.alt }}">
+  {% endif %}
+  {% if product.metafields.product.sticker_2 != blank %}
+    <img
+      class="max-w-[42px] md:max-w-none"
+      src="{{ product.metafields.product.sticker_1 }}"
+      alt="{{ product.metafields.product.sticker_1.alt }}">
+  {% endif %}
+  {% if product.metafields.product.sticker_3 != blank %}
+    <img
+      class="max-w-[42px] md:max-w-none"
+      src="{{ product.metafields.product.sticker_3 }}"
+      alt="{{ product.metafields.product.sticker_3.alt }}">
+  {% endif %}
 </div>

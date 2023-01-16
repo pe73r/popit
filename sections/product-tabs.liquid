@@ -58,26 +58,75 @@
         {% for block in section.blocks %}
           {% if block.type == 'description' %}
             <div class="block mt-4" style="color: {{ product_color }}">
-              <div class="text-sm">{{ product.description }}</div>
-            </div>
-          {% elsif block.type == 'use' %}
-            <div class="block mt-4" style="color: {{ product_color }}">
-              {% if product.metafields.global.use != blank %}
-                <div class="text-sm" style="color: {{ product_color }}">
-                  {{ product.metafields.global.use }}
+              {% comment %} <div class="text-sm">{{ product.description }}</div> {% endcomment %}
+
+              <div class="text-sm font-light">
+                {% if product.metafields.product.description_text_principal != blank %}
+                  {{ product.metafields.product.description_text_principal }}
+                {% else %}
+                  {{ product.metafields.product.description }}
+                {% endif %}
+              </div>
+              {% if product.metafields.product.description_text_1 != blank %}
+                <div class="flex items-center gap-5 pb-3 border-b border-violet-light mt-5">
+                  <img src="{{ product.metafields.product.description_image_1.value | img_url:'master' }}" alt="">
+                  <span class="block text-sm font-light">{{ product.metafields.product.description_text_1.value }}</span>
                 </div>
-              {% else %}
-                <div class="text-sm" style="color: {{ product_color }}">
-                  {{ block.settings.text }}
+              {% endif %}
+              {% if product.metafields.product.description_text_2 != blank %}
+                <div class="flex items-center gap-5 pb-3 border-b border-violet-light mt-4">
+                  <img src="{{ product.metafields.product.description_image_2.value | img_url:'master' }}" alt="">
+                  <span class="block text-sm font-light">{{ product.metafields.product.description_text_2.value }}</span>
+                </div>
+              {% endif %}
+              {% if product.metafields.product.description_text_3 != blank %}
+                <div class="flex items-center gap-5 mt-4">
+                  <img src="{{ product.metafields.product.description_image_3.value | img_url:'master' }}" alt="">
+                  <span class="block text-sm font-light">{{ product.metafields.product.description_text_3.value }}</span>
                 </div>
               {% endif %}
             </div>
+          {% elsif block.type == 'use' %}
+            <div class="block mt-4" style="color: {{ product_color }}">
+              <div class="text-sm font-light">
+                {% if product.metafields.product.use_text_principal != blank %}
+                  {{ product.metafields.product.use_text_principal }}
+                {% endif %}
+              </div>
+              {% if product.metafields.product.use_image_1.value != blank %}
+                <div class="flex items-center gap-5 pb-3 border-b border-violet-light mt-5">
+                  <img src="{{ product.metafields.product.use_image_1.value | img_url:'master' }}" alt="">
+                  <span class="block text-sm font-light">{{ product.metafields.product.use_text_1 }}</span>
+                </div>
+              {% endif %}
+              {% if product.metafields.product.description_text_2 != blank %}
+                <div class="flex items-center gap-5 pb-3 border-b border-violet-light mt-4">
+                  <img src="{{ product.metafields.product.description_image_2.value | img_url:'master' }}" alt="">
+                  <span class="block text-sm font-light">{{ product.metafields.product.use_text_2 }}</span>
+                </div>
+              {% endif %}
+              {% if product.metafields.product.description_text_3 != blank %}
+                <div class="flex items-center gap-5 mt-4">
+                  <img src="{{ product.metafields.product.description_image_3.value | img_url:'master' }}" alt="">
+                  <span class="block text-sm font-light">{{ product.metafields.product.use_text_3 }}</span>
+                </div>
+              {% endif %}
+
+            </div>
           {% elsif block.type == 'composition' %}
             <div class="block mt-4">
-              <img
-                class="mx-auto"
-                src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/Frame_9648_f63582f0-d657-46bb-8a5c-ebb0dba0e947.png?v=1673432240"
-                alt="">
+              {% if product.metafields.product.compo_image_tableau_desktop != blank %}
+                <img
+                  class="mx-auto hidden md:block"
+                  src="{{ product.metafields.product.compo_image_tableau_desktop.value | img_url: 'master' }}"
+                  alt="">
+              {% endif %}
+              {% if product.metafields.product.compo_image_tableau_mobile != blank %}
+                <img
+                  class="mx-auto block md:hidden"
+                  src="{{ product.metafields.product.compo_image_tableau_mobile.value | img_url: 'master' }}"
+                  alt="">
+              {% endif %}
             </div>
           {% else %}
             <div class="block mt-8 text-sm">

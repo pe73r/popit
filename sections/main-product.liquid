@@ -17,7 +17,7 @@
 <section class="main-product pt-24 lg:pt-28 pb-10">
   <div class="relative flex flex-col lg:flex-row gap-8 lg:gap-2 max-w-7xl mx-auto">
     <!-- product carousel -->
-    <div class="w-full lg:w-1/2 relative">
+    <div class="w-full lg:w-1/2 relative lg:sticky h-fit top-0 lg:top-16">
       {% render 'product-carousel', product: product, show_dots: section.settings.show_dots_mobile %}
       <div class="absolute top-[50%] translate-y-[-50%] right-[5%] lg:relative lg:top-0 lg:right-0 lg:translate-y-0 lg:mt-5">
         {% render 'product-icons' %}
