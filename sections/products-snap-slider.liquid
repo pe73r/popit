@@ -1,17 +1,58 @@
 {% assign collection = section.settings.collection %}
 <div class="products-slider w-full py-10 lg:py-14">
   <div class="xl:w-11/12 xl:mx-auto max-w-7xl">
-    <h2 class="text-2xl leading-8 lg:text-3xl lg:leading-10 mb-8 text-center product-ingredients-title" style="color:{{ section.settings.color }}">{{ section.settings.title }}</h2>
+    <h2 class="text-2xl leading-8 lg:text-3xl lg:leading-10 mb-8 text-center product-ingredients-title" style="color:{{ section.settings.color }}">
+      {% if product.metafields.product.asociated_product_title != blank %}
+        {{ product.metafields.product.asociated_product_title }}
+      {% else %}
+        {{ section.settings.title }}
+      {% endif %}
+    </h2>
     <div class="flex xl:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 lg:gap-6 scrollbar-none px-4">
-      {%- for product in collection.products limit: 3 -%}
+
+      {% assign product_related_1 = product.metafields.product.associated_product_1.value %}
+      {% assign product_related_1_handle = product_related_1.handle %}
+
+      {% assign product_related_2 = product.metafields.product.associated_product_2.value %}
+      {% assign product_related_2_handle = product_related_2.handle %}
+
+      {% assign product_related_3 = product.metafields.product.associated_product_3.value %}
+      {% assign product_related_3_handle = product_related_3.handle %}
+
+      {% if product_related_1 != blank or product_related_2 != blank or product_related_3 != blank %}
+
         {% render 'card-product-inline'
-         collection: collection,
-         product: product,
-         card_product: product,
+         product: all_products[product_related_1_handle],
+         card_product: all_products[product_related_1_handle],
          show_secondary_image: section.settings.show_secondary_image,
          show_quick_add: true,
          class: "min-w-[350px] xl:min-w-none" %}
-      {%- endfor -%}
+
+        {% render 'card-product-inline'
+         product: all_products[product_related_2_handle],
+         card_product: all_products[product_related_2_handle],
+         show_secondary_image: section.settings.show_secondary_image,
+         show_quick_add: true,
+         class: "min-w-[350px] xl:min-w-none" %}
+
+        {% render 'card-product-inline'
+         product: all_products[product_related_3_handle],
+         card_product: all_products[product_related_3_handle],
+         show_secondary_image: section.settings.show_secondary_image,
+         show_quick_add: true,
+         class: "min-w-[350px] xl:min-w-none" %}
+
+      {% else %}
+        {%- for product in collection.products limit: 3 -%}
+          {% render 'card-product-inline'
+           collection: collection,
+           product: product,
+           card_product: product,
+           show_secondary_image: section.settings.show_secondary_image,
+           show_quick_add: true,
+           class: "min-w-[350px] xl:min-w-none" %}
+        {%- endfor -%}
+      {% endif %}
     </div>
   </div>
 </div>
@@ -34,9 +75,13 @@
 {% schema %}
 
   {
-    "name": "Products Slider",
+    "name": "Products Related",
     "tag": "section",
     "settings": [
+      {
+        "type": "paragraph",
+        "content": "If the metafields are empty it will show the collection from the section"
+      },
       {
         "type": "collection",
         "id": "collection",
@@ -51,8 +96,7 @@
       {
         "type": "header",
         "content": "colors"
-      },
-      {
+      }, {
         "type": "color",
         "id": "bg_color",
         "label": "Background color",
@@ -66,7 +110,7 @@
     ],
     "presets": [
       {
-        "name": "Products slider"
+        "name": "Products related"
       }
     ]
   }
