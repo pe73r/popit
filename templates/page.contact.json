@@ -1,5 +1,16 @@
 {
   "sections": {
+       "collection-header": {
+      "type": "collection-header",
+      "settings": {
+        "display": true,
+        "show_breadcrumbs": true,
+        "title": "Contactez-nous",
+        "description": "Des compléments alimentaires pour favoriser votre digestion et votre transit intestinal...\n<!--split-->\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "bg_color": "#E3F2ED",
+        "color": "#005F3B"
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -7,6 +18,8 @@
     }
   },
   "order": [
+    "collection-header",
     "main"
+
   ]
 }
