@@ -200,42 +200,35 @@
         "color": "#ffffff"
       }
     },
-    "03627885-530d-4c49-96db-d614a4787a49": {
-      "type": "faq",
+    "07a37119-270e-432c-8a6f-4eaeab0ff9e1": {
+      "type": "faq-product",
       "blocks": {
-        "template--17232714531110__03627885-530d-4c49-96db-d614a4787a49-16717315276cb4376a-0": {
+        "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-0": {
           "type": "block",
           "settings": {
-            "question": "Quelles sont les options de livraison ?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
           }
         },
-        "template--17232714531110__03627885-530d-4c49-96db-d614a4787a49-16717315276cb4376a-1": {
+        "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-1": {
           "type": "block",
           "settings": {
-            "question": "Quelles sont les options de livraison ?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
           }
         },
-        "template--17232714531110__03627885-530d-4c49-96db-d614a4787a49-16717315276cb4376a-2": {
+        "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-2": {
           "type": "block",
           "settings": {
-            "question": "Quelles sont les options de livraison ?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
           }
         }
       },
       "block_order": [
-        "template--17232714531110__03627885-530d-4c49-96db-d614a4787a49-16717315276cb4376a-0",
-        "template--17232714531110__03627885-530d-4c49-96db-d614a4787a49-16717315276cb4376a-1",
-        "template--17232714531110__03627885-530d-4c49-96db-d614a4787a49-16717315276cb4376a-2"
+        "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-0",
+        "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-1",
+        "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-2"
       ],
       "settings": {
-        "hide_in_mobile": true,
         "title": "FAQ",
-        "title_color": "#201a1c",
-        "title_accordion_color": "#201a1c",
-        "content_accordion_color": "#201a1c"
+        "title_color": "#201A1C",
+        "title_accordion_color": "#201A1C",
+        "content_accordion_color": "#201A1C"
       }
     },
     "product-recommendations": {
@@ -295,7 +288,7 @@
     "product-tabs",
     "7d12314b-a9a4-42d2-8330-a732629f982b",
     "ca7fac8e-53d2-41fb-9a5b-446c1b05dc60",
-    "03627885-530d-4c49-96db-d614a4787a49",
+    "07a37119-270e-432c-8a6f-4eaeab0ff9e1",
     "product-recommendations",
     "d473013e-7df7-4660-8bc9-eeeef9b1d75e",
     "4e493477-ad97-4792-afc4-59313a83885d"
