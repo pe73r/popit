@@ -1,0 +1,204 @@
+{% assign s = section.settings %}
+<div class="px-5 py-3 md:max-w-6xl md:mx-auto">
+  <h3 class="text-2xl md:text-[40px] mb-4 sm:mb-8 text-center" style="color:{{ section.settings.header_color }};">
+    {{ s.header }}
+  </h3>
+  {%- form 'contact', id: 'ContactForm', class: '' -%}
+    <div>
+    {%- if form.posted_successfully? -%}
+        <h3
+          class="flex justify-center text-sm items-center md:mt-5"
+          id="Newsletter-success--{{ section.id }}"
+          tabindex="-1"
+          autofocus
+          style="color: {{ section.settings.color }}">
+          <span class="max-w-[80px] mr-2">{% render 'icon-success' %}</span>
+          <span>{{ 'newsletter.success' | t }}</span>
+        </h3>
+      {%- endif -%}
+      {%- if form.errors -%}
+        <h3 class="flex justify-center text-sm items-center mt-5 text-red-700" id="Newsletter-error--{{ section.id }}">
+          <span class="max-w-[80px] mr-2">{% render 'icon-error' %}</span>
+          <span>
+              {{ form.errors.translated_fields['email'] | capitalize }}
+              {{ form.errors.messages['email'] }}
+            </span>
+        </h3>
+      {%- endif -%}
+      <div class="flex-col gap-4 w-full md:flex md:flex-row md:gap-10">
+        <div class="mt-4 flex flex-col items-start w-full">
+          <label class="text-xs" for="ContactForm-first_name-{{ section.id }}">{{ 'Prénom*' }}</label>
+          <input
+            class="outline-none flex-1 w-full text-sm text-left p-2.5 mt-1 text-[#343434] rounded-md border border-[#B1B1B1]"
+            required
+            autocomplete="name"
+            type="text"
+            id="ContactForm-first_name-{{ section.id }}"
+            name="contact[{{ 'customer.register.first_name' | t }}]"
+            value="{% if form.first_name %}{{ form.first_name }}{% elsif customer %}{{ customer.first_name }}{% endif %}"
+            placeholder="{{ 'Prénom' }}">
+        </div>
+        <div class="mt-4 flex flex-col items-start w-full">
+          <label class="text-xs" for="ContactForm-last_name-{{ section.id }}">{{ 'Nom*' }}</label>
+          <input
+            class="outline-none flex-1 w-full text-sm text-left p-2.5 mt-1 text-[#343434] rounded-md border border-[#B1B1B1]"
+            required
+            autocomplete="name"
+            type="text"
+            id="ContactForm-last_name-{{ section.id }}"
+            name="contact[{{ 'customer.register.last_name' | t }}]"
+            value="{% if form.last_name %}{{ form.last_name }}{% elsif customer %}{{ customer.last_name }}{% endif %}"
+            placeholder="{{ 'Nom' }}">
+        </div>
+      </div>
+       <div class="mt-2 w-full flex flex-col items-start">
+          <label class="text-xs" for="ContactForm-email-{{ section.id }}">
+            {{ 'Adresse e-mail*' }}
+          </label>
+          <input
+            id="ContactForm-email-{{ section.id }}"
+            type="email"
+            name="contact[email]"
+            class="outline-none flex-1 text-sm text-left p-2.5 mt-1 text-[#343434] w-full rounded-md border border-[#B1B1B1]"
+            placeholder="{{ "Mes informations" }}"
+            aria-required="true"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.errors %}
+              autofocus
+              aria-invalid="true"
+              aria-describedby="ContactForm-error--{{ section.id }}"
+            {% elsif form.posted_successfully? %}
+              aria-describedby="ContactForm-success--{{ section.id }}"
+            {% endif %}
+            required
+          >
+        </div>
+      <div>
+        <div class="flex-col gap-4 w-full md:flex md:flex-row md:gap-10">
+          <div class="mt-4 flex flex-col items-start w-full">
+            <label class="text-xs" for="ContactForm-phone_number-{{ section.id }}">{{ 'Téléphone*' }}</label>
+            <input
+              class="outline-none flex-1 w-full text-sm text-left p-2.5 mt-1 text-[#343434] rounded-md border border-[#B1B1B1]"
+              required
+              autocomplete="téléphone"
+              pattern="^[0-9]*$"
+              type="text"
+              id="ContactForm-phone_number-{{ section.id }}"
+              name="contact[phone]"
+              value="{% if form.phone_number %}{{ form.phone_number }}{% elsif customer %}{{ customer.phone_number }}{% endif %}"
+              placeholder="{{ 'Numéro de téléphone' }}">
+          </div>
+          <div class="mt-4 flex flex-col items-start w-full">
+                <div class="flex flex-col items-start w-full">
+                  <label class="text-xs" for="ContactForm-comment-{{ section.id }}">{{ 'Raison de votre contact' }}</label>
+                  <select
+                    class="outline-none flex-1 w-full text-sm text-left p-3 mt-1 bg-white text-[#343434] rounded-md border border-[#B1B1B1]"
+                    id="ContactForm-comment-{{ section.id }}"
+                    name="contact[comment]">
+                    <option
+                      value=""
+                      disabled
+                      selected>{{ section.settings.title }}</option>
+                    {%- if section.settings.option_1 != blank -%}
+                      <option value="{{ section.settings.option_1 }}">{{ section.settings.option_1 }}</option>
+                    {%- endif -%}
+                    {%- if section.settings.option_2 != blank -%}
+                      <option value="{{ section.settings.option_2 }}">{{ section.settings.option_2 }}</option>
+                    {% endif %}
+                    {%- if section.settings.option_3 != blank -%}
+                      <option value="{{ section.settings.option_3 }}">{{ section.settings.option_3 }}</option>
+                    {% endif %}
+                  </select>
+                </div>
+          </div>
+        </div>
+        <div class="flex flex-col items-start w-full mt-5 h-40 md:h-48  ">
+          <label class="text-xs" for="ContactForm-message-{{ section.id }}">{{ 'Écrivez un message' }}</label>
+          <textarea
+            required
+            row="10"
+            class="flex-1 w-full outline-none  text-sm text-left p-2.5 mt-1 text-[#343434] rounded-md border border-[#B1B1B1] "
+            type="text"
+            id="ContactForm-message-{{ section.id }}"
+            name="contact[body]"
+            placeholder="{{ "Bonjour Popit, j'ai une question..." }}"></textarea>
+        </div>
+      </div>
+      <div class="my-5 text-center ">
+        <button type="submit" class="{% render "button", color: "sauge", size: "small" %} bg-[#4B9B7D] rounded-xl font-bold text-white px-20 py-[12px]">
+          {{ s.cta }}
+        </button>
+      </div>
+        </div>
+      {%- endform -%}
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Form Contact",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "cta",
+        "default": "Envoyer ma demande",
+        "label": "Text button",
+        "info": "Display button while writing text"
+      },
+      {
+        "type": "header",
+        "content": "Select settings"
+      },
+      {
+         "type": "text",
+         "id": "title",
+         "default": "Sélectionne l’objet de ta demande",
+         "label": "Question"
+       },
+       {
+         "type": "text",
+         "id": "option_1",
+         "default": "Option 1",
+         "label": "Option 1"
+       },
+       {
+         "type": "text",
+         "id": "option_2",
+         "default": "Option 2",
+         "label": "Option 2"
+       },
+       {
+         "type": "text",
+         "id": "option_3",
+         "default": "Option 3",
+         "label": "Option 3"
+       },
+       {
+        "type": "text",
+        "id": "header",
+        "default": "Formulaire de contact",
+        "label": "Header"
+      }, {
+        "type": "header",
+        "content": "Colors"
+      }, {
+        "type": "color",
+        "id": "header_color",
+        "default": "#4B9B7D",
+        "label": "Header color"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Form Contact"
+      }
+    ]
+  }
+{% endschema %}
