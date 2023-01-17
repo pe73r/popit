@@ -7,7 +7,8 @@
       data-join-widget-id="list-bubble-test-widget"
       data-join-widget-alias="test-widget"
       type="text/javascript"></script> {% endcomment %}
-      <div id="widget-{{ product.handle }}></div> <script src="https://popit.my.join-stories.com/widgets/{{ product.handle }}/index.js" data-join-widget-id="widget-{{ product.handle }}" data-join-widget-alias="{{ product.handle }}" type="text/javascript"></script>
+      <div id="widget-{{ product.handle }}"></div> 
+      <script src="https://popit.my.join-stories.com/widgets/{{ product.handle }}/index.js" data-join-widget-id="widget-{{ product.handle }}" data-join-widget-alias="{{ product.handle }}" type="text/javascript"></script>
 
     {% if product.metafields.product.image_benefices_1 != blank or product.metafields.product.image_benefices_2 != blank or product.metafields.product.image_benefices_3 != blank %}
       <h3 class="text-[2rem] text-center text-{{ product-color }} mb-4">Bénéfices</h3>
