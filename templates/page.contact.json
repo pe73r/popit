@@ -1,7 +1,7 @@
 {
   "sections": {
-       "collection-header": {
-      "type": "collection-header",
+    "contact-header": {
+      "type": "contact-header",
       "settings": {
         "display": true,
         "show_breadcrumbs": true,
@@ -13,13 +13,16 @@
     },
     "main": {
       "type": "main-page",
-      "settings": {
-      }
+      "settings": {}
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "settings": {}
     }
   },
   "order": [
-    "collection-header",
-    "main"
-
+    "contact-header",
+    "main",
+    "contact-form"
   ]
 }
