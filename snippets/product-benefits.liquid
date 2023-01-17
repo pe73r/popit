@@ -1,13 +1,14 @@
 <div class="w-11/12 mx-auto lg:mx-0 lg:w-full pr-0 lg:pr-10 mt-6">
   <div class="bg-white bg-opacity-70 rounded-lg p-4 pb-6">
     <h3 class="text-[2rem] text-center text-{{ product-color }} mb-4">Ce que vous en pensez</h3>
-    <div id="list-bubble-test-widget" style="margin: 5px 2px; min-height: 81px;"></div>
+    {% comment %} <div id="list-bubble-test-widget" style="margin: 5px 2px; min-height: 81px;"></div>
     <script
       src="https://popit.my.join-stories.com/widgets/test-widget/index.js"
       data-join-widget-id="list-bubble-test-widget"
       data-join-widget-alias="test-widget"
-      type="text/javascript"></script>
-
+      type="text/javascript"></script> {% endcomment %}
+      <div id="widget-{{ product.handle }}"></div> 
+      <script src="https://popit.my.join-stories.com/widgets/{{ product.handle }}/index.js" data-join-widget-id="widget-{{ product.handle }}" data-join-widget-alias="{{ product.handle }}" type="text/javascript"></script>
 
     {% if product.metafields.product.image_benefices_1 != blank or product.metafields.product.image_benefices_2 != blank or product.metafields.product.image_benefices_3 != blank %}
       <h3 class="text-[2rem] text-center text-{{ product-color }} mb-4">Bénéfices</h3>
