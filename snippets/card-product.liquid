@@ -101,35 +101,36 @@
       {% if section.settings.show_cta %}      
         {% if card_product.available %}
           <div class="group relative mt-3 flex gap-1">
-            <product-quantity
-            data-max-quantity="{{card_product.selected_or_first_available_variant.inventory_quantity}}"
-            data-product="{{card_product.id}}" 
-            class="flex items-center justify-center m-auto quantity border border-gray-300 rounded-md py-[5px] px-2">
-              <button class= "p-1 no-js-hidden" name="minus" type="button">
-                {% render 'icon-quantity-minus' %}
-              </button>
-              <input class="text-black bg-transparent text-[16px] md:text-[20px] font-extrabold md:max-w-[30px] max-w-[20px] text-center"
-                  type="number"
-                  name="quantity"
-                  id="Quantity-{{ section.id }}"
-                  min="1"
-                  value="1"
-                  form="{{ product_form_id }}"
-                >
-              <button  class="p-1 no-js-hidden" name="plus" type="button">
-                {% render 'icon-quantity-plus' %}
-              </button>
-            </product-quantity>
-
+            {% if section.settings.show_quantity %}   
+              <product-quantity
+              data-max-quantity="{{card_product.selected_or_first_available_variant.inventory_quantity}}"
+              data-product="{{card_product.id}}" 
+              class="flex items-center justify-center m-auto quantity border border-gray-300 rounded-md py-[5px] px-2">
+                <button class= "p-1 no-js-hidden" name="minus" type="button">
+                  {% render 'icon-quantity-minus' %}
+                </button>
+                <input class="text-black bg-transparent text-[16px] md:text-[20px] font-extrabold md:max-w-[30px] max-w-[20px] text-center"
+                    type="number"
+                    name="quantity"
+                    id="Quantity-{{ section.id }}"
+                    min="1"
+                    value="1"
+                    form="{{ product_form_id }}"
+                  >
+                <button  class="p-1 no-js-hidden" name="plus" type="button">
+                  {% render 'icon-quantity-plus' %}
+                </button>
+              </product-quantity>
+            {% endif %}
             <add-to-cart
               data-max-quantity={{card_product.selected_or_first_available_variant.inventory_quantity}}
-              class="w-8/12 "
+                class="{% if section.settings.show_quantity %} w-8/12 {% else %} w-full {% endif %}"
                 data-product="{{ card_product.id }}"
                 data-title="{{ card_product.title }}{% unless card_product.selected_or_first_available_variant.title contains 'Default' %} - {{ card_product.selected_or_first_available_variant.title }}{% endunless %}"
                 data-discount="{% if card_product.selected_or_first_available_variant.compare_at_price > card_product.selected_or_first_available_variant.price %}{{ card_product.selected_or_first_available_variant.compare_at_price | minus: card_product.selected_or_first_available_variant.price | divided_by: 100.00 }}{% else %}0.00{% endif %}"
                 data-price="{{ card_product.selected_or_first_available_variant.price | divided_by: 100.00 }}"
                 data-variant="{{ card_product.selected_or_first_available_variant.id }}">
-                <button class="btn-primary {% render "button", size:"small", color:"primary", color:"primary", fullWidth: true %}">
+                <button class="btn-primary {% render "button", size:"medium", fullWidth: true %}">
                     Ajouter au panier
                 </button>
             </add-to-cart>

@@ -6,7 +6,7 @@
 {% elsif size == "large" %}
   {% assign sizeClass = "px-4 py-3 text-sm md:px-16 md:py-3" %}
 {% elsif size == "medium" %}
-  {% assign sizeClass = "px-2 py-3.5 text-sm md:px-4 md:py-3.5" %}
+  {% assign sizeClass = "px-2 py-3.5 text-base md:px-4 md:py-3.5" %}
 {% elsif size == "small" %}
   {% assign sizeClass = "px-[12px] py-[11px] text-sm" %}
 {% endif %}
@@ -32,4 +32,4 @@
 {% if fullWidth == true %}
   w-full
 {% endif %}
-transition-all rounded-xl text-center
+  transition-all rounded-xl text-center
