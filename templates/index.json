@@ -176,59 +176,6 @@
         "background_color": "#faf5ef"
       }
     },
-    "a5b25d88-5d1b-4f30-95e2-ff5fdebef8b2": {
-      "type": "banner-with-text",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/image_44.png",
-        "imageMobile": "shopify:\/\/shop_images\/image_43.png",
-        "title": "Prenez soin de vous",
-        "text": "<p>Notre mission est de vous rendre heureux, en meilleure santé, sans dégrader la planète.<\/p>",
-        "cta": "Je découvre le gamme",
-        "ctaLink": "",
-        "bg_color": "#e3f2ed",
-        "color": "#005f3b"
-      }
-    },
-    "704f44dd-a6c3-4bad-93ce-650afe5aedf6": {
-      "type": "marquee",
-      "blocks": {
-        "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-0": {
-          "type": "text",
-          "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/popit-sticker-vegan_1.svg?v=1671536634",
-            "text": "<p>Garanti cruelty-free et sans matières animales<\/p>",
-            "url": ""
-          }
-        },
-        "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-1": {
-          "type": "text",
-          "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/popit-sticker-vegan_1.svg?v=1671536634",
-            "text": "<p>Garanti cruelty-free et sans matières animales<\/p>",
-            "url": ""
-          }
-        },
-        "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-2": {
-          "type": "text",
-          "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/popit-sticker-vegan_1.svg?v=1671536634",
-            "text": "<p>Garanti cruelty-free et sans matières animales<\/p>",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-0",
-        "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-1",
-        "template--17096559362362__704f44dd-a6c3-4bad-93ce-650afe5aedf6-16697480416e837ae3-2"
-      ],
-      "settings": {
-        "animationDuration": 30,
-        "border": false,
-        "text_color": "#201a1c",
-        "background_color": "#faf5ef"
-      }
-    },
     "0b6412c4-2e58-4ed2-beb0-443098854a8c": {
       "type": "faq",
       "blocks": {
@@ -286,8 +233,6 @@
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01",
     "801df341-54b5-4e52-9b09-68b370796d1f",
     "7e893ba1-ec47-4d9b-9864-cb4555706f15",
-    "a5b25d88-5d1b-4f30-95e2-ff5fdebef8b2",
-    "704f44dd-a6c3-4bad-93ce-650afe5aedf6",
     "0b6412c4-2e58-4ed2-beb0-443098854a8c",
     "a11b1585-0a12-4fa7-b722-9bd6997a108a"
   ]
