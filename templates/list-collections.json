@@ -159,8 +159,8 @@
             "title": "Notre sélection de vins d’exception !",
             "show_hr": true,
             "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
-            "cta": "Je découvre",
-            "button_link": ""
+            "cta": "Je découvre s",
+            "button_link": "shopify:\/\/pages\/contact"
           }
         }
       },
@@ -170,7 +170,7 @@
       ],
       "settings": {
         "container": "7xl",
-        "color": "#fff"
+        "color": "#4b9b7d"
       }
     }
   },
