@@ -6,8 +6,8 @@
         "show_breadcrumbs": true,
         "title": "Tous nos produits",
         "description": "Des compléments alimentaires pour favoriser votre digestion et votre transit intestinal...\n<!--split-->\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "bg_color": "#E3F2ED",
-        "color": "#005F3B"
+        "bg_color": "#e3f2ed",
+        "color": "#005f3b"
       }
     },
     "collection-links": {
@@ -36,8 +36,8 @@
           "settings": {
             "title": "Alimentation",
             "link": "",
-            "bg_color": "#D9E6B1",
-            "color": "#3D925C"
+            "bg_color": "#d9e6b1",
+            "color": "#3d925c"
           }
         },
         "87487d8f-15a5-407a-82b8-3ac2f4bd95f6": {
@@ -108,10 +108,38 @@
       ],
       "settings": {
       }
+    },
+    "369a537b-fda9-4e35-bba7-f6a12688261b": {
+      "type": "carousel-cards",
+      "blocks": {
+        "2f6f3b50-6b72-40ec-aa89-e8876e7d9eeb": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_43_5f6afd86-0d2e-45e6-860e-9db5eeb9124a.png",
+            "title": "Vins",
+            "collection_link": "Je décrouve",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "2f6f3b50-6b72-40ec-aa89-e8876e7d9eeb"
+      ],
+      "settings": {
+        "container": "7xl",
+        "title": "Nos catégories",
+        "collection_link": "Voir tout",
+        "url": "",
+        "show_title": true,
+        "show_arrows": true,
+        "show_dots": true,
+        "color": "#FFFFFF"
+      }
     }
   },
   "order": [
     "collection-list-header",
-    "collection-links"
+    "collection-links",
+    "369a537b-fda9-4e35-bba7-f6a12688261b"
   ]
 }
