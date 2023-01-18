@@ -1,7 +1,6 @@
 {% assign collection = section.settings.collection %}
-  <div class="my-10 w-11/12 max-w-7xl mx-auto">
-
-  <!-- collection title and description -->
+<a id="{{ collection.title }}" class="anchor"></a>
+<div class="my-10 w-11/12 max-w-7xl mx-auto">
   <div class="text-center py-5">
     {%- if section.settings.show_collection_title -%}
       <h2 class="text-[2rem] leading-[2.3rem] md:text-[3.5rem] md:leading-[4rem]" style="color:{{ section.settings.title_color }}">
@@ -23,8 +22,7 @@
 
       {%- if section.settings.show_collection_size -%}
         {%- if all_products == 0 -%}
-          <div
-            class="text-center mt-10 mb-20">
+          <div class="text-center mt-10 mb-20">
             <p class="text-sm">La collection est vide</p>
             <a href="/collections/all" class="block px-7 py-3 mt-5 text-base rounded-lg text-white bg-green w-fit mx-auto">Découvrir nos produits</a>
           </div>
