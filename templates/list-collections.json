@@ -108,76 +108,10 @@
       ],
       "settings": {
       }
-    },
-    "369a537b-fda9-4e35-bba7-f6a12688261b": {
-      "type": "carousel-cards",
-      "blocks": {
-        "2f6f3b50-6b72-40ec-aa89-e8876e7d9eeb": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image_43_5f6afd86-0d2e-45e6-860e-9db5eeb9124a.png",
-            "title": "Vins",
-            "collection_link": "Je décrouve",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "2f6f3b50-6b72-40ec-aa89-e8876e7d9eeb"
-      ],
-      "settings": {
-        "container": "7xl",
-        "title": "Nos catégories",
-        "collection_link": "Voir tout",
-        "url": "",
-        "show_title": true,
-        "show_arrows": true,
-        "show_dots": true,
-        "color": "#FFFFFF"
-      }
-    },
-    "81c02b6d-bfea-441b-9714-8a3a72ec97a1": {
-      "type": "home-cards",
-      "blocks": {
-        "ae6acc78-3269-4f42-b45d-62935c9755b9": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "image": "shopify:\/\/shop_images\/image_43_5f6afd86-0d2e-45e6-860e-9db5eeb9124a.png",
-            "title": "Notre sélection de vins d’exception !",
-            "show_hr": true,
-            "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
-            "cta": "Je découvre",
-            "button_link": ""
-          }
-        },
-        "68609a49-bd38-4d52-a945-00de44af9c95": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "image": "shopify:\/\/shop_images\/image_42.png",
-            "title": "Notre sélection de vins d’exception !",
-            "show_hr": true,
-            "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
-            "cta": "Je découvre s",
-            "button_link": "shopify:\/\/pages\/contact"
-          }
-        }
-      },
-      "block_order": [
-        "ae6acc78-3269-4f42-b45d-62935c9755b9",
-        "68609a49-bd38-4d52-a945-00de44af9c95"
-      ],
-      "settings": {
-        "container": "7xl",
-        "color": "#4b9b7d"
-      }
     }
   },
   "order": [
     "collection-list-header",
-    "collection-links",
-    "369a537b-fda9-4e35-bba7-f6a12688261b",
-    "81c02b6d-bfea-441b-9714-8a3a72ec97a1"
+    "collection-links"
   ]
 }
