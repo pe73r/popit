@@ -77,7 +77,7 @@ accordion-element[data-open="true"] .icon-minus {
   font-size: 14px;
 }
 
-/* to re-check this */
-.side-cart-overlay {
-  /* top: 35px; */
+/* workaround for the home with the announcement bar */
+.side-cart-with-announcement {
+  top: 35px;
 }
