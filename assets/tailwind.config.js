@@ -46,6 +46,7 @@ module.exports = {
           light: "#E3F2ED",
           dark: "#00555A",
           medium: "#6EB3A8",
+          clair: "#D7E6AF",
         },
         violet: {
           DEFAULT: "#4F2674",

@@ -1,60 +1,81 @@
-{% assign collection = section.settings.collection_when_empty %}
-{% assign collection_2 = section.settings.collection_when_empty_2 %}
+{% if show_card %}
+  <div
+    class="empty-card relative bg-gradiant rounded-lg p-2 sm:p-3 md:p-5 text-center flex flex-col justify-center items-center">
+    {% if label != blank %}
+      <div
+        class="absolute top-3 right-3 text-[10px] py-1 px-2 text-white font-bold bg-orange w-fit rounded-md mb-2 mx-auto md:mx-0">{{ label }}</div>
+    {% endif %}
+    <div
+      class="w-full">
+      {% if image != blank %}
+        <img
+          class="lazy mx-auto max-w-[160px]"
+          src="{{ image | img_url: 'master'}}"
+          alt="{{ image.alt }}"
+          loading="lazy"
+          style="max-width:{{ image.image_width }}px">
+      {% else %}
+        {{ 'image' | placeholder_svg_tag }}
+      {% endif %}
+      <div
+        class="text-center mt-3">
+        {% if subtitle != blank %}
+          <h4
+            class="text-base font-bold">{{ subtitle }}</h4>
+        {% endif %}
 
+        {% if title != blank %}
+          <div
+            class="text-sm font-light mt-3"
+            style="color:{{ section.settings.color }}">{{ title }}</div>
+        {% endif %}
 
-<div class="flex flex-col justify-center flex-1 p-1">
-  <h3 class="mb-[60px] leading-[22px] text-base text-center">VOTRE PANIER EST VIDE</h3>
-  <tail-carousel slidesToShow="xs:1 sm:1 lg:1 xl:1" class="w-full py-0">
-    <carousel-container class="py-1 overflow-visible snap-x">
-      <carousel-content class="w-full max-w-full">
-        {%- if collection != blank -%}
-          <carousel-panel>
-            <div class="relative overflow-hidden rounded-lg group-scoped h-[200px] w-full flex flex-col items-center justify-center bg-cover bg-no-repeat bg-center mb-8 p-4" style="background-image:url('{{ collection.featured_image | img_url:'master' }}')">
-              <p class="mb-2 text-sm text-white">À DÉCOUVRIR</p>
-              <h4 class="text-3xl font-bold text-center text-white uppercase">{{ collection.title }}</h4>
-              <a class="mt-4 text-sm text-white underline" href="{{ collection.url }}">Voir la gamme</a>
-            </div>
-          </carousel-panel>
-        {%- endif -%}
+        {% if cta != blank %}
+          <a
+            class="block mt-3 md:mt-5 {% render "button", size:"medium", color:"green", fullWidth: true %}"
+            href="{{ ctaLink }}">{{ cta }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% if show_card_2 %}
+  <div
+    class="relative w-full rounded-lg p-2 sm:p-3 md:p-5 text-center flex flex-col justify-center items-center shadow-lg">
+    {% if label_2 != blank %}
+      <div
+        class="absolute top-3 right-3 text-[10px] py-1 px-2 text-white font-bold bg-orange w-fit rounded-md mb-2 mx-auto md:mx-0">{{ label_2 }}</div>
+    {% endif %}
+    <div
+      class="w-full">
+      {% if image_2 != blank %}
+        <img
+          class="lazy mx-auto max-w-[160px]"
+          src="{{ image_2 | img_url: 'master'}}"
+          alt="{{ image_2.alt }}"
+          loading="lazy"
+          style="max-width:{{ image_2.image_width }}px">
+      {% else %}
+        {{ 'image' | placeholder_svg_tag }}
+      {% endif %}
+      <div
+        class="text-center mt-3">
+        {% if title_2 != blank %}
+          <div
+            class="text-sm font-bold mt-3">{{ title_2 }}</div>
+        {% endif %}
 
-        {%- if collection_2 != blank -%}
-          <carousel-panel class="">
-            <div class="relative overflow-hidden rounded-lg group-scoped h-[200px] w-full flex flex-col items-center justify-center bg-cover bg-no-repeat bg-center p-4" style="background-image:url('{{ collection_2.featured_image | img_url:'master' }}')">
-              <p class="mb-2 text-sm text-white">À DÉCOUVRIR</p>
-              <h4 class="text-3xl font-bold text-center text-white uppercase">{{ collection_2.title }}</h4>
-              <a class="mt-4 text-sm text-white underline" href="{{ collection_2.url }}">Voir la gamme</a>
-            </div>
-          </carousel-panel>
-        {%- endif -%}
-      </carousel-content>
-    </carousel-container>
-  </tail-carousel>
-
-
-  {%- if section.blocks.size > 0 -%}
-    <tail-carousel
-      data-auto-play="5000"
-      slidesToShow="xs:1 sm:1 lg:1 xl:1"
-      class="w-full py-0 border-t border-b border-white">
-      <carousel-container class="py-1">
-        <carousel-content class="w-full">
-          {% for block in section.blocks %}
-            <carousel-panel class="">
-              <div class="py-3 text-sm">
-                <div class="flex justify-center">
-                  {{ block.settings.icon }}
-                  <div class="ml-2">
-                    <h6
-                      class="text-sm text-acajou GrotesqueBold">{{ block.settings.title }}</h6>
-                    <p
-                      class="mt-1 text-sm">{{ block.settings.note }}</p>
-                  </div>
-                </div>
-              </div>
-            </carousel-panel>
-          {% endfor %}
-        </carousel-content>
-      </carousel-container>
-    </tail-carousel>
-  {%- endif -%}
-</div>
+        {% if cta_2 != blank %}
+          <a
+            class="block mt-3 md:mt-5 {% render "button", size:"medium", color:"green", fullWidth: true %}"
+            href="{{ ctaLink_2 }}">{{ cta_2 }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+<style>
+  .empty-card {
+    background: linear-gradient(168.52deg, #4B9B7D 0%, rgba(75, 155, 125, 0.8) 35.48%, #D7E6AF 59.33%, rgba(215, 230, 175, 0.5) 94.77%);
+  }
+</style>
