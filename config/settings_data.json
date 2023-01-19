@@ -291,7 +291,7 @@
           "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4"
         ],
         "settings": {
-          "cart_title": "Panier",
+          "cart_title": "Votre panier",
           "show_counter": true,
           "sub_total_text": "<p>📦 Livraison offerte dès 100€ - 💰 3x sans frais<\/p>",
           "validate_text": "Commander",
