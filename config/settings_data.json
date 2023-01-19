@@ -266,21 +266,21 @@
           "429d0e67-9527-40e3-909c-41a156b9cf9f": {
             "type": "reassurances",
             "settings": {
-              "title": "🎁 Une bouteille offerte à partir de 65€",
-              "text": "<p>Une bouteille de la sélection du mois dans votre colis<\/p>"
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/lock.svg?v=1674126625",
+              "text": "Réassurance dynamique"
             }
           },
           "1c9c5b5b-c1c9-4a69-9b95-8db25c19a069": {
             "type": "reassurances",
             "settings": {
-              "title": "🚚 Livraison prévue entre 3 et 6 jours",
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/lock.svg?v=1674126625",
               "text": "<p>Frais de livraison gratuits a partir de 100 €<\/p>"
             }
           },
           "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4": {
             "type": "reassurances",
             "settings": {
-              "title": "🍷  La meilleure sélection de vins",
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/lock.svg?v=1674126625",
               "text": "<p>Une bouteille de la sélection du mois dans votre colis<\/p>"
             }
           }
