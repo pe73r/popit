@@ -1,55 +1,75 @@
-
-<script>
-  const removeKdo = ()=>{
-   const tailGift = document.querySelector('tail-gift');
-   console.log(tailGift)
-   tailGift.onClick()
-  }
-</script>
-
 {% assign product = item.product %}
-<div data-line-item-variant="{{ item.variant_id }}" class="flex items-center mt-3 bg-white border border-white rounded-md max-w-[380px] relative">
-  <div>
-    <img src="{{product.featured_image | image_url: width: 400 }}" alt="{{product.featured_image.alt}}" class="max-w-[70px] object-cover rounded-l-md">
+<div
+  data-line-item-variant="{{ item.variant_id }}"
+  class="flex items-center py-5 bg-white border-b border-gray-300 relative gap-4">
+  <div
+    class="bg-beige rounded-md w-[100px] flex items-center justify-center py-2">
+    <img
+      src="{{product.featured_image | image_url: width: 400 }}"
+      alt="{{product.featured_image.alt}}"
+      class="max-w-[70px] object-cover rounded-l-md lazy"
+      loading="lazy">
   </div>
-  <div class="flex-1 px-2 ">
-    <h3 class="font-body-text mb-1 text-sm font-bold line-clamp-1 max-w-[90%]">{{ product.title }}</h3>
-  
-    
-    <span onclick="removeKdo()" class="absolute top-2 right-2 text-sm cursor-pointer hover:ring-1 ring-0 ring-acajou text-acajou transition-all rounded-full p-1.5">
-          {% render 'icon-trash-can' %}
-    </span>
-  
-      <!-- Metafield region -->
-    {%- if product.metafields.global.region != blank -%}
-        <div class="text-xs line-clamp-2 max-w-[90%] max-h-[32px] overflow-hidden">
-          {{ product.metafields.global.region }}
-        </div>
+  <div
+    class="flex-1">
+    <span
+      class="font-body-text mb-1 text-base font-bold line-clamp-1 max-w-[90%]">{{ product.title }}</span>
+
+    {% comment %} <span onclick="removeKdo()" class="absolute top-2 right-2 text-sm cursor-pointer hover:ring-1 ring-0 transition-all rounded-full p-1.5">
+      {% render 'icon-trash-can' %}
+    </span> {% endcomment %}
+
+    <!-- Metafield Cart Subtitle -->
+    {%- if product.metafields.product.cart_subtitle != blank -%}
+      <div
+        class="text-xs line-clamp-2 max-w-[90%] max-h-[32px] overflow-hidden text-gray-400 font-light">
+        {{ product.metafields.product.cart_subtitle }}
+      </div>
     {%- endif -%}
-    
-    <div class="flex items-center justify-between mt-3">
+
+    <div
+      class="flex items-center justify-between mt-3">
       {% unless item.properties.is == "free" %}
-        <cart-item-quantity data-max-quantity={{product.selected_or_first_available_variant.inventory_quantity}} class="flex justify-around items-center border-[1px] border-gray-300 rounded-md h-[32px] w-[100px] group" data-quantity="{{ item.quantity }}" data-product="{{ product.id }}" data-title="{{ product.title }}{% unless item.variant.title contains 'Default' %} - {{ item.variant.title }}{% endunless %}" data-discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | divided_by: 100.00 }}{% else %}0.00{% endif %}" data-price="{{ product.price | divided_by: 100.00 }}" data-variant="{{ item.variant_id }}">
-          <button name="minus" class="p-2 text-center">
-            {%- render 'icon-minus' -%}
+        <cart-item-quantity
+          data-max-quantity={{product.selected_or_first_available_variant.inventory_quantity}}
+          class="flex justify-around items-center border-[1px] border-green rounded-lg h-[32px] w-[100px] group"
+          data-quantity="{{ item.quantity }}"
+          data-product="{{ product.id }}"
+          data-title="{{ product.title }}{% unless item.variant.title contains 'Default' %} - {{ item.variant.title }}{% endunless %}"
+          data-discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | divided_by: 100.00 }}{% else %}0.00{% endif %}"
+          data-price="{{ product.price | divided_by: 100.00 }}"
+          data-variant="{{ item.variant_id }}">
+          <button
+            name="minus"
+            class="p-2 text-center">
+            {%- render 'icon-minus', color: "green" -%}
           </button>
-          <input value="{{ item.quantity }}" class="w-5 text-base font-bold text-center bg-transparent focus:outline-none" type="number">
-          <button name="plus" class="h-full p-2 text-center">
-            {%- render 'icon-plus' -%}
+          <input
+            value="{{ item.quantity }}"
+            class="w-5 text-base font-bold text-center bg-transparent focus:outline-none"
+            type="number">
+          <button
+            name="plus"
+            class="h-full p-2 text-center">
+            {%- render 'icon-plus', color: "green" -%}
           </button>
         </cart-item-quantity>
-      {% endunless%}
+      {% endunless %}
       <!-- Price -->
-      <div class="mt-1 ml-auto text-sm">
+      <div
+        class="mt-1 ml-auto text-sm">
         {% if product.compare_at_price == nil %}
-          <span class="font-bold">
+          <span
+            class="font-semibold">
             {{ product.price | money_without_trailing_zeros }}
           </span>
         {% else %}
-          <span class="font-bold">
+          <span
+            class="font-semibold">
             {{ product.price | money_without_trailing_zeros }}
           </span>
-          <span class="line-through text-[-1px]">
+          <span
+            class="line-through text-[-1px]">
             {{ product.compare_at_price | money_without_trailing_zeros }}
           </span>
         {% endif %}
