@@ -5,8 +5,7 @@
       "blocks": {
         "8d2c147f-c2c1-4332-9e49-8444fa8aa486": {
           "type": "summary",
-          "settings": {
-          }
+          "settings": {}
         },
         "21cbcad5-178a-4b14-8e18-0d0c855fc03b": {
           "type": "richText",
@@ -108,8 +107,7 @@
         },
         "387b07a7-5515-4025-85f0-8fed53f2594e": {
           "type": "sources",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -136,44 +134,28 @@
         "show_share": true
       }
     },
-    "featured-blog-grid-article": {
-      "type": "featured-blog-grid-article",
-      "settings": {
-        "blog": "guide",
-        "heading": "SUR LE MÊME THEME",
-        "post_limit": 4,
-        "show_date": false,
-        "show_author": false,
-        "show_button": true
-      }
-    },
     "faq-article": {
       "type": "faq-article",
       "blocks": {
         "bdbbc8b5-26ea-44c2-9421-f22ef51c6740": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "6b1362b9-e95a-41d4-b562-b8c165ca2ffc": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "c1c17f1a-0fa0-43fe-ac9e-345c16ffa250": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "df23fee3-afe2-4ea0-8bb3-97ded02ffb29": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "5218a139-b3c1-44f1-a590-8c55bfb0acb1": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -193,7 +175,6 @@
   },
   "order": [
     "main",
-    "featured-blog-grid-article",
     "faq-article"
   ]
 }
