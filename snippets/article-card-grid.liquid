@@ -1,36 +1,42 @@
-<div class="flex flex-col items-start justify-center w-full">
-  {% if show_tag %}
-    <div class="w-full h-[28px] flex justify-center items-center bg-jaune text-acajou text-xs uppercase GroteskBold article-tags">
-      {% for tag in article.tags %}
-         {% render 'article-tags', tag: tag %}
-      {% endfor %}
-    </div>
-  {% endif %}
+<div class="flex flex-col items-start justify-center h-full w-full">
   <!-- card content -->
-  <div class="flex flex-col items-start justify-center w-full">
+  <div class="flex flex-col items-start relative h-full w-full p-2 rounded-[8px] shadow">
     <a href="{{ article.url }}" class="block w-full">
-      <img class="mb-2 lazy object-cover h-[200px] w-full" src="{{ article.image | image_url }}" alt="{{ article.image.alt }}" loading="lazy">
-      <div class="gap-2">
+      <img
+        class="mb-2 lazy object-cover h-[140px] md:h-[250px] rounded-sm w-full"
+        src="{{ article.image | image_url }}"
+        alt="{{ article.image.alt }}"
+        loading="lazy">
+      <div class="gap-4 min-h-[115px]">
+        {% if show_tag %}
+          <div class="w-full h-[28px] flex capitalize text-xs GroteskBold article-tags">
+            {% for tag in article.tags %}
+              {% render 'article-tags', tag: tag %}
+            {% endfor %}
+          </div>
+        {% endif %}
+        <h3 class="text-sm py-2 line-clamp-3 min-h-[76px] sm:min-h-[55px]">
+          {{ article.title | truncate: 100 | escape }}
+        </h3>
         {%- if show_date -%}
-          <p class="my-2 text-xs">
-            {{ article.published_at | date: "%d.%m.%C"}}
+          <p class="text-[10px] font-thin">
+            {{ article.published_at | date: "%d.%b %C" }}
           </p>
         {%- endif -%}
 
         {%- if show_author -%}
-          <span class="block mt-1 text-xs capitalize">{{ article.author }}
+          <span class="block mt-1 text-xs font-thin">{{ article.author }}
           </span>
         {%- endif -%}
-
-        <h3 class="text-[20px] md:text[22px] Grotesque">
-          {{ article.title | truncate: 100 | escape }}
-        </h3>
-
-        {%- if show_button -%}
-          <a href="{{ article.url }}" class="block mt-2 underline uppercase text-xs font-bold">
-            {{ 'blogs.article.read_more' | t }}
-          </a>
-        {% endif %}
+        {%- if show_time -%}
+          <span class="reading-time text-[10px]" title="Estimated read time">
+            {% assign words = article.content | strip_html | split: ' ' | size %}
+            {{ words | divided_by: 180 | plus: 1 }} min read.
+          </span>
+        {%- endif -%}
+      </div>
+      <div class="absolute right-2 bottom-2">
+        {% render 'icon-right-arrow' %}
       </div>
     </a>
   </div>

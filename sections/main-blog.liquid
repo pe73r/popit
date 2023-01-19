@@ -1,86 +1,95 @@
-<div class="">
   <!-- blog tags -->
-  <div class=" bg-sable w-full py-5 sticky top-[65px] right-0 left-0 overflow-hidden overflow-x-scroll snap-mandatory snap-x RebondGrotesque">
-    <div class=" w-full md:w-11/12 mx-auto">
-      <ul class="flex items-center ml-2 gap-6 md:gap-4 lg:ml-0 lg:justify-center">
-        {%- for tag in blog.all_tags -%}
-          {% if current_tags %}
-           {%- assign tag_actif = true -%}
-          {% else %}
-          {%- assign tag_actif = false -%}
-        {% endif %}
-        {% endfor%}
-
-        <li class="text-[15px] min-w-fit px-2 py-1  snap-center {% unless tag_actif %} opacity-100 {% else %} opacity-50 {% endunless %}" {% unless tag_actif %} style="opacity:1"{% else %} style="opacity:.5"{% endunless %}>
-          <a href="{{ blog.url }}">
-            <div class="flex justify-center mx-auto items-center h-[44px] max-w-[44px] {% unless tag_actif %}bg-[#F4FFAF] rounded-full text-acajou {% endunless %}" {% unless tag_actif %} style="color:#733E2B; background-color:#F4FFAF" {% endunless %}>
-              {%- render 'icon-squares' -%}
-            </div>
-            <span href="{{ blog.url }}" class="focus:text-acajou focus:opacity-100">
-              Tous les articles
-            </span>
-          </a>
-        </li>
-        {%- for tag in blog.all_tags -%}
-          <li class="text-[15px] min-w-fit px-2 py-1 opacity-50 snap-start  {% if current_tags contains tag %} opacity-100 {% endif %}" {% if current_tags contains tag %} style="opacity:1" {% endif %} >
-            <a href="{{ blog.url }}/tagged/{{ tag | handle }} ">
-            <div class="flex justify-center mx-auto items-center h-[44px] w-[44px] rounded-full" {% if current_tags contains tag %} style="color:#733E2B; background-color:#F4FFAF" {% endif %} >
-              {%- if tag contains "POST-PARTUM" -%}
-                {%- render 'icon-line-curved' -%}
-              {%- elsif tag contains "Actifs" -%}
-                {%- render 'icon-carreau' -%}
-              {%- elsif tag contains "Fausse couche" -%}
-                {%- render 'icon-cycle' -%}
-              {%- elsif tag contains "Grossesse" -%}
-                {%- render 'icon-filled-cycle' -%}
-              {%- elsif tag contains "cycle" -%}
-                {%- render 'icon-filled-drop' -%}
-              {%- elsif tag contains "Accouchement" -%}
-                {%- render 'icon-double-cycle' -%}
-              {%- elsif tag contains "Allaitement" -%}
-                {%- render 'icon-drop' -%}
-              {%- elsif tag contains "Kids" -%}
-                {%- render 'icon-drop' -%}
-              {%- elsif tag contains "Recettes" -%}
-                {%- render 'icon-soleil' -%}
-              {%- elsif tag contains "Nutriments" -%}
-                {%- render 'icon-soin' -%}
-              {%- elsif tag contains "Désir d'enfant" -%}
-                {%- render 'icon-soin' -%}
-              {%- endif -%}
-            </div>
-            <span class="text-center first-letter:uppercase block {% if current_tags contains tag %} text-acajou {% endif %}">
-              {% if tag contains "POST-PARTUM" %}
-                  Post-partum
-              {% else %}
-                {{ tag }}
-              {% endif %}
-            </span>
-          </a>
-          </li>
-        {%- endfor -%}
-      </ul>
-    </div>
-  </div>
-  <!-- blog grid -->
-  <div class="w-11/12 mx-auto my-10 max-w-7xl">
-    <h1 class="leading-[30px] text-center Grotesque font-semibold mb-4 mt-4">{{ blog.title }}</h1>
-
-   {%- if section.settings.description != blank -%}
-      <div class="max-w-2xl mx-auto mb-5 text-sm text-center">
-        {{ section.settings.description }}
+    <div class="flex flex-col lg:flex-row md:justify-center items-center border-b-[1px] mx-auto mt-4">
+      <div class="text-sm sm:text-base pb-2">
+        Rechercher par besoin :
       </div>
-   {%- endif -%}
-
-
-    {%- paginate blog.articles by section.settings.number_by_page -%}
-      <div class="max-w-6xl mx-5 mt-5 overflow-hidden overflow-x-auto grid gap-5 md:mx-auto md:mt-[50px] md:w-11/12 {% if section.settings.columns_mobile == 2 %} grid-cols-2 {% elsif section.settings.columns_mobile == 3 %} grid-cols-3 {% elsif section.settings.columns_mobile == 4 %} grid-cols-4 {% else %} grid-cols-none mx-0 {% endif %} {% if section.settings.columns_desktop == 3 %} md:grid-cols-3 {% elsif section.settings.columns_desktop == 4 %} md:grid-cols-4 {% else %} md:grid-cols-2 {% endif %}">
-        {%- for article in blog.articles -%}
-          <div class="w-full mb-5">
-            {% render 'article-card-grid', blog: blog, show_tag: true, article: article, media_aspect_ratio: 1.66, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author, show_excerpt: true, show_button: section.settings.show_button %}
+    <div class="w-full md:w-fit overflow-hidden overflow-x-scroll pb-2 snap-mandatory snap-x">
+      <div class="flex items-center ml-2 lg:ml-0 lg:justify-center">
+        <div class="text-[15px] min-w-fit px-2 py-1 snap-center">
+          <a href="{{ blog.url }}">
+            <div class="flex items-center justify-center py-1 px-2 bg-[#E3F2ED] rounded-full max-w-[70px] focus:border-2 focus:border-[#4B9B7D]">
+              <span class="block text-sm text-[#4B9B7D]">
+                Tous
+              </span>
+            </div>
+          </a>
+        </div>
+        {%- for tag in blog.all_tags -%}
+          <div
+            class="text-[15px] min-w-fit px-2 py-1 opacity-80 snap-start "
+            {% if current_tags contains tag %}
+            style="opacity:1"
+            {% endif %}>
+            <a href="{{ blog.url }}/tagged/{{ tag | handle }} ">
+              <div class="flex justify-center mx-auto items-center rounded-full"></div>
+              {%- if tag contains "Énergie" -%}
+                <div class="flex items-center justify-center py-1 px-2 bg-[#FEE5C6] rounded-full max-w-[70px] {% if current_tags contains tag %} border border-[#EA5B0C] {% endif %}">
+                  <span class="block text-sm text-[#EA5B0C]">
+                    {{ tag }}
+                  </span>
+                </div>
+              {%- elsif tag contains "Sommeil" -%}
+                <div class="flex items-center justify-center py-1 px-2 bg-[#E9D2E7] rounded-full max-w-[70px]{% if current_tags contains tag %} border border-[#4F2674] {% endif %}">
+                  <span class="block text-sm text-[#4F2674]">
+                    {{ tag }}
+                  </span>
+                </div>
+              {%- elsif tag contains "Alimentation" -%}
+                <div class="flex items-center justify-center py-1 px-2 bg-[#D9E6B1] rounded-full max-w-[100px]{% if current_tags contains tag %} border border-[#3D925C] {% endif %}">
+                  <span class="block text-sm text-[#3D925C]">
+                    {{ tag }}
+                  </span>
+                </div>
+              {%- elsif tag contains "Sport" -%}
+                <div class="flex items-center justify-center py-1 px-2 bg-[#CBE7E6] rounded-full max-w-[70px]{% if current_tags contains tag %} border border-[#2F52A0] {% endif %}">
+                  <span class="block text-sm text-[#2F52A0]">
+                    {{ tag }}
+                  </span>
+                </div>
+              {%- elsif tag contains "Stress" -%}
+                <div class="flex items-center justify-center py-1 px-2 bg-[#B7E1F5] rounded-full max-w-[70px]{% if current_tags contains tag %} border border-[#2F2870] {% endif %}">
+                  <span class="block text-sm text-[#2F2870]">
+                    {{ tag }}
+                  </span>
+                </div>
+              {%- elsif tag contains "Féminin" -%}
+                <div class="flex items-center justify-center py-1 px-2 bg-[#F9CDDB] rounded-full max-w-[70px]{% if current_tags contains tag %} border border-[#9D1553] {% endif %}">
+                  <span class="block text-sm text-[#9D1553]">
+                    {{ tag }}
+                  </span>
+                </div>
+              {%- elsif tag contains "Peau" -%}
+                <div class="flex items-center justify-center py-1 px-2 bg-[#FBDBDC] rounded-full max-w-[70px]{% if current_tags contains tag %} border border-[#E4003A]{% endif %}">
+                  <span class="block text-sm text-[#E4003A]">
+                    {{ tag }}
+                  </span>
+                </div>
+              {%- elsif tag contains "Mémoire/focus" -%}
+                <div class="flex items-center justify-center py-1 px-2 bg-[#C2E3DF] rounded-full max-w-[115px]{% if current_tags contains tag %} border border-[#00555A] {% endif %}">
+                  <span class="block text-sm text-[#00555A]">
+                    {{ tag }}
+                  </span>
+                </div>
+              {%- endif -%}
+            </a>
           </div>
         {%- endfor -%}
       </div>
+    </div>
+  </div>
+  <!-- blog grid -->
+  <div class="w-11/12 md:w-10/12 mx-auto">
+    {%- paginate blog.articles by section.settings.number_by_page -%}
+      <div class="my-3 overflow-hidden overflow-x-auto grid gap-4 md:gap-5 md:mx-auto grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 ">
+        {%- for article in blog.articles -%}
+          <div class="max-w-[265px] h-[307px] sm:h-full item">
+            {% render 'article-card-grid', blog: blog, show_tag: true, article: article, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author, show_excerpt: true, show_button: section.settings.show_button %}
+          </div>
+        {%- endfor -%}
+      </div>
+      <style>
+        .items-grid {}
+      </style>
 
       {%- if paginate.pages > 1 -%}
         <div class="my-5">
@@ -105,18 +114,37 @@
   .snap-mandatory::-webkit-scrollbar {
     display: none;
   }
+
+  .item:nth-child(1) {
+    grid-column: auto / span 2;
+    max-width: inherit;
+  }
+
+  @media only screen and (min-width:500px) {
+    .item:nth-child(6) {
+      grid-column: auto / span 2;
+      max-width: inherit;
+    }
+  }
+
+  @media only screen and (max-width:500px) {
+    .item:nth-child(1) a {
+      display: flex;
+      gap: 16px;
+    }
+    .item:nth-child(1) img {
+      max-width: 140px;
+    }
+    .item:nth-child(1) {
+      height: 160px !important;
+    }
+  }
 </style>
 {% schema %}
   {
     "name": "Main blog",
     "tag": "section",
     "settings": [
-      {
-        "type": "richtext",
-        "id": "description",
-        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
-        "label": "Header text"
-      },
       {
         "type": "header",
         "content": "Grille d'articles"
@@ -131,18 +159,10 @@
         "label": "Number of articles by page"
       },
       {
-        "type": "range",
-        "id": "columns_desktop",
-        "min": 2,
-        "max": 4,
-        "step": 1,
-        "default": 3,
-        "label": "Number of columns desktop"
-      },
-      {
         "type": "header",
         "content": "Contenu de l'article"
-      }, {
+      },
+      {
         "type": "checkbox",
         "id": "show_date",
         "default": true,
@@ -154,23 +174,9 @@
         "label": "Author"
       }, {
         "type": "checkbox",
-        "id": "show_button",
-        "default": true,
-        "label": "Button"
-      }, {
-        "type": "header",
-        "content": "Aside text"
-      }, {
-        "type": "text",
-        "id": "aside_title",
-        "default": "POUR UN ALLAITEMENT SANS TRACAS",
-        "label": "Aside Title"
-      },
-      {
-        "type": "richtext",
-        "id": "aside_text",
-        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>",
-        "label": "Aside Text"
+        "id": "show_time",
+        "default": false,
+        "label": "Reading time"
       }
     ]
   }
