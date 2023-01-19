@@ -10,16 +10,17 @@
   data-full-height="true">
   <side-cart-overlay class="group-in:opacity-100 group-exiting:opacity-0 group-out:hidden group-entering:block group-entering:opacity-0 z-[50]">
     <side-cart-content class="w-[430px] overflow-x-hidden group-entering:block group-entering:translate-x-full group-in:translate-x-0 group-in:opacity-100 group-exiting:d-block group-exiting:translate-x-full group-exiting:opacity-0 group-out:opacity-0 group-out:hidden">
-      <side-cart-header class="flex justify-between px-5 py-2 bg-theme">
+      <side-cart-header class="flex justify-between p-5">
         <div class="flex items-center">
-          <h5 class="text-base font-bold">
+          <span class="text-base">
             {% if item_count == 0 %}
               {{ section.settings.cart_title_when_empty }}
             {% else %}
               {{ section.settings.cart_title }}
             {% endif %}
-          </h5>
-          <span class="block ml-2 text-sm">{{ item_count }}
+          </span>
+          <span class="block ml-2 text-sm text-gray-400 text-normal">
+            {{ item_count }}
             {% if item_count > 1 %}
               articles
             {% else %}
@@ -27,19 +28,19 @@
             {% endif %}
           </span>
         </div>
-        <side-cart-close class="w-8 h-8 p-2 mb-2">
+        <side-cart-close class="">
           {% render 'icon-cart-close' %}
         </side-cart-close>
       </side-cart-header>
 
-      <side-cart-inner class="pt-4 px-6 pb-6 bg-theme overflow-x-hidden">
+      <side-cart-inner class="overflow-x-hidden">
         {% if item_count == 0 %}
           {% render "side-cart-empty" %}
         {% else %}
-          <div>
+          <div class="">
             {% render "side-cart-carousel" %}
           </div>
-          <div id="line-items">
+          <div id="line-items" class="pt-4 px-6 pb-6 bg-theme">
             {% render "side-cart" %}
           </div>
         {% endif %}
@@ -237,14 +238,19 @@
 
           {
             "type": "text",
-            "id": "title",
-            "label": "Title",
-            "default": "🎁 Une bouteille offerte à partir de 65€"
+            "id": "svg",
+            "label": "Image svg",
+            "default": "https://cdn.shopify.com/s/files/1/0681/5494/9926/files/lock.svg?v=1674126625"
           }, {
-            "type": "richtext",
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "Image SVG field has to be empty to display this image"
+          }, {
+            "type": "text",
             "id": "text",
             "label": "Text",
-            "default": "<p>Une bouteille de la sélection du mois dans votre colis</p>"
+            "default": "Réassurance dynamique"
           }
         ]
       }
