@@ -50,9 +50,9 @@
             <div class="max-w-[180px] rounded-lg p-5 bg-white flex items-center justify-center text-center">
                <div>
                 {% if forloop.first %}
-                   {% render 'icon-telephone', product_color: product_color, class:"mx-auto" %}  
-                {% else %}   
-                 {% render 'icon-subtract', product_color: product_color, class:"mx-auto" %}  
+                   {% render 'icon-telephone', product_color: product_color, class:"mx-auto" %}
+                {% else %}
+                 {% render 'icon-subtract', product_color: product_color, class:"mx-auto" %}
                 {% endif %}
                 <p class="mt-2 text-xs md:text-sm" style="color: {{ product_color }}">{{ block.settings.text }}</p>
                </div>
@@ -101,21 +101,21 @@
         "type": "color",
         "id": "bg_color",
         "label": "Background color",
-        "default": "#FAF5EF" 
+        "default": "#FAF5EF"
       }, {
         "type": "color",
         "id": "color",
         "label": "Text color",
         "default": "#4B9B7D"
       }
-    ], 
+    ],
     "blocks": [
       {
         "name": "block",
         "type": "block",
         "limit": 2,
         "settings": [
-           
+
           {
             "type": "text",
             "id": "text",
