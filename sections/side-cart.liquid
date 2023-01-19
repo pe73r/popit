@@ -40,6 +40,9 @@
           <div class="">
             {% render "side-cart-carousel" %}
           </div>
+          <div class="px-3 pt-4 pb-2 bg-green text-white">
+            {% render "side-cart-progress" %}
+          </div>
           <div id="line-items" class="pt-4 px-6 pb-6 bg-theme">
             {% render "side-cart" %}
           </div>
@@ -48,9 +51,6 @@
 
       {% unless item_count == 0 %}
         <side-cart-footer class="flex flex-col bg-beige pb-4">
-          <div class="px-3 pt-4 pb-2">
-            {% render "side-cart-progress" %}
-          </div>
 
           {% if section.settings.upSellCollection %}
             <div class="px-3 bg-beige">
