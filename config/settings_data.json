@@ -293,7 +293,7 @@
         "settings": {
           "cart_title": "Votre panier",
           "show_counter": true,
-          "show_carousel_reassurance": false,
+          "show_carousel_reassurance": true,
           "validate_text": "Commander",
           "extra_text": "Livraison estimée : 4 jours ouvrés",
           "extra_text_2": "Frais de livraison calculés à l’étape suivante",
