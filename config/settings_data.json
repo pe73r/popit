@@ -298,7 +298,7 @@
           "extra_text": "Code promo et frais de livraison à l’étape suivante",
           "extra_text_2": "Frais de livraison et code promo à l’étape suivante.",
           "show_code_promo": false,
-          "show_carousel_reassurance": true,
+          "show_carousel_reassurance": false,
           "cart_title_when_empty": "Panier",
           "collection_when_empty": "",
           "collection_when_empty_2": "",
