@@ -274,14 +274,14 @@
             "type": "reassurances",
             "settings": {
               "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/lock.svg?v=1674126625",
-              "text": "<p>Frais de livraison gratuits a partir de 100 €<\/p>"
+              "text": "Frais de livraison gratuits a partir de 100 €"
             }
           },
           "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4": {
             "type": "reassurances",
             "settings": {
               "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/lock.svg?v=1674126625",
-              "text": "<p>Une bouteille de la sélection du mois dans votre colis<\/p>"
+              "text": "Réassurance dynamique"
             }
           }
         },
