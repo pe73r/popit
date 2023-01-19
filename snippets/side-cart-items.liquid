@@ -60,12 +60,12 @@
         class="mt-1 ml-auto text-sm">
         {% if product.compare_at_price == nil %}
           <span
-            class="font-semibold">
+            class="font-normal">
             {{ product.price | money_without_trailing_zeros }}
           </span>
         {% else %}
           <span
-            class="font-semibold">
+            class="font-normal">
             {{ product.price | money_without_trailing_zeros }}
           </span>
           <span

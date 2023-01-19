@@ -20,7 +20,7 @@ a.anchor {
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  background: #b7b1aa;
+  background: #ffffff;
   width: 90%;
   max-width: 200px;
   display: block;
@@ -28,9 +28,9 @@ a.anchor {
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-  background-color: #201A1C;
+  background-color: #4B9B7D;
   /* color of the scroll thumb */
-  border: 2px solid #201A1C;
+  border: 2px solid #4B9B7D;
   height: 5px;
   width: 5px;
 }
@@ -75,4 +75,9 @@ accordion-element[data-open="true"] .icon-minus {
 /* card product */
 .card-description p {
   font-size: 14px;
+}
+
+/* to re-check this */
+.side-cart-overlay {
+  /* top: 35px; */
 }
