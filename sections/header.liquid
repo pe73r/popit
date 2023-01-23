@@ -13,11 +13,12 @@
 </header>
 
 {% if template contains 'index' %}
-  <script type="application/ld+json">
+  <script
+    type="application/ld+json">
     {
     "@context": "http://schema.org",
-                      "@type": "Organization",
-                      "name": {{ shop.name | json }},
+                                      "@type": "Organization",
+                                      "name": {{ shop.name | json }},
     {% if section.settings.logo %}
       {% assign image_size = section.settings.logo.width | append: 'x' %}
       "logo": {{ section.settings.logo | image_url: width: image_size | prepend: "https:" | json }},
@@ -38,7 +39,8 @@
   </script>
 
   {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
-  <script type="application/ld+json">
+  <script
+    type="application/ld+json">
     {% liquid
       capture socials_container
         if settings.social_instagram_link != blank 
@@ -77,13 +79,13 @@
     %}
     {
     "@context": "http://schema.org",
-                      "@type": "WebSite",
-                      "name": {{ shop.name | json }},
+                                      "@type": "WebSite",
+                                      "name": {{ shop.name | json }},
     "potentialAction": {
-                        "@type": "SearchAction",
-                        "target": {{ potential_action_target | json }},
+                                        "@type": "SearchAction",
+                                        "target": {{ potential_action_target | json }},
     "query-input": "required name=search_term_string"
-                      },
+                                      },
     {% if socials_container.size > 0 %}
       "as": [
       {% for social in socials_container -%}
@@ -98,15 +100,16 @@
   </script>
 {% endif %}
 
-<script type="application/ld+json">
+<script
+  type="application/ld+json">
   {
   "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "{{ shop.name }}",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                      {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "{{ shop.name }}",
   "item": "{{ shop.url }}"
   },
   {% if template contains 'product' %}
@@ -114,22 +117,22 @@
       {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
       {
       "@type": "ListItem",
-                                    "position": 2,
-                                    "name": "{{ collection.title | strip_html | escape }}",
+                                                            "position": 2,
+                                                            "name": "{{ collection.title | strip_html | escape }}",
       "item": "{{ url }}"
       },
     {% else %}
       {
       "@type": "ListItem",
-                                    "position": 2,
-                                    "name": "Produits",
-                                    "item": "/collections/all"
-                                  },
+                                                            "position": 2,
+                                                            "name": "Produits",
+                                                            "item": "/collections/all"
+                                                          },
     {% endif %}
     {
     "@type": "ListItem",
-                          "position": 3,
-                          "name": "{{ product.title }}",
+                                          "position": 3,
+                                          "name": "{{ product.title }}",
     "item": "{{ product.url }}"
     }
   {% elsif template contains 'collection' and collection.handle %}
@@ -137,71 +140,71 @@
       {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
       {
       "@type": "ListItem",
-                                    "position": 2,
-                                    "name": "{% if collection.handle != "all" -%}
+                                                            "position": 2,
+                                                            "name": "{% if collection.handle != "all" -%}
         {{ collection.title | strip_html | escape }}{% else -%}Collections{%- endif %}",
       "item": "{{ url }}"
       }
     {% else %}
       {
       "@type": "ListItem",
-                                    "position": 2,
-                                    "name": "{{ collection.title | strip_html | escape }}",
+                                                            "position": 2,
+                                                            "name": "{{ collection.title | strip_html | escape }}",
       "item": "{{ collection.url }}"
       }
     {% endif %}
   {% elsif template == 'blog' %}
     {
     "@type": "ListItem",
-                            "position": 2,
-                            "name": "{{ blog.title | strip_html | escape }}",
+                                            "position": 2,
+                                            "name": "{{ blog.title | strip_html | escape }}",
     "item": "{{ blog.url }}"
     }
     {% if current_tags %}
       ,{
       "@type": "ListItem",
-                                    "position": 3,
-                                    "name": "{{ current_tags | join: " + " | strip_html | escape }}",
+                                                            "position": 3,
+                                                            "name": "{{ current_tags | join: " + " | strip_html | escape }}",
       "item": "{{ blog.url }}/{{ current_tags | join: " + " | strip_html | escape }}"
       }
     {% endif %}
   {% elsif template == 'article' %}
     {
     "@type": "ListItem",
-                          "position": 2,
-                          "name": "{{ blog.title | strip_html | escape }}",
+                                          "position": 2,
+                                          "name": "{{ blog.title | strip_html | escape }}",
     "item": "{{ blog.url }}"
     },
-                        {
-                          "@type": "ListItem",
-                          "position": 3,
-                          "name": "{{ article.title | strip_html | escape }}",
+                                        {
+                                          "@type": "ListItem",
+                                          "position": 3,
+                                          "name": "{{ article.title | strip_html | escape }}",
     "item": "{{ article.url }}
     }
   {% elsif template == 'page' %}
     {
     "@type": "ListItem",
-                          "position": 2,
-                          "name": "{{ page.title | strip_html | escape }}",
+                                          "position": 2,
+                                          "name": "{{ page.title | strip_html | escape }}",
     "item": "{{ page.url }}"
     }
   {% elsif template contains 'list-collections' %}
     {
     "@type": "ListItem",
-                          "position": 2,
-                          "name": "Collections",
-                          "item": "/collections"
-                        }{% elsif template contains 'cart' %}
+                                          "position": 2,
+                                          "name": "Collections",
+                                          "item": "/collections"
+                                        }{% elsif template contains 'cart' %}
     {
     "@type": "ListItem",
-                          "position": 2,
-                          "name": "Panier",
-                          "item": "/cart"
-                        }{% else %}
+                                          "position": 2,
+                                          "name": "Panier",
+                                          "item": "/cart"
+                                        }{% else %}
     {
     "@type": "ListItem",
-                          "position": 2,
-                          "name": "{{ page.title | strip_html | escape }}",
+                                          "position": 2,
+                                          "name": "{{ page.title | strip_html | escape }}",
     "item": "{{ page.url }}"
     }
   {% endif %}
@@ -268,7 +271,7 @@
           },
           {
             "type": "header",
-            "content": "Featured link 1"
+            "content": "Featured link"
           },
           {
             "type": "url",
@@ -445,18 +448,14 @@
           },
           {
             "type": "header",
-            "content": "Featured link 1"
-          },
-          {
-            "type": "url",
-            "id": "featured_link_1",
-            "label": "Featured link"
+            "content": "Featured link"
           },
           {
             "type": "image_picker",
             "id": "featured_link_image_1",
             "label": "Featured link image"
-          }, {
+          },
+          {
             "type": "text",
             "id": "featured_link_subtitle_1",
             "label": "Featured link subtitle"
@@ -465,24 +464,13 @@
             "id": "featured_link_title_1",
             "label": "Featured link title"
           }, {
-            "type": "header",
-            "content": "Featured link 2"
+            "type": "text",
+            "id": "featured_link_button_1",
+            "label": "Featured button"
           }, {
             "type": "url",
-            "id": "featured_link_2",
+            "id": "featured_link_1",
             "label": "Featured link"
-          }, {
-            "type": "image_picker",
-            "id": "featured_link_image_2",
-            "label": "Featured link image"
-          }, {
-            "type": "text",
-            "id": "featured_link_subtitle_2",
-            "label": "Featured link subtitle"
-          }, {
-            "type": "richtext",
-            "id": "featured_link_title_2",
-            "label": "Featured link title"
           }
         ]
       }

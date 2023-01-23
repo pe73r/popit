@@ -34,8 +34,12 @@
       {% endif %}
 
       {% if submenu != blank %}
-        <div class="absolute left-0 top-[60px] w-screen py-10 px-20 bg-beige z-10 opacity-0 group-hover:block group-hover:opacity-100 overflow-hidden hidden">
-          {% render 'megamenu' block: block, submenu: submenu, class: "grid gap-4 max-w-3xl grid-cols-3 px-20 mx-auto" %}
+        <div class="absolute lg:left-[-19%] xl:left-[-18%] 2xl:left-[-17%] top-[64px] bg-white w-screen py-5 px-10 z-10 opacity-0 group-hover:block group-hover:opacity-100 overflow-hidden hidden">
+         {% if link.title == 'BESOINS' %}
+          {% render 'megamenu-besoins' block: block, submenu: submenu %}
+         {% else %}
+           {% render 'megamenu' block: block, submenu: submenu, class: "grid gap-4 max-w-3xl grid-cols-3 px-20 mx-auto" %}
+         {% endif %}   
         </div>
       {% endif %}
     </div>
