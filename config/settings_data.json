@@ -147,96 +147,20 @@
       "header": {
         "type": "header",
         "blocks": {
-          "bbc724c6-30ab-4e7f-b250-da0bc7ceacfc": {
-            "type": "megamenu",
-            "settings": {
-              "megamenu": "",
-              "featured_link_1": "shopify:\/\/products\/baby-bump",
-              "featured_link_subtitle_1": "NOUVEAU",
-              "featured_link_title_1": "<p>COMPLÉMENT GROSSESSE<\/p><p><strong>3 en 1 <\/strong><\/p>",
-              "featured_link_2": "",
-              "featured_link_subtitle_2": "",
-              "featured_link_title_2": ""
-            }
-          },
           "9361598a-ff81-4f8d-a8a3-71f39892e985": {
             "type": "megamenu",
             "settings": {
-              "megamenu": "",
-              "featured_link_1": "shopify:\/\/blogs\/guide\/l-alimentation-en-postpartum-en-quoi-est-elle-essentielle",
-              "featured_link_subtitle_1": "POSTPARTUM",
-              "featured_link_title_1": "<p>EN QUOI L'<strong>ALIMENTATION EN POSTPARTUM<\/strong> EST ESSENTIELLE ?<\/p>",
-              "featured_link_2": "shopify:\/\/blogs\/guide\/acide-folique-ou-folates-quelle-difference",
-              "featured_link_subtitle_2": "DERNIER ARTICLE",
-              "featured_link_title_2": "<p>ACIDE FOLIQUE OU FOLATE, <strong>QUELLE DIFFÉRENCE<\/strong> ?<\/p>"
-            }
-          },
-          "9fa1b736-166f-4ace-9c2a-464a277ad13f": {
-            "type": "megamenu",
-            "settings": {
-              "megamenu": "",
-              "featured_link_1": "shopify:\/\/pages\/ebooks-gratuits",
-              "featured_link_subtitle_1": "EBOOK CYCLE",
-              "featured_link_title_1": "<p>NOS CONSEILS POUR <strong>UN CYCLE EN DOUCEUR<\/strong><\/p>",
-              "featured_link_2": "shopify:\/\/collections\/coaching",
-              "featured_link_subtitle_2": "COACHING",
-              "featured_link_title_2": "<p><strong>FAITES-VOUS ACCOMPAGNER <\/strong>PAR NOS EXPERTS ? <\/p>"
-            }
-          },
-          "6330de6b-0c75-4f1c-b01e-c913d3b7be38": {
-            "type": "mobile_tabs",
-            "settings": {
-              "title": "Produits",
-              "menu": "",
-              "featured_link_1": "shopify:\/\/products\/baby-bump",
-              "featured_link_subtitle_1": "NOUVEAU",
-              "featured_link_title_1": "<p>COMPLÉMENT GROSSESSE<\/p><p><strong>3 en 1 <\/strong><\/p>",
-              "featured_link_2": "",
-              "featured_link_subtitle_2": "",
-              "featured_link_title_2": ""
-            }
-          },
-          "88838b44-682b-443b-95f8-b0f4e0dc4926": {
-            "type": "mobile_tabs",
-            "settings": {
-              "title": "Blog",
-              "menu": "",
-              "featured_link_1": "shopify:\/\/blogs\/guide\/l-alimentation-en-postpartum-en-quoi-est-elle-essentielle",
-              "featured_link_subtitle_1": "POSTPARTUM",
-              "featured_link_title_1": "<p>EN QUOI L'<strong>ALIMENTATION EN POSTPARTUM<\/strong> EST ESSENTIELLE ?<\/p>",
-              "featured_link_2": "shopify:\/\/blogs\/guide\/acide-folique-ou-folates-quelle-difference",
-              "featured_link_subtitle_2": "DERNIER ARTICLE",
-              "featured_link_title_2": "<p>ACIDE FOLIQUE OU FOLATE, <strong>QUELLE DIFFÉRENCE<\/strong> ?<\/p>"
-            }
-          },
-          "71f5eb72-b019-4a03-8e19-59b3b90d90b8": {
-            "type": "mobile_tabs",
-            "settings": {
-              "title": "Conseil",
-              "menu": "",
-              "featured_link_1": "shopify:\/\/pages\/ebooks-gratuits",
-              "featured_link_subtitle_1": "EBOOK CYCLE",
-              "featured_link_title_1": "<p>NOS CONSEILS POUR UN CYCLE EN DOUCEUR<\/p>",
-              "featured_link_2": "shopify:\/\/collections\/coaching",
-              "featured_link_subtitle_2": "COACHING",
-              "featured_link_title_2": "<p>FAITES-VOUS ACCOMPAGNER PAR NOS EXPERTS<\/p>"
-            }
-          },
-          "d078ac29-3acc-4a33-88c8-85f12a06fbdd": {
-            "type": "mobile_bottom",
-            "settings": {
-              "menu": ""
+              "megamenu": "besoins-1",
+              "featured_link_image_1": "shopify:\/\/shop_images\/Frame_9358_85b1ae14-df01-45a6-9c79-bd4c12b8c825.png",
+              "featured_link_subtitle_1": "Personnalisez votre pack",
+              "featured_link_title_1": "<p>Économisez jusqu’à <strong>-25%<\/strong> en achetant un pack de 3, 4 ou 5 produits.<\/p>",
+              "featured_link_button_1": "Personnaliser mon pack",
+              "featured_link_1": "shopify:\/\/blogs\/infos"
             }
           }
         },
         "block_order": [
-          "bbc724c6-30ab-4e7f-b250-da0bc7ceacfc",
-          "9361598a-ff81-4f8d-a8a3-71f39892e985",
-          "9fa1b736-166f-4ace-9c2a-464a277ad13f",
-          "6330de6b-0c75-4f1c-b01e-c913d3b7be38",
-          "88838b44-682b-443b-95f8-b0f4e0dc4926",
-          "71f5eb72-b019-4a03-8e19-59b3b90d90b8",
-          "d078ac29-3acc-4a33-88c8-85f12a06fbdd"
+          "9361598a-ff81-4f8d-a8a3-71f39892e985"
         ],
         "settings": {
           "menu_desktop": "main-menu",
@@ -311,16 +235,7 @@
           "cta_2": "",
           "ctaLink_2": "",
           "upSellTitle": "Vous aimerez aussi",
-          "upSellCollection": "frontpage",
-          "free_shipping_limit": 100,
-          "free_shipping_text_before": "Plus que ((rest)) pour une livraison en point relais offerte.",
-          "free_shipping_text_after": "Vous bénéficiez de la livraison en point relais offerte.",
-          "product_1_limit": 150,
-          "product_1_text_before": "Plus que ((rest)) pour un cadeau.",
-          "product_1_text_after": "Vous bénéficiez du cadeau offert.",
-          "product_2_limit": 0,
-          "product_2_text_before": "Plus que ((rest)) pour un deuxième cadeau.",
-          "product_2_text_after": "Vous bénéficiez du cadeau offert."
+          "upSellCollection": "frontpage"
         }
       },
       "footer": {
