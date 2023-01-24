@@ -179,12 +179,20 @@
               "text": "",
               "color": "peche"
             }
+          },
+          "85395e5c-3c5b-4fce-bcea-318828fd37db": {
+            "type": "mobile_rounded",
+            "settings": {
+              "menu": "main-menu",
+              "article": ""
+            }
           }
         },
         "block_order": [
           "9361598a-ff81-4f8d-a8a3-71f39892e985",
           "821b51b7-27dd-4a1b-9036-4f3a51fe987f",
-          "d64092fa-5990-45c2-a510-065494412a77"
+          "d64092fa-5990-45c2-a510-065494412a77",
+          "85395e5c-3c5b-4fce-bcea-318828fd37db"
         ],
         "settings": {
           "menu_desktop": "main-menu",
