@@ -1,21 +1,16 @@
 <tail-drawer class="lg:hidden" data-full-height="true">
-  <drawer-overlay class="p-0 bg-transparent overflow-visible top-[30px]">
+  <drawer-overlay class="p-0 bg-transparent overflow-visible {% if template == 'index' %} top-[35px] {% else %} top-0 {% endif %}">
     <drawer-content class="w-full bg-transparent relative">
-      <drawer-close class="absolute z-10 right-[15px] top-[20px] flex justify-end">
-        {% render 'icon-close' %}
-      </drawer-close>
-      <drawer-inner class="bg-white ">
+
+      <drawer-inner class="bg-gray-100">
+        <drawer-close class="absolute z-10 right-[20px] top-[25px] flex justify-end">
+          {% render 'icon-close' %}
+        </drawer-close>
         {%- liquid
-                    assign bands = section.blocks | where: "type", "mobile_band"
-                    assign bubbles = section.blocks | where: "type", "mobile_rounded"
-                    assign links = section.blocks | where: "type", "mobile_inner"
                     assign tabs = section.blocks | where: "type", "mobile_tabs"
                     assign bottoms = section.blocks | where: "type", "mobile_bottom"
                 -%}
         <div class="flex flex-col h-auto">
-          {% render "header-drawer-bands", elements: bands %}
-          {% render "header-drawer-bubbles", elements: bubbles %}
-          {% render "header-drawer-links", elements: links %}
           {% render "header-drawer-tabs", elements: tabs %}
         </div>
         {% render "header-drawer-bottom-nav", elements: bottoms %}

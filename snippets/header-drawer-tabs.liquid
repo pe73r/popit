@@ -1,14 +1,19 @@
 <tail-tabs class="relative">
-  <tabs-buttons class="z-50 p-5 justify-start gap-3 mb-4 bg-white border-b border-gray-300">
+  <tabs-buttons class="z-50 p-5 justify-start gap-6 bg-white border-b border-gray-300 shadow-sm">
     {% for tab in elements %}
-      <div class="block relative group transition-all cursor-pointer selected:font-bold hover:text-green link-item">
-        <p class="text-sm uppercase">{{ tab.settings.title }}</p>
+      <div class="block relative group transition-all cursor-pointer {% unless  tab.settings.title contains "pack" or tab.settings.title contains "PACK" %} selected:font-bold hover:text-green {% endunless %}">
+        <p class="text-sm uppercase {% if tab.settings.title contains "pack" or tab.settings.title contains "PACK" %} link-pack rounded-lg p-1 hover:text-white {% endif %}">{{ tab.settings.title }}</p>
       </div>
     {% endfor %}
   </tabs-buttons>
   <tabs-panels>
     {% for tab in elements %}
       <div class="p-5 ">
+        <!-- featured cards -->
+        <div class="w-full">
+          {% render "header-drawer-featured-links", block: tab.settings, limit: 2 %}
+        </div>
+        <!-- links in accordion -->
         {% if tab.settings.menu != blank %}
           <accordion-group class="flex flex-col items-start justify-start block">
             {% for links in tab.settings.menu.links %}
@@ -22,12 +27,11 @@
                 endif
               -%}
               {% if links.links.size > 0 %}
-                <accordion-element
-                  class="w-full{% unless forloop.last %} mb-4{% endunless %} {% if previous == 'link' %}mt-6{% endif %}">
+                <accordion-element class="w-full rounded-lg shadow-lg p-3 {% unless forloop.last %} mb-5 {% endunless %} {% if previous == 'link' %}mt-6{% endif %}">
                   <accordion-trigger class="group">
                     <accordion-header class="flex flex-row items-center justify-between">
                       <div class="flex-1">
-                        <p class="text-base font-bold uppercase">{{ links.title }}</p>
+                        <p class="text-sm font-normal">{{ links.title }}</p>
                       </div>
                       <accordion-icon class="transition-all origin-center h-[fit-content]">
                         <span class="icon-plus">
@@ -53,18 +57,16 @@
                 </accordion-element>
                 {% assign previous = 'accordion' %}
               {% else %}
-                <a href="{{ links.url }}" class="flex flex-row gap-2 items-center{% unless forloop.last %} mb-4{% endunless %}">
+                <a href="{{ links.url }}" class="w-full flex flex-row gap-2 items-center rounded-lg shadow-lg p-3 {% unless forloop.last %} mb-4{% endunless %}">
                   {% render 'icons-menu', title: title, submenu: tab.settings.menu %}
-                  <span class="{{ class }}">{{ links.title }}</span>
+                  <span class="text-sm font-normal">{{ links.title }}</span>
                 </a>
                 {% assign previous = 'link' %}
               {% endif %}
             {% endfor %}
           </accordion-group>
         {% endif %}
-        <div class="w-full my-10">
-          {% render "header-drawer-featured-links", block: tab.settings, limit: 2 %}
-        </div>
+
       </div>
     {% endfor %}
   </tabs-panels>
