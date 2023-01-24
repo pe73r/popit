@@ -170,21 +170,11 @@
               "featured_link_subtitle_2": "",
               "featured_link_title_2": ""
             }
-          },
-          "d64092fa-5990-45c2-a510-065494412a77": {
-            "type": "mobile_band",
-            "settings": {
-              "link": "",
-              "icon": "shopify:\/\/shop_images\/packshot_sport.png",
-              "text": "",
-              "color": "peche"
-            }
           }
         },
         "block_order": [
           "9361598a-ff81-4f8d-a8a3-71f39892e985",
-          "821b51b7-27dd-4a1b-9036-4f3a51fe987f",
-          "d64092fa-5990-45c2-a510-065494412a77"
+          "821b51b7-27dd-4a1b-9036-4f3a51fe987f"
         ],
         "settings": {
           "menu_desktop": "main-menu",
@@ -205,8 +195,7 @@
       },
       "logo": {
         "type": "logo",
-        "settings": {
-        }
+        "settings": {}
       },
       "side-cart": {
         "type": "side-cart",
@@ -377,9 +366,7 @@
         }
       }
     },
-    "content_for_index": [
-
-    ]
+    "content_for_index": []
   },
   "presets": {
     "Default": {
@@ -489,8 +476,7 @@
         },
         "header": {
           "type": "header",
-          "settings": {
-          }
+          "settings": {}
         }
       }
     }
