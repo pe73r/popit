@@ -27,23 +27,43 @@
       assign title = block[titlePath]
       assign subtitle = block[subtitlePath]
     -%}
-    {% if image != blank and title != blank and link != blank %}
-      <a class="relative z-0 lg:block rounded-md bg-black {% if forloop.index > limitOnSmallScreen %} hidden {% endif %}" href="{{ link.url }}">
-        {{ image | image_url: width: 200 | image_tag: loading: 'lazy', class: "w-full rounded-md opacity-90" }}
-        <div
-          class="absolute z-0 px-[10px] inset-0 flex flex-col justify-center items-center text-white uppercase text-center text-base">
-          {% if subtitle != blank %}
-            <p class="font-[RebondGrotesque] text-base">{{ subtitle }}</p>
+    {% if image != blank %}
+      <p class="text-sm text-gray-400">NOS OFFRES</p>
+      <div class="drawer-card relative bg-gradiant rounded-lg p-2 sm:p-3 md:p-5 text-center flex flex-col justify-center items-center mb-4">
+        {% if label != blank %}
+          <div class="absolute top-3 right-3 text-[10px] py-1 px-2 text-white font-bold bg-orange w-fit rounded-md mb-2 mx-auto md:mx-0">{{ label }}</div>
+        {% endif %}
+        <div class="w-full">
+          {% if image != blank %}
+            <img
+              class="lazy mx-auto max-w-[250px]"
+              src="{{ image | img_url: 'master'}}"
+              alt="{{ image.alt }}"
+              loading="lazy"
+              style="max-width:{{ image.image_width }}px">
+          {% else %}
+            {{ 'image' | placeholder_svg_tag }}
           {% endif %}
-          <div class="hmfl text-[28px] GroteskBold font-bold mt-3 leading-[37px] tracking-[0.02em]">{{ title }}</div>
+          <div class="text-center mt-3">
+            {% if subtitle != blank %}
+              <h4 class="text-base font-bold">{{ subtitle }}</h4>
+            {% endif %}
+
+            {% if title != blank %}
+              <div class="text-sm font-light mt-3" style="color:{{ section.settings.color }}">{{ title }}</div>
+            {% endif %}
+
+            {% if cta != blank %}
+              <a class="block mt-3 md:mt-5 {% render "button", size:"medium", color:"green", fullWidth: true %}" href="{{ link }}">{{ cta }}</a>
+            {% endif %}
+          </div>
         </div>
-      </a>
+      </div>
     {% endif %}
   {% endfor %}
 </div>
-
 <style>
-  .hmfl strong {
-    color: #F4FFAF;
+  .drawer-card {
+    background: linear-gradient(168.52deg, #4B9B7D 0%, rgba(75, 155, 125, 0.8) 35.48%, #D7E6AF 59.33%, rgba(215, 230, 175, 0.5) 94.77%);
   }
 </style>
