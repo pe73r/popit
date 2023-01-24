@@ -27,7 +27,7 @@
                 endif
               -%}
               {% if links.links.size > 0 %}
-                <accordion-element class="w-full rounded-lg shadow-lg p-3 {% unless forloop.last %} mb-5 {% endunless %} {% if previous == 'link' %}mt-6{% endif %}">
+                <accordion-element class="w-full bg-white rounded-lg shadow-lg p-3 {% unless forloop.last %} mb-5 {% endunless %} {% if previous == 'link' %}mt-6{% endif %}">
                   <accordion-trigger class="group">
                     <accordion-header class="flex flex-row items-center justify-between">
                       <div class="flex-1">
@@ -57,7 +57,7 @@
                 </accordion-element>
                 {% assign previous = 'accordion' %}
               {% else %}
-                <a href="{{ links.url }}" class="w-full flex flex-row gap-2 items-center rounded-lg shadow-lg p-3 {% unless forloop.last %} mb-4{% endunless %}">
+                <a href="{{ links.url }}" class="w-full bg-white flex flex-row gap-2 items-center rounded-lg shadow-lg p-3 {% unless forloop.last %} mb-4{% endunless %}">
                   {% render 'icons-menu', title: title, submenu: tab.settings.menu %}
                   <span class="text-sm font-normal">{{ links.title }}</span>
                 </a>
