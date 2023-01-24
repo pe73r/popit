@@ -189,13 +189,20 @@
               "featured_link_subtitle_1": "",
               "featured_link_title_1": ""
             }
+          },
+          "7b909d78-4aeb-4689-abdf-286ad0fb99a5": {
+            "type": "mobile_bottom",
+            "settings": {
+              "menu": "menu-mobile-bottom"
+            }
           }
         },
         "block_order": [
           "9361598a-ff81-4f8d-a8a3-71f39892e985",
           "821b51b7-27dd-4a1b-9036-4f3a51fe987f",
           "a2ec93b6-297a-4fc2-bb68-f6b5357f8d38",
-          "bd163990-46e5-4973-9add-25befdce7734"
+          "bd163990-46e5-4973-9add-25befdce7734",
+          "7b909d78-4aeb-4689-abdf-286ad0fb99a5"
         ],
         "settings": {
           "menu_desktop": "main-menu",
