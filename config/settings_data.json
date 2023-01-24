@@ -173,7 +173,7 @@
             "type": "mobile_tabs",
             "settings": {
               "title": "PRODUITS",
-              "menu": "main-menu",
+              "menu": "menu-pack-mobile",
               "featured_link_1": "",
               "featured_link_subtitle_1": "",
               "featured_link_title_1": ""
