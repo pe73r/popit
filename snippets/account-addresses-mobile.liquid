@@ -13,7 +13,7 @@
         </div>
 
 
-        <div id="EditAddress_{{ address.id }}" class="mb-10 p-5 bg-white rounded-lg address shadow-lg" style="display:none;">
+        <div id="EditAddress_{{ address.id }}" class="mb-10 p-5 bg-white rounded-lg addressMobile shadow-lg" style="display:none;">
           {%- form 'customer_address', address -%}
 
             <div class="flex flex-col md:flex-row md:mb-2">
@@ -156,7 +156,7 @@
     {%- endfor -%}
 
 
-    <button id="toggleBtn" class="mx-auto {% render "button", size:"extralarge", color:"green", variation: "outlined"  %}">
+    <button id="toggleBtnMobile" class="mx-auto {% render "button", size:"extralarge", color:"green", variation: "outlined"  %}">
           Modifier l'adresse
       </button>
   </ul>
@@ -167,15 +167,15 @@
     typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
   }
  
-    const toggleBtn = document.querySelector("#toggleBtn");
-    const content = document.querySelector(".address");
+    const toggleBtnMobile = document.querySelector("#toggleBtnMobile");
+    const contentMobile = document.querySelector(".addressMobile");
       
-          toggleBtn.addEventListener("click", function() {
+          toggleBtnMobile.addEventListener("click", function() {
             if (content.style.display === "none") {
-              content.style.display = "block";
-              content.classList.remove('hidden');
+              contentMobile.style.display = "block";
+              contentMobile.classList.remove('hidden');
             } else {
-              content.style.display = "none";
+              contentMobile.style.display = "none";
               
             }
           });
