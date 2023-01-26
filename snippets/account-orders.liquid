@@ -1,71 +1,63 @@
-
-<script src="{{ 'customer.js' | asset_url }}" defer></script>
-
 <div class="w-full">
   <h3 class="text-green">Mes commandes</h3>
       <div class="">
         {% paginate customer.orders by 20 %}
           {%- if customer.orders.size > 0 -%}
-            <accordion-group data-orders>
+            <div class="bg-gray-100 rounded-lg mt-6 mb-8"> 
+              <div class="px-5 pt-5 md:px-10">     
+                <table class="w-full border-b border-gray-200">
+                      <thead>
+                          <tr class="">
+                            <th class="py-4 text-left w-3/5 md:w-2/5" width="40">   
+                             <p class="text-gray-600 text-base font-bold text-left">Commande n°</p>
+                            </th>
+                            <th class="py-4 text-center w-1/5" width="20">
+                            <p class="text-gray-600 text-base font-bold text-center">Date</p>
+                            </th>
+                            <th class="py-4 text-center w-1/5 hidden md:table-cell" width="20">
+                            <p class="text-gray-600 text-base font-bold text-center">Total</p>
+                            </th>
+                            <th class="py-4 text-right w-1/5" width="20">
+                              <p class="text-gray-600 text-base font-bold text-center"></p>
+                            </th>
+                          </tr>
+                        </thead>
+                  </table>
+                </div>    
+             <accordion-group data-orders class="accordion-orders">
               {%- for order in customer.orders limit:{{ orders_limit }}-%}
-                <accordion-element class="bg-white rounded-lg mb-6" {% if forloop.first %}data-open="true"{% endif %}>
+                <accordion-element class="">
                   <accordion-trigger class="group">
-                    <accordion-header class="flex flex-col justify-between px-3 pt-5 md:pt-8 md:p-8">
-                      <div class="w-full flex">
-                        <div class="flex flex-col md:flex-row md:gap-5 md:items-center mb-2 md:mb-0">
-                          <p class="text-lg font-semibold">{{ 'customer.orders.order_number' | t: number: order.name }}</p>
-                          {% liquid
-                            if order.fulfillment_status == "complete"
-                              assign bg = 'bg-sable'
-                              assign text = "customer.orders.complete" | t
-                            elsif order.fulfillment_status = "unfulfilled"
-                              assign bg = 'bg-sable'
-                              assign text = "customer.orders.unfulfilled" | t
-                            elsif order.fulfillment_status == "partial"
-                              assign bg = 'bg-sable'
-                              assign text = "customer.orders.partial_fulfilled" | t
-                            elsif order.fulfillment_status = "fulfilled"
-                              assign bg = 'bg-lime-100'
-                              assign text = "customer.orders.fulfilled" | t
-                            elsif order.financial_status == "refunded" or order.financial_status == "voided"
-                              assign bg = 'bg-red-100'
-                              assign text = "customer.orders.cancelled" | t
-                            else
-                              assign bg = 'bg-sable'
-                              assign text = "customer.orders.over" | t
-                            endif
-                          %}
-                          <div class="px-3 py-1 w-fit text-xs {{ bg }} font-bold uppercase">
-                            {{ text }}
-                          </div>
-                        </div>
-                        <accordion-icon class="ml-auto group-expanded:rotate-180 transition-all origin-center h-[fit-content]">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="10" viewBox="0 0 21 13" fill="none">
-                            <path d="M1 1L10.5 11L20 1" stroke="#343434" stroke-width="1.5"/>
-                          </svg>
-                        </accordion-icon>
-                      </div>
-                      <div class="w-full mt-2 flex flex-row items-center pb-2 gap-5 uppercase md:w-3/5">
-                        {% assign date = order.created_at | date: "%d/%m/%y" %}
-                        <p class="text-xs">{{ 'customer.orders.created_at' | t: date: date }}</p>
-                        {% assign total = order.total_price | money %}
-                        <p class="text-xs uppercase">{{ 'customer.orders.total_price' | t: money: total }}</p>
-                      </div>
-                      {% comment %} <div class="pt-6 hidden md:flex flex-row gap-8">
-                        <a href="{{ order.order_status_url }}" class="underline text-sm">
-                          {{ 'customer.orders.tracking' | t }}
-                        </a>
-                        <a href="https://lequipe-jolly-mama.gorgias.help/fr-FR" class="underline text-sm">
-                          {{ 'customer.orders.help' | t }}
-                        </a>
-                      </div> {% endcomment %}
+                    <accordion-header class="py-5 px-5 md:px-10">   
+                      <table class="w-full">
+                        <thead>
+                          <tr class="">
+                            <th class="py-4 text-left w-3/5 md:w-2/5" width="40">   
+                            <p class="text-sm text-left">{{ order.name }}</p>
+                            </th>
+                            <th class="py-4 text-center w-1/5" width="20">
+                            {% assign date = order.created_at | date: "%d/%m/%y" %}
+                             <p class="text-sm text-center">{{ date }}</p>
+                            </th>
+                            <th class="py-4 text-center w-1/5 hidden md:table-cell" width="20">
+                            {% assign total = order.total_price | money %}
+                              <p class="text-sm text-center">{{ total }}</p>
+                            </th>
+                            <th class="py-4 text-right w-1/5" width="20">
+                              <accordion-icon class="ml-auto transition-all origin-center h-[fit-content]">
+                                <span class="block underline text-sm">Voir</span>
+                              </accordion-icon>
+                            </th>
+                          </tr>
+                        </thead>
+                      </table>
                     </accordion-header>
                   </accordion-trigger>
                   <accordion-content>
-                    <div class="px-3 pb-5 md:px-8 md:pb-8 pt-13">
+                    <div class="px-5 md:px-10 pb-5">
                       <table class="w-full">
                         <thead>
-                          <tr class="uppercase font-bold text-sm  opacity-50">
+                          <tr class="font-bold text-sm text-gray-600">
                             <th class="py-4 text-left w-3/5 md:w-2/5" width="40">{{ 'customer.orders.head_products' | t }}</th>
                             <th class="py-4 text-center w-1/5" width="20">
                               <span class="hidden md:block">{{ 'customer.orders.head_quantity' | t }}</span>
@@ -172,6 +164,7 @@
                 </accordion-element>
               {%- endfor -%}
             </accordion-group> 
+            </div>
           {%- else -%}
             <div class="text-center py-10 bg-white rounded-lg">
               <p class="text-base">{{ 'customer.orders.none' | t }}</p>
@@ -184,3 +177,9 @@
         {% endpaginate %}
     </div>
 </div>
+
+<style>
+  .accordion-orders accordion-element[data-open = true] {
+    background-color: #FAFAFA;
+  }
+</style>

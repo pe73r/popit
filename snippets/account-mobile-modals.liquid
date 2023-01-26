@@ -1,161 +1,49 @@
 <!-- modal informations personnelles -->
-<tail-modal fit-page="true">
-    <modal-overlay>
-        <modal-content class="rounded-none min-h-fit !h-[auto] group-entering:-translate-x-full group-in:translate-x-0 group-exiting:-translate-x-full">
-            <modal-header class="justify-start items-center p-3 border-none">
-                <modal-close>
-                   <div class="flex">
-                     {% render 'icon-arrow-modal' %}
-                     <p class="text-xs ml-2">Mon compte / Informations personnelles</p>
-                   </div> 
-                </modal-close>
-            </modal-header>
-            <div class="text-center">
-              <h3 class="text-5xl mt-2 mb-5 leading-5">Informations personnelles</h3>
-            </div>
-            <div class="w-11/12 m-auto mt-10">
-              {% render 'account-addresses', customer:customer %}
-            </div>
-        </modal-content>
-    </modal-overlay>
-    <modal-trigger class="w-full flex items-center py-5 border-b border-gray-light cursor-pointer">
-        {% render 'icon-account-order' %}
-        <span class="text-base block ml-2">Mes informations personnelles</span>
-    </modal-trigger>
+<tail-modal class="bg-white" fit-page="true">
+  <modal-overlay>
+    <modal-content class="rounded-none group-entering:-translate-x-full group-in:translate-x-0 group-exiting:-translate-x-full">
+      <modal-header class="justify-start items-center p-3 border-none">
+        <modal-close>
+          {% render 'icon-arrow-modal' %}
+        </modal-close>
+      </modal-header>
+      <div class="text-center">
+        <h3 class="text-xl mt-2 mb-5 text-green">Informations personnelles</h3>
+      </div>
+      <div class="w-11/12 m-auto mt-10">
+        {% render 'account-addresses-mobile', customer: customer %}
+      </div>
+    </modal-content>
+  </modal-overlay>
+  <modal-trigger class="w-full flex items-center py-5 border-b bg-white cursor-pointer shadow-lg rounded-lg mb-3">
+    <span class="text-base block ml-2">Mes informations personnelles</span>
+  </modal-trigger>
 </tail-modal>
 
 <!-- modal orders -->
-<tail-modal fit-page="true">
-    <modal-overlay>
-        <modal-content class="rounded-none min-h-fit group-entering:-translate-x-full group-in:translate-x-0 group-exiting:-translate-x-full">
-            <modal-header class="justify-start items-center p-3 border-none">
-                <modal-close>
-                   <div class="flex">
-                     {% render 'icon-arrow-modal' %}
-                     <p class="text-xs ml-2">Mon compte / Mes commandes</p>
-                   </div> 
-                </modal-close>
-            </modal-header>
-            <div class="text-center">
-              <h3 class="text-5xl mt-2 mb-5 leading-5">Mes commandes</h3>
-            </div>
-            <div class="w-11/12 m-auto mt-10">
-              {% render 'account-orders', customer:customer %}
-            </div>
-        </modal-content>
-    </modal-overlay>
-    <modal-trigger class="w-full flex items-center py-5 border-b border-gray-light cursor-pointer">
-        {% render 'icon-account-leaf' %}
-        <span class="text-base block ml-2">Mes commandes</span>
-    </modal-trigger>
-</tail-modal>
-
-<!-- modal mon profil belle boucle -->
-<tail-modal fit-page="true">
+<tail-modal class="bg-white" fit-page="true">
   <modal-overlay>
-      <modal-content class="rounded-none min-h-fit group-entering:-translate-x-full group-in:translate-x-0 group-exiting:-translate-x-full">
-          <modal-header class="justify-start items-center p-3 border-none">
-              <modal-close>
-                 <div class="flex">
-                   {% render 'icon-arrow-modal' %}
-                   <p class="text-xs ml-2">Mon compte / Mon profil Belle Boucle</p>
-                 </div> 
-              </modal-close>
-          </modal-header>
-          <div class="text-center">
-            <h3 class="text-5xl mt-2 mb-5 leading-5">Mon profil Belle Boucle</h3>
-          </div>
-          <div class="w-11/12 m-auto mt-10">
-             <!-- content for mon profil Belle Boucle -->
-          </div>
-      </modal-content>
+    <modal-content class="rounded-none min-h-fit group-entering:-translate-x-full group-in:translate-x-0 group-exiting:-translate-x-full">
+      <modal-header class="justify-start items-center p-3 border-none">
+        <modal-close>
+          {% render 'icon-arrow-modal' %}
+        </modal-close>
+      </modal-header>
+      <div class="text-center">
+        <h3 class="text-xl mt-2 mb-5 text-green">Mes commandes</h3>
+      </div>
+      <div class="w-11/12 m-auto mt-10">
+        {% render 'account-orders', customer: customer %}
+      </div>
+    </modal-content>
   </modal-overlay>
-  <modal-trigger class="w-full flex items-center py-5 border-b border-gray-light cursor-pointer">
-      {% render 'icon-account-pineapple' %}
-      <span class="text-base block ml-2">Mon profil belle boucle</span>
+  <modal-trigger class="w-full flex items-center py-5 border-b bg-white cursor-pointer shadow-lg rounded-lg mb-3">
+    <span class="text-base block ml-2">Mes commandes</span>
   </modal-trigger>
 </tail-modal>
 
-<!-- modal Fidéliboucles -->
-<tail-modal fit-page="true">
-  <modal-overlay>
-      <modal-content class="rounded-none min-h-fit group-entering:-translate-x-full group-in:translate-x-0 group-exiting:-translate-x-full">
-          <modal-header class="justify-start items-center p-3 border-none">
-              <modal-close>
-                 <div class="flex">
-                   {% render 'icon-arrow-modal' %}
-                   <p class="text-xs ml-2">Mon compte / Fidéliboucles</p>
-                 </div> 
-              </modal-close>
-          </modal-header>
-          <div class="text-center">
-            <h3 class="text-5xl mt-2 mb-5 leading-5">Fidéliboucles</h3>
-          </div>
-          <div class="w-11/12 m-auto mt-10">
-             <!-- content for fidéliboucles -->
-          </div>
-      </modal-content>
-  </modal-overlay>
-  <modal-trigger class="w-full flex items-center py-5 border-b border-gray-light cursor-pointer">
-      {% render 'icon-account-pineapple' %}
-      <span class="text-base block ml-2">Fidéliboucles</span>
-  </modal-trigger>
-</tail-modal>
-
-<!-- modal Fidéliboucles -->
-<tail-modal fit-page="true">
-  <modal-overlay>
-      <modal-content class="rounded-none min-h-fit group-entering:-translate-x-full group-in:translate-x-0 group-exiting:-translate-x-full">
-          <modal-header class="justify-start items-center p-3 border-none">
-              <modal-close>
-                 <div class="flex">
-                   {% render 'icon-arrow-modal' %}
-                   <p class="text-xs ml-2">Mon compte / Parrainage</p>
-                 </div> 
-              </modal-close>
-          </modal-header>
-          <div class="text-center">
-            <h3 class="text-5xl mt-2 mb-5 leading-5">Parrainage</h3>
-          </div>
-          <div class="w-11/12 m-auto mt-10">
-            {% render 'account-sponsor' %}
-          </div>
-      </modal-content>
-  </modal-overlay>
-  <modal-trigger class="w-full flex items-center py-5 border-b border-gray-light cursor-pointer">
-      {% render 'icon-account-pineapple' %}
-      <span class="text-base block ml-2">Parrainage</span>
-  </modal-trigger>
-</tail-modal>
-
-<!-- modal Avis - Questions & Réponses -->
-<tail-modal fit-page="true">
-  <modal-overlay>
-      <modal-content class="rounded-none min-h-fit group-entering:-translate-x-full group-in:translate-x-0 group-exiting:-translate-x-full">
-          <modal-header class="justify-start items-center p-3 border-none">
-              <modal-close>
-                 <div class="flex">
-                   {% render 'icon-arrow-modal' %}
-                   <p class="text-xs ml-2">Mon compte / Avis - Questions & Réponses</p>
-                 </div> 
-              </modal-close>
-          </modal-header>
-          <div class="text-center">
-            <h3 class="text-5xl mt-2 mb-5 leading-5">Avis - Questions & Réponses</h3>
-          </div>
-          <div class="w-11/12 m-auto mt-10">
-            <!-- content for Avis - Questions & Réponses -->
-          </div>
-      </modal-content>
-  </modal-overlay>
-  <modal-trigger class="w-full flex items-center py-5 border-b border-gray-light cursor-pointer">
-      {% render 'icon-account-questions' %}
-      <span class="text-base block ml-2">Avis - Questions & Réponses</span>
-  </modal-trigger>
-</tail-modal>
 
 <!-- Logout -->
-<a href="{{ routes.account_logout_url }}" class="w-full flex items-center py-5 cursor-pointer">
-  {% render 'icon-account-leaf' %}
+<a href="{{ routes.account_logout_url }}" class="w-full flex items-center py-5 cursor-pointer bg-white shadow-lg rounded-lg mb-3">
   <span class="text-base block ml-2">Déconnexion</span>
 </a>
