@@ -6,7 +6,7 @@
         "related_products": true,
         "show_time": true,
         "show_date": true,
-        "show_content": true,
+        "show_content": false,
         "show_share": true
       }
     },
