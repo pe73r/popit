@@ -1,58 +1,96 @@
-
 <script src="{{ 'customer.js' | asset_url }}" defer></script>
 
-  <div data-customer-addresses>
-    <ul role="list">
-      {%- for address in customer.addresses limit:1 -%}
-        <li data-address>
-          <h3 class="text-base font-extrabold">Mon adresse</h3>
-          
-          <div class="text-base mt-3 mb-5">
+<div data-customer-addresses>
+  <h3 class="text-green">Carnet d’adresses</h3>
+  <ul role="list">
+    {%- for address in customer.addresses limit: 1 -%}
+      <li data-address>
+        <div class="mb-5 p-5 bg-white rounded-lg">
+          <p class="text-sm font-bold mb-4">Informations de contact</p>
+          <div class="text-sm font-normal">
             {{ address | format_address }}
           </div>
-                    
-          <div id="EditAddress_{{ address.id }}">
-            <h3 class="text-base font-extrabold">Modifier l'address</h3>
-            {%- form 'customer_address', address -%}
+        </div>
 
-             <div class="flex flex-col md:flex-row md:mb-2"> 
-                <div class="w-full md:w-1/2">
-                  <label for="AddressFirstName_{{ form.id }}" class="text-xs">Prénom</label>
-                  <input type="text" id="AddressFirstName_{{ form.id }}" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="Prénom"
-                    class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full">  
-                </div>
-                <div class="w-full md:w-1/2 md:ml-5">
-                  <label for="AddressLastName_{{ form.id }}" class="text-xs">Nom</label>
-                  <input type="text" id="AddressLastName_{{ form.id }}" name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name" placeholder="Nom"
-                    class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full">  
-                </div>
-             </div>
-             <div class="flex flex-col md:flex-row md:mb-2">
-                <div class="w-full md:w-1/2">
-                  <label for="AddressAddress1_{{ form.id }}" class="text-xs">Adresse 1</label>
-                  <input type="text" id="AddressAddress1_{{ form.id }}" name="address[address1]" value="{{ form.address1 }}" autocomplete="address-line1" placeholder="Adresse 1"
-                    class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full">  
-                </div>
+        <div id="EditAddress_{{ address.id }}" class="mb-10 p-5 bg-white rounded-lg">
+          <p class="text-sm font-light mb-4">MODIFIER L'ADDRESS</p>
+          {%- form 'customer_address', address -%}
 
-                <div class="w-full md:w-1/2 md:ml-5">
-                  <label for="AddressAddress2_{{ form.id }}" class="text-xs">Complément d’adresse (facultatif)</label>
-                  <input type="text" id="AddressAddress2_{{ form.id }}" name="address[address2]" value="{{ form.address2 }}" autocomplete="address-line2" placeholder="Adresse 2"
-                    class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full">  
-                </div>
-             </div>
-             <div class="flex flex-col md:flex-row md:mb-2">
-                <div class="w-full md:w-1/2">
-                  <label for="AddressZip_{{ form.id }}" class="text-xs">Code postal</label>
-                  <input type="text" id="AddressZip_{{ form.id }}" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code" placeholder="Code postal"
-                    class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full">  
-                </div>
-                <div class="w-full md:w-1/2 md:ml-5">
-                  <label for="AddressCity_{{ form.id }}" class="text-xs">Ville</label>
-                  <input type="text" id="AddressCity_{{ form.id }}" name="address[city]" value="{{ form.city }}" autocomplete="address-level2" placeholder="Ville"
-                    class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full">  
-                </div>  
-             </div> 
-             <div class="flex flex-col md:flex-row md:mb-5">
+            <div class="flex flex-col md:flex-row md:mb-2">
+              <div class="w-full md:w-1/2">
+                <label for="AddressFirstName_{{ form.id }}" class="text-xs font-normal">Prénom</label>
+                <input
+                  type="text"
+                  id="AddressFirstName_{{ form.id }}"
+                  name="address[first_name]"
+                  value="{{ form.first_name }}"
+                  autocomplete="given-name"
+                  placeholder="Prénom"
+                  class="border-b border-black border-solid text-sm placeholder-black placeholder-opacity-20 pr-4 py-1 leading-[22px] w-full bg-transparent font-bold">
+              </div>
+              <div class="w-full md:w-1/2 md:ml-5">
+                <label for="AddressLastName_{{ form.id }}" class="text-xs font-normal">Nom</label>
+                <input
+                  type="text"
+                  id="AddressLastName_{{ form.id }}"
+                  name="address[last_name]"
+                  value="{{ form.last_name }}"
+                  autocomplete="family-name"
+                  placeholder="Nom"
+                  class="border-b border-black border-solid text-sm placeholder-black placeholder-opacity-20 pr-4 py-1 leading-[22px] w-full bg-transparent font-bold">
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:mb-2">
+              <div class="w-full bg-transparent font-bold md:w-1/2">
+                <label for="AddressAddress1_{{ form.id }}" class="text-xs font-normal">Adresse 1</label>
+                <input
+                  type="text"
+                  id="AddressAddress1_{{ form.id }}"
+                  name="address[address1]"
+                  value="{{ form.address1 }}"
+                  autocomplete="address-line1"
+                  placeholder="Adresse 1"
+                  class="border-b border-black border-solid text-sm placeholder-black placeholder-opacity-20 pr-4 py-1 leading-[22px] w-full bg-transparent font-bold">
+              </div>
+
+              <div class="w-full bg-transparent font-bold md:w-1/2 md:ml-5">
+                <label for="AddressAddress2_{{ form.id }}" class="text-xs font-normal">Complément d’adresse (facultatif)</label>
+                <input
+                  type="text"
+                  id="AddressAddress2_{{ form.id }}"
+                  name="address[address2]"
+                  value="{{ form.address2 }}"
+                  autocomplete="address-line2"
+                  placeholder="Adresse 2"
+                  class="border-b border-black border-solid text-sm placeholder-black placeholder-opacity-20 pr-4 py-1 leading-[22px] w-full bg-transparent font-bold">
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:mb-2">
+              <div class="w-full bg-transparent font-bold md:w-1/2">
+                <label for="AddressZip_{{ form.id }}" class="text-xs font-normal">Code postal</label>
+                <input
+                  type="text"
+                  id="AddressZip_{{ form.id }}"
+                  name="address[zip]"
+                  value="{{ form.zip }}"
+                  autocapitalize="characters"
+                  autocomplete="postal-code"
+                  placeholder="Code postal"
+                  class="border-b border-black border-solid text-sm placeholder-black placeholder-opacity-20 pr-4 py-1 leading-[22px] w-full bg-transparent font-bold">
+              </div>
+              <div class="w-full bg-transparent font-bold md:w-1/2 md:ml-5">
+                <label for="AddressCity_{{ form.id }}" class="text-xs font-normal">Ville</label>
+                <input
+                  type="text"
+                  id="AddressCity_{{ form.id }}"
+                  name="address[city]"
+                  value="{{ form.city }}"
+                  autocomplete="address-level2"
+                  placeholder="Ville"
+                  class="border-b border-black border-solid text-sm placeholder-black placeholder-opacity-20 pr-4 py-1 leading-[22px] w-full bg-transparent font-bold">
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:mb-5">
               <div class="w-full md:w-1/2 h-max">
                 <label for="AddressCountry_{{ form.id }}" class="text-xs">
                   Pays
@@ -65,48 +103,53 @@
                     data-default="{{ form.country }}"
                     data-form-id="{{ form.id }}"
                     autocomplete="country"
-                    class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full">  
+                    class="border-b border-black border-solid text-sm placeholder-black placeholder-opacity-20 pr-4 py-1 leading-[22px] w-full bg-transparent font-bold">
                     {{ all_country_option_tags }}
                   </select>
-                </div>  
-              </div> 
+                </div>
+              </div>
               <div class="w-full md:w-1/2 md:ml-5">
                 <label for="AddressPhone_{{ form.id }}" class="text-xs">Téléphone</label>
-                <input type="tel" id="AddressPhone_{{ form.id }}"  name="address[phone]" value="{{ form.phone }}" autocomplete="tel" placeholder="Téléphone"
-                  class="border-b border-acajou border-solid text-[17px] placeholder-chataigne placeholder-opacity-60 pr-4 py-1 leading-[22px] font-semibold w-full">  
+                <input
+                  type="tel"
+                  id="AddressPhone_{{ form.id }}"
+                  name="address[phone]"
+                  value="{{ form.phone }}"
+                  autocomplete="tel"
+                  placeholder="Téléphone"
+                  class="border-b border-black border-solid text-sm placeholder-black placeholder-opacity-20 pr-4 py-1 leading-[22px] w-full bg-transparent font-bold">
               </div>
-            </div>     
-                 
-             {% comment %}
-                <div class="">
-                  {{ form.set_as_default_checkbox }}
-                  <label for="address_default_address_{{ form.id }}" class="text-xs">
-                    Définir comme adresse par défaut
-                  </label>
-                </div>
+            </div>
+
+            {% comment %}
+              <div class="">
+              {{ form.set_as_default_checkbox }}
+              <label for="address_default_address_{{ form.id }}" class="text-xs">
+              Définir comme adresse par défaut
+              </label>
+              </div>
+            {% endcomment %}
+
+            <div class="flex col-flex md:flex-row justify-end mt-8">
+              <div class="md:w-1/2"></div>
+              <!-- update button-->
+              <button class="btn-primary md:ml-5 w-full md:w-1/2 {% render "button", size:"small", color:"sauge", fullWidth: true  %}">
+                Enregistrer
+              </button>
+
+              {% comment %}
+                <!-- delete button-->
+                <button
+                type="button"
+                class="{% render "button", size:"small", color:"sauge", variation:"outlined", fullWidth: false  %}"
+                aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
+                data-target="{{ address.url }}"
+                data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+                >
+                SUPPRIMER L'ADRESSE
+                </button>
               {% endcomment %}
-             
-             <div class="flex col-flex md:flex-row justify-end mt-8">
-                 <div class="md:w-1/2">
-                 </div>
-                 <!-- update button-->
-                 <button class="md:ml-5 w-full md:w-1/2 {% render "button", size:"small", color:"sauge", fullWidth: true  %}">
-                    Enregistrer
-                 </button>
-                  
-                {% comment %}
-                  <!-- delete button-->
-                  <button
-                      type="button"
-                      class="{% render "button", size:"small", color:"sauge", variation:"outlined", fullWidth: false  %}"
-                      aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
-                      data-target="{{ address.url }}"
-                      data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
-                    >
-                      SUPPRIMER L'ADRESSE
-                  </button>
-                {% endcomment %}
-            </div>      
+            </div>
           {%- endform -%}
         </div>
       </li>
