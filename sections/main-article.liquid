@@ -1,523 +1,113 @@
-<!-- image banner with breadcrumbs -->
-<div class="relative">
-  {% render 'article_image-banner', image: article.image %}
-  <div class="absolute left-5 md:left-10 top-5 text-white">
-    {% render 'breadcrumbs' %}
-  </div>
-</div>
-<div class="md:w-11/12 max-w-screen-xl mt-10 mb-5 mx-auto relative">
-  <div class="flex flex-col-reverse md:flex-row gap-5 md:gap-10 relative">
-     <!-- article side-blocks -->
-
-     <div class="hidden flex-col w-3/12 max-w-[234px] gap-5 mt-20 pb-20 {% if article.metafields.custom.left_side_title_bloc_1 != blank or article.metafields.custom.left_side_title_bloc_2 != blank %} md:flex {% else %} md:hidden {% endif %}">
-
-     {%- assign side_boxes = 0 -%}
-      {% for block in section.blocks %}
-        {%- if block.type == "side_box" -%}
-
-          {%- assign side_boxes = side_boxes | plus: 1 -%}
-
-          {% assign side_box_title = 'left_side_title_bloc_' | append: side_boxes %}
-          {% assign metafield_side_box_title = article.metafields.custom[side_box_title] %}
-
-          {% assign side_box_text = 'left_side_bloc_' | append: side_boxes %}
-          {% assign metafield_side_box_text = article.metafields.custom[side_box_text] %}
-            {% if metafield_side_box_title != blank or metafield_side_box_text != blank %}
-              <div class=" {%- if block.settings.radius == "Top" -%} rounded-t-[94.5px]
-                  {%- elsif block.settings.radius == "Full" -%} rounded-[50px]
-                  {%- elsif block.settings.radius == "Bottom" -%} rounded-br-[70px]
-                  {%- elsif block.settings.radius == "None" -%} rounded-none {%- endif -%}" style="background-color: {{ block.settings.background_color }}">
-                <div class=" flex flex-col  justify-center gap-3 p-8 lg:p-8 overflow-hidden">
-                  <p class="font-[GroteskBold] font-extrabold text-base" style="color:{{ block.settings.title_color }}">
-                     {{ metafield_side_box_title }}
-                  </p>
-
-                  <div class="text-[15px]" style="color:{{ block.settings.text_color }}">
-                      {{ metafield_side_box_text }}
-                  </div>
-                </div>
-              </div>
-           {% endif %}
-        {% endif %}
-      {% endfor %}
+<section>
+  <div class="w-11/12 max-w-screen-xl mt-10 mb-5 mx-auto relative">
+    <div class="text-[#6E6E73] mb-5 text-center md:text-left">
+      {% render 'breadcrumbs' %}
     </div>
-
-    <!-- article side-blocks mobile -->
-    {%- assign side_boxes_mobile = 0 -%}
-    <div class="md:hidden Grotesque">
+    <div class="{%- if section.settings.related_products == true -%} md:w-10/12 {% else %} md:w-full {% endif %}">
+      {% render 'article_image-banner', image: article.image %}
       <div>
-        <div class="scrollbar flex relative overflow-hidden overflow-x-scroll snap-mandatory gap-4 snap-x xl:overflow-x-hidden scroller ">
-          {% for block in section.blocks %}
-            {%- if block.type == "side_box" -%}
-              {%- assign side_boxes_mobile = side_boxes_mobile | plus: 1 -%}
-
-              {% assign side_box_title_mobile = 'left_side_title_bloc_' | append: side_boxes_mobile %}
-              {% assign metafield_side_box_title_mobile = article.metafields.custom[side_box_title_mobile] %}
-
-              {% assign side_box_text_mobile = 'left_side_bloc_' | append: side_boxes_mobile %}
-              {% assign metafield_side_box_text_mobile = article.metafields.custom[side_box_text_mobile] %}
-
-              {% if metafield_side_box_title_mobile != blank or metafield_side_box_text_mobile != blank %}
-                  <div class="rounded-t-[100px]  flex flex-col items-center justify-center mx-1 min-w-[232px] min-h-[250px] snap-center" style="background-color: {{ block.settings.background_color }}">
-                    <div class=" flex flex-col justify-evenly h-full mt-10 px-2 text-center pb-3">
-                      <p class="font-[GroteskBold] text-bold text-base" style="color:{{ block.settings.title_color }}">
-                          {{ metafield_side_box_title_mobile }}
-                      </p>
-
-
-                      <div class="text-bold text-[14px]" style="color:{{ block.settings.text_color }}">
-                        {%- if metafield_side_box_text_mobile != blank -%}
-                          {{ metafield_side_box_text_mobile }}
-                        {%- else -%}
-                          {{ block.settings.block-text }}
-                        {%- endif -%}
-                      </div>
-                    </div>
-                  </div>
-                {% endif %}
-             {% endif %}
-          {% endfor %}
-        </div>
+        {% for tag in article.tags %}
+          <div class="my-3 md:hidden">
+            {% render 'article-tags', tag: tag %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="mb-3">
+        {%- if section.settings.show_time == true -%}
+          <span class="reading-time text-[#6E6E73] font-thin text-xs md:text-sm" title="Estimated read time">
+            {% assign words = article.content | strip_html | split: ' ' | size %}
+            {{ words | divided_by: 180 | plus: 4 }} minutes
+          </span>
+        {%- endif -%}
+        <h2 class="text-base font-thin md:text-2xl">
+          {{ article.title }}
+        </h2>
+        {%- if section.settings.show_date == true -%}
+          <p class="text-xs text-[#6E6E73] md:text-sm font-thin">
+            {{ article.published_at | date: "%d.%b %C" }}
+          </p>
+        {%- endif -%}
+      </div>
+      <div class="text-base mb-8 md:text-lg md:mb-12">
+        {{ article.content }}
       </div>
     </div>
-    <!-- article content -->
-    <div class="Subtitle w-11/12 max-w-[900px] mx-auto {% if article.metafields.custom.left_side_title_bloc_1 != blank or article.metafields.custom.left_side_title_bloc_2 != blank %} md:w-9/12{% else %} md:w-full {% endif %}">
-      {%- if section.settings.show_date -%}
-        <p class="mb-4 text-[13px]">
-          <span>{{ article.published_at | time_tag: '%d %b. %Y' }}
-          </span>
-        </p>
-      {%- endif -%}
-
-      {%- if section.settings.show_author -%}
-        <span class="block mt-2.5 text-xs uppercase">{{ article.author }}
-        </span>
-      {%- endif -%}
-
-      <h1 class="text-[32px] leading-[33px] md:text-[40px] md:leading-[48px] Grotesque mt-1 mb-2">{{ article.title }}</h1>
-
-      {% if section.settings.show_content %}
-        <div class="text-[21px] leading-[26px] md:text-[24px] md:leading-[30px] mt-2.5 md:mt-5 article_content">
-          {{ article.content | replace: 'h3', 'h2' }}
+    <div class="flex gap-4">
+      <div class="flex flex-col w-full gap-8 md:gap-12 {%- if section.settings.related_products == true -%} md:w-9/12 {% else %} md:w-full {% endif %}">
+        <div class="flex flex-col gap-5">
+          <h3 class="text-base md:text-xl font-bold">
+            {{ article.metafields.custom.title_1.value }}
+          </h3>
+          {% render "image" image: article.metafields.custom.image_bloc_1.value, class: "max-h-[260px] object-cover w-full" %}
+          <div class="text-base font-thin md:text-lg">
+            {{ article.metafields.custom.text_bloc_1.value }}
+          </div>
         </div>
-      {% endif %}
-
-      {%- if article.metafields.custom.subtitle != blank -%}
-        <div class="mt-4 text-base Grotesque font-semibold">
-          {{ article.metafields.custom.subtitle }}
+        <div class="flex flex-col gap-5">
+          <h3 class="text-base md:text-xl font-bold">
+            {{ article.metafields.custom.title_2.value }}
+          </h3>
+          <div class="w-full">
+            {% render "image" image: article.metafields.custom.Image_bloc_2.value, class: "max-h-[260px] object-cover" %}
+          </div>
+          <div class="text-base font-thin md:text-lg">
+            {{ article.metafields.custom.text_bloc_2.value }}
+          </div>
+        </div>
+      </div>
+      {%- assign related_products = article.metafields.custom.related_products.value -%}
+      {%- assign related_product_text = article.metafields.custom.related_product_text -%}
+      {%- if section.settings.related_products == true -%}
+        <div class="hidden md:mt-10 md:block w-3/12">
+          <div class="flex flex-col gap-16">
+            {% for related_product in related_products %}
+              {% render 'card-product'
+               product: product
+               , card_product: related_product
+               , show_secondary_image: true
+               , show_vendor: false
+               , show_quick_add: true
+               , show_cta: true %}
+            {% endfor %}
+          </div>
         </div>
       {%- endif -%}
-
-      {% assign rt_i = 1 %}
-      {% assign iwt_i = 1 %}
-      {% assign ib_i = 1 %}
-      {% assign sum_i = 1 %}
-      <!-- rt corresponding to Rich Text / iwt corresponding to Image With Text / ib corresponding to Image Banner -->
-
-      {% for block in section.blocks %}
-          {%- if block.type == 'summary' -%}
-            <div class="bg-sable border-acajou border rounded-md p-4 mt-6">
-              <p class="font-[GroteskBold] uppercase text-base mb-3 text-acajou">SOMMAIRE</p>
-              <ol>
-                {% for i in (1..09) %}
-                  {% assign summary_key = 'summary_' | append: sum_i %}
-                  {% assign metafieldsummary = article.metafields.custom[summary_key] %}
-
-                   {% if metafieldsummary != blank %}
-                     <li class="Grotesque text-base mb-2"><a href="#block-{{ sum_i }}">0{{ sum_i }}. {{ metafieldsummary }}</a></li>
-                   {% endif %}
-                    {% assign sum_i = sum_i | plus: 1 %}
-                {% endfor %}
-              </ol>
-            </div>
-
-          {%- elsif block.type == 'sources' -%}
-            {%- if article.metafields.custom.texte_bloc_sources != blank -%}
-                <accordion-group class="my-5">
-                    <accordion-element class="py-4 px-4 bg-acajou text-white rounded-lg">
-                          <accordion-trigger class="group">
-                            <accordion-header class="flex justify-between items-center">
-                                <div class="min-w[240px] mr-5">
-                                    <h2 class="text-sm md:text-base font-bold uppercase text-white">
-                                      NOS SOURCES
-                                    </h2>
-                                </div>
-                                <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
-                                    <span class="icon-plus">{% render 'icon-accordion-plus', white:true %}</span>
-                                    <span class="icon-minus hidden">{% render 'icon-accordion-minus', white:true %}</span>
-                                </accordion-icon>
-                            </accordion-header>
-                            </accordion-trigger>
-                            <accordion-content>
-                            <div class="text-base mt-4 text-white">
-                                {{ article.metafields.custom.texte_bloc_sources }}
-                            </div>
-                        </accordion-content>
-                  </accordion-element>
-              </accordion-group>
-          {%- endif -%}
-
-          {%- elsif block.type == 'richText' -%}
-            {%- liquid
-              comment
-                summary metafields
-              endcomment
-              assign titleKey_rt = 'summary_' | append: rt_i
-              assign metafieldPathTitle_rt = article.metafields.custom[titleKey_rt]
-
-              comment
-                text metafields
-              endcomment
-              assign paragraph1 = 'text_bloc_' | append: rt_i
-              assign metafieldParagraph_1 = article.metafields.custom[paragraph1]
-
-              assign paragraph2 = 'text_2_bloc_' | append: rt_i
-              assign metafieldParagraph_2 = article.metafields.custom[paragraph2]
-
-              assign paragraph3 = 'text_3_bloc_' | append: rt_i
-              assign metafieldParagraph_3 = article.metafields.custom[paragraph3]
-
-              assign paragraph_faq = 'text_faq_bloc_' | append: rt_i
-              assign metafield_paragraph_faq = article.metafields.custom[paragraph_faq]
-
-
-              comment
-                faq metafields
-              endcomment
-              assign question_faq = 'question_1_faq_bloc_' | append: rt_i
-              assign metafield_question_faq = article.metafields.custom[question_faq]
-
-              assign answer_faq = 'answer_1_faq_bloc_' | append: rt_i
-              assign metafield_answer_faq = article.metafields.custom[answer_faq]
-
-              assign question_2_faq = 'question_2_faq_bloc_' | append: rt_i
-              assign metafield_2_question_faq = article.metafields.custom[question_2_faq]
-
-              assign answer_2_faq = 'answer_2_faq_bloc_' | append: rt_i
-              assign metafield_2_answer_faq = article.metafields.custom[answer_2_faq]
-
-              assign question_3_faq = 'question_3_faq_bloc_' | append: rt_i
-              assign metafield_3_question_faq = article.metafields.custom[question_3_faq]
-
-              assign answer_3_faq = 'answer_3_faq_bloc_' | append: rt_i
-              assign metafield_3_answer_faq = article.metafields.custom[answer_3_faq]
-
-              assign question_4_faq = 'question_4_faq_bloc_' | append: rt_i
-              assign metafield_4_question_faq = article.metafields.custom[question_4_faq]
-
-              assign answer_4_faq = 'answer_4_faq_bloc_' | append: rt_i
-              assign metafield_4_answer_faq = article.metafields.custom[answer_4_faq]
-
-              assign question_5_faq = 'question_5_faq_bloc_' | append: rt_i
-              assign metafield_5_question_faq = article.metafields.custom[question_5_faq]
-
-              assign answer_5_faq = 'answer_5_faq_bloc_' | append: rt_i
-              assign metafield_5_answer_faq = article.metafields.custom[answer_5_faq]
-
-              comment
-                button metafields
-              endcomment
-              assign button = 'bouton_bloc_' | append: rt_i
-              assign metafield_button = article.metafields.custom[button]
-
-              assign rt_i = rt_i | plus: 1
-
-              comment
-                imagemetafields
-              endcomment
-              assign imageKeyDesktop_ib = 'image_bloc_' | append: ib_i
-              assign metafieldPathImageDesktop_ib = article.metafields.custom[imageKeyDesktop_ib]
-
-              assign imageKey_ib = 'image_mobile_bloc_' | append: ib_i
-              assign metafieldPathImageMobile_ib = article.metafields.custom[imageKey_ib]
-
-              assign ib_i = ib_i | plus: 1
-            -%}
-
-            {%- if metafieldParagraph_1 != blank or  metafieldParagraph_2 != blank or metafield_question_faq != blank or metafieldPathImageDesktop_ib != blank or metafieldPathImageMobile_ib != blank -%}
-              <div>
-                  <a class="anchor" id="block-{{ rt_i | minus: 1 }}"></a>
-                  <div class="max-w-6xl mt-8 mx-auto">
-                    <div class="text-{{ block.settings.textPosition }}">
-                      <h2 class="font-bold text-sm md:text-base uppercase mb-3">{{ metafieldPathTitle_rt }}</h2>
-                      <div class="text-base mt-2.5 md:mt-5 leading-[20px] article-text-block">
-                          {{ metafieldParagraph_1 }}
-                      </div>
-                      {%- if metafieldPathImageDesktop_ib != blank -%}
-                        <div class="my-5">
-                          <img class="lazy hidden md:block h-[320px] w-full object-cover" src="{{ metafieldPathImageDesktop_ib | img_url: 'master' }}" alt="{{ metafieldPathImageDesktop_ib.alt }}" loading="lazy">
-                        </div>
-                      {%- endif -%}
-                      {%- if metafieldPathImageMobile_ib != blank -%}
-                        <div class="my-5">
-                          <img class="lazy block md:hidden h-[320px] w-full object-cover" src="{{ metafieldPathImageMobile_ib | img_url: 'master' }}" alt="{{ metafieldPathImageMobile_ib.alt }}" loading="lazy">
-                        </div>
-                      {%- endif -%}
-                      <!-- multitext-2 -->
-                      <div class="my-3 text-base article-text-block">
-                        {{ metafieldParagraph_2 }}
-                      </div>
-                    </div>
-                  </div>
-
-
-                <!-- block faqs -->
-                {% if metafield_paragraph_faq != blank or metafield_question_faq != blank %}
-                  <div class="mt-8 bg-sable border-acajou border rounded-md px-4 {% if metafield_paragraph_faq != blank %} pt-4 {% else %} pt-0 {% endif %}">
-                    {% if metafield_paragraph_faq != blank %}
-                      <div class="my-2 text-sm">
-                        {{ metafield_paragraph_faq }}
-                      </div>
-                    {% endif %}
-
-                    {% render 'article-block-faqs',
-                      question_1: metafield_question_faq ,  answer_1: metafield_answer_faq ,
-                      question_2: metafield_2_question_faq , answer_2: metafield_2_answer_faq,
-                      question_3: metafield_3_question_faq , answer_3: metafield_3_answer_faq,
-                      question_4: metafield_4_question_faq , answer_4: metafield_4_answer_faq ,
-                      question_5: metafield_5_question_faq , answer_5: metafield_5_answer_faq
-                    %}
-                  </div>
-                {% endif %}
-
-                <!-- button to collection -->
-                {% if metafield_button != blank %}
-                  <div class="GrotesqueBold my-10 text-base text-white text-center max-w-[350px] mx-auto bg-acajou rounded-full py-2 px-10">
-                    <a href="{{ metafield_button }}">Découvrir nos produits</a>
-                  </div>
-                {% endif %}
-                <!-- multitext-3 -->
-                {% if metafieldParagraph_3 != blank %}
-                  <div class="my-3 text-base article-text-block">
-                    {{ metafieldParagraph_3 }}
-                  </div>
-                {% endif %}
-              </div>
-              <!-- close multiblock -->
-            {%- endif -%}
-          {% endif %}
-        {% endfor %}
     </div>
-  </div><!--close flex -->
-
-  {%- assign share_url = shop.url | append: article.url -%}
-
-      {% if section.settings.show_share %}
-        <div class="mt-10 flex justify-center gap-3 items-center">
-            <h3 class="uppercase text-[15px] mr-2">SHARE</h3>
-            <div class="w-[30px] h-[30px] roundex-full border border-acajou rounded-full flex justify-center items-center">
-            <a href="https://www.facebook.com/sharer.php?u={{ share_url }}" target="_blank">
-            {% render 'icon-facebook', fill:'acajou' %}
-            </a>
-            </div>
-            <div class="w-[30px] h-[30px] roundex-full border border-acajou rounded-full flex justify-center items-center">
-                {% render 'icon-mail' %}
-            </div>
-            <div class="w-[30px] h-[30px] roundex-full border border-acajou rounded-full flex justify-center items-center">
-              <a href="sms://?&body=https://jollymama.com{{ product.url }}{{ page.url }}{{ article.url }}">
-                {% render 'icon-sms' %}
-              </a>
-            </div>
-            <div class="w-[30px] h-[30px] roundex-full border border-acajou rounded-full flex justify-center items-center">
-             <a href="whatsapp://send?text=https://jollymama.com{{ product.url }}{{ page.url }}{{ article.url }}">
-              {% render 'icon-whatsapp' %}
-             </a>
-            </div>
-         </div>
-   {% endif %}
-</div>
-<style>
-
- h3{
-  font-size: 17px;
-  font-weight: 600;
-  font-family: RebondGrotesque;
-}
-  .scroller::-webkit-scrollbar {
-    display: none;
-  }
-
-  a.anchor {
-    display: block;
-    position: relative;
-    top: -250px;
-    visibility: hidden;
-  }
-
-  .article-text-block span{
-     font-size: 24px;
-     font-style: italic;
-     color:#733E2B;
-     margin: 10px 0;
-     display: block;
-     border-left: 2px solid #927254;
-     padding-left: 10px;
-  }
-
-  .article-text-block ul{
-    list-style: disc;
-    margin-left: 20px;
- }
-
-</style>
-
-
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org/",
-    "@type": "Article",
-    "about": "{{ page_description | escape }}",
-    "headline": "{{ article.title | escape }}",
-    {% if article.tags.size > 0 %}
-    "keywords": [ {% for tag in article.tags %}{{ tag | escape | json }}{% unless forloop.last %},{% endunless %}{% endfor %}],
-    {% endif %}
-    "dateModified": "{{ article.updated_at | date: "%Y-%m-%d" }}",
-    "datePublished": "{{ article.published_at | date: "%Y-%m-%d" }}",
-    "mainEntityOfPage": "{{ shop.url }}{{ article.url }}",
-    "articleBody": "{{ article.content | escape }}",
-    "publisher": {
-      "@type": "Organization",
-      "name": "{{ shop.name }}"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "{{ article.author }}"
-    }
-    {%- if article.image -%}
-    ,"image": {
-      "@type": "ImageObject",
-      {%- assign image_size = article.image.width | append: 'x' -%}
-      "url": "{{ shop.url }}{{ article.image | image_url: width: image_size }}",
-      "width": {{ article.image.width }},
-      "height": {{ article.image.height }}
-    }
-    {%- endif -%}
-  }
-</script>
+  </div>
+</section>
 
 {% schema %}
   {
     "name": "Article de blog",
-    "tag": "section",
     "settings": [
       {
         "type": "checkbox",
-        "id": "show_date",
+        "id": "related_products",
         "default": true,
-        "label": "Show date"
-      }, {
+        "label": "Show product"
+      },
+      {
         "type": "checkbox",
-        "id": "show_author",
+        "id": "show_time",
         "default": false,
-        "label": "Show author"
-      }, {
+        "label": "Show time"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_date",
+        "default": false,
+        "label": "Show date"
+      },
+      {
         "type": "checkbox",
         "id": "show_content",
         "default": true,
         "label": "Show article content"
-      },
-      {
-          "type": "checkbox",
-          "id": "show_share",
-          "default": true,
-          "label": "Show share"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "side_box",
-        "name": "side box",
-        "limit": 4,
-        "settings": [
-          {
-            "type": "select",
-            "id": "radius",
-            "options": [
-              {
-                "value": "None",
-                "label": "Rounded none"
-              }, {
-                "value": "Top",
-                "label": "Rounded top"
-              }, {
-                "value": "Bottom",
-                "label": "Rounded bottom"
-              }, {
-                "value": "Full",
-                "label": "Rounded full"
-              }
-            ],
-            "default": "Top",
-            "label": "Style border"
-          },
-          {
-            "type": "text",
-            "id": "block-title",
-            "label": "Title carousel",
-            "default": "DID YOU KNOW?"
-          },
-          {
-            "type": "textarea",
-            "id": "block-text",
-            "label": "Text carousel",
-            "default": "Il faut environ 1h48 pour éliminer un verre de vin de son sang."
-          },
-          {
-            "type": "header",
-            "content": "Colors"
-          }, {
-            "type": "color",
-            "id": "background_color",
-            "label": "background color",
-            "default": "#F4FFAF"
-          }, {
-            "type": "color",
-            "id": "title_color",
-            "label": "Title color",
-            "default": "#733E2B"
-          }, {
-            "type": "color",
-            "id": "text_color",
-            "label": "Text color",
-            "default": "#733E2B"
-          }
-        ]
-      },
-      {
-        "name": "Multibloc",
-        "type": "richText",
-        "settings": [
-          {
-            "type": "select",
-            "id": "textPosition",
-            "options": [
-              {
-                "value": "left",
-                "label": "Left"
-              }, {
-                "value": "center",
-                "label": "Center"
-              }, {
-                "value": "right",
-                "label": "Right"
-              }
-            ],
-            "default": "left",
-            "label": "Text Position"
-          }
-        ]
-      },
-      {
-        "name": "Summary",
-        "type": "summary",
-        "limit": 1,
-        "settings": []
-      },
-      {
-        "name": "Sources",
-        "type": "sources",
-        "limit": 1,
-        "settings": []
+      }, {
+        "type": "checkbox",
+        "id": "show_share",
+        "default": true,
+        "label": "Show share"
       }
     ]
   }
