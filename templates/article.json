@@ -6,34 +6,12 @@
         "related_products": true,
         "show_time": true,
         "show_date": true,
-        "show_content": false,
+        "show_content": true,
         "show_share": true
-      }
-    },
-    "d222f3ae-3de7-4fe2-966e-13cdf9558c5b": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "sommeil",
-        "products_to_show": 3,
-        "show_collection_title": true,
-        "show_collection_description": true,
-        "show_collection_size": true,
-        "show_secondary_image": false,
-        "show_quantity": false,
-        "show_cta": true,
-        "show_collection_card": true,
-        "label": "JUSQU’À -25%",
-        "subtitle": "Personnalisez votre pack",
-        "title": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
-        "cta": "Personnaliser mon pack",
-        "ctaLink": "",
-        "title_color": "#4B9B7D",
-        "color": "#343434"
       }
     }
   },
   "order": [
-    "main",
-    "d222f3ae-3de7-4fe2-966e-13cdf9558c5b"
+    "main"
   ]
 }
