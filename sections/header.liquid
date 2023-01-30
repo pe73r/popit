@@ -55,7 +55,7 @@
     ],
     "blocks": [
       {
-        "name": "Mobile Tabs Menu",
+        "name": "Mobile Menu Tabs",
         "type": "mobile_tabs",
         "settings": [
           {
@@ -69,13 +69,23 @@
             "label": "Menu"
           },
           {
-            "type": "header",
-            "content": "Featured link"
+            "type": "select",
+            "id": "menu_style",
+            "options": [
+              {
+                "value": "accordion",
+                "label": "accordion"
+              }, {
+                "value": "block",
+                "label": "block"
+              }
+            ],
+            "default": "accordion",
+            "label": "Menu style"
           },
           {
-            "type": "url",
-            "id": "featured_link_1",
-            "label": "Featured link"
+            "type": "header",
+            "content": "Card"
           }, {
             "type": "image_picker",
             "id": "featured_link_image_1",
@@ -88,10 +98,14 @@
             "type": "richtext",
             "id": "featured_link_title_1",
             "label": "Featured link title"
+          }, {
+            "type": "url",
+            "id": "featured_link_1",
+            "label": "Featured link"
           }
         ]
       }, {
-        "name": "Drawer Menu bottom",
+        "name": "Mobile Menu bottom",
         "type": "mobile_bottom",
         "limit": 1,
         "settings": [
@@ -102,7 +116,7 @@
           }
         ]
       }, {
-        "name": "Megamenu besoins",
+        "name": "Megamenu Desktop Besoins",
         "type": "megamenu",
         "settings": [
           {
@@ -138,7 +152,7 @@
           }
         ]
       }, {
-        "name": "Megamenu produits",
+        "name": "Megamenu Desktop Produits",
         "type": "megamenu_produits",
         "settings": [
           {

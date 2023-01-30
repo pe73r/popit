@@ -1,23 +1,37 @@
 <tail-drawer class="lg:hidden" data-full-height="true">
-  <drawer-overlay class="p-0 bg-transparent overflow-visible {% if template == 'index' %} top-[35px] {% else %} top-0 {% endif %}">
+  <drawer-overlay id="drawer-menu" class="p-0 bg-transparent overflow-visible {% if template == 'index' %} drawer-with-announcement {% else %} top-0 {% endif %}">
     <drawer-content class="w-full bg-transparent relative">
 
       <drawer-inner class="bg-gray-100">
-        <drawer-close class="absolute z-10 right-[20px] top-[25px] flex justify-end">
+        <drawer-close class="absolute z-10 right-[20px] top-[27px] flex justify-end">
           {% render 'icon-close' %}
         </drawer-close>
         {%- liquid
                     assign tabs = section.blocks | where: "type", "mobile_tabs"
-                    assign bottoms = section.blocks | where: "type", "mobile_bottom"
+                    assign bottoms = section.blocks | where: "type", "mobile_bottom" 
                 -%}
-        <div class="flex flex-col h-auto">
+        <div
+          class="flex flex-col h-auto">
           {% render "header-drawer-tabs", elements: tabs %}
         </div>
         {% render "header-drawer-bottom-nav", elements: bottoms %}
       </drawer-inner>
     </drawer-content>
   </drawer-overlay>
-  <drawer-trigger class="flex items-center justify-center w-10 h-10 p-1 cursor-pointer">
+  <drawer-trigger
+    class="flex items-center justify-center w-10 h-10 p-1 cursor-pointer">
     {% render 'icon-hamburger' %}
   </drawer-trigger>
 </tail-drawer>
+<style>
+  .top-[35px] {
+    top: 35px;
+  }
+</style>
+<script>
+  document.addEventListener("scroll", function() {
+    if (window.scrollY < 50) {
+      document.querySelector("#drawer-menu").classList.remove("drawer-with-announcement");
+    }
+  });
+</script>

@@ -78,6 +78,19 @@ accordion-element[data-open="true"] .icon-minus {
 }
 
 /* workaround for the home with the announcement bar */
-.side-cart-with-announcement {
+.drawer-with-announcement {
   top: 35px;
+}
+
+/* menu list before */
+.menu-list::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #efefef;
+  position: relative;
+  top: 8px;
+  margin-right: 5px;
 }
