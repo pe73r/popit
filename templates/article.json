@@ -9,52 +9,9 @@
         "show_content": false,
         "show_share": true
       }
-    },
-    "1c33a6c8-cb0f-40a8-aa52-11d972298b5d": {
-      "type": "featured-collection-article",
-      "settings": {
-        "collection": "sommeil",
-        "title_section": "Nos gummies contenant des vitamines",
-        "products_to_show": 2,
-        "show_collection_size": true,
-        "show_secondary_image": false,
-        "show_quantity": false,
-        "show_cta": true,
-        "show_collection_card": true,
-        "label": "JUSQU’À -25%",
-        "subtitle": "Personnalisez votre pack",
-        "title": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
-        "cta": "Personnaliser mon pack",
-        "ctaLink": "",
-        "title_color": "#4B9B7D",
-        "color": "#343434"
-      }
-    },
-    "4ca80a9f-20d7-4727-9eee-7cd2497e6b32": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "frontpage",
-        "products_to_show": 2,
-        "show_collection_title": true,
-        "show_collection_description": true,
-        "show_collection_size": true,
-        "show_secondary_image": false,
-        "show_quantity": false,
-        "show_cta": true,
-        "show_collection_card": true,
-        "label": "JUSQU’À -25%",
-        "subtitle": "Personnalisez votre pack",
-        "title": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
-        "cta": "Personnaliser mon pack",
-        "ctaLink": "",
-        "title_color": "#4B9B7D",
-        "color": "#343434"
-      }
     }
   },
   "order": [
-    "main",
-    "1c33a6c8-cb0f-40a8-aa52-11d972298b5d",
-    "4ca80a9f-20d7-4727-9eee-7cd2497e6b32"
+    "main"
   ]
 }
