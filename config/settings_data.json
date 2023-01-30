@@ -186,7 +186,7 @@
             "type": "mobile_tabs",
             "settings": {
               "title": "PRODUITS",
-              "menu": "nos-offres",
+              "menu": "produits",
               "menu_style": "block",
               "featured_link_subtitle_1": "",
               "featured_link_title_1": "",
