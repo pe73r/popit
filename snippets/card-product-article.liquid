@@ -1,0 +1,146 @@
+ <div class="card-product p-1 pb-2 md:p-2 rounded-lg bg-white shadow-md">
+    <a href="{{ product.url }}">
+          <!-- product image -->
+         <div class="relative group">
+             <!-- discount % -->
+              {%- if variant.compare_at_price != blank or product.compare_at_price != blank-%}
+              {% assign percentage = 0 %}
+              {% for variant in product.variants %}
+                {% assign saving = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price | round %}
+                {% assign percentage = saving | at_least: percentage %}
+              {% endfor %}
+              <div class="absolute z-20 right-2 top-0 mt-2 text-xs text-white bg-orange font-bold rounded-lg py-1 px-2 whitespace-nowrap">-{{ percentage }}%</div>
+            {% endif %}
+
+            {%- if product.featured_media -%}
+                <div class="w-full bg-beige rounded-lg {% if product.media[1] != nil and show_secondary_image %} product__image transition-all md:group-hover:opacity-0 {% endif %}  ">
+                    <img
+                      srcset="{%- if product.featured_media.width >= 165 -%}{{ product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+                        {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+                        {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
+                        {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
+                        {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
+                        {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
+                        {{ product.featured_media | image_url }} {{ product.featured_media.width }}w"
+                      src="{{ product.featured_media | image_url: width: 533 }}"
+                      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                      alt="{{ product.featured_media.alt | escape }}"
+                      class="motion-reduce w-full"
+                      {% unless lazy_load == false %}loading="lazy"{% endunless %}
+                      width="{{ product.featured_media.width }}"
+                      height="{{ product.featured_media.height }}"
+                    >
+                </div>
+                {%- if product.media[1] != nil and show_secondary_image -%}
+                  <div class="absolute top-0 z-10 hidden object-cover h-full transition-all bg-white opacity-0 md:block md:group-hover:opacity-100 ">
+                      <img
+                        srcset="{%- if product.media[1].width >= 165 -%}{{ product.media[1] | image_url: width: 165 }} 165w,{%- endif -%}
+                          {%- if product.media[1].width >= 360 -%}{{ product.media[1] | image_url: width: 360 }} 360w,{%- endif -%}
+                          {%- if product.media[1].width >= 533 -%}{{ product.media[1] | image_url: width: 533 }} 533w,{%- endif -%}
+                          {%- if product.media[1].width >= 720 -%}{{ product.media[1] | image_url: width: 720 }} 720w,{%- endif -%}
+                          {%- if product.media[1].width >= 940 -%}{{ product.media[1] | image_url: width: 940 }} 940w,{%- endif -%}
+                          {%- if product.media[1].width >= 1066 -%}{{ product.media[1] | image_url: width: 1066 }} 1066w,{%- endif -%}
+                          {{ product.media[1] | image_url }} {{ product.media[1].width }}w"
+                        src="{{ product.media[1] | image_url: width: 533 }}"
+                        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                        alt="{{ product.media[1].alt | escape }}"
+                        class="motion-reduce bg-beige rounded-lg"
+                        loading="lazy"
+                        width="{{ product.media[1].width }}"
+                        height="{{ product.media[1].height }}"
+                      >
+                  </div>
+                {%- endif -%}
+           {%- endif -%}
+
+           <div class="relative bottom-[15px] z-10">
+             {% if product.tags contains "60-gummies" %}
+                <div class="text-white bg-green-medium rounded-md p-1 sm:p-2 m-auto text-[10px] sm:text-xs w-fit text-center">
+                  60 gummies/2 mois
+                </div>
+             {% else %}
+                <div class="text-white bg-green-dark rounded-md p-1 sm:p-2 m-auto text-[10px] sm:text-xs w-fit text-center">
+                  120 gummies/4 mois
+                </div>
+             {% endif %}
+           </div>
+        </div>
+    </a>
+
+    <!-- product-info -->
+    <div class="text-center">
+      <!-- title -->
+      <{% if template contains 'collection' %}h2{% else %}h3{% endif %} class="font-body-text text-base md:text-[20px] font-extrabold line-clamp-1">
+        {{ product.title }}
+       </{% if template contains 'collection' %}h2{% else %}h3{% endif %}>
+
+      <!-- Description -->
+      {%- if product.metafields.global.description != blank -%}
+          <p class="card-description my-1 md:my-2 text-xs md:text-sm line-clamp-2 max-h-[42px]">{{ product.metafields.global.description }}</p>
+      {% else %}
+        <p class="card-description my-1 md:my-2 text-xs md:text-sm line-clamp-2 max-h-[42px]">Facilite la digestion & le transit intestinal...</p>
+      {%- endif -%}
+      <!-- Price -->
+      <div class="flex items-center justify-center">
+        {% if product.compare_at_price == nil %}
+            <h6 class="text-sm md:text-base font-extrabold">
+                {{ product.price | money }}
+            </h6>
+        {% else %}
+           <span class="line-through text-xs md:text-sm mr-1 md:mr-2 text-gray-400 font-semibold">
+              {{ product.compare_at_price | money }}
+          </span>
+          <h6 class="text-sm md:text-base font-extrabold">
+              {{ product.price | money }}
+          </h6>
+        {% endif %}
+      </div>
+
+       <!-- cta  -->
+      {% if section.settings.show_cta %}
+        {% if product.available %}
+          <div class="group relative mt-3 flex gap-1">
+            {% if section.settings.show_quantity %}
+              <product-quantity
+              data-max-quantity="{{product.selected_or_first_available_variant.inventory_quantity}}"
+              data-product="{{product.id}}"
+              class="flex items-center justify-center m-auto quantity border border-gray-300 rounded-md py-[5px] px-2">
+                <button class= "p-1 no-js-hidden" name="minus" type="button">
+                  {% render 'icon-quantity-minus' %}
+                </button>
+                <input class="text-black bg-transparent text-[16px] md:text-[20px] font-extrabold md:max-w-[30px] max-w-[20px] text-center"
+                    type="number"
+                    name="quantity"
+                    id="Quantity-{{ section.id }}"
+                    min="1"
+                    value="1"
+                    form="{{ product_form_id }}"
+                  >
+                <button  class="p-1 no-js-hidden" name="plus" type="button">
+                  {% render 'icon-quantity-plus' %}
+                </button>
+              </product-quantity>
+            {% endif %}
+            <add-to-cart
+              data-max-quantity={{product.selected_or_first_available_variant.inventory_quantity}}
+                class="{% if section.settings.show_quantity %} w-8/12 {% else %} w-full {% endif %}"
+                data-product="{{ product.id }}"
+                data-title="{{ product.title }}{% unless product.selected_or_first_available_variant.title contains 'Default' %} - {{ product.selected_or_first_available_variant.title }}{% endunless %}"
+                data-discount="{% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}{{ product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | divided_by: 100.00 }}{% else %}0.00{% endif %}"
+                data-price="{{ product.selected_or_first_available_variant.price | divided_by: 100.00 }}"
+                data-variant="{{ product.selected_or_first_available_variant.id }}">
+                <button class="btn-primary {% render "button", size:"medium", fullWidth: true %}">
+                    Ajouter au panier
+                </button>
+            </add-to-cart>
+          </div>
+        {% else %}
+            <div class="relative mt-3" data-variant="{{ product.selected_or_first_available_variant.id }}">
+              <div class="bg-gray-medium text-black text-center font-normal text-sm {% render "button", size:"small", color:"gray-medium", fullWidth: true %}">
+                Rupture
+              </div>
+            </div>
+       {% endif %}
+     {% endif %}
+    </div>
+  </div>
