@@ -25,7 +25,7 @@
             "post_limit": 4,
             "show_dots": true,
             "heading": "À LIRE...",
-            "show_tag": false,
+            "show_tag": true,
             "show_author": false,
             "show_date": true,
             "show_button": true
