@@ -64,11 +64,13 @@
         </div>
       {%- endif -%}
 
-      <!-- J'aimerais faire cette section ensemble demain avec la loop et le append/metafield_title_[] je me reppaelais plus de ce qu'on c'étais dit etc.. -->
 
       <div class="flex flex-col w-full gap-8 md:gap-12 {%- if section.settings.related_products and  related_products != blank -%} md:w-9/12 {% else %} w-full {% endif %}">
-        <div class="flex flex-col gap-5">
+        
 
+       {%  comment  %}  à mettre les metafields dans un boucle  {% endcomment %}
+        {%  comment  %}  comme dans l'article de JM  {% endcomment %}
+        <div class="flex flex-col gap-5">
           <h3 class="text-base md:text-xl font-bold">
             {{ article.metafields.custom.title_1.value }}
           </h3>
@@ -77,6 +79,7 @@
             {{ article.metafields.custom.text_bloc_1.value }}
           </div>
         </div>
+
         <div
           class="flex flex-col gap-5">
           <h3 class="text-base md:text-xl font-bold">
@@ -90,40 +93,11 @@
           </div>
         </div>
 
-        <!-- Grid collection card et product card a ajuster (plus add to cart product cards) -->
 
         <div class="flex relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-5 scrollbar">
           {% for block in section.blocks %}
             {% if block.type == "pack_card" %}
-              <div class="collection-card relative bg-gradiant rounded-lg p-2 sm:p-3 md:p-5 text-center flex flex-col justify-center items-center min-w-[230px] md:min-w-[550px] md:h-[430px]">
-                {% if block.settings.label != blank %}
-                  <div class="absolute top-3 right-3 text-[10px] py-1 px-2 text-white font-bold bg-orange w-fit rounded-md mb-2 mx-auto md:mx-0">{{ block.settings.label }}</div>
-                {% endif %}
-                <div class="w-full">
-                  {% if block.settings.image != blank %}
-                    <img
-                      class="lazy mx-auto max-w-[150px] md:max-w-[200px]"
-                      src="{{ block.settings.image | img_url: 'master'}}"
-                      alt="{{ block.settings.image.alt }}"
-                      loading="lazy">
-                  {% else %}
-                    {{ 'image' | placeholder_svg_tag }}
-                  {% endif %}
-                  <div class="text-center mt-3">
-                    {% if block.settings.subtitle != blank %}
-                      <h4 class="text-base font-bold">{{ block.settings.subtitle }}</h4>
-                    {% endif %}
-
-                    {% if block.settings.title != blank %}
-                      <div class="hidden md:block text-sm font-light mt-3" style="color:{{ block.settings.color }}">{{ block.settings.title }}</div>
-                    {% endif %}
-
-                    {% if block.settings.cta != blank %}
-                      <a class="block mt-3 md:mt-5 {% render "button", size:"medium", color:"green", fullWidth: true %}" href="{{ block.settings.ctaLink }}">{{ block.settings.cta }}</a>
-                    {% endif %}
-                  </div>
-                </div>
-              </div>
+              {% render "collection-card", image: block.settings.image, label: block.settings.label, title: block.settings.title, subtitle: block.settings.subtitle, cta: block.settings.cta, ctaLink: block.settings.ctaLink %}
             {% elsif block.type == "product" %}
               <div class="min-w-[158px] md:max-w-[265px]">
               {% render 'card-product'
@@ -166,11 +140,6 @@
     </div>
   </div>
 </section>
-<style>
-  .collection-card {
-    background: linear-gradient(168.52deg, #4B9B7D 0%, rgba(75, 155, 125, 0.8) 35.48%, #D7E6AF 59.33%, rgba(215, 230, 175, 0.5) 94.77%);
-  }
-</style>
 
 <!-- Schema to check voir comment tu aurait fait de ton coter (block ou pas block etc...)-->
 
