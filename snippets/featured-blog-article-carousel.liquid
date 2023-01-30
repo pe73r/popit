@@ -1,0 +1,55 @@
+{% for block in section.blocks %}
+  {%- assign blog = blogs[block.settings.blog] -%}
+    <div class="max-w-full mx-auto my-5">
+    {%- if block.settings.heading != blank -%}
+      <div class="w-11/12 mx-auto mb-5">
+        <h2 class="text-base md:text-xl">
+          {{ block.settings.heading }}
+        </h2>
+      </div>
+    {%- endif -%}
+
+
+    <!-- carousel desktop -->
+    <div class="hidden md:block md:w-full mx-auto">
+      <tail-carousel slidesToShow="xs:1 md:3 lg:4">
+        <carousel-container>
+          <carousel-content class="w-full">
+            {%- for article in blog.articles limit: block.settings.post_limit -%}
+              <carousel-panel class="px-2 w-full max-w-[280px] md:max-w-fit !min-w-[280px] md:!min-w-[25%]">
+                {% render 'article-card-grid'
+                 , blog: block.settings.blog,
+                 article: article,
+                 show_image: block.settings.show_image,
+                 show_title: block.settings.show_title,
+                 show_content: block.settings.show_content,
+                 show_author: block.settings.show_author,
+                 show_button: block.settings.show_button,
+                 show_tag: block.settings.show_tag,
+                 show_date: block.settings.show_date %}
+              </carousel-panel>
+            {%- endfor -%}
+          </carousel-content>
+        </carousel-container>
+      </tail-carousel>
+    </div>
+
+    <!-- carousel mobile -->
+    <div class="block md:hidden ml-2 mr-0">
+      <div class="flex relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-2 scrollbar pb-6">
+        {%- for article in blog.articles limit: block.settings.post_limit -%}
+          <div class="w-[200px] min-w-[200px]">
+            {% render 'article-card-grid'
+             , blog: block.settings.blog,
+             article: article,
+             show_content: block.settings.show_content,
+             show_author: block.settings.show_author,
+             show_button: block.settings.show_button,
+             show_tag: block.settings.show_tag,
+             show_date: block.settings.show_date %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endfor %}

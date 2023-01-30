@@ -1,40 +1,72 @@
 <section>
-  <div class="w-11/12 max-w-screen-xl mt-10 mb-5 mx-auto relative">
+  <div class="w-11/12 backdrop:md:w-10/12 max-w-screen-xl mt-10 mb-5 mx-auto relative">
     <div class="text-[#6E6E73] mb-5 text-center md:text-left">
       {% render 'breadcrumbs' %}
     </div>
-    <div class="{%- if section.settings.related_products == true -%} md:w-10/12 {% else %} md:w-full {% endif %}">
-      {% render 'article_image-banner', image: article.image %}
-      <div>
+    <div class="flex relative gap-4">
+      <div class="w-full">
+        {% render 'article_image-banner', image: article.image %}
+        <div>
+
+        <!-- Share to do -->
+          <!-- {% if section.settings.show_share %}
+          <div class="mt-10 flex justify-center gap-3 items-center">
+          <h3 class="uppercase text-[15px] mr-2">SHARE</h3>
+          <div class="w-[30px] h-[30px] roundex-full border border-acajou rounded-full flex justify-center items-center">
+          <a href="//www.facebook.com/sharer.php?u={{ permalinkURL }}">
+          {% render 'icon-facebook', fill: 'acajou' %}
+          </a>
+          </div>
+          <div class="w-[30px] h-[30px] roundex-full border border-acajou rounded-full flex justify-center items-center">
+          {% render 'icon-mail' %}
+          </div>
+          <div class="w-[30px] h-[30px] roundex-full border border-acajou rounded-full flex justify-center items-center">
+          <a href="sms://?&body=https://jollymama.com{{ product.url }}{{ page.url }}{{ article.url }}">
+          {% render 'icon-sms' %}
+          </a>
+          </div>
+          <div class="w-[30px] h-[30px] roundex-full border border-acajou rounded-full flex justify-center items-center">
+          <a href="whatsapp://send?text=check this out https://jollymama.com{{ product.url }}{{ page.url }}{{ article.url }}">
+          {% render 'icon-whatsapp' %}
+          </a>
+          </div>
+          </div>
+          -->
+          <!-- Share to do -->
+        {% endif %}
         {% for tag in article.tags %}
           <div class="my-3 md:hidden">
             {% render 'article-tags', tag: tag %}
           </div>
         {% endfor %}
       </div>
-      <div class="mb-3">
+      <div class="my-5">
+        {%- if section.settings.show_date == true -%}
+          <p class="text-xs text-[#6E6E73] md:text-sm font-light">
+            {{ article.published_at | date: "%d.%b %C" }}
+          </p>
+        {%- endif -%}
+        <h2 class="text-base md:text-2xl">
+          {{ article.title }}
+        </h2>
         {%- if section.settings.show_time == true -%}
-          <span class="reading-time text-[#6E6E73] font-thin text-xs md:text-sm" title="Estimated read time">
+          <span class="reading-time text-[#6E6E73] font-light text-xs md:text-sm" title="Estimated read time">
             {% assign words = article.content | strip_html | split: ' ' | size %}
             {{ words | divided_by: 180 | plus: 4 }} minutes
           </span>
         {%- endif -%}
-        <h2 class="text-base font-thin md:text-2xl">
-          {{ article.title }}
-        </h2>
-        {%- if section.settings.show_date == true -%}
-          <p class="text-xs text-[#6E6E73] md:text-sm font-thin">
-            {{ article.published_at | date: "%d.%b %C" }}
-          </p>
-        {%- endif -%}
       </div>
-      <div class="text-base mb-8 md:text-lg md:mb-12">
-        {{ article.content }}
-      </div>
-    </div>
-    <div class="flex gap-4">
-      <div class="flex flex-col w-full gap-8 md:gap-12 {%- if section.settings.related_products == true -%} md:w-9/12 {% else %} md:w-full {% endif %}">
+      {%- if section.settings.show_content == true -%}
+        <div class="text-base mb-8 md:text-lg md:mb-12">
+          {{ article.content }}
+        </div>
+      {%- endif -%}
+
+      <!-- J'aimerais faire cette section ensemble demain avec la loop et le append/metafield_title_[] je me reppaelais plus de ce qu'on c'étais dit etc.. -->
+
+      <div class="flex flex-col w-full gap-8 md:gap-12 {%- if section.settings.related_products == true -%} md:w-9/12 {% endif %}">
         <div class="flex flex-col gap-5">
+
           <h3 class="text-base md:text-xl font-bold">
             {{ article.metafields.custom.title_1.value }}
           </h3>
@@ -43,7 +75,8 @@
             {{ article.metafields.custom.text_bloc_1.value }}
           </div>
         </div>
-        <div class="flex flex-col gap-5">
+        <div
+          class="flex flex-col gap-5">
           <h3 class="text-base md:text-xl font-bold">
             {{ article.metafields.custom.title_2.value }}
           </h3>
@@ -54,12 +87,72 @@
             {{ article.metafields.custom.text_bloc_2.value }}
           </div>
         </div>
+
+        <!-- Grid collection card et product card a ajuster (plus add to cart product cards) -->
+
+        <div class="flex relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-5 scrollbar">
+          {% for block in section.blocks %}
+            {% if block.type == "pack_card" %}
+              <div class="collection-card relative bg-gradiant rounded-lg p-2 sm:p-3 md:p-5 text-center flex flex-col justify-center items-center min-w-[230px] md:min-w-[550px] md:h-[430px]">
+                {% if block.settings.label != blank %}
+                  <div class="absolute top-3 right-3 text-[10px] py-1 px-2 text-white font-bold bg-orange w-fit rounded-md mb-2 mx-auto md:mx-0">{{ block.settings.label }}</div>
+                {% endif %}
+                <div class="w-full">
+                  {% if block.settings.image != blank %}
+                    <img
+                      class="lazy mx-auto max-w-[150px] md:max-w-[200px]"
+                      src="{{ block.settings.image | img_url: 'master'}}"
+                      alt="{{ block.settings.image.alt }}"
+                      loading="lazy">
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag }}
+                  {% endif %}
+                  <div class="text-center mt-3">
+                    {% if block.settings.subtitle != blank %}
+                      <h4 class="text-base font-bold">{{ block.settings.subtitle }}</h4>
+                    {% endif %}
+
+                    {% if block.settings.title != blank %}
+                      <div class="hidden md:block text-sm font-light mt-3" style="color:{{ block.settings.color }}">{{ block.settings.title }}</div>
+                    {% endif %}
+
+                    {% if block.settings.cta != blank %}
+                      <a class="block mt-3 md:mt-5 {% render "button", size:"medium", color:"green", fullWidth: true %}" href="{{ block.settings.ctaLink }}">{{ block.settings.cta }}</a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+
+              <!-- A checker si facon de faire okay pour toi  -->
+
+              <div class="min-w-[158px] md:max-w-[265px]">
+              {% render 'card-product'
+                product: product
+               , card_product: section.settings.product
+               , show_secondary_image: true
+               , show_vendor: false
+               , show_quick_add: true
+               , show_cta: true %}
+               </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% for block in section.blocks %}
+          {% if block.type == "featured_blog" %}
+            <div>
+              {% render 'featured-blog-article-carousel' %}
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
+     </div>
+      <!-- A checker si facon de faire okay pour toi  -->
+
       {%- assign related_products = article.metafields.custom.related_products.value -%}
       {%- assign related_product_text = article.metafields.custom.related_product_text -%}
       {%- if section.settings.related_products == true -%}
-        <div class="hidden md:mt-10 md:block w-3/12">
-          <div class="flex flex-col gap-16">
+        <div class="hidden md:block w-3/12">
+          <div class="flex flex-col sticky top-16 gap-10">
             {% for related_product in related_products %}
               {% render 'card-product'
                product: product
@@ -75,16 +168,33 @@
     </div>
   </div>
 </section>
+<style>
+  .collection-card {
+    background: linear-gradient(168.52deg, #4B9B7D 0%, rgba(75, 155, 125, 0.8) 35.48%, #D7E6AF 59.33%, rgba(215, 230, 175, 0.5) 94.77%);
+  }
+</style>
+
+<!-- Schema to check voir comment tu aurait fait de ton coter (block ou pas block etc...)-->
 
 {% schema %}
   {
     "name": "Article de blog",
     "settings": [
+        {
+       "type": "header",
+       "content": "Article settings"
+      },
       {
         "type": "checkbox",
         "id": "related_products",
         "default": true,
         "label": "Show product"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_cta",
+        "default": true,
+        "label": "Show add to cart"
       },
       {
         "type": "checkbox",
@@ -97,17 +207,160 @@
         "id": "show_date",
         "default": false,
         "label": "Show date"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_content",
-        "default": true,
-        "label": "Show article content"
       }, {
         "type": "checkbox",
         "id": "show_share",
         "default": true,
         "label": "Show share"
+      },
+      {
+       "type": "header",
+       "content": "Product card settings"
+      },
+      {
+       "type": "product",
+        "id": "product",
+        "label": "Product"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "pack_card",
+        "name": "Pack card",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "show_collection_title",
+            "default": true,
+            "label": "Show title ?"
+          },
+          {
+            "type": "header",
+            "content": "card"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_pack_card",
+            "default": true,
+            "label": "Show card"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "label",
+            "default": " JUSQU’À -25%",
+            "label": "Label"
+          }, {
+            "type": "text",
+            "id": "subtitle",
+            "default": "Personnalisez votre pack",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "title",
+            "default": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.</p>",
+            "label": "Text"
+          }, {
+            "type": "text",
+            "id": "cta",
+            "label": "Button label",
+            "default": "Personnaliser mon pack"
+          }, {
+            "type": "url",
+            "id": "ctaLink",
+            "label": "Link "
+          }, {
+            "type": "header",
+            "content": "colors"
+          }, {
+            "type": "color",
+            "id": "title_color",
+            "default": "#4B9B7D",
+            "label": "Title color"
+          }, {
+            "type": "color",
+            "id": "color",
+            "default": "#343434",
+            "label": "Text color"
+          }
+        ]
+        },{
+         "type": "featured_blog",
+         "name": "Featured Blog",
+         "limit": 1,
+         "settings": [
+           {
+             "type": "header",
+             "content": "Blog"
+           },
+           {
+             "type": "blog",
+             "id": "blog",
+             "label": "Choix du blog"
+           },
+           {
+             "type": "range",
+             "id": "post_limit",
+             "min": 0,
+             "max": 4,
+             "step": 1,
+             "default": 4,
+             "label": "Nombre d'articles de blog à afficher en desktop"
+           },
+           {
+             "type": "checkbox",
+             "id": "show_dots",
+             "label": "Show carousel bar",
+             "default": true
+           }, {
+             "type": "header",
+             "content": "header"
+           }, {
+             "type": "text",
+             "id": "heading",
+             "default": "À LIRE...",
+             "label": "Titre"
+           }, {
+             "type": "header",
+             "content": "Contenu des articles"
+           }, {
+             "type": "checkbox",
+             "id": "show_tag",
+             "default": false,
+             "label": "Show tag"
+           }, {
+             "type": "checkbox",
+             "id": "show_author",
+             "default": false,
+             "label": "Show author"
+           }, {
+             "type": "checkbox",
+             "id": "show_date",
+             "default": true,
+             "label": "Show date"
+           }, {
+             "type": "checkbox",
+             "id": "show_button",
+             "default": true,
+             "label": "Show button"
+           }
+         ]
+       },
+       {
+        "type": "product_card",
+        "name": "Product card",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "product",
+            "id": "product-handle",
+            "label": "Product-Handle"
+          }
+        ]
       }
     ]
   }
