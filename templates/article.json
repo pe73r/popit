@@ -14,7 +14,7 @@
             "title": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
             "cta": "Personnaliser mon pack",
             "ctaLink": "",
-            "title_color": "#4B9B7D",
+            "title_color": "#4b9b7d",
             "color": "#343434"
           }
         },
@@ -30,11 +30,18 @@
             "show_date": true,
             "show_button": true
           }
+        },
+        "f92d5646-6fe9-48d5-ba17-093769b8762e": {
+          "type": "product",
+          "settings": {
+            "product": "copy-of-gummies-sommeil-1"
+          }
         }
       },
       "block_order": [
         "5fc6ec2a-9e2d-4b1d-b7d9-5e7dba4d3f31",
-        "a6f965ee-30c1-4423-96df-f2a14db0e24a"
+        "a6f965ee-30c1-4423-96df-f2a14db0e24a",
+        "f92d5646-6fe9-48d5-ba17-093769b8762e"
       ],
       "settings": {
         "related_products": true,
