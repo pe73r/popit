@@ -29,7 +29,7 @@
     "welcome_text_2": "Disponible prochainement : \nCumulez vos points pour débloquer des offres avantages livraison et accès en avant-première aux nouveautés",
     "checkout_logo_image": "shopify:\/\/shop_images\/logo-popit-noir.png",
     "checkout_logo_position": "center",
-    "checkout_body_background_color": "#f1f1f1",
+    "checkout_body_background_color": "#fafafa",
     "checkout_sidebar_background_color": "#e3f2ed",
     "checkout_accent_color": "#4b9b7d",
     "checkout_button_color": "#4b9b7d",
@@ -195,6 +195,16 @@
             "settings": {
               "menu": "menu-mobile-bottom"
             }
+          },
+          "bfd7dab0-fe5a-4911-9db9-a0cdcd88137d": {
+            "type": "megamenu_produits",
+            "settings": {
+              "megamenu": "produits",
+              "featured_link_subtitle_1": "",
+              "featured_link_title_1": "",
+              "featured_link_button_1": "",
+              "featured_link_1": ""
+            }
           }
         },
         "block_order": [
@@ -202,7 +212,8 @@
           "821b51b7-27dd-4a1b-9036-4f3a51fe987f",
           "bd163990-46e5-4973-9add-25befdce7734",
           "a2ec93b6-297a-4fc2-bb68-f6b5357f8d38",
-          "7b909d78-4aeb-4689-abdf-286ad0fb99a5"
+          "7b909d78-4aeb-4689-abdf-286ad0fb99a5",
+          "bfd7dab0-fe5a-4911-9db9-a0cdcd88137d"
         ],
         "settings": {
           "menu_desktop": "main-menu",
