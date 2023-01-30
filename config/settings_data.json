@@ -163,10 +163,11 @@
             "settings": {
               "title": "BESOINS",
               "menu": "menu-mobile",
-              "featured_link_1": "",
+              "menu_style": "accordion",
               "featured_link_image_1": "shopify:\/\/shop_images\/Frame_9358_85b1ae14-df01-45a6-9c79-bd4c12b8c825.png",
               "featured_link_subtitle_1": "Personnalisez votre pack",
-              "featured_link_title_1": ""
+              "featured_link_title_1": "",
+              "featured_link_1": ""
             }
           },
           "bd163990-46e5-4973-9add-25befdce7734": {
@@ -174,10 +175,11 @@
             "settings": {
               "title": "VOTRE PACK",
               "menu": "menu-pack-mobile",
-              "featured_link_1": "",
+              "menu_style": "accordion",
               "featured_link_image_1": "shopify:\/\/shop_images\/Frame_9358_85b1ae14-df01-45a6-9c79-bd4c12b8c825.png",
               "featured_link_subtitle_1": "",
-              "featured_link_title_1": ""
+              "featured_link_title_1": "",
+              "featured_link_1": ""
             }
           },
           "a2ec93b6-297a-4fc2-bb68-f6b5357f8d38": {
@@ -185,9 +187,10 @@
             "settings": {
               "title": "PRODUITS",
               "menu": "nos-offres",
-              "featured_link_1": "",
+              "menu_style": "block",
               "featured_link_subtitle_1": "",
-              "featured_link_title_1": ""
+              "featured_link_title_1": "",
+              "featured_link_1": ""
             }
           },
           "7b909d78-4aeb-4689-abdf-286ad0fb99a5": {
