@@ -20,8 +20,7 @@
           <accordion-content>
             <div class="flex gap-3">
               {% for sublinks in links.links limit: 5 %}
-                <div
-                  class="block w-1/5">
+                <div class="block">
                   <a href="{{ child_link.url }}" class="flex flex-col items-center gap-2 mt-4">
                     <img src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/Rectangle_462.png?v=1674480399" alt="">
                     <span class="text-xs">{{ sublinks.title }}</span>
@@ -31,14 +30,13 @@
             </div>
           </accordion-content>
         </accordion-element>
-        {% if forloop.last %} 
+        {% if forloop.last %}
           <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections/all">Voir tous les produits</a>
         {% endif %}
       {% endfor %}
     </accordion-group>
   {% endif %}
-  <div
-    class="w-1/3">
+  <div class="w-1/3">
     {% render 'header-menu-featured-links', block: block, limit: 1 %}
   </div>
 

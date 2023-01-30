@@ -35,13 +35,13 @@
 
       {% if submenu != blank %}
         <div class="absolute lg:left-[-19%] xl:left-[-18%] 2xl:left-[-17%] top-[64px] bg-white w-screen py-5 px-10 z-10 opacity-0 group-hover:block group-hover:opacity-100 overflow-hidden hidden">
-         {% if link.title == 'BESOINS' or link.title == 'Besoins' %}
-          {% render 'megamenu-besoins' block: block, submenu: submenu %}
-        {% elsif link.title == 'PRODUITS' or link.title == 'Produits' %}
-          {% render 'megamenu-produits' block: block, submenu: submenu %}
-         {% else %}
-           {% render 'megamenu' block: block, submenu: submenu, class: "grid gap-4 max-w-3xl grid-cols-3 px-20 mx-auto" %}
-         {% endif %}   
+          {% if link.title == 'BESOINS' or link.title == 'Besoins' %}
+            {% render 'megamenu-besoins' block: block, submenu: submenu %}
+          {% elsif link.title == 'PRODUITS' or link.title == 'Produits' %}
+            {% render 'megamenu-produits' block: block, submenu: submenu %}
+          {% else %}
+            {% render 'megamenu' block: block, submenu: submenu, class: "grid gap-4 max-w-3xl grid-cols-3 px-20 mx-auto" %}
+          {% endif %}
         </div>
       {% endif %}
     </div>
