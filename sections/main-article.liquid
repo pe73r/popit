@@ -1,3 +1,5 @@
+{%- assign related_products = article.metafields.custom.related_products.value -%}
+{%- assign related_product_text = article.metafields.custom.related_product_text -%}
 <section>
   <div class="w-11/12 backdrop:md:w-10/12 max-w-screen-xl mt-10 mb-5 mx-auto relative">
     <div class="text-[#6E6E73] mb-5 text-center md:text-left">
@@ -64,7 +66,7 @@
 
       <!-- J'aimerais faire cette section ensemble demain avec la loop et le append/metafield_title_[] je me reppaelais plus de ce qu'on c'étais dit etc.. -->
 
-      <div class="flex flex-col w-full gap-8 md:gap-12 {%- if section.settings.related_products == true -%} md:w-9/12 {% endif %}">
+      <div class="flex flex-col w-full gap-8 md:gap-12 {%- if section.settings.related_products and  related_products != blank -%} md:w-9/12 {% else %} w-full {% endif %}">
         <div class="flex flex-col gap-5">
 
           <h3 class="text-base md:text-xl font-bold">
@@ -122,13 +124,11 @@
                   </div>
                 </div>
               </div>
-
-              <!-- A checker si facon de faire okay pour toi  -->
-
+            {% elsif block.type == "product" %}
               <div class="min-w-[158px] md:max-w-[265px]">
               {% render 'card-product'
                 product: product
-               , card_product: section.settings.product
+               , card_product: block.settings.product
                , show_secondary_image: true
                , show_vendor: false
                , show_quick_add: true
@@ -146,11 +146,9 @@
         {% endfor %}
       </div>
      </div>
-      <!-- A checker si facon de faire okay pour toi  -->
 
-      {%- assign related_products = article.metafields.custom.related_products.value -%}
-      {%- assign related_product_text = article.metafields.custom.related_product_text -%}
-      {%- if section.settings.related_products == true -%}
+     
+      {%- if section.settings.related_products and related_products != blank -%}
         <div class="hidden md:block w-3/12">
           <div class="flex flex-col sticky top-16 gap-10">
             {% for related_product in related_products %}
@@ -212,15 +210,6 @@
         "id": "show_share",
         "default": true,
         "label": "Show share"
-      },
-      {
-       "type": "header",
-       "content": "Product card settings"
-      },
-      {
-       "type": "product",
-        "id": "product",
-        "label": "Product"
       }
     ],
     "blocks": [
@@ -288,7 +277,20 @@
             "label": "Text color"
           }
         ]
-        },{
+        },
+        {
+        "type": "product",
+        "name": "Product",
+        "limit": 2,
+        "settings": [
+            {
+            "type": "product",
+              "id": "product",
+              "label": "Product"
+            }
+        ]
+        },
+        {
          "type": "featured_blog",
          "name": "Featured Blog",
          "limit": 1,
