@@ -8,120 +8,127 @@
     <div class="flex relative gap-4">
       <div class="w-full">
         {% render 'article_image-banner', image: article.image %}
-        <div>
+          <div>
 
-        <!-- Share to do -->
-          <!-- {% if section.settings.show_share %}
-          <div class="mt-10 flex justify-center gap-3 items-center">
-          <h3 class="uppercase text-[15px] mr-2">SHARE</h3>
-          <div class="w-[30px] h-[30px] roundex-full border border-acajou rounded-full flex justify-center items-center">
-          <a href="//www.facebook.com/sharer.php?u={{ permalinkURL }}">
-          {% render 'icon-facebook', fill: 'acajou' %}
-          </a>
-          </div>
-          <div class="w-[30px] h-[30px] roundex-full border border-acajou rounded-full flex justify-center items-center">
-          {% render 'icon-mail' %}
-          </div>
-          <div class="w-[30px] h-[30px] roundex-full border border-acajou rounded-full flex justify-center items-center">
-          <a href="sms://?&body=https://jollymama.com{{ product.url }}{{ page.url }}{{ article.url }}">
-          {% render 'icon-sms' %}
-          </a>
-          </div>
-          <div class="w-[30px] h-[30px] roundex-full border border-acajou rounded-full flex justify-center items-center">
-          <a href="whatsapp://send?text=check this out https://jollymama.com{{ product.url }}{{ page.url }}{{ article.url }}">
-          {% render 'icon-whatsapp' %}
-          </a>
-          </div>
-          </div>
-          -->
           <!-- Share to do -->
-        {% endif %}
-        {% for tag in article.tags %}
-          <div class="my-3 md:hidden">
-            {% render 'article-tags', tag: tag %}
+          <div>
+            {% if section.settings.show_share %}
+              <div class="flex justify-center gap-3 mt-5 items-center">
+                <div class="w-[30px] h-[30px] roundex-full rounded-full flex justify-center items-center">
+                  <a href="#" class="cursor-default">
+                    {% render 'icon-facebook-article' %}
+                  </a>
+                </div>
+                <div class="w-[30px] h-[30px] roundex-full rounded-full flex justify-center items-center cursor-pointer">
+                  <a
+                    href="https://www.linkedin.com/share?url={{ article.url }}"
+                    onclick="window.open(this.href, 'share-linkedin', 'width=750, height= 750'); return false;"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    {% render 'icon-linkedin' %}
+                  </a>
+                </div>
+                <div class="w-[25px] h-[25px] border border-gray-400 rounded-full flex justify-center items-center">
+                  <a href="mailto:?body=tisbody&subject={{ article.url }}">
+                    {% render 'icon-mail' %}
+                  </a>
+                </div>
+                <div class="w-[25px] h-[25px] border border-gray-400 rounded-full flex justify-center items-center cursor-pointer">
+                  <a class="clipboard" onclick="copyToClipboard()">
+                    {% render 'icon-link' %}
+                  </a>
+                </div>
+              </div>
+            {% endif %}
           </div>
-        {% endfor %}
-      </div>
-      <div class="my-5">
-        {%- if section.settings.show_date == true -%}
-          <p class="text-xs text-[#6E6E73] md:text-sm font-light">
-            {{ article.published_at | date: "%d.%b %C" }}
-          </p>
+          <!-- Share to do -->
+          {% for tag in article.tags %}
+            <div class="my-3 md:hidden">
+              {% render 'article-tags', tag: tag %}
+            </div>
+          {% endfor %}
+        </div>
+        <div class="my-5">
+          {%- if section.settings.show_date == true -%}
+            <p
+              class="text-xs text-[#6E6E73] md:text-sm font-light">
+              {{ article.published_at | date: "%d.%b %C" }}
+            </p>
+          {%- endif -%}
+          <h2 class="text-base md:text-2xl">
+            {{ article.title }}
+          </h2>
+          {%- if section.settings.show_time == true -%}
+            <span class="reading-time text-[#6E6E73] font-light text-xs md:text-sm" title="Estimated read time">
+              {% assign words = article.content | strip_html | split: ' ' | size %}
+              {{ words | divided_by: 180 | plus: 4 }} minutes
+            </span>
+          {%- endif -%}
+        </div>
+        {%- if section.settings.show_content == true -%}
+          <div class="text-base mb-8 md:text-lg md:mb-12">
+            {{ article.content }}
+          </div>
         {%- endif -%}
-        <h2 class="text-base md:text-2xl">
-          {{ article.title }}
-        </h2>
-        {%- if section.settings.show_time == true -%}
-          <span class="reading-time text-[#6E6E73] font-light text-xs md:text-sm" title="Estimated read time">
-            {% assign words = article.content | strip_html | split: ' ' | size %}
-            {{ words | divided_by: 180 | plus: 4 }} minutes
-          </span>
-        {%- endif -%}
-      </div>
-      {%- if section.settings.show_content == true -%}
-        <div class="text-base mb-8 md:text-lg md:mb-12">
-          {{ article.content }}
-        </div>
-      {%- endif -%}
 
 
-      <div class="flex flex-col w-full gap-8 md:gap-12 {%- if section.settings.related_products and  related_products != blank -%} md:w-9/12 {% else %} w-full {% endif %}">
-        
+        <div class="flex flex-col w-full gap-8 md:gap-12 {%- if section.settings.related_products and  related_products != blank -%} md:w-9/12 {% else %} w-full {% endif %}">
 
-       {%  comment  %}  à mettre les metafields dans un boucle  {% endcomment %}
-        {%  comment  %}  comme dans l'article de JM  {% endcomment %}
-        <div class="flex flex-col gap-5">
-          <h3 class="text-base md:text-xl font-bold">
-            {{ article.metafields.custom.title_1.value }}
-          </h3>
-          {% render "image" image: article.metafields.custom.image_bloc_1.value, class: "max-h-[260px] object-cover w-full" %}
-          <div class="text-base font-thin md:text-lg">
-            {{ article.metafields.custom.text_bloc_1.value }}
+          {% comment %}  à mettre les metafields dans un boucle  {% endcomment %}
+          {% comment %}  comme dans l'article de JM  {% endcomment %}
+
+          {%- assign image_texts = 0 -%}
+            {% for block in section.blocks %}
+              {%- if block.type == "image_texts" -%}
+              {%- assign image_texts = image_texts | plus: 1 -%}
+              {% assign title_name = 'title_' | append: image_texts %}
+              {% assign image_name = 'image_bloc_' | append: image_texts %}
+              {% assign text_name = 'text_bloc_' | append: image_texts %}
+              {% assign metafield_title = article.metafields.custom[title_name] %}
+              {% assign metafield_image = article.metafields.custom[image_name] %}
+              {% assign metafield_text = article.metafields.custom[text_name] %}
+
+                {% if metafield_title != blank or metafield_text != blank or metafield_image != blank %}
+                  <div class="flex flex-col gap-5"> <h3 class="text-base md:text-xl font-bold">
+                    {{ metafield_title }}
+                  </h3>
+                  {% render "image" image: metafield_image class: "max-h-[260px] object-cover w-full" %}
+                  <div class="text-base font-thin md:text-lg">
+                    {{ metafield_text }}
+                  </div>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+
+          <div class="flex relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-5 scrollbar">
+            {% for block in section.blocks %}
+              {% if block.type == "pack_card" %}
+                {% render "collection-card", image: block.settings.image, label: block.settings.label, title: block.settings.title, subtitle: block.settings.subtitle, cta: block.settings.cta, ctaLink: block.settings.ctaLink %}
+              {% elsif block.type == "product" %}
+                <div class="min-w-[158px] md:max-w-[265px]">
+                  {% render 'card-product'
+                   product: product
+                   , card_product: block.settings.product
+                   , show_secondary_image: true
+                   , show_vendor: false
+                   , show_quick_add: true
+                   , show_cta: true %}
+                </div>
+              {% endif %}
+            {% endfor %}
           </div>
-        </div>
-
-        <div
-          class="flex flex-col gap-5">
-          <h3 class="text-base md:text-xl font-bold">
-            {{ article.metafields.custom.title_2.value }}
-          </h3>
-          <div class="w-full">
-            {% render "image" image: article.metafields.custom.Image_bloc_2.value, class: "max-h-[260px] object-cover" %}
-          </div>
-          <div class="text-base font-thin md:text-lg">
-            {{ article.metafields.custom.text_bloc_2.value }}
-          </div>
-        </div>
-
-
-        <div class="flex relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-5 scrollbar">
           {% for block in section.blocks %}
-            {% if block.type == "pack_card" %}
-              {% render "collection-card", image: block.settings.image, label: block.settings.label, title: block.settings.title, subtitle: block.settings.subtitle, cta: block.settings.cta, ctaLink: block.settings.ctaLink %}
-            {% elsif block.type == "product" %}
-              <div class="min-w-[158px] md:max-w-[265px]">
-              {% render 'card-product'
-                product: product
-               , card_product: block.settings.product
-               , show_secondary_image: true
-               , show_vendor: false
-               , show_quick_add: true
-               , show_cta: true %}
-               </div>
+            {% if block.type == "featured_blog" %}
+              <div>
+                {% render 'featured-blog-article-carousel' %}
+              </div>
             {% endif %}
           {% endfor %}
         </div>
-        {% for block in section.blocks %}
-          {% if block.type == "featured_blog" %}
-            <div>
-              {% render 'featured-blog-article-carousel' %}
-            </div>
-          {% endif %}
-        {% endfor %}
       </div>
-     </div>
 
-     
+
       {%- if section.settings.related_products and related_products != blank -%}
         <div class="hidden md:block w-3/12">
           <div class="flex flex-col sticky top-16 gap-10">
@@ -140,16 +147,31 @@
     </div>
   </div>
 </section>
+<script>
+  function copyToClipboard(text) {
+    var inputc = document.body.appendChild(document.createElement("input"));
+    inputc.value = window.location.href;
+    inputc.focus();
+    inputc.select();
+    document.execCommand('copy');
+    inputc.parentNode.removeChild(inputc);
+    alert("URL successfully Copied 🎉");
+  }
 
+  function shareLinkedIn() {
+    window.open("https://www.linkedin.com/share?url=  {{ article.url }}", "share-linkedin", "width=750, height=750");
+    return false;
+  }
+</script>
 <!-- Schema to check voir comment tu aurait fait de ton coter (block ou pas block etc...)-->
 
 {% schema %}
   {
     "name": "Article de blog",
     "settings": [
-        {
-       "type": "header",
-       "content": "Article settings"
+      {
+        "type": "header",
+        "content": "Article settings"
       },
       {
         "type": "checkbox",
@@ -168,8 +190,7 @@
         "id": "show_time",
         "default": false,
         "label": "Show time"
-      },
-      {
+      }, {
         "type": "checkbox",
         "id": "show_date",
         "default": false,
@@ -182,6 +203,12 @@
       }
     ],
     "blocks": [
+      {
+        "name": "Image texts",
+        "type": "image_texts",
+        "limit": 30,
+        "settings": []
+      },
       {
         "type": "pack_card",
         "name": "Pack card",
@@ -246,82 +273,81 @@
             "label": "Text color"
           }
         ]
-        },
-        {
+      },
+      {
         "type": "product",
         "name": "Product",
         "limit": 2,
         "settings": [
-            {
+          {
             "type": "product",
-              "id": "product",
-              "label": "Product"
-            }
+            "id": "product",
+            "label": "Product"
+          }
         ]
-        },
-        {
-         "type": "featured_blog",
-         "name": "Featured Blog",
-         "limit": 1,
-         "settings": [
-           {
-             "type": "header",
-             "content": "Blog"
-           },
-           {
-             "type": "blog",
-             "id": "blog",
-             "label": "Choix du blog"
-           },
-           {
-             "type": "range",
-             "id": "post_limit",
-             "min": 0,
-             "max": 4,
-             "step": 1,
-             "default": 4,
-             "label": "Nombre d'articles de blog à afficher en desktop"
-           },
-           {
-             "type": "checkbox",
-             "id": "show_dots",
-             "label": "Show carousel bar",
-             "default": true
-           }, {
-             "type": "header",
-             "content": "header"
-           }, {
-             "type": "text",
-             "id": "heading",
-             "default": "À LIRE...",
-             "label": "Titre"
-           }, {
-             "type": "header",
-             "content": "Contenu des articles"
-           }, {
-             "type": "checkbox",
-             "id": "show_tag",
-             "default": false,
-             "label": "Show tag"
-           }, {
-             "type": "checkbox",
-             "id": "show_author",
-             "default": false,
-             "label": "Show author"
-           }, {
-             "type": "checkbox",
-             "id": "show_date",
-             "default": true,
-             "label": "Show date"
-           }, {
-             "type": "checkbox",
-             "id": "show_button",
-             "default": true,
-             "label": "Show button"
-           }
-         ]
-       },
-       {
+      },
+      {
+        "type": "featured_blog",
+        "name": "Featured Blog",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Blog"
+          },
+          {
+            "type": "blog",
+            "id": "blog",
+            "label": "Choix du blog"
+          },
+          {
+            "type": "range",
+            "id": "post_limit",
+            "min": 0,
+            "max": 4,
+            "step": 1,
+            "default": 4,
+            "label": "Nombre d'articles de blog à afficher en desktop"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_dots",
+            "label": "Show carousel bar",
+            "default": true
+          }, {
+            "type": "header",
+            "content": "header"
+          }, {
+            "type": "text",
+            "id": "heading",
+            "default": "À LIRE...",
+            "label": "Titre"
+          }, {
+            "type": "header",
+            "content": "Contenu des articles"
+          }, {
+            "type": "checkbox",
+            "id": "show_tag",
+            "default": false,
+            "label": "Show tag"
+          }, {
+            "type": "checkbox",
+            "id": "show_author",
+            "default": false,
+            "label": "Show author"
+          }, {
+            "type": "checkbox",
+            "id": "show_date",
+            "default": true,
+            "label": "Show date"
+          }, {
+            "type": "checkbox",
+            "id": "show_button",
+            "default": true,
+            "label": "Show button"
+          }
+        ]
+      }, {
         "type": "product_card",
         "name": "Product card",
         "limit": 1,
