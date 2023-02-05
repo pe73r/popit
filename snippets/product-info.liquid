@@ -96,8 +96,13 @@
       id="price-{{ section.id }}"
       role="status"
       {{ block.shopify_attributes }}> {%- if product.compare_at_price > product.price -%}
-        <h5 class="text-lg font-extrabold text-{{ product-color }}">{{ product.price | money }}</h5>
-        <span class="ml-2 text-sm font-light line-through text-{{ product-color }}">{{ product.compare_at_price | money }}</span>
+
+
+        <h5
+          data-price
+          data-dynamic-price
+          class="text-lg font-extrabold text-{{ product-color }}">{{ product.price | money }}</h5>
+        <span data-price-stroke class="ml-2 text-sm font-light line-through text-{{ product-color }}">{{ product.compare_at_price | money }}</span>
       {% else %}
         <h5 class="text-lg font-extrabold text-{{ product-color }}">{{ product.price | money }}</h5>
       {% endif %}
@@ -281,7 +286,6 @@
           {%- for option in product.options_with_values -%}
             {% comment %} <div class="mr-5 text-[15px] min-w-fit mb-2">{{ option.name }}:
             </div> {% endcomment %}
-
             <div class="flex justify-between gap-2 mt-5 flex-row-reverse">
               {% assign counter = 0 %}
               {%- for value in option.values -%}

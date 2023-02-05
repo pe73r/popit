@@ -4,6 +4,7 @@ defineCustomElement(
     isInit = false;
     constructor() {
       super();
+      console.log("tail.variatnts");
       this.addEventListener("click", this.onClick);
     }
 
@@ -11,7 +12,7 @@ defineCustomElement(
     init = () => {
       const selects = Array.from(this.querySelectorAll("select"));
       const inputs = Array.from(this.querySelectorAll("input"));
-      this.atc = document.querySelector(`add-to-cart[data-product="${this.getAttribute("data-product")}"]`);
+      this.atc = document.querySelectorAll(`add-to-cart[data-product="${this.getAttribute("data-product")}"]`);
       this.variants = JSON.parse(this.querySelector("#product-variants").innerHTML);
 
       console.log(this.variants, this.atc);
@@ -51,19 +52,23 @@ defineCustomElement(
                 .replace("€", "")
                 .trim() + "€")
         );
-        const variantImg = variant.featured_image.src.split("v=")[1];
-        document.querySelectorAll("carousel-dot").forEach((element) => {
-          const img = element.querySelector("img");
-          if (!img) {
-            return;
-          }
+        if (variant.featured_image) {
+          const variantImg = variant.featured_image.src.split("v=")[1];
+          document.querySelectorAll("carousel-dot").forEach((element) => {
+            const img = element.querySelector("img");
+            if (!img) {
+              return;
+            }
 
-          if (String(img.src).includes(variantImg)) {
-            element.click();
-          }
+            if (String(img.src).includes(variantImg)) {
+              element.click();
+            }
+          });
+        }
+
+        this.atc.forEach((atc) => {
+          atc.setAttribute("data-variant", String(variant.id));
         });
-        console.log({ variant });
-        this.atc.setAttribute("data-variant", String(variant.id));
       }
     };
 
