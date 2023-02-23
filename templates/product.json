@@ -194,7 +194,7 @@
     "ca7fac8e-53d2-41fb-9a5b-446c1b05dc60": {
       "type": "products-snap-slider",
       "settings": {
-        "collection": "sommeil",
+        "collection": "frontpage",
         "title": "Ce produit existe aussi en gélules",
         "bg_color": "#4f2674",
         "color": "#ffffff"
@@ -226,9 +226,9 @@
       ],
       "settings": {
         "title": "FAQ",
-        "title_color": "#201A1C",
-        "title_accordion_color": "#201A1C",
-        "content_accordion_color": "#201A1C"
+        "title_color": "#201a1c",
+        "title_accordion_color": "#201a1c",
+        "content_accordion_color": "#201a1c"
       }
     },
     "product-recommendations": {
