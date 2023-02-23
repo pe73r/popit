@@ -108,19 +108,19 @@
               </div>
               {% if product.metafields.product.use_image_1.value != blank %}
                 <div class="flex items-center gap-5 pb-3 border-b border-{{ product-color }} mt-5">
-                  <img src="{{ product.metafields.product.use_image_1.value | img_url:'master' }}" alt="">
+                  <img class="max-w-[60px]" src="{{ product.metafields.product.use_image_1.value | img_url:'master' }}" alt="">
                   <span class="block text-sm font-light">{{ product.metafields.product.use_text_1 }}</span>
                 </div>
               {% endif %}
               {% if product.metafields.product.description_text_2 != blank %}
                 <div class="flex items-center gap-5 pb-3 border-b border-{{ product-color }} mt-4">
-                  <img src="{{ product.metafields.product.description_image_2.value | img_url:'master' }}" alt="">
+                  <img class="max-w-[60px]" src="{{ product.metafields.product.description_image_2.value | img_url:'master' }}" alt="">
                   <span class="block text-sm font-light">{{ product.metafields.product.use_text_2 }}</span>
                 </div>
               {% endif %}
               {% if product.metafields.product.description_text_3 != blank %}
                 <div class="flex items-center gap-5 mt-4">
-                  <img src="{{ product.metafields.product.description_image_3.value | img_url:'master' }}" alt="">
+                  <img class="max-w-[60px]" src="{{ product.metafields.product.description_image_3.value | img_url:'master' }}" alt="">
                   <span class="block text-sm font-light">{{ product.metafields.product.use_text_3 }}</span>
                 </div>
               {% endif %}

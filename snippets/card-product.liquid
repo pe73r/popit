@@ -14,7 +14,7 @@
             {% endif %}
 
             {%- if card_product.featured_media -%}
-                <div class="w-full max-w-[170px] mx-auto rounded-lg {% if card_product.media[1] != nil and show_secondary_image %} card_product__image transition-all md:group-hover:opacity-0 {% endif %}  ">
+                <div class="w-full mx-auto rounded-lg {% if card_product.media[1] != nil and show_secondary_image %} card_product__image transition-all md:group-hover:opacity-0 {% endif %}  ">
                     <img
                       srcset="{%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
                         {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
@@ -45,7 +45,7 @@
                         src="{{ card_product.media[1] | image_url: width: 533 }}"
                         sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                         alt="{{ card_product.media[1].alt | escape }}"
-                        class="motion-reduce bg-beige rounded-lg"
+                        class="motion-reduce rounded-lg"
                         loading="lazy"
                         width="{{ card_product.media[1].width }}"
                         height="{{ card_product.media[1].height }}"
@@ -69,7 +69,7 @@
     </a>
 
     <!-- product-info -->
-    <div class="text-center">  
+    <div class="text-center py-4 bg-white relative z-10">  
       <!-- title -->
       <{% if template contains 'collection' %}h2{% else %}h3{% endif %} class="font-body-text text-base md:text-[20px] font-extrabold line-clamp-1">
         {{ card_product.title }}
