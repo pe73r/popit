@@ -46,7 +46,7 @@
   class="fixed bottom-0 left-0 flex items-center justify-between w-screen gap-5 px-2 py-2 transition-all bg-white shadow md:px-10">
   <div class="items-center hidden gap-4 rounded-sm md:flex">
     <img
-      class="aspect-square w-[68px] h-[68px]"
+      class="w-[50px]"
       src="{{product.featured_image | image_url }}"
       alt="product">
     <div class="flex flex-col justify-center">
@@ -300,7 +300,7 @@
                     class="radio-variant-circle w-0 h-0 opacity-0 md:collapse hidden"
                     {% if option.selected_value == value %}checked{% endif %}>
                   <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                    <div class="variant-box block pt-3 pb-4 bg-white bg-opacity-60 text-sm rounded-lg cursor-pointer border border-violet-light text-{{ product-color }} text-center">
+                    <div class="variant-box block pt-3 pb-4 bg-white bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
                       <h5 class="text-base text-{{ product-color }}">{{ value }}</h5>
                       <!-- workaround to show variant price -->
                       {% assign counter = counter | plus: 1 %}
@@ -331,7 +331,7 @@
                       {% assign saving = product.variants[0].compare_at_price | minus: product.variants[0].price | times: 100 | divided_by: product.variants[0].compare_at_price | round %}
                       {% assign percentage = saving | at_least: percentage %}
 
-                      <div class="relative flex -top-3 text-[10px] bg-orange text-white percentage text-center whitespace-nowrap rounded-md w-fit mx-auto py-1 px-2">
+                      <div class="relative flex -top-3 text-[10px] bg-{{ product-color }} text-white percentage text-center whitespace-nowrap rounded-md w-fit mx-auto py-1 px-2">
                         <span class="hidden md:block mr-1">ÉCONOMISEZ</span>
                         {{ percentage }}%</div>
                     {% endif %}
@@ -342,7 +342,7 @@
                       {% assign saving = product.variants[1].compare_at_price | minus: product.variants[1].price | times: 100 | divided_by: product.variants[1].compare_at_price | round %}
                       {% assign percentage = saving | at_least: percentage %}
 
-                      <div class="relative flex -top-3 text-[10px] bg-orange text-white percentage text-center whitespace-nowrap rounded-md w-fit mx-auto py-1 px-2">
+                      <div class="relative flex -top-3 text-[10px] bg-{{ product-color }} text-white percentage text-center whitespace-nowrap rounded-md w-fit mx-auto py-1 px-2">
                         <span class="hidden md:block mr-1">ÉCONOMISEZ</span>
                         {{ percentage }}%</div>
                     {% endif %}
@@ -353,7 +353,7 @@
                       {% assign saving = product.variants[2].compare_at_price | minus: product.variants[2].price | times: 100 | divided_by: product.variants[2].compare_at_price | round %}
                       {% assign percentage = saving | at_least: percentage %}
 
-                      <div class="relative flex -top-3 text-[10px] bg-orange text-white percentage text-center whitespace-nowrap rounded-md w-fit mx-auto py-1 px-2">
+                      <div class="relative flex -top-3 text-[10px] bg-{{ product-color }} text-white percentage text-center whitespace-nowrap rounded-md w-fit mx-auto py-1 px-2">
                         <span class="hidden md:block mr-1">ÉCONOMISEZ</span>
                         {{ percentage }}%</div>
                     {% endif %}
@@ -456,7 +456,7 @@
             id="referenceDesktop"
             data-product="{{ product.id }}"
             data-variant="{{ product.selected_or_first_available_variant.id }}">
-            <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="{% unless product.available %} hidden {% endunless %} w-full my-2 cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }} {% render "button", size: "large" %}">
+            <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="{% unless product.available %} hidden {% endunless %} w-full my-2 cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }} {% render "button", color: product-color, size: "large" %}">
               {% if product.available %}
                 <div class="px-0 md:px-16 py-3 flex justify-center items-center">
                   <span class="block">Ajouter au panier</span>
@@ -492,16 +492,16 @@
 
 </div>
 <style>
-  {% if product.tags contains "sommeil" %}
-    input.radio-variant-circle[type="radio"]:checked + label > div {
-      background: {{ product_color }}
-       !important;
-      border-color: {{ product_color }}
-       !important;
-      color: white !important;
-      transition-duration: 0.3s;
-    }
-  {% endif %}
+
+  input.radio-variant-circle[type="radio"]:checked + label > div {
+    background: {{ product_color }}
+     !important;
+    border-color: {{ product_color }}
+     !important;
+    color: white !important;
+    transition-duration: 0.3s;
+  }
+
   input.radio-variant-circle[type="radio"]:checked + label > div > h5 {
     color: white !important;
   }

@@ -65,6 +65,14 @@
     .products-slider {
       background-color: #EA5B0C;
     }
+  {% elsif product.tags contains "hair" or product.tags contains "peau"%}
+      .products-slider {
+        background-color: #E4003A;
+      }
+  {% elsif product.tags contains "stress" %}
+    .products-slider {
+      background-color: #2F52A0;
+    }
   {% else %}
     .products-slider {
       background-color: {{ section.settings.bg_color }}
