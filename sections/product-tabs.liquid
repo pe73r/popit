@@ -1,33 +1,46 @@
 {% if product.tags contains "sommeil" %}
   {% assign product_color = "#4F2674" %}
+  {% assign product-color = "violet" %}
   {% assign bg_color = "#E9D2E7" %}
 
 {% elsif product.tags contains "energie" %}
   {% assign product_color = "#EA5B0C" %}
+  {% assign product-color = orange %}
   {% assign bg_color = "#FEE5C6" %}
 
 {% elsif product.tags contains "alimentation" %}
   {% assign product_color = "#3D925C" %}
+  {% assign product-color = "green" %}
   {% assign bg_color = "#D9E6B1" %}
 
 {% elsif product.tags contains "sport" %}
   {% assign product_color = "#2F52A0" %}
+  {% assign product-color = "blue" %}
   {% assign bg_color = "#CBE7E6" %}
 
 {% elsif product.tags contains "stress" %}
   {% assign product_color = "#2F2870" %}
+  {% assign product-color = "blue" %}
   {% assign bg_color = "#B7E1F5" %}
 
 {% elsif product.tags contains "feminim" %}
   {% assign product_color = "#9D1553" %}
+  {% assign product-color = "pink" %}
   {% assign bg_color = "#F9CDDB" %}
 
 {% elsif product.tags contains "peau" %}
   {% assign product_color = "#E4003A" %}
+  {% assign product-color = "red-hair" %}
+  {% assign bg_color = "#FBDBDC" %}
+
+{% elsif product.tags contains "hair" %}
+  {% assign product_color = "#E4003A" %}
+  {% assign product-color = "red-hair" %}
   {% assign bg_color = "#FBDBDC" %}
 
 {% elsif product.tags contains "focus" %}
   {% assign product_color = "#00555A" %}
+  {% assign product-color = "green" %}
   {% assign bg_color = "#C2E3DF" %}
 {% else %}
   {% assign product_color = section.settings.color %}
@@ -68,20 +81,20 @@
                 {% endif %}
               </div>
               {% if product.metafields.product.description_text_1 != blank %}
-                <div class="flex items-center gap-5 pb-3 border-b border-violet-light mt-5">
-                  <img src="{{ product.metafields.product.description_image_1.value | img_url:'master' }}" alt="">
+                <div class="flex items-center gap-5 pb-3 border-b border-{{ product-color }} mt-5">
+                  <img class="max-w-[60px]" src="{{ product.metafields.product.description_image_1.value | img_url:'master' }}" alt="">
                   <span class="block text-sm font-light">{{ product.metafields.product.description_text_1.value }}</span>
                 </div>
               {% endif %}
               {% if product.metafields.product.description_text_2 != blank %}
-                <div class="flex items-center gap-5 pb-3 border-b border-violet-light mt-4">
-                  <img src="{{ product.metafields.product.description_image_2.value | img_url:'master' }}" alt="">
+                <div class="flex items-center gap-5 pb-3 border-b border-{{ product-color }} mt-4">
+                  <img class="max-w-[60px]" src="{{ product.metafields.product.description_image_2.value | img_url:'master' }}" alt="">
                   <span class="block text-sm font-light">{{ product.metafields.product.description_text_2.value }}</span>
                 </div>
               {% endif %}
               {% if product.metafields.product.description_text_3 != blank %}
                 <div class="flex items-center gap-5 mt-4">
-                  <img src="{{ product.metafields.product.description_image_3.value | img_url:'master' }}" alt="">
+                  <img class="max-w-[60px]" src="{{ product.metafields.product.description_image_3.value | img_url:'master' }}" alt="">
                   <span class="block text-sm font-light">{{ product.metafields.product.description_text_3.value }}</span>
                 </div>
               {% endif %}
@@ -94,13 +107,13 @@
                 {% endif %}
               </div>
               {% if product.metafields.product.use_image_1.value != blank %}
-                <div class="flex items-center gap-5 pb-3 border-b border-violet-light mt-5">
+                <div class="flex items-center gap-5 pb-3 border-b border-{{ product-color }} mt-5">
                   <img src="{{ product.metafields.product.use_image_1.value | img_url:'master' }}" alt="">
                   <span class="block text-sm font-light">{{ product.metafields.product.use_text_1 }}</span>
                 </div>
               {% endif %}
               {% if product.metafields.product.description_text_2 != blank %}
-                <div class="flex items-center gap-5 pb-3 border-b border-violet-light mt-4">
+                <div class="flex items-center gap-5 pb-3 border-b border-{{ product-color }} mt-4">
                   <img src="{{ product.metafields.product.description_image_2.value | img_url:'master' }}" alt="">
                   <span class="block text-sm font-light">{{ product.metafields.product.use_text_2 }}</span>
                 </div>

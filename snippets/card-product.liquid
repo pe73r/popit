@@ -14,7 +14,7 @@
             {% endif %}
 
             {%- if card_product.featured_media -%}
-                <div class="w-full bg-beige rounded-lg {% if card_product.media[1] != nil and show_secondary_image %} card_product__image transition-all md:group-hover:opacity-0 {% endif %}  ">
+                <div class="w-full max-w-[170px] mx-auto rounded-lg {% if card_product.media[1] != nil and show_secondary_image %} card_product__image transition-all md:group-hover:opacity-0 {% endif %}  ">
                     <img
                       srcset="{%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
                         {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
@@ -33,7 +33,7 @@
                     >
                 </div>
                 {%- if card_product.media[1] != nil and show_secondary_image -%}
-                  <div class="absolute top-0 z-10 hidden object-cover h-full transition-all bg-white opacity-0 md:block md:group-hover:opacity-100 ">
+                  <div class="absolute top-0 z-10 hidden object-cover h-full transition-all bg-white opacity-0 md:block md:group-hover:opacity-100">
                       <img
                         srcset="{%- if card_product.media[1].width >= 165 -%}{{ card_product.media[1] | image_url: width: 165 }} 165w,{%- endif -%}
                           {%- if card_product.media[1].width >= 360 -%}{{ card_product.media[1] | image_url: width: 360 }} 360w,{%- endif -%}

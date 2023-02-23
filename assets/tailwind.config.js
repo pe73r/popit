@@ -17,8 +17,11 @@ module.exports = {
         acajou: {
           DEFAULT: "#733E2B",
         },
+        red: {
+          DEFAULT: "#c91010",
+          hair: "#E4003A",
+        },
         orange: {
-          DEFAULT: "#F84C55",
           energy: "#EA5B0C",
         },
         sable: {

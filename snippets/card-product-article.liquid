@@ -13,7 +13,7 @@
             {% endif %}
 
             {%- if product.featured_media -%}
-                <div class="w-full bg-beige rounded-lg {% if product.media[1] != nil and show_secondary_image %} product__image transition-all md:group-hover:opacity-0 {% endif %}  ">
+                <div class="w-full max-w-[170px] mx-auto rounded-lg {% if product.media[1] != nil and show_secondary_image %} product__image transition-all md:group-hover:opacity-0 {% endif %}  ">
                     <img
                       srcset="{%- if product.featured_media.width >= 165 -%}{{ product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
                         {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}

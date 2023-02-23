@@ -145,6 +145,14 @@
     .product-marquee {
       background-color: #EA5B0C;
     }
+  {% elsif product.tags contains "stress" %}
+    .product-marquee {
+      background-color: #2F52A0;
+    }
+  {% elsif product.tags contains "hair" or product.tags contains "peau" %}
+    .product-marquee {
+      background-color: #E4003A;
+    }
   {% else %}
     .product-marquee {
       background-color: {{ section.settings.bg_color }}
