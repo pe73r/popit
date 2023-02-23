@@ -1,5 +1,5 @@
 {%- if settings.social_twitter_link != blank -%}
-  <li class="">
+  <li class="picto-social">
     <a target="_blank" href="{{ settings.social_twitter_link }}">
       {%- render 'icon-twitter' -%}
     </a>
@@ -7,7 +7,7 @@
 {%- endif -%}
 
 {%- if settings.social_facebook_link != blank -%}
-  <li class="">
+  <li class="picto-social">
     <a target="_blank" href="{{ settings.social_facebook_link }}">
       {%- render 'icon-facebook' -%}
     </a>
@@ -15,60 +15,68 @@
 {%- endif -%}
 
 {%- if settings.social_instagram_link != blank -%}
-<li class="">
+  <li class="picto-social">
     <a target="_blank" href="{{ settings.social_instagram_link }}">
       {%- render 'icon-instagram' -%}
     </a>
   </li>
 {%- endif -%}
-  
-{%- if settings.social_pinterest_link != blank -%}
-   <li class="">
-     <a target="_blank" href="{{ settings.social_pinterest_link }}">
-       {%- render 'icon-pinterest' -%}
-     </a>
-   </li>
- {%- endif -%}
 
- {%- if settings.social_tumblr_link != blank -%}
-   <li class="">
-     <a target="_blank" href="{{ settings.social_tumblr_link }}">
-       {%- render 'icon-tumblr' -%}
-     </a>
-   </li>
- {%- endif -%}
- {%- if settings.social_snapchat_link != blank -%}
-   <li class="">
-     <a target="_blank" href="{{ settings.social_snapchat_link }}">
-       {%- render 'icon-snapchat' -%}
-     </a>
-   </li>
- {%- endif -%}
- {%- if settings.social_youtube_link != blank -%}
-   <li class="">
-     <a target="_blank" href="{{ settings.social_youtube_link }}">
-       {%- render 'icon-youtube' -%}
-     </a>
-   </li>
- {%- endif -%}
- {%- if settings.social_vimeo_link != blank -%}
-   <li class="">
-     <a target="_blank" href="{{ settings.social_vimeo_link }}">
-       {%- render 'icon-vimeo' -%}
-     </a>
-   </li>
- {%- endif -%}
- {%- if settings.social_tiktok_link != blank -%}
-   <li class="">
-     <a target="_blank" href="{{ settings.social_tiktok_link }}">
-       {%- render 'icon-tiktok' -%}
-     </a>
-   </li>
- {%- endif -%}
- {%- if settings.social_linkedin_link != blank -%}
-   <li class="">
-     <a target="_blank" href="{{ settings.social_linkedin_link }}">
-       {%- render 'icon-linkedin' -%}
-     </a>
-   </li>
- {%- endif -%}
+{%- if settings.social_pinterest_link != blank -%}
+  <li class="picto-social">
+    <a target="_blank" href="{{ settings.social_pinterest_link }}">
+      {%- render 'icon-pinterest' -%}
+    </a>
+  </li>
+{%- endif -%}
+
+{%- if settings.social_tumblr_link != blank -%}
+  <li class="picto-social">
+    <a target="_blank" href="{{ settings.social_tumblr_link }}">
+      {%- render 'icon-tumblr' -%}
+    </a>
+  </li>
+{%- endif -%}
+{%- if settings.social_snapchat_link != blank -%}
+  <li class="picto-social">
+    <a target="_blank" href="{{ settings.social_snapchat_link }}">
+      {%- render 'icon-snapchat' -%}
+    </a>
+  </li>
+{%- endif -%}
+{%- if settings.social_youtube_link != blank -%}
+  <li class="picto-social">
+    <a target="_blank" href="{{ settings.social_youtube_link }}">
+      {%- render 'icon-youtube' -%}
+    </a>
+  </li>
+{%- endif -%}
+{%- if settings.social_vimeo_link != blank -%}
+  <li class="picto-social">
+    <a target="_blank" href="{{ settings.social_vimeo_link }}">
+      {%- render 'icon-vimeo' -%}
+    </a>
+  </li>
+{%- endif -%}
+{%- if settings.social_tiktok_link != blank -%}
+  <li class="picto-social">
+    <a target="_blank" href="{{ settings.social_tiktok_link }}">
+      {%- render 'icon-tiktok' -%}
+    </a>
+  </li>
+{%- endif -%}
+{%- if settings.social_linkedin_link != blank -%}
+  <li class="picto-social">
+    <a target="_blank" href="{{ settings.social_linkedin_link }}">
+      {%- render 'icon-linkedin' -%}
+    </a>
+  </li>
+{%- endif -%}
+<style>
+
+  @media screen and (max-width: 639px) {
+    .picto-social svg {
+      max-width: 24px;
+    }
+  }
+</style>

@@ -3,25 +3,27 @@
   class="py-10"
   style="background-color: {{ section.settings.bg_color }}">
   <div class="w-11/12 max-w-6xl mx-auto">
-    <!-- logo -->
-
-    <div class="text-center flex flex-row md:flex-col justify-between items-center">
-      {% if section.settings.logo_svg != blank %}
-        <img
-          class="lazy max-w-[110px] md:max-w-[160px] md:mx-auto"
-          src="{{ section.settings.logo_svg }}"
-          alt="{{ section.settings.logo_svg.alt }}">
-      {% elsif section.settings.logo != blank %}
-        <img
-          class="lazy max-w-[110px] max-w-[160px] md:mx-auto"
-          src="{{ section.settings.logo | img_url: 'master' }}"
-          alt="{{ section.settings.logo.alt }}"
-          loading="lazy">
+    <div class="flex justify-between items-center flex-col-reverse md:flex-row mb-7">
+      {% if section.settings.image_family != blank or section.settings.footer_text != blank %}
+        <div class="flex gap-6 items-center flex-col justify-center md:flex-row md:justify-start">
+          {% if section.settings.image_family != blank %}
+            <img
+              class="lazy max-w-[170px]"
+              src="{{ section.settings.image_family | img_url: 'master' }}"
+              alt="{{ section.settings.image_family.alt }}"
+              loading="lazy">
+          {% endif %}
+          {% if section.settings.footer_text != blank %}
+            <div class="text-sm text-green font-bold text-center md:text-left max-w-[500px]">
+              {{ section.settings.footer_text }}
+            </div>
+          {% endif %}
+        </div>
       {% endif %}
       <!-- render social  -->
       {%- if section.settings.show_social -%}
-        <div class="">
-          <ul class="flex md:hidden items-center gap-3 justify-center md:justify-start" role="list">
+        <div class="mb-3 md:mb-0">
+          <ul class="flex items-center gap-3" role="list">
             {% render 'social' %}
           </ul>
         </div>
@@ -92,12 +94,31 @@
     </div>
     <!-- close flex -->
 
+
+    <!-- logo -->
+    <div class="text-center flex flex-row md:flex-col justify-between items-center mt-10 mb-5">
+      {% if section.settings.logo_svg != blank %}
+        <img
+          class="lazy max-w-[110px] md:max-w-[160px] md:mx-auto"
+          src="{{ section.settings.logo_svg }}"
+          alt="{{ section.settings.logo_svg.alt }}">
+      {% elsif section.settings.logo != blank %}
+        <img
+          class="lazy max-w-[110px] md:mx-auto"
+          src="{{ section.settings.logo | img_url: 'master' }}"
+          alt="{{ section.settings.logo.alt }}"
+          loading="lazy">
+      {% endif %}
+    </div>
+
+
     <!-- mentions legal -->
     {%- if section.settings.mention-legal != blank -%}
-      <div class="w-full mt-10 pb4 lg:pb-6 text-xs text-center" style="color:{{ section.settings.color }}">
+      <div class="w-full pb4 lg:pb-6 text-xs text-center" style="color:{{ section.settings.color }}">
         {{ section.settings.mention-legal }}
       </div>
     {% endif %}
+
 
     {%- if section.settings.menu_legal != blank -%}
       <ul class="list-none flex flex-col md:flex-row justify-center text-center">
@@ -160,9 +181,13 @@
         "type": "header",
         "content": "content"
       }, {
-        "type": "richtext",
-        "id": "subtext",
-        "default": "<p>Texte descriptif de chaque collection. À ne pas dépasser sur plus de 3 lignes. Sinon CTA lire plus/lire moins...</p>",
+        "type": "image_picker",
+        "id": "image_family",
+        "label": "Image family"
+      }, {
+        "type": "textarea",
+        "id": "footer_text",
+        "default": "POP it simplifie et égaye la nutrition pour vous aider à prendre soin de vous et de toute votre famille",
         "label": "Text"
       }, {
         "type": "checkbox",
