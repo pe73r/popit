@@ -6,8 +6,8 @@
         "16635863695bdbafb2-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_33.png",
-            "image_mobile": "shopify:\/\/shop_images\/image_42.png",
+            "image": "shopify:\/\/shop_images\/michal-parzuchowski-7TWRwDjfGew-unsplash.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/michal-parzuchowski-7TWRwDjfGew-unsplash.jpg",
             "title": "Découvrez nos compléments <br>\nalimentaires et leurs<br>\nbénéfices.",
             "title_mobile": "Découvrez nos compléments alimentaires et leurs bénéfices.",
             "text": "",
@@ -120,6 +120,8 @@
         "collection_2": "",
         "limit_2": 6,
         "show_secondary_image": true,
+        "show_quantity": false,
+        "show_cta": true,
         "show_arrows": true,
         "show_dots": true
       }
