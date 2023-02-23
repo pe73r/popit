@@ -17,40 +17,10 @@
             "button_color": "#ffffff",
             "button_bg": "#4b9b7d"
           }
-        },
-        "c5415137-2df9-4722-ac77-c9afd3473e5d": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/nicolas-solerieu-vHbw2pf8nbw-unsplash.jpg",
-            "title": "Nouveautés",
-            "title_mobile": "Nouveautés",
-            "text": "",
-            "cta": "Je découvre",
-            "button_link": "shopify:\/\/collections",
-            "text_color": "#ffffff",
-            "button_color": "#fcfaf8",
-            "button_bg": "#4b9b7d"
-          }
-        },
-        "be81d616-6b1a-4ea6-9fb4-6da40f8b3482": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/michele-blackwell-przZDqzZKpk-unsplash.jpg",
-            "title": "SCIENTIFIQUEMENT PROUVÉ",
-            "title_mobile": "SCIENTIFIQUEMENT <br>PROUVÉ",
-            "text": "",
-            "cta": "",
-            "button_link": "",
-            "text_color": "#ffffff",
-            "button_color": "#201a1c",
-            "button_bg": "#ffffff"
-          }
         }
       },
       "block_order": [
-        "16635863695bdbafb2-0",
-        "c5415137-2df9-4722-ac77-c9afd3473e5d",
-        "be81d616-6b1a-4ea6-9fb4-6da40f8b3482"
+        "16635863695bdbafb2-0"
       ],
       "settings": {
       }
