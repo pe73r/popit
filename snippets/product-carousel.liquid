@@ -12,17 +12,17 @@
       <carousel-dots class="hidden lg:flex flex-col absolute z-10 gap-1 top-[50%] lg:left-[-5%] xl:left-[-20%] translate-y-[-50%]">
         {%- for media in product.media -%}
           <carousel-dot class="py-2 text-center transition-all cursor-pointer group" href="{{ media }}">
-            <div class="{% if product_media_size >= 8 %} w-[40px] h-[40px]  {% else %} w-[60px] h-[60px] {% endif %} border border-[#BC86BA] rounded-full  lg:hover:ring-capucine lg:hover:border-violet  group-selected:border-violet transition-all flex justify-center ">
+            <div class="{% if product_media_size >= 8 %} w-[40px] h-[40px]  {% else %} w-[60px] h-[60px] {% endif %} rounded-full  lg:hover:ring-capucine  group-selected:border-white group-selected:border-2 transition-all flex justify-center ">
               <img class="rounded-full" src="{{ media  | image_url: width: 52, height: 52 }}">
             </div>
           </carousel-dot>
         {%- endfor -%}
       </carousel-dots>
-      <carousel-container class="w-[440px] h-[440px] bg-white rounded-full mx-auto flex justify-center">
+      <carousel-container class="w-[440px] h-[440px] bg-white rounded-lg mx-auto flex justify-center">
         <carousel-content>
           {%- for media in product.media -%}
             <carousel-panel class="flex items-center">
-              {% render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants, class: 'max-w-[250px] mx-auto' %}
+              {% render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants, class: 'w-full mx-auto' %}
             </carousel-panel>
           {% endfor %}
         </carousel-content>
