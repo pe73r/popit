@@ -347,7 +347,7 @@
           "image_family": "shopify:\/\/shop_images\/Capture_d_ecran_2023-01-19_a_17.01.png",
           "footer_text": "POP it simplifie et égaye la nutrition pour vous aider à prendre soin de vous et de toute votre famille",
           "show_social": true,
-          "mention-legal": "<p>Copyright 2022, <strong>Popit<\/strong>.<\/p>",
+          "mention-legal": "",
           "menu_legal": "menu-legal",
           "bg_color": "#e3f2ed",
           "color": "#4b9b7d"
@@ -360,7 +360,7 @@
             "type": "block",
             "settings": {
               "svg": "",
-              "image": "shopify:\/\/shop_images\/Group_1363.png",
+              "image": "shopify:\/\/shop_images\/Group_1362.png",
               "image_width": 60,
               "title": "Paiement 100% sécurisé",
               "text": "Visa, Mastercard, PayPal, Apple Pay & Amex"
