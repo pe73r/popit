@@ -51,6 +51,16 @@
             <span class="hidden md:block">{{ section.settings.text_button }}</span>
           </button>
         </div>
+        <label class="text-center text-green text-sm flex items-center justify-center gap-2 mt-3">
+          <input
+            type="checkbox"
+            name="newsletter"
+            value="subscribe"
+            required
+            class="rounded border border-green focus:bg-green focus:ring-green">
+          <span>J'accepte la politique de confidentialité</span>
+        </label>
+
 
         {%- if form.errors -%}
           <h3 class="flex jsutify-center text-sm items-center text-red-700 mt-3" id="Newsletter-error--{{ section.id }}">
