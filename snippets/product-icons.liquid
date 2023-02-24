@@ -1,20 +1,26 @@
 <div class="flex flex-col lg:flex-row justify-center gap-5">
   {% if product.metafields.product.sticker_1 != blank %}
     <img
-      class="max-w-[42px] md:max-w-none"
-      src="{{ product.metafields.product.sticker_1 }}"
+      class="max-w-[42px] md:max-w-[65px]"
+      src="{{ product.metafields.product.sticker_1 | img_url: 'medium'}}"
       alt="{{ product.metafields.product.sticker_1.alt }}">
   {% endif %}
   {% if product.metafields.product.sticker_2 != blank %}
     <img
-      class="max-w-[42px] md:max-w-none"
-      src="{{ product.metafields.product.sticker_1 }}"
+      class="max-w-[42px] md:max-w-[65px]"
+      src="{{ product.metafields.product.sticker_1 | img_url: 'medium' }}"
       alt="{{ product.metafields.product.sticker_1.alt }}">
   {% endif %}
   {% if product.metafields.product.sticker_3 != blank %}
     <img
-      class="max-w-[42px] md:max-w-none"
-      src="{{ product.metafields.product.sticker_3 }}"
+      class="max-w-[42px] md:max-w-[65px]"
+      src="{{ product.metafields.product.sticker_3 | img_url: 'medium'}}"
       alt="{{ product.metafields.product.sticker_3.alt }}">
+  {% endif %}
+  {% if product.metafields.product.sticker_4 != blank %}
+    <img
+      class="max-w-[42px] md:max-w-[65px]"
+      src="{{ product.metafields.product.sticker_4 | img_url: 'medium'}}"
+      alt="{{ product.metafields.product.sticker_4.alt }}">
   {% endif %}
 </div>
