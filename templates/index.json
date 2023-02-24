@@ -32,7 +32,7 @@
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/sticker-vegan-feuille-sommeil.png",
-            "image_width": 106,
+            "image_width": 120,
             "title": "Vegan",
             "text": "Garanti cruelty-free et sans matières animales"
           }
@@ -41,7 +41,7 @@
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/Vegan-Beaute-Clair_2x_1ed30b9d-739b-4e3f-838a-f17950e4aa71.png",
-            "image_width": 78,
+            "image_width": 85,
             "title": "Noté 4,8 sur 5",
             "text": "Plus de 43566 avis clients vérifiés"
           }
@@ -50,7 +50,7 @@
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/Sucre-Magnesium-Clair.png",
-            "image_width": 80,
+            "image_width": 85,
             "title": "Sans sucre",
             "text": "Garanti cruelty-free et sans matières animales"
           }
@@ -58,8 +58,8 @@
         "3dc98c99-4d6b-4bf4-ac0d-a895c79edd86": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Colorant-Sommeil-Clair_2x_836ca8d2-d5c5-42a4-9d77-56d2ef46872a.png",
-            "image_width": 80,
+            "image": "shopify:\/\/shop_images\/Lactose-Beaute-Clair_2x_a2769866-c78b-4338-b9ff-2c7ea38b73f1.png",
+            "image_width": 85,
             "title": "Autre réassurance",
             "text": "Garanti cruelty-free et sans matières animales"
           }
