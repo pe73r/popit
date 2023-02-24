@@ -132,7 +132,8 @@
         "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-2": {
           "type": "text",
           "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/popit-sticker-vegan_1.svg?v=1671536634",
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/sticker-vegan-feuille-vitamines.png",
             "text": "<p>Garanti cruelty-free et sans matières animales<\/p>",
             "url": ""
           }
