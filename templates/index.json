@@ -191,15 +191,23 @@
         "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-2": {
           "type": "block",
           "settings": {
-            "question": "Quelles sont les options de livraison ?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "question": "Les Gummies contiennent-ils des colorants et des arômes artificiels ?",
+            "answer": "Non ! Les Gummies Mium Lab ne contiennent que des arômes et des colorants naturels issus de fruits et de plantes."
+          }
+        },
+        "06e3581e-e2d4-4d1d-b5df-b9f7fb562a93": {
+          "type": "block",
+          "settings": {
+            "question": "Pendant combien de temps se conserve ma boîte de Gummies une fois ouverte ?",
+            "answer": "Les Gummies Mium Lab ont un délai de consommation de 2 ans. Ils doivent être conservés à température ambiante, dans un endroit sec et à l’abri de la lumière."
           }
         }
       },
       "block_order": [
         "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-0",
         "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-1",
-        "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-2"
+        "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-2",
+        "06e3581e-e2d4-4d1d-b5df-b9f7fb562a93"
       ],
       "settings": {
         "hide_in_mobile": true,
