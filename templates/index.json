@@ -201,13 +201,21 @@
             "question": "Pendant combien de temps se conserve ma boîte de Gummies une fois ouverte ?",
             "answer": "Les Gummies Mium Lab ont un délai de consommation de 2 ans. Ils doivent être conservés à température ambiante, dans un endroit sec et à l’abri de la lumière."
           }
+        },
+        "fe7f98b1-f6ab-4cd6-972e-43343525b725": {
+          "type": "block",
+          "settings": {
+            "question": "Beauté : Est-ce que les Gummies Beauté font pousser tous les poils de notre corps ?",
+            "answer": "NON. Nos Gummies Beauté contiennent des principes actifs reconnus tels que de la vitamine B8 (biotine), de la vitamine B5, de l'acide hyaluronique et du zinc. Ils ont été spécifiquement conçus pour améliorer la qualité des cheveux, des ongles et de la peau. La pousse et la répartition des poils sont quant à elles principalement liées à des stimulus hormonaux, or nos Gummies ne contiennent pas d'hormones."
+          }
         }
       },
       "block_order": [
         "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-0",
         "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-1",
         "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-2",
-        "06e3581e-e2d4-4d1d-b5df-b9f7fb562a93"
+        "06e3581e-e2d4-4d1d-b5df-b9f7fb562a93",
+        "fe7f98b1-f6ab-4cd6-972e-43343525b725"
       ],
       "settings": {
         "hide_in_mobile": true,
