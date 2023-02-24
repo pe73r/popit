@@ -202,6 +202,7 @@
     },
     "07a37119-270e-432c-8a6f-4eaeab0ff9e1": {
       "type": "faq-product",
+      "disabled": true,
       "blocks": {
         "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-0": {
           "type": "block",
