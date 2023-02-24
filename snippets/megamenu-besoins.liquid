@@ -22,8 +22,34 @@
               {% for sublinks in links.links limit: 5 %}
                 <div class="block">
                   <a href="{{ child_link.url }}" class="flex flex-col items-center gap-2 mt-4">
-                    <img src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/Rectangle_462.png?v=1674480399" alt="">
-                    <span class="text-xs">{{ sublinks.title }}</span>
+                    {% if sublinks.title contains "Grossesse" or sublinks.title contains "Magnésium" %}
+                      <img
+                        class="max-w-[60px]"
+                        src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/magnesium-carre.png?v=1677233543"
+                        alt="">
+                    {% elsif sublinks.title contains "Multivitamines" or sublinks.title contains "Multivitamins" %}
+                      <img
+                        class="max-w-[60px]"
+                        src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/vita-carre.png?v=1677233543"
+                        alt="">
+                    {% elsif sublinks.title contains "Sommeil" or sublinks.title contains "sommeil" %}
+                      <img
+                        class="max-w-[60px]"
+                        src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/SOMMEIL-carre-2.png?v=1677235889"
+                        alt="">
+                    {% elsif sublinks.title contains "Allaitement" or sublinks.title contains "Ménopause" or sublinks.title contains "Biotine" or sublinks.title contains "Pousse Cheveux" %}
+                      <img
+                        class="max-w-[60px]"
+                        src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/biotine-big-carre.png?v=1677233543"
+                        alt="">
+                    {% else %}
+                      <img
+                        class="max-w-[60px]"
+                        src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/Rectangle_462.png?v=1674480399"
+                        alt="">
+                    {% endif %}
+
+                    <span class="text-xs text-center">{{ sublinks.title }}</span>
                   </a>
                 </div>
               {% endfor %}

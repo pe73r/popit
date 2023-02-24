@@ -134,6 +134,14 @@
         {%- endfor -%}
       </ul>
     {% endif %}
+
+    {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
+      <div class="my-5 text-center">
+        {% for type in shop.enabled_payment_types %}
+          {{ type | payment_type_svg_tag }}
+        {% endfor %}
+      </div>
+    {%- endif -%}
   </div>
 </footer>
 
@@ -208,6 +216,11 @@
         "default": "footer",
         "label": "Menu legal",
         "info": "Affiche uniquement les éléments de menu de niveau supérieur."
+      }, {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "label": "Show payment icons",
+        "default": true
       }, {
         "type": "header",
         "content": "colors"
