@@ -219,10 +219,10 @@
       ],
       "settings": {
         "hide_in_mobile": true,
-        "title": "FAQ",
-        "title_color": "#201a1c",
-        "title_accordion_color": "#201a1c",
-        "content_accordion_color": "#201a1c"
+        "title": "Des questions ?",
+        "title_color": "#4b9b7d",
+        "title_accordion_color": "#4b9b7d",
+        "content_accordion_color": "#4b9b7d"
       }
     },
     "a11b1585-0a12-4fa7-b722-9bd6997a108a": {
