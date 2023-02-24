@@ -1,4 +1,4 @@
-<div class="py-4 md:py-10 {% if section.settings.section_style == 'boxed' %} md:max-w-3xl md:mx-auto md:my-10 rounded-lg {% endif %}" style=" background-color: {{ section.settings.bg_color }}">
+<div class="py-6 md:py-10 {% if section.settings.section_style == 'boxed' %} md:max-w-3xl md:mx-auto md:my-10 rounded-lg {% endif %}" style=" background-color: {{ section.settings.bg_color }}">
   <div class="w-11/12 mx-auto">
     <div class="text-left md:text-center">
       <h2 class="text-lg md:text-4xl xl:text-5xl xl:leading-9 font-bold pb-2 md:pb-4 lg:pb-6 xl:pb-8" style="color: {{ section.settings.color }}">
@@ -51,14 +51,21 @@
             <span class="hidden md:block">{{ section.settings.text_button }}</span>
           </button>
         </div>
-        <label class="text-center text-green text-sm flex items-center justify-center gap-2 mt-3">
+
+
+        <label class="flex items-center relative justify-center text-center w-fit mx-auto mt-5">
           <input
             type="checkbox"
             name="newsletter"
             value="subscribe"
-            required
-            class="rounded border border-green focus:bg-green focus:ring-green">
-          <span>J'accepte la politique de confidentialité</span>
+            class="rounded border border-green focus:ring-2 focus:ring-green appearance-none w-5 h-5 checked:bg-green checked:border-transparent focus:outline-none">
+          <span class="ml-2 text-green text-xs md:text-sm">J'accepte la politique de confidentialité</span>
+          <svg
+            viewBox="0 0 20 20"
+            fill="#ffffff"
+            class="checkmark w-3 h-3 ml-2 hidden absolute left-[-4px]">
+            <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+          </svg>
         </label>
 
 
@@ -86,7 +93,15 @@
     </div>
   </div>
 </div>
-
+<script>
+  document.querySelector('input[name="newsletter"]').addEventListener('change', function() {
+    if (this.checked) {
+      document.querySelector('.checkmark').classList.remove('hidden');
+    } else {
+      document.querySelector('.checkmark').classList.add('hidden');
+    }
+  });
+</script>
 
 {% schema %}
   {
