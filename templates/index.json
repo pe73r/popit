@@ -3,6 +3,20 @@
     "1663586369b92a04be": {
       "type": "slideshow",
       "blocks": {
+        "005ed553-0fc4-4465-b465-1c7b8bed466c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.jpg",
+            "title": "Découvrez nos compléments <br>\nalimentaires et leurs<br>\nbénéfices.",
+            "title_mobile": "Découvrez nos compléments alimentaires et leurs bénéfices.",
+            "text": "",
+            "cta": "",
+            "button_link": "",
+            "text_color": "#fff",
+            "button_color": "#201A1C",
+            "button_bg": "#fff"
+          }
+        },
         "16635863695bdbafb2-0": {
           "type": "slide",
           "settings": {
@@ -20,6 +34,7 @@
         }
       },
       "block_order": [
+        "005ed553-0fc4-4465-b465-1c7b8bed466c",
         "16635863695bdbafb2-0"
       ],
       "settings": {
