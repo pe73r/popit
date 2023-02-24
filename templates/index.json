@@ -116,7 +116,7 @@
           "settings": {
             "svg": "",
             "image": "shopify:\/\/shop_images\/site-mail.png",
-            "text": "<p>Garanti cruelty-free et sans matières animales<\/p>",
+            "text": "<p> Simple et pratique<\/p>",
             "url": ""
           }
         },
@@ -124,7 +124,7 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/site-satisfait.png",
+            "image": "shopify:\/\/shop_images\/vitamines-haltere-gummies_c9dafd91-8522-47d4-9ea3-a02420d5d410.png",
             "text": "<p>Garanti cruelty-free et sans matières animales<\/p>",
             "url": ""
           }
@@ -137,12 +137,22 @@
             "text": "<p>Garanti cruelty-free et sans matières animales<\/p>",
             "url": ""
           }
+        },
+        "2ad908f2-22cd-4449-8dfb-5b5780097b51": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/antioxydant-gummies.png",
+            "text": "",
+            "url": ""
+          }
         }
       },
       "block_order": [
         "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-0",
         "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-1",
-        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-2"
+        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-2",
+        "2ad908f2-22cd-4449-8dfb-5b5780097b51"
       ],
       "settings": {
         "animationDuration": 30,
