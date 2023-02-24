@@ -10,11 +10,11 @@
             "title": "Découvrez nos compléments <br>\nalimentaires et leurs<br>\nbénéfices.",
             "title_mobile": "Découvrez nos compléments alimentaires et leurs bénéfices.",
             "text": "",
-            "cta": "",
-            "button_link": "",
-            "text_color": "#fff",
-            "button_color": "#201A1C",
-            "button_bg": "#fff"
+            "cta": "Voir les produits",
+            "button_link": "shopify:\/\/collections\/frontpage",
+            "text_color": "#ffffff",
+            "button_color": "#ffffff",
+            "button_bg": "#4b9b7d"
           }
         },
         "16635863695bdbafb2-0": {
