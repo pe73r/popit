@@ -247,8 +247,9 @@
         "title": "NEWSLETTER",
         "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives !<\/p>",
         "text_button": "S'inscrire",
+        "show_checkbox": true,
         "bg_color": "#faf5ef",
-        "color": "#e22120",
+        "color": "#4b9b7d",
         "button_color": "#4b9b7d"
       }
     }
