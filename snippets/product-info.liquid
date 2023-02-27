@@ -53,51 +53,100 @@
       <div class="flex items-center gap-2">
         <h4 class="text-sm text-{{ product-color }}">{{ product.title }}</h4>
       </div>
-      <div class="text-sm text-{{ product-color }} line-clamp-2 h-[40px] mt-1">
-        {{ product.metafields.global.weight }}
-      </div>
+      {% if product.metafields.global.weight != blank %}
+        <div class="text-sm text-{{ product-color }} line-clamp-2 h-[40px] mt-1">
+          {{ product.metafields.global.weight }}
+        </div>
+      {% endif %}
+      {%- unless product.has_only_default_variant -%}
+        <tail-variants
+          data-product="{{product.id}}"
+          class="no-js-hidden"
+          data-section="{{ section.id }}"
+          data-url="{{ product.url }}">
+          {%- for option in product.options_with_values -%}
+            {% comment %} <div class="mr-5 text-[15px] min-w-fit mb-2">{{ option.name }}:
+            </div> {% endcomment %}
+            <div class="flex justify-between gap-2 mt-1 flex-row-reverse">
+              {% assign counter = 0 %}
+              {%- for value in option.values -%}
+                <div class="w-1/3">
+                  <input
+                    data-position="{{ option.position }}"
+                    type="radio"
+                    id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                    name="{{ option.name }}"
+                    value="{{ value | escape }}"
+                    form="{{ product_form_id }}"
+                    class="radio-variant-circle w-0 h-0 opacity-0 md:collapse hidden"
+                    {% if option.selected_value == value %}checked{% endif %}>
+                  <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                    <div class="variant-box block pt-2 pb-3 px-2 bg-white bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
+                      <h5 class="text-sm text-{{ product-color }} leading-4">{{ value }}</h5>
+                      <!-- workaround to show variant price -->
+                      {% assign counter = counter | plus: 1 %}
+
+
+                    </div>
+                  </label>
+                  <!-- discount % -->
+                  {% if counter == 1 %}
+                    {%- if product.variants[0].compare_at_price %}
+                      {% assign percentage = 0 %}
+
+                      {% assign saving = product.variants[0].compare_at_price | minus: product.variants[0].price | times: 100 | divided_by: product.variants[0].compare_at_price | round %}
+                      {% assign percentage = saving | at_least: percentage %}
+
+                      <div class="relative flex -top-2 text-[10px] bg-{{ product-color }} text-white percentage text-center whitespace-nowrap rounded-md w-fit mx-auto py-0.5 px-2">
+                        <span class="hidden md:block mr-1">ÉCONOMISEZ</span>
+                        {{ percentage }}%</div>
+                    {% endif %}
+                  {% elsif counter == 2 %}
+                    {%- if product.variants[1].compare_at_price %}
+                      {% assign percentage = 0 %}
+
+                      {% assign saving = product.variants[1].compare_at_price | minus: product.variants[1].price | times: 100 | divided_by: product.variants[1].compare_at_price | round %}
+                      {% assign percentage = saving | at_least: percentage %}
+
+                      <div class="relative flex -top-2 text-[10px] bg-{{ product-color }} text-white percentage text-center whitespace-nowrap rounded-md w-fit mx-auto py-0.5 px-2">
+                        <span class="hidden md:block mr-1">ÉCONOMISEZ</span>
+                        {{ percentage }}%</div>
+                    {% endif %}
+                  {% elsif counter == 3 %}
+                    {%- if product.variants[2].compare_at_price %}
+                      {% assign percentage = 0 %}
+
+                      {% assign saving = product.variants[2].compare_at_price | minus: product.variants[2].price | times: 100 | divided_by: product.variants[2].compare_at_price | round %}
+                      {% assign percentage = saving | at_least: percentage %}
+
+                      <div class="relative flex -top-2 text-[10px] bg-{{ product-color }} text-white percentage text-center whitespace-nowrap rounded-md w-fit mx-auto py-0.5 px-2">
+                        <span class="hidden md:block mr-1">ÉCONOMISEZ</span>
+                        {{ percentage }}%</div>
+                    {% endif %}
+                  {% endif %}
+                </div>
+              {%- endfor -%}
+            </div>
+          {%- endfor -%}
+          <script id="product-variants" type="application/json">
+            {{ product.variants | json }}
+          </script>
+        </tail-variants>
+
+        <script type="application/json">
+          {{ product.variants | json }}
+        </script>
+      {%- endunless -%}
+
     </div>
   </div>
   <div class="flex items-center justify-center w-full max-w-full gap-3 pr-3 md:w-fit md:min-w-[450px]">
-    {% comment %}
-      {% if product.available == true %}
-      <div class="border-violet border-2 rounded-md w-fit h-fit py-2 px-3 hidden md:block" {{ block.shopify_attributes }}>
-      <product-quantity
-      data-max-quantity={{product.selected_or_first_available_variant.inventory_quantity}}
-      data-product="{{product.id}}"
-      class="flex items-center justify-center m-auto quantity">
-      <button
-      class="p-2 no-js-hidden"
-      name="minus"
-      type="button">
-      {% render 'icon-minus' %}
-      </button>
-      <input
-      class="text-acajou bg-transparent text-base font-bold max-w-[50px] text-center"
-      type="number"
-      name="quantity"
-      id="Quantity-{{ section.id }}"
-      min="1"
-      value="1"
-      form="{{ product_form_id }}">
-      <button
-      class="p-2 no-js-hidden"
-      name="plus"
-      type="button">
-      {% render 'icon-plus' %}
-      </button>
-      </product-quantity>
-      </div>
-      {% endif %}
-    {% endcomment %}
-    <!-- sticky price -->
-      <div
+    <div
       class="flex items-center my-2"
       id="price-{{ section.id }}"
       role="status"
-      {{ block.shopify_attributes }}> {%- if product.compare_at_price > product.price -%}
-
-
+      {{ block.shopify_attributes }}>
+      {%- if product.compare_at_price > product.price -%}
         <h5
           data-price
           data-dynamic-price

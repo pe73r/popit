@@ -33,12 +33,12 @@
   <!-- carousel mobile -->
   <div class="lg:hidden">
     <tail-carousel slidesToShow="xs:1 sm:1" class="relative top-[15px]">
-      <carousel-container class="w-[230px] h-[230px] md:w-[300px] md:h-[300px] bg-white rounded-full mx-auto flex justify-center">
+      <carousel-container class="w-[250px] h-[250px] md:w-[300px] md:h-[300px] bg-white rounded-lg mx-auto flex justify-center">
         <carousel-content>
           {%- for media in product.media -%}
             <carousel-panel class="flex items-center">
               <img
-                class="lazy max-w-[150px] md:max-w-[200px] mx-auto"
+                class="lazy max-w-[230px] md:max-w-[280px] mx-auto"
                 data-src="{{ media | img_url:'master' }}"
                 alt="{{ media.alt }}"
                 loading="lazy">
@@ -50,7 +50,7 @@
       {% if show_dots %}
         <carousel-dots class="relative flex justify-center mt-6 lg:hidden">
           {%- for media in product.media -%}
-            <carousel-dot class="w-2 h-2 m-1 transition-all bg-white border rounded-full border-white selected:bg-violet selected:border-violet selected:w-10 selected:scale-110"></carousel-dot>
+            <carousel-dot class="w-2 h-2 m-1 transition-all bg-white border rounded-full border-white selected:bg-{{ product-color }} selected:border-{{ product-color }} selected:w-10 selected:scale-110"></carousel-dot>
           {% endfor %}
         </carousel-dots>
       {% endif %}

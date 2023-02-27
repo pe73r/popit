@@ -1,64 +1,63 @@
-
-
 {% assign variantsInCarts = cart.items | map: "variant_id" %}
-{% assign variantsInCarts = variantsInCarts | join: ', '   %} 
+{% assign variantsInCarts = variantsInCarts | join: ', ' %}
 
-    <div class="flex items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 scrollbar ml-6 pr-6 pb-4">
-        {% for product in collection.products limit:10 %}
-            <div class="min-w-fit">
-                <a href="{{ product.url }}">
-                    <div class="rounded-lg flex gap-2 bg-white p-2">
-                        <div class="bg-beige rounded-md w-[100px] flex items-center justify-center py-2">
-                        <img src="{{product.featured_image | image_url: width: 400 }}" alt="{{product.featured_image.alt}}" class="max-w-[60px] object-fit rounded-tl-lg rounded-bl-lg">
-                        </div> 
-                        <div class="flex-1 flex justify-between">
-                          <div class="mr-2">
-                            <!-- TITLE -->
-                            <h5 class="mb-1 text-sm line-clamp-1 font-body-text font-semibold">{{ product.title }}</h5>
-    
-                             <!-- Metafield subtitle -->
-                             {% if product.metafields.product.cart_subtitle != blank %}
-                                <div class="my-1 text-xs line-clamp-1 h-[15px] text-gray-400">
-                                    {{ product.metafields.product.cart_subtitle }}
-                                </div>
-                             {% endif %}
-                            
-                            <!-- PRICE -->
-                            <div class="text-xs mb-1">
-                                {% if product.compare_at_price == nil %}
-                                    <span class="font-semibold text-base">
-                                        {{ product.price | money_with_currency }}
-                                    </span>
-                                {% else %}
-                                    <span class="line-through text-sm text-gray-400">
-                                        {{ product.compare_at_price | money_with_currency }}
-                                    </span>
-                                    <span class="font-semibold text-base ml-1"> 
-                                        {{ product.price | money_with_currency }}
-                                    </span>
-                                {% endif %}
-                            </div>
-                        </div>
-    
-                        <!-- ADDTOCART -->
-                         <add-to-cart
-                            class="self-end"
-                            data-max-quantity="{{product.selected_or_first_available_variant.inventory_quantity}}"
-                            data-product="{{ product.id }}"
-                            data-title="{{ product.title }}{% unless product.selected_or_first_available_variant.title contains 'Default' %} - {{ product.selected_or_first_available_variant.title }}{% endunless %}"
-                            data-discount="{% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}{{ product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | divided_by: 100.00 }}{% else %}0.00{% endif %}"
-                            data-price="{{ product.selected_or_first_available_variant.price | divided_by: 100.00 }}"
-                            data-lightReRender="true"
-                            data-variant="{{ product.selected_or_first_available_variant.id}}">
-                                <button class="rounded-md w-[30px] h-[30px] flex justify-center items-center text-center bg-green">
-                                    {% render 'icon-add-2-cart' class: 'w-[8px] h-[8px]' %}
-                                </button>
-                            </add-to-cart>
-                        </div>
-                    </div>
-                   </a>
+<div class="flex items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 scrollbar ml-6 pr-6 pb-4">
+  {% for product in collection.products limit: 10 %}
+    <div class="min-w-fit">
+      <a href="{{ product.url }}">
+        <div class="rounded-lg flex gap-2 bg-white p-2">
+          <div class="rounded-md w-[100px] flex items-center justify-center py-2">
+            <img
+              src="{{product.featured_image | image_url: width: 400 }}"
+              alt="{{product.featured_image.alt}}"
+              class="max-w-[80px] object-fit rounded-tl-lg rounded-bl-lg">
+          </div>
+          <div class="flex-1 flex justify-between">
+            <div class="mr-2">
+              <!-- TITLE -->
+              <h5 class="mb-1 text-sm line-clamp-1 font-body-text font-semibold">{{ product.title }}</h5>
+
+              <!-- Metafield subtitle -->
+              {% if product.metafields.product.cart_subtitle != blank %}
+                <div class="my-1 text-xs line-clamp-1 h-[15px] text-gray-400">
+                  {{ product.metafields.product.cart_subtitle }}
+                </div>
+              {% endif %}
+
+              <!-- PRICE -->
+              <div class="text-xs mb-1">
+                {% if product.compare_at_price == nil %}
+                  <span class="font-semibold text-base">
+                    {{ product.price | money_with_currency }}
+                  </span>
+                {% else %}
+                  <span class="line-through text-sm text-gray-400">
+                    {{ product.compare_at_price | money_with_currency }}
+                  </span>
+                  <span class="font-semibold text-base ml-1">
+                    {{ product.price | money_with_currency }}
+                  </span>
+                {% endif %}
+              </div>
             </div>
-        {%- endfor -%}
+
+            <!-- ADDTOCART -->
+            <add-to-cart
+              class="self-end"
+              data-max-quantity="{{product.selected_or_first_available_variant.inventory_quantity}}"
+              data-product="{{ product.id }}"
+              data-title="{{ product.title }}{% unless product.selected_or_first_available_variant.title contains 'Default' %} - {{ product.selected_or_first_available_variant.title }}{% endunless %}"
+              data-discount="{% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}{{ product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | divided_by: 100.00 }}{% else %}0.00{% endif %}"
+              data-price="{{ product.selected_or_first_available_variant.price | divided_by: 100.00 }}"
+              data-lightReRender="true"
+              data-variant="{{ product.selected_or_first_available_variant.id}}">
+              <button class="rounded-md w-[30px] h-[30px] flex justify-center items-center text-center bg-green">
+                {% render 'icon-add-2-cart' class: 'w-[8px] h-[8px]' %}
+              </button>
+            </add-to-cart>
+          </div>
+        </div>
+      </a>
     </div>
-
-
+  {%- endfor -%}
+</div>
