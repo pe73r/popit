@@ -6,11 +6,14 @@
         "products_per_page": 16,
         "show_collection_image": true,
         "show_collection_title": true,
+        "show_breadcrumbs": true,
         "show_collection_description": true,
         "show_collection_size": true,
+        "show_collection_grid": true,
         "show_secondary_image": true,
-        "enable_filtering": true,
-        "enable_sorting": true
+        "enable_filtering": false,
+        "enable_sorting": true,
+        "filters_background": "#e3f2ed"
       }
     }
   },
