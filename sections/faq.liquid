@@ -9,31 +9,10 @@
     </div>
     <accordion-group>
       {% for block in section.blocks %}
-        {% render 'faq', block: block %}
+        {% render 'faq', block: block, color: section.settings.title_accordion_color %}
       {% endfor %}
     </accordion-group>
   </div>
-  {% if section.blocks.size > 0 %}
-    <script type="application/ld+json">
-      {
-      "@context":"https://schema.org",
-                                                          "@type":"FAQPage",
-                                                          "mainEntity":[
-      {% for block in section.blocks -%}
-        {
-        "@type":"Question",
-                                                                                "name":"{{ block.settings.question }}",
-        "acceptedAnswer":
-                                                                                {
-                                                                                  "@type":"Answer",
-                                                                                  "text":"{{ block.settings.answer }}"
-        }
-                                                                              },
-      {%- endfor %}
-      ]
-      }
-    </script>
-  {% endif %}
 </section>
 
 

@@ -86,70 +86,114 @@
   </div>
 
   <!-- collection size -->
-  <div>
-    {% assign all_products = 0 %}
-    {% assign available_products = 0 %}
+  {% unless isSearch == true %}
+    <div>
+      {% assign all_products = 0 %}
+      {% assign available_products = 0 %}
 
-    {% for product in collection.products %}
-      {%- assign all_products = all_products | plus: 1 -%}
-      {% if product.available %}
-        {% assign available_products = available_products | plus: 1 %}
-      {% endif %}
-    {% endfor %}
-
-    {%- if section.settings.show_collection_size -%}
-      {%- if all_products == 0 -%}
-        <div class="text-center mt-10 mb-20">
-          <p class="text-sm">La collection est vide</p>
-          <a href="/collections/all" class="block px-7 py-3 mt-5 text-base rounded-full text-white bg-acajou w-fit mx-auto">Découvrir nos produits</a>
-        </div>
-      {%- elsif all_products == 1 -%}
-        <p class="hidden md:block md:my-8 text-sm text-center">{{ all_products }} produit</p>
-      {%- else -%}
-        <p class="hidden md:block md:my-8 text-sm text-center">{{ all_products }} produits</p>
-      {%- endif -%}
-    {%- endif -%}
-  </div>
-
-  {%- unless all_products == 0 -%}
-    <div class="my-10 w-11/12 max-w-7xl mx-auto">
-      <div class="flex flex-col md:flex-row gap-8">
-        <!-- filters and sorting side -->
-        {% if section.settings.enable_filtering or section.settings.enable_sorting %}
-          <div
-            class="hidden w-full md:block md:w-3/12 lg:w-1/4 rounded-md p-4 h-[fit-content]"
-            id="main-collection-filters"
-            data-id="{{ section.id }}"
-            style="background-color: {{ section.settings.filters_background }}">
-            <!-- filters -->
-            {% if section.settings.enable_filtering %}
-              <div class="h-[fit-content]">
-                {% render 'facets', results: results, show_links: section.settings.show_links %}
-              </div>
-            {% endif %}
-
-            <!-- Sorting -->
-            {% if section.settings.enable_sorting %}
-              <div class="h-[fit-content] mt-10">
-                {% render 'sorting', results: results %}
-              </div>
-            {% endif %}
-          </div>
+      {% for product in collection.products %}
+        {%- assign all_products = all_products | plus: 1 -%}
+        {% if product.available %}
+          {% assign available_products = available_products | plus: 1 %}
         {% endif %}
+      {% endfor %}
 
-        <!-- products grid -->
-        <div class="w-full {% if section.settings.enable_filtering or section.settings.enable_sorting %} md:w-9/12 lg:w-3/4 {% endif %}">
+      {%- if section.settings.show_collection_size -%}
+        {%- if all_products == 0 -%}
+          <div class="text-center mt-10 mb-20">
+            <p class="text-sm">La collection est vide</p>
+            <a href="/collections/all" class="block px-7 py-3 mt-5 text-base rounded-lg text-white bg-green w-fit mx-auto">Découvrir nos produits</a>
+          </div>
+        {%- elsif all_products == 1 -%}
+          <p class="hidden md:block md:my-8 text-sm text-center">{{ all_products }} produit</p>
+        {%- else -%}
+          <p class="hidden md:block md:my-8 text-sm text-center">{{ all_products }} produits</p>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  {% endunless %}
 
-          <!-- filters mobile -->
-          {% render "mobile-filters", results: results %}
 
-          {%- if isSearch == true -%}
-            {%- paginate search.results by section.settings.products_per_page -%}
+  <div class="my-10 w-11/12 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row gap-8">
+      <!-- filters and sorting side -->
+      {% if section.settings.enable_filtering or section.settings.enable_sorting %}
+        <div
+          class="hidden w-full md:block md:w-3/12 lg:w-1/4 rounded-md p-4 h-[fit-content]"
+          id="main-collection-filters"
+          data-id="{{ section.id }}"
+          style="background-color: {{ section.settings.filters_background }}">
+          <!-- filters -->
+          {% if section.settings.enable_filtering %}
+            <div class="h-[fit-content]">
+              {% render 'facets', results: results, show_links: section.settings.show_links %}
+            </div>
+          {% endif %}
+
+          <!-- Sorting -->
+          {% if section.settings.enable_sorting %}
+            <div class="h-[fit-content] {% if section.settings.enable_filtering %} mt-10 {% endif %}">
+              {% render 'sorting', results: results %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <!-- products grid -->
+      <div class="w-full {% if section.settings.enable_filtering or section.settings.enable_sorting %} md:w-9/12 lg:w-3/4 {% endif %}">
+
+        <!-- filters mobile -->
+        {% render "mobile-filters", results: results %}
+
+        {%- if isSearch == true -%}
+          {% if search.performed %}
+            <p class="text-base font-normal mb-2">
+              {{ search.results_count }} résultat trouvé pour
+              <span class="font-bold">"{{ search.terms }}"</span>
+            </p>
+          {% else %}
+            <p class="text-base font-normal mb-2">
+              Aucun résultat trouvé pour
+              <span class="font-bold">"{{ search.terms }}"</span>. Vérifiez l'orthographe ou utilisez un autre mot ou une autre expression.
+            </p>
+          {% endif %}
+
+          {%- paginate search.results by section.settings.products_per_page -%}
+            <ul
+              id="product-grid"
+              data-id="{{ section.id }}"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+              {%- for product in search.results -%}
+                <!-- product_card -->
+                <li class="">
+                  {% render 'card-product'
+                   , card_product: product,
+                   show_secondary_image: section.settings.show_secondary_image,
+                   show_vendor: section.settings.show_vendor,
+                   lazy_load: true,
+                   show_quick_add: section.settings.show_quick_add %}
+                </li>
+              {%- endfor -%}
+            </ul>
+            {%- if paginate.pages > 1 -%}
+              {% render 'pagination', paginate: paginate %}
+            {%- endif -%}
+          {%- endpaginate -%}
+        {%- else -%}
+          {% if section.settings.show_collection_grid %}
+
+            {%- paginate collection.products by section.settings.products_per_page -%}
               <ul
                 id="product-grid"
                 data-id="{{ section.id }}"
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
-                {%- for product in search.results -%}
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                {%- for product in collection.products -%}
+                  <!-- product-dumie -->
+                  {% if forloop.index == 7 and section.settings.show_product_dumie %}
+                    <li class="">
+                      {% render "product-dumie" %}
+                    </li>
+                  {% endif %}
                   <!-- product_card -->
                   <li class="">
                     {% render 'card-product'
@@ -160,70 +204,40 @@
                      show_quick_add: section.settings.show_quick_add %}
                   </li>
                 {%- endfor -%}
+                <script>
+                  dataLayer.push({
+                    'event': 'view_item_list',
+                    'ecommerce': {
+                      'currency': '{{ shop.currency }}',
+                      'items': [{% for product in collection.products %}{
+                            'item_id': '{{ product.id }}',
+                            'item_name': '{{ product.title }}',
+                            'quantity': 1,
+                            'item_category': "{{ collection.title }}",
+                            'price': {{ product.price | divided_by: 100.00 }},
+                            'item_discount':{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | divided_by: 100.00 }}
+                            {% else %}
+                              0.00
+                            {% endif %}
+                          }
+                          {% unless forloop.last %},{% endunless %}{% endfor %}]
+                    }
+                  });
+                </script>
               </ul>
               {%- if paginate.pages > 1 -%}
-                {% render 'pagination', paginate: paginate %}
+                <div class="relative md:left-[-20%] mt-10">
+                  {% render 'pagination', paginate: paginate %}
+                </div>
+
               {%- endif -%}
             {%- endpaginate -%}
-          {%- else -%}
-            {% if section.settings.show_collection_grid %}
-
-              {%- paginate collection.products by section.settings.products_per_page -%}
-                <ul
-                  id="product-grid"
-                  data-id="{{ section.id }}"
-                  class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                  {%- for product in collection.products -%}
-                    <!-- product-dumie -->
-                    {% if forloop.index == 7 and section.settings.show_product_dumie %}
-                      <li class="">
-                        {% render "product-dumie" %}
-                      </li>
-                    {% endif %}
-                    <!-- product_card -->
-                    <li class="">
-                      {% render 'card-product'
-                       , card_product: product,
-                       show_secondary_image: section.settings.show_secondary_image,
-                       show_vendor: section.settings.show_vendor,
-                       lazy_load: true,
-                       show_quick_add: section.settings.show_quick_add %}
-                    </li>
-                  {%- endfor -%}
-                  <script>
-                    dataLayer.push({
-                      'event': 'view_item_list',
-                      'ecommerce': {
-                        'currency': '{{ shop.currency }}',
-                        'items': [{% for product in collection.products %}{
-                              'item_id': '{{ product.id }}',
-                              'item_name': '{{ product.title }}',
-                              'quantity': 1,
-                              'item_category': "{{ collection.title }}",
-                              'price': {{ product.price | divided_by: 100.00 }},
-                              'item_discount':{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | divided_by: 100.00 }}
-                              {% else %}
-                                0.00
-                              {% endif %}
-                            }
-                            {% unless forloop.last %},{% endunless %}{% endfor %}]
-                      }
-                    });
-                  </script>
-                </ul>
-                {%- if paginate.pages > 1 -%}
-                  <div class="relative md:left-[-20%] mt-10">
-                    {% render 'pagination', paginate: paginate %}
-                  </div>
-
-                {%- endif -%}
-              {%- endpaginate -%}
-            {% endif %}
-          {%- endif -%}
-        </div>
+          {% endif %}
+        {%- endif -%}
       </div>
     </div>
-  {%- endunless -%}
+  </div>
+
 </section>
 
 {% schema %}
