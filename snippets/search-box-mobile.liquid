@@ -1,0 +1,30 @@
+{% comment %}
+  <button
+  id="searchBtnMobile"
+  data-search-box
+  class="relative items-center justify-center w-5">
+  <span>🔍 Rechercher</span>
+  </button>
+{% endcomment %}
+
+<form
+  id="searchFormMobile"
+  class="relative flex items-center max-w-[60%] mt-2 mb-3"
+  action="{{ routes.search_url }}">
+  <input
+    type="hidden"
+    name="type"
+    value="product">
+  <input
+    name="q"
+    value="{{ search.terms | escape }}"
+    class="rounded-2xl w-full text-sm pl-3 py-1 pr-10 border-[0.5px] ring-0 border-gray-medium focus:outline-none transition-all focus:ring-1 ring-capucine"
+    type="text"
+    placeholder="Rechercher" />
+
+  <input
+    type="submit"
+    value="Search"
+    class="hidden"
+    tra>
+</form>

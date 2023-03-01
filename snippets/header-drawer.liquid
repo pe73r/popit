@@ -10,16 +10,15 @@
                     assign tabs = section.blocks | where: "type", "mobile_tabs"
                     assign bottoms = section.blocks | where: "type", "mobile_bottom" 
                 -%}
-        <div
-          class="flex flex-col h-auto">
+        <div class="flex flex-col h-auto">
           {% render "header-drawer-tabs", elements: tabs %}
         </div>
         {% render "header-drawer-bottom-nav", elements: bottoms %}
+
       </drawer-inner>
     </drawer-content>
   </drawer-overlay>
-  <drawer-trigger
-    class="flex items-center justify-center w-10 h-10 p-1 cursor-pointer">
+  <drawer-trigger class="flex items-center justify-center w-10 h-10 p-1 cursor-pointer">
     {% render 'icon-hamburger' %}
   </drawer-trigger>
 </tail-drawer>
@@ -35,3 +34,4 @@
     }
   });
 </script>
+<script></script>
