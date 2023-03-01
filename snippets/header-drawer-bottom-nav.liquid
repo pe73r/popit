@@ -1,11 +1,16 @@
 <div class="p-5 mt-auto bg-green-light">
   <ul class="">
     {% for link in elements[0].settings.menu.links %}
-      <li href="{{ link.url }}" class="text-left p-2 text-sm">
-        <a class="block mt-1">{{ link.title }}</a>
+      <li class="text-left p-1 text-sm">
+        <a href="{{ link.url }}" class="block mt-1">{{ link.title }}</a>
       </li>
     {% endfor %}
   </ul>
+
+  {% if section.settings.show_search_mobile %}
+    {% render "search-box-mobile" %}
+  {% endif %}
+
   <div class="flex gap-2 mt-3">
     <a target="_blank" href="{{ settings.social_instagram_link }}">
       {%- render 'icon-instagram-green' -%}

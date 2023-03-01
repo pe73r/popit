@@ -1,22 +1,51 @@
-<button data-search-box class="relative items-center justify-center w-10 h-10 p-2 hidden sm:block">
-  {% render "icon-search" %}
-</button>
 
-<form class="relative flex items-center md:w-[320px]" action="{{ routes.search_url }}">
-  <input
-    type="hidden"
-    name="type"
-    value="product">
-  <input
-    name="q"
-    value="{{ search.terms | escape }}"
-    class="rounded-2xl w-full text-sm pl-3 py-1 pr-10 border-[0.5px] ring-0 border-gray-medium focus:outline-none transition-all focus:ring-1 ring-capucine"
-    type="text"
-    placeholder="Rechercher" />
+  <button
+    id="searchBtn"
+    data-search-box
+    class="relative items-center justify-center w-5 hidden md:block">
+    {% render "icon-search" %}
+  </button>
 
-  <input
-    type="submit"
-    value="Search"
-    class="hidden"
-    tra>
-</form>
+  <form
+    id="searchForm"
+    class="relative flex items-center md:w-[320px]"
+    action="{{ routes.search_url }}">
+    <input
+      type="hidden"
+      name="type"
+      value="product">
+    <input
+      name="q"
+      value="{{ search.terms | escape }}"
+      class="rounded-2xl w-full text-sm pl-3 py-1 pr-10 border-[0.5px] ring-0 border-gray-medium focus:outline-none transition-all focus:ring-1 ring-capucine"
+      type="text"
+      placeholder="Rechercher" />
+
+    <input
+      type="submit"
+      value="Search"
+      class="hidden"
+      tra>
+  </form>
+
+
+<style>
+  #searchForm {
+  overflow: hidden;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+#searchForm.active {
+  width: 50%;
+}
+</style>
+<script>
+  const toggleBtn = document.getElementById('searchBtn');
+  const toggleDiv = document.getElementById('searchForm');
+
+toggleBtn.addEventListener('click', () => {
+  toggleDiv.classList.toggle('active');
+});
+
+</script>
