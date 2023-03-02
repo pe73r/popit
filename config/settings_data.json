@@ -420,9 +420,9 @@
           "link": "",
           "image_2": "shopify:\/\/shop_images\/Sale.svg",
           "text_2": "Fidelité",
-          "link_2": "shopify:\/\/pages\/article",
+          "link_2": "shopify:\/\/pages\/fidelite",
           "text_3": "Compte",
-          "link_3": "",
+          "link_3": "\/account\/login",
           "text_4": "Panier",
           "text_5": "Menu"
         }
