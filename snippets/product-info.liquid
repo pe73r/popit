@@ -43,10 +43,10 @@
 <div
   id="sticktCart"
   style="z-index: 40; transform:translateY(100%);"
-  class="fixed bottom-0 left-0 flex items-center justify-between w-screen gap-5 px-2 py-2 transition-all bg-white shadow md:px-10">
+  class="fixed bottom-0 left-0 flex items-center justify-between w-screen gap-5 px-4 md:px-2 py-2 xl:px-10 transition-all bg-white shadow ">
   <div class="items-center hidden gap-4 rounded-sm md:flex">
     <img
-      class="w-[50px]"
+      class="w-[80px]"
       src="{{product.featured_image | image_url }}"
       alt="product">
     <div class="flex flex-col justify-center">
@@ -67,10 +67,10 @@
           {%- for option in product.options_with_values -%}
             {% comment %} <div class="mr-5 text-[15px] min-w-fit mb-2">{{ option.name }}:
             </div> {% endcomment %}
-            <div class="flex justify-between gap-2 mt-1 flex-row-reverse">
+            <div class="hidden xl:flex justify-between gap-2 mt-1 flex-row-reverse">
               {% assign counter = 0 %}
               {%- for value in option.values -%}
-                <div class="w-1/3">
+                <div class="w-1/3 tail-variant">
                   <input
                     data-position="{{ option.position }}"
                     type="radio"
@@ -78,7 +78,7 @@
                     name="{{ option.name }}"
                     value="{{ value | escape }}"
                     form="{{ product_form_id }}"
-                    class="radio-variant-circle w-0 h-0 opacity-0 md:collapse hidden"
+                    class="radio-variant-circle-sticky w-0 h-0 opacity-0 md:collapse hidden"
                     {% if option.selected_value == value %}checked{% endif %}>
                   <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                     <div class="variant-box block pt-2 pb-3 px-2 bg-white bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
@@ -142,7 +142,7 @@
   </div>
   <div class="flex items-center justify-center w-full max-w-full gap-3 pr-3 md:w-fit md:min-w-[450px]">
     <div
-      class="flex items-center my-2"
+      class="hidden 2xl:flex items-center my-2"
       id="price-{{ section.id }}"
       role="status"
       {{ block.shopify_attributes }}>
@@ -338,7 +338,7 @@
             <div class="flex justify-between gap-2 mt-5 flex-row-reverse">
               {% assign counter = 0 %}
               {%- for value in option.values -%}
-                <div class="w-1/3">
+                <div class="w-1/3 tail-variant">
                   <input
                     data-position="{{ option.position }}"
                     type="radio"
@@ -547,15 +547,24 @@
 <style>
 
   input.radio-variant-circle[type="radio"]:checked + label > div {
-    background: {{ product_color }}
-     !important;
-    border-color: {{ product_color }}
-     !important;
+    background: {{ product_color }} !important;
+    border-color: {{ product_color }} !important;
     color: white !important;
     transition-duration: 0.3s;
   }
 
   input.radio-variant-circle[type="radio"]:checked + label > div > h5 {
+    color: white !important;
+  }
+
+  input.radio-variant-circle-sticky[type="radio"]:checked + label > div {
+    background: {{ product_color }} !important;
+    border-color: {{ product_color }} !important;
+    color: white !important;
+    transition-duration: 0.3s;
+  }
+
+  input.radio-variant-circle-sticky[type="radio"]:checked + label > div > h5 {
     color: white !important;
   }
 
