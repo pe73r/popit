@@ -222,6 +222,7 @@
         "settings": {
           "menu_desktop": "main-menu",
           "menu_mobile": "main-menu",
+          "show_search_mobile": true,
           "feature_drawer_title": "",
           "feature_drawer_subtitle": "",
           "feature_drawer_link": ""
@@ -409,6 +410,21 @@
           "header": "",
           "bg_color": "#4b9b7d",
           "text_color": "#ffffff"
+        }
+      },
+      "menu-fixed": {
+        "type": "menu-fixed",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Frame_9358_41cb00e5-a000-4fae-8b93-10e37330f53a.png",
+          "text": "Shop",
+          "link": "",
+          "image_2": "shopify:\/\/shop_images\/Sale.svg",
+          "text_2": "Fidelité",
+          "link_2": "shopify:\/\/pages\/article",
+          "text_3": "Compte",
+          "link_3": "",
+          "text_4": "Panier",
+          "text_5": "Menu"
         }
       }
     },
