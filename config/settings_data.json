@@ -417,7 +417,7 @@
         "settings": {
           "image": "shopify:\/\/shop_images\/Frame_9358_41cb00e5-a000-4fae-8b93-10e37330f53a.png",
           "text": "Shop",
-          "link": "",
+          "link": "shopify:\/\/collections\/frontpage",
           "image_2": "shopify:\/\/shop_images\/Sale.svg",
           "text_2": "Fidelité",
           "link_2": "shopify:\/\/pages\/fidelite",
