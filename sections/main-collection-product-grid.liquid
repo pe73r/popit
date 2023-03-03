@@ -206,7 +206,8 @@
                      show_secondary_image: section.settings.show_secondary_image,
                      show_vendor: section.settings.show_vendor,
                      lazy_load: true,
-                     show_quick_add: section.settings.show_quick_add %}
+                     show_quick_add: section.settings.show_quick_add,
+                     show_cta: section.settings.show_cta %}
                   </li>
                 {%- endfor -%}
                 <script>
@@ -298,6 +299,11 @@
         "id": "show_secondary_image",
         "default": false,
         "label": "Show secondary image on hover"
+      }, {
+        "type": "checkbox",
+        "id": "show_cta",
+        "default": true,
+        "label": "Show cta"
       }, {
         "type": "header",
         "content": "Filters"
