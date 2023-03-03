@@ -1,173 +1,181 @@
 <div class="w-11/12 max-w-screen-sm m-auto my-10 md:my-16">
-  <div class="relative"> 
-  <!-- recover password -->
-  <div id="passwordBox" class="hidden absolute top-0 left-0 w-full h-full bg-white z-[1]">
-    <h2 class="text-2xl md:text-3xl text-center mb-5 text-green">
+  <div class="relative">
+    <!-- recover password -->
+    <div id="passwordBox" class="hidden absolute top-0 left-0 w-full h-full bg-white z-[1]">
+      <h2 class="text-2xl md:text-3xl text-center mb-5 text-green">
         Réinitialiser son mot de passe
-    </h2> 
- 
-    {%- form 'recover_customer_password' -%}
-      {% assign recover_success = form.posted_successfully? %}
-      <div class="mb-5">
-        <label for="RecoverEmail" class="block relative left-1 mb-1 text-sm">
-          Email
-        </label>
-        <input type="email"
-          value=""
-          name="email"
-          id="RecoverEmail"
-          autocorrect="off"
-          autocapitalize="off"
-          autocomplete="email"
-          {% if form.errors %}
+      </h2>
+
+      {%- form 'recover_customer_password' -%}
+        {% assign recover_success = form.posted_successfully? %}
+        <div class="mb-5">
+          <label for="RecoverEmail" class="block relative left-1 mb-1 text-sm">
+            Email
+          </label>
+          <input
+            type="email"
+            value=""
+            name="email"
+            id="RecoverEmail"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.errors %}
             aria-invalid="true"
             aria-describedby="RecoverEmail-email-error"
             autofocus
-          {% endif %}
-          placeholder="Email"
-          class="text-base w-full border border-gray-400 rounded-md p-2 focus-within:border-capucine focus-within:outline-none focus-within:shadow-none"
-        >
-       
-      </div>
-      {%- if form.errors -%}
-        <small id="RecoverEmail-email-error" class="text-sm text-capucine my-2">
-          {{ form.errors.messages['form'] }}
-        </small>
-      {%- endif -%}
-
-      <button class="w-full my-2 uppercase {% render "button", size:"medium", color:"green", variation: "outlined" %}">
-        Envoyer
-      </button> 
-
-      <p id="cancelButton" class="block text-center mt-2 cursor-pointer m-auto text-sm">
-        Annuler
-      </p>
-    {%- endform -%}
-  </div>
-
-  <h1 class="text-2xl md:text-3xl text-center mb-5 text-green">
-    Déjà client ?
-  </h1>
-  
-  <div>
-    {%- if recover_success == true -%}
-      <h3 class="form__message text-center text-sm" tabindex="-1" autofocus>
-        {{ 'customer.recover_password.success' | t }}
-      </h3>
-    {%- endif -%}
-    {%- form 'customer_login', novalidate: 'novalidate' -%}
-      <!-- errors -->
-      {%- if form.errors -%}
-        <h2 class="text-sm text-capucine my-2" tabindex="-1" autofocus>
-          <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
-          {{ 'templates.contact.form.error_heading' | t }}
-        </h2>
-        {{ form.errors | default_errors }}
-      {%- endif -%}
-
-      <!-- email -->
-      <div class="mb-5">
-        <label for="CustomerEmail" class="block relative left-1 mb-1 text-sm text-green font-semibold">
-          Email*
-        </label>         
-        <input
-          type="email"
-          name="customer[email]"
-          id="CustomerEmail"
-          autocomplete="email"
-          autocorrect="off"
-          autocapitalize="off"
-          {% if form.errors contains 'form' %}
-            aria-invalid="true"
-          {% endif %}
-          placeholder="Email"
-          class="text-base w-full border border-gray-400 rounded-md p-2 focus-within:border-capucine focus-within:outline-none focus-within:shadow-none"
-        > 
-      </div>
-
-     <!-- Password -->
-      {%- if form.password_needed -%}
-        <div class="">     
-          <label for="CustomerPassword" class="block relative left-1 mb-1 text-sm text-green font-semibold">
-            Mot de passe*
-          </label>     
-          <input
-            type="password"
-            value=""
-            name="customer[password]"
-            id="CustomerPassword"
-            autocomplete="current-password"
-            {% if form.errors contains 'form' %}
-              aria-invalid="true"
             {% endif %}
-            placeholder="Mot de passe"
-            class="text-base w-full border border-gray-400 rounded-md p-2 focus-within:border-capucine focus-within:outline-none focus-within:shadow-none"
-          >    
+            placeholder="Email"
+            class="text-base w-full border border-gray-400 rounded-md p-2 focus-within:border-capucine focus-within:outline-none focus-within:shadow-none">
+
         </div>
-      {%- endif -%}
-      <div class="text-sm mt-2">
-        <p id="passwordButton" class="block cursor-pointer text-[10px] underline"> 
-           Mot de passe oublié ?
+        {%- if form.errors -%}
+          <small id="RecoverEmail-email-error" class="text-sm text-capucine my-2">
+            {{ form.errors.messages['form'] }}
+          </small>
+        {%- endif -%}
+
+        <button class="w-full my-2 uppercase {% render "button", size:"medium", color:"green", variation: "outlined" %}">
+          Envoyer
+        </button>
+
+        <p id="cancelButton" class="block text-center mt-2 cursor-pointer m-auto text-sm">
+          Annuler
         </p>
-      </div>
-
-      <!-- Button -->
-      <button class="btn-primary w-full mt-8 {% render "button", size:"medium", color:"green" %}">
-         Se connecter
-      </button>
-
-    {%- endform -%}
-
-   <div class="mt-10">
-    <div class="w-full flex items-center mb-8">
-      <div class="h-0.5 w-full bg-green mr-4"></div>
-      <div class="">{% render 'icon-green-dot' %}</div>
-      <div class="h-0.5 w-full bg-green ml-4"></div>
+      {%- endform -%}
     </div>
-      <h1 class="font-serif text-3xl text-center mb-5 text-green">
-        Pas encore client ?
-      </h1>
-      <div class="bg-green-light rounded-lg p-5 mt-6">
-        <ul>
-          <li class="flex gap-3 mb-3 text-sm text-green items-center"><span>{% render 'icon-green-dot' %}</span>Bénéficiez des avantages de notre programme de fidélité, le Popit Club</li>
-          <li class="flex gap-3 mb-3 text-sm text-green items-center"><span>{% render 'icon-green-dot' %}</span>Gagnez du temps lors du paiement en sauvegardant votre adresse de livraison</li>
-          <li class="flex gap-3 mb-3 text-sm text-green items-center"><span>{% render 'icon-green-dot' %}</span>Vous serez parmi les premiers à tout savoir sur nos nouveautés, les promotions à venir...</li>
-          <li class="flex gap-3 text-sm text-green items-center"><span>{% render 'icon-green-dot' %}</span>Suivez facilement vos commandes</li>
-        </ul>
-      </div>
 
-      <a class="block btn-primary w-full mt-5  {% render "button", size:"medium", color:"green" %}" href="{{ routes.account_register_url }}">
-         Créer mon compte
-       </a>
-     </div>
-  </div>
-  
-  {% comment %}
-      {%- if shop.checkout.guest_login -%}
-        <div>
-          <hr>
-          <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
+    <h1 class="text-2xl md:text-3xl text-center mb-5 text-green">
+      Déjà client ?
+    </h1>
 
-          {%- form 'guest_login' -%}
-            <button>
-              {{ 'customer.login_page.guest_continue' | t }}
-            </button>
-          {%- endform -%}
-        </div>
+    <div>
+      {%- if recover_success == true -%}
+        <h3
+          class="form__message text-center text-sm"
+          tabindex="-1"
+          autofocus>
+          {{ 'customer.recover_password.success' | t }}
+        </h3>
       {%- endif -%}
-   {% endcomment %}
- </div>
+      {%- form 'customer_login', novalidate: 'novalidate' -%}
+        <!-- errors -->
+        {%- if form.errors -%}
+          <h2
+            class="text-sm text-capucine my-2"
+            tabindex="-1"
+            autofocus>
+            <span class="visually-hidden">{{ 'accessibility.error' | t }}
+            </span>
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+          {{ form.errors | default_errors }}
+        {%- endif -%}
+
+        <!-- email -->
+        <div class="mb-5">
+          <label for="CustomerEmail" class="block relative left-1 mb-1 text-sm text-green font-semibold">
+            Email*
+          </label>
+          <input
+            type="email"
+            name="customer[email]"
+            id="CustomerEmail"
+            autocomplete="email"
+            autocorrect="off"
+            autocapitalize="off"
+            {% if form.errors contains 'form' %}
+            aria-invalid="true"
+            {% endif %}
+            placeholder="Email"
+            class="text-base w-full border border-gray-400 rounded-md p-2 focus-within:border-capucine focus-within:outline-none focus-within:shadow-none">
+        </div>
+
+        <!-- Password -->
+        {%- if form.password_needed -%}
+          <div class="">
+            <label for="CustomerPassword" class="block relative left-1 mb-1 text-sm text-green font-semibold">
+              Mot de passe*
+            </label>
+            <input
+              type="password"
+              value=""
+              name="customer[password]"
+              id="CustomerPassword"
+              autocomplete="current-password"
+              {% if form.errors contains 'form' %}
+              aria-invalid="true"
+              {% endif %}
+              placeholder="Mot de passe"
+              class="text-base w-full border border-gray-400 rounded-md p-2 focus-within:border-capucine focus-within:outline-none focus-within:shadow-none">
+          </div>
+        {%- endif -%}
+        <div class="text-sm mt-2">
+          <p id="passwordButton" class="block cursor-pointer text-[10px] underline">
+            Mot de passe oublié ?
+          </p>
+        </div>
+
+        <!-- Button -->
+        <button class="btn-primary w-full mt-8 {% render "button", size:"medium", color:"green" %}">
+          Se connecter
+        </button>
+
+      {%- endform -%}
+
+      <div class="mt-10">
+        <div class="w-full flex items-center mb-8">
+          <div class="h-0.5 w-full bg-green mr-4"></div>
+          <div class="">{% render 'icon-green-dot' %}</div>
+          <div class="h-0.5 w-full bg-green ml-4"></div>
+        </div>
+        <h1 class="font-serif text-2xl md:text-3xl text-center mb-5 text-green">
+          Pas encore client ?
+        </h1>
+        <div class="bg-green-light rounded-lg p-5 mt-6">
+          <ul>
+            <li class="flex gap-3 mb-3 text-sm text-green items-center">
+              <span>{% render 'icon-green-dot' %}</span>Bénéficiez des avantages de notre programme de fidélité, le Popit Club</li>
+            <li class="flex gap-3 mb-3 text-sm text-green items-center">
+              <span>{% render 'icon-green-dot' %}</span>Gagnez du temps lors du paiement en sauvegardant votre adresse de livraison</li>
+            <li class="flex gap-3 mb-3 text-sm text-green items-center">
+              <span>{% render 'icon-green-dot' %}</span>Vous serez parmi les premiers à tout savoir sur nos nouveautés, les promotions à venir...</li>
+            <li class="flex gap-3 text-sm text-green items-center">
+              <span>{% render 'icon-green-dot' %}</span>Suivez facilement vos commandes</li>
+          </ul>
+        </div>
+
+        <a class="block btn-primary w-full mt-5  {% render "button", size:"medium", color:"green" %}" href="{{ routes.account_register_url }}">
+          Créer mon compte
+        </a>
+      </div>
+    </div>
+
+    {% comment %}
+      {%- if shop.checkout.guest_login -%}
+      <div>
+      <hr>
+      <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
+
+      {%- form 'guest_login' -%}
+      <button>
+      {{ 'customer.login_page.guest_continue' | t }}
+      </button>
+      {%- endform -%}
+      </div>
+      {%- endif -%}
+    {% endcomment %}</div>
 </div>
 <script>
   var password_button = document.querySelector('#passwordButton');
   var cancel_button = document.querySelector('#cancelButton');
   var password_box = document.querySelector('#passwordBox');
 
-     password_button.onclick = function() {
-      password_box.classList.toggle('!block');
+  password_button.onclick = function() {
+    password_box.classList.toggle('!block');
   }
 
   cancel_button.onclick = function() {
-      password_box.classList.toggle('!block');
+    password_box.classList.toggle('!block');
   }
 </script>
