@@ -3,7 +3,7 @@
     {% for block in section.blocks %}
       <a
         href="{{ block.settings.link }}"
-        class="rounded-full text-center px-4 py-2 text-sm"
+        class="rounded-full text-center px-4 py-2 text-sm min-w-fit"
         style="background-color: {{ block.settings.bg_color }}; color: {{ block.settings.color }};">
         {{ block.settings.title }}
       </a>
