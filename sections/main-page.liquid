@@ -1,32 +1,31 @@
 <section class="py-10 w-11/12 max-w-5xl mx-auto overflow-hidden">
-     {% if section.settings.display_page_title  != blank %}
-          <h2 class="text-center text-2xl mb-3">{{ page.title }}</h2>
-    {% endif %}      
-    {% if section.settings.display_page_content  != blank %}
-        <div class="text-base">
-        {{ page.content }}
-         </div>
-     {% endif %}
+  {% if section.settings.display_page_title != blank %}
+    <h2 class="text-center text-2xl text-green mb-5">{{ page.title }}</h2>
+  {% endif %}
+  {% if section.settings.display_page_content != blank %}
+    <div class="text-base">
+      {{ page.content }}
+    </div>
+  {% endif %}
 </section>
 
 {% schema %}
 
-{
-"name": "Main page",
-"settings": [
-   
-    {
+  {
+    "name": "Main page",
+    "settings": [
+
+      {
         "type": "checkbox",
         "id": "display_page_title",
         "label": "Display title ?",
         "default": true
-    },
-    {
+      }, {
         "type": "checkbox",
         "id": "display_page_content",
         "label": "Display page content",
         "default": true
-    }
- ]
-}
+      }
+    ]
+  }
 {% endschema %}
