@@ -10,7 +10,7 @@
                 {% assign saving = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price | round %}
                 {% assign percentage = saving | at_least: percentage %}
               {% endfor %}
-              <div class="absolute z-20 right-2 top-0 mt-2 text-xs text-white bg-orange font-bold rounded-lg py-1 px-2 whitespace-nowrap">-{{ percentage }}%</div>
+              <div class="absolute z-20 right-2 top-0 mt-2 text-xs text-white bg-sale font-bold rounded-md py-1 px-2 whitespace-nowrap">-{{ percentage }}%</div>
             {% endif %}
 
             {%- if card_product.featured_media -%}
