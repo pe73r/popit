@@ -26,7 +26,7 @@
                       src="{{ card_product.featured_media | image_url: width: 533 }}"
                       sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                       alt="{{ card_product.featured_media.alt | escape }}"
-                      class="motion-reduce w-full"
+                      class="motion-reduce w-full bg-beige rounded-md"
                       {% unless lazy_load == false %}loading="lazy"{% endunless %}
                       width="{{ card_product.featured_media.width }}"
                       height="{{ card_product.featured_media.height }}"
@@ -69,7 +69,7 @@
     </a>
 
     <!-- product-info -->
-    <div class="text-center py-4 bg-white relative z-10">  
+    <div class="text-center pt-4 bg-white relative z-10">  
       <!-- title -->
       <{% if template contains 'collection' %}h2{% else %}h3{% endif %} class="font-body-text text-base md:text-[20px] font-extrabold line-clamp-1">
         {{ card_product.title }}
@@ -137,7 +137,7 @@
           </div>
         {% else %}
             <div class="relative mt-3" data-variant="{{ product.selected_or_first_available_variant.id }}">
-              <div class="bg-gray-medium text-black text-center font-normal text-sm {% render "button", size:"medium", color:"gray-medium", fullWidth: true %}">
+              <div class="bg-gray-medium text-black font-normal {% render "button", size:"medium", color:"gray-medium", fullWidth: true %}">
                 Rupture
               </div>
             </div>
