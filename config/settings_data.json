@@ -320,13 +320,6 @@
               "menu": "besoins"
             }
           },
-          "9f4aa598-1549-4004-8a0b-04b27f1eab98": {
-            "type": "link_list",
-            "settings": {
-              "heading": "SUPERFOOD",
-              "menu": "besoins"
-            }
-          },
           "a5485402-f5d6-4184-b592-6a5bc153a500": {
             "type": "link_list",
             "settings": {
@@ -339,7 +332,6 @@
           "c30e5de2-0357-4258-aec3-1a38e7dfa88a",
           "a60a8e48-011b-433c-a9a4-ab46efd57ef9",
           "2f5128fc-ab49-4c8b-ad3d-d0240c1916a7",
-          "9f4aa598-1549-4004-8a0b-04b27f1eab98",
           "a5485402-f5d6-4184-b592-6a5bc153a500"
         ],
         "settings": {
