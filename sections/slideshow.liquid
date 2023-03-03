@@ -54,7 +54,7 @@
                 {% endif %}
                 <div class="w-11/12 max-w-[500px] mx-auto md:ml-16 relative bottom-20 md:bottom-16">
                   <div class="text-center md:text-left">
-                    <h1 style="color: {{ block.settings.text_color }}" class="text-2xl leading-7 md:text-[2.15rem] md:leading-9 {% if block.settings.title_mobile != blank %} hidden md:block {% endif%}">{{ block.settings.title }}</h1>
+                    <h1 style="color: {{ block.settings.text_color }}" class="text-3xl leading-7 md:text-[2.15rem] md:leading-9 {% if block.settings.title_mobile != blank %} hidden md:block {% endif%}">{{ block.settings.title }}</h1>
 
                     {% if block.settings.title_mobile != blank %}
                       <h2 style="color: {{ block.settings.text_color }}" class="text-2xl sm:text-3xl leading-7 md:hidden">{{ block.settings.title_mobile }}</h2>
@@ -68,7 +68,7 @@
                       <div class="mt-6 md:mt-8 w-full">
                         <a
                           href="{{ block.settings.button_link }}"
-                          class="block {% render "button" size: "extralarge", fullWidth: true %}"
+                          class="block max-w-[80%] mx-auto md:max-w-none md:mx-0 {% render "button" size: "extralarge", fullWidth: true %}"
                           style="color: {{ block.settings.button_color }}; background-color: {{ block.settings.button_bg }}">
                           {{ block.settings.cta }}
                         </a>
@@ -82,9 +82,9 @@
         {%- endfor -%}
       </carousel-content>
     </carousel-container>
-    <carousel-dots class="absolute flex justify-center bottom-[20px] md:bottom-16 left-[50%] translate-x-[-50%]">
+    <carousel-dots class="absolute flex justify-center bottom-[20px] md:bottom-8 xl:bottom-16 left-[50%] translate-x-[-50%]">
       {%- for block in section.blocks -%}
-        <carousel-dot class="w-3 h-3 m-1 transition-all bg-white border rounded-full border-white selected:bg-green selected:border-green selected:w-10 selected:scale-110"></carousel-dot>
+        <carousel-dot class="w-3 h-3 m-1 transition-all bg-white border rounded-full border-white selected:bg-green selected:border-green selected:w-16 selected:scale-110"></carousel-dot>
       {% endfor %}
     </carousel-dots>
   </tail-carousel>
