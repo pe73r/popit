@@ -143,7 +143,10 @@
       <div class="w-full {% if section.settings.enable_filtering or section.settings.enable_sorting %} md:w-9/12 lg:w-3/4 {% endif %}">
 
         <!-- filters mobile -->
-        {% render "mobile-filters", results: results %}
+        {% if section.settings.show_filters_mobile %}
+          {% render "mobile-filters", results: results %}
+        {% endif %}
+
 
         {%- if isSearch == true -%}
           {% if search.performed %}
