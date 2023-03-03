@@ -54,7 +54,7 @@
                 {% endif %}
                 <div class="w-11/12 max-w-[500px] mx-auto md:ml-16 relative bottom-20 md:bottom-16">
                   <div class="text-center md:text-left">
-                    <h1 style="color: {{ block.settings.text_color }}" class="text-2xl leading-7 md:text-[2.15rem] md:leading-9 {% if block.settings.title_mobile != blank %} hidden md:block {% endif%}">{{ block.settings.title }}</h1>
+                    <h1 style="color: {{ block.settings.text_color }}" class="text-3xl leading-7 md:text-[2.15rem] md:leading-9 {% if block.settings.title_mobile != blank %} hidden md:block {% endif%}">{{ block.settings.title }}</h1>
 
                     {% if block.settings.title_mobile != blank %}
                       <h2 style="color: {{ block.settings.text_color }}" class="text-2xl sm:text-3xl leading-7 md:hidden">{{ block.settings.title_mobile }}</h2>
@@ -68,7 +68,7 @@
                       <div class="mt-6 md:mt-8 w-full">
                         <a
                           href="{{ block.settings.button_link }}"
-                          class="block {% render "button" size: "extralarge", fullWidth: true %}"
+                          class="block max-w-[80%] mx-auto md:max-w-none md:mx-0 {% render "button" size: "extralarge", fullWidth: true %}"
                           style="color: {{ block.settings.button_color }}; background-color: {{ block.settings.button_bg }}">
                           {{ block.settings.cta }}
                         </a>
