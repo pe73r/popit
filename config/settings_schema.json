@@ -72,6 +72,12 @@
         "label": "Accent"
       },
       {
+        "type": "color",
+        "id": "sale",
+        "default": "#c91010",
+        "label": "On sale"
+      },
+      {
         "type": "header",
         "content": "button primary"
       },
