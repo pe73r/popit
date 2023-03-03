@@ -51,39 +51,41 @@
   {%- endif -%}
 
   <!-- collection title and description -->
-  <div class="text-center py-5">
+  {%- if section.settings.show_collection_title and isSearch == false -%}
+    <div class="text-center py-5">
 
-    {%- if section.settings.show_collection_title and isSearch == false -%}
-      <h1 class="text-[2rem] leading-[2.3rem] md:text-[3.5rem] md:leading-[4rem] mb-3">
-        {{- collection.title | escape -}}
-      </h1>
-    {% endif %}
+      {%- if section.settings.show_collection_title and isSearch == false -%}
+        <h1 class="text-[2rem] leading-[2.3rem] md:text-[3.5rem] md:leading-[4rem] mb-3">
+          {{- collection.title | escape -}}
+        </h1>
+      {% endif %}
 
-    {%- if collection.description contains "<!--split-->" and isSearch == false and section.settings.show_collection_description -%}
-      {%- assign collection_description = collection.description | split: "<!--split-->" -%}
-      <tail-details class="text-sm w-11/12 max-w-2xl m-auto">
-        <details-part>
-          <div class="text-sm ">
-            {{ collection_description | first }}
+      {%- if collection.description contains "<!--split-->" and isSearch == false and section.settings.show_collection_description -%}
+        {%- assign collection_description = collection.description | split: "<!--split-->" -%}
+        <tail-details class="text-sm w-11/12 max-w-2xl m-auto">
+          <details-part>
+            <div class="text-sm ">
+              {{ collection_description | first }}
+            </div>
+          </details-part>
+          <details-part>
+            <div class="text-sm mt-3">
+              {{ collection_description | last }}
+            </div>
+          </details-part>
+          <see-more class="block mt-5 text-sm underline capitalize">Lire plus</see-more>
+          <div class="text-center mt-3">
+            <see-less class="hidden justify-center mt-5 text-sm underline capitalize">Lire moins</see-less>
           </div>
-        </details-part>
-        <details-part>
-          <div class="text-sm mt-3">
-            {{ collection_description | last }}
-          </div>
-        </details-part>
-        <see-more class="block mt-5 text-sm underline capitalize">Lire plus</see-more>
-        <div class="text-center mt-3">
-          <see-less class="hidden justify-center mt-5 text-sm underline capitalize">Lire moins</see-less>
+        </tail-details>
+
+      {% elsif section.settings.show_collection_description and isSearch == false -%}
+        <div class="text-base mt-5">
+          {{ collection.description }}
         </div>
-      </tail-details>
-
-    {% elsif section.settings.show_collection_description and isSearch == false -%}
-      <div class="text-base mt-5">
-        {{ collection.description }}
-      </div>
-    {%- endif -%}
-  </div>
+      {%- endif -%}
+    </div>
+  {% endif %}
 
   <!-- collection size -->
   {% unless isSearch == true %}
