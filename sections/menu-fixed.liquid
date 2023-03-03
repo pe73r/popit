@@ -1,4 +1,5 @@
 <div class="md:hidden grid grid-cols-5 gap-2 p-1 w-full max-w-[95%] mx-auto fixed bottom-2 left-[50%] translate-x-[-50%] bg-white rounded-lg z-20">
+  <!-- shop -->
   <div class="text-center bg-green-light p-2 rounded-md self-center">
     <a href="{{ section.settings.link }}">
       <img
@@ -8,6 +9,7 @@
       <p class="text-[10px] text-green mt-1">{{ section.settings.text }}</p>
     </a>
   </div>
+  <!-- fidelity -->
   <div class="text-center self-center">
     <a href="{{ section.settings.link_2 }}">
       <img
@@ -17,8 +19,9 @@
       <p class="text-[10px] mt-1">{{ section.settings.text_2 }}</p>
     </a>
   </div>
+  <!-- account-->
   <div class="text-center self-center">
-    <a href="{{ section.settings.link_3 }}">
+    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">
       <img
         class="max-w-[22px] mx-auto"
         src="{{ section.settings.image_3 | img_url: 'master' }}"
@@ -107,10 +110,6 @@
         "id": "text_3",
         "default": "Compte",
         "label": "Compte"
-      }, {
-        "type": "url",
-        "id": "link_3",
-        "label": "Link"
       }, {
         "type": "header",
         "content": "Panier"
