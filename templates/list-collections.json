@@ -93,6 +93,15 @@
             "bg_color": "#fee5c6",
             "color": "#ea5b0c"
           }
+        },
+        "ae941741-c5ba-4e14-9831-9b75d37cc10c": {
+          "type": "link",
+          "settings": {
+            "title": "alaldad",
+            "link": "",
+            "bg_color": "#D9E6B1",
+            "color": "#3D925C"
+          }
         }
       },
       "block_order": [
@@ -104,7 +113,8 @@
         "a2bb0450-b578-4217-b1a5-c48d0082c77f",
         "514021bb-ded5-4de8-a40d-199880159fe9",
         "b73bc100-1214-473a-b5ca-3f5a23892a94",
-        "3318605b-9cc8-45b0-9992-ce4c5fabfc23"
+        "3318605b-9cc8-45b0-9992-ce4c5fabfc23",
+        "ae941741-c5ba-4e14-9831-9b75d37cc10c"
       ],
       "settings": {
       }
@@ -152,12 +162,35 @@
         "title_color": "#ea5b0c",
         "color": "#343434"
       }
+    },
+    "d1501d1a-e614-4622-8ee2-cf5eac786edd": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "cheveux",
+        "products_to_show": 3,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_size": true,
+        "show_secondary_image": false,
+        "show_quantity": false,
+        "show_cta": true,
+        "show_collection_card": false,
+        "image": "shopify:\/\/shop_images\/Gummies-Beaute_2x_f10259ff-e4d5-4f72-8abe-fb29149df7c7.png",
+        "label": "JUSQU’À -25%",
+        "subtitle": "Personnalisez votre pack",
+        "title": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
+        "cta": "Personnaliser mon pack",
+        "ctaLink": "",
+        "title_color": "#e22120",
+        "color": "#343434"
+      }
     }
   },
   "order": [
     "collection-list-header",
     "collection-links",
     "bbd68e1e-b0dc-4c9b-89fd-c0ea85ec9b71",
-    "5fe2ec1b-d42e-4c71-839e-7f566255b4f9"
+    "5fe2ec1b-d42e-4c71-839e-7f566255b4f9",
+    "d1501d1a-e614-4622-8ee2-cf5eac786edd"
   ]
 }
