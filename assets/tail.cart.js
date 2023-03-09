@@ -181,7 +181,7 @@ defineCustomElement(
     }
 
     setHeight = () => {
-      console.log("setHeight", this.tagName);
+      
       this.style.minHeight = window.innerHeight + "px";
       this.style.height = window.innerHeight + "px";
       this.style.maxHeight = window.innerHeight + "px";

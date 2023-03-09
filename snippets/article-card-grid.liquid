@@ -1,6 +1,6 @@
-<div class="flex flex-col items-start justify-center h-full w-full">
+<div class="flex flex-col items-start justify-center h-full w-full p-2 rounded-[8px] shadow-md">
   <!-- card content -->
-  <div class="flex flex-col items-start relative h-full w-full p-2 rounded-[8px] shadow">
+  <div class="flex flex-col items-start relative h-full w-full">
     <a href="{{ article.url }}" class="block w-full">
       <img
         class="mb-2 lazy object-cover h-[140px] md:h-[250px] rounded-sm w-full"
@@ -9,7 +9,7 @@
         loading="lazy">
       <div class="gap-4 min-h-[115px]">
         {% if show_tag %}
-          <div class="w-full h-[28px] flex capitalize text-xs GroteskBold article-tags">
+          <div class="w-full h-[28px] flex capitalize text-xs article-tags">
             {% for tag in article.tags %}
               {% render 'article-tags', tag: tag %}
             {% endfor %}
