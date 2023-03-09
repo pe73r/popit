@@ -1,5 +1,5 @@
 <div data-customer-addresses>
-  
+
 
   <h3 class="text-green">Carnet d’adresses</h3>
   <ul role="list">
@@ -13,7 +13,10 @@
         </div>
 
 
-        <div id="EditAddress_{{ address.id }}" class="mb-10 p-5 bg-white rounded-lg address shadow-lg" style="display:none;">
+        <div
+          id="EditAddress_{{ address.id }}"
+          class="mb-10 p-5 bg-white rounded-lg address shadow-lg"
+          style="display:none;">
           {%- form 'customer_address', address -%}
 
             <div class="flex flex-col md:flex-row md:mb-2">
@@ -156,28 +159,29 @@
     {%- endfor -%}
 
 
-    <button id="toggleBtn" class="mx-auto {% render "button", size:"extralarge", color:"green", variation: "outlined"  %}">
-          Modifier l'adresse
-      </button>
+    <button id="toggleBtnAdresses" class="mx-auto {% render "button", size:"extralarge", color:"green", variation: "outlined"  %}">
+      Modifier l'adresse
+    </button>
   </ul>
 </div>
 
 <script>
+
   window.onload = () => {
     typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
   }
- 
-    const toggleBtn = document.querySelector("#toggleBtn");
-    const content = document.querySelector(".address");
-      
-          toggleBtn.addEventListener("click", function() {
-            if (content.style.display === "none") {
-              content.style.display = "block";
-              content.classList.remove('hidden');
-            } else {
-              content.style.display = "none";
-              
-            }
-          });
-    
+
+  const toggleBtnAdresses = document.querySelector("#toggleBtnAdresses");
+  const content = document.querySelector(".address");
+
+  toggleBtnAdresses.addEventListener("click", function() {
+    if (content.style.display === "none") {
+      content.style.display = "block";
+      content.classList.remove('hidden');
+      this.style.display = "none";
+    } else {
+      content.style.display = "none";
+
+    }
+  });
 </script>

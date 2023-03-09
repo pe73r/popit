@@ -1,5 +1,5 @@
 <div data-customer-addresses>
-  
+
 
   <h3 class="text-green">Carnet d’adresses</h3>
   <ul role="list">
@@ -13,7 +13,10 @@
         </div>
 
 
-        <div id="EditAddress_{{ address.id }}" class="mb-10 p-5 bg-white rounded-lg addressMobile shadow-lg" style="display:none;">
+        <div
+          id="EditAddress_{{ address.id }}"
+          class="mb-10 p-5 bg-white rounded-lg addressMobile shadow-lg"
+          style="display:none;">
           {%- form 'customer_address', address -%}
 
             <div class="flex flex-col md:flex-row md:mb-2">
@@ -157,8 +160,8 @@
 
 
     <button id="toggleBtnMobile" class="mx-auto {% render "button", size:"extralarge", color:"green", variation: "outlined"  %}">
-          Modifier l'adresse
-      </button>
+      Modifier l'adresse
+    </button>
   </ul>
 </div>
 
@@ -166,18 +169,18 @@
   window.onload = () => {
     typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
   }
- 
-    const toggleBtnMobile = document.querySelector("#toggleBtnMobile");
-    const contentMobile = document.querySelector(".addressMobile");
-      
-          toggleBtnMobile.addEventListener("click", function() {
-            if (content.style.display === "none") {
-              contentMobile.style.display = "block";
-              contentMobile.classList.remove('hidden');
-            } else {
-              contentMobile.style.display = "none";
-              
-            }
-          });
-    
+
+  const toggleBtnMobile = document.querySelector("#toggleBtnMobile");
+  const contentMobile = document.querySelector(".addressMobile");
+
+  toggleBtnMobile.addEventListener("click", function() {
+    if (content.style.display === "none") {
+      contentMobile.style.display = "block";
+      contentMobile.classList.remove('hidden');
+      this.style.display = "none";
+    } else {
+      contentMobile.style.display = "none";
+
+    }
+  });
 </script>
