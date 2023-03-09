@@ -35,7 +35,7 @@
           "type": "link",
           "settings": {
             "title": "Alimentation",
-            "link": "\/alimentation",
+            "link": "#alimentation",
             "bg_color": "#d9e6b1",
             "color": "#3d925c"
           }
