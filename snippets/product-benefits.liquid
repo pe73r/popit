@@ -2,23 +2,27 @@
   <div class="bg-white bg-opacity-70 rounded-lg p-4 pb-6">
     <h3 class="text-[2rem] text-center text-{{ product-color }} mb-4">Ce que vous en pensez</h3>
     {% comment %} <div id="list-bubble-test-widget" style="margin: 5px 2px; min-height: 81px;"></div>
-    <script
+      <script
       src="https://popit.my.join-stories.com/widgets/test-widget/index.js"
       data-join-widget-id="list-bubble-test-widget"
       data-join-widget-alias="test-widget"
-      type="text/javascript"></script> {% endcomment %}
-      <div id="widget-{{ product.handle }}"></div> 
-      <script src="https://popit.my.join-stories.com/widgets/{{ product.handle }}/index.js" data-join-widget-id="widget-{{ product.handle }}" data-join-widget-alias="{{ product.handle }}" type="text/javascript"></script>
+    type="text/javascript"></script> {% endcomment %}
+    <div id="widget-{{ product.handle }}"></div>
+    <script
+      src="https://popit.my.join-stories.com/widgets/{{ product.handle }}/index.js"
+      data-join-widget-id="widget-{{ product.handle }}"
+      data-join-widget-alias="{{ product.handle }}"
+      type="text/javascript"></script>
 
     {% if product.metafields.product.image_benefices_1 != blank or product.metafields.product.image_benefices_2 != blank or product.metafields.product.image_benefices_3 != blank %}
       <h3 class="text-[2rem] text-center text-{{ product-color }} mb-4">Bénéfices</h3>
-      <div class="flex justify-center gap-4 mt-4">
+      <div class="flex justify-center gap-10 mt-4">
         {% if product.metafields.product.image_benefices_1 != blank %}
           <div class="text-center">
-            <div class="w-20 h-20 rounded-full flex justify-center items-center" style="{{ bg_color }}">
+            <div class="w-26 h-26 rounded-full flex justify-center items-center">
               <img
                 src="{{ product.metafields.product.image_benefices_1.value | img_url: 'master'}}"
-                class="object-contain max-w-[50px]"
+                class="object-contain max-w-[80px]"
                 alt="{{ product.metafields.product.image_benefices_1.alt }}">
             </div>
             <span class="block text-xs mt-2 font-bold text-{{ product-color }}">{{ product.metafields.product.text_benefices_1 }}</span>
@@ -26,10 +30,10 @@
         {% endif %}
         {% if product.metafields.product.image_benefices_2 != blank %}
           <div class="text-center">
-            <div class="w-20 h-20 rounded-full flex justify-center items-center" style="{{ bg_color }}">
+            <div class="w-26 h-26 rounded-full flex justify-center items-center">
               <img
                 src="{{ product.metafields.product.image_benefices_2.value | img_url: 'master' }}"
-                class="object-contain max-w-[50px]"
+                class="object-contain max-w-[80px]"
                 alt="{{ product.metafields.product.image_benefices_2.alt }}">
             </div>
             <span class="block text-xs mt-2 font-bold text-{{ product-color }}">{{ product.metafields.product.text_benefices_2 }}</span>
@@ -37,10 +41,10 @@
         {% endif %}
         {% if product.metafields.product.image_benefices_3 != blank %}
           <div class="text-center">
-            <div class="w-20 h-20 rounded-full flex justify-center items-center" style="{{ bg_color }}">
+            <div class="w-26 h-26 rounded-full flex justify-center items-center" ">
               <img
                 src="{{ product.metafields.product.image_benefices_3.value | img_url: 'master' }}"
-                class="object-contain max-w-[50px]"
+                class="object-contain max-w-[80px]"
                 alt="{{ product.metafields.product.image_benefices_3.alt }}">
             </div>
             <span class="block text-xs mt-2 font-bold text-{{ product-color }}">{{ product.metafields.product.text_benefices_3 }}</span>
