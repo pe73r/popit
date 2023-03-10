@@ -21,7 +21,7 @@
       <carousel-container class="w-[500px] h-[500px] bg-white rounded-full mx-auto flex justify-center">
         <carousel-content>
           {%- for media in product.media -%}
-            <carousel-panel class="flex items-center">
+            <carousel-panel class="flex items-center p-0">
               {% render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants, class: 'w-full mx-auto' %}
             </carousel-panel>
           {% endfor %}
