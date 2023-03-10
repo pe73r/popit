@@ -300,20 +300,19 @@
       <tail-marquee class="flex relative overflow-hidden">
         <marquee-content style="animation-duration:30s" class="items-center flex py-3 animate-marquee whitespace-nowrap gap-10 pr-10">
           {% if block.settings.text != blank %}
-            <div class="flex items-center">
-              <div class="hidden md:block">
-                {% render 'icon-truck' %}
+            <div class="flex items-center gap-1">
+              <div class="w-16">
+                <img src="{{ block.settings.truck | img_url: 'master'}}" alt="{{ block.settings.truck.alt }}">
               </div>
-              <div class="block md:hidden">
-                {% render 'icon-clock' %}
-              </div>
-              <p class="text-xs md:text-sm delivery-text ml-2">{{ block.settings.text }}</p>
+              <p class="text-xs md:text-sm delivery-text">{{ block.settings.text }}</p>
             </div>
           {% endif %}
           {% if block.settings.text_2 != blank %}
-            <div class="flex items-center">
-              {% render 'icon-truck-2' %}
-              <p class="text-xs md:text-sm delivery-text ml-2">{{ block.settings.text_2 }}</p>
+            <div class="flex items-center gap-1">
+              <div class="w-16">
+                <img src="{{ block.settings.oclock | img_url: 'master'}}" alt="{{ block.settings.oclock.alt }}">
+              </div>
+              <p class="text-xs md:text-sm delivery-text">{{ block.settings.text_2 }}</p>
             </div>
           {% endif %}
         </marquee-content>

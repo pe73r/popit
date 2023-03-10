@@ -48,9 +48,15 @@
 {% endif %}
 
 <section class="w-11/12 lg:w-full py-5 lg:py-10 mx-auto my-5 lg:my-0 rounded-lg lg:rounded-none" style=" background-color: {{ bg_color }}">
-  <div class="w-11/12 max-w-7xl mx-auto flex gap-5">
+  <div class="w-11/12 max-w-7xl mx-auto flex gap-4 items-center">
     <div class="hidden lg:block w-1/2">
-      {% if section.settings.image != blank %}
+      {% if product.metafields.product.extra_image != blank %}
+        <img
+          class="lazy mx-auto"
+          src="{{ product.metafields.product.extra_image | img_url: 'master'}}"
+          alt="{{ product.metafields.product.extra_image.alt }}"
+          loading="lazy">
+      {% else %}
         <img
           class="lazy mx-auto"
           src="{{ section.settings.image | img_url: 'master'}}"
@@ -60,7 +66,7 @@
       {% endif %}
     </div>
     <tail-tabs data-products-tab class="w-full lg:w-1/2">
-      <tabs-buttons class="justify-center gap-4 md:gap-8 mb-5 md:mb-8">
+      <tabs-buttons class="justify-center gap-4 md:gap-8 mb-5 md:mb-4">
         {% for block in section.blocks %}
           <div class="tab-button block relative group font-light transition-all !border-[0] cursor-pointer selected:after:bg-[{{ product_color }}] selected:after:w-[60px] selected:after:h-[2px] selected:after:absolute selected:after:bottom-[2px] selected:after:left-[50%] selected:after:translate-x-[-50%] selected:after:mx-auto">
             <span class="block py-2 text-xs md:text-sm font-light group:selected:font-bold text-center">{{ block.settings.title }}</span>
@@ -70,7 +76,7 @@
       <tabs-panels>
         {% for block in section.blocks %}
           {% if block.type == 'description' %}
-            <div class="block mt-4" style="color: {{ product_color }}">
+            <div class="block mt-2" style="color: {{ product_color }}">
               {% comment %} <div class="text-sm">{{ product.description }}</div> {% endcomment %}
 
               <div class="text-xs md:text-sm font-light">
@@ -81,27 +87,27 @@
                 {% endif %}
               </div>
               {% if product.metafields.product.description_text_1 != blank %}
-                <div class="flex items-center gap-5 pb-3 border-b border-{{ product-color }} mt-5">
+                <div class="flex items-center gap-4 pb-3 border-b border-{{ product-color }} mt-5">
                   <img
-                    class="max-w-[60px]"
+                    class="max-w-[80px]"
                     src="{{ product.metafields.product.description_image_1.value | img_url:'master' }}"
                     alt="">
                   <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.description_text_1.value }}</span>
                 </div>
               {% endif %}
               {% if product.metafields.product.description_text_2 != blank %}
-                <div class="flex items-center gap-5 pb-3 border-b border-{{ product-color }} mt-4">
+                <div class="flex items-center gap-4 pb-3 border-b border-{{ product-color }} mt-4">
                   <img
-                    class="max-w-[60px]"
+                    class="max-w-[80px]"
                     src="{{ product.metafields.product.description_image_2.value | img_url:'master' }}"
                     alt="">
                   <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.description_text_2.value }}</span>
                 </div>
               {% endif %}
               {% if product.metafields.product.description_text_3 != blank %}
-                <div class="flex items-center gap-5 mt-4">
+                <div class="flex items-center gap-4 mt-4">
                   <img
-                    class="max-w-[60px]"
+                    class="max-w-[80px]"
                     src="{{ product.metafields.product.description_image_3.value | img_url:'master' }}"
                     alt="">
                   <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.description_text_3.value }}</span>
@@ -109,43 +115,49 @@
               {% endif %}
             </div>
           {% elsif block.type == 'use' %}
-            <div class="block mt-4" style="color: {{ product_color }}">
+            <div class="block mt-2" style="color: {{ product_color }}">
               <div class="text-xs md:text-sm font-light">
                 {% if product.metafields.product.use_text_principal != blank %}
                   {{ product.metafields.product.use_text_principal }}
                 {% endif %}
               </div>
-              {% if product.metafields.product.use_image_1.value != blank %}
-                <div class="flex items-center gap-5 pb-3 border-b border-{{ product-color }} mt-5">
-                  <img
-                    class="max-w-[60px]"
-                    src="{{ product.metafields.product.use_image_1.value | img_url:'master' }}"
-                    alt="">
+              {% if product.metafields.product.use_text_1 != blank %}
+                <div class="flex items-center gap-4 pb-3 border-b border-{{ product-color }} mt-5">
+                  {% if product.metafields.product.use_image_1 != blank %}
+                    <img
+                      class="max-w-[80px]"
+                      src="{{ product.metafields.product.use_image_1.value | img_url:'master' }}"
+                      alt="">
+                  {% endif %}
                   <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_1 }}</span>
                 </div>
               {% endif %}
-              {% if product.metafields.product.description_text_2 != blank %}
-                <div class="flex items-center gap-5 pb-3 border-b border-{{ product-color }} mt-4">
-                  <img
-                    class="max-w-[60px]"
-                    src="{{ product.metafields.product.description_image_2.value | img_url:'master' }}"
-                    alt="">
+              {% if product.metafields.product.use_text_2 != blank %}
+                <div class="flex items-center gap-4 pb-3 border-b border-{{ product-color }} mt-4">
+                  {% if product.metafields.product.use_image_2 != blank %}
+                    <img
+                      class="max-w-[80px]"
+                      src="{{ product.metafields.product.use_image_2.value | img_url:'master' }}"
+                      alt="">
+                  {% endif %}
                   <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_2 }}</span>
                 </div>
               {% endif %}
-              {% if product.metafields.product.use_text_3.value != blank %}
-                <div class="flex items-center gap-5 mt-4">
-                  <img
-                    class="max-w-[60px]"
-                    src="{{ product.metafields.product.description_image_3.value | img_url:'master' }}"
-                    alt="">
+              {% if product.metafields.product.use_text_3 != blank %}
+                <div class="flex items-center gap-4 mt-4">
+                  {% if product.metafields.product.use_image_3 != blank %}
+                    <img
+                      class="max-w-[80px]"
+                      src="{{ product.metafields.product.use_image_3.value | img_url:'master' }}"
+                      alt="">
+                  {% endif %}
                   <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_3 }}</span>
                 </div>
               {% endif %}
 
             </div>
           {% elsif block.type == 'composition' %}
-            <div class="block mt-4">
+            <div class="block mt-2">
               {% if product.metafields.product.compo_image_tableau_desktop != blank %}
                 <img
                   class="mx-auto hidden md:block"
