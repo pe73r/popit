@@ -38,7 +38,7 @@
 {% endif %}
 
 <div class="w-full py-10 lg:py-14 lg:w-11/12 lg:mx-auto max-w-7xl">
-  <h2 class="w-11/12 mx-auto text-3xl md:text-4xl lg:text-6xl mb-8 text-center product-ingredients-title">{{ section.settings.title }}</h2>
+  <h2 class="w-11/12 mx-auto text-3xl md:text-4xl mb-8 text-center product-ingredients-title">{{ section.settings.title }}</h2>
   <!-- mobile -->
   <div class="flex lg:hidden lg:justify-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 lg:gap-6 xl:gap-8 scrollbar-none px-4">
     {% assign i = 0 %}
@@ -69,9 +69,9 @@
 
       {% if metafield_title != blank %}
 
-        <div class="min-w-[350px] lg:min-w-0 shadow-md pt-8 pb-4 px-4 mb-5 rounded-lg flex flex-col justify-between h-full min-h-[500px]">
+        <div class="min-w-[350px] lg:min-w-0 shadow-md pt-8 pb-4 px-4 mb-5 rounded-lg flex flex-col justify-between min-h-[300px]">
           <div class="">
-            <h5 class="block text-sm mb-8">{{ metafield_title }}</h5>
+            <h5 class="block text-base mb-5">{{ metafield_title }}</h5>
             <ul class="product-ingredients-list">
               {% if metafield_bullet_1 != blank %}
                 <li class="text-sm flex items-center mb-3">
@@ -100,9 +100,11 @@
               {% endif %}
             </ul>
           </div>
-          <div class="mt-4">
-            <a href="{{ metafield_link }}" class="text-sm underline text-gray-300">En savoir plus</a>
-          </div>
+          {% if metafield_link != blank %}
+            <div class="mt-4">
+              <a href="{{ metafield_link }}" class="text-sm underline text-gray-300">En savoir plus</a>
+            </div>
+          {% endif %}
         </div>
 
       {% endif %}
@@ -143,10 +145,10 @@
 
             {% if metafield_title != blank %}
               <carousel-panel class="px-2">
-                <div class="shadow-md pt-8 pb-4 px-4 mb-5 rounded-lg min-h-[500px] h-full">
+                <div class="shadow-md pt-8 pb-4 px-4 mb-5 rounded-lg min-h-[300px]">
                   <div class="flex flex-col justify-between h-full">
                     <div>
-                      <h5 class="block text-sm mb-8">{{ metafield_title }}</h5>
+                      <h5 class="block text-base mb-5">{{ metafield_title }}</h5>
                       <ul class="product-ingredients-list">
                         {% if metafield_bullet_1 != blank %}
                           <li class="text-sm flex items-center mb-4">
@@ -176,9 +178,11 @@
                         {% endif %}
                       </ul>
                     </div>
-                    <div class="mt-4">
-                      <a href="{{ metafield_link }}" class="text-sm underline text-gray-300">En savoir plus</a>
-                    </div>
+                    {% if metafield_link != blank %}
+                      <div class="mt-4">
+                        <a href="{{ metafield_link }}" class="text-sm underline text-gray-300">En savoir plus</a>
+                      </div>
+                    {% endif %}
                   </div>
                 </div>
               </carousel-panel>
