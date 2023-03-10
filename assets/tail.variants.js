@@ -34,7 +34,12 @@ defineCustomElement(
           acc[Number(inputPosition) - 1] = position === inputPosition ? value : input.value;
           return acc;
         }, []);
-        console.log({ value, position, newState });
+
+        const inputs = Array.from(document.querySelectorAll(`[value="${e.target.value}"]`));
+        inputs.forEach((input) => {
+          input.checked = true;
+        });
+
         const variant = this.variants.find((variant) => {
           return JSON.stringify(variant.options) === JSON.stringify(newState);
         });

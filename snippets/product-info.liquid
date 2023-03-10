@@ -59,6 +59,7 @@
           </div>
         {% endif %}
         {%- unless product.has_only_default_variant -%}
+
           <tail-variants
             data-product="{{product.id}}"
             class="no-js-hidden"
@@ -81,12 +82,10 @@
                       class="radio-variant-circle-sticky w-0 h-0 opacity-0 md:collapse hidden"
                       {% if option.selected_value == value %}checked{% endif %}>
                     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                      <div class="variant-box block pt-2 pb-3 px-2 bg-white bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
+                      <div  data-option-value="{{ value }}" class="variant-box block pt-2 pb-3 px-2 bg-white bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
                         <h5 class="text-sm text-{{ product-color }} leading-4">{{ value }}</h5>
                         <!-- workaround to show variant price -->
                         {% assign counter = counter | plus: 1 %}
-
-
                       </div>
                     </label>
                     <!-- discount % -->
@@ -328,6 +327,8 @@
 
       {%- when 'variant_picker' -%}
       {%- unless product.has_only_default_variant -%}
+      <fieldset>
+        hello
         <tail-variants
           data-product="{{product.id}}"
           class="no-js-hidden"
@@ -350,7 +351,7 @@
                     class="radio-variant-circle w-0 h-0 opacity-0 md:collapse hidden"
                     {% if option.selected_value == value %}checked{% endif %}>
                   <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                    <div class="variant-box block pt-3 pb-4 bg-white bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
+                    <div  data-option-value="{{ value }}" class="variant-box block pt-3 pb-4 bg-white bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
                       <h5 class="text-base text-{{ product-color }}">{{ value }}</h5>
                       <!-- workaround to show variant price -->
                       {% assign counter = counter | plus: 1 %}
@@ -416,7 +417,7 @@
             {{ product.variants | json }}
           </script>
         </tail-variants>
-
+        </fieldset>
         <script type="application/json">
           {{ product.variants | json }}
         </script>
