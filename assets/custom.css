@@ -119,3 +119,10 @@ accordion-element[data-open="true"] .icon-minus {
     font-size: 1.875rem;
     margin-bottom: 50px !important;
 }
+
+@media (max-width: 639px) {
+  .jdgm-rev-widg {
+    font-size: 14px;
+}
+
+}
