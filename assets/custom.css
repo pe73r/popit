@@ -107,3 +107,9 @@ accordion-element[data-open="true"] .icon-minus {
 .jdgm-prev-badge__text {
     font-size: 16px;
 }
+
+.jdgm-rev-widg {
+    max-width: 900px;
+    margin: 50px auto;
+    font-size: 16px;
+}
