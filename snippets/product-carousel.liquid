@@ -36,7 +36,7 @@
       <carousel-container class="w-[250px] h-[250px] md:w-[300px] md:h-[300px] bg-white rounded-full mx-auto flex justify-center">
         <carousel-content>
           {%- for media in product.media -%}
-            <carousel-panel class="flex items-center">
+            <carousel-panel class="flex items-center p-0">
               <img
                 class="lazy max-w-[230px] md:max-w-[280px] mx-auto"
                 data-src="{{ media | img_url:'master' }}"
