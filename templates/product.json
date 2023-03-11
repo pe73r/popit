@@ -202,6 +202,21 @@
         "color": "#ffffff"
       }
     },
+    "16785376921acc729a": {
+      "type": "apps",
+      "blocks": {
+        "c2fed4fe-70ea-4833-bdbd-46783f591c72": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "c2fed4fe-70ea-4833-bdbd-46783f591c72"
+      ],
+      "settings": {
+      }
+    },
     "07a37119-270e-432c-8a6f-4eaeab0ff9e1": {
       "type": "faq-product",
       "disabled": true,
@@ -293,6 +308,7 @@
     "product-tabs",
     "7d12314b-a9a4-42d2-8330-a732629f982b",
     "ca7fac8e-53d2-41fb-9a5b-446c1b05dc60",
+    "16785376921acc729a",
     "07a37119-270e-432c-8a6f-4eaeab0ff9e1",
     "product-recommendations",
     "d473013e-7df7-4660-8bc9-eeeef9b1d75e",
