@@ -32,6 +32,7 @@
         },
         "e7c38b55-666d-42db-a0e0-bc393527f6cc": {
           "type": "klarna",
+          "disabled": true,
           "settings": {
             "text": "<b>18,33 € <\/b> aujourd’hui grâce au <italic><b>3x sans frais<\/b><\/italic>"
           }
