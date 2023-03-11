@@ -22,6 +22,7 @@ module.exports = {
           hair: "#E4003A",
         },
         orange: {
+          DEFAULT: "#EA5B0C",
           energy: "#EA5B0C",
         },
         sable: {
