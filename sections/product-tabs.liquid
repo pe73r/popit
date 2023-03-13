@@ -158,17 +158,38 @@
             </div>
           {% elsif block.type == 'composition' %}
             <div class="block mt-2">
-              {% if product.metafields.product.compo_image_tableau_desktop != blank %}
-                <img
-                  class="mx-auto hidden md:block"
-                  src="{{ product.metafields.product.compo_image_tableau_desktop.value | img_url: 'master' }}"
-                  alt="">
+              {% if product.metafields.product.compo_image_tableau_desktop.value != blank %}
+                {% assign file_name_parts = product.metafields.product.compo_image_tableau_desktop.value | split: '.' %}
+                {% assign file_extension = file_name_parts.last %}
+                {% assign file_extension_prefix = file_extension | slice: 0, 3 %}
+
+                {% if file_extension_prefix == 'png' %}
+                  <img
+                    class="mx-auto hidden md:block"
+                    src="{{ product.metafields.product.compo_image_tableau_desktop.value | img_url: 'master' }}"
+                    alt="">
+                {% else %}
+                  <svg class="mx-auto hidden md:block">
+                    <image class="mx-auto w-full h-full " xlink:href="{{ product.metafields.product.compo_image_tableau_desktop.value.url }}" />
+                  </svg>
+                {% endif %}
+
               {% endif %}
               {% if product.metafields.product.compo_image_tableau_mobile != blank %}
-                <img
-                  class="mx-auto block md:hidden"
-                  src="{{ product.metafields.product.compo_image_tableau_mobile.value | img_url: 'master' }}"
-                  alt="">
+                {% assign file_name_mobile_parts = product.metafields.product.compo_image_tableau_mobile.value | split: '.' %}
+                {% assign file_extension_mobile = file_name_mobile_parts.last %}
+                {% assign file_extension_prefix_mobile = file_extension_mobile | slice: 0, 3 %}
+
+                {% if file_extension_prefix_mobile == 'png' %}
+                  <img
+                    class="mx-auto block md:hidden"
+                    src="{{ product.metafields.product.compo_image_tableau_mobile.value | img_url: 'master' }}"
+                    alt="">
+                {% else %}
+                  <svg class="mx-auto block md:hidden">
+                    <image class="mx-auto w-full h-full" xlink:href="{{ product.metafields.product.compo_image_tableau_mobile.value.url }}" />
+                  </svg>
+                {% endif %}
               {% endif %}
             </div>
           {% else %}
