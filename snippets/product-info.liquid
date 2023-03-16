@@ -172,7 +172,7 @@
           <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="{% unless product.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}">
             {% if product.available %}
               <div class="px-0 md:px-16 py-3 flex justify-center items-center">
-                <span class="block">Ajouter au panier</span>
+                <span class="block font-bold">Ajouter au panier</span>
                 <span class="px-1">-</span>
                 <span
                   data-price
@@ -208,7 +208,7 @@
       {% render block %}
 
       {%- when 'subtitle' -%}
-      <p class="my-2 text-sm text-{{ product-color }} italic" {{ block.shopify_attributes }}>
+      <p class="my-2 text-base text-{{ product-color }} italic" {{ block.shopify_attributes }}>
         {{ product.metafields.product.sub_title }}
       </p>
       {%- when 'vendor' -%}
@@ -393,7 +393,7 @@
 
                         <div class="relative flex -top-3 text-[10px] bg-{{ product-color }} text-white percentage text-center whitespace-nowrap rounded-md w-fit mx-auto py-1 px-2">
                           <span class="hidden md:block mr-1">ÉCONOMISEZ</span>
-                          {{ percentage }}%</div>
+                          {{ product.metafields.product.percentage }}%</div>
                       {% endif %}
                     {% elsif counter == 3 %}
                       {%- if product.variants[2].compare_at_price %}
@@ -508,7 +508,7 @@
             <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="{% unless product.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}">
               {% if product.available %}
                 <div class="px-0 md:px-16 py-3 flex justify-center items-center">
-                  <span class="block">Ajouter au panier</span>
+                  <span class="block font-bold">Ajouter au panier</span>
                   <span class="px-1">-</span>
                   <span
                     data-price
