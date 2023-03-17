@@ -128,8 +128,14 @@ accordion-element[data-open="true"] .icon-minus {
 
 }
 
+.jdgm-rev-widg__title{
+  font-size: 1.875rem;
+  color: #4b9b7d;
+}
+
 @media screen and (min-width: 1024px) {
-  .card-inline{
-    background-color: lightblue;
-  }
+  .jdgm-rev-widg__title{
+  font-size: 1.875rem;
+  color: #4b9b7d;
+}
 }
