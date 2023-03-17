@@ -291,7 +291,7 @@
     "4e493477-ad97-4792-afc4-59313a83885d": {
       "type": "newsletter",
       "settings": {
-        "section_style": "boxed",
+        "section_style": "default",
         "title": "NEWSLETTER",
         "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives ! <\/p>",
         "text_button": "S'inscrire",
