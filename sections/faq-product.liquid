@@ -28,8 +28,8 @@
                     </span>
                   </div>
                   <accordion-icon class="duration-150 group-transition-all origin-center h-[fit-content]">
-                    <span class="icon-plus">{% render 'icon-accordion-plus' %}</span>
-                    <span class="icon-minus hidden">{% render 'icon-accordion-minus' %}</span>
+                    <span class="icon-plus">{% render 'icon-accordion-plus', color: section.settings.title_accordion_color %}</span>
+                    <span class="icon-minus hidden">{% render 'icon-accordion-minus', color: section.settings.title_accordion_color %}</span>
                   </accordion-icon>
                 </accordion-header>
               </accordion-trigger>
@@ -53,8 +53,8 @@
     <script type="application/ld+json">
       {
       "@context":"https://schema.org",
-                                                                                                                                  "@type":"FAQPage",
-                                                                                                                                  "mainEntity":[
+                                                                                                                                        "@type":"FAQPage",
+                                                                                                                                        "mainEntity":[
       {% assign i = 1 %}
       {% for block in section.blocks -%}
         {% liquid 
@@ -67,13 +67,13 @@
               -%}
         {
         "@type":"Question",
-                                                                                                                                                                                "name":"{{ metafield_question }}",
+                                                                                                                                                                                        "name":"{{ metafield_question }}",
         "acceptedAnswer":
-                                                                                                                                                                                {
-                                                                                                                                                                                  "@type":"Answer",
-                                                                                                                                                                                  "text":"{{ metafield_answer }}"
+                                                                                                                                                                                        {
+                                                                                                                                                                                          "@type":"Answer",
+                                                                                                                                                                                          "text":"{{ metafield_answer }}"
         }
-                                                                                                                                                                              },
+                                                                                                                                                                                      },
       {%- endfor %}
       ]
       }
