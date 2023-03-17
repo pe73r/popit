@@ -129,13 +129,13 @@ accordion-element[data-open="true"] .icon-minus {
 }
 
 .jdgm-rev-widg__title{
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
   color: #4b9b7d;
 }
 
 @media screen and (min-width: 1024px) {
   .jdgm-rev-widg__title{
-  font-size: 1.875rem;
+  font-size: 1.875rem !important;
   color: #4b9b7d;
 }
 }
