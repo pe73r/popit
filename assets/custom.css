@@ -111,7 +111,7 @@ accordion-element[data-open="true"] .icon-minus {
 .jdgm-rev-widg {
     width:90%;
     max-width: 900px;
-    margin: 50px auto !important;
+    margin: 20px auto !important;
     font-size: 16px;
 }
 
@@ -137,5 +137,8 @@ accordion-element[data-open="true"] .icon-minus {
   .jdgm-rev-widg__title{
   font-size: 1.875rem !important;
   color: #4b9b7d;
-}
+  }
+  .jdgm-rev-widg {
+    margin: 50px auto !important;
+  }
 }
