@@ -26,21 +26,21 @@
          card_product: all_products[product_related_1_handle],
          show_secondary_image: section.settings.show_secondary_image,
          show_quick_add: true,
-         class: "min-w-[350px] xl:min-w-none" %}
+         class: "min-w-[350px] xl:min-w-fit xl:max-w-[350px]" %}
 
         {% render 'card-product-inline'
          product: all_products[product_related_2_handle],
          card_product: all_products[product_related_2_handle],
          show_secondary_image: section.settings.show_secondary_image,
          show_quick_add: true,
-         class: "min-w-[350px] xl:min-w-none" %}
+         class: "min-w-[350px] xl:min-w-fit xl:max-w-[350px]" %}
 
         {% render 'card-product-inline'
          product: all_products[product_related_3_handle],
          card_product: all_products[product_related_3_handle],
          show_secondary_image: section.settings.show_secondary_image,
          show_quick_add: true,
-         class: "min-w-[350px] xl:min-w-none" %}
+         class: "min-w-[350px] xl:min-w-fit xl:max-w-[350px]" %}
 
       {% else %}
         {%- for product in collection.products limit: 3 -%}
@@ -50,7 +50,7 @@
            card_product: product,
            show_secondary_image: section.settings.show_secondary_image,
            show_quick_add: true,
-           class: "min-w-[350px] xl:min-w-none" %}
+           class: "min-w-[350px] xl:min-w-fit" %}
         {%- endfor -%}
       {% endif %}
     </div>
