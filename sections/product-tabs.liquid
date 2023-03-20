@@ -165,11 +165,11 @@
 
                 {% if file_extension_prefix == 'png' %}
                   <img
-                    class="mx-auto hidden md:block"
+                    class="mx-auto hidden md:block max-w-[300px]"
                     src="{{ product.metafields.product.compo_image_tableau_desktop.value | img_url: 'master' }}"
                     alt="">
                 {% else %}
-                  <svg class="mx-auto hidden md:block">
+                  <svg class="mx-auto hidden md:block max-w-[300px]">
                     <image class="mx-auto w-full h-full " xlink:href="{{ product.metafields.product.compo_image_tableau_desktop.value.url }}" />
                   </svg>
                 {% endif %}
