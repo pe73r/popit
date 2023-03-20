@@ -138,7 +138,10 @@
                       src="{{ product.metafields.product.use_image_1.value | img_url:'master' }}"
                       alt="">
                   {% endif %}
-                  <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_1 }}</span>
+                  <div>
+                    <h5 class="text-sm mb-2">{{ product.metafields.product.use_title_1.value }}</h5>
+                    <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_1 }}</span>
+                  </div>
                 </div>
               {% endif %}
               {% if product.metafields.product.use_text_2 != blank %}
