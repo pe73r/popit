@@ -136,7 +136,7 @@
     {% endif %}
 
     {%- if section.settings.show_payment_icons -%}
-      <div class="my-5 text-center">
+      <div class="my-5 text-center flex gap-1">
         {% for type in shop.enabled_payment_types %}
           {{ type | payment_type_svg_tag }}
         {% endfor %}
