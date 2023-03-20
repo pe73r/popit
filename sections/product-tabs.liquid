@@ -93,7 +93,7 @@
                     src="{{ product.metafields.product.description_image_1.value | img_url:'master' }}"
                     alt="">
                   <div>
-                  <h5>{{ product.metafields.product.description_title_1.value }}</h5>
+                  <h5 class="text-sm">{{ product.metafields.product.description_title_1.value }}</h5>
                   <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.description_text_1.value }}</span>
                   </div>
                 </div>
@@ -207,10 +207,10 @@
   </div>
 </section>
 <style>
-  .tab-button span {
+  .tab-button span,
+  .tab-button h5{
     font-weight: normal;
-    color: {{ product_color }}
-    ;
+    color: {{ product_color }};
   }
   .tab-button[aria-selected="true"]::after {
     background-color: {{ product_color}}
