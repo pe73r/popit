@@ -1,6 +1,6 @@
 <a href="/" class="">
   {% if settings.logo_svg != blank %}
-    <img src="{{ settings.logo_svg }} " alt="{{ settings.logo_svg.alt }}">
+    <img class="max-w-[100px] md:max-w-[150px]" src="{{ settings.logo_svg }} " alt="{{ settings.logo_svg.alt }}">
   {% elsif settings.logo != blank %}
     <img
       class="max-w-[150px]"
