@@ -152,7 +152,10 @@
                       src="{{ product.metafields.product.use_image_2.value | img_url:'master' }}"
                       alt="">
                   {% endif %}
+                  <div>
+                    <h5 class="text-sm mb-2">{{ product.metafields.product.use_title_2.value }}</h5>
                   <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_2 }}</span>
+                  </div>
                 </div>
               {% endif %}
               {% if product.metafields.product.use_text_3 != blank %}
@@ -163,7 +166,10 @@
                       src="{{ product.metafields.product.use_image_3.value | img_url:'master' }}"
                       alt="">
                   {% endif %}
-                  <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_3 }}</span>
+                  <div>
+                    <h5 class="text-sm mb-2">{{ product.metafields.product.use_title_3.value }}</h5>
+                    <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_3 }}</span>
+                  </div>
                 </div>
               {% endif %}
 
