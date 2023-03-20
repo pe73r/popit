@@ -181,8 +181,9 @@
       {% endif %}
     </main>
 
-
-    {% section 'reinsurance' %}
+    {% unless template == 'product' %}
+      {% section 'reinsurance' %}
+    {% endunless %}
     {% section 'footer' %}
 
     <ul hidden>
