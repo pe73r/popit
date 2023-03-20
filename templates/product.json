@@ -328,9 +328,10 @@
           "type": "block",
           "settings": {
             "svg": "",
+            "image": "shopify:\/\/shop_images\/Vegan-Magnesium-Clair_2x_1b2a75cd-05c9-4b62-8593-7bf9eb796e28.png",
             "image_width": 80,
-            "title": "Livraison rapide et gratuite",
-            "text": "dès 59€ d'achat en France métropolitaine"
+            "title": "VEGAN & CRUELTY FREE",
+            "text": "La qualité sans jamais faire de compromis."
           }
         },
         "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3": {
@@ -351,7 +352,7 @@
       ],
       "settings": {
         "add_margin": 0,
-        "header": "On s’occupe de tout pour vous !",
+        "header": "",
         "bg_color": "#4b9b7d",
         "text_color": "#ffffff"
       }
