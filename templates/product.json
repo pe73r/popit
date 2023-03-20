@@ -119,20 +119,20 @@
         "2ee8f73b-9ef4-4477-a1b0-df5959f30eb5": {
           "type": "description",
           "settings": {
-            "title": "Description"
+            "title": "EFFICACITÉ"
           }
         },
         "f0707111-a8dd-450d-b9bb-56ac58f20cd3": {
           "type": "use",
           "settings": {
-            "title": "How to use",
+            "title": "CONSEILS D’UTILISATION",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
           }
         },
         "1f939024-352b-461d-b3cd-534b112ecee0": {
           "type": "composition",
           "settings": {
-            "title": "Composition",
+            "title": "COMPOSITION",
             "text": "<p>Lorem o eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
           }
         }

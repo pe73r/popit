@@ -92,7 +92,10 @@
                     class="max-w-[80px]"
                     src="{{ product.metafields.product.description_image_1.value | img_url:'master' }}"
                     alt="">
+                  <div>
+                  <h5>{{ product.metafields.product.description_title_1.value }}</h5>
                   <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.description_text_1.value }}</span>
+                  </div>
                 </div>
               {% endif %}
               {% if product.metafields.product.description_text_2 != blank %}
