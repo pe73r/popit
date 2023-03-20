@@ -116,7 +116,10 @@
                     class="max-w-[80px]"
                     src="{{ product.metafields.product.description_image_3.value | img_url:'master' }}"
                     alt="">
-                  <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.description_text_3.value }}</span>
+                  <div>
+                    <h5 class="text-sm">{{ product.metafields.product.description_title_2.value }}</h5>
+                    <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.description_text_3.value }}</span>
+                  </div>
                 </div>
               {% endif %}
             </div>
