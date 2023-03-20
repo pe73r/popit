@@ -300,6 +300,61 @@
         "color": "#4b9b7d",
         "button_color": "#4b9b7d"
       }
+    },
+    "1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b": {
+      "type": "reinsurance",
+      "blocks": {
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-0": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/Gelules-Sommeil_2x_7bf5efb1-43ce-4751-92b9-3e228c18a46b.png",
+            "image_width": 80,
+            "title": "POUR TOUTE LA FAMILLE",
+            "text": "Prenez soin de vous et de ceux que vous aimez."
+          }
+        },
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-1": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/favicon.svg",
+            "image_width": 80,
+            "title": "ACCESSIBLE, SIMPLE & BON",
+            "text": "Des produits abordables qui simplifient votre quotidien."
+          }
+        },
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-2": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image_width": 80,
+            "title": "Livraison rapide et gratuite",
+            "text": "dès 59€ d'achat en France métropolitaine"
+          }
+        },
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image_width": 80,
+            "title": "Livraison rapide et gratuite",
+            "text": "dès 59€ d'achat en France métropolitaine"
+          }
+        }
+      },
+      "block_order": [
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-0",
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-1",
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-2",
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3"
+      ],
+      "settings": {
+        "add_margin": 0,
+        "header": "On s’occupe de tout pour vous !",
+        "bg_color": "#4b9b7d",
+        "text_color": "#000"
+      }
     }
   },
   "order": [
@@ -312,6 +367,7 @@
     "07a37119-270e-432c-8a6f-4eaeab0ff9e1",
     "product-recommendations",
     "d473013e-7df7-4660-8bc9-eeeef9b1d75e",
-    "4e493477-ad97-4792-afc4-59313a83885d"
+    "4e493477-ad97-4792-afc4-59313a83885d",
+    "1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b"
   ]
 }
