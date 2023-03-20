@@ -338,9 +338,10 @@
           "type": "block",
           "settings": {
             "svg": "",
-            "image_width": 80,
-            "title": "Livraison rapide et gratuite",
-            "text": "dès 59€ d'achat en France métropolitaine"
+            "image": "shopify:\/\/shop_images\/site-satisfait.png",
+            "image_width": 107,
+            "title": "FABRIQUÉ EN FRANCE",
+            "text": "Formules conçues avec soin sous le soleil de Nice."
           }
         }
       },
