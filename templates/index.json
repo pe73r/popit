@@ -103,9 +103,35 @@
         "background_color": "#faf5ef"
       }
     },
+    "ec1c9248-3ca2-483d-8370-8f7e3ce48d01": {
+      "type": "products-carousel",
+      "settings": {
+        "container": "7xl",
+        "collection": "frontpage",
+        "limit": 25,
+        "collection_2": "",
+        "limit_2": 6,
+        "show_secondary_image": true,
+        "show_quantity": false,
+        "show_cta": true,
+        "show_arrows": true,
+        "show_dots": true
+      }
+    },
+    "801df341-54b5-4e52-9b09-68b370796d1f": {
+      "type": "home-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/vitamines-soleil-gummies.png",
+        "label": "JUSQU’À -25%",
+        "subtitle": "Personnalisez votre pack",
+        "title": "Économisez jusqu’à <span>-25%<\/span> en achetant un pack de 3, 4 ou 5 produits.",
+        "cta": "Personnaliser mon pack",
+        "ctaLink": "",
+        "color": "#201a1c"
+      }
+    },
     "1db7442e-0ee1-495a-96a1-01f3969e95f2": {
       "type": "banner-intro",
-      "disabled": true,
       "blocks": {
         "93825112-b67c-4bcc-9c67-e5aefb3c9a2a": {
           "type": "block",
@@ -158,33 +184,6 @@
         "show_hr": true,
         "bg_color": "#faf5ef",
         "color": "#1a1a1a"
-      }
-    },
-    "ec1c9248-3ca2-483d-8370-8f7e3ce48d01": {
-      "type": "products-carousel",
-      "settings": {
-        "container": "7xl",
-        "collection": "frontpage",
-        "limit": 25,
-        "collection_2": "",
-        "limit_2": 6,
-        "show_secondary_image": true,
-        "show_quantity": false,
-        "show_cta": true,
-        "show_arrows": true,
-        "show_dots": true
-      }
-    },
-    "801df341-54b5-4e52-9b09-68b370796d1f": {
-      "type": "home-banner",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/vitamines-soleil-gummies.png",
-        "label": "JUSQU’À -25%",
-        "subtitle": "Personnalisez votre pack",
-        "title": "Économisez jusqu’à <span>-25%<\/span> en achetant un pack de 3, 4 ou 5 produits.",
-        "cta": "Personnaliser mon pack",
-        "ctaLink": "",
-        "color": "#201a1c"
       }
     },
     "414f3324-4b76-488e-95ee-4e8f2002ed15": {
@@ -266,9 +265,9 @@
   "order": [
     "1663586369b92a04be",
     "7e893ba1-ec47-4d9b-9864-cb4555706f15",
-    "1db7442e-0ee1-495a-96a1-01f3969e95f2",
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01",
     "801df341-54b5-4e52-9b09-68b370796d1f",
+    "1db7442e-0ee1-495a-96a1-01f3969e95f2",
     "414f3324-4b76-488e-95ee-4e8f2002ed15",
     "167845847058516467",
     "a11b1585-0a12-4fa7-b722-9bd6997a108a"
