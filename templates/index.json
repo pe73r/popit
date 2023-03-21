@@ -187,151 +187,6 @@
         "color": "#201a1c"
       }
     },
-    "0b6412c4-2e58-4ed2-beb0-443098854a8c": {
-      "type": "faq",
-      "disabled": true,
-      "blocks": {
-        "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-0": {
-          "type": "block",
-          "settings": {
-            "question": "Les Gummies contiennent-ils du sucre ?",
-            "answer": "Dans 2 Gummies (la posologie quotidienne), vous avez 2g de sucre, soit l’équivalent d’un quartier de pomme. Par ailleurs, nous avons fait le choix de ne pas utiliser d'édulcorants artificiels « sans sucre » car beaucoup sont controversés aujourd'hui."
-          }
-        },
-        "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-1": {
-          "type": "block",
-          "settings": {
-            "question": "Les produits contiennent-ils de la gélatine animale ?",
-            "answer": "Non, nos Gummies sont 100% d’origine végétale ! À la place de la gélatine, nous utilisons de la pectine de fruit, de pomme et de citron."
-          }
-        },
-        "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-2": {
-          "type": "block",
-          "settings": {
-            "question": "Les Gummies contiennent-ils des colorants et des arômes artificiels ?",
-            "answer": "Non ! Les Gummies Mium Lab ne contiennent que des arômes et des colorants naturels issus de fruits et de plantes."
-          }
-        },
-        "06e3581e-e2d4-4d1d-b5df-b9f7fb562a93": {
-          "type": "block",
-          "settings": {
-            "question": "Pendant combien de temps se conserve ma boîte de Gummies une fois ouverte ?",
-            "answer": "Les Gummies Mium Lab ont un délai de consommation de 2 ans. Ils doivent être conservés à température ambiante, dans un endroit sec et à l’abri de la lumière."
-          }
-        },
-        "fe7f98b1-f6ab-4cd6-972e-43343525b725": {
-          "type": "block",
-          "settings": {
-            "question": "Beauté : Est-ce que les Gummies Beauté font pousser tous les poils de notre corps ?",
-            "answer": "NON. Nos Gummies Beauté contiennent des principes actifs reconnus tels que de la vitamine B8 (biotine), de la vitamine B5, de l'acide hyaluronique et du zinc. Ils ont été spécifiquement conçus pour améliorer la qualité des cheveux, des ongles et de la peau. La pousse et la répartition des poils sont quant à elles principalement liées à des stimulus hormonaux, or nos Gummies ne contiennent pas d'hormones."
-          }
-        }
-      },
-      "block_order": [
-        "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-0",
-        "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-1",
-        "template--17232714006822__0b6412c4-2e58-4ed2-beb0-443098854a8c-167148626706e58964-2",
-        "06e3581e-e2d4-4d1d-b5df-b9f7fb562a93",
-        "fe7f98b1-f6ab-4cd6-972e-43343525b725"
-      ],
-      "settings": {
-        "hide_in_mobile": true,
-        "title": "Des questions ?",
-        "title_color": "#4b9b7d",
-        "title_accordion_color": "#4b9b7d",
-        "content_accordion_color": "#4b9b7d"
-      }
-    },
-    "167845847058516467": {
-      "type": "apps",
-      "blocks": {
-        "2cfdb4c1-162a-497b-ad4a-bd9be1c2d2b0": {
-          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
-          "settings": {
-            "heading_size": 20,
-            "feed_width": 100,
-            "html_area": ""
-          }
-        }
-      },
-      "block_order": [
-        "2cfdb4c1-162a-497b-ad4a-bd9be1c2d2b0"
-      ],
-      "settings": {
-      }
-    },
-    "a11b1585-0a12-4fa7-b722-9bd6997a108a": {
-      "type": "newsletter",
-      "settings": {
-        "section_style": "default",
-        "title": "NEWSLETTER",
-        "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives !<\/p>",
-        "text_button": "S'inscrire",
-        "show_checkbox": true,
-        "bg_color": "#faf5ef",
-        "color": "#4b9b7d",
-        "button_color": "#4b9b7d"
-      }
-    },
-    "1678458577263aa99e": {
-      "type": "apps",
-      "disabled": true,
-      "blocks": {
-        "c18c0fdc-6deb-46a8-8596-abdc35c79a87": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/all_reviews_text\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "c18c0fdc-6deb-46a8-8596-abdc35c79a87"
-      ],
-      "settings": {
-      }
-    },
-    "00b177a2-4aab-4567-93f0-a5e8e30efa6f": {
-      "type": "banner-intro",
-      "settings": {
-        "title": "À propos",
-        "subtitle": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
-        "cta": "En savoir plus",
-        "ctaLink": "",
-        "show_hr": false,
-        "bg_color": "#FAF5EF",
-        "color": "#1A1A1A"
-      }
-    },
-    "0aa889bb-3c1f-4823-9d85-18f1544962f6": {
-      "type": "home-banner",
-      "settings": {
-        "label": "JUSQU’À -25%",
-        "subtitle": "Personnalisez votre pack",
-        "title": "Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.",
-        "cta": "Personnaliser mon pack",
-        "ctaLink": "",
-        "color": "#1A1A1A"
-      }
-    },
-    "600f28ba-0162-4a1a-8c33-fd15a8d1b86d": {
-      "type": "image-text",
-      "settings": {
-        "layout": "image_right",
-        "hide_image_mobile": false,
-        "subtitle": "SUBTITLE",
-        "title": "Title",
-        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>",
-        "subtitle_color": "#713F2E",
-        "title_color": "#733E2B",
-        "text_color": "#927254"
-      }
-    },
-    "1f97e41e-3fe3-4104-a5b6-432120304458": {
-      "type": "image-banner",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.jpg",
-        "container": "full"
-      }
-    },
     "414f3324-4b76-488e-95ee-4e8f2002ed15": {
       "type": "home-cards",
       "blocks": {
@@ -368,6 +223,52 @@
         "container": "7xl",
         "color": "#4b9b7d"
       }
+    },
+    "167845847058516467": {
+      "type": "apps",
+      "blocks": {
+        "2cfdb4c1-162a-497b-ad4a-bd9be1c2d2b0": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "2cfdb4c1-162a-497b-ad4a-bd9be1c2d2b0"
+      ],
+      "settings": {
+      }
+    },
+    "a11b1585-0a12-4fa7-b722-9bd6997a108a": {
+      "type": "newsletter",
+      "settings": {
+        "section_style": "default",
+        "title": "NEWSLETTER",
+        "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives !<\/p>",
+        "text_button": "S'inscrire",
+        "show_checkbox": true,
+        "bg_color": "#faf5ef",
+        "color": "#4b9b7d",
+        "button_color": "#4b9b7d"
+      }
+    },
+    "1678458577263aa99e": {
+      "type": "apps",
+      "blocks": {
+        "c18c0fdc-6deb-46a8-8596-abdc35c79a87": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/all_reviews_text\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "c18c0fdc-6deb-46a8-8596-abdc35c79a87"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -376,14 +277,9 @@
     "1db7442e-0ee1-495a-96a1-01f3969e95f2",
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01",
     "801df341-54b5-4e52-9b09-68b370796d1f",
-    "0b6412c4-2e58-4ed2-beb0-443098854a8c",
+    "414f3324-4b76-488e-95ee-4e8f2002ed15",
     "167845847058516467",
     "a11b1585-0a12-4fa7-b722-9bd6997a108a",
-    "1678458577263aa99e",
-    "00b177a2-4aab-4567-93f0-a5e8e30efa6f",
-    "0aa889bb-3c1f-4823-9d85-18f1544962f6",
-    "600f28ba-0162-4a1a-8c33-fd15a8d1b86d",
-    "1f97e41e-3fe3-4104-a5b6-432120304458",
-    "414f3324-4b76-488e-95ee-4e8f2002ed15"
+    "1678458577263aa99e"
   ]
 }
