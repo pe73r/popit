@@ -142,6 +142,11 @@ accordion-element[data-open="true"] .icon-minus {
   text-decoration: underline !important;
 }
 
+.jdgm-widget.jdgm-widget {
+    max-width: 1200px;
+    margin: auto;
+}
+
 @media screen and (min-width: 1024px) {
   .jdgm-rev-widg__title {
     font-size: 1.875rem !important;
