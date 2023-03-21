@@ -142,7 +142,7 @@ accordion-element[data-open="true"] .icon-minus {
   text-decoration: underline !important;
 }
 
-.jdgm-widget.jdgm-widget {
+.jdgm-all-reviews-widget  {
     width: 90%;
     max-width: 1200px;
     margin: 50px auto;
