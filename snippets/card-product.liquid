@@ -55,7 +55,7 @@
            {%- endif -%}
            
           
-           <div class="relative bottom-[15px] flex gap-2 mb-2">
+           <div class="relative bottom-[15px] flex justify-center gap-2 mb-2 z-10">
             {% if card_product.tags contains "60-gummies" %}
               <div class="text-white bg-green rounded-md p-1 text-[10px] sm:text-xs w-fit text-center">
                 60 gummies
@@ -95,18 +95,18 @@
     </a>
 
     <!-- product-info -->
-    <div class="text-center pt-4 bg-white relative z-10">  
+    <div class="text-center bg-white relative z-10">  
       <!-- title -->
       <{% if template contains 'collection' %}h2{% else %}h3{% endif %} class="font-body-text text-base md:text-[20px] font-extrabold line-clamp-1">
         {{ card_product.title }}
        </{% if template contains 'collection' %}h2{% else %}h3{% endif %}>
 
       <!-- Description -->
-      {%- if card_product.metafields.global.description != blank -%}
-          <p class="card-description my-1 md:my-2 text-xs md:text-sm line-clamp-2 max-h-[42px]">{{ card_product.metafields.global.description }}</p>
-      {% else %}
-        <p class="card-description my-1 md:my-2 text-xs md:text-sm line-clamp-2 max-h-[42px]">Facilite la digestion & le transit intestinal...</p>
+      {%- if card_product.metafields.product.sub_title.value != blank -%}
+          <p class="card-description my-1 md:my-2 text-xs md:text-sm line-clamp-2 max-h-[42px]">{{ product.metafields.product.sub_title.value }}</p>
+    
       {%- endif -%}
+      {% comment %}
       <!-- Price -->
       <div class="flex items-center justify-center">
         {% if card_product.compare_at_price == nil %}
@@ -122,6 +122,7 @@
           </h6>   
         {% endif %}
       </div>
+      {% endcomment %}
 
        <!-- cta  -->
       {% if section.settings.show_cta %}      
@@ -156,8 +157,20 @@
                 data-discount="{% if card_product.selected_or_first_available_variant.compare_at_price > card_product.selected_or_first_available_variant.price %}{{ card_product.selected_or_first_available_variant.compare_at_price | minus: card_product.selected_or_first_available_variant.price | divided_by: 100.00 }}{% else %}0.00{% endif %}"
                 data-price="{{ card_product.selected_or_first_available_variant.price | divided_by: 100.00 }}"
                 data-variant="{{ card_product.selected_or_first_available_variant.id }}">
-                <button class="btn-primary {% render "button", size:"medium", fullWidth: true %}">
-                    Ajouter au panier
+                <button class="btn-primary {% render "button", size:"medium", fullWidth: true %} flex justify-center items-center">
+                    <span class="block mr-1">Ajouter - </span>
+                    {% if card_product.compare_at_price == nil %}
+                        <span class="block text-sm">
+                            {{ card_product.price | money }}
+                        </span>
+                    {% else %} 
+                      <span class="block text-sm">
+                          {{ card_product.price | money }}
+                      </span>
+                      <span class="block line-through text-xs mr-1 font-light pl-1">
+                          {{ card_product.compare_at_price | money }}
+                      </span>   
+                   {% endif %}
                 </button>
             </add-to-cart>
           </div>
