@@ -287,51 +287,6 @@
       ],
       "settings": {
       }
-    },
-    "84357e37-d086-4c57-89b1-076f311426a1": {
-      "type": "images-grid",
-      "blocks": {
-        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-0": {
-          "type": "block",
-          "settings": {
-            "image-product": "shopify:\/\/shop_images\/Colorant-Magnesium-Clair_2x_ddcff558-d2d8-45de-ab87-a0444ee34cbd.png"
-          }
-        },
-        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-1": {
-          "type": "block",
-          "settings": {
-            "image-product": "shopify:\/\/shop_images\/Vegan-Sommeil-Clair_2x_30a8b3e2-6d67-4d0f-8719-71d3b59dad73.png"
-          }
-        },
-        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-2": {
-          "type": "block",
-          "settings": {
-            "image-product": "shopify:\/\/shop_images\/Lactose-Magnesium-Clair_2x_7d64046c-bdb4-4fb8-be1b-36b0247eac55.png"
-          }
-        },
-        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-3": {
-          "type": "block",
-          "settings": {
-            "image-product": "shopify:\/\/shop_images\/Colorant-Magnesium-Clair_2x_ddcff558-d2d8-45de-ab87-a0444ee34cbd.png"
-          }
-        }
-      },
-      "block_order": [
-        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-0",
-        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-1",
-        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-2",
-        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-3"
-      ],
-      "settings": {
-        "subtitle": "SUBTITLE",
-        "header": "HEADING",
-        "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.jpg",
-        "link_url": "",
-        "link": "Voir toute la gamme",
-        "bg-color": "#E8E2DB",
-        "subtitle-color": "#FFFFFF",
-        "header-color": "#FFFFFF"
-      }
     }
   },
   "order": [
@@ -343,7 +298,6 @@
     "0b6412c4-2e58-4ed2-beb0-443098854a8c",
     "167845847058516467",
     "a11b1585-0a12-4fa7-b722-9bd6997a108a",
-    "1678458577263aa99e",
-    "84357e37-d086-4c57-89b1-076f311426a1"
+    "1678458577263aa99e"
   ]
 }
