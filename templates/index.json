@@ -224,6 +224,36 @@
         "color": "#4b9b7d"
       }
     },
+    "1678458577263aa99e": {
+      "type": "apps",
+      "blocks": {
+        "c18c0fdc-6deb-46a8-8596-abdc35c79a87": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/all_reviews_text\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "aa3a9546-030e-47b2-9e0e-25b25982b7db": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/all_reviews_page\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {
+            "extra_wrapper_classes": "page-width page-width--narrow"
+          }
+        },
+        "426e5ef2-d36c-4153-8769-87932b559dd9": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/medals\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "c18c0fdc-6deb-46a8-8596-abdc35c79a87",
+        "aa3a9546-030e-47b2-9e0e-25b25982b7db",
+        "426e5ef2-d36c-4153-8769-87932b559dd9"
+      ],
+      "settings": {
+      }
+    },
     "167845847058516467": {
       "type": "apps",
       "blocks": {
@@ -254,21 +284,6 @@
         "color": "#4b9b7d",
         "button_color": "#4b9b7d"
       }
-    },
-    "1678458577263aa99e": {
-      "type": "apps",
-      "blocks": {
-        "c18c0fdc-6deb-46a8-8596-abdc35c79a87": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/all_reviews_text\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "c18c0fdc-6deb-46a8-8596-abdc35c79a87"
-      ],
-      "settings": {
-      }
     }
   },
   "order": [
@@ -278,8 +293,8 @@
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01",
     "801df341-54b5-4e52-9b09-68b370796d1f",
     "414f3324-4b76-488e-95ee-4e8f2002ed15",
+    "1678458577263aa99e",
     "167845847058516467",
-    "a11b1585-0a12-4fa7-b722-9bd6997a108a",
-    "1678458577263aa99e"
+    "a11b1585-0a12-4fa7-b722-9bd6997a108a"
   ]
 }
