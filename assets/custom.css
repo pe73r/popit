@@ -145,6 +145,10 @@ accordion-element[data-open="true"] .icon-minus {
 .jdgm-widget.jdgm-widget {
     max-width: 1200px;
     margin: auto;
+  font-size:14px;
+}
+
+.jdgm-widget.jdgm-widget {
 }
 
 @media screen and (min-width: 1024px) {
