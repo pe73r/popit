@@ -1,6 +1,6 @@
 <footer
   id="footer"
-  class="py-10"
+  class="py-10 {% if template == "product" %} pb-20 {% endif %}"
   style="background-color: {{ section.settings.bg_color }}">
   <div class="w-11/12 max-w-6xl mx-auto">
     <div class="flex justify-between items-center flex-col-reverse md:flex-row mb-7">
@@ -37,7 +37,7 @@
       </div>
     {% endif %}
 
-    <div class="flex justify-between mt-10 {% if section.settings.mention-legal == blank %} pb-10 {% endif %}">
+    <div class="flex justify-between mt-10 {% if section.settings.mention-legal == blank %} pb-5 {% endif %}">
       <!-- desktop menus -->
       {% for block in section.blocks %}
         <div class="hidden md:block">
@@ -47,7 +47,7 @@
               <li class="">
                 <a
                   href="{{ link.url }}"
-                  class="uppercase:first-letter md:text-xs lg:text-sm font-light {% if link.active %} font-bold {% endif %}"
+                  class="uppercase:first-letter md:text-xs lg:text-sm font-light {% if link.title contains "commande" %} block rounded-lg !text-white bg-green p-2 mt-3 font-semibold {% endif %} {% if link.active %} font-bold {% endif %}"
                   style="color:{{ section.settings.color }}">
                   {{ link.title }}
                 </a>
@@ -93,7 +93,12 @@
       </div>
     </div>
     <!-- close flex -->
-
+    <!-- follow order button -->
+    {% if section.settings.show_follow_order %}
+      <a href="{{ section.settings.follow_button_url }}" class="block md:hidden {% render "button", color: product-color, size: "medium", fullWidth: true %}">
+        {{ section.settings.follow_button }}
+      </a>
+    {% endif %}
 
     <!-- logo -->
     <div class="text-center flex justify-center items-center mt-10 mb-5">
@@ -221,6 +226,23 @@
         "id": "show_payment_icons",
         "label": "Show payment icons",
         "default": true
+      }, {
+        "type": "header",
+        "content": "Follow order button mobile"
+      }, {
+        "type": "checkbox",
+        "id": "show_follow_order",
+        "label": "Show follow order button",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "follow_button",
+        "default": "Suivre ma commande",
+        "label": "Button"
+      }, {
+        "type": "url",
+        "id": "follow_button_url",
+        "label": "Link"
       }, {
         "type": "header",
         "content": "colors"

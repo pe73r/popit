@@ -48,7 +48,7 @@
 {% endif %}
 
 <section class="w-11/12 lg:w-full py-5 lg:py-10 mx-auto my-5 lg:my-0 rounded-lg lg:rounded-none" style=" background-color: {{ bg_color }}">
-  <div class="w-11/12 max-w-7xl mx-auto flex gap-4">
+  <div class="w-11/12 max-w-7xl mx-auto flex gap-4 items-center">
     <div class="hidden lg:block w-1/2">
       {% if product.metafields.product.extra_image != blank %}
         <img
@@ -69,7 +69,8 @@
       <tabs-buttons class="justify-center gap-4 md:gap-8 mb-5 md:mb-4">
         {% for block in section.blocks %}
           <div class="tab-button block relative group font-light transition-all !border-[0] cursor-pointer selected:after:bg-[{{ product_color }}] selected:after:w-[60px] selected:after:h-[2px] selected:after:absolute selected:after:bottom-[2px] selected:after:left-[50%] selected:after:translate-x-[-50%] selected:after:mx-auto">
-            <span class="block py-2 text-xs md:text-sm font-light group:selected:font-bold text-center">{{ block.settings.title }}</span>
+            <span class="hidden md:block py-2 text-xs md:text-sm font-light group:selected:font-bold text-center">{{ block.settings.title }}</span>
+            <span class="block md:hidden py-2 text-xs md:text-sm font-light group:selected:font-bold text-center">{{ block.settings.title_mobile }}</span>
           </div>
         {% endfor %}
       </tabs-buttons>
@@ -87,19 +88,19 @@
                 {% endif %}
               </div>
               {% if product.metafields.product.description_text_1 != blank %}
-                <div class="flex items-center gap-4 pb-3 border-b border-{{ product-color }} mt-5">
+                <div class="flex items-center gap-2 pb-3 border-b border-{{ product-color }} mt-5">
                   <img
                     class="max-w-[80px]"
                     src="{{ product.metafields.product.description_image_1.value | img_url:'master' }}"
                     alt="">
                   <div>
-                  <h5 class="text-sm mb-2">{{ product.metafields.product.description_title_1.value }}</h5>
-                  <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.description_text_1.value }}</span>
+                    <h5 class="text-sm mb-2">{{ product.metafields.product.description_title_1.value }}</h5>
+                    <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.description_text_1.value }}</span>
                   </div>
                 </div>
               {% endif %}
               {% if product.metafields.product.description_text_2 != blank %}
-                <div class="flex items-center gap-4 pb-3 border-b border-{{ product-color }} mt-4">
+                <div class="flex items-center gap-2 pb-3 border-b border-{{ product-color }} mt-4">
                   <img
                     class="max-w-[80px]"
                     src="{{ product.metafields.product.description_image_2.value | img_url:'master' }}"
@@ -131,7 +132,7 @@
                 {% endif %}
               </div>
               {% if product.metafields.product.use_text_1 != blank %}
-                <div class="flex items-center gap-4 pb-3 border-b border-{{ product-color }} mt-5">
+                <div class="flex items-center gap-2 pb-3 border-b border-{{ product-color }} mt-5">
                   {% if product.metafields.product.use_image_1 != blank %}
                     <img
                       class="max-w-[80px]"
@@ -145,7 +146,7 @@
                 </div>
               {% endif %}
               {% if product.metafields.product.use_text_2 != blank %}
-                <div class="flex items-center gap-4 pb-3 border-b border-{{ product-color }} mt-4">
+                <div class="flex items-center gap-2 pb-3 border-b border-{{ product-color }} mt-4">
                   {% if product.metafields.product.use_image_2 != blank %}
                     <img
                       class="max-w-[80px]"
@@ -154,7 +155,7 @@
                   {% endif %}
                   <div>
                     <h5 class="text-sm mb-2">{{ product.metafields.product.use_title_2.value }}</h5>
-                  <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_2 }}</span>
+                    <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_2 }}</span>
                   </div>
                 </div>
               {% endif %}
@@ -223,12 +224,14 @@
 </section>
 <style>
   .tab-button span,
-  .tab-button h5{
+  .tab-button h5 {
     font-weight: normal;
-    color: {{ product_color }};
+    color: {{ product_color }}
+    ;
   }
-  h5{
-    color: {{ product_color }};
+  h5 {
+    color: {{ product_color }}
+    ;
   }
   .tab-button[aria-selected="true"]::after {
     background-color: {{ product_color}}
@@ -258,7 +261,12 @@
           {
             "type": "text",
             "id": "title",
-            "label": "Tab title",
+            "label": "Tab title desktop",
+            "default": "Description"
+          }, {
+            "type": "text",
+            "id": "title_mobile",
+            "label": "Tab title mobile",
             "default": "Description"
           }
         ]
@@ -270,7 +278,12 @@
           {
             "type": "text",
             "id": "title",
-            "label": "Tab title",
+            "label": "Tab title desktop",
+            "default": "Composition"
+          }, {
+            "type": "text",
+            "id": "title_mobile",
+            "label": "Tab title mobile",
             "default": "Composition"
           }, {
             "type": "richtext",
@@ -288,8 +301,13 @@
           {
             "type": "text",
             "id": "title",
-            "label": "Tab title",
+            "label": "Tab title desktop",
             "default": "HOW TO USE"
+          }, {
+            "type": "text",
+            "id": "title_mobile",
+            "label": "Tab title mobile",
+            "default": "Utilisation"
           }, {
             "type": "richtext",
             "id": "text",
@@ -306,7 +324,12 @@
           {
             "type": "text",
             "id": "title",
-            "label": "Tab title",
+            "label": "Tab title desktop",
+            "default": "TAB"
+          }, {
+            "type": "text",
+            "id": "title_mobile",
+            "label": "Tab title mobile",
             "default": "TAB"
           }, {
             "type": "richtext",
