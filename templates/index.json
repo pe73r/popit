@@ -342,8 +342,8 @@
             "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.jpg",
             "title": "Notre sélection de gummies",
             "show_hr": false,
-            "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
-            "cta": "Je découvre",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam<\/p>",
+            "cta": "",
             "button_link": ""
           }
         },
@@ -354,8 +354,8 @@
             "image": "shopify:\/\/shop_images\/batch-by-wisconsin-hemp-scientific-NDPUzuo5a8M-unsplash.jpg",
             "title": "Notre sélection de gummies",
             "show_hr": true,
-            "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
-            "cta": "Je découvre",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p>",
+            "cta": "",
             "button_link": ""
           }
         }
