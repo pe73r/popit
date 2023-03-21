@@ -83,6 +83,7 @@ accordion-element[data-open="true"] .icon-minus {
 }
 
 /* menu list before */
+/*
 .menu-list::before {
   content: '';
   display: inline-block;
@@ -93,7 +94,7 @@ accordion-element[data-open="true"] .icon-minus {
   position: relative;
   top: 8px;
   margin-right: 5px;
-}
+} */
 
 .collection-card {
   background: linear-gradient(168.52deg, #4B9B7D 0%, rgba(75, 155, 125, 0.8) 35.48%, #D7E6AF 59.33%, rgba(215, 230, 175, 0.5) 94.77%);
