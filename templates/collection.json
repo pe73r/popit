@@ -128,6 +128,21 @@
         "filters_background": "#fcf9f3"
       }
     },
+    "d27639b0-62ba-48a8-b124-8ab554659809": {
+      "type": "featured-blog-carousel",
+      "settings": {
+        "blog": "infos",
+        "post_limit": 7,
+        "show_dots": true,
+        "heading": "À LIRE...",
+        "show_title": false,
+        "show_tag": false,
+        "show_content": true,
+        "show_author": false,
+        "show_date": true,
+        "show_button": true
+      }
+    },
     "7871f33c-c56f-48f1-b633-0119a0eaa797": {
       "type": "featured-blog-grid",
       "settings": {
@@ -144,6 +159,7 @@
     "collection-header",
     "collection-links",
     "product-grid",
+    "d27639b0-62ba-48a8-b124-8ab554659809",
     "7871f33c-c56f-48f1-b633-0119a0eaa797"
   ]
 }
