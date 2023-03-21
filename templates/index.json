@@ -10,7 +10,7 @@
             "title": "Découvrez nos compléments <br>\nalimentaires et leurs<br>\nbénéfices.",
             "title_mobile": "Découvrez nos compléments alimentaires et leurs bénéfices.",
             "text": "",
-            "cta": "Voir les produits",
+            "cta": "Je découvre",
             "button_link": "shopify:\/\/collections\/frontpage",
             "text_color": "#ffffff",
             "button_color": "#ffffff",
@@ -40,8 +40,72 @@
       "settings": {
       }
     },
+    "7e893ba1-ec47-4d9b-9864-cb4555706f15": {
+      "type": "marquee",
+      "blocks": {
+        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-0": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/site-mail.png",
+            "text": "<p> Simple et pratique<\/p>",
+            "url": ""
+          }
+        },
+        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-1": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/vitamines-haltere-gummies_c9dafd91-8522-47d4-9ea3-a02420d5d410.png",
+            "text": "<p>Retrouvez de l'énergie au quotidien<\/p>",
+            "url": ""
+          }
+        },
+        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-2": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/sticker-vegan-feuille-vitamines.png",
+            "text": "<p>Garanti cruelty-free et sans matières animales<\/p>",
+            "url": ""
+          }
+        },
+        "2ad908f2-22cd-4449-8dfb-5b5780097b51": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/antioxydant-gummies.png",
+            "text": "<p>Coup de boost physique et mental<\/p>",
+            "url": ""
+          }
+        },
+        "8b43ede5-d99d-4422-9fb4-8ab609c60ee4": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/vitamines-soleil-gummies.png",
+            "text": "<p>Facile à prendre chaque matin<\/p>",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-0",
+        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-1",
+        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-2",
+        "2ad908f2-22cd-4449-8dfb-5b5780097b51",
+        "8b43ede5-d99d-4422-9fb4-8ab609c60ee4"
+      ],
+      "settings": {
+        "animationDuration": 50,
+        "border": false,
+        "text_color": "#4b9b7d",
+        "background_color": "#faf5ef"
+      }
+    },
     "1db7442e-0ee1-495a-96a1-01f3969e95f2": {
       "type": "banner-intro",
+      "disabled": true,
       "blocks": {
         "93825112-b67c-4bcc-9c67-e5aefb3c9a2a": {
           "type": "block",
@@ -123,69 +187,6 @@
         "color": "#201a1c"
       }
     },
-    "7e893ba1-ec47-4d9b-9864-cb4555706f15": {
-      "type": "marquee",
-      "blocks": {
-        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-0": {
-          "type": "text",
-          "settings": {
-            "svg": "",
-            "image": "shopify:\/\/shop_images\/site-mail.png",
-            "text": "<p> Simple et pratique<\/p>",
-            "url": ""
-          }
-        },
-        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-1": {
-          "type": "text",
-          "settings": {
-            "svg": "",
-            "image": "shopify:\/\/shop_images\/vitamines-haltere-gummies_c9dafd91-8522-47d4-9ea3-a02420d5d410.png",
-            "text": "<p>Retrouvez de l'énergie au quotidien<\/p>",
-            "url": ""
-          }
-        },
-        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-2": {
-          "type": "text",
-          "settings": {
-            "svg": "",
-            "image": "shopify:\/\/shop_images\/sticker-vegan-feuille-vitamines.png",
-            "text": "<p>Garanti cruelty-free et sans matières animales<\/p>",
-            "url": ""
-          }
-        },
-        "2ad908f2-22cd-4449-8dfb-5b5780097b51": {
-          "type": "text",
-          "settings": {
-            "svg": "",
-            "image": "shopify:\/\/shop_images\/antioxydant-gummies.png",
-            "text": "<p>Coup de boost physique et mental<\/p>",
-            "url": ""
-          }
-        },
-        "8b43ede5-d99d-4422-9fb4-8ab609c60ee4": {
-          "type": "text",
-          "settings": {
-            "svg": "",
-            "image": "shopify:\/\/shop_images\/vitamines-soleil-gummies.png",
-            "text": "<p>Facile à prendre chaque matin<\/p>",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-0",
-        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-1",
-        "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-2",
-        "2ad908f2-22cd-4449-8dfb-5b5780097b51",
-        "8b43ede5-d99d-4422-9fb4-8ab609c60ee4"
-      ],
-      "settings": {
-        "animationDuration": 50,
-        "border": false,
-        "text_color": "#4b9b7d",
-        "background_color": "#faf5ef"
-      }
-    },
     "0b6412c4-2e58-4ed2-beb0-443098854a8c": {
       "type": "faq",
       "blocks": {
@@ -240,6 +241,24 @@
         "content_accordion_color": "#4b9b7d"
       }
     },
+    "167845847058516467": {
+      "type": "apps",
+      "blocks": {
+        "2cfdb4c1-162a-497b-ad4a-bd9be1c2d2b0": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "2cfdb4c1-162a-497b-ad4a-bd9be1c2d2b0"
+      ],
+      "settings": {
+      }
+    },
     "a11b1585-0a12-4fa7-b722-9bd6997a108a": {
       "type": "newsletter",
       "settings": {
@@ -252,15 +271,79 @@
         "color": "#4b9b7d",
         "button_color": "#4b9b7d"
       }
+    },
+    "1678458577263aa99e": {
+      "type": "apps",
+      "disabled": true,
+      "blocks": {
+        "c18c0fdc-6deb-46a8-8596-abdc35c79a87": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/all_reviews_text\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "c18c0fdc-6deb-46a8-8596-abdc35c79a87"
+      ],
+      "settings": {
+      }
+    },
+    "84357e37-d086-4c57-89b1-076f311426a1": {
+      "type": "images-grid",
+      "blocks": {
+        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-0": {
+          "type": "block",
+          "settings": {
+            "image-product": "shopify:\/\/shop_images\/Colorant-Magnesium-Clair_2x_ddcff558-d2d8-45de-ab87-a0444ee34cbd.png"
+          }
+        },
+        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-1": {
+          "type": "block",
+          "settings": {
+            "image-product": "shopify:\/\/shop_images\/Vegan-Sommeil-Clair_2x_30a8b3e2-6d67-4d0f-8719-71d3b59dad73.png"
+          }
+        },
+        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-2": {
+          "type": "block",
+          "settings": {
+            "image-product": "shopify:\/\/shop_images\/Lactose-Magnesium-Clair_2x_7d64046c-bdb4-4fb8-be1b-36b0247eac55.png"
+          }
+        },
+        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-3": {
+          "type": "block",
+          "settings": {
+            "image-product": "shopify:\/\/shop_images\/Colorant-Magnesium-Clair_2x_ddcff558-d2d8-45de-ab87-a0444ee34cbd.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-0",
+        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-1",
+        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-2",
+        "template--17232714006822__84357e37-d086-4c57-89b1-076f311426a1-1679391666293262ce-3"
+      ],
+      "settings": {
+        "subtitle": "SUBTITLE",
+        "header": "HEADING",
+        "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.jpg",
+        "link_url": "",
+        "link": "Voir toute la gamme",
+        "bg-color": "#E8E2DB",
+        "subtitle-color": "#FFFFFF",
+        "header-color": "#FFFFFF"
+      }
     }
   },
   "order": [
     "1663586369b92a04be",
+    "7e893ba1-ec47-4d9b-9864-cb4555706f15",
     "1db7442e-0ee1-495a-96a1-01f3969e95f2",
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01",
     "801df341-54b5-4e52-9b09-68b370796d1f",
-    "7e893ba1-ec47-4d9b-9864-cb4555706f15",
     "0b6412c4-2e58-4ed2-beb0-443098854a8c",
-    "a11b1585-0a12-4fa7-b722-9bd6997a108a"
+    "167845847058516467",
+    "a11b1585-0a12-4fa7-b722-9bd6997a108a",
+    "1678458577263aa99e",
+    "84357e37-d086-4c57-89b1-076f311426a1"
   ]
 }
