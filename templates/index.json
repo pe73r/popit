@@ -346,10 +346,23 @@
             "cta": "Je découvre",
             "button_link": ""
           }
+        },
+        "e2995a60-e69f-4c89-bc88-c5e11c797b05": {
+          "type": "card",
+          "settings": {
+            "card_width": "1\/2",
+            "image": "shopify:\/\/shop_images\/batch-by-wisconsin-hemp-scientific-NDPUzuo5a8M-unsplash.jpg",
+            "title": "Notre sélection de vins d’exception !",
+            "show_hr": true,
+            "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
+            "cta": "Je découvre",
+            "button_link": ""
+          }
         }
       },
       "block_order": [
-        "38534204-35d1-4945-9338-a00f1e6703c7"
+        "38534204-35d1-4945-9338-a00f1e6703c7",
+        "e2995a60-e69f-4c89-bc88-c5e11c797b05"
       ],
       "settings": {
         "container": "7xl",
