@@ -127,11 +127,23 @@
         "enable_sorting": false,
         "filters_background": "#fcf9f3"
       }
+    },
+    "7871f33c-c56f-48f1-b633-0119a0eaa797": {
+      "type": "featured-blog-grid",
+      "settings": {
+        "blog": "infos",
+        "heading": "À LIRE...",
+        "post_limit": 6,
+        "show_date": false,
+        "show_author": false,
+        "show_button": true
+      }
     }
   },
   "order": [
     "collection-header",
     "collection-links",
-    "product-grid"
+    "product-grid",
+    "7871f33c-c56f-48f1-b633-0119a0eaa797"
   ]
 }
