@@ -16,7 +16,7 @@
           </div>
         {% elsif card_product.tags contains "60-gelules" %}
           <div class="text-white bg-green rounded-md p-1 text-[10px] sm:text-xs w-fit text-center">
-            60 gelules
+            60 gélules
           </div>
         {% elsif card_product.tags contains "120-gummies" %}
           <div class="text-white bg-green rounded-md p-1 text-[10px] sm:text-xs w-fit text-center">
@@ -24,20 +24,24 @@
           </div>
         {% elsif card_product.tags contains "120-gelules" %}
           <div class="text-white bg-green rounded-md p-1 text-[10px] sm:text-xs w-fit text-center">
-            120 gelules
+            120 gélules
           </div>
         {% endif %}
         {% if card_product.tags contains "30-jours" %}
           <div class="text-white bg-green rounded-md p-1 text-[10px] sm:text-xs w-fit text-center">
-            1 mois
+            30 jours
           </div>
         {% elsif card_product.tags contains "60-jours" %}
           <div class="text-white bg-green rounded-md p-1 text-[10px] sm:text-xs w-fit text-center">
-            2 mois
+            60 jours
+          </div>
+        {% elsif card_product.tags contains "90-jours" %}
+          <div class="text-white bg-green rounded-md p-1 text-[10px] sm:text-xs w-fit text-center">
+            90 jours
           </div>
         {% elsif card_product.tags contains "120-jours" %}
           <div class="text-white bg-green rounded-md p-1 text-[10px] sm:text-xs w-fit text-center">
-            4 mois
+            120 jours
           </div>
         {% endif %}
       </div>
