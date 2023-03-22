@@ -7,7 +7,7 @@
           "type": "category_1",
           "settings": {
             "question": "Quels sont les tarifs et délais de livraison ?",
-            "answer": "<p>La livraison est offerte dès 49€ d'achat et est assurée sous 2 à 3 jours ouvrés. <\/p>"
+            "answer": "<p>La livraison est offerte dès <strong>49€ d'achat<\/strong> et est assurée sous <strong>2 à 3 jours ouvrés. <\/strong><\/p>"
           }
         },
         "e534d746-64ae-4407-9460-81be9cc69904": {
