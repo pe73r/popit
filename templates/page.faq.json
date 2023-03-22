@@ -38,6 +38,13 @@
             "answer": "<p>Si l'adresse que vous avez renseignée est incomplète ou que le colis a été endommagé pendant le transport, il arrive que le colis nous soit automatiquement renvoyé. <\/p><p>Dans ce cas, nous vous invitons à nous contacter à <strong>hello@we-pop-it.co<\/strong>, en nous renvoyant votre adresse complète si nécessaire, afin que nous puissions vous envoyer un nouveau colis au plus vite.<\/p>"
           }
         },
+        "ebe4ec3f-1534-4538-a707-239aba6a2d8b": {
+          "type": "category_1",
+          "settings": {
+            "question": "Vais-je devoir payer des frais de douane pour une livraison à l'étranger ?",
+            "answer": "<p>Les frais de douane sont spécifiques à chaque pays et dépendent du montant de votre commande. Lorsque des frais s'appliquent, ils sont à votre charge.<\/p>"
+          }
+        },
         "1b714378-dfb3-41a0-9f69-6680410b2b28": {
           "type": "category_2",
           "settings": {
@@ -122,6 +129,7 @@
         "8474b469-f201-4a4f-afff-6df338d8a35e",
         "25172bc4-ca1f-451f-bca2-ac945fa6ecb2",
         "3714bd05-89fb-48f4-967a-db43635b8981",
+        "ebe4ec3f-1534-4538-a707-239aba6a2d8b",
         "1b714378-dfb3-41a0-9f69-6680410b2b28",
         "2174bf0a-c056-43eb-b32f-1fa32235d0ac",
         "5444bf21-b36c-4e90-b90b-b0342eba52bc",
