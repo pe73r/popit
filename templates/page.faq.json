@@ -184,6 +184,13 @@
             "question": "Comment puis-je me déconnecter de mon compte ?",
             "answer": "<p>Rien de plus simple, il suffit de vous rendre sur la page <strong>Mon Compte et de cliquer sur le petit bouton<\/strong> en haut à gauche \"<strong>Déconnexion<\/strong>\".<\/p>"
           }
+        },
+        "dd77089a-8084-46ad-8466-a81d002a52ca": {
+          "type": "category_5",
+          "settings": {
+            "question": "Comment supprimer mon compte client ?",
+            "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <strong>hello@we-pop-it.co<\/strong> pour demander la suppression de votre compte client.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -212,7 +219,8 @@
         "0bd4fabf-b44f-4129-a014-788739e9841f",
         "7e07e48c-33ce-4141-b25d-bd70e8b4001c",
         "0c490cce-887a-4e32-a7da-41f06e6c119b",
-        "30c4cf42-b674-4506-8a8b-919e29d466e8"
+        "30c4cf42-b674-4506-8a8b-919e29d466e8",
+        "dd77089a-8084-46ad-8466-a81d002a52ca"
       ],
       "settings": {
         "title": "FOIRE AUX QUESTIONS",
