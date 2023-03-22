@@ -49,8 +49,8 @@
     <script type="application/ld+json">
       {
       "@context":"https://schema.org",
-                  "@type":"FAQPage",
-                  "mainEntity":[
+                        "@type":"FAQPage",
+                        "mainEntity":[
       {% assign i = 1 %}
       {% for block in section.blocks -%}
         {% liquid 
@@ -63,13 +63,13 @@
                 -%}
         {
         "@type":"Question",
-                          "name":"{{ metafield_question }}",
+                                  "name":"{{ metafield_question }}",
         "acceptedAnswer":
-                          {
-                            "@type":"Answer",
-                            "text":"{{ metafield_answer }}"
+                                  {
+                                    "@type":"Answer",
+                                    "text":"{{ metafield_answer }}"
         }
-                        },
+                                },
       {%- endfor %}
       ]
       }
@@ -77,14 +77,6 @@
   {% endif %}
 {%- endif -%}
 
-<style>
-  accordion-element[data-open="true"] .icon-plus {
-    display: none;
-  }
-  accordion-element[data-open="true"] .icon-minus {
-    display: block;
-  }
-</style>
 
 {% schema %}
   {

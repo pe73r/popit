@@ -1,4 +1,4 @@
-<accordion-element class="py-6 border-b last:border-none">
+<accordion-element class="py-6 border-b last:border-none faq">
   <accordion-trigger class="group">
     <accordion-header class="flex justify-between items-center">
       <div class="flex-1">
@@ -11,16 +11,8 @@
     </accordion-header>
   </accordion-trigger>
   <accordion-content>
-    <div class="text-base mt-4" style="color:{{ section.settings.content_accordion_color }}">
+    <div class="text-xs md:text-sm mt-4" style="color:{{ section.settings.content_accordion_color }}">
       {{ block.settings.answer }}
     </div>
   </accordion-content>
 </accordion-element>
-<style>
-  accordion-element[data-open="true"] .icon-plus {
-    display: none;
-  }
-  accordion-element[data-open="true"] .icon-minus {
-    display: block;
-  }
-</style>

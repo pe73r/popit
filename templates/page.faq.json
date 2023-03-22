@@ -1,86 +1,135 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "display_page_title": true,
-        "display_page_content": true
-      }
-    },
-    "18c6b45b-81e0-48c4-9ec3-cd254f171ed6": {
-      "type": "faq",
+    "main-faq": {
+      "type": "main-faq",
       "blocks": {
-        "template--18246810960166__18c6b45b-81e0-48c4-9ec3-cd254f171ed6-1678985987f815722e-0": {
-          "type": "block",
+        "8f4acfdf-e277-4906-9849-918d43148b2a": {
+          "type": "category_1",
           "settings": {
-            "question": "Quelles sont les options de livraison ?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "question": "Quels sont les délais de livraison ? Combien coûtent les frais de port ?",
+            "answer": "<p>Une fois votre commande validée, celle-ci est préparée et expédiée sous 24h à 48h (jours ouvrés); <\/p><p>Nos délais de livraison varient en fonction du pays de livraison et du mode de livraison sélectionné. <\/p><p>Nous vous offrons les frais de port dès 59€ d’achat en France Métropolitaine et dès 89€ en Belgique ! <\/p><p>Pour plus d'informations, cliquez ici : <a href=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/livraisons\" target=\"_blank\" title=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/livraisons\"><span style=\"text-decoration:underline\">https:\/\/labelleboucle.fr\/livraisons\/<\/span><\/a><\/p>"
           }
         },
-        "template--18246810960166__18c6b45b-81e0-48c4-9ec3-cd254f171ed6-1678985987f815722e-1": {
-          "type": "block",
+        "e534d746-64ae-4407-9460-81be9cc69904": {
+          "type": "category_1",
           "settings": {
-            "question": "Quelles sont les options de livraison ?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "question": "Dans quels pays livrez-vous ?",
+            "answer": "<p>Nous livrons en France Métropolitaine, Belgique, Espagne (hors territoires spécifiques), Allemagne, Luxembourg, Pays-Bas, Autriche, Portugal(hors territoires spécifiques), Italie, Suisse, Estonie, Hongie, Lettonie, Lituanie, République Tchèque, Slovaquie, Slovénie, Danemark, Pologne, Suède, Bulgarie, Chypre, Croatie, Finlande, Grèce, Islande, Malte, Norvège, Roumanie, Outre-Mer : Réunion, Guyane, Guadeloupe, Martinique, Mayotte et Saint-Pierre et Miquelon, Maroc, Tunisie, Algérie, Canada, Israël, États-Unis (USA), Nouvelle-Calédonie. <\/p><p>Vous pouvez retrouver la liste complète des pays et des modalités de livraison juste ici : <a href=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/livraisons\" target=\"_blank\" title=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/livraisons\"><span style=\"text-decoration:underline\">https:\/\/labelleboucle.fr\/livraisons\/<\/span><\/a> <\/p>"
           }
         },
-        "template--18246810960166__18c6b45b-81e0-48c4-9ec3-cd254f171ed6-1678985987f815722e-2": {
-          "type": "block",
+        "25172bc4-ca1f-451f-bca2-ac945fa6ecb2": {
+          "type": "category_1",
           "settings": {
-            "question": "Quelles sont les options de livraison ?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "question": "Quels modes de paiements puis-je utiliser ?",
+            "answer": "<p>Vous pouvez régler vos achats par carte bancaire ( Carte Bleue, Visa, Master Card, etc), Apple Pay, Bancontact, et avec les cartes cadeaux La Belle Boucle.  <\/p><p>Il est également possible de régler toute commande supérieure à 100€ en 3 fois sans frais via Klarna.  <\/p><p>Le règlement de vos achats par virement ou par Paypal est indisponible. <\/p>"
           }
         },
-        "aed5a079-cafc-4298-9794-41835bd97494": {
-          "type": "block",
+        "8474b469-f201-4a4f-afff-6df338d8a35e": {
+          "type": "category_1",
           "settings": {
-            "question": "Quelles sont les options de livraison ?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "question": "Comment fonctionne la carte cadeau ?",
+            "answer": "<p>Notre carte cadeau est dématérialisée et vous sera envoyée par email. <\/p><p>Lorsque vous commandez une carte cadeau, un code d’utilisation est envoyé. <\/p><p>Après avoir validé votre panier, il vous suffit de cliquer sur l’onglet « Avez-vous une carte-cadeau ? ». <\/p><p>Vous pourrez ensuite renseigner votre code afin de déduire votre carte cadeau de vos achats. <\/p><p>Votre carte cadeau est utilisable sur la boutique en ligne et dans notre boutique physique à Lyon (hors prestations au salon)<\/p>"
           }
         },
-        "9172ca52-82c7-4f36-822b-efb9da30a1b5": {
-          "type": "block",
+        "1b714378-dfb3-41a0-9f69-6680410b2b28": {
+          "type": "category_2",
           "settings": {
-            "question": "Quelles sont les options de livraison ?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "question": "J’ai reçu un produit erroné\/manquant\/abimé, que dois-je faire ?",
+            "answer": "<p>Nous sommes sincèrement navrés pour ce désagrément.  <\/p><p>Vous pouvez contacter notre Service Clients via le formulaire juste <a href=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\" target=\"_blank\" title=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\"><span style=\"text-decoration:underline\"><strong>ici<\/strong><\/span><\/a>. Notre équipe vous apportera une solution dans les meilleurs délais. <\/p>"
           }
         },
-        "f7f2a6f7-7071-415a-a4e1-16a17c79328d": {
-          "type": "block",
+        "2174bf0a-c056-43eb-b32f-1fa32235d0ac": {
+          "type": "category_2",
           "settings": {
-            "question": "Quelles sont les options de livraison ?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "question": "Comment puis-je retourner un article ?",
+            "answer": "<p>Vous disposez d’un délai de 14 jours à compter de la réception de votre commande, pour effectuer un retour de vos produits.  <\/p><p>Pour cela, contactez notre service client via le <a href=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\" target=\"_blank\" title=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\"><span style=\"text-decoration:underline\">Formulaire de Contact.<\/span><\/a> Nous vous expliquerons la démarche à suivre.  <\/p><p>Nous vous rembourserons le ou les articles retournés dès réception et contrôle par notre logisticien. Les produits retournés doivent être non ouverts et non utilisés.  <\/p><p>Les frais de retour sont à la charge de nos clients. <\/p>"
           }
         },
-        "a7ab4b62-8886-4923-b0ec-20316452754a": {
-          "type": "block",
+        "5444bf21-b36c-4e90-b90b-b0342eba52bc": {
+          "type": "category_3",
           "settings": {
-            "question": "Quelles sont les options de livraison ?",
-            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "question": "Comment puis-je avoir des conseils personnalisés ?",
+            "answer": "<p>Nous proposons un service de <a href=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/diagnostic\" target=\"_blank\" title=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/diagnostic\"><span style=\"text-decoration:underline\"><strong>Diagnostic Personnalisé <\/strong><\/span><\/a>afin de vous aider à retrouver des boucles naturelles en pleine santé. Il vous suffit de remplir notre questionnaire et notre équipe de conseillères Belle Boucle sélectionnera pour vous les meilleurs produits naturels de notre boutique afin de vous proposer une routine adaptée à votre type de boucles.<\/p>"
+          }
+        },
+        "39e8455c-fad6-47b4-a8f9-ba0fa489fda1": {
+          "type": "category_3",
+          "settings": {
+            "question": "Je n’ai pas reçu mon Diagnostic Personnalisé, que faire ?",
+            "answer": "<p>N’hésitez pas à regarder dans vos spams, nos diagnostics s’y glissent parfois. Si vous ne le trouvez toujours pas, vous pouvez contacter notre Service Clients via le formulaire juste <a href=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\" target=\"_blank\" title=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\"><span style=\"text-decoration:underline\"><strong>ici<\/strong><\/span><\/a>. Notre équipe vous apportera une solution dans les meilleurs délais.<\/p>"
+          }
+        },
+        "2ed14995-7c89-4112-a3ee-61edf1666bf4": {
+          "type": "category_4",
+          "settings": {
+            "question": "Comment fonctionne le programme de fidélité (Fidéliboucles) ?",
+            "answer": "<p>Vous pouvez retrouver toutes les informations sur la page dédiée au programme fidélité <a href=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/fideliboucles\" target=\"_blank\" title=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/fideliboucles\"><span style=\"text-decoration:underline\">juste ici.<\/span><\/a><br\/>Pour chaque commande validée sur la <a href=\"https:\/\/labelleboucle-2022.myshopify.com\/\" target=\"_blank\" title=\"https:\/\/labelleboucle-2022.myshopify.com\/\"><span style=\"text-decoration:underline\">boutique Belle Boucle<\/span><\/a>, vous gagnez des points. Echangez-les ensuite contre des <strong>bons de réduction<\/strong> pour vos futures commandes. <\/p><p>Les points sont valables pendant 1 an dans votre espace client à partir de leur date de création. <\/p>"
+          }
+        },
+        "057577c2-e2b3-4187-bac1-dc3f71435120": {
+          "type": "category_4",
+          "settings": {
+            "question": "Puis-je utiliser le programme fidélité en boutique ?",
+            "answer": "<p>Oui, vous pouvez utiliser le programme fidélité en boutique physique et sur la boutique en ligne.<\/p>"
+          }
+        },
+        "e32693d4-7ab1-4c52-95d2-7f1efe53089a": {
+          "type": "category_4",
+          "settings": {
+            "question": "Comment fonctionne le système de parrainage ?",
+            "answer": "<p>Invitez les Bouclettes de votre entourage à découvrir nos produits !  Pour chaque parrainage, offrez 10% et recevez 10%, à utiliser sur vos commandes respectives. Plus d’infos ici <em>(lien parrainage)<\/em><\/p>"
+          }
+        },
+        "9a4d0cee-d2ec-4da6-9662-b59f4ecee103": {
+          "type": "category_4",
+          "settings": {
+            "question": "Puis-je recevoir mes colis en boutique ?",
+            "answer": "<p>Nous ne proposons pas de Click and Collect dans notre boutique à Lyon pour le moment, mais n’hésitez pas à passer nous voir directement sans rendez-vous, notre équipe sera ravie de vous conseiller !<\/p>"
+          }
+        },
+        "e60abd65-e951-473f-bba9-f016e9918d0c": {
+          "type": "category_4",
+          "settings": {
+            "question": "Je souhaite supprimer mes données\/mon compte, comment faire ?",
+            "answer": "<p>Vous pouvez contacter notre Service Clients via le formulaire juste <a href=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\" target=\"_blank\" title=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\"><span style=\"text-decoration:underline\"><strong>ici<\/strong><\/span><\/a>. Notre équipe vous apportera une solution dans les meilleurs délais.<\/p>"
+          }
+        },
+        "a26f6b94-4fe5-4ffb-a1e8-e85f4bd0254b": {
+          "type": "category_4",
+          "settings": {
+            "question": "Comment sont sélectionnés les produits de la boutique ?",
+            "answer": "<p>Chez La Belle Boucle, nous avons à cœur de sélectionner les meilleurs produits pour vos cheveux bouclés ! Nous vérifions les compositions et testons l’efficacité de chaque produit sur nos propres bouclettes avant leur mise en ligne sur notre Boutique.  <\/p><p>Nous vous proposons uniquement des produits d’origine naturelle et\/ou biologiques, des marques engagées pour l’environnement, dont les pratiques sont éthiques et partagent nos valeurs.<\/p>"
+          }
+        },
+        "8a377dd0-496d-453f-8c01-d6dc01fd454f": {
+          "type": "category_4",
+          "settings": {
+            "question": "Comment rejoindre l’équipe Belle Boucle ?",
+            "answer": "<p>Pour soutenir notre croissance et développer nos projets, nous sommes toujours à la recherche des meilleurs talents afin d’agrandir notre équipe.  <\/p><p>Si vous souhaitez participer à cette aventure et évoluer au sein d’une équipe dynamique et passionnée : rejoignez-nous ! <\/p><p>Vous pouvez envoyer votre CV ainsi que votre lettre de motivation à l’adresse : <a href=\"mailto:recrutement@labelleboucle.fr\" target=\"_blank\"><span style=\"text-decoration:underline\">recrutement@labelleboucle.fr<\/span><\/a> <\/p>"
           }
         }
       },
       "block_order": [
-        "template--18246810960166__18c6b45b-81e0-48c4-9ec3-cd254f171ed6-1678985987f815722e-0",
-        "template--18246810960166__18c6b45b-81e0-48c4-9ec3-cd254f171ed6-1678985987f815722e-1",
-        "template--18246810960166__18c6b45b-81e0-48c4-9ec3-cd254f171ed6-1678985987f815722e-2",
-        "aed5a079-cafc-4298-9794-41835bd97494",
-        "9172ca52-82c7-4f36-822b-efb9da30a1b5",
-        "f7f2a6f7-7071-415a-a4e1-16a17c79328d",
-        "a7ab4b62-8886-4923-b0ec-20316452754a"
+        "8f4acfdf-e277-4906-9849-918d43148b2a",
+        "e534d746-64ae-4407-9460-81be9cc69904",
+        "25172bc4-ca1f-451f-bca2-ac945fa6ecb2",
+        "8474b469-f201-4a4f-afff-6df338d8a35e",
+        "1b714378-dfb3-41a0-9f69-6680410b2b28",
+        "2174bf0a-c056-43eb-b32f-1fa32235d0ac",
+        "5444bf21-b36c-4e90-b90b-b0342eba52bc",
+        "39e8455c-fad6-47b4-a8f9-ba0fa489fda1",
+        "2ed14995-7c89-4112-a3ee-61edf1666bf4",
+        "057577c2-e2b3-4187-bac1-dc3f71435120",
+        "e32693d4-7ab1-4c52-95d2-7f1efe53089a",
+        "9a4d0cee-d2ec-4da6-9662-b59f4ecee103",
+        "e60abd65-e951-473f-bba9-f016e9918d0c",
+        "a26f6b94-4fe5-4ffb-a1e8-e85f4bd0254b",
+        "8a377dd0-496d-453f-8c01-d6dc01fd454f"
       ],
-      "settings": {
-        "hide_in_mobile": true,
-        "title": "FAQ",
-        "title_color": "#4b9b7d",
-        "title_accordion_color": "#4b9b7d",
-        "content_accordion_color": "#201A1C"
-      }
+      "settings": {}
     }
   },
   "order": [
-    "main",
-    "18c6b45b-81e0-48c4-9ec3-cd254f171ed6"
+    "main-faq"
   ]
 }

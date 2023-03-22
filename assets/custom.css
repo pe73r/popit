@@ -46,12 +46,24 @@ accordion-element {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-accordion-element[data-open="true"] .icon-plus {
+
+accordion-element[data-open="true"].faq .icon-plus {
   display: none;
 }
 
-accordion-element[data-open="true"] .icon-minus {
+accordion-element[data-open="true"].faq .icon-minus {
   display: block;
+}
+
+@media screen and (max-width: 767px) {
+
+  .icon-plus svg {
+    width: 14px;
+  }
+
+  .icon-minus svg {
+    width: 14px;
+  }
 }
 
 /* Gradient links */
@@ -143,11 +155,11 @@ accordion-element[data-open="true"] .icon-minus {
   text-decoration: underline !important;
 }
 
-.jdgm-all-reviews-widget  {
-    width: 90%;
-    max-width: 1200px;
-    margin: 50px auto;
-    font-size:14px;
+.jdgm-all-reviews-widget {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  font-size: 14px;
 }
 
 
