@@ -101,6 +101,13 @@
             "answer": "<p>Une fois votre panier prêt, à l'étape de renseignement de l'adresse de livraison, vous <strong>verrez à droite un champ<\/strong> pour renseigner et appliquer votre code promo. Attention : vous ne pouvez <strong>bénéficier que d'un seul code<\/strong> de réduction par commande.<\/p>"
           }
         },
+        "1287910e-8b37-4b12-bf1d-c3a530008f32": {
+          "type": "category_3",
+          "settings": {
+            "question": "J'ai besoin d'une facture, où la trouver ?",
+            "answer": "<p>Votre facture est envoyée avec <strong>votre mail de confirmation de commande<\/strong>. N'hésitez pas à nous envoyer un mail à <strong>hello@we-pop-it.co<\/strong> si vous avez du mal à la trouver. Nous vous l'enverrons par mail !<\/p>"
+          }
+        },
         "2ed14995-7c89-4112-a3ee-61edf1666bf4": {
           "type": "category_4",
           "settings": {
@@ -166,6 +173,7 @@
         "39e8455c-fad6-47b4-a8f9-ba0fa489fda1",
         "c2950670-f3e8-427b-805c-0ff7055ae5ea",
         "6ebbe525-0c4a-4ba7-bc23-b91297527a06",
+        "1287910e-8b37-4b12-bf1d-c3a530008f32",
         "2ed14995-7c89-4112-a3ee-61edf1666bf4",
         "057577c2-e2b3-4187-bac1-dc3f71435120",
         "e32693d4-7ab1-4c52-95d2-7f1efe53089a",
