@@ -170,6 +170,13 @@
             "question": "Pourquoi créer un compte ?",
             "answer": "<p>Créer un compte vous permet d'avoir <strong>accès à tout l'historique de vos commandes<\/strong> et d'enregistrer vos adresses de livraison et de facturation !<\/p>"
           }
+        },
+        "0c490cce-887a-4e32-a7da-41f06e6c119b": {
+          "type": "category_5",
+          "settings": {
+            "question": "J'ai perdu mon mot de passe, comment le réinitialiser ?",
+            "answer": "<p>Cela arrive à tout le monde ! <\/p><p>Vous pouvez à tout moment réinitialiser votre mot de passe en <strong>cliquant sur \"mot de passe oublié\"<\/strong>. Vous pourrez alors indiquer votre adresse mail et <strong>un mail vous sera envoyé<\/strong> pour créer un nouveau mot de passe.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -196,7 +203,8 @@
         "a26f6b94-4fe5-4ffb-a1e8-e85f4bd0254b",
         "8a377dd0-496d-453f-8c01-d6dc01fd454f",
         "0bd4fabf-b44f-4129-a014-788739e9841f",
-        "7e07e48c-33ce-4141-b25d-bd70e8b4001c"
+        "7e07e48c-33ce-4141-b25d-bd70e8b4001c",
+        "0c490cce-887a-4e32-a7da-41f06e6c119b"
       ],
       "settings": {
         "title": "FOIRE AUX QUESTIONS",
