@@ -126,7 +126,18 @@
         "a26f6b94-4fe5-4ffb-a1e8-e85f4bd0254b",
         "8a377dd0-496d-453f-8c01-d6dc01fd454f"
       ],
-      "settings": {}
+      "settings": {
+        "title": "FOIRE AUX QUESTIONS",
+        "header_text": "<p>Une question, un doute ? <br\/>Nous répondons à vos questions<\/p>",
+        "category1_title": "Catégorie 1",
+        "category2_title": "Catégorie 2",
+        "category3_title": "Catégorie 3",
+        "category4_title": "Catégorie 4",
+        "category5_title": "",
+        "category6_title": "",
+        "title_accordion_color": "#4b9b7d",
+        "content_accordion_color": "#201A1C"
+      }
     }
   },
   "order": [
