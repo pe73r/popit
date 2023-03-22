@@ -66,6 +66,13 @@
             "answer": "<p>Avec un peu de chance, votre <strong>commande n'a pas encore été traitée<\/strong> par notre logisticien. <\/p><p>Dans ce cas uniquement, nous pourrons intervenir pour l'annuler si vous nous envoyez un mail très rapidement à <strong>hello@we-pop-it.co<\/strong> ! Mais ce n'est pas garanti.<\/p>"
           }
         },
+        "9f2ce022-2364-4b40-90a7-20580dcd3a76": {
+          "type": "category_2",
+          "settings": {
+            "question": "Je viens de recevoir ma commande et il manque un produit ou un produit est arrivé cassé ou défectueux. Que faire ?",
+            "answer": "<p>À réception, pensez toujours à <strong>regarder si votre colis a été endommagé ou partiellement ouvert<\/strong> avant de l'ouvrir complètement. <\/p><p>Si il est endommagé, prenez des <strong>photos de l'état général du colis<\/strong>, des produits cassés et de l'étiquette d'expédition collée sur le colis. Ensuite, envoyez-nous le tout à <strong>hello@we-pop-it.co<\/strong> et nous vous renverrons les <strong>produits manquants ou endommagés<\/strong> !<\/p>"
+          }
+        },
         "5444bf21-b36c-4e90-b90b-b0342eba52bc": {
           "type": "category_3",
           "settings": {
@@ -140,6 +147,7 @@
         "65687ccb-ea2b-4465-8ec4-b88b11b7c933",
         "1b714378-dfb3-41a0-9f69-6680410b2b28",
         "2174bf0a-c056-43eb-b32f-1fa32235d0ac",
+        "9f2ce022-2364-4b40-90a7-20580dcd3a76",
         "5444bf21-b36c-4e90-b90b-b0342eba52bc",
         "39e8455c-fad6-47b4-a8f9-ba0fa489fda1",
         "2ed14995-7c89-4112-a3ee-61edf1666bf4",
