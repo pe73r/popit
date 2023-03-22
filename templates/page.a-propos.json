@@ -30,6 +30,7 @@
         "5daac023-9716-45e7-b58f-c74f96396acb"
       ],
       "settings": {
+        "show_dots": true
       }
     },
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14": {
@@ -66,11 +67,12 @@
         "1dc1198c-e68f-40a5-b4df-51fb4ee6f7b2"
       ],
       "settings": {
+        "section_style": "boxed",
+        "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_16.02.24.png",
         "title": "",
         "subtitle": "",
         "cta": "",
         "ctaLink": "",
-        "show_hr": false,
         "bg_color": "#faf5ef",
         "color": "#4b9b7d"
       }
@@ -78,7 +80,7 @@
     "b1cde5b7-b28b-4a93-b8cd-55e523e5693b": {
       "type": "rich-text-expandable",
       "settings": {
-        "text_color": "#201A1C",
+        "text_color": "#201a1c",
         "title": "",
         "text": "<h1>Notre mission c'est de développer des produits mieux pensés et mieux conçus, et on ne va pas en rester là. Voici quelques résultats dont nous sommes particulièrements fiers :<\/h1>",
         "more_text": "",
@@ -95,36 +97,36 @@
           "type": "card",
           "settings": {
             "card_width": "1\/2",
+            "content": "inside",
             "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_16.02.24.png",
             "title": "",
-            "show_hr": false,
             "text": "",
-            "cta": "",
-            "button_link": ""
+            "button_link": "",
+            "color": "#fff"
           }
         },
         "012795f2-5c93-4b23-a164-e7c91241a0ec": {
           "type": "card",
           "settings": {
             "card_width": "1\/2",
+            "content": "inside",
             "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.png",
             "title": "Notre sélection de vins d’exception !",
-            "show_hr": true,
             "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
-            "cta": "Je découvre",
-            "button_link": ""
+            "button_link": "",
+            "color": "#fff"
           }
         },
         "5ada16c2-c2ae-423d-bd05-d0b6c1ac3bf3": {
           "type": "card",
           "settings": {
             "card_width": "1\/2",
+            "content": "inside",
             "image": "shopify:\/\/shop_images\/adam-kool-ndN00KmbJ1c-unsplash.jpg",
             "title": "",
-            "show_hr": true,
             "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
-            "cta": "Je découvre",
-            "button_link": ""
+            "button_link": "",
+            "color": "#fff"
           }
         }
       },
@@ -134,8 +136,7 @@
         "5ada16c2-c2ae-423d-bd05-d0b6c1ac3bf3"
       ],
       "settings": {
-        "container": "7xl",
-        "color": "#201a1c"
+        "container": "7xl"
       }
     }
   },
