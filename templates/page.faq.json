@@ -17,6 +17,13 @@
             "answer": "<p>Lorsque votre colis sera expédié et pris en charge par le transporteur, vous recevrez un mail contenant un lien de suivi pour savoir où est votre commande. Vous pouvez aussi suivre votre commande à tout moment en <strong>cliquant ici<\/strong>.<\/p>"
           }
         },
+        "8474b469-f201-4a4f-afff-6df338d8a35e": {
+          "type": "category_1",
+          "settings": {
+            "question": "J'ai un souci de livraison, que faire ?",
+            "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <strong>hello@we-pop-it.co<\/strong>, sur le chat du site ou via notre <strong>formulaire de contact<\/strong>.<\/p>"
+          }
+        },
         "25172bc4-ca1f-451f-bca2-ac945fa6ecb2": {
           "type": "category_1",
           "settings": {
@@ -24,11 +31,11 @@
             "answer": "<p>Il se peut que l’un de vos voisins ou que votre concierge l’ait récupéré pour vous, n’hésitez pas à vous renseigner auprès d’eux ! <\/p><p>Si ce n'est pas le cas, il arrive également que les transporteurs mettent à jour les statuts de livraison avant même d'avoir livré le colis. Nous vous invitons à attendre au moins 24 heures supplémentaires ouvrées ! <\/p><p>Si vous ne le recevez toujours pas, n'hésitez pas à nous envoyer un mail à <strong>hello@we-pop-it.co<\/strong> les jours suivants et nous trouverons une solution ensemble !<\/p>"
           }
         },
-        "8474b469-f201-4a4f-afff-6df338d8a35e": {
+        "3714bd05-89fb-48f4-967a-db43635b8981": {
           "type": "category_1",
           "settings": {
-            "question": "J'ai un souci de livraison, que faire ?",
-            "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <strong>hello@we-pop-it.co<\/strong>, sur le chat du site ou via notre <strong>formulaire de contact<\/strong>.<\/p>"
+            "question": "Mon colis est en retour à l'expéditeur, que va-t-il se passer ?",
+            "answer": "<p>Si l'adresse que vous avez renseignée est incomplète ou que le colis a été endommagé pendant le transport, il arrive que le colis nous soit automatiquement renvoyé. <\/p><p>Dans ce cas, nous vous invitons à nous contacter à <strong>hello@we-pop-it.co<\/strong>, en nous renvoyant votre adresse complète si nécessaire, afin que nous puissions vous envoyer un nouveau colis au plus vite.<\/p>"
           }
         },
         "1b714378-dfb3-41a0-9f69-6680410b2b28": {
@@ -112,8 +119,9 @@
       "block_order": [
         "8f4acfdf-e277-4906-9849-918d43148b2a",
         "e534d746-64ae-4407-9460-81be9cc69904",
-        "25172bc4-ca1f-451f-bca2-ac945fa6ecb2",
         "8474b469-f201-4a4f-afff-6df338d8a35e",
+        "25172bc4-ca1f-451f-bca2-ac945fa6ecb2",
+        "3714bd05-89fb-48f4-967a-db43635b8981",
         "1b714378-dfb3-41a0-9f69-6680410b2b28",
         "2174bf0a-c056-43eb-b32f-1fa32235d0ac",
         "5444bf21-b36c-4e90-b90b-b0342eba52bc",
