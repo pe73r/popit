@@ -1,0 +1,488 @@
+{% assign s = section.settings %}
+
+  <section class="py-10 w-11/12 max-w-[1120px] m-auto">
+
+  <div class="text-center mb-10">
+    <h2 class="font-serif text-3xl text-green mb-3">{{ s.title }}</h2>
+    <div class="text-sm text-green">{{ s.header_text }}</div>
+  </div>
+  <!-- faqs desktop -->
+  <div class="hidden md:block">
+    <tail-tabs class="flex mt-10">
+      <tabs-buttons class="flex-col max-w-[260px] m-auto">
+        {% if section.settings.category1_title != blank %}
+          <div class="w-full cursor-pointer bg-green-light p-5 rounded-lg mb-5 flex justify-center items-center text-center">
+            <span class="text-green text-base Fredoka">{{ section.settings.category1_title }}</span>
+          </div>
+        {% endif %}
+        {% if section.settings.category2_title != blank %}
+          <div class="w-full cursor-pointer bg-green-light p-5 rounded-lg mb-5 flex justify-center items-center text-center">
+            <span class="text-green text-base Fredoka">{{ section.settings.category2_title }}</span>
+          </div>
+        {% endif %}
+        {% if section.settings.category3_title != blank %}
+          <div class="w-full cursor-pointer bg-green-light p-5 rounded-lg mb-5 flex justify-center items-center text-center">
+            <span class="text-green text-base Fredoka">{{ section.settings.category3_title }}</span>
+          </div>
+        {% endif %}
+        {% if section.settings.category4_title != blank %}
+          <div class="w-full cursor-pointer bg-green-light p-5 rounded-lg mb-5 flex justify-center items-center text-center">
+            <span class="text-green text-base Fredoka">{{ section.settings.category4_title }}</span>
+          </div>
+        {% endif %}
+        {% if section.settings.category5_title != blank %}
+          <div class="w-full cursor-pointer bg-green-light p-5 rounded-lg mb-5 flex justify-center items-center text-center">
+            <span class="text-green text-base Fredoka">{{ section.settings.category5_title }}</span>
+          </div>
+        {% endif %}
+        {% if section.settings.category6_title != blank %}
+          <div class="w-full cursor-pointer bg-green-light p-5 rounded-lg mb-5 flex justify-center items-center text-center">
+            <span class="text-green text-base Fredoka">{{ section.settings.category6_title }}</span>
+          </div>
+        {% endif %}
+      </tabs-buttons>
+      <tabs-panels class="ml-14">
+        <!-- category 1 questions -->
+        {% if section.settings.category1_title != blank %}
+          <div class="block">
+            <accordion-group>
+              {% for block in section.blocks %}
+                {% if block.type == 'category_1' %}
+                  {% render 'faq', block: block, color: "#4b9b7d" %}
+                {% endif %}
+              {% endfor %}
+            </accordion-group>
+          </div>
+        {% endif %}
+        <!-- category 2 questions -->
+        {% if section.settings.category2_title != blank %}
+          <div class="block">
+            <accordion-group>
+              {% for block in section.blocks %}
+                {% if block.type == 'category_2' %}
+                  {% render 'faq', block: block, color: "#4b9b7d" %}
+                {% endif %}
+              {% endfor %}
+            </accordion-group>
+          </div>
+        {% endif %}
+        <!-- category 3 questions -->
+        {% if section.settings.category3_title != blank %}
+          <div class="block">
+            <accordion-group>
+              {% for block in section.blocks %}
+                {% if block.type == 'category_3' %}
+                  {% render 'faq', block: block, color: "#4b9b7d" %}
+                {% endif %}
+              {% endfor %}
+            </accordion-group>
+          </div>
+        {% endif %}
+        <!-- category 4 questions -->
+        {% if section.settings.category4_title != blank %}
+          <div class="block">
+            <accordion-group>
+              {% for block in section.blocks %}
+                {% if block.type == 'category_4' %}
+                  {% render 'faq', block: block, color: "#4b9b7d" %}
+                {% endif %}
+              {% endfor %}
+            </accordion-group>
+          </div>
+        {% endif %}
+        <!-- category 5 questions -->
+        {% if section.settings.category5_title != blank %}
+          <div class="block">
+            <accordion-group>
+              {% for block in section.blocks %}
+                {% if block.type == 'category_5' %}
+                  {% render 'faq', block: block, color: "#4b9b7d" %}
+                {% endif %}
+              {% endfor %}
+            </accordion-group>
+          </div>
+        {% endif %}
+        <!-- category 6 questions -->
+        {% if section.settings.category6_title != blank %}
+          <div class="block">
+            <accordion-group>
+              {% for block in section.blocks %}
+                {% if block.type == 'category_6' %}
+                  {% render 'faq', block: block, color: "#4b9b7d" %}
+                {% endif %}
+              {% endfor %}
+            </accordion-group>
+          </div>
+        {% endif %}
+      </tabs-panels>
+    </tail-tabs>
+  </div>
+  <!-- faqs mobile -->
+  <div class="block md:hidden">
+    <accordion-group class="mt-1 w-full">
+      <!-- category 1 -->
+      {%- if section.settings.category1_title != blank -%}
+        <accordion-element class="py-3 border-b border-gray-light">
+          <accordion-trigger class="group">
+            <accordion-header class="flex justify-between items-center w-full">
+              <div class="text-base text-green Fredoka">
+                {{ section.settings.category1_title }}
+              </div>
+              <accordion-icon class="group-expanded:rotate-180 transition-all origin-center h-[fit-content]">
+                {% render 'icon-arrow-accordion' %}
+              </accordion-icon>
+            </accordion-header>
+          </accordion-trigger>
+          <accordion-content>
+            <div>
+              <accordion-group class="mt-1 w-full">
+                {% for block in section.blocks %}
+                  {% if block.type == 'category_1' %}
+                    {% render 'faq', block: block, color: "#4b9b7d" %}
+                  {% endif %}
+                {% endfor %}
+              </accordion-group>
+            </div>
+          </accordion-content>
+        </accordion-element>
+      {%- endif -%}
+      <!-- category 2 -->
+      {%- if section.settings.category2_title != blank -%}
+        <accordion-element class="py-3 border-b border-gray-light">
+          <accordion-trigger class="group">
+            <accordion-header class="flex justify-between items-center w-full">
+              <div class="text-base text-green Fredoka">
+                {{ section.settings.category2_title }}
+              </div>
+              <accordion-icon class="group-expanded:rotate-180 transition-all origin-center h-[fit-content]">
+                {% render 'icon-arrow-accordion' %}
+              </accordion-icon>
+            </accordion-header>
+          </accordion-trigger>
+          <accordion-content>
+            <div>
+              <accordion-group class="mt-1 w-full">
+                {% for block in section.blocks %}
+                  {% if block.type == 'category_2' %}
+                    {% render 'faq', block: block, color: "#4b9b7d" %}
+                  {% endif %}
+                {% endfor %}
+              </accordion-group>
+            </div>
+          </accordion-content>
+        </accordion-element>
+      {%- endif -%}
+      <!-- category 3 -->
+      {%- if section.settings.category3_title != blank -%}
+        <accordion-element class="py-3 border-b border-gray-light">
+          <accordion-trigger class="group">
+            <accordion-header class="flex justify-between items-center w-full">
+              <div class="text-base text-green Fredoka">
+                {{ section.settings.category3_title }}
+              </div>
+              <accordion-icon class="group-expanded:rotate-180 transition-all origin-center h-[fit-content]">
+                {% render 'icon-arrow-accordion' %}
+              </accordion-icon>
+            </accordion-header>
+          </accordion-trigger>
+          <accordion-content>
+            <div>
+              <accordion-group class="mt-1 w-full">
+                {% for block in section.blocks %}
+                  {% if block.type == 'category_3' %}
+                    {% render 'faq', block: block, color: "#4b9b7d" %}
+                  {% endif %}
+                {% endfor %}
+              </accordion-group>
+            </div>
+          </accordion-content>
+        </accordion-element>
+      {%- endif -%}
+      <!-- category 4 -->
+      {%- if section.settings.category4_title != blank -%}
+        <accordion-element class="py-3 border-b border-gray-light">
+          <accordion-trigger class="group">
+            <accordion-header class="flex justify-between items-center w-full">
+              <div class="text-base text-green Fredoka">
+                {{ section.settings.category4_title }}
+              </div>
+              <accordion-icon class="group-expanded:rotate-180 transition-all origin-center h-[fit-content]">
+                {% render 'icon-arrow-accordion' %}
+              </accordion-icon>
+            </accordion-header>
+          </accordion-trigger>
+          <accordion-content>
+            <div>
+              <accordion-group class="mt-1 w-full">
+                {% for block in section.blocks %}
+                  {% if block.type == 'category_4' %}
+                    {% render 'faq', block: block, color: "#4b9b7d" %}
+                  {% endif %}
+                {% endfor %}
+              </accordion-group>
+            </div>
+          </accordion-content>
+        </accordion-element>
+      {%- endif -%}
+      <!-- category 5 -->
+      {%- if section.settings.category5_title != blank -%}
+        <accordion-element class="py-3 border-b border-gray-light">
+          <accordion-trigger class="group">
+            <accordion-header class="flex justify-between items-center w-full">
+              <div class="text-base text-green Fredoka">
+                {{ section.settings.category5_title }}
+              </div>
+              <accordion-icon class="group-expanded:rotate-180 transition-all origin-center h-[fit-content]">
+                {% render 'icon-arrow-accordion' %}
+              </accordion-icon>
+            </accordion-header>
+          </accordion-trigger>
+          <accordion-content>
+            <div>
+              <accordion-group class="mt-1 w-full">
+                {% for block in section.blocks %}
+                  {% if block.type == 'category_5' %}
+                    {% render 'faq', block: block, color: "#4b9b7d" %}
+                  {% endif %}
+                {% endfor %}
+              </accordion-group>
+            </div>
+          </accordion-content>
+        </accordion-element>
+      {%- endif -%}
+      <!-- category 6 -->
+      {%- if section.settings.category6_title != blank -%}
+        <accordion-element class="py-3 border-b border-gray-light">
+          <accordion-trigger class="group">
+            <accordion-header class="flex justify-between items-center w-full">
+              <div class="text-base text-green Fredoka">
+                {{ section.settings.category6_title }}
+              </div>
+              <accordion-icon class="group-expanded:rotate-180 transition-all origin-center h-[fit-content]">
+                {% render 'icon-arrow-accordion' %}
+              </accordion-icon>
+            </accordion-header>
+          </accordion-trigger>
+          <accordion-content>
+            <div>
+              <accordion-group class="mt-1 w-full">
+                {% for block in section.blocks %}
+                  {% if block.type == 'category_6' %}
+                    {% render 'faq', block: block, color: "#4b9b7d" %}
+                  {% endif %}
+                {% endfor %}
+              </accordion-group>
+            </div>
+          </accordion-content>
+        </accordion-element>
+      {%- endif -%}
+    </accordion-group>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Faqs",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "FOIRE AUX QUESTIONS"
+      },
+      {
+        "type": "richtext",
+        "id": "header_text",
+        "label": "Header text",
+        "default": "<p>Une question, un doute ? <br> Nous répondons à vos questions</p>"
+      },
+      {
+        "type": "header",
+        "content": "category 1"
+      },
+      {
+        "type": "text",
+        "id": "category1_title",
+        "label": "Title",
+        "default": "Catégorie 1"
+      }, {
+        "type": "header",
+        "content": "category 2"
+      }, {
+        "type": "text",
+        "id": "category2_title",
+        "label": "Title",
+        "default": "Catégorie 2"
+      }, {
+        "type": "header",
+        "content": "category 3"
+      }, {
+        "type": "text",
+        "id": "category3_title",
+        "label": "Title",
+        "default": "Catégorie 3"
+      }, {
+        "type": "header",
+        "content": "category 4"
+      }, {
+        "type": "text",
+        "id": "category4_title",
+        "label": "Title",
+        "default": "Catégorie 4"
+      }, {
+        "type": "header",
+        "content": "category 5"
+      }, {
+        "type": "text",
+        "id": "category5_title",
+        "label": "Title",
+        "default": "Catégorie 5"
+      }, {
+        "type": "header",
+        "content": "category 6"
+      }, {
+        "type": "text",
+        "id": "category6_title",
+        "label": "Title",
+        "default": "Catégorie 6"
+      }, {
+        "type": "header",
+        "content": "colors"
+      }, {
+        "type": "color",
+        "id": "title_accordion_color",
+        "label": "Title accordion color",
+        "default": "#4b9b7d"
+      }, {
+        "type": "color",
+        "id": "content_accordion_color",
+        "label": "Text accordion color",
+        "default": "#201A1C"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Category 1",
+        "type": "category_1",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question",
+            "default": "Question"
+          }, {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer",
+            "default": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Category 2",
+        "type": "category_2",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question",
+            "default": "Question"
+          }, {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer",
+            "default": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Category 3",
+        "type": "category_3",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question",
+            "default": "Question"
+          }, {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer",
+            "default": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Category 4",
+        "type": "category_4",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question",
+            "default": "Question"
+          }, {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer",
+            "default": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.</p>"
+          }
+        ]
+      }, {
+        "name": "Category 5",
+        "type": "category_5",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question",
+            "default": "Question"
+          }, {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer",
+            "default": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.</p>"
+          }
+        ]
+      }, {
+        "name": "Category 6",
+        "type": "category_6",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question",
+            "default": "Question"
+          }, {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer",
+            "default": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi eos molestiae, odio rem blanditiis accusantium hic quae incidunt impedit fugit exercitationem architecto accusamus id, totam porro adipisci sunt nisi magnam.</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Faqs",
+        "blocks": [
+          {
+            "type": "category_1",
+            "settings": {
+              "question": "Question 1 ?"
+            }
+          }, {
+            "type": "category_1",
+            "settings": {
+              "question": "Question 2 ?"
+            }
+          }, {
+            "type": "category_1",
+            "settings": {
+              "question": "Question 3 ?"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
