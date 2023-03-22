@@ -30,7 +30,7 @@
         "5daac023-9716-45e7-b58f-c74f96396acb"
       ],
       "settings": {
-        "show_dots": true
+        "show_dots": false
       }
     },
     "c3651bbc-c24a-44d2-a7b1-9bac325ddff1": {
@@ -39,7 +39,7 @@
         "layout": "image_right",
         "content": "column",
         "text_align": "center",
-        "image": "shopify:\/\/shop_images\/matteo-vistocco-Dph00R2SwFo-unsplash.jpg",
+        "image": "shopify:\/\/shop_images\/jellybee-dTR0x-mvI_s-unsplash.jpg",
         "hide_image_mobile": false,
         "subtitle": "",
         "title": "Title",
