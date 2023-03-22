@@ -585,6 +585,31 @@
             </button>
           </add-to-cart>
 
+<!-- Just Button  -->
+            <just-pay-button 
+             theme="default"
+             default_variant="{{product.selected_or_first_available_variant.id}}"
+             default_available="{{product.selected_or_first_available_variant.available}}"
+             product_id="{{ product.id }}" 
+             product_handle="{{ product.handle }}"                        
+             className="just-btn just-btn-product top"
+             app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7" 
+             domain="Popit"
+             source="product">
+            </just-pay-button>
+    	    <style>
+	        .flex-1 just-pay-button::part(just-button) {
+                text-transform:inherit;
+                border-radius: 0.75rem;
+                font-family: inherit;
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+                height:44px;
+                font-weight: inherit;
+              }
+    	    </style>
+<!-- End Of Just Button  -->
+          
           {% if block.settings.show_dynamic_checkout %}
             {{ form | payment_button }}
           {% endif %}
