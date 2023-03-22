@@ -97,12 +97,12 @@
           "type": "card",
           "settings": {
             "card_width": "1\/2",
-            "content": "inside",
+            "content": "outside",
             "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_16.02.24.png",
             "title": "",
             "text": "",
             "button_link": "",
-            "color": "#fff"
+            "color": "#4b9b7d"
           }
         },
         "012795f2-5c93-4b23-a164-e7c91241a0ec": {
