@@ -1,6 +1,24 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
+
+<!-- Just Button  -->
+<script src="https://checkout-button-shopify.vercel.app/just-pay-button.js" type="module"></script>
+<link  href="https://checkout-button-shopify.vercel.app/styles.css" rel="stylesheet" crossorigin>
+<style>
+      #just-frame-payment {
+        z-index: 9999999999;
+      }
+      .#buy-buttons just-pay-button::part(just-button) {
+          border-radius: 0.75rem;
+          height: 44px;
+          font-size: 0.875rem;
+          font-family: inherit;
+          font-weight: inherit;
+      }
+</style>
+<!-- End of Just Button  -->
+    
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width,initial-scale=1" name="viewport">
