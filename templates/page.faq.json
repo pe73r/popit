@@ -191,6 +191,13 @@
             "question": "Comment supprimer mon compte client ?",
             "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <strong>hello@we-pop-it.co<\/strong> pour demander la suppression de votre compte client.<\/p>"
           }
+        },
+        "6e082f44-e152-4696-b588-1316ba9ef281": {
+          "type": "category_5",
+          "settings": {
+            "question": "Comment supprimer toutes mes données personnelles ?",
+            "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <strong>hello@we-pop-it.co<\/strong> pour demander la suppression de l'ensemble de vos données. N'hésitez pas aussi à <strong>consulter notre Politique de Confidentialité<\/strong>.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -220,7 +227,8 @@
         "7e07e48c-33ce-4141-b25d-bd70e8b4001c",
         "0c490cce-887a-4e32-a7da-41f06e6c119b",
         "30c4cf42-b674-4506-8a8b-919e29d466e8",
-        "dd77089a-8084-46ad-8466-a81d002a52ca"
+        "dd77089a-8084-46ad-8466-a81d002a52ca",
+        "6e082f44-e152-4696-b588-1316ba9ef281"
       ],
       "settings": {
         "title": "FOIRE AUX QUESTIONS",
