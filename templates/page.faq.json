@@ -62,8 +62,8 @@
         "2174bf0a-c056-43eb-b32f-1fa32235d0ac": {
           "type": "category_2",
           "settings": {
-            "question": "Comment puis-je retourner un article ?",
-            "answer": "<p>Vous disposez d’un délai de 14 jours à compter de la réception de votre commande, pour effectuer un retour de vos produits.  <\/p><p>Pour cela, contactez notre service client via le <a href=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\" target=\"_blank\" title=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\"><span style=\"text-decoration:underline\">Formulaire de Contact.<\/span><\/a> Nous vous expliquerons la démarche à suivre.  <\/p><p>Nous vous rembourserons le ou les articles retournés dès réception et contrôle par notre logisticien. Les produits retournés doivent être non ouverts et non utilisés.  <\/p><p>Les frais de retour sont à la charge de nos clients. <\/p>"
+            "question": "Est-ce que je peux annuler ma commande ?",
+            "answer": "<p>Avec un peu de chance, votre <strong>commande n'a pas encore été traitée<\/strong> par notre logisticien. <\/p><p>Dans ce cas uniquement, nous pourrons intervenir pour l'annuler si vous nous envoyez un mail très rapidement à <strong>hello@we-pop-it.co<\/strong> ! Mais ce n'est pas garanti.<\/p>"
           }
         },
         "5444bf21-b36c-4e90-b90b-b0342eba52bc": {
