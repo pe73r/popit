@@ -34,12 +34,43 @@
     },
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14": {
       "type": "banner-intro",
+      "blocks": {
+        "4d669b9f-1f28-4730-8926-11bc0de4308d": {
+          "type": "block",
+          "settings": {
+            "image_width": 80,
+            "title": "UN DESIGN ÉPURÉ",
+            "text": "Garanti cruelty-free et sans matières animales"
+          }
+        },
+        "f3d3f360-ea9c-42dd-b592-3adcd58b00ae": {
+          "type": "block",
+          "settings": {
+            "image_width": 80,
+            "title": "LE CONFORT ENCORE PLUS FORT",
+            "text": "Garanti cruelty-free et sans matières animales"
+          }
+        },
+        "1dc1198c-e68f-40a5-b4df-51fb4ee6f7b2": {
+          "type": "block",
+          "settings": {
+            "image_width": 80,
+            "title": "AU NOM DE LA NATURE",
+            "text": "Garanti cruelty-free et sans matières animales"
+          }
+        }
+      },
+      "block_order": [
+        "4d669b9f-1f28-4730-8926-11bc0de4308d",
+        "f3d3f360-ea9c-42dd-b592-3adcd58b00ae",
+        "1dc1198c-e68f-40a5-b4df-51fb4ee6f7b2"
+      ],
       "settings": {
-        "title": "À propos",
-        "subtitle": "<p>Créateur de compléments alimentaires pour une santé de Fer<\/p>",
+        "title": "",
+        "subtitle": "",
         "cta": "",
         "ctaLink": "",
-        "show_hr": true,
+        "show_hr": false,
         "bg_color": "#faf5ef",
         "color": "#4b9b7d"
       }
@@ -84,6 +115,49 @@
         "show_arrows": true,
         "show_dots": true
       }
+    },
+    "72e62bdd-f1f4-44e3-9d46-45794312dd9d": {
+      "type": "images-grid",
+      "blocks": {
+        "template--18292260241702__72e62bdd-f1f4-44e3-9d46-45794312dd9d-1679497325a6f00da3-0": {
+          "type": "block",
+          "settings": {
+            "image-product": "shopify:\/\/shop_images\/Gif---popit-_1.gif"
+          }
+        },
+        "template--18292260241702__72e62bdd-f1f4-44e3-9d46-45794312dd9d-1679497325a6f00da3-1": {
+          "type": "block",
+          "settings": {
+            "image-product": "shopify:\/\/shop_images\/FR-TAB-NUTRI-GE-SOMMEIL-0.5_5bcd0a66-a2d9-469a-bf5c-731fd83a8987.png"
+          }
+        },
+        "template--18292260241702__72e62bdd-f1f4-44e3-9d46-45794312dd9d-1679497325a6f00da3-2": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "template--18292260241702__72e62bdd-f1f4-44e3-9d46-45794312dd9d-1679497325a6f00da3-3": {
+          "type": "block",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--18292260241702__72e62bdd-f1f4-44e3-9d46-45794312dd9d-1679497325a6f00da3-0",
+        "template--18292260241702__72e62bdd-f1f4-44e3-9d46-45794312dd9d-1679497325a6f00da3-1",
+        "template--18292260241702__72e62bdd-f1f4-44e3-9d46-45794312dd9d-1679497325a6f00da3-2",
+        "template--18292260241702__72e62bdd-f1f4-44e3-9d46-45794312dd9d-1679497325a6f00da3-3"
+      ],
+      "settings": {
+        "subtitle": "",
+        "header": "",
+        "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_16.02.24.png",
+        "link_url": "",
+        "link": "",
+        "bg-color": "#E8E2DB",
+        "subtitle-color": "#FFFFFF",
+        "header-color": "#FFFFFF"
+      }
     }
   },
   "order": [
@@ -92,6 +166,7 @@
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14",
     "fb6dd386-da95-473a-9943-f627eb882012",
     "c6c02950-3c00-4fb3-bf99-a91de1f0450a",
-    "f42be54a-ef9c-47d2-b20a-0f0076133c24"
+    "f42be54a-ef9c-47d2-b20a-0f0076133c24",
+    "72e62bdd-f1f4-44e3-9d46-45794312dd9d"
   ]
 }
