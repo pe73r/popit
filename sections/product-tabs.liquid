@@ -69,15 +69,15 @@
       <tabs-buttons class="justify-center gap-4 md:gap-8 mb-5 md:mb-4">
         {% for block in section.blocks %}
           <div class="tab-button block relative group font-light transition-all !border-[0] cursor-pointer selected:after:bg-[{{ product_color }}] selected:after:w-[60px] selected:after:h-[2px] selected:after:absolute selected:after:bottom-[2px] selected:after:left-[50%] selected:after:translate-x-[-50%] selected:after:mx-auto">
-            <span class="hidden md:block py-2 text-xs md:text-sm font-light group:selected:font-bold text-center">{{ block.settings.title }}</span>
-            <span class="block md:hidden py-2 text-xs md:text-sm font-light group:selected:font-bold text-center">{{ block.settings.title_mobile }}</span>
+            <span class="Fredoka hidden md:block py-2 text-xs md:text-sm font-light group:selected:font-bold text-center">{{ block.settings.title }}</span>
+            <span class="Fredoka block md:hidden py-2 text-xs md:text-sm font-light group:selected:font-bold text-center">{{ block.settings.title_mobile }}</span>
           </div>
         {% endfor %}
       </tabs-buttons>
       <tabs-panels>
         {% for block in section.blocks %}
           {% if block.type == 'description' %}
-            <div class="block mt-2" style="color: {{ product_color }}">
+            <div class="block mt-2">
               {% comment %} <div class="text-sm">{{ product.description }}</div> {% endcomment %}
 
               <div class="text-xs md:text-sm font-light">
@@ -94,7 +94,7 @@
                     src="{{ product.metafields.product.description_image_1.value | img_url:'master' }}"
                     alt="">
                   <div>
-                    <h5 class="text-sm mb-2">{{ product.metafields.product.description_title_1.value }}</h5>
+                    <h5 class="text-sm mb-2 tab-subtitle" style="color: {{ product_color }}">{{ product.metafields.product.description_title_1.value }}</h5>
                     <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.description_text_1.value }}</span>
                   </div>
                 </div>
@@ -106,7 +106,7 @@
                     src="{{ product.metafields.product.description_image_2.value | img_url:'master' }}"
                     alt="">
                   <div>
-                    <h5 class="text-sm mb-2">{{ product.metafields.product.description_title_2.value }}</h5>
+                    <h5 class="text-sm mb-2 tab-subtitle" style="color: {{ product_color }}">{{ product.metafields.product.description_title_2.value }}</h5>
                     <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.description_text_2.value }}</span>
                   </div>
                 </div>
@@ -118,7 +118,7 @@
                     src="{{ product.metafields.product.description_image_3.value | img_url:'master' }}"
                     alt="">
                   <div>
-                    <h5 class="text-sm mb-2">{{ product.metafields.product.description_title_2.value }}</h5>
+                    <h5 class="text-sm mb-2 tab-subtitle" style="color: {{ product_color }}">{{ product.metafields.product.description_title_3.value }}</h5>
                     <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.description_text_3.value }}</span>
                   </div>
                 </div>
@@ -140,7 +140,7 @@
                       alt="">
                   {% endif %}
                   <div>
-                    <h5 class="text-sm mb-2">{{ product.metafields.product.use_title_1.value }}</h5>
+                    <h5 class="text-sm mb-2 tab-subtitle" style="color: {{ product_color }}">{{ product.metafields.product.use_title_1.value }}</h5>
                     <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_1 }}</span>
                   </div>
                 </div>
@@ -154,7 +154,7 @@
                       alt="">
                   {% endif %}
                   <div>
-                    <h5 class="text-sm mb-2">{{ product.metafields.product.use_title_2.value }}</h5>
+                    <h5 class="text-sm mb-2 tab-subtitle" style="color: {{ product_color }}">{{ product.metafields.product.use_title_2.value }}</h5>
                     <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_2 }}</span>
                   </div>
                 </div>
@@ -168,7 +168,7 @@
                       alt="">
                   {% endif %}
                   <div>
-                    <h5 class="text-sm mb-2">{{ product.metafields.product.use_title_3.value }}</h5>
+                    <h5 class="text-sm mb-2 tab-subtitle" style="color: {{ product_color }}">{{ product.metafields.product.use_title_3.value }}</h5>
                     <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_3 }}</span>
                   </div>
                 </div>
@@ -229,7 +229,7 @@
     color: {{ product_color }}
     ;
   }
-  h5 {
+  .tab-subtitle {
     color: {{ product_color }}
     ;
   }

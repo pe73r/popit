@@ -144,21 +144,23 @@
       </div>
     </div>
     <div class="flex items-center justify-center w-full max-w-full gap-3 pr-3 md:w-fit md:min-w-[450px]">
-      <div
+      {% comment %}
+        <div
         class="hidden 2xl:flex items-center my-2"
         id="price-{{ section.id }}"
         role="status"
         {{ block.shopify_attributes }}>
         {%- if product.compare_at_price > product.price -%}
-          <h5
-            data-price
-            data-dynamic-price
-            class="text-lg font-extrabold text-{{ product-color }}">{{ product.price | money }}</h5>
-          <span data-price-stroke class="ml-2 text-sm font-light line-through text-{{ product-color }}">{{ product.compare_at_price | money }}</span>
+        <h5
+        data-price
+        data-dynamic-price
+        class="text-lg font-extrabold text-{{ product-color }}">{{ product.price | money }}</h5>
+        <span data-price-stroke class="ml-2 text-sm font-light line-through text-{{ product-color }}">{{ product.compare_at_price | money }}</span>
         {% else %}
-          <h5 class="text-lg font-extrabold text-{{ product-color }}">{{ product.price | money }}</h5>
+        <h5 class="text-lg font-extrabold text-{{ product-color }}">{{ product.price | money }}</h5>
         {% endif %}
-      </div>
+        </div>
+      {% endcomment %}
       <div
         id="buy-buttons"
         {{ block.shopify_attributes }}
@@ -219,6 +221,43 @@
       <h5 class="my-2 text-sm uppercase md:block" {{ block.shopify_attributes }}>
         {{ product.vendor }}
       </h5>
+      {%- when 'product-type' -%}
+      <div class="flex gap-2 mb-3">
+        {% if product.tags contains "60-gummies" %}
+          <div class="text-white bg-{{ product-color }} rounded-md px-2 py-1 font-semibold text-[10px] sm:text-xs w-fit text-center">
+            60 gummies
+          </div>
+        {% elsif product.tags contains "60-gelules" %}
+          <div class="text-white bg-{{ product-color }} rounded-md px-2 py-1 font-semibold text-[10px] sm:text-xs w-fit text-center">
+            60 gélules
+          </div>
+        {% elsif product.tags contains "120-gummies" %}
+          <div class="text-white bg-{{ product-color }} rounded-md px-2 py-1 font-semibold text-[10px] sm:text-xs w-fit text-center">
+            120 gummies
+          </div>
+        {% elsif product.tags contains "120-gelules" %}
+          <div class="text-white bg-{{ product-color }} rounded-md px-2 py-1 font-semibold text-[10px] sm:text-xs w-fit text-center">
+            120 gélules
+          </div>
+        {% endif %}
+        {% if product.tags contains "30-jours" %}
+          <div class="text-white bg-{{ product-color }} rounded-md px-2 py-1 font-semibold text-[10px] sm:text-xs w-fit text-center">
+            30 jours
+          </div>
+        {% elsif product.tags contains "60-jours" %}
+          <div class="text-white bg-{{ product-color }} rounded-md px-2 py-1 font-semibold text-[10px] sm:text-xs w-fit text-center">
+            60 jours
+          </div>
+        {% elsif product.tags contains "90-jours" %}
+          <div class="text-white bg-{{ product-color }} rounded-md px-2 py-1 font-semibold text-[10px] sm:text-xs w-fit text-center">
+            90 jours
+          </div>
+        {% elsif product.tags contains "120-jours" %}
+          <div class="text-white bg-{{ product-color }} rounded-md px-2 py-1 font-semibold text-[10px] sm:text-xs w-fit text-center">
+            120 jours
+          </div>
+        {% endif %}
+      </div>
 
       {%- when 'title' -%}
 
@@ -254,7 +293,7 @@
 
       {%- when 'short_description' -%}
       {% if product.metafields.global.short_description != blank %}
-        <div class="mt-2.5 md:mt-4 text-sm text-acajou">
+        <div class="mt-2 md:mt-4 text-sm">
           {{ product.metafields.global.short_description }}
         </div>
       {% endif %}
