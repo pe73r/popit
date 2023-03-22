@@ -15,14 +15,14 @@
           "type": "video",
           "settings": {
             "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d8500a4a52b84f4c89d1a213b79ca3eb.webm",
-            "title": "Les vins bio",
-            "title_mobile": "Les vins bio",
+            "title": "Title",
+            "title_mobile": "Title",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <\/p>",
             "cta": "",
             "button_link": "",
-            "text_color": "#fff",
-            "button_color": "#201A1C",
-            "button_bg": "#fff"
+            "text_color": "#ffffff",
+            "button_color": "#201a1c",
+            "button_bg": "#ffffff"
           }
         }
       },
