@@ -287,7 +287,7 @@
           "title": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
           "cta": "Personnaliser mon pack",
           "ctaLink": "",
-          "show_card_2": true,
+          "show_card_2": false,
           "image_2": "shopify:\/\/shop_images\/Frame_9358_85b1ae14-df01-45a6-9c79-bd4c12b8c825.png",
           "label_2": "JUSQU’À -25%",
           "title_2": "Nos packs",
