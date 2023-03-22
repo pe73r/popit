@@ -157,6 +157,13 @@
             "answer": "<p>Vous trouverez en-dessous de nos pots <strong>une date d'expiration<\/strong> pour chaque produit. <\/p><p>Elle est indiquée juste à côté du numéro de lot qui garantit une <strong>traçabilité complète de nos produits<\/strong>. Pour votre sécurité, nous vous invitons à <strong>consommer vos compléments avant cette date d’expiration<\/strong>.<\/p>"
           }
         },
+        "fde70513-013e-4d15-a4e9-f9c00cfe3234": {
+          "type": "category_4",
+          "settings": {
+            "question": "Combien de temps durent vos produits ?",
+            "answer": "<p>Tout dépend de la cure réalisée !<\/p><p>Certaines formules vous permettront une <strong>utilisation d'1 mois, d'autres jusqu'à 3 mois<\/strong>. Retenez qu'une cure de Magnésium durera 60 jours tandis que la formule Biotine vous assurera une peau et des cheveux éclatants pendant 120 jours. Vous pourrez <strong>retrouver nos conseils d'utilisation sur chaque produit<\/strong>.<\/p>"
+          }
+        },
         "0bd4fabf-b44f-4129-a014-788739e9841f": {
           "type": "category_5",
           "settings": {
@@ -199,11 +206,11 @@
             "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <strong>hello@we-pop-it.co<\/strong> pour demander la suppression de l'ensemble de vos données. N'hésitez pas aussi à <strong>consulter notre Politique de Confidentialité<\/strong>.<\/p>"
           }
         },
-        "fde70513-013e-4d15-a4e9-f9c00cfe3234": {
+        "591bb5f7-2149-4c44-86f9-e7cb77f1f648": {
           "type": "category_4",
           "settings": {
-            "question": "Combien de temps durent vos produits ?",
-            "answer": "<p>Tout dépend de la cure réalisée !<\/p><p>Certaines formules vous permettront une <strong>utilisation d'1 mois, d'autres jusqu'à 3 mois<\/strong>. Retenez qu'une cure de Magnésium durera 60 jours tandis que la formule Biotine vous assurera une peau et des cheveux éclatants pendant 120 jours. Vous pourrez <strong>retrouver nos conseils d'utilisation sur chaque produit<\/strong>.<\/p>"
+            "question": "Les compléments Pop it conviennent-ils aux enfants ?",
+            "answer": "<p>Parce que petits et grands ont des besoins bien spécifiques, Pop it a lancé <strong>une gamme KIDS pour vous permettre de prendre soin d'eux avec des formules adaptées<\/strong>. Pour le reste de nos formules, certaines ne conviennent pas aux enfants ! Sur chacun de nos produits, vous retrouverez des <strong>informations précises à ce sujet avec des dosages à adapter<\/strong> selon leurs âges.<\/p>"
           }
         }
       },
@@ -230,13 +237,14 @@
         "e60abd65-e951-473f-bba9-f016e9918d0c",
         "a26f6b94-4fe5-4ffb-a1e8-e85f4bd0254b",
         "8a377dd0-496d-453f-8c01-d6dc01fd454f",
+        "fde70513-013e-4d15-a4e9-f9c00cfe3234",
         "0bd4fabf-b44f-4129-a014-788739e9841f",
         "7e07e48c-33ce-4141-b25d-bd70e8b4001c",
         "0c490cce-887a-4e32-a7da-41f06e6c119b",
         "30c4cf42-b674-4506-8a8b-919e29d466e8",
         "dd77089a-8084-46ad-8466-a81d002a52ca",
         "6e082f44-e152-4696-b588-1316ba9ef281",
-        "fde70513-013e-4d15-a4e9-f9c00cfe3234"
+        "591bb5f7-2149-4c44-86f9-e7cb77f1f648"
       ],
       "settings": {
         "title": "FOIRE AUX QUESTIONS",
