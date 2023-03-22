@@ -89,14 +89,39 @@
             "cta": "Je découvre",
             "button_link": ""
           }
+        },
+        "012795f2-5c93-4b23-a164-e7c91241a0ec": {
+          "type": "card",
+          "settings": {
+            "card_width": "1\/2",
+            "title": "Notre sélection de vins d’exception !",
+            "show_hr": true,
+            "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
+            "cta": "Je découvre",
+            "button_link": ""
+          }
+        },
+        "5ada16c2-c2ae-423d-bd05-d0b6c1ac3bf3": {
+          "type": "card",
+          "settings": {
+            "card_width": "1\/2",
+            "image": "shopify:\/\/shop_images\/adam-kool-ndN00KmbJ1c-unsplash.jpg",
+            "title": "Notre sélection de vins d’exception !",
+            "show_hr": true,
+            "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
+            "cta": "Je découvre",
+            "button_link": ""
+          }
         }
       },
       "block_order": [
-        "5b1a20a0-e03f-4e85-af57-eb92b7376f87"
+        "5b1a20a0-e03f-4e85-af57-eb92b7376f87",
+        "012795f2-5c93-4b23-a164-e7c91241a0ec",
+        "5ada16c2-c2ae-423d-bd05-d0b6c1ac3bf3"
       ],
       "settings": {
         "container": "7xl",
-        "color": "#fff"
+        "color": "#4b9b7d"
       }
     }
   },
