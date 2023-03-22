@@ -42,7 +42,7 @@
           "type": "category_1",
           "settings": {
             "question": "Vais-je devoir payer des frais de douane pour une livraison à l'étranger ?",
-            "answer": "<p>Les frais de douane sont spécifiques à chaque pays et dépendent du montant de votre commande. Lorsque des frais s'appliquent, ils sont à votre charge.<\/p>"
+            "answer": "<p>Les frais de douane sont <strong>spécifiques à chaque pays<\/strong> et dépendent du montant de votre commande. Lorsque des frais s'appliquent, <strong>ils sont à votre charge.<\/strong><\/p>"
           }
         },
         "1b714378-dfb3-41a0-9f69-6680410b2b28": {
