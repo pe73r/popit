@@ -80,7 +80,7 @@
       "settings": {
         "text_color": "#201A1C",
         "title": "",
-        "text": "<h2>Notre mission c'est de développer des produits mieux pensés et mieux conçus, et on ne va pas en rester là. Voici quelques résultats dont nous sommes particulièrements fiers :<\/h2>",
+        "text": "<h1>Notre mission c'est de développer des produits mieux pensés et mieux conçus, et on ne va pas en rester là. Voici quelques résultats dont nous sommes particulièrements fiers :<\/h1>",
         "more_text": "",
         "text_mobile": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
         "more_text_mobile": "",
