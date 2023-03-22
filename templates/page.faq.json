@@ -199,6 +199,13 @@
             "answer": "<p>Vous trouverez les <strong>conseils d'utilisation détaillés<\/strong> pour chacun de nos produits, <strong>sur l'étiquette et sur notre site Internet. <\/strong><\/p><p>Contactez notre équipe par email à <strong>hello@we-pop-it.co<\/strong>, sur le chat du site ou via notre formulaire de contact si vous avez des questions ou besoin de conseils personnalisés. <\/p><p><strong>Nous revenons vers vous sous 24h maximum<\/strong> (hors weekends et jours fériés) avec une routine adaptée à vos besoins !<\/p>"
           }
         },
+        "cc5d6ada-6f6f-4890-8e0d-d0ad28951347": {
+          "type": "category_4",
+          "settings": {
+            "question": "Où trouver vos produits ?",
+            "answer": "<p>Nos produits sont vendus sur <strong>notre site web et sur Amazon<\/strong> en Europe !<\/p>"
+          }
+        },
         "0bd4fabf-b44f-4129-a014-788739e9841f": {
           "type": "category_5",
           "settings": {
@@ -240,13 +247,6 @@
             "question": "Comment supprimer toutes mes données personnelles ?",
             "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <strong>hello@we-pop-it.co<\/strong> pour demander la suppression de l'ensemble de vos données. N'hésitez pas aussi à <strong>consulter notre Politique de Confidentialité<\/strong>.<\/p>"
           }
-        },
-        "cc5d6ada-6f6f-4890-8e0d-d0ad28951347": {
-          "type": "category_4",
-          "settings": {
-            "question": "Où trouver vos produits ?",
-            "answer": "<p>Nos produits sont vendus sur <strong>notre site web et sur Amazon<\/strong> en Europe !<\/p>"
-          }
         }
       },
       "block_order": [
@@ -278,13 +278,13 @@
         "946e0205-f026-42e5-b150-301e23b6d83b",
         "ac87fcc3-64d0-40d1-8e5b-ad538a39b35b",
         "6b1728ad-72d0-4005-9304-7b182f6386fe",
+        "cc5d6ada-6f6f-4890-8e0d-d0ad28951347",
         "0bd4fabf-b44f-4129-a014-788739e9841f",
         "7e07e48c-33ce-4141-b25d-bd70e8b4001c",
         "0c490cce-887a-4e32-a7da-41f06e6c119b",
         "30c4cf42-b674-4506-8a8b-919e29d466e8",
         "dd77089a-8084-46ad-8466-a81d002a52ca",
-        "6e082f44-e152-4696-b588-1316ba9ef281",
-        "cc5d6ada-6f6f-4890-8e0d-d0ad28951347"
+        "6e082f44-e152-4696-b588-1316ba9ef281"
       ],
       "settings": {
         "title": "FOIRE AUX QUESTIONS",
