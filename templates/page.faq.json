@@ -128,7 +128,7 @@
       ],
       "settings": {
         "title": "FOIRE AUX QUESTIONS",
-        "header_text": "<p>Une question, un doute ? <br\/>Nous répondons à vos questions<\/p>",
+        "header_text": "<p>Une question, un doute ? <br\/>Nous répondons à toutes vos questions.<\/p>",
         "category1_title": "Catégorie 1",
         "category2_title": "Catégorie 2",
         "category3_title": "Catégorie 3",
@@ -136,7 +136,7 @@
         "category5_title": "",
         "category6_title": "",
         "title_accordion_color": "#4b9b7d",
-        "content_accordion_color": "#201A1C"
+        "content_accordion_color": "#201a1c"
       }
     }
   },
