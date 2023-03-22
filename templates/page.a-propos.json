@@ -15,8 +15,8 @@
           "type": "video",
           "settings": {
             "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d8500a4a52b84f4c89d1a213b79ca3eb.webm",
-            "title": "Title",
-            "title_mobile": "Title",
+            "title": "À propos",
+            "title_mobile": "À propos",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <\/p>",
             "cta": "",
             "button_link": "",
