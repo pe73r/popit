@@ -163,6 +163,13 @@
             "question": "Comment créer un compte ?",
             "answer": "<p><strong>Cliquez-ici<\/strong> pour créer un compte client et renseignez votre adresse mail et mot de passe.<\/p>"
           }
+        },
+        "7e07e48c-33ce-4141-b25d-bd70e8b4001c": {
+          "type": "category_5",
+          "settings": {
+            "question": "Pourquoi créer un compte ?",
+            "answer": "<p>Créer un compte vous permet d'avoir <strong>accès à tout l'historique de vos commandes<\/strong> et d'enregistrer vos adresses de livraison et de facturation !<\/p>"
+          }
         }
       },
       "block_order": [
@@ -188,7 +195,8 @@
         "e60abd65-e951-473f-bba9-f016e9918d0c",
         "a26f6b94-4fe5-4ffb-a1e8-e85f4bd0254b",
         "8a377dd0-496d-453f-8c01-d6dc01fd454f",
-        "0bd4fabf-b44f-4129-a014-788739e9841f"
+        "0bd4fabf-b44f-4129-a014-788739e9841f",
+        "7e07e48c-33ce-4141-b25d-bd70e8b4001c"
       ],
       "settings": {
         "title": "FOIRE AUX QUESTIONS",
