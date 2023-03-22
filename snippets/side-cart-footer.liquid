@@ -1,20 +1,36 @@
 {% if section.settings.extra_text != blank %}
-  <div data-sidecart-footer-text class="py-3 text-center">
-    <p class="text-xs font-bold">{{ section.settings.extra_text }}</p>
-    <p class="text-xs mt-1">{{ section.settings.extra_text_2 }}</p>
-  </div>
+    <div data-sidecart-footer-text class="py-3 text-center">
+        <p class="text-xs font-bold">{{ section.settings.extra_text }}</p>
+        <p class="text-xs mt-1">{{ section.settings.extra_text_2 }}</p>
+    </div>
 {% endif %}
 
-<form
-  action="/cart"
-  novalidate
-  method="post">
-  <button
-    data-send="false"
-    name="checkout"
-    type="submit"
-    class="mt-1 btn-primary bg-orange {% render "button", size:"large", fullWidth: true %}">
-    {{ section.settings.validate_text }} -
-    <span data-cart-indicator>{{ cart.total_price | money_without_trailing_zeros }}</span>
-  </button>
+<form action="/cart" novalidate method="post">
+
+<!-- Just Button  -->
+            <just-pay-button 
+             theme="default"
+             className="just-btn just-btn-product"
+             app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7" 
+             domain="Popit"
+             source="cart">
+            </just-pay-button>
+    	    <style>
+	        .px-3 just-pay-button::part(just-button) {
+                font-family: inherit;
+                font-weight: 700;
+                font-size: 1rem;
+                border-radius: 0.5rem;
+                text-transform:inherit;
+                height: 48px;
+                letter-spacing: normal;
+                margin-bottom:5px;
+            }
+    	    </style>
+<!-- End Of Just Button  -->
+  
+    <button data-send="false" name="checkout" type="submit" class="mt-1 btn-primary bg-orange {% render "button", size:"large", fullWidth: true %}">
+       {{ section.settings.validate_text}} - <span data-cart-indicator >{{ cart.total_price | money_without_trailing_zeros }}</span>
+    </button>
 </form>
+
