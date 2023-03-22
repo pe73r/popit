@@ -96,7 +96,7 @@
     "73be8675-80a8-4864-84fc-1ec2e6b9930d": {
       "type": "rich-text-expandable",
       "settings": {
-        "text_color": "#201A1C",
+        "text_color": "#4b9b7d",
         "title": "Notre mission",
         "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
         "more_text": "",
