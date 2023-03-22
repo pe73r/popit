@@ -94,6 +94,7 @@
           "type": "card",
           "settings": {
             "card_width": "1\/2",
+            "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.png",
             "title": "Notre sélection de vins d’exception !",
             "show_hr": true,
             "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
