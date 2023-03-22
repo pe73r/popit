@@ -177,6 +177,13 @@
             "question": "J'ai perdu mon mot de passe, comment le réinitialiser ?",
             "answer": "<p>Cela arrive à tout le monde ! <\/p><p>Vous pouvez à tout moment réinitialiser votre mot de passe en <strong>cliquant sur \"mot de passe oublié\"<\/strong>. Vous pourrez alors indiquer votre adresse mail et <strong>un mail vous sera envoyé<\/strong> pour créer un nouveau mot de passe.<\/p>"
           }
+        },
+        "30c4cf42-b674-4506-8a8b-919e29d466e8": {
+          "type": "category_5",
+          "settings": {
+            "question": "Comment puis-je me déconnecter de mon compte ?",
+            "answer": "<p>Rien de plus simple, il suffit de vous rendre sur la page <strong>Mon Compte et de cliquer sur le petit bouton<\/strong> en haut à gauche \"<strong>Déconnexion<\/strong>\".<\/p>"
+          }
         }
       },
       "block_order": [
@@ -204,7 +211,8 @@
         "8a377dd0-496d-453f-8c01-d6dc01fd454f",
         "0bd4fabf-b44f-4129-a014-788739e9841f",
         "7e07e48c-33ce-4141-b25d-bd70e8b4001c",
-        "0c490cce-887a-4e32-a7da-41f06e6c119b"
+        "0c490cce-887a-4e32-a7da-41f06e6c119b",
+        "30c4cf42-b674-4506-8a8b-919e29d466e8"
       ],
       "settings": {
         "title": "FOIRE AUX QUESTIONS",
