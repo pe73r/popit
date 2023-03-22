@@ -45,6 +45,13 @@
             "answer": "<p>Les frais de douane sont <strong>spécifiques à chaque pays<\/strong> et dépendent du montant de votre commande. Lorsque des frais s'appliquent, <strong>ils sont à votre charge.<\/strong><\/p>"
           }
         },
+        "65687ccb-ea2b-4465-8ec4-b88b11b7c933": {
+          "type": "category_1",
+          "settings": {
+            "question": "Quelle est votre politique de retour ou d'échange ?",
+            "answer": "<p>Nous acceptons les retours pour les <strong>produits neufs et non utilisés dans un délai de 14 jours<\/strong> après la réception de la commande. Les produits doivent être dans leur <strong>emballage d'origine, en parfait état<\/strong>. Les frais de retour sont à votre charge. Nous vous invitons à nous contacter à <strong>hello@we-pop-it.co <\/strong>pour que nous puissions traiter votre retour dans les plus brefs délais. Pour effectuer un <strong>échange, vous pouvez suivre la procédure de retour classique<\/strong> puis passer une nouvelle commande.<\/p>"
+          }
+        },
         "1b714378-dfb3-41a0-9f69-6680410b2b28": {
           "type": "category_2",
           "settings": {
@@ -130,6 +137,7 @@
         "25172bc4-ca1f-451f-bca2-ac945fa6ecb2",
         "3714bd05-89fb-48f4-967a-db43635b8981",
         "ebe4ec3f-1534-4538-a707-239aba6a2d8b",
+        "65687ccb-ea2b-4465-8ec4-b88b11b7c933",
         "1b714378-dfb3-41a0-9f69-6680410b2b28",
         "2174bf0a-c056-43eb-b32f-1fa32235d0ac",
         "5444bf21-b36c-4e90-b90b-b0342eba52bc",
