@@ -68,8 +68,7 @@
 
       {% unless item_count == 0 %}
         <side-cart-footer class="flex flex-col bg-beige pb-4">
-
-          {% if section.settings.upSellCollection %}
+          {% if section.settings.upSellCollection != blank %}
             <div class=" py-4 bg-green-clair">
               <h5 class="text-lg font-bold text-center mb-2 text-green">{{ section.settings.upSellTitle }}</h5>
               {% render "side-cart-upsell-carousel", collection: section.settings.upSellCollection %}
