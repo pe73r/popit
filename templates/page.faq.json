@@ -94,11 +94,11 @@
             "answer": "<p>Avant tout, pensez à <strong>vérifier la date de validité<\/strong> de votre carte. Si c’est une nouvelle carte, vous devez avoir effectué au préalable un retrait d’argent ou un paiement avec votre carte bancaire (hors internet). <\/p><p>Après plusieurs tentatives, et\/ou plusieurs cartes, <strong>essayez avec une nouvelle adresse e-mail, ou testez un autre moyen de paiement disponible<\/strong> (ex : Paypal). Si votre panier est élevé, pensez à <strong>vérifier le plafond<\/strong> de votre carte bancaire.<\/p>"
           }
         },
-        "2e26a1e8-057a-45b5-afe8-31442d71686b": {
+        "6ebbe525-0c4a-4ba7-bc23-b91297527a06": {
           "type": "category_3",
           "settings": {
             "question": "Comment utiliser mon code promo ? Peut-on en combiner plusieurs ?",
-            "answer": "<p>Une fois votre panier prêt, à l'étape de renseignement de l'adresse de livraison, <strong>vous verrez à droite un champ<\/strong> pour renseigner et appliquer votre code promo. Attention : <strong>vous ne pouvez bénéficier que d'un seul code<\/strong> de réduction par commande.<\/p>"
+            "answer": "<p>Une fois votre panier prêt, à l'étape de renseignement de l'adresse de livraison, vous <strong>verrez à droite un champ<\/strong> pour renseigner et appliquer votre code promo. Attention : vous ne pouvez <strong>bénéficier que d'un seul code<\/strong> de réduction par commande.<\/p>"
           }
         },
         "2ed14995-7c89-4112-a3ee-61edf1666bf4": {
@@ -165,7 +165,7 @@
         "5444bf21-b36c-4e90-b90b-b0342eba52bc",
         "39e8455c-fad6-47b4-a8f9-ba0fa489fda1",
         "c2950670-f3e8-427b-805c-0ff7055ae5ea",
-        "2e26a1e8-057a-45b5-afe8-31442d71686b",
+        "6ebbe525-0c4a-4ba7-bc23-b91297527a06",
         "2ed14995-7c89-4112-a3ee-61edf1666bf4",
         "057577c2-e2b3-4187-bac1-dc3f71435120",
         "e32693d4-7ab1-4c52-95d2-7f1efe53089a",
