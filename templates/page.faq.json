@@ -198,6 +198,13 @@
             "question": "Comment supprimer toutes mes données personnelles ?",
             "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <strong>hello@we-pop-it.co<\/strong> pour demander la suppression de l'ensemble de vos données. N'hésitez pas aussi à <strong>consulter notre Politique de Confidentialité<\/strong>.<\/p>"
           }
+        },
+        "fde70513-013e-4d15-a4e9-f9c00cfe3234": {
+          "type": "category_4",
+          "settings": {
+            "question": "Combien de temps durent vos produits ?",
+            "answer": "<p>Tout dépend de la cure réalisée !<\/p><p>Certaines formules vous permettront une <strong>utilisation d'1 mois, d'autres jusqu'à 3 mois<\/strong>. Retenez qu'une cure de Magnésium durera 60 jours tandis que la formule Biotine vous assurera une peau et des cheveux éclatants pendant 120 jours. Vous pourrez <strong>retrouver nos conseils d'utilisation sur chaque produit<\/strong>.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -228,7 +235,8 @@
         "0c490cce-887a-4e32-a7da-41f06e6c119b",
         "30c4cf42-b674-4506-8a8b-919e29d466e8",
         "dd77089a-8084-46ad-8466-a81d002a52ca",
-        "6e082f44-e152-4696-b588-1316ba9ef281"
+        "6e082f44-e152-4696-b588-1316ba9ef281",
+        "fde70513-013e-4d15-a4e9-f9c00cfe3234"
       ],
       "settings": {
         "title": "FOIRE AUX QUESTIONS",
