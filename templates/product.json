@@ -40,9 +40,9 @@
         "1e425230-6800-49eb-922c-18eab7fbfd55": {
           "type": "delivery_note",
           "settings": {
-            "text": "<b>FREE SHIPPING<\/b> à partir de 45 €",
+            "text": "<b>LIVRAISON GRATUITE<\/b> à partir de 49€",
             "truck": "shopify:\/\/shop_images\/site-livraison.png",
-            "text_2": "<b>LIVRAISON:<\/b> sous 2 à 3 jours",
+            "text_2": "<b>LIVRAISON RAPIDE<\/b> sous 2 à 3 jours",
             "oclock": "shopify:\/\/shop_images\/vitamines-haltere-gummies_c9dafd91-8522-47d4-9ea3-a02420d5d410.png"
           }
         }
@@ -119,13 +119,15 @@
         "2ee8f73b-9ef4-4477-a1b0-df5959f30eb5": {
           "type": "description",
           "settings": {
-            "title": "EFFICACITÉ"
+            "title": "EFFICACITÉ",
+            "title_mobile": "Description"
           }
         },
         "f0707111-a8dd-450d-b9bb-56ac58f20cd3": {
           "type": "use",
           "settings": {
             "title": "CONSEILS D’UTILISATION",
+            "title_mobile": "Utilisation",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
           }
         },
@@ -133,6 +135,7 @@
           "type": "composition",
           "settings": {
             "title": "COMPOSITION",
+            "title_mobile": "Composition",
             "text": "<p>Lorem o eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
           }
         }
@@ -266,13 +269,15 @@
         "68559418-eb2e-4bf9-a79f-f97de8962e5b": {
           "type": "block",
           "settings": {
-            "text": "Appelez-nous au +330678125521"
+            "text": "Appelez-nous au +330678125521",
+            "url": ""
           }
         },
         "fdbe05cc-c480-4415-9f77-fbb6afcd0fda": {
           "type": "block",
           "settings": {
-            "text": "Envoyez-nous un message"
+            "text": "Envoyez-nous un message",
+            "url": ""
           }
         }
       },
