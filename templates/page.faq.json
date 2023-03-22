@@ -171,6 +171,13 @@
             "answer": "<p>Parce que petits et grands ont des besoins bien spécifiques, Pop it a lancé <strong>une gamme KIDS pour vous permettre de prendre soin d'eux avec des formules adaptées<\/strong>. Pour le reste de nos formules, certaines ne conviennent pas aux enfants ! Sur chacun de nos produits, vous retrouverez des <strong>informations précises à ce sujet avec des dosages à adapter<\/strong> selon leurs âges.<\/p>"
           }
         },
+        "561859f6-fd33-48f6-a6de-531779844cd9": {
+          "type": "category_4",
+          "settings": {
+            "question": "Vos pots sont-ils en plastique recyclable ?",
+            "answer": "<p>Nos compléments alimentaires sont conditionnés dans des <strong>pots en plastique 100% recyclables<\/strong> (pot + bouchon + opercule). <\/p>"
+          }
+        },
         "0bd4fabf-b44f-4129-a014-788739e9841f": {
           "type": "category_5",
           "settings": {
@@ -213,11 +220,11 @@
             "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <strong>hello@we-pop-it.co<\/strong> pour demander la suppression de l'ensemble de vos données. N'hésitez pas aussi à <strong>consulter notre Politique de Confidentialité<\/strong>.<\/p>"
           }
         },
-        "561859f6-fd33-48f6-a6de-531779844cd9": {
+        "946e0205-f026-42e5-b150-301e23b6d83b": {
           "type": "category_4",
           "settings": {
-            "question": "Vos pots sont-ils en plastique recyclable ?",
-            "answer": "<p>Nos compléments alimentaires sont conditionnés dans des <strong>pots en plastique 100% recyclables<\/strong> (pot + bouchon + opercule). <\/p>"
+            "question": "Pourquoi avoir fait le choix de format gummies pour certaines de vos formules ?",
+            "answer": "<p>Le gummy est un complément alimentaire <strong>fortement dosé<\/strong> en plantes, vitamines ou minéraux avec une galénique particulière.<\/p><p>Ludique et au délicieux goût fruité, il est irrésistible et <strong>100% végane chez Pop it grâce à la pectine de fruit<\/strong> ! Les gommes à mâcher permettant une absorption sublinguale, les <strong>actifs vont être absorbés à travers les petites veines présentes sous la langue<\/strong>, et vont rejoindre la circulation sanguine. La biodisponibilité des actifs est optimale pour un <strong>maximum d'efficacité<\/strong>. <br\/><\/p><p><br\/>Le gummy, c'est aussi zéro contrainte et <strong>idéal pour celles et ceux qui ne peuvent pas avaler les gélules<\/strong> ou pour qui la prise de compléments alimentaires s'apparente à une corvée. C'est le complément <strong>parfait pour les enfants. Pas besoin d'un verre d'eau<\/strong> pour accompagner votre complément. Sentez-vous libre de prendre vos gummies n'importe où !<\/p>"
           }
         }
       },
@@ -246,13 +253,14 @@
         "8a377dd0-496d-453f-8c01-d6dc01fd454f",
         "fde70513-013e-4d15-a4e9-f9c00cfe3234",
         "591bb5f7-2149-4c44-86f9-e7cb77f1f648",
+        "561859f6-fd33-48f6-a6de-531779844cd9",
         "0bd4fabf-b44f-4129-a014-788739e9841f",
         "7e07e48c-33ce-4141-b25d-bd70e8b4001c",
         "0c490cce-887a-4e32-a7da-41f06e6c119b",
         "30c4cf42-b674-4506-8a8b-919e29d466e8",
         "dd77089a-8084-46ad-8466-a81d002a52ca",
         "6e082f44-e152-4696-b588-1316ba9ef281",
-        "561859f6-fd33-48f6-a6de-531779844cd9"
+        "946e0205-f026-42e5-b150-301e23b6d83b"
       ],
       "settings": {
         "title": "FOIRE AUX QUESTIONS",
