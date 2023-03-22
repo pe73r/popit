@@ -23,7 +23,7 @@
               <accordion-trigger class="group">
                 <accordion-header class="flex justify-between items-center">
                   <div class="flex-1 mr-2">
-                    <span class="block text-sm first-letter:uppercase" style="color:{{ section.settings.title_accordion_color }}">
+                    <span class="Fredoka block text-sm first-letter:uppercase" style="color:{{ section.settings.title_accordion_color }}">
                       {{ metafield_question }}
                     </span>
                   </div>
@@ -53,8 +53,8 @@
     <script type="application/ld+json">
       {
       "@context":"https://schema.org",
-                                                                                                                                        "@type":"FAQPage",
-                                                                                                                                        "mainEntity":[
+                                                                                                                                              "@type":"FAQPage",
+                                                                                                                                              "mainEntity":[
       {% assign i = 1 %}
       {% for block in section.blocks -%}
         {% liquid 
@@ -67,13 +67,13 @@
               -%}
         {
         "@type":"Question",
-                                                                                                                                                                                        "name":"{{ metafield_question }}",
+                                                                                                                                                                                                "name":"{{ metafield_question }}",
         "acceptedAnswer":
-                                                                                                                                                                                        {
-                                                                                                                                                                                          "@type":"Answer",
-                                                                                                                                                                                          "text":"{{ metafield_answer }}"
+                                                                                                                                                                                                {
+                                                                                                                                                                                                  "@type":"Answer",
+                                                                                                                                                                                                  "text":"{{ metafield_answer }}"
         }
-                                                                                                                                                                                      },
+                                                                                                                                                                                              },
       {%- endfor %}
       ]
       }
