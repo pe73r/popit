@@ -6,6 +6,28 @@
 {% endif %}
 
 <form action="/cart" novalidate method="post">
+
+<!-- Just Button  -->
+            <just-pay-button 
+             theme="default"
+             className="just-btn just-btn-product"
+             app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7" 
+             domain="Popit"
+             source="cart">
+            </just-pay-button>
+    	    <style>
+	        .px-3 just-pay-button::part(just-button) {
+                text-transform:inherit;
+                border-radius: 0.75rem;
+                font-family: inherit;
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+                height:44px;
+                font-weight: inherit;
+              }
+    	    </style>
+<!-- End Of Just Button  -->
+  
     <button data-send="false" name="checkout" type="submit" class="mt-1 btn-primary bg-orange {% render "button", size:"large", fullWidth: true %}">
        {{ section.settings.validate_text}} - <span data-cart-indicator >{{ cart.total_price | money_without_trailing_zeros }}</span>
     </button>
