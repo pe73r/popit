@@ -83,8 +83,8 @@
         "39e8455c-fad6-47b4-a8f9-ba0fa489fda1": {
           "type": "category_3",
           "settings": {
-            "question": "Je n’ai pas reçu mon Diagnostic Personnalisé, que faire ?",
-            "answer": "<p>N’hésitez pas à regarder dans vos spams, nos diagnostics s’y glissent parfois. Si vous ne le trouvez toujours pas, vous pouvez contacter notre Service Clients via le formulaire juste <a href=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\" target=\"_blank\" title=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\"><span style=\"text-decoration:underline\"><strong>ici<\/strong><\/span><\/a>. Notre équipe vous apportera une solution dans les meilleurs délais.<\/p>"
+            "question": "Comment garantissez-vous un paiement sécurisé sur votre site ?",
+            "answer": "<p>Tous les paiements par carte bancaire sont <strong>100% sécurisés par la plateforme Mollie<\/strong>, conformément aux dispositifs de sécurité interbancaires français et internationaux. Mollie est une <strong>infrastructure de paiement web sécurisée<\/strong> (certifiée PCI niveau 1, le niveau de sécurité le plus élevé) et très efficace.<\/p>"
           }
         },
         "2ed14995-7c89-4112-a3ee-61edf1666bf4": {
