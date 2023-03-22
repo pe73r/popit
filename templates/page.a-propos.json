@@ -8,6 +8,30 @@
         "display_page_content": true
       }
     },
+    "5410ab4a-cd77-485d-9749-df7116ef3979": {
+      "type": "slideshow",
+      "blocks": {
+        "5daac023-9716-45e7-b58f-c74f96396acb": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/76c62d28cc8d4b1d9c172ad52a492e49.mp4",
+            "title": "Les vins bio",
+            "title_mobile": "Les vins bio",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <\/p>",
+            "cta": "",
+            "button_link": "",
+            "text_color": "#fff",
+            "button_color": "#201A1C",
+            "button_bg": "#fff"
+          }
+        }
+      },
+      "block_order": [
+        "5daac023-9716-45e7-b58f-c74f96396acb"
+      ],
+      "settings": {
+      }
+    },
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14": {
       "type": "banner-intro",
       "settings": {
@@ -16,7 +40,7 @@
         "cta": "",
         "ctaLink": "",
         "show_hr": true,
-        "bg_color": "#FAF5EF",
+        "bg_color": "#faf5ef",
         "color": "#4b9b7d"
       }
     },
@@ -64,6 +88,7 @@
   },
   "order": [
     "main",
+    "5410ab4a-cd77-485d-9749-df7116ef3979",
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14",
     "fb6dd386-da95-473a-9943-f627eb882012",
     "c6c02950-3c00-4fb3-bf99-a91de1f0450a",
