@@ -194,6 +194,20 @@
           </button>
         </add-to-cart>
 
+<!-- Just Button  -->
+            <just-pay-button 
+             theme="default"
+             default_variant="{{product.selected_or_first_available_variant.id}}"
+             default_available="{{product.selected_or_first_available_variant.available}}"
+             product_id="{{ product.id }}" 
+             product_handle="{{ product.handle }}"                        
+             className="just-btn just-btn-product sticky"
+             app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7" 
+             domain="Popit"
+             source="product">
+            </just-pay-button>
+<!-- End Of Just Button  -->
+        
         {% if block.settings.show_dynamic_checkout %}
           {{ form | payment_button }}
         {% endif %}
