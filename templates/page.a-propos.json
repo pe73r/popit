@@ -75,6 +75,19 @@
         "color": "#4b9b7d"
       }
     },
+    "b1cde5b7-b28b-4a93-b8cd-55e523e5693b": {
+      "type": "rich-text-expandable",
+      "settings": {
+        "text_color": "#201A1C",
+        "title": "",
+        "text": "<h2>Notre mission c'est de développer des produits mieux pensés et mieux conçus, et on ne va pas en rester là. Voici quelques résultats dont nous sommes particulièrements fiers :<\/h2>",
+        "more_text": "",
+        "text_mobile": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+        "more_text_mobile": "",
+        "text_link": "Lire plus",
+        "text_less": "Lire moins"
+      }
+    },
     "bf2b5390-cf59-4b11-bbb1-2198456aa735": {
       "type": "home-cards",
       "blocks": {
@@ -130,6 +143,7 @@
     "main",
     "5410ab4a-cd77-485d-9749-df7116ef3979",
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14",
+    "b1cde5b7-b28b-4a93-b8cd-55e523e5693b",
     "bf2b5390-cf59-4b11-bbb1-2198456aa735"
   ]
 }
