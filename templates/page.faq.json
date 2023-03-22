@@ -55,8 +55,8 @@
         "1b714378-dfb3-41a0-9f69-6680410b2b28": {
           "type": "category_2",
           "settings": {
-            "question": "J’ai reçu un produit erroné\/manquant\/abimé, que dois-je faire ?",
-            "answer": "<p>Nous sommes sincèrement navrés pour ce désagrément.  <\/p><p>Vous pouvez contacter notre Service Clients via le formulaire juste <a href=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\" target=\"_blank\" title=\"https:\/\/labelleboucle-2022.myshopify.com\/pages\/contactez-nous\"><span style=\"text-decoration:underline\"><strong>ici<\/strong><\/span><\/a>. Notre équipe vous apportera une solution dans les meilleurs délais. <\/p>"
+            "question": "Est-ce que je peux modifier les informations de ma commande (produits, adresse, ...) ?",
+            "answer": "<p>Une fois la commande passée, il n'est malheureusement <strong>pas possible de la modifier<\/strong>.<\/p>"
           }
         },
         "2174bf0a-c056-43eb-b32f-1fa32235d0ac": {
