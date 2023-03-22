@@ -69,8 +69,8 @@
       "settings": {
         "section_style": "boxed",
         "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_16.02.24.png",
-        "title": "",
-        "subtitle": "",
+        "title": "À propos",
+        "subtitle": "<p>Lorerm ipsum 2023.<\/p>",
         "cta": "",
         "ctaLink": "",
         "bg_color": "#edece6",
