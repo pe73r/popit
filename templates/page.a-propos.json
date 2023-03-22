@@ -33,6 +33,22 @@
         "show_dots": true
       }
     },
+    "c3651bbc-c24a-44d2-a7b1-9bac325ddff1": {
+      "type": "image-text",
+      "settings": {
+        "layout": "image_right",
+        "content": "column",
+        "text_align": "center",
+        "image": "shopify:\/\/shop_images\/matteo-vistocco-Dph00R2SwFo-unsplash.jpg",
+        "hide_image_mobile": false,
+        "subtitle": "",
+        "title": "Title",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>",
+        "subtitle_color": "#4B9B7D",
+        "title_color": "#4B9B7D",
+        "text_color": "#4B9B7D"
+      }
+    },
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14": {
       "type": "banner-intro",
       "blocks": {
@@ -143,6 +159,7 @@
   "order": [
     "main",
     "5410ab4a-cd77-485d-9749-df7116ef3979",
+    "c3651bbc-c24a-44d2-a7b1-9bac325ddff1",
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14",
     "73be8675-80a8-4864-84fc-1ec2e6b9930d",
     "bf2b5390-cf59-4b11-bbb1-2198456aa735"
