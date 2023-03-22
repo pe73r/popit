@@ -99,8 +99,8 @@
             "card_width": "1\/2",
             "content": "outside",
             "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_16.02.24.png",
-            "title": "",
-            "text": "",
+            "title": "Title",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
             "button_link": "",
             "color": "#4b9b7d"
           }
@@ -112,7 +112,7 @@
             "content": "inside",
             "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.png",
             "title": "Notre sélection de vins d’exception !",
-            "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
             "button_link": "",
             "color": "#fff"
           }
@@ -121,10 +121,10 @@
           "type": "card",
           "settings": {
             "card_width": "1\/2",
-            "content": "inside",
+            "content": "outside",
             "image": "shopify:\/\/shop_images\/adam-kool-ndN00KmbJ1c-unsplash.jpg",
-            "title": "",
-            "text": "<p>Vins d’auteur et vins d’artisans au naturel, depuis 2003.<\/p>",
+            "title": "Title",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
             "button_link": "",
             "color": "#fff"
           }
