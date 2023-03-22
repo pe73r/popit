@@ -129,11 +129,11 @@
       "settings": {
         "title": "FOIRE AUX QUESTIONS",
         "header_text": "<p>Une question, un doute ? <br\/>Nous répondons à toutes vos questions.<\/p>",
-        "category1_title": "Catégorie 1",
-        "category2_title": "Catégorie 2",
-        "category3_title": "Catégorie 3",
-        "category4_title": "Catégorie 4",
-        "category5_title": "",
+        "category1_title": "Livraison & Retours",
+        "category2_title": "Commande",
+        "category3_title": "Paiement & Facturation",
+        "category4_title": "Produits & Utilisation",
+        "category5_title": "Compte client",
         "category6_title": "",
         "title_accordion_color": "#4b9b7d",
         "content_accordion_color": "#201a1c"
