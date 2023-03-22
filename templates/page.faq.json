@@ -87,6 +87,13 @@
             "answer": "<p>Tous les paiements par carte bancaire sont <strong>100% sécurisés par la plateforme Mollie<\/strong>, conformément aux dispositifs de sécurité interbancaires français et internationaux. Mollie est une <strong>infrastructure de paiement web sécurisée<\/strong> (certifiée PCI niveau 1, le niveau de sécurité le plus élevé) et très efficace.<\/p>"
           }
         },
+        "c2950670-f3e8-427b-805c-0ff7055ae5ea": {
+          "type": "category_3",
+          "settings": {
+            "question": "Pourquoi le paiement de ma commande a-t-il échoué ?",
+            "answer": "<p>Avant tout, pensez à <strong>vérifier la date de validité<\/strong> de votre carte. Si c’est une nouvelle carte, vous devez avoir effectué au préalable un retrait d’argent ou un paiement avec votre carte bancaire (hors internet). <\/p><p>Après plusieurs tentatives, et\/ou plusieurs cartes, <strong>essayez avec une nouvelle adresse e-mail, ou testez un autre moyen de paiement disponible<\/strong> (ex : Paypal). Si votre panier est élevé, pensez à <strong>vérifier le plafond<\/strong> de votre carte bancaire.<\/p>"
+          }
+        },
         "2ed14995-7c89-4112-a3ee-61edf1666bf4": {
           "type": "category_4",
           "settings": {
@@ -150,6 +157,7 @@
         "9f2ce022-2364-4b40-90a7-20580dcd3a76",
         "5444bf21-b36c-4e90-b90b-b0342eba52bc",
         "39e8455c-fad6-47b4-a8f9-ba0fa489fda1",
+        "c2950670-f3e8-427b-805c-0ff7055ae5ea",
         "2ed14995-7c89-4112-a3ee-61edf1666bf4",
         "057577c2-e2b3-4187-bac1-dc3f71435120",
         "e32693d4-7ab1-4c52-95d2-7f1efe53089a",
