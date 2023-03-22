@@ -41,7 +41,7 @@
           "settings": {
             "image_width": 80,
             "title": "UN DESIGN ÉPURÉ",
-            "text": "Garanti cruelty-free et sans matières animales"
+            "text": "Garanti cruelty-free <br>et sans matières animales"
           }
         },
         "f3d3f360-ea9c-42dd-b592-3adcd58b00ae": {
@@ -49,7 +49,7 @@
           "settings": {
             "image_width": 80,
             "title": "LE CONFORT ENCORE PLUS FORT",
-            "text": "Garanti cruelty-free et sans matières animales"
+            "text": "Garanti cruelty-free <br> et sans matières animales"
           }
         },
         "1dc1198c-e68f-40a5-b4df-51fb4ee6f7b2": {
@@ -57,7 +57,7 @@
           "settings": {
             "image_width": 80,
             "title": "AU NOM DE LA NATURE",
-            "text": "Garanti cruelty-free et sans matières animales"
+            "text": "Garanti cruelty-free <br> et sans matières animales"
           }
         }
       },
