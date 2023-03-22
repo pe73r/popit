@@ -1,14 +1,19 @@
 <div class="py-10 md:py-16 lg:py-20" style=" background-color: {{ section.settings.background_color }}">
     <div class="w-11/12 max-w-[840px] mx-auto">
-     <div class="flex flex-col items-center md:flex-row md:gap-10 {% if section.settings.layout == 'image_right' %} md:flex-row-reverse {% endif %}">
+     <div class="flex flex-col items-center md:gap-10 {% if section.settings.layout == 'image_right' %} md:flex-row-reverse {% endif %} {% if section.settings.content == 'column' %} md:flex-col {% else %}  md:flex-row {% endif %}">
         <div class="w-full md:basis-5/12 {% if section.settings.hide_image_mobile %} hidden {% endif %} md:block">
           {% if section.settings.image != blank  %}
-              {% render "image" image: section.settings.image , class:"w-full" %}
+              <img
+              class="lazy mx-auto w-full"
+              src="{{ section.settings.image | img_url: 'master'}}"
+              alt="{{ section.settings.image.alt }}"
+              loading="lazy"
+              style="max-width:{{ section.settings.image_width }}px">
           {% else %}
              {{ 'image' | placeholder_svg_tag }}
           {% endif %}
         </div>
-        <div class="md:basis-7/12 text-center md:text-left mt-8 md:mt-0">
+        <div class="md:basis-7/12 text-center  mt-8 md:mt-0 {% if section.settings.text_align == 'center' %} md:text-center {% else %} md:text-left {% endif %}">
             {%- if section.settings.subtitle != blank -%} 
                 <h5 class="font-[GroteskBold] text-sm uppercase mb-2" style="color: {{ section.settings.subtitle_color }}">
                 {{ section.settings.subtitle }}
@@ -31,13 +36,7 @@
       </div>
     </div> 
 </div>
-  <style>
-    .section-image-text .text-base strong {
-      font-family: "GroteskBold";
-       font-weight: 700;
-    }
-  </style>
-  
+ 
   {% schema %}
   {
     "name": "Image-Text",
@@ -59,6 +58,38 @@
         ],
         "default": "image_right",
         "label": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "content",
+        "options": [
+            {
+            "value": "column",
+            "label": "Column"
+            },
+            {
+            "value": "row",
+            "label": "Row"
+            }
+        ],
+        "default": "row",
+        "label": "Orientation"
+      },
+      {
+        "type": "select",
+        "id": "text_align",
+        "options": [
+            {
+            "value": "center",
+            "label": "Center"
+            },
+            {
+            "value": "left",
+            "label": "Left"
+            }
+        ],
+        "default": "left",
+        "label": "Text align"
       },
       {
         "type": "image_picker",
@@ -97,19 +128,19 @@
         "type": "color",
         "id": "subtitle_color",
         "label": "Subtitle color",
-        "default": "#713F2E"
+        "default": "#4B9B7D"
       },
       {
         "type": "color",
         "id": "title_color",
         "label": "Title color",
-        "default": "#733E2B"
+        "default": "#4B9B7D"
       },
       {
         "type": "color",
         "id": "text_color",
         "label": "Text color",
-        "default": "#927254"
+        "default": "#4B9B7D"
       }
      
     ],
