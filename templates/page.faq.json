@@ -63,7 +63,7 @@
           "type": "category_2",
           "settings": {
             "question": "Est-ce que je peux annuler ma commande ?",
-            "answer": "<p>Avec un peu de chance, votre <strong>commande n'a pas encore été traitée<\/strong> par notre logisticien. <\/p><p>Dans ce cas uniquement, nous pourrons intervenir pour l'annuler si vous nous envoyez un mail très rapidement à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co<\/strong><\/a> ! Mais ce n'est pas garanti.<\/p>"
+            "answer": "<p>Avec un peu de chance, votre <strong>commande n'a pas encore été traitée<\/strong> par notre logisticien. <\/p><p>Dans ce cas uniquement, nous pourrons intervenir pour l'annuler si vous nous envoyez un mail très rapidement à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co <\/strong><\/a>! Mais ce n'est pas garanti.<\/p>"
           }
         },
         "9f2ce022-2364-4b40-90a7-20580dcd3a76": {
