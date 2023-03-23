@@ -70,7 +70,7 @@
           "type": "category_2",
           "settings": {
             "question": "Je viens de recevoir ma commande et il manque un produit ou un produit est arrivé cassé ou défectueux. Que faire ?",
-            "answer": "<p>À réception, pensez toujours à <strong>regarder si votre colis a été endommagé ou partiellement ouvert<\/strong> avant de l'ouvrir complètement. <\/p><p>Si il est endommagé, prenez des <strong>photos de l'état général du colis<\/strong>, des produits cassés et de l'étiquette d'expédition collée sur le colis. Ensuite, envoyez-nous le tout à <strong>hello@we-pop-it.co<\/strong> et nous vous renverrons les <strong>produits manquants ou endommagés<\/strong> !<\/p>"
+            "answer": "<p>À réception, pensez toujours à <strong>regarder si votre colis a été endommagé ou partiellement ouvert<\/strong> avant de l'ouvrir complètement. <\/p><p>Si il est endommagé, prenez des <strong>photos de l'état général du colis<\/strong>, des produits cassés et de l'étiquette d'expédition collée sur le colis. Ensuite, envoyez-nous le tout à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co<\/strong><\/a> et nous vous renverrons les <strong>produits manquants ou endommagés<\/strong> !<\/p>"
           }
         },
         "5444bf21-b36c-4e90-b90b-b0342eba52bc": {
