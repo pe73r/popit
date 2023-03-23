@@ -245,7 +245,7 @@
           "type": "category_5",
           "settings": {
             "question": "Comment supprimer toutes mes données personnelles ?",
-            "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <strong>hello@we-pop-it.co<\/strong> pour demander la suppression de l'ensemble de vos données. N'hésitez pas aussi à <strong>consulter notre Politique de Confidentialité<\/strong>.<\/p>"
+            "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co<\/strong><\/a> pour demander la suppression de l'ensemble de vos données. N'hésitez pas aussi à <strong>consulter notre Politique de Confidentialité<\/strong>.<\/p>"
           }
         }
       },
