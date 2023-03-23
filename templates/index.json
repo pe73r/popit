@@ -178,6 +178,15 @@
             "heading": "Tell your story",
             "url": ""
           }
+        },
+        "23da9a31-321e-4240-88b4-a189e479c7c8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sticker-gelule-vege-vitamines.png",
+            "subheading": "Slide title",
+            "heading": "Tell your story",
+            "url": ""
+          }
         }
       },
       "block_order": [
@@ -185,7 +194,8 @@
         "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-1",
         "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-2",
         "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-3",
-        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-4"
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-4",
+        "23da9a31-321e-4240-88b4-a189e479c7c8"
       ],
       "settings": {
         "subheading": "",
