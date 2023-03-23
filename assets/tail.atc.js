@@ -15,7 +15,7 @@ defineCustomElement(
     }
 
     static get observedAttributes() {
-      return ["data-quantity"];
+      return ["data-quantity", "data-price-stroke"];
     }
     attributeChangedCallback(name, oldValue, newValue) {
       if (name === "data-quantity") {
@@ -30,6 +30,20 @@ defineCustomElement(
           const priceStroke = this.getAttribute("data-price-stroke").replace("€", "").trim();
           const newPriceStroke = Number(newValue) * Number(priceStroke);
           priceStrokeElement.textContent = `${newPriceStroke}€`;
+        }
+      }
+      if (name === "data-price-stroke") {
+        const priceStrokeElement = this.querySelector("[data-price-stroke]");
+        if (priceStrokeElement) {
+          const priceStroke = newValue.replace("€", "").replace(",", ".").trim();
+          const quantity = this.getAttribute("data-quantity") || "1";
+          const newPriceStroke = Number(quantity) * Number(priceStroke);
+          console.log({ priceStroke, quantity, newPriceStroke, newValue, q: Number(quantity), p: Number(priceStroke) });
+          if (priceStroke > 0) {
+            priceStrokeElement.textContent = `${newPriceStroke}€`;
+          } else {
+            priceStrokeElement.textContent = "";
+          }
         }
       }
     }

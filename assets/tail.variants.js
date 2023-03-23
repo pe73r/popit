@@ -15,7 +15,6 @@ defineCustomElement(
       this.atc = document.querySelectorAll(`add-to-cart[data-product="${this.getAttribute("data-product")}"]`);
       this.variants = JSON.parse(this.querySelector("#product-variants").innerHTML);
 
-      console.log(this.variants, this.atc);
       selects.concat(inputs).forEach((element) => {
         element.addEventListener("change", this.onChange);
       });
@@ -60,6 +59,18 @@ defineCustomElement(
                 .replace("€", "")
                 .trim() + "€")
         );
+        const hasPriceStroke = variant.price !== variant.compare_at_price;
+
+        document.querySelectorAll("add-to-cart").forEach((element) => {
+          console.log({ element });
+          element.setAttribute(
+            "data-price-stroke",
+            price
+              .format(variant.compare_at_price / 100)
+              .replace("€", "")
+              .trim() + "€"
+          );
+        });
         if (variant.featured_image) {
           const variantImg = variant.featured_image.src.split("v=")[1];
           document.querySelectorAll("carousel-dot").forEach((element) => {
