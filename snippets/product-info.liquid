@@ -418,17 +418,17 @@
 
                         {% if counter == 1 %}
                           <div class="flex justify-center items-center">
-                            <span class="text-sm md:text-base">{{ product.variants[0].price | money }}</span>
+                            <span class="text-sm md:text-base font-bold">{{ product.variants[0].price | money }}</span>
                             <span class="md:ml-2 text-xs font-light line-through">{{ product.variants[0].compare_at_price | money }}</span>
                           </div>
                         {% elsif counter == 2 %}
                           <div class="flex justify-center items-center">
-                            <span class="text-sm md:text-base">{{ product.variants[1].price | money }}</span>
+                            <span class="text-sm md:text-base font-bold">{{ product.variants[1].price | money }}</span>
                             <span class="md:ml-2 text-xs font-light line-through">{{ product.variants[1].compare_at_price | money }}</span>
                           </div>
                         {% elsif counter == 3 %}
                           <div class="flex justify-center items-center">
-                            <span class="text-sm md:text-base">{{ product.variants[2].price | money }}</span>
+                            <span class="text-sm md:text-base font-bold">{{ product.variants[2].price | money }}</span>
                             <span class="md:ml-2 text-xs font-light line-through">{{ product.variants[2].compare_at_price | money }}</span>
                           </div>
                         {% endif %}
