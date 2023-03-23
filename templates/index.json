@@ -38,6 +38,7 @@
         "16635863695bdbafb2-0"
       ],
       "settings": {
+        "show_dots": true
       }
     },
     "7e893ba1-ec47-4d9b-9864-cb4555706f15": {
@@ -130,6 +131,69 @@
         "color": "#201a1c"
       }
     },
+    "a6890697-da8c-4795-b963-7882f6d2dcbe": {
+      "type": "collection-list",
+      "blocks": {
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gout-tropical-kids_1.png",
+            "subheading": "Slide title",
+            "heading": "Tell your story",
+            "url": ""
+          }
+        },
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sticker-gelule-vege-magnesium.png",
+            "subheading": "Slide title",
+            "heading": "Tell your story",
+            "url": ""
+          }
+        },
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gout-citron.png",
+            "subheading": "Slide title",
+            "heading": "Tell your story",
+            "url": ""
+          }
+        },
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/duree-cure-120.png",
+            "subheading": "Slide title",
+            "heading": "Tell your story",
+            "url": ""
+          }
+        },
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/quantite-gelules-energie-immunite-120.png",
+            "subheading": "Slide title",
+            "heading": "Tell your story",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-0",
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-1",
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-2",
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-3",
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-4"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Heading",
+        "color": "#4B9B7D",
+        "background_color": "#e3f2ed"
+      }
+    },
     "1db7442e-0ee1-495a-96a1-01f3969e95f2": {
       "type": "banner-intro",
       "blocks": {
@@ -177,11 +241,11 @@
         "3dc98c99-4d6b-4bf4-ac0d-a895c79edd86"
       ],
       "settings": {
+        "section_style": "boxed",
         "title": "",
         "subtitle": "",
         "cta": "",
         "ctaLink": "",
-        "show_hr": true,
         "bg_color": "#faf5ef",
         "color": "#1a1a1a"
       }
@@ -193,24 +257,24 @@
           "type": "card",
           "settings": {
             "card_width": "1\/2",
+            "content": "inside",
             "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.jpg",
             "title": "Notre sélection de gummies",
-            "show_hr": false,
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam<\/p>",
-            "cta": "",
-            "button_link": ""
+            "button_link": "",
+            "color": "#fff"
           }
         },
         "e2995a60-e69f-4c89-bc88-c5e11c797b05": {
           "type": "card",
           "settings": {
             "card_width": "1\/2",
+            "content": "inside",
             "image": "shopify:\/\/shop_images\/batch-by-wisconsin-hemp-scientific-NDPUzuo5a8M-unsplash.jpg",
             "title": "Notre sélection de gummies",
-            "show_hr": true,
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p>",
-            "cta": "",
-            "button_link": ""
+            "button_link": "",
+            "color": "#fff"
           }
         }
       },
@@ -219,8 +283,7 @@
         "e2995a60-e69f-4c89-bc88-c5e11c797b05"
       ],
       "settings": {
-        "container": "7xl",
-        "color": "#4b9b7d"
+        "container": "7xl"
       }
     },
     "167845847058516467": {
@@ -267,6 +330,7 @@
     "7e893ba1-ec47-4d9b-9864-cb4555706f15",
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01",
     "801df341-54b5-4e52-9b09-68b370796d1f",
+    "a6890697-da8c-4795-b963-7882f6d2dcbe",
     "1db7442e-0ee1-495a-96a1-01f3969e95f2",
     "414f3324-4b76-488e-95ee-4e8f2002ed15",
     "167845847058516467",
