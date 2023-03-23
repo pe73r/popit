@@ -105,7 +105,7 @@
           "type": "category_3",
           "settings": {
             "question": "J'ai besoin d'une facture, où la trouver ?",
-            "answer": "<p>Votre facture est envoyée avec <strong>votre mail de confirmation de commande<\/strong>. N'hésitez pas à nous envoyer un mail à <strong>hello@we-pop-it.co<\/strong> si vous avez du mal à la trouver. Nous vous l'enverrons par mail !<\/p>"
+            "answer": "<p>Votre facture est envoyée avec <strong>votre mail de confirmation de commande<\/strong>. N'hésitez pas à nous envoyer un mail à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co<\/strong><\/a> si vous avez du mal à la trouver. Nous vous l'enverrons par mail !<\/p>"
           }
         },
         "2ed14995-7c89-4112-a3ee-61edf1666bf4": {
