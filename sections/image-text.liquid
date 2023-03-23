@@ -4,11 +4,10 @@
         <div class="w-full md:basis-5/12 {% if section.settings.hide_image_mobile %} hidden {% endif %} md:block">
           {% if section.settings.image != blank  %}
               <img
-              class="lazy mx-auto w-full"
+              class="lazy mx-auto w-full {% if section.settings.content == 'column' %} max-w-[600px] {% endif %}"
               src="{{ section.settings.image | img_url: 'master'}}"
               alt="{{ section.settings.image.alt }}"
-              loading="lazy"
-              style="max-width:{{ section.settings.image_width }}px">
+              loading="lazy">
           {% else %}
              {{ 'image' | placeholder_svg_tag }}
           {% endif %}
