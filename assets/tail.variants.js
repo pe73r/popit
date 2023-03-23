@@ -36,8 +36,11 @@ defineCustomElement(
         }, []);
 
         const inputs = Array.from(document.querySelectorAll(`[value="${e.target.value}"]`));
+        document.querySelectorAll("tail-variants input").forEach((input) => {
+          input.classList.remove("checked");
+        });
         inputs.forEach((input) => {
-          input.checked = true;
+          input.classList.add("checked");
         });
 
         const variant = this.variants.find((variant) => {

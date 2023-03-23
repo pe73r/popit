@@ -79,8 +79,8 @@
                       name="{{ option.name }}"
                       value="{{ value | escape }}"
                       form="{{ product_form_id }}"
-                      class="radio-variant-circle-sticky w-0 h-0 opacity-0 md:collapse hidden"
-                      {% if option.selected_value == value %}checked{% endif %}>
+                      class="radio-variant-circle-sticky w-0 h-0 opacity-0 md:collapse hidden  {% if option.selected_value == value %}checked{% endif %}"
+                     >
                     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                       <div data-option-value="{{ value }}" class="variant-box block pt-2 pb-3 px-2 bg-white bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
                         <h5 class="text-sm text-{{ product-color }} leading-4">{{ value }}</h5>
@@ -90,7 +90,7 @@
                     </label>
                     <!-- discount % -->
                     {% comment %}
-                      I did this workaround to show the percentage but at the end the client wants the 10%/5% fixed. 
+                      I did this workaround to show the percentage but at the end the client wants the 10%/5% fixed.
                       If you want to show the real percentage of compare price you have to use {{ percentage }}
                     {% endcomment %}
                     {% if counter == 1 %}
@@ -195,19 +195,19 @@
         </add-to-cart>
 
 <!-- Just Button  -->
-            <just-pay-button 
+            <just-pay-button
              theme="default"
              default_variant="{{product.selected_or_first_available_variant.id}}"
              default_available="{{product.selected_or_first_available_variant.available}}"
-             product_id="{{ product.id }}" 
-             product_handle="{{ product.handle }}"                        
+             product_id="{{ product.id }}"
+             product_handle="{{ product.handle }}"
              className="just-btn just-btn-product sticky"
-             app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7" 
+             app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7"
              domain="Popit"
              source="product">
             </just-pay-button>
 <!-- End Of Just Button  -->
-        
+
         {% if block.settings.show_dynamic_checkout %}
           {{ form | payment_button }}
         {% endif %}
@@ -403,8 +403,7 @@
                       name="{{ option.name }}"
                       value="{{ value | escape }}"
                       form="{{ product_form_id }}"
-                      class="radio-variant-circle w-0 h-0 opacity-0 md:collapse hidden"
-                      {% if option.selected_value == value %}checked{% endif %}>
+                      class="radio-variant-circle w-0 h-0 opacity-0 md:collapse hidden  {% if option.selected_value == value %}checked{% endif %}">
                     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                       <div data-option-value="{{ value }}" class="variant-box block pt-3 pb-4 bg-white bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
                         <h5 class="text-base text-{{ product-color }} leading-5 md:leading-8">{{ value }}</h5>
@@ -431,7 +430,7 @@
                     </label>
                     <!-- discount % -->
                     {% comment %}
-                      I did this workaround to show the percentage but at the end the client wants the 10%/5% fixed. 
+                      I did this workaround to show the percentage but at the end the client wants the 10%/5% fixed.
                       If you want to show the real percentage of compare price you have to use {{ percentage }}
                     {% endcomment %}
                     {% if counter == 1 %}
@@ -586,14 +585,14 @@
           </add-to-cart>
 
 <!-- Just Button  -->
-            <just-pay-button 
+            <just-pay-button
              theme="default"
              default_variant="{{product.selected_or_first_available_variant.id}}"
              default_available="{{product.selected_or_first_available_variant.available}}"
-             product_id="{{ product.id }}" 
-             product_handle="{{ product.handle }}"                        
+             product_id="{{ product.id }}"
+             product_handle="{{ product.handle }}"
              className="just-btn just-btn-product top"
-             app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7" 
+             app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7"
              domain="Popit"
              source="product">
             </just-pay-button>
@@ -609,7 +608,7 @@
               }
     	    </style>
 <!-- End Of Just Button  -->
-          
+
           {% if block.settings.show_dynamic_checkout %}
             {{ form | payment_button }}
           {% endif %}
@@ -632,7 +631,7 @@
 </div>
 <style>
 
-  input.radio-variant-circle[type="radio"]:checked + label > div {
+  input.radio-variant-circle[type="radio"].checked + label > div {
     background: {{ product_color }}
      !important;
     border-color: {{ product_color }}
@@ -641,11 +640,11 @@
     transition-duration: 0.3s;
   }
 
-  input.radio-variant-circle[type="radio"]:checked + label > div > h5 {
+  input.radio-variant-circle[type="radio"].checked + label > div > h5 {
     color: white !important;
   }
 
-  input.radio-variant-circle-sticky[type="radio"]:checked + label > div {
+  input.radio-variant-circle-sticky[type="radio"].checked + label > div {
     background: {{ product_color }}
      !important;
     border-color: {{ product_color }}
@@ -654,7 +653,7 @@
     transition-duration: 0.3s;
   }
 
-  input.radio-variant-circle-sticky[type="radio"]:checked + label > div > h5 {
+  input.radio-variant-circle-sticky[type="radio"].checked + label > div > h5 {
     color: white !important;
   }
 
