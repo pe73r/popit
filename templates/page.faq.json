@@ -238,7 +238,7 @@
           "type": "category_5",
           "settings": {
             "question": "Comment supprimer mon compte client ?",
-            "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <strong>hello@we-pop-it.co<\/strong> pour demander la suppression de votre compte client.<\/p>"
+            "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co<\/strong><\/a> pour demander la suppression de votre compte client.<\/p>"
           }
         },
         "6e082f44-e152-4696-b588-1316ba9ef281": {
