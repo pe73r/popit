@@ -35,7 +35,7 @@
           "type": "category_1",
           "settings": {
             "question": "Mon colis est en retour à l'expéditeur, que va-t-il se passer ?",
-            "answer": "<p>Si l'adresse que vous avez renseignée est incomplète ou que le <strong>colis a été endommagé<\/strong> pendant le transport, il arrive que <strong>le colis nous soit automatiquement renvoyé<\/strong>. <\/p><p>Dans ce cas, nous vous invitons à nous contacter à <strong>hello@we-pop-it.co<\/strong>, en nous renvoyant votre adresse complète si nécessaire, afin que nous puissions vous envoyer un <strong>nouveau colis au plus vite<\/strong>.<\/p>"
+            "answer": "<p>Si l'adresse que vous avez renseignée est incomplète ou que le <strong>colis a été endommagé<\/strong> pendant le transport, il arrive que <strong>le colis nous soit automatiquement renvoyé<\/strong>. <\/p><p>Dans ce cas, nous vous invitons à nous contacter à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co<\/strong><\/a>, en nous renvoyant votre adresse complète si nécessaire, afin que nous puissions vous envoyer un <strong>nouveau colis au plus vite<\/strong>.<\/p>"
           }
         },
         "ebe4ec3f-1534-4538-a707-239aba6a2d8b": {
