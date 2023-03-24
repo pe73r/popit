@@ -178,3 +178,7 @@ accordion-element[data-open="true"].faq .icon-minus {
 .just-button-main-label{
   font-size:14px !important;
 }
+
+.just-btn {
+  font-size:14px !important;
+}
