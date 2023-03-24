@@ -173,6 +173,48 @@
                   </div>
                 </div>
               {% endif %}
+              {% if product.metafields.product.use_text_4 != blank %}
+                <div class="flex items-center gap-4 mt-4">
+                  {% if product.metafields.product.use_image_4 != blank %}
+                    <img
+                      class="max-w-[80px]"
+                      src="{{ product.metafields.product.use_image_4.value | img_url:'master' }}"
+                      alt="">
+                  {% endif %}
+                  <div>
+                    <h5 class="text-sm mb-2 tab-subtitle" style="color: {{ product_color }}">{{ product.metafields.product.use_title_4.value }}</h5>
+                    <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_4 }}</span>
+                  </div>
+                </div>
+              {% endif %}
+              {% if product.metafields.product.use_text_5 != blank %}
+                <div class="flex items-center gap-4 mt-4">
+                  {% if product.metafields.product.use_image_5 != blank %}
+                    <img
+                      class="max-w-[80px]"
+                      src="{{ product.metafields.product.use_image_5.value | img_url:'master' }}"
+                      alt="">
+                  {% endif %}
+                  <div>
+                    <h5 class="text-sm mb-2 tab-subtitle" style="color: {{ product_color }}">{{ product.metafields.product.use_title_5.value }}</h5>
+                    <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_5 }}</span>
+                  </div>
+                </div>
+              {% endif %}
+              {% if product.metafields.product.use_text_6 != blank %}
+                <div class="flex items-center gap-4 mt-4">
+                  {% if product.metafields.product.use_image_6 != blank %}
+                    <img
+                      class="max-w-[80px]"
+                      src="{{ product.metafields.product.use_image_6.value | img_url:'master' }}"
+                      alt="">
+                  {% endif %}
+                  <div>
+                    <h5 class="text-sm mb-2 tab-subtitle" style="color: {{ product_color }}">{{ product.metafields.product.use_title_6.value }}</h5>
+                    <span class="block text-xs md:text-sm font-light">{{ product.metafields.product.use_text_6 }}</span>
+                  </div>
+                </div>
+              {% endif %}
 
             </div>
           {% elsif block.type == 'composition' %}

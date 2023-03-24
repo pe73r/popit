@@ -114,6 +114,28 @@
           </div>
         </div>
       {% endif %}
+      {% if product.metafields.product.image_picto_5 != blank %}
+        <div class="min-w-fit md:min-w-0">
+          <div class="flex items-center gap-2">
+            <img
+              src="{{ product.metafields.product.image_picto_5.value | img_url: 'master' }}"
+              class="object-contain max-w-[60px]"
+              alt="{{ product.metafields.product.image_picto_5.alt }}">
+            <p class="block text-sm" style="color:{{ section.settings.color }}">{{ product.metafields.product.text_picto_5 }}</p>
+          </div>
+        </div>
+      {% endif %}
+      {% if product.metafields.product.image_picto_6 != blank %}
+        <div class="min-w-fit md:min-w-0">
+          <div class="flex items-center gap-2">
+            <img
+              src="{{ product.metafields.product.image_picto_6.value | img_url: 'master' }}"
+              class="object-contain max-w-[60px]"
+              alt="{{ product.metafields.product.image_picto_6.alt }}">
+            <p class="block text-sm" style="color:{{ section.settings.color }}">{{ product.metafields.product.text_picto_6 }}</p>
+          </div>
+        </div>
+      {% endif %}
       {%- for block in section.blocks -%}
         <div class="min-w-fit md:min-w-0">
           <div class="flex items-center gap-2">
