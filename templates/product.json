@@ -50,7 +50,7 @@
             "text_2": "<b>PAIEMENT SIMPLE ET SÉCURISÉ<\/b> sous Visa, Mastercard, PayPal, Apple Pay & Amex",
             "oclock": "shopify:\/\/shop_images\/site-paiement_14400fca-e5a9-4172-9474-61674fcb4109.png",
             "text_3": "<b>Heureux ou remboursés<\/b> retours gratuits sous 30 jours",
-            "image_3": "shopify:\/\/shop_images\/site-satisfait-main.png"
+            "image_3": "shopify:\/\/shop_images\/PRECAUTIONS_D_EMPLOI.png"
           }
         }
       },
@@ -65,7 +65,7 @@
         "1e425230-6800-49eb-922c-18eab7fbfd55"
       ],
       "custom_css": [
-        ".just-button-main-label{font-size:14px;}"
+        ".just-button-main-label {font-size: 14px;}"
       ],
       "settings": {
         "show_dots_mobile": true
