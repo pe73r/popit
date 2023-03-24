@@ -48,7 +48,9 @@
             "text": "<b>LIVRAISON GRATUITE ET RAPIDE<\/b> à partir de 49€, sous 2 à 3 jours ouvrés",
             "truck": "shopify:\/\/shop_images\/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
             "text_2": "<b>PAIEMENT SIMPLE ET SÉCURISÉ<\/b> sous Visa, Mastercard, PayPal, Apple Pay & Amex",
-            "oclock": "shopify:\/\/shop_images\/site-paiement_14400fca-e5a9-4172-9474-61674fcb4109.png"
+            "oclock": "shopify:\/\/shop_images\/site-paiement_14400fca-e5a9-4172-9474-61674fcb4109.png",
+            "text_3": "<b>Heureux ou remboursés<\/b> retours gratuits sous 30 jours",
+            "image_3": "shopify:\/\/shop_images\/site-satisfait-main.png"
           }
         }
       },
