@@ -45,12 +45,12 @@
         "1e425230-6800-49eb-922c-18eab7fbfd55": {
           "type": "delivery_note",
           "settings": {
-            "text": "<b>LIVRAISON GRATUITE ET RAPIDE<\/b> à partir de 49€, sous 2 à 3 jours ouvrés",
+            "text": "<b>LIVRAISON RAPIDE<\/b> sous 2 à 3 jours ouvrés",
             "truck": "shopify:\/\/shop_images\/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
-            "text_2": "<b>PAIEMENT SIMPLE ET SÉCURISÉ<\/b> sous Visa, Mastercard, PayPal, Apple Pay & Amex",
-            "oclock": "shopify:\/\/shop_images\/site-paiement_14400fca-e5a9-4172-9474-61674fcb4109.png",
-            "text_3": "<b>Heureux ou remboursés<\/b> retours gratuits sous 30 jours",
-            "image_3": "shopify:\/\/shop_images\/PRECAUTIONS_D_EMPLOI.png"
+            "text_2": "<b>LIVRAISON GRATUITE<\/b> dès 49€ d'achat",
+            "oclock": "shopify:\/\/shop_images\/site-satisfait-main.png",
+            "text_3": "<b>PAIEMENT SIMPLE<\/b> 100% sécurisé",
+            "image_3": "shopify:\/\/shop_images\/site-paiement_14400fca-e5a9-4172-9474-61674fcb4109.png"
           }
         }
       },
