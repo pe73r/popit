@@ -64,6 +64,9 @@
         "e7c38b55-666d-42db-a0e0-bc393527f6cc",
         "1e425230-6800-49eb-922c-18eab7fbfd55"
       ],
+      "custom_css": [
+        ".just-button-main-label{font-size:14px;}"
+      ],
       "settings": {
         "show_dots_mobile": true
       }
