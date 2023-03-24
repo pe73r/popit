@@ -256,8 +256,83 @@
       "settings": {
         "subheading": "",
         "title": "Notre gamme",
-        "color": "#4B9B7D",
+        "color": "#4b9b7d",
         "background_color": "#e3f2ed"
+      }
+    },
+    "98024d9b-c4cd-4f22-ba7c-cd26563f99bb": {
+      "type": "collection-list-carousel",
+      "blocks": {
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/site-satisfait-main.png",
+            "subheading": "Slide title",
+            "heading": "Tell your story",
+            "url": ""
+          }
+        },
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/quantite-gummies-sommeil-60.png",
+            "subheading": "Slide title",
+            "heading": "Tell your story",
+            "url": ""
+          }
+        },
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gout-tropical-kids_1.png",
+            "subheading": "Slide title",
+            "heading": "Tell your story",
+            "url": ""
+          }
+        },
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gout-mure.png",
+            "subheading": "Slide title",
+            "heading": "Tell your story",
+            "url": ""
+          }
+        },
+        "ec1dd371-71c4-4613-bb65-15d945712419": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/quantite-gelules-energie-immunite-120.png",
+            "subheading": "Slide title",
+            "heading": "Tell your story",
+            "url": ""
+          }
+        },
+        "3f0bf6f6-d730-4f4c-8046-b0e3056f8d67": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/quantite-gelules-stress-120.png",
+            "subheading": "Slide title",
+            "heading": "Tell your story",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0",
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1",
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2",
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3",
+        "ec1dd371-71c4-4613-bb65-15d945712419",
+        "3f0bf6f6-d730-4f4c-8046-b0e3056f8d67"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Heading",
+        "show_arrows": true,
+        "show_dots": true,
+        "color": "#4B9B7D",
+        "background_color": "#FAF5EF"
       }
     },
     "414f3324-4b76-488e-95ee-4e8f2002ed15": {
@@ -272,7 +347,7 @@
             "title": "Notre sélection de gummies",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam<\/p>",
             "button_link": "",
-            "color": "#fff"
+            "color": "#ffffff"
           }
         },
         "e2995a60-e69f-4c89-bc88-c5e11c797b05": {
@@ -284,7 +359,7 @@
             "title": "Notre sélection de gummies",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p>",
             "button_link": "",
-            "color": "#fff"
+            "color": "#ffffff"
           }
         }
       },
@@ -342,6 +417,7 @@
     "801df341-54b5-4e52-9b09-68b370796d1f",
     "1db7442e-0ee1-495a-96a1-01f3969e95f2",
     "a6890697-da8c-4795-b963-7882f6d2dcbe",
+    "98024d9b-c4cd-4f22-ba7c-cd26563f99bb",
     "414f3324-4b76-488e-95ee-4e8f2002ed15",
     "167845847058516467",
     "a11b1585-0a12-4fa7-b722-9bd6997a108a"
