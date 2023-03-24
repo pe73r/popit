@@ -1,0 +1,144 @@
+<section class="py-10 md:py-18" style="color: {{ section.settings.color }}; background-color: {{ section.settings.background_color }}">
+  {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+    <header class="mb-10 text-center">
+      {%- if section.settings.subheading != blank -%}
+        <h3 class="text-xl">{{ section.settings.subheading | escape }}</h3>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h2 class="text-xl md:text-3xl">{{ section.settings.title | escape }}</h2>
+      {%- endif -%}
+    </header>
+  {%- endif -%}
+  <div class="w-11/12 max-w-7xl mx-auto">
+    <tail-carousel slidesToShow="xs:2 md:3 lg:4 xl:4">
+      <carousel-container class="lg:w-11/12 mx-auto">
+        <carousel-content class="w-full">
+          {% for block in section.blocks %}
+            <carousel-panel class="px-1.5 md:px-2">
+              <div class="text-center max-w-[250px] mx-auto">
+                <a href="{{ block.settings.url }}">
+                  {%- if block.settings.image != blank -%}
+                    {% render "image" image: block.settings.image, class: "w-full max-w-[130px] md:max-w-[180px] mx-auto" %}
+                  {%- else -%}
+                    {{ 'image' | placeholder_svg_tag: 'SnapSlider__Image' }}
+                  {%- endif -%}
+                  <h5 class="text-base lg:text-lg mt-5">{{ block.settings.heading }}</h5>
+                  <p class="text-xs md:text-sm">{{ block.settings.subheading }}</p>
+                </a>
+              </div>
+            </carousel-panel>
+          {% endfor %}
+        </carousel-content>
+      </carousel-container>
+      {% if section.settings.show_arrows %}
+        <carousel-next class="arrow hidden lg:block absolute rounded-lg bg-green-light py-2 px-3 right-[-6px] top-[50%] translate-y-[-50%] z-[1] cursor-pointer disabled:opacity-50 disabled:cursor-auto">
+          {% render 'icon-arrow-right' %}
+        </carousel-next>
+        <carousel-prev class="rotate-180 arrow hidden lg:block absolute rounded-lg bg-green-light py-2 px-3 left-[-6px] top-[50%] translate-y-[-50%] z-[1] cursor-pointer disabled:opacity-50 disabled:cursor-auto selected:bg-[#E3F2ED]">
+          {% render 'icon-arrow-left' %}
+        </carousel-prev>
+      {% endif %}
+
+      {% if section.settings.show_dots %}
+        <carousel-dots class="relative flex lg:hidden justify-center mx-auto mt-4">
+          {% for block in section.blocks %}
+            <carousel-dot class="w-3 h-3 m-1 transition-all bg-gray-300 border rounded-full border-gray-300 selected:bg-green selected:border-green selected:w-10 selected:scale-110"></carousel-dot>
+          {% endfor %}
+        </carousel-dots>
+      {% endif %}
+    </tail-carousel>
+  </div>
+
+</section>
+
+
+{% schema %}
+  {
+    "name": "Collection list carousel",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Heading"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_arrows",
+        "label": "Show arrows",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_dots",
+        "label": "Show bar",
+        "default": true
+      }, {
+        "type": "header",
+        "content": "Colors"
+      }, {
+        "type": "color",
+        "id": "color",
+        "label": "Text color",
+        "default": "#4B9B7D"
+      }, {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#FAF5EF"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "1800 x 800px .jpg recommended"
+          }, {
+            "type": "text",
+            "id": "subheading",
+            "label": "Sub-heading",
+            "default": "Slide title"
+          }, {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Tell your story"
+          }, {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Image",
+        "name": "Collection list carousel",
+        "settings": {},
+        "blocks": [
+          {
+            "type": "image"
+          }, {
+            "type": "image"
+          }, {
+            "type": "image"
+          }, {
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
