@@ -187,6 +187,36 @@
           "settings": {
             "title": "Magnésium"
           }
+        },
+        "1e12d661-14c5-4997-8ade-9816ac32bc48": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "c83ae539-2d24-4f3e-b7b4-b3988cb03ac2": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "82d53fb2-a08d-4b85-bc27-5928ac72bf30": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "3e6e2d21-f655-4c0d-b0c8-e7d687867d04": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "c598e76d-5bad-480e-b004-e3af9d89a304": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
         }
       },
       "block_order": [
@@ -194,7 +224,12 @@
         "c5ed126c-a767-4384-b9b9-82bd852d7305",
         "94b80e00-9c02-4c36-86b3-f6edfeb9b2ae",
         "83d65aac-f55d-45f7-bbff-1499ac599800",
-        "6a5766b7-5948-4131-a8fd-f1debb869707"
+        "6a5766b7-5948-4131-a8fd-f1debb869707",
+        "1e12d661-14c5-4997-8ade-9816ac32bc48",
+        "c83ae539-2d24-4f3e-b7b4-b3988cb03ac2",
+        "82d53fb2-a08d-4b85-bc27-5928ac72bf30",
+        "3e6e2d21-f655-4c0d-b0c8-e7d687867d04",
+        "c598e76d-5bad-480e-b004-e3af9d89a304"
       ],
       "settings": {
         "title": "Des ingrédients supérieurs",
