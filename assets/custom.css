@@ -182,3 +182,7 @@ accordion-element[data-open="true"].faq .icon-minus {
 .just-btn {
   font-size:14px !important;
 }
+
+.just-btn-sticky{
+  font-size:14px !important;
+}
