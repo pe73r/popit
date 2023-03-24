@@ -173,3 +173,8 @@ accordion-element[data-open="true"].faq .icon-minus {
     margin: 50px auto !important;
   }
 }
+
+/* button just pay */
+.just-button-main-label{
+  font-size:14px !important;
+}
