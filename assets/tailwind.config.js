@@ -20,6 +20,7 @@ module.exports = {
         red: {
           DEFAULT: "#c91010",
           hair: "#E4003A",
+          feminin: "#A01450",
         },
         orange: {
           DEFAULT: "#EA5B0C",
@@ -51,6 +52,8 @@ module.exports = {
           dark: "#00555A",
           medium: "#6EB3A8",
           clair: "#D7E6AF",
+          alimentation:"#3C915A",
+          focus: "#00555A",
         },
         violet: {
           DEFAULT: "#4F2674",
@@ -58,6 +61,7 @@ module.exports = {
         },
         blue: {
           DEFAULT: "#2F52A0",
+          stress: "#2D286E"
         },
       },
 
