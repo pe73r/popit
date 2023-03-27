@@ -179,6 +179,10 @@
     .product-marquee {
       background-color: #CBE7E6;
     }
+  {% elsif product.tags contains "feminin" %}
+    .product-marquee {
+      background-color: ##FACDDC;
+    }
   {% elsif product.tags contains "hair" or product.tags contains "peau" or product.tags contains "beaute" %}
     .product-marquee {
       background-color: #E4003A;
