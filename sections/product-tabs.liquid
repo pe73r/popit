@@ -9,9 +9,9 @@
   {% assign bg_color = "#FEE5C6" %}
 
 {% elsif product.tags contains "alimentation" %}
-  {% assign product_color = "#3D925C" %}
+  {% assign product_color = "#3C915A" %}
   {% assign product-color = "green" %}
-  {% assign bg_color = "#D9E6B1" %}
+  {% assign bg_color = "#D7E6AF" %}
 
 {% elsif product.tags contains "sport" %}
   {% assign product_color = "#2F52A0" %}
@@ -26,14 +26,9 @@
 {% elsif product.tags contains "feminim" %}
   {% assign product_color = "#9D1553" %}
   {% assign product-color = "pink" %}
-  {% assign bg_color = "#F9CDDB" %}
+  {% assign bg_color = "#FACDDC" %}
 
-{% elsif product.tags contains "peau" %}
-  {% assign product_color = "#E4003A" %}
-  {% assign product-color = "red-hair" %}
-  {% assign bg_color = "#FBDBDC" %}
-
-{% elsif product.tags contains "hair" %}
+{% elsif product.tags contains "peau" or product.tags contains "hair" or product.tags contains "beaute" %}
   {% assign product_color = "#E4003A" %}
   {% assign product-color = "red-hair" %}
   {% assign bg_color = "#FBDBDC" %}
