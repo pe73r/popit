@@ -1,6 +1,6 @@
 <div class="pt-10 pb-20">
   <div class="w-11/12 mx-auto md:max-w-{{ section.settings.container }}">
-    <div class="flex flex-col md:flex-row gap-5 md:gap-6 lg:gap-10">
+    <div class="flex flex-col md:flex-row gap-5 md:gap-6">
       {%- for block in section.blocks -%}
         <div class="w-full md:1/2  text-center {% if block.settings.card_width == "3/5" %} md:w-3/5 {% elsif block.settings.card_width == "2/5" %} md:w-2/5 {% endif %}">
           <div class="w-full bg-cover bg-center bg-no-repeat flex items-center justify-center p-5 h-[370px] md:h-[350px] rounded-md" style="background-image: url({{block.settings.image | img_url: '1000x' }});">
