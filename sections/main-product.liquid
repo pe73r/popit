@@ -4,17 +4,36 @@
   {% assign bg_color = "background: linear-gradient(168.52deg, rgba(188, 134, 186, 0.5) 0%, rgba(233, 210, 231, 0.5) 70.09%, rgba(233, 210, 231, 0.25) 94.77%);" %}
 {% elsif product.tags contains "energie" %}
   {% assign product-color = "orange-energy" %}
-  {% assign product_color = "#EA5B0C" %}
+  {% assign product_color = "#EB5A0A" %}
   {% assign bg_color = "background: linear-gradient(168.52deg, rgba(234, 91, 12, 0.4) 0%, rgba(245, 162, 110, 0.8) 35.48%, #FEE5C6 59.33%, rgba(254, 229, 198, 0.5) 94.77%);" %}
-{% elsif product.tags contains "hair" %}
+{% elsif product.tags contains "alimentation" %}
+  {% assign product-color = "green-alimentation" %}
+  {% assign product_color = "#3C915A" %}
+  {% assign bg_color = "background: linear-gradient(168.52deg, rgba(60, 145, 90, 1) 0%, rgba(60, 145, 90, 0.8) 35.48%, #D7E6AF  59.33%, rgba(215, 230, 175, 1) 94.77%);" %}
+{% elsif product.tags contains "hair" or product.tags contains "beaute" or product.tags contains "peau" %}
   {% assign product-color = "red-hair" %}
   {% assign product_color = "#E4003A" %}
   {% assign bg_color = "background: linear-gradient(168.52deg, rgba(250, 142, 156, 1) 0%, rgba(246, 169, 179, 1) 35.48%, #f6dcdc 59.33%, rgba(246, 220, 220, 1)  94.77%);" %}
-
-{% else %}
+{% elsif product.tags contains "sport" %}
   {% assign product-color = "blue" %}
-  {% assign product_color = "#2F52A0" %}
+  {% assign product_color = "#2D50A0" %}
   {% assign bg_color = "background: linear-gradient(168.52deg, rgba(47, 82, 160, 0.4) 0%, rgba(105, 172, 223, 0.8) 35.48%, #CBE7E6 59.33%, rgba(203, 231, 230, 0.5) 94.77%);" %}
+{% elsif product.tags contains "stress" %}
+  {% assign product-color = "blue-stress" %}
+  {% assign product_color = "#2D286E" %}
+  {% assign bg_color = "background: linear-gradient(168.52deg, rgba(45, 40, 110, 1) 0%, rgba(45, 40, 110, 0.8) 35.48%, #B4E1F5 59.33%, rgba(180, 225, 245, 0.5) 94.77%);" %}
+{% elsif product.tags contains "feminin" %}
+  {% assign product-color = "red-feminin" %}
+  {% assign product_color = "#A01450" %}
+  {% assign bg_color = "background: linear-gradient(168.52deg, rgba(160, 20, 80, 1) 0%, rgba(160, 20, 80, 0.8) 35.48%, #FACDDC 59.33%, rgba(250, 205, 220, 0.5)) 94.77%);" %}
+{% elsif product.tags contains "focus" %}
+  {% assign product-color = "green-focus" %}
+  {% assign product_color = "#00555A" %}
+  {% assign bg_color = "background: linear-gradient(168.52deg, rgba(0, 85, 90, 1) 0%, rgba(0, 85, 90, 0.8) 35.48%, #C3E6DC 59.33%, rgba(195, 230, 220, 1)) 94.77%);" %}
+{% else %}
+  {% assign product-color = "violet" %}
+  {% assign product_color = "#4F2674" %}
+  {% assign bg_color = "background: linear-gradient(168.52deg, rgba(188, 134, 186, 0.5) 0%, rgba(233, 210, 231, 0.5) 70.09%, rgba(233, 210, 231, 0.25) 94.77%);" %}
 {% endif %}
 
 <section class="main-product pt-24 lg:pt-28 pb-10">
@@ -42,14 +61,29 @@
     .main-product {
       background: linear-gradient(168.52deg, rgba(234, 91, 12, 0.4) 0%, rgba(245, 162, 110, 0.8) 35.48%, #FEE5C6 59.33%, rgba(254, 229, 198, 0.5) 94.77%);
     }
-  {% elsif product.tags contains "hair" %}
+  {% elsif product.tags contains "alimentation" %}
     .main-product {
-      background: linear-gradient(168.52deg, rgba(232, 86, 105, 1) 0%, rgba(246, 169, 179, 1) 35.48%, #f6dcdc 59.33%, rgba(246, 220, 220, 1)  94.77%);"
+      background: linear-gradient(168.52deg, rgba(60, 145, 90, 1) 0%, rgba(60, 145, 90, 0.8) 35.48%, #D7E6AF 59.33%, rgba(215, 230, 175, 1) 94.77%);" } {% elsif product.tags contains "hair" or product.tags contains "peau" or product.tags contains "beaute" %} .main-product { background: linear-gradient(168.52deg, rgba(232, 86, 105, 1) 0%, rgba(246, 169, 179, 1) 35.48%, #f6dcdc 59.33%, rgba(246, 220, 220, 1) 94.77%);"
+    }
+  {% elsif product.tags contains "sport "%}
+    .main-product {
+      background: linear-gradient(168.52deg, rgba(47, 82, 160, 0.4) 0%, rgba(105, 172, 223, 0.8) 35.48%, #CBE7E6 59.33%, rgba(203, 231, 230, 0.5) 94.77%);
+    }
+  {% elsif product.tags contains "stress" %}
+    .main-product {
+      background: linear-gradient(168.52deg, rgba(45, 40, 110, 1) 0%, rgba(45, 40, 110, 0.8) 35.48%, #B4E1F5 59.33%, rgba(180, 225, 245, 0.5) 94.77%);
+    }
+  {% elsif product.tags contains "feminin" %}
+    .main-product {
+      background: linear-gradient(168.52deg, rgba(160, 20, 80, 1) 0%, rgba(160, 20, 80, 0.8) 35.48%, #FACDDC 59.33%, rgba(250, 205, 220, 0.5)) 94.77 %);
+    }
+  {% elsif product.tags contains "focus" %}
+    .main-product {
+      background: linear-gradient(168.52deg, rgba(0, 85, 90, 1) 0%, rgba(0, 85, 90, 0.8) 35.48%, #C3E6DC 59.33%, rgba(195, 230, 220, 1)) 94.77 %);
     }
   {% else %}
     .main-product {
-      background: linear-gradient(168.52deg, rgba(47, 82, 160, 0.4) 0%, rgba(105, 172, 223, 0.8) 35.48%, #CBE7E6 59.33%, rgba(203, 231, 230, 0.5) 94.77%);
-
+      background: linear-gradient(168.52deg, rgba(79, 38, 116, 0.4) 0%, rgba(188, 134, 186, 0.8) 35.48%, #E9D2E7 59.33%, rgba(233, 210, 231, 0.5) 94.77%);
     }
   {% endif %}
 </style>
@@ -76,8 +110,7 @@
         "name": "Metafield subtitle",
         "limit": 1,
         "settings": []
-      },
-      {
+      }, {
         "type": "contenance",
         "name": "Contenance",
         "limit": 1,
@@ -115,7 +148,7 @@
             "type": "textarea",
             "id": "text",
             "label": "Text"
-          }, 
+          },
           {
             "type": "image_picker",
             "id": "truck",
@@ -130,13 +163,11 @@
             "type": "image_picker",
             "id": "oclock",
             "label": "Image"
-          },
-          {
+          }, {
             "type": "textarea",
             "id": "text_3",
             "label": "Text"
-          },
-          {
+          }, {
             "type": "image_picker",
             "id": "image_3",
             "label": "Image"
