@@ -127,7 +127,7 @@
                 {% endif %}
               </div>
               {% if product.metafields.product.use_text_1 != blank %}
-                <div class="flex items-center gap-2 py-2">
+                <div class="flex items-center gap-2 pb-2">
                   {% if product.metafields.product.use_image_1 != blank %}
                     <img
                       class="max-w-[80px]"
@@ -213,7 +213,7 @@
 
             </div>
           {% elsif block.type == 'composition' %}
-            <div class="block mt-4">
+            <div class="block mt-8">
               {% if product.metafields.product.compo_image_tableau_desktop.value != blank %}
                 {% assign file_name_parts = product.metafields.product.compo_image_tableau_desktop.value | split: '.' %}
                 {% assign file_extension = file_name_parts.last %}
