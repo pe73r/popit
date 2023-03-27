@@ -167,6 +167,10 @@
     .product-marquee {
       background-color: #EA5B0C;
     }
+  {% elsif product.tags contains "alimentation" %}
+    .product-marquee {
+      background-color: #D7E6AF;
+    }
   {% elsif product.tags contains "stress" %}
     .product-marquee {
       background-color: #2F52A0;
