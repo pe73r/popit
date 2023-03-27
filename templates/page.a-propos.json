@@ -15,9 +15,9 @@
           "type": "video",
           "settings": {
             "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d8500a4a52b84f4c89d1a213b79ca3eb.webm",
-            "title": "À propos",
-            "title_mobile": "À propos",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <\/p>",
+            "title": "Notre histoire en quelques mots ...",
+            "title_mobile": "Notre histoire en quelques mots ...",
+            "text": "",
             "cta": "",
             "button_link": "",
             "text_color": "#ffffff",
@@ -44,9 +44,9 @@
         "subtitle": "",
         "title": "Title",
         "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>",
-        "subtitle_color": "#4B9B7D",
-        "title_color": "#4B9B7D",
-        "text_color": "#4B9B7D"
+        "subtitle_color": "#4b9b7d",
+        "title_color": "#4b9b7d",
+        "text_color": "#4b9b7d"
       }
     },
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14": {
@@ -130,7 +130,7 @@
             "title": "Title",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
             "button_link": "",
-            "color": "#fff"
+            "color": "#ffffff"
           }
         },
         "5ada16c2-c2ae-423d-bd05-d0b6c1ac3bf3": {
@@ -142,7 +142,7 @@
             "title": "Title",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
             "button_link": "",
-            "color": "#fff"
+            "color": "#ffffff"
           }
         }
       },
