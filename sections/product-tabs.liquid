@@ -120,14 +120,14 @@
               {% endif %}
             </div>
           {% elsif block.type == 'use' %}
-            <div class="block mt-2">
+            <div class="block">
               <div class="text-xs md:text-sm font-light">
                 {% if product.metafields.product.use_text_principal != blank %}
                   {{ product.metafields.product.use_text_principal }}
                 {% endif %}
               </div>
               {% if product.metafields.product.use_text_1 != blank %}
-                <div class="flex items-center gap-2 py-2 mt-5">
+                <div class="flex items-center gap-2 py-2">
                   {% if product.metafields.product.use_image_1 != blank %}
                     <img
                       class="max-w-[80px]"
