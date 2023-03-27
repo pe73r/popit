@@ -387,11 +387,37 @@
             "button_link": "",
             "color": "#ffffff"
           }
+        },
+        "ff245f0b-487c-4e86-9fe9-08ce793e647c": {
+          "type": "card",
+          "settings": {
+            "card_width": "1\/2",
+            "content": "inside",
+            "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
+            "title": "Title",
+            "text": "<p>Lorem ipsum 2023.<\/p>",
+            "button_link": "",
+            "color": "#fff"
+          }
+        },
+        "2044cc22-1df4-4522-8d9f-ebee347a36c8": {
+          "type": "card",
+          "settings": {
+            "card_width": "1\/2",
+            "content": "inside",
+            "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
+            "title": "Title",
+            "text": "<p>Lorem ipsum 2023.<\/p>",
+            "button_link": "",
+            "color": "#fff"
+          }
         }
       },
       "block_order": [
         "38534204-35d1-4945-9338-a00f1e6703c7",
-        "e2995a60-e69f-4c89-bc88-c5e11c797b05"
+        "e2995a60-e69f-4c89-bc88-c5e11c797b05",
+        "ff245f0b-487c-4e86-9fe9-08ce793e647c",
+        "2044cc22-1df4-4522-8d9f-ebee347a36c8"
       ],
       "settings": {
         "container": "7xl"
