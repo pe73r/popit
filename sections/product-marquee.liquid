@@ -181,7 +181,11 @@
     }
   {% elsif product.tags contains "feminin" %}
     .product-marquee {
-      background-color: ##FACDDC;
+      background-color: #FACDDC;
+    }
+  {% elsif product.tags contains "focus" %}
+    .product-marquee {
+      background-color: #C3E6DC;
     }
   {% elsif product.tags contains "hair" or product.tags contains "peau" or product.tags contains "beaute" %}
     .product-marquee {
