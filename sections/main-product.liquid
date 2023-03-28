@@ -48,7 +48,9 @@
     <!-- product info -->
     <div class="w-full lg:w-1/2">
       {% render 'product-info', product: product, product-color: product-color, product_color: product_color %}
-      {% render 'product-benefits', product: product, product-color: product-color, product_color: product_color, bg_color: bg_color %}
+      {% if section.settings.show_benefits %}
+       {% render 'product-benefits', product: product, product-color: product-color, product_color: product_color, bg_color: bg_color %}
+      {% endif %}
     </div>
   </div>
 </section>
@@ -243,6 +245,13 @@
         "id": "show_dots_mobile",
         "default": true,
         "label": "Display dots in mobile carousel"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_benefits",
+        "default": true,
+        "label": "Display product benefits",
+        "info": "Join stories + metafields benefits"
       }
     ]
   }
