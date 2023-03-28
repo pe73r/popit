@@ -397,6 +397,7 @@
     },
     "1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b": {
       "type": "reinsurance",
+      "disabled": true,
       "blocks": {
         "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-0": {
           "type": "block",
