@@ -68,7 +68,8 @@
         ".just-button-main-label {font-size: 14px;}"
       ],
       "settings": {
-        "show_dots_mobile": true
+        "show_dots_mobile": true,
+        "show_benefits": false
       }
     },
     "product-marquee": {
@@ -158,8 +159,8 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
-        "bg_color": "#E6F0EB",
-        "color": "#4B9B7D"
+        "bg_color": "#e6f0eb",
+        "color": "#4b9b7d"
       }
     },
     "7d12314b-a9a4-42d2-8330-a732629f982b": {
@@ -251,7 +252,7 @@
         "collection": "frontpage",
         "title": "Ce produit existe aussi en gélules",
         "bg_color": "#4b9b7d",
-        "color": "#fff"
+        "color": "#ffffff"
       }
     },
     "16785376921acc729a": {
