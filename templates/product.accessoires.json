@@ -1,0 +1,470 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "2123d97f-146b-49e9-846e-386171adb4af": {
+          "type": "product-type",
+          "settings": {
+          }
+        },
+        "bb4f17d7-4ef4-4c4a-8040-e4d1ab5254ed": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "2077e0aa-65e5-437c-a933-775b9bf1bc85": {
+          "type": "subtitle",
+          "settings": {
+          }
+        },
+        "09df8643-814c-47b7-915b-2710485c5804": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea": {
+          "type": "variant_picker",
+          "settings": {
+          }
+        },
+        "ce287ddd-56b4-4eae-92cf-5e6f08239886": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_quantity": false
+          }
+        },
+        "e7c38b55-666d-42db-a0e0-bc393527f6cc": {
+          "type": "klarna",
+          "disabled": true,
+          "settings": {
+            "text": "<b>18,33 € <\/b> aujourd’hui grâce au <italic><b>3x sans frais<\/b><\/italic>"
+          }
+        },
+        "1e425230-6800-49eb-922c-18eab7fbfd55": {
+          "type": "delivery_note",
+          "settings": {
+            "text": "<b>LIVRAISON RAPIDE<\/b> sous 2 à 3 jours ouvrés",
+            "truck": "shopify:\/\/shop_images\/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
+            "text_2": "<b>LIVRAISON GRATUITE<\/b> dès 49€ d'achat",
+            "oclock": "shopify:\/\/shop_images\/site-satisfait-main.png",
+            "text_3": "<b>PAIEMENT SIMPLE<\/b> 100% sécurisé",
+            "image_3": "shopify:\/\/shop_images\/site-paiement_14400fca-e5a9-4172-9474-61674fcb4109.png"
+          }
+        }
+      },
+      "block_order": [
+        "2123d97f-146b-49e9-846e-386171adb4af",
+        "bb4f17d7-4ef4-4c4a-8040-e4d1ab5254ed",
+        "2077e0aa-65e5-437c-a933-775b9bf1bc85",
+        "09df8643-814c-47b7-915b-2710485c5804",
+        "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea",
+        "ce287ddd-56b4-4eae-92cf-5e6f08239886",
+        "e7c38b55-666d-42db-a0e0-bc393527f6cc",
+        "1e425230-6800-49eb-922c-18eab7fbfd55"
+      ],
+      "custom_css": [
+        ".just-button-main-label {font-size: 14px;}"
+      ],
+      "settings": {
+        "show_dots_mobile": true
+      }
+    },
+    "product-marquee": {
+      "type": "product-marquee",
+      "blocks": {
+        "24f6925c-397e-4ce1-960a-2f2b8bdde503": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/popit-sticker-mure.png",
+            "text": "Non testé sur des animaux"
+          }
+        },
+        "12cf3c52-8902-4443-9aeb-7135386f0b74": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/popit-sticker-gummies.png",
+            "text": "Non testé sur des animaux"
+          }
+        },
+        "1cf4349d-2518-41f7-a8b1-cbb19accbef3": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/popit-sticker-feuille.png",
+            "text": "Non testé sur des animaux"
+          }
+        },
+        "a2d9df4d-be4c-428a-bda7-b1e532f69b10": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/popit-sticker-gummies-sommeil.png",
+            "text": "Non testé sur des animaux"
+          }
+        }
+      },
+      "block_order": [
+        "24f6925c-397e-4ce1-960a-2f2b8bdde503",
+        "12cf3c52-8902-4443-9aeb-7135386f0b74",
+        "1cf4349d-2518-41f7-a8b1-cbb19accbef3",
+        "a2d9df4d-be4c-428a-bda7-b1e532f69b10"
+      ],
+      "settings": {
+        "section_type": "marquee",
+        "animationDuration": 30,
+        "bg_color": "#e3f2ed",
+        "color": "#ffffff"
+      }
+    },
+    "product-tabs": {
+      "type": "product-tabs",
+      "blocks": {
+        "2ee8f73b-9ef4-4477-a1b0-df5959f30eb5": {
+          "type": "description",
+          "settings": {
+            "title": "EFFICACITÉ",
+            "title_mobile": "EFFICACITÉ"
+          }
+        },
+        "f0707111-a8dd-450d-b9bb-56ac58f20cd3": {
+          "type": "use",
+          "settings": {
+            "title": "CONSEILS D’UTILISATION",
+            "title_mobile": "UTILISATION",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
+          }
+        },
+        "1f939024-352b-461d-b3cd-534b112ecee0": {
+          "type": "composition",
+          "settings": {
+            "title": "COMPOSITION",
+            "title_mobile": "COMPOSITION",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "2ee8f73b-9ef4-4477-a1b0-df5959f30eb5",
+        "f0707111-a8dd-450d-b9bb-56ac58f20cd3",
+        "1f939024-352b-461d-b3cd-534b112ecee0"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
+        "bg_color": "#E6F0EB",
+        "color": "#4B9B7D"
+      }
+    },
+    "7d12314b-a9a4-42d2-8330-a732629f982b": {
+      "type": "product-ingredients",
+      "blocks": {
+        "9d7aeff1-7840-4d15-870e-19cf0f6854bc": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "c5ed126c-a767-4384-b9b9-82bd852d7305": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "94b80e00-9c02-4c36-86b3-f6edfeb9b2ae": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "83d65aac-f55d-45f7-bbff-1499ac599800": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "6a5766b7-5948-4131-a8fd-f1debb869707": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "1e12d661-14c5-4997-8ade-9816ac32bc48": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "c83ae539-2d24-4f3e-b7b4-b3988cb03ac2": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "82d53fb2-a08d-4b85-bc27-5928ac72bf30": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "3e6e2d21-f655-4c0d-b0c8-e7d687867d04": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        },
+        "c598e76d-5bad-480e-b004-e3af9d89a304": {
+          "type": "block",
+          "settings": {
+            "title": "Magnésium"
+          }
+        }
+      },
+      "block_order": [
+        "9d7aeff1-7840-4d15-870e-19cf0f6854bc",
+        "c5ed126c-a767-4384-b9b9-82bd852d7305",
+        "94b80e00-9c02-4c36-86b3-f6edfeb9b2ae",
+        "83d65aac-f55d-45f7-bbff-1499ac599800",
+        "6a5766b7-5948-4131-a8fd-f1debb869707",
+        "1e12d661-14c5-4997-8ade-9816ac32bc48",
+        "c83ae539-2d24-4f3e-b7b4-b3988cb03ac2",
+        "82d53fb2-a08d-4b85-bc27-5928ac72bf30",
+        "3e6e2d21-f655-4c0d-b0c8-e7d687867d04",
+        "c598e76d-5bad-480e-b004-e3af9d89a304"
+      ],
+      "settings": {
+        "title": "Des ingrédients supérieurs",
+        "show_arrows": true,
+        "color": "#4b9b7d",
+        "bg_color": "#e3f2ed"
+      }
+    },
+    "ca7fac8e-53d2-41fb-9a5b-446c1b05dc60": {
+      "type": "products-snap-slider",
+      "settings": {
+        "collection": "frontpage",
+        "title": "Ce produit existe aussi en gélules",
+        "bg_color": "#4b9b7d",
+        "color": "#fff"
+      }
+    },
+    "16785376921acc729a": {
+      "type": "apps",
+      "blocks": {
+        "c2fed4fe-70ea-4833-bdbd-46783f591c72": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "c2fed4fe-70ea-4833-bdbd-46783f591c72"
+      ],
+      "settings": {
+      }
+    },
+    "07a37119-270e-432c-8a6f-4eaeab0ff9e1": {
+      "type": "faq-product",
+      "blocks": {
+        "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-0": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-1": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-2": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "ad9e812f-9f19-498a-a4ee-c1358e269a06": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "0c5c0f1b-8df0-4e1a-875b-9ac284c88cb0": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "4463b4b5-871c-45d9-bf53-bee0ea86933d": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "0b304882-3095-40a7-b21b-e44202b604fd": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "3468e914-ba02-405a-93c0-97dccbf9bd8b": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "17052a0f-907b-4d8e-b411-2b3d4b8757a5": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "bfe8ec1f-cf78-49ea-b797-242e32e010af": {
+          "type": "block",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-0",
+        "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-1",
+        "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-2",
+        "ad9e812f-9f19-498a-a4ee-c1358e269a06",
+        "0c5c0f1b-8df0-4e1a-875b-9ac284c88cb0",
+        "4463b4b5-871c-45d9-bf53-bee0ea86933d",
+        "0b304882-3095-40a7-b21b-e44202b604fd",
+        "3468e914-ba02-405a-93c0-97dccbf9bd8b",
+        "17052a0f-907b-4d8e-b411-2b3d4b8757a5",
+        "bfe8ec1f-cf78-49ea-b797-242e32e010af"
+      ],
+      "settings": {
+        "title": "FAQ",
+        "title_color": "#4b9b7d",
+        "title_accordion_color": "#4b9b7d",
+        "content_accordion_color": "#201a1c"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "card-product": "inline",
+        "title": "Complètez votre routine",
+        "show_secondary_image": true,
+        "bg_color": "#d7e6af",
+        "color": "#4b9b7d"
+      }
+    },
+    "d473013e-7df7-4660-8bc9-eeeef9b1d75e": {
+      "type": "product-contact",
+      "blocks": {
+        "68559418-eb2e-4bf9-a79f-f97de8962e5b": {
+          "type": "block",
+          "settings": {
+            "text": "Appelez-nous au +330678125521",
+            "url": ""
+          }
+        },
+        "fdbe05cc-c480-4415-9f77-fbb6afcd0fda": {
+          "type": "block",
+          "settings": {
+            "text": "Envoyez-nous un message",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "68559418-eb2e-4bf9-a79f-f97de8962e5b",
+        "fdbe05cc-c480-4415-9f77-fbb6afcd0fda"
+      ],
+      "settings": {
+        "section_style": "boxed",
+        "title": "Des questions sur ce produit ?",
+        "text": "<p>Contactez-nous pour en savoir plus !<\/p>",
+        "bg_color": "#faf5ef",
+        "color": "#4b9b7d"
+      }
+    },
+    "4e493477-ad97-4792-afc4-59313a83885d": {
+      "type": "newsletter",
+      "settings": {
+        "section_style": "default",
+        "title": "Newsletter",
+        "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives ! <\/p>",
+        "text_button": "S'inscrire",
+        "show_checkbox": true,
+        "bg_color": "#faf5ef",
+        "color": "#4b9b7d",
+        "button_color": "#4b9b7d"
+      }
+    },
+    "1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b": {
+      "type": "reinsurance",
+      "blocks": {
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-0": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/site-paiement_f99ac933-80b6-4c9d-8121-b925aaddf8df.png",
+            "image_width": 64,
+            "title": "Paiement 100% sécurisé",
+            "text": "Visa, Mastercard, PayPal, Apple Pay & Amex"
+          }
+        },
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-1": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/site-mail_e309fb07-3714-4e54-a31f-3e6e289a3d4c.png",
+            "image_width": 80,
+            "title": "Notre équipe à vos petits soins",
+            "text": "hello@we-pop-it.co"
+          }
+        },
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-2": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/site-satisfait_77043e29-3345-4662-b294-456277b6d971.png",
+            "image_width": 87,
+            "title": "Heureux ou remboursés",
+            "text": "retours gratuits sous 30 jours"
+          }
+        },
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
+            "image_width": 99,
+            "title": "Livraison rapide et offerte",
+            "text": "dès 49€ d'achat"
+          }
+        }
+      },
+      "block_order": [
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-0",
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-1",
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-2",
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3"
+      ],
+      "settings": {
+        "add_margin": 0,
+        "header": "",
+        "bg_color": "#4b9b7d",
+        "text_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-marquee",
+    "product-tabs",
+    "7d12314b-a9a4-42d2-8330-a732629f982b",
+    "ca7fac8e-53d2-41fb-9a5b-446c1b05dc60",
+    "16785376921acc729a",
+    "07a37119-270e-432c-8a6f-4eaeab0ff9e1",
+    "product-recommendations",
+    "d473013e-7df7-4660-8bc9-eeeef9b1d75e",
+    "4e493477-ad97-4792-afc4-59313a83885d",
+    "1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b"
+  ]
+}
