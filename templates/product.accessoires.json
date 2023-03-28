@@ -74,6 +74,7 @@
     },
     "product-marquee": {
       "type": "product-marquee",
+      "disabled": true,
       "blocks": {
         "24f6925c-397e-4ce1-960a-2f2b8bdde503": {
           "type": "block",
@@ -165,6 +166,7 @@
     },
     "7d12314b-a9a4-42d2-8330-a732629f982b": {
       "type": "product-ingredients",
+      "disabled": true,
       "blocks": {
         "9d7aeff1-7840-4d15-870e-19cf0f6854bc": {
           "type": "block",
