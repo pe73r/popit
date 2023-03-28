@@ -394,64 +394,6 @@
         "color": "#4b9b7d",
         "button_color": "#4b9b7d"
       }
-    },
-    "1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b": {
-      "type": "reinsurance",
-      "disabled": true,
-      "blocks": {
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-0": {
-          "type": "block",
-          "settings": {
-            "svg": "",
-            "image": "shopify:\/\/shop_images\/site-paiement_f99ac933-80b6-4c9d-8121-b925aaddf8df.png",
-            "image_width": 64,
-            "title": "Paiement 100% sécurisé",
-            "text": "Visa, Mastercard, PayPal, Apple Pay & Amex"
-          }
-        },
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-1": {
-          "type": "block",
-          "settings": {
-            "svg": "",
-            "image": "shopify:\/\/shop_images\/site-mail_e309fb07-3714-4e54-a31f-3e6e289a3d4c.png",
-            "image_width": 80,
-            "title": "Notre équipe à vos petits soins",
-            "text": "hello@we-pop-it.co"
-          }
-        },
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-2": {
-          "type": "block",
-          "settings": {
-            "svg": "",
-            "image": "shopify:\/\/shop_images\/site-satisfait_77043e29-3345-4662-b294-456277b6d971.png",
-            "image_width": 87,
-            "title": "Heureux ou remboursés",
-            "text": "retours gratuits sous 30 jours"
-          }
-        },
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3": {
-          "type": "block",
-          "settings": {
-            "svg": "",
-            "image": "shopify:\/\/shop_images\/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
-            "image_width": 99,
-            "title": "Livraison rapide et offerte",
-            "text": "dès 49€ d'achat"
-          }
-        }
-      },
-      "block_order": [
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-0",
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-1",
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-2",
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3"
-      ],
-      "settings": {
-        "add_margin": 0,
-        "header": "",
-        "bg_color": "#4b9b7d",
-        "text_color": "#ffffff"
-      }
     }
   },
   "order": [
@@ -464,7 +406,6 @@
     "07a37119-270e-432c-8a6f-4eaeab0ff9e1",
     "product-recommendations",
     "d473013e-7df7-4660-8bc9-eeeef9b1d75e",
-    "4e493477-ad97-4792-afc4-59313a83885d",
-    "1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b"
+    "4e493477-ad97-4792-afc4-59313a83885d"
   ]
 }
