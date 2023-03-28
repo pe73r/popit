@@ -144,12 +144,25 @@
             "button_link": "",
             "color": "#ffffff"
           }
+        },
+        "bf5492a3-f8e0-4433-b56b-c6bcd8fddb90": {
+          "type": "card",
+          "settings": {
+            "card_width": "1\/2",
+            "content": "inside",
+            "image": "shopify:\/\/shop_images\/Untitled_design_1.png",
+            "title": "Title",
+            "text": "<p>Lorem ipsum 2023.<\/p>",
+            "button_link": "",
+            "color": "#fff"
+          }
         }
       },
       "block_order": [
         "5b1a20a0-e03f-4e85-af57-eb92b7376f87",
         "012795f2-5c93-4b23-a164-e7c91241a0ec",
-        "5ada16c2-c2ae-423d-bd05-d0b6c1ac3bf3"
+        "5ada16c2-c2ae-423d-bd05-d0b6c1ac3bf3",
+        "bf5492a3-f8e0-4433-b56b-c6bcd8fddb90"
       ],
       "settings": {
         "container": "7xl"
