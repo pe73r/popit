@@ -263,15 +263,6 @@
     "98024d9b-c4cd-4f22-ba7c-cd26563f99bb": {
       "type": "collection-list-carousel",
       "blocks": {
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vitamines-soleil-gummies_636be0c5-4734-4321-9e32-efd479682295.png",
-            "subheading": "Pour une forme olympique",
-            "heading": "Énergie & Immunité",
-            "url": ""
-          }
-        },
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1": {
           "type": "image",
           "settings": {
@@ -281,21 +272,30 @@
             "url": ""
           }
         },
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vitamines-soleil-gummies_636be0c5-4734-4321-9e32-efd479682295.png",
+            "subheading": "Pour une forme olympique",
+            "heading": "Énergie & Immunité",
+            "url": ""
+          }
+        },
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/gout-tropical-kids_1.png",
+            "image": "shopify:\/\/shop_images\/sommeil-gelule-v2_70e6d86e-2ed9-4b24-b1b8-7b65a67ef3e1.png",
             "subheading": "Slide title",
-            "heading": "Tell your story",
+            "heading": "Sommeil",
             "url": ""
           }
         },
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/duree-cure-sommeil-120.png",
+            "image": "shopify:\/\/shop_images\/POUSSE_CHEVEUX_2.png",
             "subheading": "Slide title",
-            "heading": "Tell your story",
+            "heading": "Beauté",
             "url": ""
           }
         },
@@ -319,8 +319,8 @@
         }
       },
       "block_order": [
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0",
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1",
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0",
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2",
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3",
         "ec1dd371-71c4-4613-bb65-15d945712419",
