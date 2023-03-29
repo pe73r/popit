@@ -69,7 +69,7 @@
       ],
       "settings": {
         "show_dots_mobile": true,
-        "show_benefits": false
+        "show_benefits": true
       }
     },
     "product-marquee": {
