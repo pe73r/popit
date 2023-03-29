@@ -124,15 +124,6 @@
     "1db7442e-0ee1-495a-96a1-01f3969e95f2": {
       "type": "banner-intro",
       "blocks": {
-        "93825112-b67c-4bcc-9c67-e5aefb3c9a2a": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sticker-vegan-feuille-sommeil.png",
-            "image_width": 120,
-            "title": "Vegan",
-            "text": "Garanti cruelty-free et sans matières animales"
-          }
-        },
         "f7ec02ea-7e45-4959-a5f8-a49876ccab60": {
           "type": "block",
           "settings": {
@@ -140,6 +131,15 @@
             "image_width": 85,
             "title": "Vegan",
             "text": "Garanti cruelty-free et sans matières animales"
+          }
+        },
+        "93825112-b67c-4bcc-9c67-e5aefb3c9a2a": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Colorant-Vitamines-Clair_2x_17ee41fb-1cbd-445b-80f3-1864a6d6e978.png",
+            "image_width": 120,
+            "title": "Sans OGM",
+            "text": "Aux colorants naturels"
           }
         },
         "7c7cb104-dd56-4c7a-944b-cbe2c63bdfe6": {
@@ -162,8 +162,8 @@
         }
       },
       "block_order": [
-        "93825112-b67c-4bcc-9c67-e5aefb3c9a2a",
         "f7ec02ea-7e45-4959-a5f8-a49876ccab60",
+        "93825112-b67c-4bcc-9c67-e5aefb3c9a2a",
         "7c7cb104-dd56-4c7a-944b-cbe2c63bdfe6",
         "3dc98c99-4d6b-4bf4-ac0d-a895c79edd86"
       ],
