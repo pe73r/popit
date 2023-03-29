@@ -188,7 +188,7 @@
                   <span data-price-stroke data-dynamic-price-stroke class="block pl-2 text-xs line-through">
                     {%- if product.compare_at_price != blank -%}
                     <span>
-                      {{ product.compare_at_price | money_without_trailing_zeros }}
+                      <!-- price from tail-variants.js -->
                     </span>
                   {%- endif -%}
                   </span>
@@ -579,7 +579,9 @@
                     class="block font-bold">{{ product.price | money_without_trailing_zeros }}</span>
                     
                     {% if product.price != product.compare_at_price %}
-                      <span data-price-stroke class="block ml-2 text-xs line-through">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+                      <span data-price-stroke class="block ml-2 text-xs line-through">
+                        <!-- price from tail-variants.js -->
+                      </span>
                   {%- endif -%}
                 </div>
               {% else %}
