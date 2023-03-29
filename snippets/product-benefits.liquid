@@ -16,14 +16,14 @@
         type="text/javascript"></script>
     </div>
     {% if product.metafields.product.image_benefices_1 != blank or product.metafields.product.image_benefices_2 != blank or product.metafields.product.image_benefices_3 != blank %}
-      <h3 class="text-2xl md:text-3xl text-center text-{{ product-color }} mb-2">Bénéfices</h3>
+      <h3 class="text-2xl md:text-3xl text-center text-{{ product-color }} mb-1">Bénéfices</h3>
       <div class="flex justify-center gap-10 mt-4">
         {% if product.metafields.product.image_benefices_1 != blank %}
           <div class="text-center">
             <div class="w-26 h-26 rounded-full flex justify-center items-center">
               <img
                 src="{{ product.metafields.product.image_benefices_1.value | img_url: 'master'}}"
-                class="object-contain max-w-[80px]"
+                class="object-contain max-w-[100px]"
                 alt="{{ product.metafields.product.image_benefices_1.alt }}">
             </div>
             <span class="block text-sm  font-bold text-{{ product-color }}">{{ product.metafields.product.text_benefices_1 }}</span>
@@ -34,7 +34,7 @@
             <div class="w-26 h-26 rounded-full flex justify-center items-center">
               <img
                 src="{{ product.metafields.product.image_benefices_2.value | img_url: 'master' }}"
-                class="object-contain max-w-[80px]"
+                class="object-contain max-w-[100px]"
                 alt="{{ product.metafields.product.image_benefices_2.alt }}">
             </div>
             <span class="block text-sm  font-bold text-{{ product-color }}">{{ product.metafields.product.text_benefices_2 }}</span>
@@ -45,7 +45,7 @@
             <div class="w-26 h-26 rounded-full flex justify-center items-center" ">
               <img
                 src="{{ product.metafields.product.image_benefices_3.value | img_url: 'master' }}"
-                class="object-contain max-w-[80px]"
+                class="object-contain max-w-[100px]"
                 alt="{{ product.metafields.product.image_benefices_3.alt }}">
             </div>
             <span class="block text-sm font-bold text-{{ product-color }}">{{ product.metafields.product.text_benefices_3 }}</span>
