@@ -261,6 +261,11 @@
             GÉLULES
           </div>
         {% endif %}
+        {% if product.tags contains "accessoire" %}
+          <div class="text-white bg-{{ product-color }} rounded-md px-2 py-1 font-semibold text-[10px] sm:text-xs w-fit text-center Fredoka">
+            ACCESSOIRE
+          </div>
+        {% endif %}
       </div>
 
       {%- when 'title' -%}
