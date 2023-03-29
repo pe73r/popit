@@ -149,12 +149,12 @@
           "type": "card",
           "settings": {
             "card_width": "1\/2",
-            "content": "inside",
+            "content": "outside",
             "image": "shopify:\/\/shop_images\/Untitled_design_1.png",
-            "title": "Title",
-            "text": "<p>Lorem ipsum 2023.<\/p>",
+            "title": "Fabriqué dans le sud de la France",
+            "text": "<p>Puisque rien ne vaut le savoir-faire à la française, l'innovation est partout. Notre mission est de vous proposer des solutions dignes de confiance, concentrées en principes actifs et conçues avec soin sous le soleil de Nice.<\/p>",
             "button_link": "",
-            "color": "#fff"
+            "color": "#ffffff"
           }
         }
       },
