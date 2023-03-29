@@ -267,7 +267,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/vitamines-soleil-gummies_636be0c5-4734-4321-9e32-efd479682295.png",
-            "subheading": "Pour une forme olympique !",
+            "subheading": "Pour une forme olympique",
             "heading": "Énergie & Immunité",
             "url": ""
           }
@@ -276,7 +276,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/stress-gelule_bb01b68c-0cce-4ee8-b804-ecaa12354300.png",
-            "subheading": "Stress",
+            "subheading": "Pour un esprit apaisé",
             "heading": "Stress",
             "url": ""
           }
