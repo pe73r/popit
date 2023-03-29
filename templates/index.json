@@ -263,6 +263,15 @@
             "url": ""
           }
         },
+        "748a5fcb-8af2-4ef0-a929-df4a6e55ce0a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Gummies-Vitamines_2x_fae78103-cdcd-46ca-806b-8620c2da1343.png",
+            "subheading": "À emporter avec vous",
+            "heading": "Accessoires",
+            "url": ""
+          }
+        },
         "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-2": {
           "type": "image",
           "disabled": true,
@@ -277,6 +286,7 @@
       "block_order": [
         "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-0",
         "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-1",
+        "748a5fcb-8af2-4ef0-a929-df4a6e55ce0a",
         "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-2"
       ],
       "settings": {
