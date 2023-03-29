@@ -293,8 +293,8 @@
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/POUSSE_CHEVEUX_2.png",
-            "subheading": "Slide title",
+            "image": "shopify:\/\/shop_images\/beaute-gummies_e5f62aa1-738d-4a75-851c-3829dd73f8f2.png",
+            "subheading": "",
             "heading": "Beauté",
             "url": ""
           }
@@ -304,16 +304,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/quantite-gelules-energie-immunite-120.png",
             "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        },
-        "3f0bf6f6-d730-4f4c-8046-b0e3056f8d67": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/quantite-gelules-stress-120.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
+            "heading": "Kids",
             "url": ""
           }
         }
@@ -323,8 +314,7 @@
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0",
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2",
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3",
-        "ec1dd371-71c4-4613-bb65-15d945712419",
-        "3f0bf6f6-d730-4f4c-8046-b0e3056f8d67"
+        "ec1dd371-71c4-4613-bb65-15d945712419"
       ],
       "settings": {
         "subheading": "",
