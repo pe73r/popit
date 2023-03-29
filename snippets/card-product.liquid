@@ -159,18 +159,19 @@
                 data-variant="{{ card_product.selected_or_first_available_variant.id }}">
                 <button class="btn-primary {% render "button", size:"medium", fullWidth: true %} flex justify-center items-center">
                     <span class="block mr-1">Ajouter - </span>
-                    {% if card_product.compare_at_price == nil %}
-                        <span class="block text-sm">
-                            {{ card_product.price | money }}
-                        </span>
-                    {% else %} 
-                      <span class="block text-sm">
-                          {{ card_product.price | money }}
-                      </span>
-                      <span class="block line-through text-xs mr-1 font-light pl-1">
-                          {{ card_product.compare_at_price | money }}
-                      </span>   
-                   {% endif %}
+                    {% assign first_variant = card_product.first_available_variant %}
+                      {% if first_variant.compare_at_price == nil %}
+                          <span class="block text-sm">
+                              {{ first_variant.price | money }}
+                          </span>
+                      {% else %} 
+                          <span class="block text-sm">
+                              {{ first_variant.price | money }}
+                          </span>
+                          <span class="block line-through text-xs mr-1 font-light pl-1">
+                              {{ first_variant.compare_at_price | money }}
+                          </span>   
+                      {% endif %}
                 </button>
             </add-to-cart>
           </div>
