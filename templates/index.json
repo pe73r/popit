@@ -187,6 +187,71 @@
         "color": "#1a1a1a"
       }
     },
+    "98024d9b-c4cd-4f22-ba7c-cd26563f99bb": {
+      "type": "collection-list-carousel",
+      "blocks": {
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vitamines-soleil-gummies_636be0c5-4734-4321-9e32-efd479682295.png",
+            "subheading": "Pour une forme olympique toute l'année",
+            "heading": "Énergie & Immunité",
+            "url": ""
+          }
+        },
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stress-gelule_bb01b68c-0cce-4ee8-b804-ecaa12354300.png",
+            "subheading": "Pour un esprit apaisé dans un corps sain",
+            "heading": "Stress",
+            "url": ""
+          }
+        },
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/beaute-gummies_e5f62aa1-738d-4a75-851c-3829dd73f8f2.png",
+            "subheading": "Pour une apparence sublimée",
+            "heading": "Beauté",
+            "url": ""
+          }
+        },
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sommeil-gelule-v2_70e6d86e-2ed9-4b24-b1b8-7b65a67ef3e1.png",
+            "subheading": "Pour des nuits calmes et reposantes",
+            "heading": "Sommeil",
+            "url": ""
+          }
+        },
+        "ec1dd371-71c4-4613-bb65-15d945712419": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/croissance-gummies_b6911c0d-45ec-42a6-a506-671df8105427.png",
+            "subheading": "Pour des petits aventuriers en pleine croissance",
+            "heading": "Kids",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0",
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1",
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3",
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2",
+        "ec1dd371-71c4-4613-bb65-15d945712419"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Nos gammes",
+        "show_arrows": true,
+        "show_dots": true,
+        "color": "#4b9b7d",
+        "background_color": "#e3f2ed"
+      }
+    },
     "a6890697-da8c-4795-b963-7882f6d2dcbe": {
       "type": "collection-list",
       "blocks": {
@@ -262,71 +327,6 @@
         "title": "Nos produits",
         "color": "#4b9b7d",
         "background_color": "#e3f2ed"
-      }
-    },
-    "98024d9b-c4cd-4f22-ba7c-cd26563f99bb": {
-      "type": "collection-list-carousel",
-      "blocks": {
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vitamines-soleil-gummies_636be0c5-4734-4321-9e32-efd479682295.png",
-            "subheading": "Pour une forme olympique toute l'année",
-            "heading": "Énergie & Immunité",
-            "url": ""
-          }
-        },
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/stress-gelule_bb01b68c-0cce-4ee8-b804-ecaa12354300.png",
-            "subheading": "Pour un esprit apaisé dans un corps sain",
-            "heading": "Stress",
-            "url": ""
-          }
-        },
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/beaute-gummies_e5f62aa1-738d-4a75-851c-3829dd73f8f2.png",
-            "subheading": "Pour une apparence sublimée",
-            "heading": "Beauté",
-            "url": ""
-          }
-        },
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sommeil-gelule-v2_70e6d86e-2ed9-4b24-b1b8-7b65a67ef3e1.png",
-            "subheading": "Pour des nuits calmes et reposantes",
-            "heading": "Sommeil",
-            "url": ""
-          }
-        },
-        "ec1dd371-71c4-4613-bb65-15d945712419": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/croissance-gummies_b6911c0d-45ec-42a6-a506-671df8105427.png",
-            "subheading": "Pour des petits aventuriers en pleine croissance",
-            "heading": "Kids",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0",
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1",
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3",
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2",
-        "ec1dd371-71c4-4613-bb65-15d945712419"
-      ],
-      "settings": {
-        "subheading": "",
-        "title": "Nos gammes",
-        "show_arrows": true,
-        "show_dots": true,
-        "color": "#4b9b7d",
-        "background_color": "#faf5ef"
       }
     },
     "414f3324-4b76-488e-95ee-4e8f2002ed15": {
@@ -440,8 +440,8 @@
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01",
     "801df341-54b5-4e52-9b09-68b370796d1f",
     "1db7442e-0ee1-495a-96a1-01f3969e95f2",
-    "a6890697-da8c-4795-b963-7882f6d2dcbe",
     "98024d9b-c4cd-4f22-ba7c-cd26563f99bb",
+    "a6890697-da8c-4795-b963-7882f6d2dcbe",
     "414f3324-4b76-488e-95ee-4e8f2002ed15",
     "167845847058516467",
     "a11b1585-0a12-4fa7-b722-9bd6997a108a"
