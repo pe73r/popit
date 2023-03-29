@@ -263,15 +263,6 @@
     "98024d9b-c4cd-4f22-ba7c-cd26563f99bb": {
       "type": "collection-list-carousel",
       "blocks": {
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/stress-gelule_bb01b68c-0cce-4ee8-b804-ecaa12354300.png",
-            "subheading": "Pour un esprit apaisé dans un corps sain",
-            "heading": "Stress",
-            "url": ""
-          }
-        },
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0": {
           "type": "image",
           "settings": {
@@ -281,12 +272,12 @@
             "url": ""
           }
         },
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2": {
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sommeil-gelule-v2_70e6d86e-2ed9-4b24-b1b8-7b65a67ef3e1.png",
-            "subheading": "Pour des nuits calmes et reposantes",
-            "heading": "Sommeil",
+            "image": "shopify:\/\/shop_images\/stress-gelule_bb01b68c-0cce-4ee8-b804-ecaa12354300.png",
+            "subheading": "Pour un esprit apaisé dans un corps sain",
+            "heading": "Stress",
             "url": ""
           }
         },
@@ -296,6 +287,15 @@
             "image": "shopify:\/\/shop_images\/beaute-gummies_e5f62aa1-738d-4a75-851c-3829dd73f8f2.png",
             "subheading": "Pour une apparence sublimée",
             "heading": "Beauté",
+            "url": ""
+          }
+        },
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sommeil-gelule-v2_70e6d86e-2ed9-4b24-b1b8-7b65a67ef3e1.png",
+            "subheading": "Pour des nuits calmes et reposantes",
+            "heading": "Sommeil",
             "url": ""
           }
         },
@@ -310,10 +310,10 @@
         }
       },
       "block_order": [
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1",
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0",
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2",
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1",
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3",
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2",
         "ec1dd371-71c4-4613-bb65-15d945712419"
       ],
       "settings": {
