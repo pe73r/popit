@@ -18,19 +18,6 @@
             "color": "#343434"
           }
         },
-        "a6f965ee-30c1-4423-96df-f2a14db0e24a": {
-          "type": "featured_blog",
-          "settings": {
-            "blog": "infos",
-            "post_limit": 4,
-            "show_dots": true,
-            "heading": "À LIRE...",
-            "show_tag": true,
-            "show_author": false,
-            "show_date": true,
-            "show_button": true
-          }
-        },
         "f92d5646-6fe9-48d5-ba17-093769b8762e": {
           "type": "product",
           "settings": {
@@ -40,7 +27,6 @@
       },
       "block_order": [
         "5fc6ec2a-9e2d-4b1d-b7d9-5e7dba4d3f31",
-        "a6f965ee-30c1-4423-96df-f2a14db0e24a",
         "f92d5646-6fe9-48d5-ba17-093769b8762e"
       ],
       "settings": {
