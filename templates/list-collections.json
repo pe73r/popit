@@ -116,6 +116,9 @@
         "3318605b-9cc8-45b0-9992-ce4c5fabfc23",
         "ae941741-c5ba-4e14-9831-9b75d37cc10c"
       ],
+      "custom_css": [
+
+      ],
       "settings": {
       }
     },
@@ -123,7 +126,7 @@
       "type": "featured-collection",
       "settings": {
         "collection": "sommeil",
-        "products_to_show": 2,
+        "products_to_show": 4,
         "show_collection_title": true,
         "show_collection_description": true,
         "show_collection_size": true,
