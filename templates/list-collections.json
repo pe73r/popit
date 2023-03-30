@@ -129,7 +129,7 @@
         "products_to_show": 4,
         "show_collection_title": true,
         "show_collection_description": true,
-        "show_collection_size": true,
+        "show_collection_size": false,
         "show_secondary_image": false,
         "show_quantity": false,
         "show_cta": true,
