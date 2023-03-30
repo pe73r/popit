@@ -12,7 +12,7 @@
       <carousel-dots class="hidden lg:flex flex-col absolute z-10 gap-1 top-[50%] lg:left-[-5%] md:left-[-5%] xl:left-[-10%]  2xl:left-[-20%] translate-y-[-50%]">
         {%- for media in product.media -%}
           <carousel-dot class="py-2 text-center transition-all cursor-pointer group" href="{{ media }}">
-            <div class="{% if product_media_size >= 8 %} w-[40px] h-[40px]  {% else %} w-[50px] h-[50px] xl:w-[60px] xl:h-[60px] {% endif %} rounded-full  lg:hover:ring-capucine  group-selected:border-white group-selected:border-2 transition-all flex justify-center ">
+            <div class="{% if product_media_size >= 8 %} w-[40px] h-[40px]  {% else %} w-[50px] h-[50px] xl:w-[60px] xl:h-[60px] {% endif %} rounded-full bg-white group-selected:border-white group-selected:border-2 transition-all flex justify-center ">
               <img class="rounded-full" src="{{ media  | image_url: width: 52, height: 52 }}">
             </div>
           </carousel-dot>
