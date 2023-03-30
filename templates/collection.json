@@ -4,7 +4,7 @@
       "type": "collection-header",
       "settings": {
         "display": true,
-        "show_breadcrumbs": true,
+        "show_breadcrumbs": false,
         "title": "Tous nos produits",
         "description": "Des compléments alimentaires pour ravir petits et grands",
         "bg_color": "#e3f2ed",
