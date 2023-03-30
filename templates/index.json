@@ -90,8 +90,8 @@
       "settings": {
         "animationDuration": 50,
         "border": false,
-        "text_color": "#4b9b7d",
-        "background_color": "#faf5ef"
+        "text_color": "#ffffff",
+        "background_color": "#4b9b7d"
       }
     },
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01": {
@@ -123,6 +123,7 @@
     },
     "1db7442e-0ee1-495a-96a1-01f3969e95f2": {
       "type": "banner-intro",
+      "disabled": true,
       "blocks": {
         "f7ec02ea-7e45-4959-a5f8-a49876ccab60": {
           "type": "block",
@@ -244,6 +245,7 @@
     },
     "a6890697-da8c-4795-b963-7882f6d2dcbe": {
       "type": "collection-list",
+      "disabled": true,
       "blocks": {
         "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-0": {
           "type": "image",
