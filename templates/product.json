@@ -47,7 +47,7 @@
           "settings": {
             "text": "<b>LIVRAISON RAPIDE<\/b> sous 2 à 3 jours ouvrés",
             "truck": "shopify:\/\/shop_images\/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
-            "text_2": "<b>LIVRAISON GRATUITE<\/b> dès 49€ d'achat",
+            "text_2": "<b>LIVRAISON GRATUITE<\/b> dès 60€ d'achats",
             "oclock": "shopify:\/\/shop_images\/site-satisfait-main.png",
             "text_3": "<b>PAIEMENT SIMPLE<\/b> 100% sécurisé",
             "image_3": "shopify:\/\/shop_images\/site-paiement_14400fca-e5a9-4172-9474-61674fcb4109.png"
@@ -68,7 +68,8 @@
         ".just-button-main-label {font-size: 14px;}"
       ],
       "settings": {
-        "show_dots_mobile": true
+        "show_dots_mobile": true,
+        "show_benefits": true
       }
     },
     "product-marquee": {
@@ -158,8 +159,8 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
-        "bg_color": "#E6F0EB",
-        "color": "#4B9B7D"
+        "bg_color": "#e6f0eb",
+        "color": "#4b9b7d"
       }
     },
     "7d12314b-a9a4-42d2-8330-a732629f982b": {
@@ -251,7 +252,7 @@
         "collection": "frontpage",
         "title": "Ce produit existe aussi en gélules",
         "bg_color": "#4b9b7d",
-        "color": "#fff"
+        "color": "#ffffff"
       }
     },
     "16785376921acc729a": {
