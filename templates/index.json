@@ -341,7 +341,7 @@
           "type": "card",
           "settings": {
             "card_width": "1\/2",
-            "content": "inside",
+            "content": "outside",
             "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
             "title": "Title",
             "text": "<p>Lorem ipsum 2023.<\/p>",
