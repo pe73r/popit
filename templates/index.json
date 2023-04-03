@@ -393,8 +393,8 @@
       "type": "newsletter",
       "settings": {
         "section_style": "default",
-        "title": "NEWSLETTER",
-        "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives !<\/p>",
+        "title": "Newsletter",
+        "text": "<p>Abonnez-vous à notre newsletter et recevez nos bons plans et actualités (promis, pas de spam !)<\/p>",
         "text_button": "S'inscrire",
         "show_checkbox": true,
         "bg_color": "#faf5ef",
