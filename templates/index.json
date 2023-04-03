@@ -395,7 +395,7 @@
         "section_style": "default",
         "title": "Newsletter",
         "text": "<p>Abonnez-vous à notre newsletter et recevez nos bons plans et actualités (promis, pas de spam !)<\/p>",
-        "text_button": "S'inscrire",
+        "text_button": "Je m'inscris",
         "show_checkbox": true,
         "bg_color": "#faf5ef",
         "color": "#4b9b7d",
