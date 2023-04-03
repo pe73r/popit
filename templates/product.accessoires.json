@@ -77,6 +77,7 @@
       "blocks": {
         "24f6925c-397e-4ce1-960a-2f2b8bdde503": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "svg": "",
             "image": "shopify:\/\/shop_images\/popit-sticker-mure.png",
@@ -85,6 +86,7 @@
         },
         "12cf3c52-8902-4443-9aeb-7135386f0b74": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "svg": "",
             "image": "shopify:\/\/shop_images\/popit-sticker-gummies.png",
@@ -93,6 +95,7 @@
         },
         "1cf4349d-2518-41f7-a8b1-cbb19accbef3": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "svg": "",
             "image": "shopify:\/\/shop_images\/popit-sticker-feuille.png",
@@ -101,6 +104,7 @@
         },
         "a2d9df4d-be4c-428a-bda7-b1e532f69b10": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "svg": "",
             "image": "shopify:\/\/shop_images\/popit-sticker-gummies-sommeil.png",
@@ -117,8 +121,8 @@
       "settings": {
         "section_type": "marquee",
         "animationDuration": 30,
-        "bg_color": "#e3f2ed",
-        "color": "#4b9b7d"
+        "bg_color": "#4b9b7d",
+        "color": "#ffffff"
       }
     },
     "product-tabs": {
