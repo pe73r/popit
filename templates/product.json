@@ -46,11 +46,11 @@
           "type": "delivery_note",
           "settings": {
             "text": "<b>LIVRAISON RAPIDE<\/b> sous 2 à 3 jours ouvrés",
-            "truck": "shopify:\/\/shop_images\/picto-livraison.svg",
+            "truck": "shopify:\/\/shop_images\/picto-livraison-rapide.png",
             "text_2": "<b>LIVRAISON GRATUITE<\/b> dès 60€ d'achats",
-            "oclock": "shopify:\/\/shop_images\/picto-main.svg",
+            "oclock": "shopify:\/\/shop_images\/picto-livraison-gratuite.png",
             "text_3": "<b>PAIEMENT SÉCURISÉ <\/b> 100% facile",
-            "image_3": "shopify:\/\/shop_images\/picto-paiement.svg"
+            "image_3": "shopify:\/\/shop_images\/picto-paiement-securise.png"
           }
         }
       },
