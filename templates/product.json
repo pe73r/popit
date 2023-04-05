@@ -400,6 +400,16 @@
     "1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b": {
       "type": "reinsurance",
       "blocks": {
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
+            "image_width": 99,
+            "title": "Livraison rapide et offerte",
+            "text": "dès 60€ d'achats"
+          }
+        },
         "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-0": {
           "type": "block",
           "settings": {
@@ -429,23 +439,13 @@
             "title": "Heureux ou remboursés",
             "text": "retours gratuits sous 30 jours"
           }
-        },
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3": {
-          "type": "block",
-          "settings": {
-            "svg": "",
-            "image": "shopify:\/\/shop_images\/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
-            "image_width": 99,
-            "title": "Livraison rapide et offerte",
-            "text": "dès 60€ d'achats"
-          }
         }
       },
       "block_order": [
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3",
         "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-0",
         "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-1",
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-2",
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3"
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-2"
       ],
       "settings": {
         "add_margin": 0,
