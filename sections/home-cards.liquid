@@ -1,15 +1,31 @@
-<div class="pt-10 pb-20">
-  <div class="w-11/12 mx-auto md:max-w-{{ section.settings.container }}">
-    <div class="flex flex-col md:flex-row gap-5 md:gap-6">
+<div
+  class="pt-10 pb-20">
+  <div
+    class="w-11/12 mx-auto md:max-w-{{ section.settings.container }}">
+    {% if section.settings.title != blank %}
+      <h3
+        class="text-xl md:text-3xl font-bold text-green mb-8 text-center">
+        {{ section.settings.title }}
+      </h3>
+    {% endif %}
+    <div
+      class="flex flex-col md:flex-row gap-5 md:gap-6">
       {%- for block in section.blocks -%}
-        <div class="w-full md:1/2  text-center {% if block.settings.card_width == "3/5" %} md:w-3/5 {% elsif block.settings.card_width == "2/5" %} md:w-2/5 {% endif %}">
-          <div class="w-full bg-cover bg-center bg-no-repeat flex items-center justify-center p-5 h-[370px] md:h-[350px] rounded-md" style="background-image: url({{block.settings.image | img_url: '1000x' }});">
+        <div
+          class="w-full md:1/2  text-center {% if block.settings.card_width == "3/5" %} md:w-3/5 {% elsif block.settings.card_width == "2/5" %} md:w-2/5 {% endif %}">
+          <div
+            class="w-full bg-cover bg-center bg-no-repeat flex items-center justify-center p-5 h-[370px] md:h-[350px] rounded-md"
+            style="background-image: url({{block.settings.image | img_url: '1000x' }});">
             {% if block.settings.content == 'inside' %}
               <div>
-                <h3 class="text-xl mb-5" style="color:{{ block.settings.color }};">{{ block.settings.title }}</h3>
+                <h3
+                  class="text-xl mb-5"
+                  style="color:{{ block.settings.color }};">{{ block.settings.title }}</h3>
 
                 {% if block.settings.text != blank %}
-                  <div class="text-sm md:text-base" style="color:{{ block.settings.color }};">
+                  <div
+                    class="text-sm md:text-base"
+                    style="color:{{ block.settings.color }};">
                     {{ block.settings.text }}
                   </div>
                 {% endif %}
@@ -18,11 +34,26 @@
             {% endif %}
           </div>
           {% if block.settings.content == 'outside' %}
-            <div class="text-center mt-5">
-              <h3 class="text-xl mb-2" style="color:{{ section.settings.color }};">{{ block.settings.title }}</h3>
+            <div
+              class="text-center mt-5">
+              <h3
+                class="text-xl mb-2"
+                style="color:{{ section.settings.color }};">{{ block.settings.title }}</h3>
               {% if block.settings.text != blank %}
-                <div class="text-sm md:text-base" style="color:{{ section.settings.color }};">
+                <div
+                  class="text-sm"
+                  style="color:{{ section.settings.color }};">
                   {{ block.settings.text }}
+                </div>
+              {% endif %}
+              {% if block.settings.cta != blank %}
+                <div
+                  class="mt-3 w-full">
+                  <a
+                    href="{{ block.settings.button_link }}"
+                    class="block btn-primary {% render "button" size: "small" %}">
+                    {{ block.settings.cta }}
+                  </a>
                 </div>
               {% endif %}
 
@@ -55,7 +86,13 @@
         ],
         "default": "7xl",
         "label": "Container desktop"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "section title",
+        "default": "Title"
       }
+
     ],
     "blocks": [
       {
@@ -111,6 +148,14 @@
             "id": "text",
             "default": "<p>Lorem ipsum 2023.</p>",
             "label": "Text"
+          }, {
+            "type": "header",
+            "content": "Button"
+          }, {
+            "type": "text",
+            "id": "cta",
+            "label": "Call to action",
+            "default": "Link"
           }, {
             "type": "url",
             "id": "button_link",
