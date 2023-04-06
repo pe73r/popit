@@ -75,7 +75,7 @@
     }
   {% elsif product.tags contains "stress" %}
     .products-slider {
-      background-color: #2F52A0;
+      background-color: #2D286E;
     }
   {% elsif product.tags contains "feminin" %}
     .products-slider {
@@ -86,9 +86,9 @@
       background-color: #C3E6DC;
     }
   {% elsif product.tags contains "hair" or product.tags contains "peau" or product.tags contains "beaute" %}
-      .products-slider {
-        background-color: #E4003A;
-      }
+    .products-slider {
+      background-color: #E4003A;
+    }
   {% else %}
     .products-slider {
       background-color: {{ section.settings.bg_color }}

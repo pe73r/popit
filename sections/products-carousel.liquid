@@ -6,11 +6,15 @@
     <tail-tabs class="relative">
       <tabs-buttons class="justify-center gap-3 md:gap-4 text-center mb-2 md:mb-4 relative">
         <div class="tab block relative group transition-all !border-[0] pb-3 cursor-pointer selected:border-b-2 selected:after:content-['']  selected:text-green selected:after:block selected:after:bg-green selected:after:w-[70%] selected:after:h-[3px] selected:after:absolute selected:after:bottom-[5px] selected:after:left-[50%] selected:after:translate-x-[-50%] selected:after:mx-auto">
-          <h3 class="text-xl md:text-3xl group:selected:font-bold group:selected:text-green">
-            {% if s.collection != blank %}
+          {% if s.title != blank %}
+            <h3 class="text-xl md:text-3xl font-bold text-green">
+              {{ s.title }}
+            </h3>
+          {% else %}
+            <h3 class="text-xl md:text-3xl group:selected:font-bold group:selected:text-green">
               {{ s.collection.title }}
-            {% endif %}
-          </h3>
+            </h3>
+          {% endif %}
         </div>
         {% if s.collection_2 != blank %}
           <div class="tab block relative group transition-all !border-[0] pb-3 cursor-pointer selected:border-b-2 selected:after:content-['']  selected:text-green selected:after:block selected:after:bg-green selected:after:w-[70%] selected:after:h-[3px] selected:after:absolute selected:after:bottom-[5px] selected:after:left-[50%] selected:after:translate-x-[-50%] selected:after:mx-auto">
@@ -137,10 +141,17 @@
         "default": "7xl",
         "label": "Container desktop"
       },
+
       {
         "type": "collection",
         "id": "collection",
         "label": "Collection to display"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "section title",
+        "default": "Title"
       },
       {
         "type": "range",
@@ -150,8 +161,7 @@
         "step": 1,
         "default": 6,
         "label": "Maximum products to show"
-      },
-      {
+      }, {
         "type": "collection",
         "id": "collection_2",
         "label": "Collection to display"

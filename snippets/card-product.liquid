@@ -4,6 +4,7 @@
           <!-- product image -->
          <div class="relative group">
              <!-- discount % -->
+             {% comment %}
               {%- if variant.compare_at_price != blank or card_product.compare_at_price != blank-%}
               {% assign percentage = 0 %}
               {% for variant in card_product.variants %}
@@ -12,6 +13,7 @@
               {% endfor %}
               <div class="absolute z-20 right-2 top-0 mt-2 text-xs text-white bg-sale font-bold rounded-md py-1 px-2 whitespace-nowrap">-{{ percentage }}%</div>
             {% endif %}
+          {% endcomment %}
 
             {%- if card_product.featured_media -%}
                 <div class="w-full mx-auto rounded-lg {% if card_product.media[1] != nil and show_secondary_image %} card_product__image transition-all md:group-hover:opacity-0 {% endif %}  ">
