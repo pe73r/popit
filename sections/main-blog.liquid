@@ -7,7 +7,7 @@
       <div class="flex items-center ml-2 lg:ml-0 lg:justify-center gap-2">
         <div class="text-[15px] min-w-fit py-1 snap-center">
           <a href="{{ blog.url }}">
-            <div class="flex items-center justify-center py-1 px-2 bg-[#E3F2ED] rounded-full max-w-[70px] focus:border-2 focus:border-[#4B9B7D]">
+            <div class="flex items-center justify-center py-1 px-2 bg-[#E3F2ED] rounded-full max-w-[80px] focus:border-2 focus:border-[#4B9B7D]">
               <span class="block text-xs md:text-sm text-[#4B9B7D]">
                 Tous
               </span>
@@ -23,49 +23,49 @@
             <a href="{{ blog.url }}/tagged/{{ tag | handle }} ">
               <div class="flex justify-center mx-auto items-center rounded-full"></div>
               {%- if tag contains "Énergie" -%}
-                <div class="flex items-center justify-center py-1 px-2 bg-[#FEE5C6] rounded-full max-w-[70px] {% if current_tags contains tag %} border border-[#EA5B0C] {% endif %}">
+                <div class="flex items-center justify-center py-1 px-6 bg-[#FEE5C6] rounded-full max-w-[80px] {% if current_tags contains tag %} border border-[#EA5B0C] {% endif %}">
                   <span class="block text-xs md:text-sm text-[#EA5B0C]">
                     {{ tag }}
                   </span>
                 </div>
               {%- elsif tag contains "Sommeil" -%}
-                <div class="flex items-center justify-center py-1 px-2 bg-[#E9D2E7] rounded-full max-w-[70px]{% if current_tags contains tag %} border border-[#4F2674] {% endif %}">
+                <div class="flex items-center justify-center py-1 px-6 bg-[#E9D2E7] rounded-full max-w-[80px]{% if current_tags contains tag %} border border-[#4F2674] {% endif %}">
                   <span class="block text-xs md:text-sm text-[#4F2674]">
                     {{ tag }}
                   </span>
                 </div>
               {%- elsif tag contains "Alimentation" -%}
-                <div class="flex items-center justify-center py-1 px-2 bg-[#D9E6B1] rounded-full max-w-[100px]{% if current_tags contains tag %} border border-[#3D925C] {% endif %}">
+                <div class="flex items-center justify-center py-1 px-6 bg-[#D9E6B1] rounded-full max-w-[115px]{% if current_tags contains tag %} border border-[#3D925C] {% endif %}">
                   <span class="block text-xs md:text-sm text-[#3D925C]">
                     {{ tag }}
                   </span>
                 </div>
               {%- elsif tag contains "Sport" -%}
-                <div class="flex items-center justify-center py-1 px-2 bg-[#CBE7E6] rounded-full max-w-[70px]{% if current_tags contains tag %} border border-[#2F52A0] {% endif %}">
+                <div class="flex items-center justify-center py-1 px-6 bg-[#CBE7E6] rounded-full max-w-[80px]{% if current_tags contains tag %} border border-[#2F52A0] {% endif %}">
                   <span class="block text-xs md:text-sm text-[#2F52A0]">
                     {{ tag }}
                   </span>
                 </div>
               {%- elsif tag contains "Stress" -%}
-                <div class="flex items-center justify-center py-1 px-2 bg-[#B7E1F5] rounded-full max-w-[70px]{% if current_tags contains tag %} border border-[#2F2870] {% endif %}">
-                  <span class="block text-xs md:text-sm text-[#2F2870]">
+                <div class="flex items-center justify-center py-1 px-6 bg-[#B7E1F5] rounded-full max-w-[80px]{% if current_tags contains tag %} border border-[#2F2880] {% endif %}">
+                  <span class="block text-xs md:text-sm text-[#2F2880]">
                     {{ tag }}
                   </span>
                 </div>
               {%- elsif tag contains "Féminin" -%}
-                <div class="flex items-center justify-center py-1 px-2 bg-[#F9CDDB] rounded-full max-w-[70px]{% if current_tags contains tag %} border border-[#9D1553] {% endif %}">
+                <div class="flex items-center justify-center py-1 px-6 bg-[#F9CDDB] rounded-full max-w-[80px]{% if current_tags contains tag %} border border-[#9D1553] {% endif %}">
                   <span class="block text-xs md:text-sm text-[#9D1553]">
                     {{ tag }}
                   </span>
                 </div>
               {%- elsif tag contains "Peau" -%}
-                <div class="flex items-center justify-center py-1 px-2 bg-[#FBDBDC] rounded-full max-w-[70px]{% if current_tags contains tag %} border border-[#E4003A]{% endif %}">
+                <div class="flex items-center justify-center py-1 px-6 bg-[#FBDBDC] rounded-full max-w-[80px]{% if current_tags contains tag %} border border-[#E4003A]{% endif %}">
                   <span class="block text-xs md:text-sm text-[#E4003A]">
                     {{ tag }}
                   </span>
                 </div>
               {%- elsif tag contains "Mémoire/focus" -%}
-                <div class="flex items-center justify-center py-1 px-2 bg-[#C2E3DF] rounded-full max-w-[115px]{% if current_tags contains tag %} border border-[#00555A] {% endif %}">
+                <div class="flex items-center justify-center py-1 px-6 bg-[#C2E3DF] rounded-full max-w-[115px]{% if current_tags contains tag %} border border-[#00555A] {% endif %}">
                   <span class="block text-xs md:text-sm text-[#00555A]">
                     {{ tag }}
                   </span>
