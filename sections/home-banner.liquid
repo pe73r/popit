@@ -1,10 +1,15 @@
 {% assign s = section.settings %}
-<div class="py-10 md:py-12" style="background-color: {{ section.settings.bg_color }}">
-  <div class="relative bg-gradiant w-11/12 max-w-7xl mx-auto rounded-xl flex flex-col md:flex-row justify-between items-center gap-5 md:gap-8 xl:gap-10 p-2 sm:p-3 md:p-8 xl:p-12">
+<div
+  class="py-10 md:py-12"
+  style="background-color: {{ section.settings.bg_color }}">
+  <div
+    class="relative bg-gradiant w-11/12 max-w-7xl mx-auto rounded-xl flex flex-col md:flex-row justify-between items-center gap-5 md:gap-8 xl:gap-10 p-2 sm:p-3 md:p-8 xl:p-12">
     {% if s.label != blank %}
-      <div class="block md:hidden absolute top-2 right-2 text-[10px] py-1 px-2 text-white font-bold bg-orange w-fit rounded-md mb-2 mx-auto md:mx-0">{{ s.label }}</div>
+      <div
+        class="block md:hidden absolute top-2 right-2 text-[10px] py-1 px-2 text-white font-bold bg-orange w-fit rounded-md mb-2 mx-auto md:mx-0">{{ s.label }}</div>
     {% endif %}
-    <div class="w-full md:w-5/12">
+    <div
+      class="w-full md:w-5/12">
       {% if section.settings.image != blank %}
         <img
           class="lazy mx-auto max-w-[250px] md:max-w-full"
@@ -16,22 +21,31 @@
         {{ 'image' | placeholder_svg_tag }}
       {% endif %}
     </div>
-    <div class="w-full md:w-7/12 text-center md:text-left">
+    <div
+      class="w-full md:w-7/12 text-center md:text-left">
       {% if s.label != blank %}
-        <div class="hidden md:block text-xs py-1 px-2 text-white font-bold bg-orange w-fit rounded-md mb-2 mx-auto md:mx-0">{{ s.label }}</div>
+        <div
+          class="hidden md:block text-xs py-1 px-2 text-white font-bold bg-orange w-fit rounded-md mb-3 mx-auto md:mx-0">{{ s.label }}</div>
       {% endif %}
 
       {% if s.subtitle != blank %}
-        <h4 class="text-sm md:text-xl md:text-white mb-2 md:mb-3">{{ s.subtitle }}</h4>
+        <h4
+          class="text-sm md:text-xl md:text-white mb-2 md:mb-3">{{ s.subtitle }}</h4>
       {% endif %}
 
       {% if s.title != blank %}
-        <h2 class="hidden md:block section-title text-3xl leading-7 md:text-4xl md:leading-9 xl:text-6xl xl:leading-[4rem]" style="color:{{ section.settings.color }}">{{ s.title }}</h2>
-        <h3 class="block md:hidden Captura section-title text-sm" style="color:{{ section.settings.color }}">{{ s.title }}</h3>
+        <h2
+          class="hidden md:block section-title text-3xl leading-7 md:text-4xl md:leading-9 xl:text-6xl xl:leading-[4rem]"
+          style="color:{{ section.settings.color }}">{{ s.title }}</h2>
+        <h3
+          class="block md:hidden Captura section-title text-sm"
+          style="color:{{ section.settings.color }}">{{ s.title }}</h3>
       {% endif %}
 
       {% if s.cta != blank %}
-        <a class="block mt-3 md:mt-8 {% render "button", size:"medium", color:"green", fullWidth: true %}" href="{{ s.ctaLink }}">{{ s.cta }}</a>
+        <a
+          class="block mt-3 md:mt-8 {% render "button", size:"medium", color:"green", fullWidth: true %}"
+          href="{{ s.ctaLink }}">{{ s.cta }}</a>
       {% endif %}
     </div>
   </div>
@@ -42,7 +56,7 @@
   }
 
   .section-title span {
-    color: #F05D5E;
+    color: #EB5A0A;
   }
   @media(max-width: 639px) {
     .section-title span {
