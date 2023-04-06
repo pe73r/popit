@@ -81,7 +81,7 @@
                       form="{{ product_form_id }}"
                       class="radio-variant-circle-sticky w-0 h-0 opacity-0 md:collapse hidden  {% if option.selected_value == value %}checked{% endif %}">
                     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                      <div data-option-value="{{ value }}" class="variant-box block pt-2 pb-3 max-w-[125px] {% if value contains "60" %} px-3.5 {% else %} px-2 {% endif %} bg-white min-h-[55px] bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
+                      <div data-option-value="{{ value }}" class="variant-box block pt-2 pb-3 max-w-[125px] {% if value contains "60" or value contains "30" %} px-3.5 {% else %} px-3 {% endif %} bg-white min-h-[55px] bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
                         <h5 class="text-sm text-{{ product-color }} leading-4">{{ value }}</h5>
                         <!-- workaround to show variant price -->
                         {% assign counter = counter | plus: 1 %}
