@@ -101,6 +101,7 @@
       "settings": {
         "container": "7xl",
         "collection": "frontpage",
+        "title": "Title",
         "limit": 25,
         "collection_2": "",
         "limit_2": 6,
@@ -409,6 +410,21 @@
         "color": "#4b9b7d",
         "button_color": "#4b9b7d"
       }
+    },
+    "1680777446de6b452b": {
+      "type": "apps",
+      "blocks": {
+        "3013daef-c239-4333-9e08-e37865c1a077": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/verified_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "3013daef-c239-4333-9e08-e37865c1a077"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -422,6 +438,7 @@
     "a6890697-da8c-4795-b963-7882f6d2dcbe",
     "414f3324-4b76-488e-95ee-4e8f2002ed15",
     "167845847058516467",
-    "a11b1585-0a12-4fa7-b722-9bd6997a108a"
+    "a11b1585-0a12-4fa7-b722-9bd6997a108a",
+    "1680777446de6b452b"
   ]
 }
