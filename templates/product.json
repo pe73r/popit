@@ -46,11 +46,11 @@
           "type": "delivery_note",
           "settings": {
             "text": "<b>LIVRAISON RAPIDE<\/b> sous 2 à 3 jours ouvrés",
-            "truck": "shopify:\/\/shop_images\/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
-            "text_2": "<b>LIVRAISON GRATUITE<\/b> dès 49€ d'achat",
-            "oclock": "shopify:\/\/shop_images\/site-satisfait-main.png",
-            "text_3": "<b>PAIEMENT SIMPLE<\/b> 100% sécurisé",
-            "image_3": "shopify:\/\/shop_images\/site-paiement_14400fca-e5a9-4172-9474-61674fcb4109.png"
+            "truck": "shopify:\/\/shop_images\/picto-livraison-rapide_351a6b45-9442-4a56-a7e1-93b97a818b3f.png",
+            "text_2": "<b>LIVRAISON GRATUITE<\/b> dès 60€ d'achats",
+            "oclock": "shopify:\/\/shop_images\/picto-livraison-gratuite_02ef0ef2-8acf-4b39-bade-4e025b79a2b7.png",
+            "text_3": "<b>PAIEMENT 100% SÉCURISÉ <\/b> ultra facile",
+            "image_3": "shopify:\/\/shop_images\/picto-paiement-securise_718a4110-6591-4ab4-b08c-8da2a2e654e7.png"
           }
         }
       },
@@ -68,7 +68,8 @@
         ".just-button-main-label {font-size: 14px;}"
       ],
       "settings": {
-        "show_dots_mobile": true
+        "show_dots_mobile": true,
+        "show_benefits": true
       }
     },
     "product-marquee": {
@@ -158,8 +159,8 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
-        "bg_color": "#E6F0EB",
-        "color": "#4B9B7D"
+        "bg_color": "#e6f0eb",
+        "color": "#4b9b7d"
       }
     },
     "7d12314b-a9a4-42d2-8330-a732629f982b": {
@@ -251,7 +252,7 @@
         "collection": "frontpage",
         "title": "Ce produit existe aussi en gélules",
         "bg_color": "#4b9b7d",
-        "color": "#fff"
+        "color": "#ffffff"
       }
     },
     "16785376921acc729a": {
@@ -388,8 +389,8 @@
       "settings": {
         "section_style": "default",
         "title": "Newsletter",
-        "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives ! <\/p>",
-        "text_button": "S'inscrire",
+        "text": "<p>Abonnez-vous à notre newsletter et recevez nos bons plans et actualités (promis, pas de spam !)<\/p>",
+        "text_button": "Je m'inscris",
         "show_checkbox": true,
         "bg_color": "#faf5ef",
         "color": "#4b9b7d",
@@ -399,6 +400,16 @@
     "1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b": {
       "type": "reinsurance",
       "blocks": {
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
+            "image_width": 99,
+            "title": "Livraison rapide et offerte",
+            "text": "dès 60€ d'achats"
+          }
+        },
         "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-0": {
           "type": "block",
           "settings": {
@@ -428,23 +439,13 @@
             "title": "Heureux ou remboursés",
             "text": "retours gratuits sous 30 jours"
           }
-        },
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3": {
-          "type": "block",
-          "settings": {
-            "svg": "",
-            "image": "shopify:\/\/shop_images\/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
-            "image_width": 99,
-            "title": "Livraison rapide et offerte",
-            "text": "dès 49€ d'achat"
-          }
         }
       },
       "block_order": [
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3",
         "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-0",
         "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-1",
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-2",
-        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-3"
+        "template--17232714531110__1bf2f5ce-ffbd-45d1-9dd3-8a4fb712914b-1679327352132c4af3-2"
       ],
       "settings": {
         "add_margin": 0,

@@ -5,9 +5,9 @@
       "settings": {
         "show_breadcrumbs": true,
         "title": "Tous nos produits",
-        "description": "Des compléments alimentaires pour favoriser votre digestion et votre transit intestinal...\n<!--split-->\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "description": "Des compléments alimentaires pour ravir petits et grands.",
         "bg_color": "#e3f2ed",
-        "color": "#005f3b"
+        "color": "#4b9b7d"
       }
     },
     "collection-links": {
@@ -100,7 +100,7 @@
             "title": "cheveux",
             "link": "#cheveux",
             "bg_color": "#e22120",
-            "color": "#3D925C"
+            "color": "#3d925c"
           }
         }
       },
@@ -116,6 +116,9 @@
         "3318605b-9cc8-45b0-9992-ce4c5fabfc23",
         "ae941741-c5ba-4e14-9831-9b75d37cc10c"
       ],
+      "custom_css": [
+
+      ],
       "settings": {
       }
     },
@@ -123,10 +126,10 @@
       "type": "featured-collection",
       "settings": {
         "collection": "sommeil",
-        "products_to_show": 2,
+        "products_to_show": 4,
         "show_collection_title": true,
         "show_collection_description": true,
-        "show_collection_size": true,
+        "show_collection_size": false,
         "show_secondary_image": false,
         "show_quantity": false,
         "show_cta": true,

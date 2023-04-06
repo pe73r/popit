@@ -6,7 +6,8 @@
         "005ed553-0fc4-4465-b465-1c7b8bed466c": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.jpg",
+            "image": "shopify:\/\/shop_images\/Sans_titre_15.png",
+            "image_mobile": "shopify:\/\/shop_images\/POP_IT_-_WEBSITE_-_HOMEPAGE_MOBILE_6.png",
             "title": "Découvrez nos compléments <br>\nalimentaires et leurs<br>\nbénéfices.",
             "title_mobile": "Découvrez nos compléments alimentaires et leurs bénéfices.",
             "text": "",
@@ -19,6 +20,7 @@
         },
         "16635863695bdbafb2-0": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/batch-by-wisconsin-hemp-scientific-NDPUzuo5a8M-unsplash.jpg",
             "image_mobile": "shopify:\/\/shop_images\/batch-by-wisconsin-hemp-scientific-NDPUzuo5a8M-unsplash.jpg",
@@ -38,7 +40,7 @@
         "16635863695bdbafb2-0"
       ],
       "settings": {
-        "show_dots": true
+        "show_dots": false
       }
     },
     "7e893ba1-ec47-4d9b-9864-cb4555706f15": {
@@ -48,8 +50,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/site-mail.png",
-            "text": "<p> Simple et pratique<\/p>",
+            "image": "shopify:\/\/shop_images\/picto-simples-et-bons_b4dd2d81-55da-42bd-b3f2-ea5266fd0037.png",
+            "text": "<p> Simples et bons<\/p>",
             "url": ""
           }
         },
@@ -57,8 +59,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/vitamines-haltere-gummies_c9dafd91-8522-47d4-9ea3-a02420d5d410.png",
-            "text": "<p>Retrouvez de l'énergie au quotidien<\/p>",
+            "image": "shopify:\/\/shop_images\/picto-pour-toute-la-famille_9e282773-3796-4928-ba1d-7c04393754e3.png",
+            "text": "<p>Pour toute la famille<\/p>",
             "url": ""
           }
         },
@@ -66,8 +68,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/sticker-vegan-feuille-vitamines.png",
-            "text": "<p>Garanti cruelty-free et sans matières animales<\/p>",
+            "image": "shopify:\/\/shop_images\/picto-fabrique-en-france_85563e3f-b24c-45d1-815a-416131fba837.png",
+            "text": "<p>Fabriqués en France <\/p>",
             "url": ""
           }
         },
@@ -75,17 +77,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/antioxydant-gummies.png",
-            "text": "<p>Coup de boost physique et mental<\/p>",
-            "url": ""
-          }
-        },
-        "8b43ede5-d99d-4422-9fb4-8ab609c60ee4": {
-          "type": "text",
-          "settings": {
-            "svg": "",
-            "image": "shopify:\/\/shop_images\/vitamines-soleil-gummies.png",
-            "text": "<p>Facile à prendre chaque matin<\/p>",
+            "image": "shopify:\/\/shop_images\/picto-vegan-cruelty-free_14949e0d-f2c4-4d89-86e8-8781b714e130.png",
+            "text": "<p>Vegan et cruelty-free<\/p>",
             "url": ""
           }
         }
@@ -94,14 +87,13 @@
         "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-0",
         "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-1",
         "template--17232714006822__7e893ba1-ec47-4d9b-9864-cb4555706f15-167153641676fca24f-2",
-        "2ad908f2-22cd-4449-8dfb-5b5780097b51",
-        "8b43ede5-d99d-4422-9fb4-8ab609c60ee4"
+        "2ad908f2-22cd-4449-8dfb-5b5780097b51"
       ],
       "settings": {
         "animationDuration": 50,
         "border": false,
-        "text_color": "#4b9b7d",
-        "background_color": "#faf5ef"
+        "text_color": "#ffffff",
+        "background_color": "#4b9b7d"
       }
     },
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01": {
@@ -117,6 +109,266 @@
         "show_cta": true,
         "show_arrows": true,
         "show_dots": true
+      }
+    },
+    "904b1d5d-41ad-473a-b6e8-626f0e6b9062": {
+      "type": "join-widget-section",
+      "settings": {
+        "widget_html": "<div id=\"list-bubble-wiget-home\" style=\"margin: 5px 2px; min-height: 108px;\"><\/div> <script src=\"https:\/\/popit.my.join-stories.com\/widgets\/wiget-home\/index.js\" data-join-widget-id=\"list-bubble-wiget-home\" data-join-widget-alias=\"wiget-home\" type=\"text\/javascript\"><\/script>"
+      }
+    },
+    "801df341-54b5-4e52-9b09-68b370796d1f": {
+      "type": "home-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_9358.png",
+        "label": "JUSQU’À -15%",
+        "subtitle": "",
+        "title": "Économisez jusqu’à <span>-15%<\/span> en achetant un pack de 3, 4 ou 5 produits.",
+        "cta": "Je crée mon pack",
+        "ctaLink": "",
+        "color": "#111111"
+      }
+    },
+    "1db7442e-0ee1-495a-96a1-01f3969e95f2": {
+      "type": "banner-intro",
+      "disabled": true,
+      "blocks": {
+        "f7ec02ea-7e45-4959-a5f8-a49876ccab60": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vegan-Beaute-Clair_2x_1ed30b9d-739b-4e3f-838a-f17950e4aa71.png",
+            "image_width": 85,
+            "title": "Vegan",
+            "text": "Garanti cruelty-free et sans matières animales"
+          }
+        },
+        "93825112-b67c-4bcc-9c67-e5aefb3c9a2a": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Colorant-Vitamines-Clair_2x_17ee41fb-1cbd-445b-80f3-1864a6d6e978.png",
+            "image_width": 85,
+            "title": "Naturellement purs",
+            "text": "Garanti sans OGM et sans colorants artificiels"
+          }
+        },
+        "7c7cb104-dd56-4c7a-944b-cbe2c63bdfe6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lactose-Sommeil-Clair_2x_205c389a-ef9c-47f8-8292-d512e21bc594.png",
+            "image_width": 85,
+            "title": "Sans lactose",
+            "text": "Convient aux personnes intolérantes"
+          }
+        },
+        "3dc98c99-4d6b-4bf4-ac0d-a895c79edd86": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Gluten-Magnesium-Clair_2x_039efe40-9b22-49e3-b1f5-42da41878db1.png",
+            "image_width": 85,
+            "title": "Sans gluten",
+            "text": "Convient aux personnes allergiques"
+          }
+        }
+      },
+      "block_order": [
+        "f7ec02ea-7e45-4959-a5f8-a49876ccab60",
+        "93825112-b67c-4bcc-9c67-e5aefb3c9a2a",
+        "7c7cb104-dd56-4c7a-944b-cbe2c63bdfe6",
+        "3dc98c99-4d6b-4bf4-ac0d-a895c79edd86"
+      ],
+      "settings": {
+        "section_style": "default",
+        "title": "",
+        "subtitle": "",
+        "cta": "",
+        "ctaLink": "",
+        "bg_color": "#faf5ef",
+        "color": "#4b9b7d"
+      }
+    },
+    "98024d9b-c4cd-4f22-ba7c-cd26563f99bb": {
+      "type": "collection-list-carousel",
+      "blocks": {
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sommeil-gelule-v2_70e6d86e-2ed9-4b24-b1b8-7b65a67ef3e1.png",
+            "subheading": "Pour des nuits calmes et reposantes",
+            "heading": "Sommeil",
+            "url": "shopify:\/\/collections\/sommeil"
+          }
+        },
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vitamines-soleil-gummies_636be0c5-4734-4321-9e32-efd479682295.png",
+            "subheading": "Pour une forme olympique toute l'année",
+            "heading": "Énergie & Immunité",
+            "url": "shopify:\/\/collections\/energie"
+          }
+        },
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stress-gelule_bb01b68c-0cce-4ee8-b804-ecaa12354300.png",
+            "subheading": "Pour un esprit apaisé dans un corps sain",
+            "heading": "Stress",
+            "url": "shopify:\/\/collections\/stress"
+          }
+        },
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/beaute-gummies_e5f62aa1-738d-4a75-851c-3829dd73f8f2.png",
+            "subheading": "Pour une apparence sublimée",
+            "heading": "Beauté",
+            "url": "shopify:\/\/collections\/beaute"
+          }
+        },
+        "ec1dd371-71c4-4613-bb65-15d945712419": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/croissance-gummies_b6911c0d-45ec-42a6-a506-671df8105427.png",
+            "subheading": "Pour des petits aventuriers en pleine croissance",
+            "heading": "Kids",
+            "url": "shopify:\/\/collections\/kids"
+          }
+        }
+      },
+      "block_order": [
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2",
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0",
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1",
+        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3",
+        "ec1dd371-71c4-4613-bb65-15d945712419"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Nos gammes",
+        "show_arrows": true,
+        "show_dots": true,
+        "color": "#111111",
+        "background_color": "#e6f0eb"
+      }
+    },
+    "a6890697-da8c-4795-b963-7882f6d2dcbe": {
+      "type": "collection-list",
+      "disabled": true,
+      "blocks": {
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Gummies-Vitamines_2x_fae78103-cdcd-46ca-806b-8620c2da1343.png",
+            "subheading": "Au bon goût de fruit",
+            "heading": "Gummies",
+            "url": "shopify:\/\/collections\/gummies"
+          }
+        },
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Gelules-Sommeil_2x_b0fd11ef-e918-401f-9572-391f72089378.png",
+            "subheading": "À l'enveloppe végétale",
+            "heading": "Gélules",
+            "url": "shopify:\/\/collections\/gelules"
+          }
+        },
+        "748a5fcb-8af2-4ef0-a929-df4a6e55ce0a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Gummies-Vitamines_2x_fae78103-cdcd-46ca-806b-8620c2da1343.png",
+            "subheading": "À emporter avec vous",
+            "heading": "Accessoires",
+            "url": ""
+          }
+        },
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-2": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gout-citron.png",
+            "subheading": "Aux nombreux bienfaits",
+            "heading": "Superfood",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-0",
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-1",
+        "748a5fcb-8af2-4ef0-a929-df4a6e55ce0a",
+        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-2"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Nos produits",
+        "color": "#4b9b7d",
+        "background_color": "#faf5ef"
+      }
+    },
+    "414f3324-4b76-488e-95ee-4e8f2002ed15": {
+      "type": "home-cards",
+      "blocks": {
+        "38534204-35d1-4945-9338-a00f1e6703c7": {
+          "type": "card",
+          "settings": {
+            "card_width": "1\/2",
+            "content": "outside",
+            "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.jpg",
+            "title": "Notre sélection de gummies",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam<\/p>",
+            "button_link": "",
+            "color": "#ffffff"
+          }
+        },
+        "e2995a60-e69f-4c89-bc88-c5e11c797b05": {
+          "type": "card",
+          "settings": {
+            "card_width": "1\/2",
+            "content": "outside",
+            "image": "shopify:\/\/shop_images\/batch-by-wisconsin-hemp-scientific-NDPUzuo5a8M-unsplash.jpg",
+            "title": "Notre sélection de gummies",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p>",
+            "button_link": "",
+            "color": "#ffffff"
+          }
+        },
+        "ff245f0b-487c-4e86-9fe9-08ce793e647c": {
+          "type": "card",
+          "settings": {
+            "card_width": "1\/2",
+            "content": "outside",
+            "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
+            "title": "Title",
+            "text": "<p>Lorem ipsum 2023.<\/p>",
+            "button_link": "",
+            "color": "#ffffff"
+          }
+        },
+        "2044cc22-1df4-4522-8d9f-ebee347a36c8": {
+          "type": "card",
+          "settings": {
+            "card_width": "1\/2",
+            "content": "outside",
+            "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
+            "title": "Title",
+            "text": "<p>Lorem ipsum 2023.<\/p>",
+            "button_link": "",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "38534204-35d1-4945-9338-a00f1e6703c7",
+        "e2995a60-e69f-4c89-bc88-c5e11c797b05",
+        "ff245f0b-487c-4e86-9fe9-08ce793e647c",
+        "2044cc22-1df4-4522-8d9f-ebee347a36c8"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "container": "7xl"
       }
     },
     "167845847058516467": {
@@ -145,291 +397,13 @@
       "settings": {
       }
     },
-    "801df341-54b5-4e52-9b09-68b370796d1f": {
-      "type": "home-banner",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Frame_9358.png",
-        "label": "JUSQU’À -25%",
-        "subtitle": "Personnalisez votre pack",
-        "title": "Économisez jusqu’à <span>-25%<\/span> en achetant un pack de 3, 4 ou 5 produits.",
-        "cta": "Personnaliser mon pack",
-        "ctaLink": "",
-        "color": "#201a1c"
-      }
-    },
-    "1db7442e-0ee1-495a-96a1-01f3969e95f2": {
-      "type": "banner-intro",
-      "blocks": {
-        "93825112-b67c-4bcc-9c67-e5aefb3c9a2a": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sticker-vegan-feuille-sommeil.png",
-            "image_width": 120,
-            "title": "Vegan",
-            "text": "Garanti cruelty-free et sans matières animales"
-          }
-        },
-        "f7ec02ea-7e45-4959-a5f8-a49876ccab60": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Vegan-Beaute-Clair_2x_1ed30b9d-739b-4e3f-838a-f17950e4aa71.png",
-            "image_width": 85,
-            "title": "Noté 4,8 sur 5",
-            "text": "Plus de 43566 avis clients vérifiés"
-          }
-        },
-        "7c7cb104-dd56-4c7a-944b-cbe2c63bdfe6": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Sucre-Magnesium-Clair.png",
-            "image_width": 85,
-            "title": "Sans sucre",
-            "text": "Garanti cruelty-free et sans matières animales"
-          }
-        },
-        "3dc98c99-4d6b-4bf4-ac0d-a895c79edd86": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Lactose-Beaute-Clair_2x_a2769866-c78b-4338-b9ff-2c7ea38b73f1.png",
-            "image_width": 85,
-            "title": "Sans lactose",
-            "text": "Garanti cruelty-free et sans matières animales"
-          }
-        }
-      },
-      "block_order": [
-        "93825112-b67c-4bcc-9c67-e5aefb3c9a2a",
-        "f7ec02ea-7e45-4959-a5f8-a49876ccab60",
-        "7c7cb104-dd56-4c7a-944b-cbe2c63bdfe6",
-        "3dc98c99-4d6b-4bf4-ac0d-a895c79edd86"
-      ],
-      "settings": {
-        "section_style": "default",
-        "title": "",
-        "subtitle": "",
-        "cta": "",
-        "ctaLink": "",
-        "bg_color": "#faf5ef",
-        "color": "#1a1a1a"
-      }
-    },
-    "a6890697-da8c-4795-b963-7882f6d2dcbe": {
-      "type": "collection-list",
-      "blocks": {
-        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/gout-tropical-kids_1.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        },
-        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sticker-gelule-vege-magnesium.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        },
-        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/gout-citron.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        },
-        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/duree-cure-120.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        },
-        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-4": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/quantite-gelules-energie-immunite-120.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        },
-        "23da9a31-321e-4240-88b4-a189e479c7c8": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sticker-gelule-vege-vitamines.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-0",
-        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-1",
-        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-2",
-        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-3",
-        "template--17232714006822__a6890697-da8c-4795-b963-7882f6d2dcbe-1679587493a8fc774d-4",
-        "23da9a31-321e-4240-88b4-a189e479c7c8"
-      ],
-      "settings": {
-        "subheading": "",
-        "title": "Notre gamme",
-        "color": "#4b9b7d",
-        "background_color": "#e3f2ed"
-      }
-    },
-    "98024d9b-c4cd-4f22-ba7c-cd26563f99bb": {
-      "type": "collection-list-carousel",
-      "blocks": {
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/site-satisfait-main.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        },
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/quantite-gummies-sommeil-60.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        },
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/gout-tropical-kids_1.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        },
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/duree-cure-sommeil-120.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        },
-        "ec1dd371-71c4-4613-bb65-15d945712419": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/quantite-gelules-energie-immunite-120.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        },
-        "3f0bf6f6-d730-4f4c-8046-b0e3056f8d67": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/quantite-gelules-stress-120.png",
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0",
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1",
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-2",
-        "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3",
-        "ec1dd371-71c4-4613-bb65-15d945712419",
-        "3f0bf6f6-d730-4f4c-8046-b0e3056f8d67"
-      ],
-      "settings": {
-        "subheading": "",
-        "title": "Collection carousel",
-        "show_arrows": true,
-        "show_dots": true,
-        "color": "#4b9b7d",
-        "background_color": "#faf5ef"
-      }
-    },
-    "414f3324-4b76-488e-95ee-4e8f2002ed15": {
-      "type": "home-cards",
-      "blocks": {
-        "38534204-35d1-4945-9338-a00f1e6703c7": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "inside",
-            "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.jpg",
-            "title": "Notre sélection de gummies",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam<\/p>",
-            "button_link": "",
-            "color": "#ffffff"
-          }
-        },
-        "e2995a60-e69f-4c89-bc88-c5e11c797b05": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "inside",
-            "image": "shopify:\/\/shop_images\/batch-by-wisconsin-hemp-scientific-NDPUzuo5a8M-unsplash.jpg",
-            "title": "Notre sélection de gummies",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p>",
-            "button_link": "",
-            "color": "#ffffff"
-          }
-        },
-        "ff245f0b-487c-4e86-9fe9-08ce793e647c": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "inside",
-            "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
-            "title": "Title",
-            "text": "<p>Lorem ipsum 2023.<\/p>",
-            "button_link": "",
-            "color": "#fff"
-          }
-        },
-        "2044cc22-1df4-4522-8d9f-ebee347a36c8": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "inside",
-            "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
-            "title": "Title",
-            "text": "<p>Lorem ipsum 2023.<\/p>",
-            "button_link": "",
-            "color": "#fff"
-          }
-        }
-      },
-      "block_order": [
-        "38534204-35d1-4945-9338-a00f1e6703c7",
-        "e2995a60-e69f-4c89-bc88-c5e11c797b05",
-        "ff245f0b-487c-4e86-9fe9-08ce793e647c",
-        "2044cc22-1df4-4522-8d9f-ebee347a36c8"
-      ],
-      "settings": {
-        "container": "7xl"
-      }
-    },
     "a11b1585-0a12-4fa7-b722-9bd6997a108a": {
       "type": "newsletter",
       "settings": {
         "section_style": "default",
-        "title": "NEWSLETTER",
-        "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives !<\/p>",
-        "text_button": "S'inscrire",
+        "title": "Newsletter",
+        "text": "<p>Abonnez-vous à notre newsletter et recevez nos bons plans et actualités (promis, pas de spam !)<\/p>",
+        "text_button": "Je m'inscris",
         "show_checkbox": true,
         "bg_color": "#faf5ef",
         "color": "#4b9b7d",
@@ -441,12 +415,13 @@
     "1663586369b92a04be",
     "7e893ba1-ec47-4d9b-9864-cb4555706f15",
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01",
-    "167845847058516467",
+    "904b1d5d-41ad-473a-b6e8-626f0e6b9062",
     "801df341-54b5-4e52-9b09-68b370796d1f",
     "1db7442e-0ee1-495a-96a1-01f3969e95f2",
-    "a6890697-da8c-4795-b963-7882f6d2dcbe",
     "98024d9b-c4cd-4f22-ba7c-cd26563f99bb",
+    "a6890697-da8c-4795-b963-7882f6d2dcbe",
     "414f3324-4b76-488e-95ee-4e8f2002ed15",
+    "167845847058516467",
     "a11b1585-0a12-4fa7-b722-9bd6997a108a"
   ]
 }

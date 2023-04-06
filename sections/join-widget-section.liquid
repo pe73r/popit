@@ -1,0 +1,29 @@
+<div class="join-widget-section">
+  {{ section.settings.widget_html }}
+</div>
+
+{% schema %}
+  {
+    "name": "Join Widget section",
+    "tag" : "section",
+    "class" : "section",
+    "settings": [{
+      "type": "text",
+      "id": "widget_html",
+      "label": "Widget Code"
+    }],
+    "presets": [{
+      "name": "Join Widget section",
+      "category": "Custom"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+  .join-widget-section div {
+    display: block!important;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

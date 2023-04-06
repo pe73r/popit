@@ -15,9 +15,9 @@
           "type": "video",
           "settings": {
             "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d8500a4a52b84f4c89d1a213b79ca3eb.webm",
-            "title": "Découvrez Pop it et son histoire",
-            "title_mobile": "Découvrez Pop it et son histoire",
-            "text": "",
+            "title": "Notre philosophie",
+            "title_mobile": "Notre philosophie",
+            "text": "<p>Le bien-être de toute la famille<\/p>",
             "cta": "",
             "button_link": "",
             "text_color": "#ffffff",
@@ -109,28 +109,28 @@
     "bf2b5390-cf59-4b11-bbb1-2198456aa735": {
       "type": "home-cards",
       "blocks": {
-        "5b1a20a0-e03f-4e85-af57-eb92b7376f87": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "outside",
-            "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_16.02.24.png",
-            "title": "Pour toute la famille",
-            "text": "<p>Petits et grands, votre santé et votre plaisir sont notre priorité ! Nos formules aux formats innovants et nos gammes spéciales s’adaptent à tous et améliorent la relation de chacun à la nutrition.<\/p>",
-            "button_link": "",
-            "color": "#4b9b7d"
-          }
-        },
         "012795f2-5c93-4b23-a164-e7c91241a0ec": {
           "type": "card",
           "settings": {
             "card_width": "1\/2",
             "content": "outside",
             "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.png",
-            "title": "Simples et bons",
+            "title": "Simplicité",
             "text": "<p>Avec nos gummies gourmands aux arômes de fruits, nous rétablissons la vérité. Non, la simplicité, la qualité et le goût ne sont pas des contraires et peuvent décrire un même produit.<\/p>",
             "button_link": "",
             "color": "#ffffff"
+          }
+        },
+        "5b1a20a0-e03f-4e85-af57-eb92b7376f87": {
+          "type": "card",
+          "settings": {
+            "card_width": "1\/2",
+            "content": "outside",
+            "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_16.02.24.png",
+            "title": "Famille",
+            "text": "<p>Petits et grands, votre santé et votre plaisir sont notre priorité ! Nos formules aux formats innovants et nos gammes spéciales s’adaptent à tous et améliorent la relation de chacun à la nutrition.<\/p>",
+            "button_link": "",
+            "color": "#4b9b7d"
           }
         },
         "5ada16c2-c2ae-423d-bd05-d0b6c1ac3bf3": {
@@ -139,8 +139,8 @@
             "card_width": "1\/2",
             "content": "outside",
             "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_21.16.29.png",
-            "title": "Respect environnemental",
-            "text": "<p>Prendre soin de sa santé c’est aussi respecter l'environnement. Tous nos pots, opercules et couvercles sont conçus à partir de plastique recyclable. Et en plus ils sont facilement réutilisables ! <\/p>",
+            "title": "Environnement",
+            "text": "<p>Pop it est engagé pour l'environnement. Tous nos pots, opercules et couvercles sont conçus à partir de plastique recyclable. Et en plus ils sont facilement réutilisables ! <\/p>",
             "button_link": "",
             "color": "#ffffff"
           }
@@ -149,18 +149,18 @@
           "type": "card",
           "settings": {
             "card_width": "1\/2",
-            "content": "inside",
+            "content": "outside",
             "image": "shopify:\/\/shop_images\/Untitled_design_1.png",
-            "title": "Title",
-            "text": "<p>Lorem ipsum 2023.<\/p>",
+            "title": "Fabrication",
+            "text": "<p>Notre mission est de vous proposer des solutions dignes de confiance, fabriquées en France. Nos formules sont concentrées en principes actifs et conçues avec soin sous le soleil de Nice.<\/p>",
             "button_link": "",
-            "color": "#fff"
+            "color": "#ffffff"
           }
         }
       },
       "block_order": [
-        "5b1a20a0-e03f-4e85-af57-eb92b7376f87",
         "012795f2-5c93-4b23-a164-e7c91241a0ec",
+        "5b1a20a0-e03f-4e85-af57-eb92b7376f87",
         "5ada16c2-c2ae-423d-bd05-d0b6c1ac3bf3",
         "bf5492a3-f8e0-4433-b56b-c6bcd8fddb90"
       ],

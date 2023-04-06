@@ -4,11 +4,11 @@
       "type": "collection-header",
       "settings": {
         "display": true,
-        "show_breadcrumbs": true,
+        "show_breadcrumbs": false,
         "title": "Tous nos produits",
-        "description": "Des compléments alimentaires pour favoriser votre digestion et votre transit intestinal...\n<!--split-->\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "Des compléments alimentaires pour ravir petits et grands",
         "bg_color": "#e3f2ed",
-        "color": "#005f3b"
+        "color": "#4b9b7d"
       }
     },
     "collection-links": {
