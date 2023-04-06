@@ -79,10 +79,9 @@
                       name="{{ option.name }}"
                       value="{{ value | escape }}"
                       form="{{ product_form_id }}"
-                      class="radio-variant-circle-sticky w-0 h-0 opacity-0 md:collapse hidden  {% if option.selected_value == value %}checked{% endif %}"
-                     >
+                      class="radio-variant-circle-sticky w-0 h-0 opacity-0 md:collapse hidden  {% if option.selected_value == value %}checked{% endif %}">
                     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                      <div data-option-value="{{ value }}" class="variant-box block pt-2 pb-3 px-2 bg-white bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
+                      <div data-option-value="{{ value }}" class="variant-box block pt-2 pb-3 max-w-[125px] {% if value contains "60" %} px-3.5 {% else %} px-2 {% endif %} bg-white min-h-[55px] bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
                         <h5 class="text-sm text-{{ product-color }} leading-4">{{ value }}</h5>
                         <!-- workaround to show variant price -->
                         {% assign counter = counter | plus: 1 %}
@@ -185,13 +184,16 @@
                   data-dynamic-price
                   class="block font-bold">{{ product.price | money_without_trailing_zeros }}</span>
 
-                  <span data-price-stroke data-dynamic-price-stroke class="block pl-2 text-xs line-through">
-                    {%- if product.compare_at_price != blank -%}
+                <span
+                  data-price-stroke
+                  data-dynamic-price-stroke
+                  class="block pl-2 text-xs line-through">
+                  {%- if product.compare_at_price != blank -%}
                     <span>
                       <!-- price from tail-variants.js -->
                     </span>
                   {%- endif -%}
-                  </span>
+                </span>
 
               </div>
             {% else %}
@@ -200,20 +202,19 @@
           </button>
         </add-to-cart>
 
-<!-- Just Button  -->
-            <just-pay-button
-             theme="default"
-             default_variant="{{product.selected_or_first_available_variant.id}}"
-             default_available="{{product.selected_or_first_available_variant.available}}"
-             product_id="{{ product.id }}"
-             product_handle="{{ product.handle }}"
-             class="just-btn-sticky"
-             className="just-btn just-btn-product sticky"
-             app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7"
-             domain="Popit"
-             source="product">
-            </just-pay-button>
-<!-- End Of Just Button  -->
+        <!-- Just Button  -->
+        <just-pay-button
+          theme="default"
+          default_variant="{{product.selected_or_first_available_variant.id}}"
+          default_available="{{product.selected_or_first_available_variant.available}}"
+          product_id="{{ product.id }}"
+          product_handle="{{ product.handle }}"
+          class="just-btn-sticky"
+          className="just-btn just-btn-product sticky"
+          app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7"
+          domain="Popit"
+          source="product"></just-pay-button>
+        <!-- End Of Just Button  -->
 
         {% if block.settings.show_dynamic_checkout %}
           {{ form | payment_button }}
@@ -577,11 +578,10 @@
                     data-price
                     data-dynamic-price
                     class="block font-bold">{{ product.price | money_without_trailing_zeros }}</span>
-                    
-                    {% if product.price != product.compare_at_price %}
-                      <span data-price-stroke class="block ml-2 text-xs line-through">
-                        <!-- price from tail-variants.js -->
-                      </span>
+
+                  {% if product.price != product.compare_at_price %}
+                    <span data-price-stroke class="block ml-2 text-xs line-through"><!-- price from tail-variants.js -->
+                    </span>
                   {%- endif -%}
                 </div>
               {% else %}
@@ -590,30 +590,29 @@
             </button>
           </add-to-cart>
 
-<!-- Just Button  -->
-            <just-pay-button
-             theme="default"
-             default_variant="{{product.selected_or_first_available_variant.id}}"
-             default_available="{{product.selected_or_first_available_variant.available}}"
-             product_id="{{ product.id }}"
-             product_handle="{{ product.handle }}"
-             className="just-btn just-btn-product top"
-             app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7"
-             domain="Popit"
-             source="product">
-            </just-pay-button>
-    	    <style>
-	        .add-cart-2 just-pay-button::part(just-button) {
-                font-family: inherit;
-                font-weight: 700;
-                font-size: 1rem;
-                border-radius: 0.5rem;
-                text-transform:inherit;
-                height: 48px;
-                letter-spacing: normal;
-              }
-    	    </style>
-<!-- End Of Just Button  -->
+          <!-- Just Button  -->
+          <just-pay-button
+            theme="default"
+            default_variant="{{product.selected_or_first_available_variant.id}}"
+            default_available="{{product.selected_or_first_available_variant.available}}"
+            product_id="{{ product.id }}"
+            product_handle="{{ product.handle }}"
+            className="just-btn just-btn-product top"
+            app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7"
+            domain="Popit"
+            source="product"></just-pay-button>
+          <style>
+            .add-cart-2 just-pay-button::part(just-button) {
+              font-family: inherit;
+              font-weight: 700;
+              font-size: 1rem;
+              border-radius: 0.5rem;
+              text-transform: inherit;
+              height: 48px;
+              letter-spacing: normal;
+            }
+          </style>
+          <!-- End Of Just Button  -->
 
           {% if block.settings.show_dynamic_checkout %}
             {{ form | payment_button }}
@@ -666,6 +665,6 @@
   .delivery-text span,
   .delivery-text b,
   .delivery-text strong {
-    color: #38BC8A;
+    color: #4B9B7D;
   }
 </style>

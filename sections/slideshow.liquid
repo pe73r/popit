@@ -68,7 +68,7 @@
                       <div class="mt-6 md:mt-8 w-full">
                         <a
                           href="{{ block.settings.button_link }}"
-                          class="block max-w-[80%] mx-auto md:max-w-none md:mx-0 {% render "button" size: "extralarge", fullWidth: true %}"
+                          class="block w-11/12 max-w-[70%] mx-auto md:mx-0 {% render "button" size: "extralarge" %}"
                           style="color: {{ block.settings.button_color }}; background-color: {{ block.settings.button_bg }}">
                           {{ block.settings.cta }}
                         </a>
@@ -82,7 +82,7 @@
         {%- endfor -%}
       </carousel-content>
     </carousel-container>
-    {% if section.settings.show_dots %}
+    {% if section.settings.show_dots and section.blocks.size > 1 %}
       <carousel-dots class="absolute flex justify-center bottom-[20px] md:bottom-8 xl:bottom-16 left-[50%] translate-x-[-50%]">
         {%- for block in section.blocks -%}
           <carousel-dot class="w-3 h-3 m-1 transition-all bg-white border rounded-full border-white selected:bg-green selected:border-green selected:w-16 selected:scale-110"></carousel-dot>
