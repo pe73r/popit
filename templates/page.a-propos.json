@@ -241,6 +241,22 @@
         "text_color": "#fff",
         "background_color": "#4b9b7d"
       }
+    },
+    "3dfba5a7-c12e-4b15-84b2-b12beb042642": {
+      "type": "products-carousel",
+      "settings": {
+        "container": "7xl",
+        "collection": "",
+        "title": "",
+        "limit": 6,
+        "collection_2": "gelules",
+        "limit_2": 6,
+        "show_secondary_image": false,
+        "show_quantity": false,
+        "show_cta": true,
+        "show_arrows": true,
+        "show_dots": true
+      }
     }
   },
   "order": [
@@ -253,6 +269,7 @@
     "44d0ac1a-7a6f-45b2-b456-e2ea918cff59",
     "d66c9067-282e-4348-806d-e32291e3a192",
     "7e8538e0-4af4-4228-be79-2b167620fb1b",
-    "12d3a672-9a68-4fb7-8689-8c334aa319ee"
+    "12d3a672-9a68-4fb7-8689-8c334aa319ee",
+    "3dfba5a7-c12e-4b15-84b2-b12beb042642"
   ]
 }
