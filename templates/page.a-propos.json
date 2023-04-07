@@ -164,8 +164,9 @@
         "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-1": {
           "type": "text",
           "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
-            "text": "",
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/Sucre-Accessoire-Clair_2x_14c5339a-3266-4aa5-87ed-66ca86e9d980.png",
+            "text": "<p>Sans sucres<\/p>",
             "url": ""
           }
         },
