@@ -36,7 +36,7 @@
     "d327bd19-8143-4592-baa0-70d5aa79704b": {
       "type": "rich-text-expandable",
       "settings": {
-        "text_color": "#201A1C",
+        "text_color": "#201a1c",
         "title": "Prendre soin de toute sa famille n'est pas évident.",
         "text": "<p>Marre d'avoir à passer commande dans <\/p>",
         "more_text": "",
@@ -117,7 +117,7 @@
         "add_margin": 0,
         "header": "",
         "bg_color": "#e3f2ed",
-        "text_color": "#000"
+        "text_color": "#000000"
       }
     },
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14": {
@@ -185,7 +185,7 @@
       "settings": {
         "animationDuration": 10,
         "border": false,
-        "text_color": "#fff",
+        "text_color": "#ffffff",
         "background_color": "#4b9b7d"
       }
     },
@@ -199,7 +199,7 @@
         "cta": "",
         "ctaLink": "",
         "bg_color": "#edece6",
-        "color": "#1A1A1A"
+        "color": "#1a1a1a"
       }
     },
     "3dfba5a7-c12e-4b15-84b2-b12beb042642": {
@@ -254,7 +254,7 @@
       "settings": {
         "animationDuration": 10,
         "border": false,
-        "text_color": "#fff",
+        "text_color": "#ffffff",
         "background_color": "#4b9b7d"
       }
     },
@@ -267,7 +267,7 @@
         "cta": "",
         "ctaLink": "",
         "bg_color": "#edece6",
-        "color": "#1A1A1A"
+        "color": "#1a1a1a"
       }
     },
     "b003d11a-d952-4bc9-b050-a566fd4dd43a": {
@@ -322,7 +322,7 @@
       "settings": {
         "animationDuration": 10,
         "border": false,
-        "text_color": "#fff",
+        "text_color": "#ffffff",
         "background_color": "#4b9b7d"
       }
     },
