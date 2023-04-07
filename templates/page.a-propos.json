@@ -15,9 +15,9 @@
           "type": "video",
           "settings": {
             "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d8500a4a52b84f4c89d1a213b79ca3eb.webm",
-            "title": "Notre philosophie",
-            "title_mobile": "Notre philosophie",
-            "text": "<p>Le bien-être de toute la famille<\/p>",
+            "title": "Pop it simplifie et égaye la nutrition pour vous aider à prendre soin de vous et de toute votre famille.",
+            "title_mobile": "Pop it simplifie et égaye la nutrition pour vous aider à prendre soin de vous et de toute votre famille.",
+            "text": "",
             "cta": "",
             "button_link": "",
             "text_color": "#ffffff",
@@ -117,6 +117,7 @@
             "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.png",
             "title": "Simplicité",
             "text": "<p>Avec nos gummies gourmands aux arômes de fruits, nous rétablissons la vérité. Non, la simplicité, la qualité et le goût ne sont pas des contraires et peuvent décrire un même produit.<\/p>",
+            "cta": "Link",
             "button_link": "",
             "color": "#ffffff"
           }
@@ -129,6 +130,7 @@
             "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_16.02.24.png",
             "title": "Famille",
             "text": "<p>Petits et grands, votre santé et votre plaisir sont notre priorité ! Nos formules aux formats innovants et nos gammes spéciales s’adaptent à tous et améliorent la relation de chacun à la nutrition.<\/p>",
+            "cta": "Link",
             "button_link": "",
             "color": "#4b9b7d"
           }
@@ -141,6 +143,7 @@
             "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_21.16.29.png",
             "title": "Environnement",
             "text": "<p>Pop it est engagé pour l'environnement. Tous nos pots, opercules et couvercles sont conçus à partir de plastique recyclable. Et en plus ils sont facilement réutilisables ! <\/p>",
+            "cta": "Link",
             "button_link": "",
             "color": "#ffffff"
           }
@@ -153,6 +156,7 @@
             "image": "shopify:\/\/shop_images\/Untitled_design_1.png",
             "title": "Fabrication",
             "text": "<p>Notre mission est de vous proposer des solutions dignes de confiance, fabriquées en France. Nos formules sont concentrées en principes actifs et conçues avec soin sous le soleil de Nice.<\/p>",
+            "cta": "Link",
             "button_link": "",
             "color": "#ffffff"
           }
@@ -165,7 +169,8 @@
         "bf5492a3-f8e0-4433-b56b-c6bcd8fddb90"
       ],
       "settings": {
-        "container": "7xl"
+        "container": "7xl",
+        "title": "Title"
       }
     }
   },
