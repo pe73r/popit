@@ -366,8 +366,9 @@
         "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-2": {
           "type": "text",
           "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
-            "text": "",
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/picto-reutilisable-Clair_2x-pilulier_e9fb556a-cad1-4432-a70b-cdea01b96dd6.png",
+            "text": "<p>Étui 100% recyclable<\/p>",
             "url": ""
           }
         }
