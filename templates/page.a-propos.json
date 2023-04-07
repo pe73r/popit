@@ -246,7 +246,7 @@
       "type": "products-carousel",
       "settings": {
         "container": "7xl",
-        "collection": "",
+        "collection": "gelules",
         "title": "",
         "limit": 6,
         "collection_2": "gelules",
