@@ -188,6 +188,59 @@
         "show_arrows": true,
         "show_dots": true
       }
+    },
+    "7e8538e0-4af4-4228-be79-2b167620fb1b": {
+      "type": "banner-intro",
+      "settings": {
+        "section_style": "boxed",
+        "image": "shopify:\/\/shop_images\/RANGEMENT-GELULES-FR.jpg",
+        "title": "Des gélules",
+        "subtitle": "<p>Lorerm ipsum 2023.<\/p>",
+        "cta": "",
+        "ctaLink": "",
+        "bg_color": "#edece6",
+        "color": "#1A1A1A"
+      }
+    },
+    "12d3a672-9a68-4fb7-8689-8c334aa319ee": {
+      "type": "marquee",
+      "blocks": {
+        "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-0": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "text": "",
+            "url": ""
+          }
+        },
+        "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-1": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "text": "",
+            "url": ""
+          }
+        },
+        "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-2": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "text": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-0",
+        "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-1",
+        "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-2"
+      ],
+      "settings": {
+        "animationDuration": 10,
+        "border": false,
+        "text_color": "#fff",
+        "background_color": "#4b9b7d"
+      }
     }
   },
   "order": [
@@ -198,6 +251,8 @@
     "53567e68-79a9-4e38-b4c7-29553918d1c0",
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14",
     "44d0ac1a-7a6f-45b2-b456-e2ea918cff59",
-    "d66c9067-282e-4348-806d-e32291e3a192"
+    "d66c9067-282e-4348-806d-e32291e3a192",
+    "7e8538e0-4af4-4228-be79-2b167620fb1b",
+    "12d3a672-9a68-4fb7-8689-8c334aa319ee"
   ]
 }
