@@ -196,6 +196,15 @@
             "text": "<p>Sans lactose<\/p>",
             "url": ""
           }
+        },
+        "d65990ec-4126-44ea-bcf8-0ca776127eb3": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/picto-reutilisable-Clair_2x-pilulier_e9fb556a-cad1-4432-a70b-cdea01b96dd6.png",
+            "text": "<p>Packaging 100% reyclable<\/p>",
+            "url": ""
+          }
         }
       },
       "block_order": [
@@ -203,7 +212,8 @@
         "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-1",
         "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-2",
         "e00de213-7dd3-4f8f-90ce-88b0170901a8",
-        "33e5dc4d-7167-4ef1-9397-9c157284cc73"
+        "33e5dc4d-7167-4ef1-9397-9c157284cc73",
+        "d65990ec-4126-44ea-bcf8-0ca776127eb3"
       ],
       "settings": {
         "animationDuration": 10,
