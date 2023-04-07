@@ -423,10 +423,19 @@
           "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/verified_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
           }
+        },
+        "8168432b-5d5b-4f3f-898f-93a558573151": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
         }
       },
       "block_order": [
-        "3013daef-c239-4333-9e08-e37865c1a077"
+        "3013daef-c239-4333-9e08-e37865c1a077",
+        "8168432b-5d5b-4f3f-898f-93a558573151"
       ],
       "settings": {
       }
