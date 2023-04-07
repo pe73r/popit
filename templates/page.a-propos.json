@@ -280,12 +280,22 @@
             "text": "<p>Sans lactose<\/p>",
             "url": ""
           }
+        },
+        "3ce6b234-3294-43cd-b322-7b45057a93d5": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/Colorant-pilulier-Clair_2x_8d84400a-d510-41c3-a075-eca9a6b2abf8.png",
+            "text": "<p>Sans OGM<\/p>",
+            "url": ""
+          }
         }
       },
       "block_order": [
         "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-0",
         "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-1",
-        "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-2"
+        "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-2",
+        "3ce6b234-3294-43cd-b322-7b45057a93d5"
       ],
       "settings": {
         "animationDuration": 30,
