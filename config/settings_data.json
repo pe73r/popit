@@ -257,8 +257,9 @@
           "1c9c5b5b-c1c9-4a69-9b95-8db25c19a069": {
             "type": "reassurances",
             "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/truck.svg?v=1674126625",
-              "text": "Frais de livraison gratuits a partir de 100 €"
+              "svg": "",
+              "image": "shopify:\/\/shop_images\/picto-livraison-gratuite.png",
+              "text": "Livraison gratuite dès 60€ d'achats"
             }
           },
           "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4": {
