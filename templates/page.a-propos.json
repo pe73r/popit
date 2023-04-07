@@ -257,6 +257,18 @@
         "text_color": "#fff",
         "background_color": "#4b9b7d"
       }
+    },
+    "18ec92f4-2d90-481c-89cc-71f212687aaf": {
+      "type": "banner-intro",
+      "settings": {
+        "section_style": "boxed",
+        "title": "Des accessoires pour simplifier votre quotidien.",
+        "subtitle": "<p>Lorerm ipsum 2023.<\/p>",
+        "cta": "",
+        "ctaLink": "",
+        "bg_color": "#edece6",
+        "color": "#1A1A1A"
+      }
     }
   },
   "order": [
@@ -270,6 +282,7 @@
     "44d0ac1a-7a6f-45b2-b456-e2ea918cff59",
     "7e8538e0-4af4-4228-be79-2b167620fb1b",
     "3dfba5a7-c12e-4b15-84b2-b12beb042642",
-    "12d3a672-9a68-4fb7-8689-8c334aa319ee"
+    "12d3a672-9a68-4fb7-8689-8c334aa319ee",
+    "18ec92f4-2d90-481c-89cc-71f212687aaf"
   ]
 }
