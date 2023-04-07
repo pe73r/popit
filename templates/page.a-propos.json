@@ -37,7 +37,7 @@
       "type": "rich-text-expandable",
       "settings": {
         "text_color": "#201A1C",
-        "title": "Notre mission",
+        "title": "Pour chaque besoin, il y a un produit Pop it !",
         "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
         "more_text": "",
         "text_mobile": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
@@ -48,7 +48,6 @@
     },
     "c3651bbc-c24a-44d2-a7b1-9bac325ddff1": {
       "type": "image-text",
-      "disabled": true,
       "settings": {
         "layout": "image_right",
         "content": "column",
