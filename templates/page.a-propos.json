@@ -266,8 +266,9 @@
         "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-1": {
           "type": "text",
           "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
-            "text": "",
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/Gluten-Accessoire-Clair_2x_c55261d4-bd29-43ef-bda6-7c4751b95b95.png",
+            "text": "<p>Sans gluten<\/p>",
             "url": ""
           }
         },
