@@ -178,12 +178,22 @@
             "text": "<p>Sans colorants ni arômes artificiels<\/p>",
             "url": ""
           }
+        },
+        "e00de213-7dd3-4f8f-90ce-88b0170901a8": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/Gluten-Accessoire-Clair_2x_c55261d4-bd29-43ef-bda6-7c4751b95b95.png",
+            "text": "<p>Sans gluten<\/p>",
+            "url": ""
+          }
         }
       },
       "block_order": [
         "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-0",
         "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-1",
-        "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-2"
+        "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-2",
+        "e00de213-7dd3-4f8f-90ce-88b0170901a8"
       ],
       "settings": {
         "animationDuration": 10,
