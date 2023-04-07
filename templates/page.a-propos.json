@@ -48,6 +48,7 @@
     },
     "c3651bbc-c24a-44d2-a7b1-9bac325ddff1": {
       "type": "image-text",
+      "disabled": true,
       "settings": {
         "layout": "image_right",
         "content": "column",
