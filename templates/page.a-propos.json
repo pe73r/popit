@@ -348,8 +348,9 @@
         "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-0": {
           "type": "text",
           "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
-            "text": "",
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/Colorant-pilulier-Clair_2x_8d84400a-d510-41c3-a075-eca9a6b2abf8.png",
+            "text": "<p>Sans BPA<\/p>",
             "url": ""
           }
         },
