@@ -15,8 +15,8 @@
           "type": "video",
           "settings": {
             "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d8500a4a52b84f4c89d1a213b79ca3eb.webm",
-            "title": "Pop it simplifie et égaye la nutrition pour vous aider à prendre soin de vous et de toute votre famille.",
-            "title_mobile": "Pop it simplifie et égaye la nutrition pour vous aider à prendre soin de vous et de toute votre famille.",
+            "title": "Pop it simplifie et égaye la nutrition pour vous aider<br> à prendre soin de vous et de toute votre famille.",
+            "title_mobile": "Pop it simplifie et égaye la nutrition pour vous aider<br> à prendre soin de vous et de toute votre famille.",
             "text": "",
             "cta": "",
             "button_link": "",
@@ -37,10 +37,10 @@
       "type": "rich-text-expandable",
       "settings": {
         "text_color": "#201A1C",
-        "title": "Pour chaque besoin, il y a un produit Pop it !",
-        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+        "title": "Notre mission",
+        "text": "<p>Pop it simplifie et égaye la nutrition pour vous aider à prendre soin de vous et de toute votre famille.<\/p>",
         "more_text": "",
-        "text_mobile": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+        "text_mobile": "<p>Pop it simplifie et égaye la nutrition pour vous aider à prendre soin de vous et de toute votre famille.<\/p>",
         "more_text_mobile": "",
         "text_link": "",
         "text_less": ""
@@ -121,42 +121,11 @@
     },
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14": {
       "type": "banner-intro",
-      "blocks": {
-        "4d669b9f-1f28-4730-8926-11bc0de4308d": {
-          "type": "block",
-          "settings": {
-            "image_width": 80,
-            "title": "Vegan et cruelty free",
-            "text": "Nos cures sont gourmandes et respectueuses de nos amis les animaux.Toutes nos formules sont véganes, nos gummies certifiés EVE VEGAN. Non testées chez les animaux, nos gammes sont également cruelty free."
-          }
-        },
-        "f3d3f360-ea9c-42dd-b592-3adcd58b00ae": {
-          "type": "block",
-          "settings": {
-            "image_width": 80,
-            "title": "Gélules végétales",
-            "text": "Parce que la qualité sans compromis ça existe, l’enveloppe de nos gélules est conçue à partir de cellulose. D’origine végétale, elle est sans OGM et sans gluten. De qualité irréprochable, elle est adaptée aux régimes végétariens et véganes."
-          }
-        },
-        "1dc1198c-e68f-40a5-b4df-51fb4ee6f7b2": {
-          "type": "block",
-          "settings": {
-            "image_width": 80,
-            "title": "Gummies au bon goût de fruit",
-            "text": "Aussi efficaces que nos gélules, nos gummies ont un point fort ! Ils sont riches en arômes de fruits, délicieux et faciles à consommer. Ces petites gommes sont naturellement aromatisées pour satisfaire vos papilles."
-          }
-        }
-      },
-      "block_order": [
-        "4d669b9f-1f28-4730-8926-11bc0de4308d",
-        "f3d3f360-ea9c-42dd-b592-3adcd58b00ae",
-        "1dc1198c-e68f-40a5-b4df-51fb4ee6f7b2"
-      ],
       "settings": {
         "section_style": "boxed",
-        "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_16.02.24.png",
+        "image": "shopify:\/\/shop_images\/RANGEMENT-GUMMIES-FR.jpg",
         "title": "En quelques mots, Pop it, c’est …",
-        "subtitle": "<p>Une gamme de produits simples avec des formules “Bénéfice” adaptée aux besoins spécifiques, des formules “Expert” contenant un principe actif majeur. <\/p><p>Dans quel but ? Satisfaire les besoins de toute la famille, sans faire de compromis ! Parce que chez Pop it efficacité rime avec praticité, aucun aspect n’est négligé pour convenir aux petits comme aux grands.<\/p><p><\/p><p>Pop it, pour nous c’est un moyen de développer des produits mieux pensés et mieux conçus, pour faciliter le quotidien de tous. Et comment ?<\/p>",
+        "subtitle": "<p>Une gamme de produits simples avec des formules “Bénéfice” adaptée aux besoins spécifiques, des formules “Expert” contenant un principe actif majeur. <\/p><p>Dans quel but ? Satisfaire les besoins de toute la famille, sans faire de compromis ! Parce que chez Pop it efficacité rime avec praticité, aucun aspect n’est négligé pour convenir aux petits comme aux grands.<\/p><p><\/p><p>Pop it, pour nous c’est un moyen de développer des produits mieux pensés et mieux conçus, pour faciliter le quotidien de tous. Et comment ?<\/p><p><\/p><p><\/p><p><\/p>",
         "cta": "",
         "ctaLink": "",
         "bg_color": "#edece6",
@@ -175,73 +144,6 @@
         "text_link": "Lire plus",
         "text_less": "Lire moins"
       }
-    },
-    "bf2b5390-cf59-4b11-bbb1-2198456aa735": {
-      "type": "home-cards",
-      "blocks": {
-        "012795f2-5c93-4b23-a164-e7c91241a0ec": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "outside",
-            "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.png",
-            "title": "Simplicité",
-            "text": "<p>Avec nos gummies gourmands aux arômes de fruits, nous rétablissons la vérité. Non, la simplicité, la qualité et le goût ne sont pas des contraires et peuvent décrire un même produit.<\/p>",
-            "cta": "Link",
-            "button_link": "",
-            "color": "#ffffff"
-          }
-        },
-        "5b1a20a0-e03f-4e85-af57-eb92b7376f87": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "outside",
-            "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_16.02.24.png",
-            "title": "Famille",
-            "text": "<p>Petits et grands, votre santé et votre plaisir sont notre priorité ! Nos formules aux formats innovants et nos gammes spéciales s’adaptent à tous et améliorent la relation de chacun à la nutrition.<\/p>",
-            "cta": "Link",
-            "button_link": "",
-            "color": "#4b9b7d"
-          }
-        },
-        "5ada16c2-c2ae-423d-bd05-d0b6c1ac3bf3": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "outside",
-            "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-03-22_a_21.16.29.png",
-            "title": "Environnement",
-            "text": "<p>Pop it est engagé pour l'environnement. Tous nos pots, opercules et couvercles sont conçus à partir de plastique recyclable. Et en plus ils sont facilement réutilisables ! <\/p>",
-            "cta": "Link",
-            "button_link": "",
-            "color": "#ffffff"
-          }
-        },
-        "bf5492a3-f8e0-4433-b56b-c6bcd8fddb90": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "outside",
-            "image": "shopify:\/\/shop_images\/Untitled_design_1.png",
-            "title": "Fabrication",
-            "text": "<p>Notre mission est de vous proposer des solutions dignes de confiance, fabriquées en France. Nos formules sont concentrées en principes actifs et conçues avec soin sous le soleil de Nice.<\/p>",
-            "cta": "Link",
-            "button_link": "",
-            "color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "012795f2-5c93-4b23-a164-e7c91241a0ec",
-        "5b1a20a0-e03f-4e85-af57-eb92b7376f87",
-        "5ada16c2-c2ae-423d-bd05-d0b6c1ac3bf3",
-        "bf5492a3-f8e0-4433-b56b-c6bcd8fddb90"
-      ],
-      "settings": {
-        "container": "7xl",
-        "title": "Title"
-      }
     }
   },
   "order": [
@@ -251,7 +153,6 @@
     "c3651bbc-c24a-44d2-a7b1-9bac325ddff1",
     "53567e68-79a9-4e38-b4c7-29553918d1c0",
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14",
-    "73be8675-80a8-4864-84fc-1ec2e6b9930d",
-    "bf2b5390-cf59-4b11-bbb1-2198456aa735"
+    "73be8675-80a8-4864-84fc-1ec2e6b9930d"
   ]
 }
