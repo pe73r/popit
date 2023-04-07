@@ -173,8 +173,9 @@
         "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-2": {
           "type": "text",
           "settings": {
-            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
-            "text": "",
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/Colorant-pilulier-Clair_2x_8d84400a-d510-41c3-a075-eca9a6b2abf8.png",
+            "text": "<p>Sans colorants ni arômes artificiels<\/p>",
             "url": ""
           }
         }
