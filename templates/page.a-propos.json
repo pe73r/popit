@@ -90,7 +90,8 @@
           "type": "block",
           "settings": {
             "svg": "",
-            "image_width": 80,
+            "image": "shopify:\/\/shop_images\/picto-vegan-cruelty-free_14949e0d-f2c4-4d89-86e8-8781b714e130.png",
+            "image_width": 140,
             "title": "VEGAN & CRUELTY FREE",
             "text": "La qualité sans jamais faire de compromis."
           }
