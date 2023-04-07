@@ -216,7 +216,7 @@
         "d65990ec-4126-44ea-bcf8-0ca776127eb3"
       ],
       "settings": {
-        "animationDuration": 30,
+        "animationDuration": 15,
         "border": false,
         "text_color": "#ffffff",
         "background_color": "#4b9b7d"
@@ -379,7 +379,7 @@
         "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-2"
       ],
       "settings": {
-        "animationDuration": 17,
+        "animationDuration": 15,
         "border": false,
         "text_color": "#ffffff",
         "background_color": "#4b9b7d"
