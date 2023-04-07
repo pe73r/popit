@@ -285,6 +285,46 @@
         "show_arrows": true,
         "show_dots": true
       }
+    },
+    "ae3769ef-ff11-413d-aaba-d47d91676da1": {
+      "type": "marquee",
+      "blocks": {
+        "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-0": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "text": "",
+            "url": ""
+          }
+        },
+        "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-1": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "text": "",
+            "url": ""
+          }
+        },
+        "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-2": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "text": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-0",
+        "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-1",
+        "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-2"
+      ],
+      "settings": {
+        "animationDuration": 10,
+        "border": false,
+        "text_color": "#fff",
+        "background_color": "#4b9b7d"
+      }
     }
   },
   "order": [
@@ -300,6 +340,7 @@
     "3dfba5a7-c12e-4b15-84b2-b12beb042642",
     "12d3a672-9a68-4fb7-8689-8c334aa319ee",
     "18ec92f4-2d90-481c-89cc-71f212687aaf",
-    "b003d11a-d952-4bc9-b050-a566fd4dd43a"
+    "b003d11a-d952-4bc9-b050-a566fd4dd43a",
+    "ae3769ef-ff11-413d-aaba-d47d91676da1"
   ]
 }
