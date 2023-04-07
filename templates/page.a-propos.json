@@ -224,6 +224,7 @@
     },
     "7e8538e0-4af4-4228-be79-2b167620fb1b": {
       "type": "banner-intro",
+      "disabled": true,
       "settings": {
         "section_style": "boxed",
         "image": "shopify:\/\/shop_images\/RANGEMENT-GELULES-FR.jpg",
@@ -237,6 +238,7 @@
     },
     "3dfba5a7-c12e-4b15-84b2-b12beb042642": {
       "type": "products-carousel",
+      "disabled": true,
       "settings": {
         "container": "7xl",
         "collection": "gelules",
@@ -308,7 +310,7 @@
         "cd5528a4-31ee-45dd-a8bb-d4e80cb1193c"
       ],
       "settings": {
-        "animationDuration": 18,
+        "animationDuration": 16,
         "border": false,
         "text_color": "#ffffff",
         "background_color": "#4b9b7d"
@@ -316,6 +318,7 @@
     },
     "18ec92f4-2d90-481c-89cc-71f212687aaf": {
       "type": "banner-intro",
+      "disabled": true,
       "settings": {
         "section_style": "boxed",
         "title": "Des accessoires pour simplifier votre quotidien.",
@@ -328,6 +331,7 @@
     },
     "b003d11a-d952-4bc9-b050-a566fd4dd43a": {
       "type": "products-carousel",
+      "disabled": true,
       "settings": {
         "container": "7xl",
         "collection": "accessoires",
