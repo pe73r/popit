@@ -249,25 +249,22 @@
           "429d0e67-9527-40e3-909c-41a156b9cf9f": {
             "type": "reassurances",
             "settings": {
-              "svg": "",
-              "image": "shopify:\/\/shop_images\/picto-livraison-rapide_351a6b45-9442-4a56-a7e1-93b97a818b3f.png",
-              "text": "Livraison rapide sous 2 à 3 jours ouvrés"
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/lock.svg?v=1674126625",
+              "text": "Réassurance dynamique"
             }
           },
           "1c9c5b5b-c1c9-4a69-9b95-8db25c19a069": {
             "type": "reassurances",
             "settings": {
-              "svg": "",
-              "image": "shopify:\/\/shop_images\/picto-livraison-gratuite_02ef0ef2-8acf-4b39-bade-4e025b79a2b7.png",
-              "text": "Livraison gratuite dès 60€ d'achats"
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/truck.svg?v=1674126625",
+              "text": "Frais de livraison gratuits a partir de 100 €"
             }
           },
           "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4": {
             "type": "reassurances",
             "settings": {
-              "svg": "",
-              "image": "shopify:\/\/shop_images\/picto-paiement-securise_b10be099-01d0-4b24-a834-09445c8cec42.png",
-              "text": "Paiement 100% sécurisé"
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/lock.svg?v=1674126625",
+              "text": "Réassurance dynamique"
             }
           }
         },
@@ -281,13 +278,13 @@
           "show_counter": true,
           "show_carousel_reassurance": true,
           "validate_text": "Commander",
-          "extra_text": "Livraison estimée : 2 à 3 jours ouvrés",
+          "extra_text": "Livraison estimée : 4 jours ouvrés",
           "extra_text_2": "Frais de livraison calculés à l’étape suivante",
           "show_card": true,
           "image": "shopify:\/\/shop_images\/Frame_9358_85b1ae14-df01-45a6-9c79-bd4c12b8c825.png",
-          "label": "JUSQU’À -15%",
+          "label": "JUSQU’À -25%",
           "subtitle": "Personnalisez votre pack",
-          "title": "<p>Économisez jusqu’à -15% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
+          "title": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
           "cta": "Personnaliser mon pack",
           "ctaLink": "",
           "show_card_2": false,
