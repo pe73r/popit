@@ -33,8 +33,22 @@
         "show_dots": false
       }
     },
+    "d327bd19-8143-4592-baa0-70d5aa79704b": {
+      "type": "rich-text-expandable",
+      "settings": {
+        "text_color": "#201A1C",
+        "title": "Notre mission",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+        "more_text": "<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>",
+        "text_mobile": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+        "more_text_mobile": "<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>",
+        "text_link": "",
+        "text_less": "Lire moins"
+      }
+    },
     "c3651bbc-c24a-44d2-a7b1-9bac325ddff1": {
       "type": "image-text",
+      "disabled": true,
       "settings": {
         "layout": "image_right",
         "content": "column",
@@ -47,6 +61,59 @@
         "subtitle_color": "#4b9b7d",
         "title_color": "#4b9b7d",
         "text_color": "#201a1c"
+      }
+    },
+    "53567e68-79a9-4e38-b4c7-29553918d1c0": {
+      "type": "reinsurance",
+      "blocks": {
+        "template--18292260241702__53567e68-79a9-4e38-b4c7-29553918d1c0-1680864800f293f7b6-0": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image_width": 80,
+            "title": "Livraison rapide et gratuite",
+            "text": "dès 59€ d'achat en France métropolitaine"
+          }
+        },
+        "template--18292260241702__53567e68-79a9-4e38-b4c7-29553918d1c0-1680864800f293f7b6-1": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image_width": 80,
+            "title": "Livraison rapide et gratuite",
+            "text": "dès 59€ d'achat en France métropolitaine"
+          }
+        },
+        "template--18292260241702__53567e68-79a9-4e38-b4c7-29553918d1c0-1680864800f293f7b6-2": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image_width": 80,
+            "title": "Livraison rapide et gratuite",
+            "text": "dès 59€ d'achat en France métropolitaine"
+          }
+        },
+        "template--18292260241702__53567e68-79a9-4e38-b4c7-29553918d1c0-1680864800f293f7b6-3": {
+          "type": "block",
+          "settings": {
+            "svg": "",
+            "image_width": 80,
+            "title": "Livraison rapide et gratuite",
+            "text": "dès 59€ d'achat en France métropolitaine"
+          }
+        }
+      },
+      "block_order": [
+        "template--18292260241702__53567e68-79a9-4e38-b4c7-29553918d1c0-1680864800f293f7b6-0",
+        "template--18292260241702__53567e68-79a9-4e38-b4c7-29553918d1c0-1680864800f293f7b6-1",
+        "template--18292260241702__53567e68-79a9-4e38-b4c7-29553918d1c0-1680864800f293f7b6-2",
+        "template--18292260241702__53567e68-79a9-4e38-b4c7-29553918d1c0-1680864800f293f7b6-3"
+      ],
+      "settings": {
+        "add_margin": 0,
+        "header": "",
+        "bg_color": "#fff",
+        "text_color": "#000"
       }
     },
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14": {
@@ -177,7 +244,9 @@
   "order": [
     "main",
     "5410ab4a-cd77-485d-9749-df7116ef3979",
+    "d327bd19-8143-4592-baa0-70d5aa79704b",
     "c3651bbc-c24a-44d2-a7b1-9bac325ddff1",
+    "53567e68-79a9-4e38-b4c7-29553918d1c0",
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14",
     "73be8675-80a8-4864-84fc-1ec2e6b9930d",
     "bf2b5390-cf59-4b11-bbb1-2198456aa735"
