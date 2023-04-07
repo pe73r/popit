@@ -289,13 +289,23 @@
             "text": "<p>Sans OGM<\/p>",
             "url": ""
           }
+        },
+        "cd5528a4-31ee-45dd-a8bb-d4e80cb1193c": {
+          "type": "text",
+          "settings": {
+            "svg": "",
+            "image": "shopify:\/\/shop_images\/picto-reutilisable-Clair_2x-pilulier_e9fb556a-cad1-4432-a70b-cdea01b96dd6.png",
+            "text": "<p>Packaging 100% recyclable<\/p>",
+            "url": ""
+          }
         }
       },
       "block_order": [
         "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-0",
         "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-1",
         "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-2",
-        "3ce6b234-3294-43cd-b322-7b45057a93d5"
+        "3ce6b234-3294-43cd-b322-7b45057a93d5",
+        "cd5528a4-31ee-45dd-a8bb-d4e80cb1193c"
       ],
       "settings": {
         "animationDuration": 30,
