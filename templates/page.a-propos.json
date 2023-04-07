@@ -70,7 +70,8 @@
           "type": "block",
           "settings": {
             "svg": "",
-            "image_width": 80,
+            "image": "shopify:\/\/shop_images\/picto-pour-toute-la-famille_9e282773-3796-4928-ba1d-7c04393754e3.png",
+            "image_width": 140,
             "title": "POUR TOUTE LA FAMILLE",
             "text": "Prenez soin de vous et de ceux que vous aimez."
           }
@@ -79,7 +80,8 @@
           "type": "block",
           "settings": {
             "svg": "",
-            "image_width": 80,
+            "image": "shopify:\/\/shop_images\/picto-simples-et-bons_b4dd2d81-55da-42bd-b3f2-ea5266fd0037.png",
+            "image_width": 140,
             "title": "ACCESSIBLE, SIMPLE & BON",
             "text": "Des produits abordables qui simplifient votre quotidien."
           }
