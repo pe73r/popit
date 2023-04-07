@@ -133,17 +133,44 @@
         "color": "#201a1c"
       }
     },
-    "73be8675-80a8-4864-84fc-1ec2e6b9930d": {
-      "type": "rich-text-expandable",
+    "44d0ac1a-7a6f-45b2-b456-e2ea918cff59": {
+      "type": "marquee",
+      "blocks": {
+        "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-0": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "text": "",
+            "url": ""
+          }
+        },
+        "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-1": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "text": "",
+            "url": ""
+          }
+        },
+        "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-2": {
+          "type": "text",
+          "settings": {
+            "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0682\/9126\/4826\/files\/verre.svg?v=1669311694",
+            "text": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-0",
+        "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-1",
+        "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-2"
+      ],
       "settings": {
-        "text_color": "#201a1c",
-        "title": "Notre mission",
-        "text": "<p>Et parce que le plaisir ne serait pas total sans quelques engagements, en voici quelques-uns dont nous sommes fiers : <\/p>",
-        "more_text": "",
-        "text_mobile": "",
-        "more_text_mobile": "",
-        "text_link": "Lire plus",
-        "text_less": "Lire moins"
+        "animationDuration": 10,
+        "border": false,
+        "text_color": "#fff",
+        "background_color": "#4b9b7d"
       }
     }
   },
@@ -154,6 +181,6 @@
     "c3651bbc-c24a-44d2-a7b1-9bac325ddff1",
     "53567e68-79a9-4e38-b4c7-29553918d1c0",
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14",
-    "73be8675-80a8-4864-84fc-1ec2e6b9930d"
+    "44d0ac1a-7a6f-45b2-b456-e2ea918cff59"
   ]
 }
