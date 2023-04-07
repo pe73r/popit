@@ -101,7 +101,7 @@
       "settings": {
         "container": "7xl",
         "collection": "frontpage",
-        "title": "Title",
+        "title": "Tous nos produits",
         "limit": 25,
         "collection_2": "",
         "limit_2": 6,
@@ -318,6 +318,7 @@
             "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.jpg",
             "title": "Notre sélection de gummies",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam<\/p>",
+            "cta": "Link",
             "button_link": "",
             "color": "#ffffff"
           }
@@ -330,6 +331,7 @@
             "image": "shopify:\/\/shop_images\/batch-by-wisconsin-hemp-scientific-NDPUzuo5a8M-unsplash.jpg",
             "title": "Notre sélection de gummies",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p>",
+            "cta": "Link",
             "button_link": "",
             "color": "#ffffff"
           }
@@ -342,6 +344,7 @@
             "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
             "title": "Title",
             "text": "<p>Lorem ipsum 2023.<\/p>",
+            "cta": "Link",
             "button_link": "",
             "color": "#ffffff"
           }
@@ -354,6 +357,7 @@
             "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
             "title": "Title",
             "text": "<p>Lorem ipsum 2023.<\/p>",
+            "cta": "Link",
             "button_link": "",
             "color": "#ffffff"
           }
@@ -369,7 +373,8 @@
 
       ],
       "settings": {
-        "container": "7xl"
+        "container": "7xl",
+        "title": "Title"
       }
     },
     "167845847058516467": {
