@@ -325,6 +325,13 @@
         "text_color": "#fff",
         "background_color": "#4b9b7d"
       }
+    },
+    "625cf8d8-3ae6-498e-a090-c4c74decec15": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Sans_titre_cd3ffead-8d8d-47ac-8e3b-909d97b9aac6.png",
+        "container": "full"
+      }
     }
   },
   "order": [
@@ -341,6 +348,7 @@
     "12d3a672-9a68-4fb7-8689-8c334aa319ee",
     "18ec92f4-2d90-481c-89cc-71f212687aaf",
     "b003d11a-d952-4bc9-b050-a566fd4dd43a",
-    "ae3769ef-ff11-413d-aaba-d47d91676da1"
+    "ae3769ef-ff11-413d-aaba-d47d91676da1",
+    "625cf8d8-3ae6-498e-a090-c4c74decec15"
   ]
 }
