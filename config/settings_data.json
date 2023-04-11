@@ -435,6 +435,12 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "5871719951905634831": {
+        "type": "shopify:\/\/apps\/kwanko-tracking\/blocks\/kwanko-tracking\/82a7aed2-cf83-498c-887f-bc6c2e8db7f7",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   },
