@@ -50,11 +50,11 @@
             <div class="max-w-[180px] rounded-lg p-5 bg-white flex items-center justify-center text-center">
               <a href="{{ block.settings.url }}">
                 <div>
-                  {% if product.metafields.global.picto_contact != blank %}
+                  {% if product.metafields.product.picto_contact != blank %}
                      <img
                     class="lazy mx-auto"
-                    src="{{ product.metafields.global.picto_contact }}"
-                    alt="{{ product.metafields.global.picto_contact.alt }}"
+                    src="{{ product.metafields.product.picto_contact }}"
+                    alt="{{ product.metafields.product.picto_contact.alt }}"
                     loading="lazy">
                   {% elsif block.settings.image != blank %}
                   <img
