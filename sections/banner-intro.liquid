@@ -4,11 +4,11 @@
     {% if s.title != blank or s.subtitle != blank or s.image != blank %}
       <div class="w-11/12 mx-auto text-center mb-10">
         {% if s.title != blank %}
-          <h2 class="text-[28px] leading-[37px] md:text-[32px] md:leading-[42px] mb-5" style="color:{{ section.settings.text_color }}">{{ s.title }}</h2>
+          <h2 class="text-[28px] leading-[37px] md:text-[32px] md:leading-[42px] mb-5" style="color:{{ section.settings.color }}">{{ s.title }}</h2>
         {% endif %}
 
         {% if s.subtitle != blank %}
-          <div class="text-base" style="color:{{ section.settings.text_color }}">{{ s.subtitle }}</div>
+          <div class="text-base" style="color:{{ section.settings.color }}">{{ s.subtitle }}</div>
         {% endif %}
 
         {% if s.cta != blank %}
