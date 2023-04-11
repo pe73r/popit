@@ -122,38 +122,6 @@
     },
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14": {
       "type": "banner-intro",
-      "blocks": {
-        "ff0352f7-e469-407f-a472-dc6f0cab6a5d": {
-          "type": "block",
-          "settings": {
-            "image_width": 80,
-            "title": "Title",
-            "text": "Garanti cruelty-free et sans matières animales"
-          }
-        },
-        "fadb559e-86a8-4985-822e-0c7075a4a68c": {
-          "type": "block",
-          "settings": {
-            "image_width": 80,
-            "title": "Title",
-            "text": "Garanti cruelty-free et sans matières animales"
-          }
-        },
-        "f29ca39e-8b0b-4ca0-b39f-a7e4824a753d": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Lactose-Accessoire-Clair_2x_78f8d2dc-f0af-4a0c-9f57-adb2419297df.png",
-            "image_width": 80,
-            "title": "Title",
-            "text": "Garanti cruelty-free et sans matières animales"
-          }
-        }
-      },
-      "block_order": [
-        "ff0352f7-e469-407f-a472-dc6f0cab6a5d",
-        "fadb559e-86a8-4985-822e-0c7075a4a68c",
-        "f29ca39e-8b0b-4ca0-b39f-a7e4824a753d"
-      ],
       "settings": {
         "section_style": "boxed",
         "image": "shopify:\/\/shop_images\/RANGEMENT-GUMMIES-FR.jpg",
@@ -355,7 +323,7 @@
         "cta": "",
         "ctaLink": "",
         "bg_color": "#edece6",
-        "color": "#1a1a1a"
+        "color": "#4b9b7d"
       }
     },
     "b003d11a-d952-4bc9-b050-a566fd4dd43a": {
