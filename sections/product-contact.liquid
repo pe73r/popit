@@ -50,20 +50,38 @@
             <div class="max-w-[180px] rounded-lg p-5 bg-white flex items-center justify-center text-center">
               <a href="{{ block.settings.url }}">
                 <div>
-                  {% if product.metafields.product.picto_contact != blank %}
-                     <img
-                    class="lazy mx-auto"
-                    src="{{ product.metafields.product.picto_contact | img_url:'master'}}"
-                    alt="{{ product.metafields.product.picto_contact.alt }}"
-                    loading="lazy">
-                  {% elsif block.settings.image != blank %}
-                  <img
-                    class="lazy mx-auto"
-                    src="{{ block.settings.image | img_url: 'master'}}"
-                    alt="{{ block.settings.image.alt }}"
-                    loading="lazy"
-                    style="max-width:{{ block.settings.image_width }}px">
-                {% endif %}
+                  {% if forloop.first %}
+                       {% if product.metafields.product.picto_telephone != blank %}
+                         <img
+                        class="lazy mx-auto"
+                        src="{{ product.metafields.product.picto_telephone | img_url:'master'}}"
+                        alt="{{ product.metafields.product.picto_telephone.alt }}"
+                        loading="lazy">
+                      {% elsif block.settings.image != blank %}
+                      <img
+                        class="lazy mx-auto"
+                        src="{{ block.settings.image | img_url: 'master'}}"
+                        alt="{{ block.settings.image.alt }}"
+                        loading="lazy"
+                        style="max-width:{{ block.settings.image_width }}px">
+                    {% endif %}
+                  {% else %}
+                      {% if product.metafields.product.picto_contact != blank %}
+                         <img
+                        class="lazy mx-auto"
+                        src="{{ product.metafields.product.picto_contact | img_url:'master'}}"
+                        alt="{{ product.metafields.product.picto_contact.alt }}"
+                        loading="lazy">
+                      {% elsif block.settings.image != blank %}
+                      <img
+                        class="lazy mx-auto"
+                        src="{{ block.settings.image | img_url: 'master'}}"
+                        alt="{{ block.settings.image.alt }}"
+                        loading="lazy"
+                        style="max-width:{{ block.settings.image_width }}px">
+                    {% endif %}
+                    
+                    {% endif %}
 
                   <p class="mt-2 text-xs md:text-sm" style="color: {{ product_color }}">{{ block.settings.text }}</p>
                 </div>
