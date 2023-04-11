@@ -8,6 +8,11 @@
             <ul class="leading-6">
               <li class="menu-list text-sm uppercase font-bold mb-2 Fredoka">
                 <a href="{{ link.url }}">
+                  {% if links.title contains "gelules" %}
+                    gel
+                   {% elsif links.title contains "gelules" %} 
+                  gum
+                  {% endif %}
                   {{ links.title }}
                 </a>
               </li>
