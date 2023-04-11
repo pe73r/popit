@@ -8,11 +8,11 @@
         {% endif %}
 
         {% if s.subtitle != blank %}
-          <div class="text-base" style="color:{{ section.settings.color }}">{{ s.subtitle }}</div>
+          <div class="text-base my-2" style="color:{{ section.settings.color }}">{{ s.subtitle }}</div>
         {% endif %}
 
         {% if s.cta != blank %}
-          <a class="block mt-2 accent-color underline font-bold text-sm" href="{{ s.ctaLink }}">{{ s.cta }}</a>
+          <a class="block my-2 accent-color underline font-bold text-sm" href="{{ s.ctaLink }}">{{ s.cta }}</a>
         {% endif %}
 
         {% if s.image != blank %}
