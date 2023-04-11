@@ -377,6 +377,14 @@
         "title": "Le blog"
       }
     },
+    "14368ae4-5afa-4f4c-b849-04c106bf8a0a": {
+      "type": "section-title",
+      "settings": {
+        "heading_size": 2,
+        "heading_size_mobile": 1.5,
+        "title": "Nos avis"
+      }
+    },
     "167845847058516467": {
       "type": "apps",
       "blocks": {
@@ -451,6 +459,7 @@
     "98024d9b-c4cd-4f22-ba7c-cd26563f99bb",
     "a6890697-da8c-4795-b963-7882f6d2dcbe",
     "414f3324-4b76-488e-95ee-4e8f2002ed15",
+    "14368ae4-5afa-4f4c-b849-04c106bf8a0a",
     "167845847058516467",
     "a11b1585-0a12-4fa7-b722-9bd6997a108a",
     "1680777446de6b452b"
