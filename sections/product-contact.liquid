@@ -53,7 +53,7 @@
                   {% if product.metafields.product.picto_contact != blank %}
                      <img
                     class="lazy mx-auto"
-                    src="{{ product.metafields.product.picto_contact }}"
+                    src="{{ product.metafields.product.picto_contact | img_url:'master'}}"
                     alt="{{ product.metafields.product.picto_contact.alt }}"
                     loading="lazy">
                   {% elsif block.settings.image != blank %}
