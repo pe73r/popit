@@ -102,7 +102,7 @@
       <{% if template contains 'collection' %}h2{% else %}h3{% endif %} class="font-body-text text-base md:text-[20px] font-extrabold line-clamp-1">
         {{ card_product.title }}
        </{% if template contains 'collection' %}h2{% else %}h3{% endif %}>
-
+{% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: card_product %}
       <!-- Description -->
       {%- if card_product.metafields.product.sub_title.value != blank -%}
           <p class="card-description my-1 md:my-2 text-xs md:text-sm line-clamp-2 max-h-[42px]">{{ product.metafields.product.sub_title.value }}</p>
