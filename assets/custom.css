@@ -158,7 +158,9 @@ accordion-element[data-open="true"].faq .icon-minus {
 .jdgm-all-reviews-widget {
   width: 90%;
   max-width: 1200px;
-  margin: 50px auto;
+  margin: 0 auto;
+  margin-bottom:50px;
+  margin-top:20px;
   font-size: 14px;
 }
 
