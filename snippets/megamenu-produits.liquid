@@ -9,9 +9,9 @@
               <li class="menu-list text-sm uppercase font-bold mb-2 Fredoka">
                 <a href="{{ link.url }}">
                   {% if links.title contains "Gélules" %}
-                    gel
+                    {% render 'icon-gelules' %}
                    {% elsif links.title contains "Gummies" %} 
-                  gum
+                    {% render 'icon-gummies' %}
                   {% endif %}
                   {{ links.title }}
                 </a>
