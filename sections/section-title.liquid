@@ -1,0 +1,51 @@
+<section id="section-{{ section.id }}">
+  <h2 class="section-title text-center uppercase px-5">{{ section.settings.title }}</h2>
+</section>
+<style>
+  #section-{{ section.id }} .section-title {
+    font-size: {{ section.settings.heading_size }}rem;
+  }
+  @media screen and (max-width: 749px) {
+    #section-{{ section.id }} .section-title {
+      font-size: {{ section.settings.heading_size_mobile }}rem;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Section title",
+    "settings": [
+      {
+        "type": "range",
+        "id": "heading_size",
+        "min": 1,
+        "max": 5,
+        "step": 0.5,
+        "unit": "rem",
+        "label": "Title size desktop",
+        "default": 2
+      }, {
+        "type": "range",
+        "id": "heading_size_mobile",
+        "min": 1,
+        "max": 5,
+        "step": 0.5,
+        "unit": "rem",
+        "label": "Title size mobile",
+        "default": 1.5
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "SUIVEZ-NOUS SUR INSTA"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section title",
+        "category": "Text"
+      }
+    ]
+  }
+{%endschema%}
