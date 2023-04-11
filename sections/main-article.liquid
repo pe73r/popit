@@ -24,7 +24,7 @@
                   <a
                     href="{{ settings.social_facebook_link }}"
                     class="cursor-default">
-                    {% render 'icon-facebook' %}
+                    {% render 'icon-facebook', size:'small' %}
                   </a>
                 </div>
                 <div
@@ -34,14 +34,14 @@
                     onclick="window.open(this.href, 'share-linkedin', 'width=750, height= 750'); return false;"
                     target="_blank"
                     rel="noopener noreferrer">
-                    {% render 'icon-instagram' %}
+                    {% render 'icon-instagram', size:'small' %}
                   </a>
                 </div>
                
                 <div
                   class="rounded-full flex justify-center items-center cursor-pointer">
                   <a target="_blank" href="{{ settings.social_tiktok_link }}">
-                      {%- render 'icon-tiktok' -%}
+                      {%- render 'icon-tiktok', size:'small'-%}
                     </a>
                 </div>
               </div>
