@@ -15,7 +15,7 @@
       "type": "main-blog",
       "settings": {
         "number_by_page": 6,
-        "show_date": false,
+        "show_date": true,
         "show_author": false,
         "show_time": true
       }
