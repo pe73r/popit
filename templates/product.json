@@ -360,8 +360,9 @@
         "68559418-eb2e-4bf9-a79f-f97de8962e5b": {
           "type": "block",
           "settings": {
+            "image": "shopify:\/\/shop_images\/9.png",
             "text": "Appelez-nous au +33489740934",
-            "url": ""
+            "url": "tel:+34677395187"
           }
         },
         "fdbe05cc-c480-4415-9f77-fbb6afcd0fda": {
