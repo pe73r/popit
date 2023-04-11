@@ -22,35 +22,27 @@
                 <div
                   class="w-[30px] h-[30px] roundex-full rounded-full flex justify-center items-center">
                   <a
-                    href="#"
+                    href="{{ settings.social_facebook_link }}"
                     class="cursor-default">
-                    {% render 'icon-facebook-article' %}
+                    {% render 'icon-facebook' %}
                   </a>
                 </div>
                 <div
                   class="w-[30px] h-[30px] roundex-full rounded-full flex justify-center items-center cursor-pointer">
                   <a
-                    href="https://www.linkedin.com/share?url={{ article.url }}"
+                    href="{{ settings.social_instagram_link }}"
                     onclick="window.open(this.href, 'share-linkedin', 'width=750, height= 750'); return false;"
                     target="_blank"
                     rel="noopener noreferrer">
-                    {% render 'icon-linkedin' %}
+                    {% render 'icon-instagram' %}
                   </a>
                 </div>
-                <div
-                  class="w-[25px] h-[25px] border border-gray-400 rounded-full flex justify-center items-center">
-                  <a
-                    href="mailto:?body=tisbody&subject={{ article.url }}">
-                    {% render 'icon-mail' %}
-                  </a>
-                </div>
+               
                 <div
                   class="w-[25px] h-[25px] border border-gray-400 rounded-full flex justify-center items-center cursor-pointer">
-                  <a
-                    class="clipboard"
-                    onclick="copyToClipboard()">
-                    {% render 'icon-link' %}
-                  </a>
+                  <a target="_blank" href="{{ settings.social_tiktok_link }}">
+                      {%- render 'icon-tiktok' -%}
+                    </a>
                 </div>
               </div>
             {% endif %}
