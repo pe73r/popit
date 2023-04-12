@@ -164,7 +164,7 @@
         "subtitle": "Personnalisez votre pack",
         "title": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
         "cta": "Personnaliser mon pack",
-        "ctaLink": "",
+        "ctaLink": "shopify:\/\/collections\/energie",
         "title_color": "#eb5a0a",
         "color": "#343434"
       }
