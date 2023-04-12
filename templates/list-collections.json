@@ -33,6 +33,7 @@
         },
         "c49ef8ab-847c-4816-896c-bf7586dee89f": {
           "type": "link",
+          "disabled": true,
           "settings": {
             "title": "Alimentation",
             "link": "#alimentation",
@@ -42,6 +43,7 @@
         },
         "87487d8f-15a5-407a-82b8-3ac2f4bd95f6": {
           "type": "link",
+          "disabled": true,
           "settings": {
             "title": "Mémoire \/ Focus",
             "link": "",
@@ -51,6 +53,7 @@
         },
         "18664160-e607-446d-87c7-bfd186ac6a0c": {
           "type": "link",
+          "disabled": true,
           "settings": {
             "title": "Sport",
             "link": "",
@@ -69,6 +72,7 @@
         },
         "514021bb-ded5-4de8-a40d-199880159fe9": {
           "type": "link",
+          "disabled": true,
           "settings": {
             "title": "Féminin",
             "link": "",
@@ -79,7 +83,7 @@
         "b73bc100-1214-473a-b5ca-3f5a23892a94": {
           "type": "link",
           "settings": {
-            "title": "Peau",
+            "title": "Beauté",
             "link": "",
             "bg_color": "#fbdbdc",
             "color": "#e4003a"
