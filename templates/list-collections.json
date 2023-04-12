@@ -27,8 +27,8 @@
           "settings": {
             "title": "Sommeil",
             "link": "",
-            "bg_color": "#e9d2e7",
-            "color": "#4f2674"
+            "bg_color": "#ebd2e6",
+            "color": "#502873"
           }
         },
         "c49ef8ab-847c-4816-896c-bf7586dee89f": {
@@ -97,15 +97,6 @@
             "bg_color": "#ffe6c8",
             "color": "#eb5a0a"
           }
-        },
-        "ae941741-c5ba-4e14-9831-9b75d37cc10c": {
-          "type": "link",
-          "settings": {
-            "title": "cheveux",
-            "link": "#cheveux",
-            "bg_color": "#e22120",
-            "color": "#3d925c"
-          }
         }
       },
       "block_order": [
@@ -117,8 +108,7 @@
         "a2bb0450-b578-4217-b1a5-c48d0082c77f",
         "514021bb-ded5-4de8-a40d-199880159fe9",
         "b73bc100-1214-473a-b5ca-3f5a23892a94",
-        "3318605b-9cc8-45b0-9992-ce4c5fabfc23",
-        "ae941741-c5ba-4e14-9831-9b75d37cc10c"
+        "3318605b-9cc8-45b0-9992-ce4c5fabfc23"
       ],
       "custom_css": [
 
