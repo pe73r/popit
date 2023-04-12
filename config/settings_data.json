@@ -134,10 +134,18 @@
               "text": "<p>Réassurance dynamique top header<\/p>",
               "url": ""
             }
+          },
+          "1c8fcdae-e398-4947-9328-27ee9e919303": {
+            "type": "text",
+            "settings": {
+              "text": "<p>Économisez -10% dès 3 produits achetés<\/p>",
+              "url": ""
+            }
           }
         },
         "block_order": [
-          "88832915-2123-406d-8a6a-14b2a85b4b72"
+          "88832915-2123-406d-8a6a-14b2a85b4b72",
+          "1c8fcdae-e398-4947-9328-27ee9e919303"
         ],
         "settings": {
           "display": true,
