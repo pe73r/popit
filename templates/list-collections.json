@@ -65,7 +65,7 @@
           "type": "link",
           "settings": {
             "title": "Stress",
-            "link": "",
+            "link": "shopify:\/\/collections\/stress",
             "bg_color": "#b4e1f5",
             "color": "#2d286e"
           }
@@ -92,8 +92,8 @@
         "3318605b-9cc8-45b0-9992-ce4c5fabfc23": {
           "type": "link",
           "settings": {
-            "title": "Énergie",
-            "link": "",
+            "title": "Énergie & Immunité",
+            "link": "shopify:\/\/collections\/energie",
             "bg_color": "#ffe6c8",
             "color": "#eb5a0a"
           }
