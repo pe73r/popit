@@ -369,7 +369,7 @@
           "type": "block",
           "settings": {
             "text": "Envoyez-nous un message",
-            "url": ""
+            "url": "shopify:\/\/pages\/contact"
           }
         }
       },
