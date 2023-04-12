@@ -142,7 +142,7 @@
       "type": "featured-collection",
       "settings": {
         "collection": "frontpage",
-        "products_to_show": 2,
+        "products_to_show": 12,
         "show_collection_title": true,
         "show_collection_description": true,
         "show_collection_size": true,
