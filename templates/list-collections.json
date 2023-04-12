@@ -40,6 +40,15 @@
             "color": "#2d286e"
           }
         },
+        "2731d2f7-59bd-4bcb-98f7-08eb18d6d782": {
+          "type": "link",
+          "settings": {
+            "title": "Kids",
+            "link": "shopify:\/\/collections\/kids",
+            "bg_color": "#ffe6b4",
+            "color": "#eb5a0a"
+          }
+        },
         "11b69bb8-9ab4-4301-92c4-00573aad36e0": {
           "type": "link",
           "settings": {
@@ -97,33 +106,45 @@
             "bg_color": "#f9cddb",
             "color": "#9d1553"
           }
-        },
-        "2731d2f7-59bd-4bcb-98f7-08eb18d6d782": {
-          "type": "link",
-          "settings": {
-            "title": "Kids",
-            "link": "shopify:\/\/collections\/kids",
-            "bg_color": "#ffe6b4",
-            "color": "#eb5a0a"
-          }
         }
       },
       "block_order": [
         "d78b76bd-bfd5-4686-8bc3-2f7b415fa9d8",
         "3318605b-9cc8-45b0-9992-ce4c5fabfc23",
         "a2bb0450-b578-4217-b1a5-c48d0082c77f",
+        "2731d2f7-59bd-4bcb-98f7-08eb18d6d782",
         "11b69bb8-9ab4-4301-92c4-00573aad36e0",
         "b73bc100-1214-473a-b5ca-3f5a23892a94",
         "c49ef8ab-847c-4816-896c-bf7586dee89f",
         "87487d8f-15a5-407a-82b8-3ac2f4bd95f6",
         "18664160-e607-446d-87c7-bfd186ac6a0c",
-        "514021bb-ded5-4de8-a40d-199880159fe9",
-        "2731d2f7-59bd-4bcb-98f7-08eb18d6d782"
+        "514021bb-ded5-4de8-a40d-199880159fe9"
       ],
       "custom_css": [
 
       ],
       "settings": {
+      }
+    },
+    "6883289f-7f5b-4881-b4d5-25410aea7d64": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "energie",
+        "products_to_show": 4,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_size": true,
+        "show_secondary_image": false,
+        "show_quantity": false,
+        "show_cta": true,
+        "show_collection_card": false,
+        "label": "JUSQU’À -25%",
+        "subtitle": "Personnalisez votre pack",
+        "title": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
+        "cta": "Personnaliser mon pack",
+        "ctaLink": "",
+        "title_color": "#eb5a0a",
+        "color": "#343434"
       }
     },
     "5fe2ec1b-d42e-4c71-839e-7f566255b4f9": {
@@ -196,6 +217,7 @@
   "order": [
     "collection-list-header",
     "collection-links",
+    "6883289f-7f5b-4881-b4d5-25410aea7d64",
     "5fe2ec1b-d42e-4c71-839e-7f566255b4f9",
     "bbd68e1e-b0dc-4c9b-89fd-c0ea85ec9b71",
     "d1501d1a-e614-4622-8ee2-cf5eac786edd"
