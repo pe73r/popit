@@ -257,8 +257,9 @@
           "429d0e67-9527-40e3-909c-41a156b9cf9f": {
             "type": "reassurances",
             "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/lock.svg?v=1674126625",
-              "text": "Réassurance dynamique"
+              "svg": "",
+              "image": "shopify:\/\/shop_images\/picto-livraison-gratuite.png",
+              "text": "Livraison offerte dès 60€ d'achats"
             }
           },
           "1c9c5b5b-c1c9-4a69-9b95-8db25c19a069": {
