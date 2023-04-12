@@ -141,7 +141,7 @@
     "5fe2ec1b-d42e-4c71-839e-7f566255b4f9": {
       "type": "featured-collection",
       "settings": {
-        "collection": "alimentation",
+        "collection": "frontpage",
         "products_to_show": 2,
         "show_collection_title": true,
         "show_collection_description": true,
@@ -149,14 +149,14 @@
         "show_secondary_image": false,
         "show_quantity": false,
         "show_cta": true,
-        "show_collection_card": true,
+        "show_collection_card": false,
         "image": "shopify:\/\/shop_images\/Frame_9358_85b1ae14-df01-45a6-9c79-bd4c12b8c825.png",
         "label": "JUSQU’À -25%",
         "subtitle": "Personnalisez votre pack",
         "title": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
         "cta": "Personnaliser mon pack",
         "ctaLink": "",
-        "title_color": "#ea5b0c",
+        "title_color": "#4b9b7d",
         "color": "#343434"
       }
     },
