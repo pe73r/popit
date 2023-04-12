@@ -147,6 +147,28 @@
         "color": "#343434"
       }
     },
+    "070b8222-e0ca-42d6-b655-2ac69aa94f2d": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "stress",
+        "products_to_show": 3,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_size": true,
+        "show_secondary_image": false,
+        "show_quantity": false,
+        "show_cta": true,
+        "show_collection_card": true,
+        "image": "shopify:\/\/shop_images\/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
+        "label": "JUSQU’À -15%",
+        "subtitle": "Personnalisez votre pack",
+        "title": "<p>Économisez jusqu’à -15% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
+        "cta": "Je crée mon pack",
+        "ctaLink": "",
+        "title_color": "#4B9B7D",
+        "color": "#343434"
+      }
+    },
     "5fe2ec1b-d42e-4c71-839e-7f566255b4f9": {
       "type": "featured-collection",
       "settings": {
@@ -218,6 +240,7 @@
     "collection-list-header",
     "collection-links",
     "6883289f-7f5b-4881-b4d5-25410aea7d64",
+    "070b8222-e0ca-42d6-b655-2ac69aa94f2d",
     "5fe2ec1b-d42e-4c71-839e-7f566255b4f9",
     "bbd68e1e-b0dc-4c9b-89fd-c0ea85ec9b71",
     "d1501d1a-e614-4622-8ee2-cf5eac786edd"
