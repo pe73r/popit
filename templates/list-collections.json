@@ -143,7 +143,7 @@
         "subtitle": "Personnalisez votre pack",
         "title": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
         "cta": "Personnaliser mon pack",
-        "ctaLink": "",
+        "ctaLink": "shopify:\/\/collections\/frontpage",
         "title_color": "#4b9b7d",
         "color": "#343434"
       }
