@@ -44,7 +44,7 @@
           "type": "link",
           "settings": {
             "title": "Kids",
-            "link": "shopify:\/\/collections\/kids",
+            "link": "#Kids",
             "bg_color": "#ffe6b4",
             "color": "#eb5a0a"
           }
