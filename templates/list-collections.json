@@ -53,7 +53,7 @@
           "type": "link",
           "settings": {
             "title": "Sommeil",
-            "link": "shopify:\/\/collections\/sommeil",
+            "link": "#Sommeil",
             "bg_color": "#ebd2e6",
             "color": "#502873"
           }
