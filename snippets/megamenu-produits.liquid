@@ -18,7 +18,7 @@
               </li>
               {% for sublinks in links.links limit: 5 %}
                 <li class="menu-list">
-                  <a href="{{ child_link.url }}">
+                  <a href="{{ sublinks.url }}">
                     <span class="text-xs">{{ sublinks.title }}</span>
                   </a>
                 </li>
