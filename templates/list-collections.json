@@ -5,7 +5,7 @@
       "settings": {
         "show_breadcrumbs": true,
         "title": "Tous nos produits",
-        "description": "Des compléments alimentaires pour ravir petits et grands.",
+        "description": "pour prendre soin de vous et de toute votre famille !",
         "bg_color": "#e3f2ed",
         "color": "#4b9b7d"
       }
@@ -128,12 +128,13 @@
     },
     "5fe2ec1b-d42e-4c71-839e-7f566255b4f9": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "frontpage",
         "products_to_show": 4,
         "show_collection_title": true,
-        "show_collection_description": true,
-        "show_collection_size": true,
+        "show_collection_description": false,
+        "show_collection_size": false,
         "show_secondary_image": false,
         "show_quantity": false,
         "show_cta": true,
@@ -155,7 +156,7 @@
         "products_to_show": 4,
         "show_collection_title": true,
         "show_collection_description": true,
-        "show_collection_size": true,
+        "show_collection_size": false,
         "show_secondary_image": false,
         "show_quantity": false,
         "show_cta": true,
