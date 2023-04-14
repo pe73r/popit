@@ -6,9 +6,9 @@
         "display": true,
         "show_breadcrumbs": true,
         "title": "Contactez-nous",
-        "description": "Des compléments alimentaires pour favoriser votre digestion et votre transit intestinal...\n<!--split-->\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "",
         "bg_color": "#e3f2ed",
-        "color": "#005f3b"
+        "color": "#4b9b7d"
       }
     },
     "main": {
@@ -22,12 +22,14 @@
       "type": "contact-form",
       "settings": {
         "cta": "Envoyer ma demande",
+        "show_phone_input": true,
+        "show_select_input": true,
         "title": "Sélectionne l’objet de ta demande",
         "option_1": "Option 1",
         "option_2": "Option 2",
         "option_3": "Option 3",
         "header": "Formulaire de contact",
-        "header_color": "#4B9B7D"
+        "header_color": "#4b9b7d"
       }
     }
   },
