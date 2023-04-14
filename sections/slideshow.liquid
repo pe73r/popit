@@ -8,7 +8,7 @@
         {%- for block in section.blocks -%}
           {% if block.type == 'video' %}
             <carousel-panel class="h-full p-0" id="block-{{ block.id }}">
-              <div class="relative flex flex-col justify-center h-full items-center" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) ,rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.55))">
+              <div class="relative flex flex-col justify-center h-full items-center">
                 <video
                   class="absolute z-[-1] w-full h-full object-cover"
                   playsinline
