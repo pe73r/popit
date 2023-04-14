@@ -134,7 +134,7 @@
         "blog": "infos",
         "post_limit": 7,
         "show_dots": true,
-        "heading": "À LIRE...",
+        "heading": "",
         "show_title": false,
         "show_tag": false,
         "show_content": true,
