@@ -116,6 +116,7 @@
     },
     "904b1d5d-41ad-473a-b6e8-626f0e6b9062": {
       "type": "join-widget-section",
+      "disabled": true,
       "settings": {
         "widget_html": "<div id=\"list-bubble-wiget-home\" style=\"margin: 5px 2px; min-height: 108px;\"><\/div> <script src=\"https:\/\/popit.my.join-stories.com\/widgets\/wiget-home\/index.js\" data-join-widget-id=\"list-bubble-wiget-home\" data-join-widget-alias=\"wiget-home\" type=\"text\/javascript\"><\/script>",
         "heading_size": 2,
@@ -387,7 +388,7 @@
       "settings": {
         "heading_size": 2,
         "heading_size_mobile": 1.5,
-        "title": "Vos avis"
+        "title": "Ça a l'air de vous plaire !"
       }
     },
     "167845847058516467": {
