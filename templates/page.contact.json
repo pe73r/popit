@@ -6,13 +6,14 @@
         "display": true,
         "show_breadcrumbs": true,
         "title": "Contactez-nous",
-        "description": "",
+        "description": "via notre formulaire de contact.",
         "bg_color": "#e3f2ed",
         "color": "#4b9b7d"
       }
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "display_page_title": false,
         "display_page_content": false
@@ -22,13 +23,13 @@
       "type": "contact-form",
       "settings": {
         "cta": "Envoyer ma demande",
-        "show_phone_input": true,
+        "show_phone_input": false,
         "show_select_input": true,
-        "title": "Sélectionne l’objet de ta demande",
-        "option_1": "Option 1",
-        "option_2": "Option 2",
-        "option_3": "Option 3",
-        "header": "Formulaire de contact",
+        "title": "Sélectionnez l’objet de votre demande",
+        "option_1": "J'ai besoin de conseils",
+        "option_2": "Où est mon colis ?",
+        "option_3": "Autre demande d'info",
+        "header": "",
         "header_color": "#4b9b7d"
       }
     }
