@@ -134,7 +134,7 @@
         "show_collection_title": true,
         "show_collection_description": false,
         "show_collection_size": false,
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_quantity": false,
         "show_cta": true,
         "show_collection_card": false,
