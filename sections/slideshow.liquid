@@ -41,7 +41,7 @@
             </carousel-panel>
           {% else %}
             <carousel-panel class="h-full p-0" id="block-{{ block.id }}">
-              <div class="relative flex flex-col justify-end md:justify-end h-full items-center md:items-start" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.55))">
+              <div class="relative flex flex-col justify-end md:justify-end h-full items-center md:items-start">
                 <img
                   data-src="{{ block.settings.image | img_url: 'master'}}"
                   class="lazyload absolute z-[-1] w-full h-full object-cover {% if block.settings.image_mobile != blank %} hidden md:block {% endif%}"
