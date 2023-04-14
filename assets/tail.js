@@ -256,11 +256,11 @@ class HeaderDialog extends Dialog {
       const overlay = this.querySelector(`${this.type}-overlay`);
       if (overlay && header) {
         const { top } = header.getBoundingClientRect();
-        if (newValue === "out") {
-          overlay.style.marginTop = "0px";
-        } else {
-          overlay.style.marginTop = `${-top}px`;
-        }
+        //if (newValue === "out") {
+        //  overlay.style.marginTop = "0px";
+        //} else {
+        //  overlay.style.marginTop = `${-top}px`;
+        //}
       }
     }
   }
