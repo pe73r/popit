@@ -1,12 +1,8 @@
-<tail-tabs
-  class="relative">
-  <tabs-buttons
-    class="z-50 p-5 justify-start gap-6 bg-white border-b border-gray-300 shadow-sm">
+<tail-tabs class="relative">
+  <tabs-buttons class="z-50 p-5 justify-start gap-6 bg-white border-b border-gray-300 shadow-sm">
     {% for tab in elements %}
-      <div
-        class="block relative group transition-all cursor-pointer {% unless  tab.settings.title contains "pack" or tab.settings.title contains "PACK" %} selected:font-bold hover:text-green {% endunless %}">
-        <p
-          class="text-sm uppercase {% if tab.settings.title contains "pack" or tab.settings.title contains "PACK" %} link-pack rounded-lg p-1 hover:text-white {% endif %}">{{ tab.settings.title }}</p>
+      <div class="block relative group transition-all cursor-pointer {% unless  tab.settings.title contains "pack" or tab.settings.title contains "PACK" %} selected:font-bold hover:text-green {% endunless %}">
+        <p class="text-sm uppercase {% if tab.settings.title contains "pack" or tab.settings.title contains "PACK" %} link-pack rounded-lg p-1 hover:text-white {% endif %}">{{ tab.settings.title }}</p>
       </div>
     {% endfor %}
   </tabs-buttons>
@@ -16,45 +12,33 @@
 
 
         <!-- featured cards -->
-        <div
-          class="w-full">
+        <div class="w-full">
           {% render "header-drawer-featured-links", block: tab.settings, limit: 2 %}
         </div>
 
         {% if tab.settings.menu_style == "accordion" %}
           <!-- links in accordion -->
           {% if tab.settings.menu != blank %}
-            <accordion-group
-              class="flex flex-col items-start justify-start">
+            <accordion-group class="flex flex-col items-start justify-start">
               {% for links in tab.settings.menu.links %}
 
                 {% if links.links.size > 0 %}
-                  <accordion-element
-                    class="w-full bg-white rounded-lg shadow-lg p-3 {% unless forloop.last %} mb-5 {% endunless %} {% if previous == 'link' %}mt-6{% endif %}">
-                    <accordion-trigger
-                      class="group">
-                      <accordion-header
-                        class="flex flex-row items-center justify-between">
-                        <div
-                          class="flex-1">
-                          <p
-                            class="text-sm font-normal">{{ links.title }}</p>
+                  <accordion-element class="w-full bg-white rounded-lg shadow-lg p-3 {% unless forloop.last %} mb-5 {% endunless %} {% if previous == 'link' %}mt-6{% endif %}">
+                    <accordion-trigger class="group">
+                      <accordion-header class="flex flex-row items-center justify-between">
+                        <div class="flex-1">
+                          <p class="text-sm font-normal">{{ links.title }}</p>
                         </div>
-                        <accordion-icon
-                          class="group-expanded:rotate-180 transition-all origin-center h-[fit-content]">
+                        <accordion-icon class="group-expanded:rotate-180 transition-all origin-center h-[fit-content]">
                           {% render 'icon-arrow-accordion' %}
                         </accordion-icon>
                       </accordion-header>
                     </accordion-trigger>
                     <accordion-content>
-                      <div
-                        class="text-sm">
+                      <div class="text-sm">
                         {% for sublinks in links.links %}
-                          <div
-                            class="mt-3">
-                            <a
-                              href="{{ sublinks.url }}"
-                              class="flex flex-row items-center gap-2">
+                          <div class="mt-3">
+                            <a href="{{ sublinks.url }}" class="flex flex-row items-center gap-2">
                               {% assign title = sublinks.title | handle %}
                               {% render 'icons-menu', title: title, submenu: tab.settings.menu %}
                               <span>{{ sublinks.title }}</span>
@@ -66,12 +50,9 @@
                   </accordion-element>
                   {% assign previous = 'accordion' %}
                 {% else %}
-                  <a
-                    href="{{ links.url }}"
-                    class="w-full bg-white flex flex-row gap-2 items-center rounded-lg shadow-lg p-3 {% unless forloop.last %} mb-4{% endunless %}">
+                  <a href="{{ links.url }}" class="w-full bg-white flex flex-row gap-2 items-center rounded-lg shadow-lg p-3 {% unless forloop.last %} mb-4{% endunless %}">
                     {% render 'icons-menu', title: title, submenu: tab.settings.menu %}
-                    <span
-                      class="text-sm font-normal">{{ links.title }}</span>
+                    <span class="text-sm font-normal">{{ links.title }}</span>
                   </a>
                   {% assign previous = 'link' %}
                 {% endif %}
@@ -84,7 +65,16 @@
               <div>
                 <ul>
                   <li class="menu-list text-sm uppercase font-bold mb-2">
-                    <a href="{{ link.url }}">
+                    <a href="{{ link.url }}" class="flex items-center">
+                      {% if links.title contains "Gélules" %}
+                        <span class="-ml-3">
+                          {% render 'icon-gelule' %}
+                        </span>
+                      {% elsif links.title contains "Gummies" %}
+                        <span class="-ml-3">
+                          {% render 'icon-gummy' %}
+                        </span>
+                      {% endif %}
                       {{ links.title }}
                     </a>
                   </li>
