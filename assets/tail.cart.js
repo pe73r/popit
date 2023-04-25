@@ -26,11 +26,13 @@ const reRenderSections = (sections, newSections) => {
   });
 };
 const reRenderLineItems = (newSections) => {
+  console.log({ newSections });
   if (!newSections || (newSections && !Object.keys(newSections).length)) {
     return;
   }
   const newDom = new DOMParser().parseFromString(newSections["side-cart"], "text/html");
   const lineItems = document.getElementById("line-items");
+
   lineItems.innerHTML = newDom.getElementById("line-items").innerHTML;
   return newDom;
 };
@@ -181,7 +183,6 @@ defineCustomElement(
     }
 
     setHeight = () => {
-      
       this.style.minHeight = window.innerHeight + "px";
       this.style.height = window.innerHeight + "px";
       this.style.maxHeight = window.innerHeight + "px";
@@ -379,6 +380,14 @@ defineCustomElement(
         reRenderSections(["side-cart"], response.sections);
       } else {
         reRenderCartIndicators(response.sections);
+
+        const newDom = new DOMParser().parseFromString(response.sections["side-cart"], "text/html");
+        const selector = `[data-cart-price="${this.variant}"]`;
+        const price = document.querySelector(selector);
+
+        if (price) {
+          price.innerHTML = newDom.querySelector(selector).innerHTML;
+        }
       }
 
       document
@@ -394,6 +403,8 @@ defineCustomElement(
     };
   }
 );
+
+const reRenderPrices = (section) => {};
 
 defineCustomElement(
   "cart-item-remove",

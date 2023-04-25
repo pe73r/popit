@@ -45,7 +45,7 @@
         </cart-item-quantity>
       {% endunless %}
       <!-- Price -->
-      <div class="mt-1 ml-auto text-sm">
+      <div class="mt-1 ml-auto text-sm" data-cart-price={{item.variant_id }}>
         {% if product.compare_at_price == nil %}
           <span class="font-bold">
             {{ item.original_line_price | money_without_trailing_zeros }}

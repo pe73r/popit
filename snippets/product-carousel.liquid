@@ -1,6 +1,15 @@
+
 {%- for media in product.media -%}
   {%- assign product_media_size = product.media.size -%}
 {% endfor %}
+
+{% assign medias = product.media %}
+{% assign first_media = product.media[1] %}
+
+{%- for media in product.media -%}
+  {%- assign product_media_size = product.media.size -%}
+{% endfor %}
+
 
 <div class="flex justify-center items-center">
   <!-- carousel desktop -->
@@ -20,10 +29,15 @@
       </carousel-dots>
       <carousel-container class="w-[400px] h-[400px] xl:w-[500px] xl:h-[500px] bg-white rounded-full mx-auto flex justify-center">
         <carousel-content>
+          <carousel-panel class="flex items-center p-0">
+            {% render 'product-media', media: first_media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants, class: 'w-full mx-auto' %}
+          </carousel-panel>
           {%- for media in product.media -%}
+            {% unless forloop.index == 2 %}
             <carousel-panel class="flex items-center p-0">
               {% render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants, class: 'w-full mx-auto' %}
-            </carousel-panel>
+              </carousel-panel>
+            {% endunless %}
           {% endfor %}
         </carousel-content>
       </carousel-container>
