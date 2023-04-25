@@ -361,7 +361,7 @@
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/9.png",
-            "text": "Appelez-nous au 04 89 74 09 34",
+            "text": "Appelez-nous<br>au 04 89 74 09 34",
             "url": "tel:+0489740934"
           }
         },
