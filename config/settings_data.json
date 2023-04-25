@@ -197,18 +197,6 @@
               "featured_link_1": "shopify:\/\/collections\/all"
             }
           },
-          "bd163990-46e5-4973-9add-25befdce7734": {
-            "type": "mobile_tabs",
-            "settings": {
-              "title": "VOTRE PACK",
-              "menu": "menu-pack-mobile",
-              "menu_style": "accordion",
-              "featured_link_image_1": "shopify:\/\/shop_images\/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
-              "featured_link_subtitle_1": "Personnalisez votre pack",
-              "featured_link_title_1": "<p>Économisez jusqu’à <strong>-15%<\/strong> en achetant un pack de 3, 4 ou 5 produits.<\/p>",
-              "featured_link_1": "shopify:\/\/collections\/all"
-            }
-          },
           "a2ec93b6-297a-4fc2-bb68-f6b5357f8d38": {
             "type": "mobile_tabs",
             "settings": {
@@ -225,15 +213,27 @@
             "settings": {
               "menu": "menu-mobile-bottom"
             }
+          },
+          "bd163990-46e5-4973-9add-25befdce7734": {
+            "type": "mobile_tabs",
+            "settings": {
+              "title": "VOTRE PACK",
+              "menu": "menu-pack-mobile",
+              "menu_style": "accordion",
+              "featured_link_image_1": "shopify:\/\/shop_images\/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
+              "featured_link_subtitle_1": "Personnalisez votre pack",
+              "featured_link_title_1": "<p>Économisez jusqu’à <strong>-15%<\/strong> en achetant un pack de 3, 4 ou 5 produits.<\/p>",
+              "featured_link_1": "shopify:\/\/collections\/all"
+            }
           }
         },
         "block_order": [
           "9361598a-ff81-4f8d-a8a3-71f39892e985",
           "821b51b7-27dd-4a1b-9036-4f3a51fe987f",
           "bfd7dab0-fe5a-4911-9db9-a0cdcd88137d",
-          "bd163990-46e5-4973-9add-25befdce7734",
           "a2ec93b6-297a-4fc2-bb68-f6b5357f8d38",
-          "7b909d78-4aeb-4689-abdf-286ad0fb99a5"
+          "7b909d78-4aeb-4689-abdf-286ad0fb99a5",
+          "bd163990-46e5-4973-9add-25befdce7734"
         ],
         "settings": {
           "menu_desktop": "main-menu",
