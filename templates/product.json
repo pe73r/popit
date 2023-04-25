@@ -361,14 +361,14 @@
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/9.png",
-            "text": "Appelez-nous directement",
+            "text": "Appelez-nous au 04 67 73",
             "url": "tel:+34677395187"
           }
         },
         "fdbe05cc-c480-4415-9f77-fbb6afcd0fda": {
           "type": "block",
           "settings": {
-            "text": "Envoyez-nous un message",
+            "text": "Envoyez-nous<br>un message",
             "url": "shopify:\/\/pages\/contact"
           }
         }
