@@ -41,7 +41,7 @@
             </carousel-panel>
           {% else %}
             <carousel-panel class="h-full p-0" id="block-{{ block.id }}">
-              <div class="relative flex flex-col justify-end md:justify-end h-full items-center md:items-start">
+              <div class="relative flex flex-col justify-end md:justify-end h-full items-center md:items-start slideshow-panel">
                 <img
                   data-src="{{ block.settings.image | img_url: 'master'}}"
                   class="lazyload absolute z-[-1] w-full h-full object-cover {% if block.settings.image_mobile != blank %} hidden md:block {% endif%}"
@@ -92,7 +92,15 @@
 
   </tail-carousel>
 </section>
-
+<style>
+  {% if section.settings.gradient %}
+    @media(max-width: 639px) {
+      .slideshow-panel {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) ,rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.55))
+      }
+    }
+  {% endif %}
+</style>
 {% schema %}
   {
     "name": "Slideshow",
@@ -102,7 +110,13 @@
         "id": "show_dots",
         "default": true,
         "label": "Show dots ?"
+      }, {
+        "type": "checkbox",
+        "id": "gradient",
+        "default": true,
+        "label": "Linear gradient in mobile to improve visibility"
       }
+
     ],
     "max_blocks": 6,
     "blocks": [
