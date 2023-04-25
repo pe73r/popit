@@ -1,6 +1,8 @@
 {
   "general": {
     "custom": {
+      "compartments": "4 compartments",
+      "re_use": "Reusable"
     },
     "password_page": {
       "login_form_heading": "Enter store using password:",
