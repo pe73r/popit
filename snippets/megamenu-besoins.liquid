@@ -3,7 +3,7 @@
   {% if submenu != blank %}
     <accordion-group class="w-2/3 grid gap-x-5 gap-y-4 grid-cols-2 h-fit">
       {% for links in submenu.links %}
-        <accordion-element class="p-3 rounded-lg shadow-lg w-full h-fit">
+        <accordion-element class="p-3 pr-0 rounded-lg shadow-lg w-full h-fit">
           <accordion-trigger class="group">
             <accordion-header class="flex justify-between items-center">
               <div class="flex-1">
@@ -12,13 +12,13 @@
                   <span class="{{ class }} text-sm first-letter:uppercase">{{ links.title }}</span>
                 </h3>
               </div>
-              <accordion-icon class="group-expanded:rotate-180 transition-all origin-center h-[fit-content]">
+              <accordion-icon class="group-expanded:rotate-180 transition-all origin-center h-[fit-content] relative right-4">
                 {% render 'icon-arrow-accordion' %}
               </accordion-icon>
             </accordion-header>
           </accordion-trigger>
           <accordion-content>
-            <div class="flex gap-3">
+            <div class="flex gap-3 overflow-hidden overflow-x-scroll snap-mandatory snap-x scroller">
               {% for sublinks in links.links limit: 5 %}
                 <div class="block">
                   <a href="{{ child_link.url }}" class="flex flex-col items-center gap-2 mt-4">

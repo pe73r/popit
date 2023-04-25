@@ -39,6 +39,9 @@ a.anchor {
   display: none;
 }
 
+.scroller::-webkit-scrollbar {
+  display: none;
+}
 
 /* accordion */
 
