@@ -19,12 +19,19 @@
       slidesToShow="md:1"
       data-auto-dots="false">
       <carousel-dots class="hidden lg:flex flex-col absolute z-10 gap-1 top-[50%] lg:left-[-5%] md:left-[-5%] xl:left-[-10%]  2xl:left-[-20%] translate-y-[-50%]">
+        <carousel-dot class="py-2 text-center transition-all cursor-pointer group" href="{{ media }}">
+          <div class="{% if product_media_size >= 8 %} w-[40px] h-[40px]  {% else %} w-[50px] h-[50px] xl:w-[60px] xl:h-[60px] {% endif %} rounded-full bg-white group-selected:border-white group-selected:border-2 transition-all flex justify-center ">
+            <img class="rounded-full" src="{{ first_media  | image_url: width: 52, height: 52 }}">
+          </div>
+        </carousel-dot>
         {%- for media in product.media -%}
+            {% unless forloop.index == 2 %}
           <carousel-dot class="py-2 text-center transition-all cursor-pointer group" href="{{ media }}">
             <div class="{% if product_media_size >= 8 %} w-[40px] h-[40px]  {% else %} w-[50px] h-[50px] xl:w-[60px] xl:h-[60px] {% endif %} rounded-full bg-white group-selected:border-white group-selected:border-2 transition-all flex justify-center ">
               <img class="rounded-full" src="{{ media  | image_url: width: 52, height: 52 }}">
             </div>
           </carousel-dot>
+            {% endunless %}
         {%- endfor -%}
       </carousel-dots>
       <carousel-container class="w-[400px] h-[400px] xl:w-[500px] xl:h-[500px] bg-white rounded-full mx-auto flex justify-center">
