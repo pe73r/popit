@@ -7,7 +7,7 @@
         src="{{ article.image | image_url }}"
         alt="{{ article.image.alt }}"
         loading="lazy">
-      <div class="gap-4 min-h-[115px]">
+      <div class="gap-4">
         {% if show_tag %}
           <div class="w-full h-[28px] flex capitalize text-xs article-tags">
             {% for tag in article.tags %}
@@ -15,13 +15,18 @@
             {% endfor %}
           </div>
         {% endif %}
-        <h3 class="text-sm py-2 line-clamp-3 min-h-[76px] sm:min-h-[55px]">
+        <h3 class="text-sm py-2">
           {{ article.title | truncate: 100 | escape }}
         </h3>
         {%- if show_date -%}
-          <p class="text-[10px] font-thin">
-            {{ article.published_at | date: "%d.%b %C" }}
-          </p>
+          {% if article.metafields.global.date != blank %}
+            <p class="text-[10px] font-light">
+              {{ article.metafields.global.date }}</p>
+          {% else %}
+            <p class="text-[10px] font-light">
+              {{ article.published_at | date: "%d.%b %C" }}
+            </p>
+          {% endif %}
         {%- endif -%}
 
         {%- if show_author -%}
