@@ -361,7 +361,7 @@
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/9.png",
-            "text": "Appelez-nous au 04 67 73",
+            "text": "Appelez-nous<br> au 04 67 73",
             "url": "tel:+34677395187"
           }
         },
