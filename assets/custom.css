@@ -188,3 +188,23 @@ accordion-element[data-open="true"].faq .icon-minus {
 .just-btn-sticky{
   font-size:14px !important;
 }
+
+/* login and register */
+
+.register-list li {
+  display: flex;
+  font-size: 14px;
+  color: #4B9B7D;
+  margin-bottom: 10px;
+  
+}
+.register-list li::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  min-width: 24px;
+  background-color: #4B9B7D;
+  border-radius: 50%;
+  margin-right: 12px;
+}
