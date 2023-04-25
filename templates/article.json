@@ -23,11 +23,25 @@
           "settings": {
             "product": "copy-of-gummies-sommeil-1"
           }
+        },
+        "8b8b9d5d-da9f-46df-9cb0-8103a7af87c8": {
+          "type": "featured_blog",
+          "settings": {
+            "blog": "infos",
+            "post_limit": 4,
+            "show_dots": true,
+            "heading": "Découvrez tous nos articles :",
+            "show_tag": false,
+            "show_author": false,
+            "show_date": true,
+            "show_button": true
+          }
         }
       },
       "block_order": [
         "5fc6ec2a-9e2d-4b1d-b7d9-5e7dba4d3f31",
-        "f92d5646-6fe9-48d5-ba17-093769b8762e"
+        "f92d5646-6fe9-48d5-ba17-093769b8762e",
+        "8b8b9d5d-da9f-46df-9cb0-8103a7af87c8"
       ],
       "settings": {
         "related_products": true,
