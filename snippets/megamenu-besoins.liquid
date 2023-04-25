@@ -22,30 +22,43 @@
               {% for sublinks in links.links limit: 5 %}
                 <div class="block">
                   <a href="{{ child_link.url }}" class="flex flex-col items-center gap-2 mt-4">
+
+                    {% assign list_magnesium = settings.list_magnesium | split: ", " %}
+                    {% for name in list_magnesium %}
+                      {% if sublinks.title contains name %}
+                        {% assign magnesium = true %}
+                      {% endif %}
+                    {% endfor %}
+
                     {% if sublinks.title contains "Grossesse" or sublinks.title contains "Magnésium" %}
                       <img
                         class="max-w-[60px]"
-                        src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/magnesium-carre.png?v=1677233543"
+                        src="{{ settings.menu_product_magnesium | img_url:'master'}}"
                         alt="">
                     {% elsif sublinks.title contains "Multivitamines" or sublinks.title contains "Multivitamins" %}
                       <img
                         class="max-w-[60px]"
-                        src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/vita-carre.png?v=1677233543"
+                        src="{{ settings.menu_product_vitamins | img_url:'master'}}"
                         alt="">
                     {% elsif sublinks.title contains "Sommeil" or sublinks.title contains "sommeil" %}
                       <img
                         class="max-w-[60px]"
-                        src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/SOMMEIL-carre-2.png?v=1677235889"
+                        src="{{ settings.menu_product_sommeil | img_url:'master'}}"
                         alt="">
                     {% elsif sublinks.title contains "Allaitement" or sublinks.title contains "Ménopause" or sublinks.title contains "Biotine" or sublinks.title contains "Pousse Cheveux" %}
                       <img
                         class="max-w-[60px]"
-                        src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/biotine-big-carre.png?v=1677233543"
+                        src="{{ settings.menu_product_allaitement | img_url:'master'}}"
+                        alt="">
+                    {% elsif sublinks.title contains "D3" %}
+                      <img
+                        class="max-w-[60px]"
+                        src="{{ settings.menu_product_vitamine_d3 | img_url:'master'}}"
                         alt="">
                     {% else %}
                       <img
                         class="max-w-[60px]"
-                        src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/Rectangle_462.png?v=1674480399"
+                        src="{{ settings.menu_product_default | img_url:'master'}}"
                         alt="">
                     {% endif %}
 
