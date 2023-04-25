@@ -133,15 +133,18 @@
           Pas encore client ?
         </h1>
         <div class="bg-green-light rounded-lg p-5 mt-6">
-          <ul>
-            <li class="flex gap-3 mb-3 text-sm text-green items-center">
+          <ul class="register-list">
+            {% comment %}
+              <li class="flex gap-3 mb-3 text-sm text-green items-center">
               <span>{% render 'icon-green-dot' %}</span>Bénéficiez des avantages de notre programme de fidélité, le Popit Club</li>
-            <li class="flex gap-3 mb-3 text-sm text-green items-center">
+              <li class="flex gap-3 mb-3 text-sm text-green items-center">
               <span>{% render 'icon-green-dot' %}</span>Gagnez du temps lors du paiement en sauvegardant votre adresse de livraison</li>
-            <li class="flex gap-3 mb-3 text-sm text-green items-center">
+              <li class="flex gap-3 mb-3 text-sm text-green items-center">
               <span>{% render 'icon-green-dot' %}</span>Vous serez parmi les premiers à tout savoir sur nos nouveautés, les promotions à venir...</li>
-            <li class="flex gap-3 text-sm text-green items-center">
+              <li class="flex gap-3 text-sm text-green items-center">
               <span>{% render 'icon-green-dot' %}</span>Suivez facilement vos commandes</li>
+            {% endcomment %}
+            {{ settings.register_list }}
           </ul>
         </div>
 

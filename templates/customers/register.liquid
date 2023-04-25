@@ -1,26 +1,29 @@
 <div class="w-11/12 max-w-screen-sm m-auto my-10 md:my-16">
   <h1 class="text-2xl md:text-3xl text-center m-5 text-green">
-    Inscription 
+    Inscription
   </h1>
   <div class="bg-green-light rounded-lg p-5 my-6">
-        <ul>
-          <li class="flex gap-3 mb-3 text-sm text-green items-center"><span>{% render 'icon-green-dot' %}</span>Bénéficiez des avantages de notre programme de fidélité, le Popit Club</li>
-          <li class="flex gap-3 mb-3 text-sm text-green items-center"><span>{% render 'icon-green-dot' %}</span>Gagnez du temps lors du paiement en sauvegardant votre adresse de livraison</li>
-          <li class="flex gap-3 mb-3 text-sm text-green items-center"><span>{% render 'icon-green-dot' %}</span>Vous serez parmi les premiers à tout savoir sur nos nouveautés, les promotions à venir...</li>
-          <li class="flex gap-3 text-sm text-green items-center"><span>{% render 'icon-green-dot' %}</span>Suivez facilement vos commandes</li>
-        </ul>
-    </div>
+    <ul class="register-list">
+      {% comment %}
+        <li class="flex gap-3 mb-3 text-sm text-green items-center"><span>{% render 'icon-green-dot' %}</span>Bénéficiez des avantages de notre programme de fidélité, le Popit Club</li>
+        <li class="flex gap-3 mb-3 text-sm text-green items-center"><span>{% render 'icon-green-dot' %}</span>Gagnez du temps lors du paiement en sauvegardant votre adresse de livraison</li>
+        <li class="flex gap-3 mb-3 text-sm text-green items-center"><span>{% render 'icon-green-dot' %}</span>Vous serez parmi les premiers à tout savoir sur nos nouveautés, les promotions à venir...</li>
+        <li class="flex gap-3 text-sm text-green items-center"><span>{% render 'icon-green-dot' %}</span>Suivez facilement vos commandes</li>
+      {% endcomment %}
+      {{ settings.register_list }}
+    </ul>
+  </div>
 
-  
-      {%- form 'create_customer' -%}
+
+  {%- form 'create_customer' -%}
     {%- if form.errors -%}
-      <ul> 
+      <ul>
         {%- for field in form.errors -%}
           <li>
             {%- if field == 'form' -%}
               <div class="text-capucine text-sm mb-4">
                 {{ form.errors.messages[field] }}
-              </div>   
+              </div>
             {%- else -%}
               <a class="text-capucine text-sm mb-4" href="#RegisterForm-{{ field }}">
                 {{ form.errors.translated_fields[field] | capitalize }}
@@ -33,10 +36,10 @@
     {%- endif -%}
 
     <!-- First name -->
-    <div class="mb-5">     
+    <div class="mb-5">
       <label for="RegisterForm-FirstName" class="block relative left-1 mb-1 text-sm text-green">
         Prénom*
-      </label> 
+      </label>
       <input
         type="text"
         name="customer[first_name]"
@@ -44,8 +47,7 @@
         id="RegisterForm-FirstName"
         {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
         autocomplete="given-name"
-        placeholder="{{ 'customer.register.first_name' | t }}"
-      >
+        placeholder="{{ 'customer.register.first_name' | t }}">
     </div>
 
     <!-- Last name -->
@@ -60,55 +62,55 @@
         id="RegisterForm-LastName"
         {% if form.last_name %}value="{{ form.last_name }}"{% endif %}
         autocomplete="family-name"
-        placeholder="{{ 'customer.register.last_name' | t }}"
-      >
+        placeholder="{{ 'customer.register.last_name' | t }}">
     </div>
 
     <!-- Email -->
-    <div class="mb-5">   
+    <div class="mb-5">
       <label for="RegisterForm-email" class="block relative left-1 mb-1 text-sm text-green">
         Adresse mail*
-      </label>   
+      </label>
       <input
         type="email"
         name="customer[email]"
         class="text-base w-full border border-gray-400 rounded-md p-2 focus-within:border-capucine focus-within:outline-none focus-within:shadow-none"
         id="RegisterForm-email"
-        {% if form.email %} value="{{ form.email }}"{% endif %}
+        {% if form.email %}
+        value="{{ form.email }}"
+        {% endif %}
         spellcheck="false"
         autocapitalize="off"
         autocomplete="email"
         aria-required="true"
         {% if form.errors contains 'email' %}
-          aria-invalid="true"
-          aria-describedby="RegisterForm-email-error"
+        aria-invalid="true"
+        aria-describedby="RegisterForm-email-error"
         {% endif %}
-        placeholder="{{ 'customer.register.email' | t }}"
-      >
+        placeholder="{{ 'customer.register.email' | t }}">
     </div>
 
     {% comment %} <!-- date naissance -->
-    <div class="mb-5">   
+      <div class="mb-5">   
       <label for="RegisterForm-email" class="block relative left-1 mb-1 text-sm">
-        Date de naissance
+      Date de naissance
       </label>   
       <input
-        type="date"
-        name="customer[note][date_of_birth]"
-        class="text-base w-full border border-gray-400 rounded-md p-2 focus-within:border-capucine focus-within:outline-none focus-within:shadow-none"
-        id="RegisterForm-email"
-        value=""
-        spellcheck="false"
-        autocapitalize="off"
-        autocomplete=""
-        aria-required="true"
-        placeholder="Date de naissance"
-        required
+      type="date"
+      name="customer[note][date_of_birth]"
+      class="text-base w-full border border-gray-400 rounded-md p-2 focus-within:border-capucine focus-within:outline-none focus-within:shadow-none"
+      id="RegisterForm-email"
+      value=""
+      spellcheck="false"
+      autocapitalize="off"
+      autocomplete=""
+      aria-required="true"
+      placeholder="Date de naissance"
+      required
       >
     </div> {% endcomment %}
-    
+
     <!-- Password -->
-    <div class="mb-5">     
+    <div class="mb-5">
       <label for="RegisterForm-password" class="block relative left-1 mb-1 text-sm text-green">
         Mot de passe*
       </label>
@@ -119,22 +121,33 @@
         id="RegisterForm-password"
         aria-required="true"
         {% if form.errors contains 'password' %}
-          aria-invalid="true"
-          aria-describedby="RegisterForm-password-error"
+        aria-invalid="true"
+        aria-describedby="RegisterForm-password-error"
         {% endif %}
-        placeholder="{{ 'customer.register.password' | t }}"
-      >   
+        placeholder="{{ 'customer.register.password' | t }}">
     </div>
 
-     <!-- Checkbox -->
-     <div class="py-4 flex items-center default--filters text-xs">
-      <input type="checkbox" id="checkbox_legal" value="legal" required> 
-      <label class="ml-2" for="checkbox_legal">En créant votre compte, vous acceptez l'intégralité de nos cgv et <a class="underline" target="_blank" href="/pages/politique-de-protection-des-donnees-personnelles">notre politique de protection des données personnelles.</a></label>
-     </div>
+    <!-- Checkbox -->
+    <div class="py-4 flex items-center default--filters text-xs">
+      <input
+        type="checkbox"
+        id="checkbox_legal"
+        value="legal"
+        required>
+      <label class="ml-2" for="checkbox_legal">En créant votre compte, vous acceptez l'intégralité de nos cgv et
+        <a
+          class="underline"
+          target="_blank"
+          href="/pages/politique-de-protection-des-donnees-personnelles">notre politique de protection des données personnelles.</a>
+      </label>
+    </div>
 
     {%- if form.errors contains 'password' -%}
       <span id="RegisterForm-password-error" class="form__message">
-        <svg aria-hidden="true" focusable="false" role="presentation">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          role="presentation">
           <use href="#icon-error" />
         </svg>
         {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.

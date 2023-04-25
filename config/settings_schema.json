@@ -195,6 +195,17 @@
     ]
   },
   {
+    "name": "Register",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "register_list",
+        "label": "Register list",
+        "default": "<li>Bénéficiez des avantages de notre programme de fidélité, le Popit Club<\/li>"
+      }
+    ]
+  },
+  {
     "name": "Customer account",
     "settings": [
       {
