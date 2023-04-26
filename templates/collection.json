@@ -135,7 +135,7 @@
         "post_limit": 7,
         "show_dots": true,
         "heading": "sssdd",
-        "show_title": false,
+        "show_title": true,
         "show_tag": false,
         "show_content": true,
         "show_author": true,
@@ -145,12 +145,11 @@
     },
     "7871f33c-c56f-48f1-b633-0119a0eaa797": {
       "type": "featured-blog-grid",
-      "disabled": true,
       "settings": {
         "blog": "infos",
         "heading": "À LIRE...",
         "post_limit": 6,
-        "show_date": false,
+        "show_date": true,
         "show_author": false,
         "show_button": true
       }
