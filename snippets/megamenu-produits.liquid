@@ -13,7 +13,9 @@
                   {% elsif links.title contains "Gummies" %} 
                     {% render 'icon-gummy' %}
                   {% elsif links.title contains "Accessoires" %} 
-                    {% render 'icon-pilulier' %}
+                     <span class="block mr-2">
+                        {% render 'icon-pilulier' %}
+                     </span>
                   {% endif %}
                   {{ links.title }}
                 </a>
