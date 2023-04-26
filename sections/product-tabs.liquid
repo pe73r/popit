@@ -247,6 +247,23 @@
                   </svg>
                 {% endif %}
               {% endif %}
+
+              <tail-popup class="relative">
+                <popup-trigger class="block mt-5 text-sm text-center underline cursor-pointer font-light">
+                  Voir la liste complète des ingrédients
+                </popup-trigger>
+                <popup-content class="bg-white top-3 translate-x[-15px] translate-y-[-50%] p-5 max-w-[600px] shadow-lg rounded-lg mx-auto text-sm overflow-hidden">
+                  <div class="relative w-full">
+                    <popup-trigger class="absolute top-1 right-1">
+                      {% render 'icon-cart-close' %}
+                    </popup-trigger>
+                  </div>
+                  <h4 class="mb-3 text-green text-xl text-center">Liste des ingrédients</h4>
+                  <div class="text-xs sm:text-sm">
+                    {{ product.metafields.product.compo_popup_ingredient.value }}
+                  </div>
+                </popup-content>
+              </tail-popup>
             </div>
           {% else %}
             <div class="block mt-8 text-sm">
@@ -287,8 +304,7 @@
         "type": "image_picker",
         "id": "image",
         "label": "Image"
-      },
-      {
+      }, {
         "type": "header",
         "content": "colors"
       }, {
