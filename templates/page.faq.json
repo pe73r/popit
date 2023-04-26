@@ -7,7 +7,8 @@
           "type": "category_1",
           "settings": {
             "question": "Quels sont les tarifs et délais de livraison ?",
-            "answer": "<p>Les délais de livraison indiqués sont en <strong>jours ouvrés<\/strong> (hors weekends et jours fériés).<\/p>"
+            "answer": "<p>Les délais de livraison indiqués sont en <strong>jours ouvrés<\/strong> (hors weekends et jours fériés).<\/p>",
+            "image": "shopify:\/\/shop_images\/Capture_d_ecran_2023-04-26_a_15.07.30.png"
           }
         },
         "e534d746-64ae-4407-9460-81be9cc69904": {
