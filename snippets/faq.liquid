@@ -14,5 +14,12 @@
     <div class="text-xs md:text-sm mt-4" style="color:{{ section.settings.content_accordion_color }}">
       {{ block.settings.answer }}
     </div>
+    {% if block.settings.image != blank %}
+      <img
+        class="mx-auto mt-6"
+        src="{{ block.settings.image | img_url:'master' }}"
+        alt="{{ block.settings.image.alt }}"
+        loading="lazy">
+    {% endif %}
   </accordion-content>
 </accordion-element>
