@@ -1246,7 +1246,7 @@ if (!customElements.get("tail-carousel")) {
     const previous = embla.previousScrollSnap();
 
     const selected = embla.selectedScrollSnap();
-    console.log({ previous, selected, dotsArray });
+
     dotsArray[previous].setAttribute("aria-selected", "false");
     dotsArray[selected].setAttribute("aria-selected", "true");
   };

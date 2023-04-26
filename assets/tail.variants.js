@@ -4,7 +4,6 @@ defineCustomElement(
     isInit = false;
     constructor() {
       super();
-      console.log("tail.variatnts");
       this.addEventListener("click", this.onClick);
     }
 
@@ -59,10 +58,11 @@ defineCustomElement(
                 .replace("€", "")
                 .trim() + "€")
         );
+
+        //cdn.shopify.com/s/files/1/0681/5494/9926/products/Biotine-zinc-selenium-beaute-de-la-peau-ongles-cheveux-gelules-pack-de-3.png?v=1680689697&width=1445
         const hasPriceStroke = variant.price !== variant.compare_at_price;
 
         document.querySelectorAll("add-to-cart").forEach((element) => {
-          console.log({ element });
           element.setAttribute(
             "data-price-stroke",
             price
@@ -72,16 +72,10 @@ defineCustomElement(
           );
         });
         if (variant.featured_image) {
-          const variantImg = variant.featured_image.src.split("v=")[1];
-          document.querySelectorAll("carousel-dot").forEach((element) => {
-            const img = element.querySelector("img");
-            if (!img) {
-              return;
-            }
-
-            if (String(img.src).includes(variantImg)) {
-              element.click();
-            }
+          console.log({ variant });
+          const imageId = variant.featured_media.id;
+          document.querySelectorAll(`[data-media-id="${imageId}"]`).forEach((element) => {
+            element.click();
           });
         }
 

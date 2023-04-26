@@ -21,14 +21,14 @@
       <carousel-dots class="hidden lg:flex flex-col absolute z-10 gap-1 top-[50%] lg:left-[-5%] md:left-[-5%] xl:left-[-10%]  2xl:left-[-20%] translate-y-[-50%]">
         <carousel-dot class="py-2 text-center transition-all cursor-pointer group" href="{{ media }}">
           <div class="{% if product_media_size >= 8 %} w-[40px] h-[40px]  {% else %} w-[50px] h-[50px] xl:w-[60px] xl:h-[60px] {% endif %} rounded-full bg-white group-selected:border-white group-selected:border-2 transition-all flex justify-center ">
-            <img class="rounded-full" src="{{ first_media  | image_url: width: 52, height: 52 }}">
+            <img data-media-id="{{ first_media.id }}" class="rounded-full" src="{{ first_media  | image_url: width: 52, height: 52 }}">
           </div>
         </carousel-dot>
         {%- for media in product.media -%}
             {% unless forloop.index == 2 %}
           <carousel-dot class="py-2 text-center transition-all cursor-pointer group" href="{{ media }}">
             <div class="{% if product_media_size >= 8 %} w-[40px] h-[40px]  {% else %} w-[50px] h-[50px] xl:w-[60px] xl:h-[60px] {% endif %} rounded-full bg-white group-selected:border-white group-selected:border-2 transition-all flex justify-center ">
-              <img class="rounded-full" src="{{ media  | image_url: width: 52, height: 52 }}">
+              <img data-media-id="{{ media.id }}" class="rounded-full" src="{{ media  | image_url: width: 52, height: 52 }}">
             </div>
           </carousel-dot>
             {% endunless %}
@@ -53,10 +53,19 @@
 
   <!-- carousel mobile -->
   <div class="lg:hidden">
-    <tail-carousel slidesToShow="xs:1 sm:1" class="relative top-[15px]">
+    <tail-carousel  data-auto-dots="false" slidesToShow="xs:1 sm:1" class="relative top-[15px]">
       <carousel-container class="w-[250px] h-[250px] md:w-[300px] md:h-[300px] bg-white rounded-full mx-auto flex justify-center">
         <carousel-content>
+          <carousel-panel class="flex items-center p-0">
+            <img
+
+              class="lazy max-w-[250px] md:max-w-[300px] mx-auto rounded-full"
+              data-src="{{ first_media | img_url:'master' }}"
+              alt="{{ media.alt }}"
+              loading="lazy">
+          </carousel-panel>
           {%- for media in product.media -%}
+              {% unless forloop.index == 2 %}
             <carousel-panel class="flex items-center p-0">
               <img
                 class="lazy max-w-[250px] md:max-w-[300px] mx-auto rounded-full"
@@ -64,15 +73,19 @@
                 alt="{{ media.alt }}"
                 loading="lazy">
             </carousel-panel>
+             {% endunless %}
           {% endfor %}
         </carousel-content>
       </carousel-container>
 
       {% if show_dots %}
         <carousel-dots class="relative flex justify-center mt-6 lg:hidden">
+          <carousel-dot data-media-id="{{ first_media.id }}"  class="w-2 h-2 m-1 transition-all bg-white border rounded-full border-white selected:bg-{{ product-color }} selected:border-{{ product-color }} selected:w-10 selected:scale-110"></carousel-dot>
           {%- for media in product.media -%}
-            <carousel-dot class="w-2 h-2 m-1 transition-all bg-white border rounded-full border-white selected:bg-{{ product-color }} selected:border-{{ product-color }} selected:w-10 selected:scale-110"></carousel-dot>
-          {% endfor %}
+              {% unless forloop.index == 2 %}
+            <carousel-dot data-media-id="{{ media.id }}"  class="w-2 h-2 m-1 transition-all bg-white border rounded-full border-white selected:bg-{{ product-color }} selected:border-{{ product-color }} selected:w-10 selected:scale-110"></carousel-dot>
+          {% endunless %}
+        {% endfor %}
         </carousel-dots>
       {% endif %}
     </tail-carousel>
