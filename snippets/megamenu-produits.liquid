@@ -10,8 +10,10 @@
                 <a href="{{ link.url }}" class="flex items-center">
                   {% if links.title contains "Gélules" %}
                     {% render 'icon-gelule' %}
-                   {% elsif links.title contains "Gummies" %} 
+                  {% elsif links.title contains "Gummies" %} 
                     {% render 'icon-gummy' %}
+                  {% elsif links.title contains "Accesoires" %} 
+                    {% render 'icon-pilulier' %}
                   {% endif %}
                   {{ links.title }}
                 </a>
