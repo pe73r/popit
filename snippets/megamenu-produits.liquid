@@ -10,14 +10,19 @@
                 <a href="{{ link.url }}" class="flex items-center">
                   {% if links.title contains "Gélules" %}
                     {% render 'icon-gelule' %}
+                    <span>{{ links.title }}</span>
                   {% elsif links.title contains "Gummies" %} 
                     {% render 'icon-gummy' %}
+                    <span>{{ links.title }}</span>
                   {% elsif links.title contains "Accessoires" %} 
-                     <span class="block mr-2">
+                     <span class="block mr-2 mt-1">
                         {% render 'icon-pilulier' %}
                      </span>
+                     <span class="block mt-1">{{ links.title }}</span>
+                  {% else %} 
+                    {{ links.title }}
                   {% endif %}
-                  {{ links.title }}
+                  
                 </a>
               </li>
               {% for sublinks in links.links limit: 5 %}
