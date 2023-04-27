@@ -241,6 +241,15 @@
             "heading": "Kids",
             "url": "shopify:\/\/collections\/kids"
           }
+        },
+        "32977433-ce56-49ce-aa4a-45f37e388214": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/muscle-gelule_a83bf7de-0dcb-4417-89a6-311777eec8df.png",
+            "subheading": "Pour des muscles d'acier",
+            "heading": "Sport",
+            "url": "shopify:\/\/collections\/sport"
+          }
         }
       },
       "block_order": [
@@ -248,7 +257,8 @@
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-0",
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-1",
         "template--17232714006822__98024d9b-c4cd-4f22-ba7c-cd26563f99bb-1679650286ace41cad-3",
-        "ec1dd371-71c4-4613-bb65-15d945712419"
+        "ec1dd371-71c4-4613-bb65-15d945712419",
+        "32977433-ce56-49ce-aa4a-45f37e388214"
       ],
       "settings": {
         "subheading": "",
