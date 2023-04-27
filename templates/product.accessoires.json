@@ -361,8 +361,8 @@
         "68559418-eb2e-4bf9-a79f-f97de8962e5b": {
           "type": "block",
           "settings": {
-            "text": "Appelez-nous directement",
-            "url": "tel:+33489740934"
+            "text": "Appelez-nous au<br>04 89 74 09 34",
+            "url": "tel:0489740934"
           }
         },
         "fdbe05cc-c480-4415-9f77-fbb6afcd0fda": {
