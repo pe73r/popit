@@ -249,7 +249,7 @@
     "ca7fac8e-53d2-41fb-9a5b-446c1b05dc60": {
       "type": "products-snap-slider",
       "settings": {
-        "collection": "",
+        "collection": "gummies",
         "title": "Complétez votre routine bien-être",
         "bg_color": "#4b9b7d",
         "color": "#ffffff"
@@ -345,7 +345,6 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
-      "disabled": true,
       "settings": {
         "card-product": "inline",
         "title": "Complètez votre routine",
