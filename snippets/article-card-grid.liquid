@@ -42,9 +42,11 @@
           </span>
         {%- endif -%}
       </div>
-      <div class="absolute right-2 bottom-2">
-        {% render 'icon-right-arrow' %}
-      </div>
+      {%- if show_button -%}
+        <div class="absolute right-2 bottom-2">
+          {% render 'icon-right-arrow' %}
+        </div>
+      {%  endif %}
     </a>
   </div>
 </div>
