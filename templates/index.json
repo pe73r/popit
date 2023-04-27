@@ -434,7 +434,7 @@
     "78a05fcd-b1cf-4706-8e34-f45ebd94551e": {
       "type": "newsletter-klaviyo",
       "settings": {
-        "section_style": "boxed",
+        "section_style": "default",
         "title": "NEWSLETTER KLAVIYO",
         "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives ! <\/p>",
         "text_button": "S'inscrire",
