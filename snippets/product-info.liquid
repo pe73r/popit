@@ -592,27 +592,29 @@
           </add-to-cart>
 
           <!-- Just Button  -->
-          <just-pay-button
-            theme="default"
-            default_variant="{{product.selected_or_first_available_variant.id}}"
-            default_available="{{product.selected_or_first_available_variant.available}}"
-            product_id="{{ product.id }}"
-            product_handle="{{ product.handle }}"
-            className="just-btn just-btn-product top"
-            app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7"
-            domain="Popit"
-            source="product"></just-pay-button>
-          <style>
-            .add-cart-2 just-pay-button::part(just-button) {
-              font-family: inherit;
-              font-weight: 700;
-              font-size: 1rem;
-              border-radius: 0.5rem;
-              text-transform: inherit;
-              height: 48px;
-              letter-spacing: normal;
-            }
+         {% if product.available %}
+            <just-pay-button
+              theme="default"
+              default_variant="{{product.selected_or_first_available_variant.id}}"
+              default_available="{{product.selected_or_first_available_variant.available}}"
+              product_id="{{ product.id }}"
+              product_handle="{{ product.handle }}"
+              className="just-btn just-btn-product top"
+              app_id="bb4d5e79-c36d-499d-a2da-801217b5c5f7"
+              domain="Popit"
+              source="product"></just-pay-button>
+            <style>
+              .add-cart-2 just-pay-button::part(just-button) {
+                font-family: inherit;
+                font-weight: 700;
+                font-size: 1rem;
+                border-radius: 0.5rem;
+                text-transform: inherit;
+                height: 48px;
+                letter-spacing: normal;
+              }
           </style>
+          {% endif %}
           <!-- End Of Just Button  -->
 
           {% if block.settings.show_dynamic_checkout %}
