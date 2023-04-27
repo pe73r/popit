@@ -419,6 +419,7 @@
     },
     "a11b1585-0a12-4fa7-b722-9bd6997a108a": {
       "type": "newsletter",
+      "disabled": true,
       "settings": {
         "section_style": "default",
         "title": "Newsletter",
@@ -436,11 +437,11 @@
         "section_style": "default",
         "title": "NEWSLETTER KLAVIYO",
         "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives ! <\/p>",
-        "text_button": "S'inscrire",
+        "text_button": "Je m'inscris",
         "show_checkbox": true,
-        "bg_color": "#FAF5EF",
-        "color": "#4B9B7D",
-        "button_color": "#4B9B7D"
+        "bg_color": "#faf5ef",
+        "color": "#4b9b7d",
+        "button_color": "#4b9b7d"
       }
     },
     "1680777446de6b452b": {
