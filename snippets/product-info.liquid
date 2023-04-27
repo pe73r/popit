@@ -220,6 +220,10 @@
           {{ form | payment_button }}
         {% endif %}
 
+        {% unless product.available %}
+          <a class="klaviyo-bis-trigger block !w-full !my-2 GrotesqueBold text-white mb-3 text-center {% render "button", size: "large", color:"primary" %}" href="#">Créer une alerte</a>
+        {% endunless %}
+
       </div>
     </div>
   </div>
