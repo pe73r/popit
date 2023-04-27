@@ -623,6 +623,11 @@
 
           {% unless product.available %}
             <a class="klaviyo-bis-trigger !block btn-primary !w-full !my-2 text-white mb-3 text-center {% render "button", size: "large", color:"primary" %}" href="#">Créer une alerte</a>
+            <style>
+              .btn-success{
+                border-radius: 10px;
+              }
+            </style>
           {% endunless %}
 
         </div>
