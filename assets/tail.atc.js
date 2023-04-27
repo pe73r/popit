@@ -1,12 +1,3 @@
-// window.fetch = new Proxy(window.fetch, {
-//   async apply(fetch, that, args) {
-//     console.log(args);
-//     const []
-//     const result = fetch.apply(that, args);
-//     return result;
-//   }
-// });
-
 defineCustomElement(
   "add-to-cart",
   class TailAtc extends HTMLElement {

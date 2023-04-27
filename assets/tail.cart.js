@@ -1,3 +1,149 @@
+window.fetch = new Proxy(window.fetch, {
+  async apply(fetch, that, args) {
+    const result = fetch.apply(that, args);
+    result.then(async (response) => {
+      const [endpoint, { body } = {}] = args;
+      const isUpdate = endpoint.endsWith("/cart/update.js");
+      const isAdd = endpoint.endsWith("/cart/add.js");
+      const isRemove = endpoint.endsWith("/cart/remove.js");
+
+      if (isUpdate || isAdd || isRemove) {
+        console.log("fetch completed!", {
+          body,
+          endpoint,
+          isUpdate,
+          isAdd,
+          isRemove
+        });
+        const isGiftCard = (item) => {
+          return item.title.toLowerCase().includes("carte") && item.title.toLowerCase().includes("cadeau");
+        };
+        const { items } = await (await fetch("/cart.js")).json();
+
+        const total_price = items.reduce((acc, item) => (acc += isGiftCard(item) ? 0 : item.final_line_price), 0);
+
+        const isOnlyGift = items.every((item) => {
+          return isGiftCard(item);
+        });
+
+        // const steps = [
+        //   [40379966455878, 6900]
+        //   // [40167046512710, 10000],
+        // ];
+
+        /**
+         * @typedef {Object} QuantityRule
+         * @property {number} min
+         * @property {?number} max
+         * @property {number} increment
+         */
+
+        /**
+         * @typedef {Object} Variant
+         * @property {number} id
+         * @property {string} title
+         * @property {string} option1
+         * @property {?string} option2
+         * @property {?string} option3
+         * @property {string} sku
+         * @property {boolean} requires_shipping
+         * @property {boolean} taxable
+         * @property {?Object} featured_image
+         * @property {boolean} available
+         * @property {string} name
+         * @property {?string} public_title
+         * @property {string[]} options
+         * @property {number} price
+         * @property {number} weight
+         * @property {?number} compare_at_price
+         * @property {string} inventory_management
+         * @property {string} barcode
+         * @property {QuantityRule} quantity_rule
+         */
+
+        /**
+         * @typedef {Object} Step
+         * @property {number} amount
+         * @property {string} product_title
+         * @property {?Variant[]} variants
+         * @property {string} textBefore
+         * @property {string} textAfter
+         */
+
+        /**
+         * @typedef {Object} CartConfig
+         * @property {Step[]} steps
+         * @property {number} firstStep
+         * @property {number} lastStep
+         * @property {number} stepWidth
+         */
+
+        /** @type {CartConfig} */
+        const { steps } = JSON.parse(document.getElementById("cart-progress").textContent);
+
+        console.log({ steps });
+
+        const hasFreeItem = (id) => {
+          return items.some((item) => item.variant_id === id && item.properties.is === "free");
+        };
+        const f = async (mode, data) => {
+          return (
+            await fetch(`/cart/${mode}.js`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+              },
+              body: JSON.stringify({
+                [mode === "add" ? "items" : "updates"]: data,
+                sections: ["side-cart"],
+                sections_url: window.location.pathname
+              })
+            })
+          ).json();
+        };
+
+        let add = [];
+        let remove = {};
+
+        steps.forEach(({ amount, product_title, variants }) => {
+          const [{ id }] = variants || [{ id: "auto" }];
+          if (id === "auto") {
+            return;
+          }
+
+          if (total_price <= amount || isOnlyGift) {
+            if (hasFreeItem(id)) {
+              Object.assign(remove, { [id]: 0 });
+            }
+          } else {
+            if (!hasFreeItem(id) && !isOnlyGift) {
+              add.push({ id, properties: { is: "free" } });
+            }
+          }
+        });
+        let fetchers = [];
+
+        console.log({ total_price, add, remove });
+
+        if (Object.keys(remove).length > 0) {
+          fetchers.push(f("update", remove));
+        }
+        if (add.length > 0) {
+          fetchers.push(f("add", add));
+        }
+        if (fetchers.length) {
+          const [{ sections }] = await Promise.all(fetchers);
+          console.log({ sections });
+          reRenderCartIndicators(sections);
+        }
+      }
+    });
+
+    return result;
+  }
+});
+
 const spinnerHtml = (height) => /*HTML */ `
 <svg height=${height} class="animate-[spin_1.4s_linear_infinite] mx-auto w-10" aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
     <circle  class="animate-dash origin-[center_center]" fill="none" stroke="currentColor" stroke-width="6" cx="33" cy="33" r="30" stroke-dasharray="280" stroke-dashoffset="0" ></circle>

@@ -1,74 +1,78 @@
+{% assign steps = section.blocks | map: 'settings' | sort: "amount" | where: "amount" %}
+{% assign lastStep = steps | sort: "amount" | where: "amount" | last %}
+{%- assign cartTotal = 0 -%}
+{% assign total = 0 %}
+
+<script id="cart-progress">
+  {
+  "steps": [
+  {% for step in steps %}
+    {
+    "amount": {{ step.amount | floor | times: 100 }},
+    "product_title": "{{ step.product.title }}",
+    "variants": {{ step.product.variants | json }},
+    "textBefore": "{{ step.text_before }}",
+    "textAfter": "{{ step.text_after }}"
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ]
+  }
+</script>
 
 
+{% for i in cart.items %}
+  {% if i.product.gift_card? == false %}
+    {% assign total = total | plus: i.final_line_price %}
+    {% assign cartTotal = cartTotal | plus: i.final_line_price %}
+  {% endif %}
+{% endfor %}
 
-{% assign steps = section.blocks | map: 'settings' | sort: "limit" | where: "limit" %}
-{% assign firstStep = steps | map: 'limit' | first | floor %}
-{% assign lastStep = steps | map: 'limit' | last | floor %}
-{% assign stepWidth = 100 | divided_by: steps.size %}
-{% assign currentStepIndex = false %}
-
-{% assign start = 0 %}
-{% assign end = 60 %}
-{%- assign cartTotal = cart.original_total_price -%}
-{% assign progression = 18 %}
-{% assign firstStep = false %}
-{% assign secondStep = false %}
-{% assign total = cartTotal | divided_by: 100 %}
-
-{% if total >= 60 %}
-  {% assign progression = 55 %}
-  {% assign firstStep = true %}
-
-{% endif %}
-
-{% if total >= 150 %}
-  {% assign progression = 90 %}
-  {% assign secondStep = true %}
-{% endif %}
+{% assign total = total | divided_by: 100 %}
+{% assign previousAmount = 0 %}
+{% assign progression = 0 %}
 
 
-<div data-cart-indicator class="w-full p-2">
+<div class="flex flex-col flex-col-reverse p-2">
+
+
+  <div data-cart-indicator class="w-full mt-2 ">
+    <div class="text-sm text-center text-sauge">
+
+      {% for step in steps %}
+        {% assign amount = step.amount | floor %}
+        {% if total >= previousAmount and total <= amount %}
+          {% assign progression = cartTotal | divided_by: amount %}
+          {% if total == amount %}
+            {% assign progression = 100 %}
+            {{ step.text_after }}
+          {% else %}
+            {% capture rest %}
+              {% assign restAmount = total | minus: amount | times: -1 %}
+              <b>{{ restAmount }}€</b>
+            {% endcapture %}
+            {{ step.text_before | replace: "((rest))", rest }}
+          {% endif %}
+        {% endif %}
+        {% assign previousAmount = amount %}
+      {% endfor %}
+
+
+      {% if total >= lastStep.amount %}
+        {% assign progression = 100 %}
+        {{ lastStep.text_after }}
+      {% endif %}
+    </div>
+
+  </div>
+
 
   <div class="w-full relative  flex items-center">
     <div class="w-full bg-[#81baa4] rounded-md overflow-hidden relative h-1">
       <div class="absolute w-full h-1 origin-left rounded-md bg-white progress-bar" style="transform: scaleX({{progression}}%);"></div>
     </div>
     <div class="flex w-full absolute items-center justify-around"></div>
-    <div style="left: {{progression}}%;" class="rounded-full -translate-x-2 absolute  bg-white border-[1px] border-white w-7 h-7 flex items-center justify-center">
+    <div style="left: {{progression| minus: 5 }}%;" class="rounded-full -translate-x-2 absolute  bg-white border-[1px] border-white w-7 h-7 flex items-center justify-center">
       {% render 'icon-progress-cart' %}
     </div>
-  </div>
-  <div class="w-full text-center pt-2 text-xs flex justify-around items-center">
-
-    <div class="relative opacity-0 hidden">
-      <div style="background: {% if firstStep == true %}  #ffffff {% else %} #E3F2ED {% endif %}; border-color: {% if firstStep == true %}  #ffffff {% else %} #E3F2ED {% endif %};" class=" m-auto left-0 right-0 top-[-16px] absolute rounded-full selected:border-marron border-2  w-3.5 h-3.5"></div>
-      <b class="text-sm font-bold">100€</b>
-      <br>
-      Livraison offerte
-    </div>
-
-    <div class="relative opacity-0 hidden">
-      <div style="background: {% if secondStep == true %}  #ffffff {% else %} #E3F2ED {% endif %};border-color: {% if secondStep == true %}  #ffffff {% else %} #E3F2ED {% endif %};" class=" absolute  m-auto left-0 right-0 top-[-16px]  rounded-full border-2 w-3.5 h-3.5"></div>
-      <b class="text-sm font-bold">150€</b><br>
-      <span class="">bouteille gratuite</span>
-    </div>
-  </div>
-  <div class="text-sm text-center font-light mt-3">
-    {% if firstStep == false %}
-      <span>Plus que
-        <b class="text-md font-semibold">{{ 60 | minus: total }}€</b>
-        pour la livraison gratuite</span>
-    {% endif %}
-
-    {% if firstStep == true and secondStep == false %}
-      <span>Plus que
-        <b class="text-md font-semibold">{{ 150 | minus: total }}€</b>
-        pour obtenir 10%</span>
-    {% endif %}
-
-    {% if firstStep == true and secondStep == true %}
-      <span class="font-semibold">Vous avez débloqué votre cadeau !
-      </span>
-    {% endif %}
   </div>
 </div>
