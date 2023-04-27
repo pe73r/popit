@@ -28,6 +28,7 @@
 
 <div class="w-11/12 mx-auto py-10">
   <!-- header with loyalty -->
+  {% comment %}
   <div class="bg-beige rounded-lg p-5 text-center max-w-3xl mx-auto mb-3">
     <h2 class="text-xl mb-5 text-center italic">Bonjour {{ customer.first_name }}!</h2>
     <p class="text-sm">Vous avez actuellement :</p>
@@ -36,6 +37,9 @@
       Voir mes récompenses
     </a>
   </div>
+  {% endcomment %}
+
+  <div class="yotpo-widget-instance" data-yotpo-instance-id="366701"></div>
 
   <!-- menu mobile -->
   <div class="block md:hidden">
