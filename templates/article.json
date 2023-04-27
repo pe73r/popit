@@ -30,8 +30,8 @@
             "blog": "infos",
             "post_limit": 4,
             "show_dots": true,
-            "heading": "Découvrez tous nos articles :",
-            "show_tag": false,
+            "heading": "Découvrez tous nos articles",
+            "show_tag": true,
             "show_author": false,
             "show_date": true,
             "show_button": true
