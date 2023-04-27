@@ -18,7 +18,7 @@
             </accordion-header>
           </accordion-trigger>
           <accordion-content>
-            <div class="grid grid-cols-5 gap-3 overflow-scroll scroller snap-mandatory">
+            <div class="grid grid-cols-5 gap-3  overflow-hidden overflow-x-scroll snap-mandatory">
               {% for sublinks in links.links limit: 4 %}
                 <div class="block">
                   <a href="{{ child_link.url }}" class="flex flex-col items-center gap-2 mt-4">
