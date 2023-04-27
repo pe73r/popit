@@ -20,6 +20,7 @@
           <label for="k_id_email">Email</label>
           <input type="email" name="email" id="k_id_email" placeholder="correo@ejemplo.com" required>
         </div>
+        <button type="submit" class="klaviyo-submit-button">Suscribirse</button>
         {% if section.settings.show_checkbox %}
           <label class="flex items-center relative justify-center text-center w-fit mx-auto mt-5">
             <input
@@ -35,18 +36,7 @@
               <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
             </svg>
           </label>
-        {% endif %}
-        {% comment %}
-          <div class="klaviyo-form-field">
-            <label for="k_id_fname">NAME</label>
-            <input type="text" name="first_name" id="k_id_fname" placeholder="Tu nombre">
-          </div>
-          <div class="klaviyo-form-field">
-            <label for="k_id_lname">LAST NAME</label>
-            <input type="text" name="last_name" id="k_id_lname" placeholder="Tu apellido">
-          </div>
-        {% endcomment %}
-        <button type="submit" class="klaviyo-submit-button">Suscribirse</button>
+        {% endif %}  
       </form>
     </div>
   </div>
