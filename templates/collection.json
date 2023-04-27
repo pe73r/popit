@@ -135,6 +135,7 @@
         "post_limit": 7,
         "show_dots": true,
         "heading": "Notre blog",
+        "color": "#4b9b7d",
         "show_title": true,
         "show_tag": false,
         "show_content": true,
