@@ -5,10 +5,10 @@
       "settings": {
         "display": true,
         "show_breadcrumbs": false,
-        "title": "Beauté",
+        "title": "Sport",
         "description": "Pour une apparence sublimée",
-        "bg_color": "#fadcdc",
-        "color": "#e6003c"
+        "bg_color": "#c8e6e6",
+        "color": "#2d50a0"
       }
     },
     "collection-links": {
