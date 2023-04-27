@@ -15,9 +15,11 @@
             {% endfor %}
           </div>
         {% endif %}
+        {%- if show_title -%}
         <h3 class="text-sm py-2">
           {{ article.title | truncate: 100 | escape }}
         </h3>
+        {% endif %}
         {%- if show_date -%}
           {% if article.metafields.global.date != blank %}
             <p class="text-[10px] font-light">
