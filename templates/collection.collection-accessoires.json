@@ -1,0 +1,177 @@
+{
+  "sections": {
+    "collection-header": {
+      "type": "collection-header",
+      "settings": {
+        "display": true,
+        "show_breadcrumbs": false,
+        "title": "Gélules",
+        "description": "À l'enveloppe végétale.",
+        "bg_color": "#e3f2ed",
+        "color": "#4b9b7d"
+      }
+    },
+    "collection-links": {
+      "type": "collection-links",
+      "disabled": true,
+      "blocks": {
+        "5504e0f6-90ab-4922-9493-68da2d254498": {
+          "type": "link",
+          "settings": {
+            "title": "Tous",
+            "link": "shopify:\/\/collections",
+            "bg_color": "#e3f2ed",
+            "color": "#4b9b7d"
+          }
+        },
+        "b66550d2-2594-46ea-ac78-8f45c0feb68a": {
+          "type": "link",
+          "settings": {
+            "title": "Sommeil",
+            "link": "",
+            "bg_color": "#e9d2e7",
+            "color": "#4f2674"
+          }
+        },
+        "e35c17b5-47be-4cd7-a9b5-830aba66e885": {
+          "type": "link",
+          "settings": {
+            "title": "Alimentation",
+            "link": "",
+            "bg_color": "#d9e6b1",
+            "color": "#3d925c"
+          }
+        },
+        "af33b9c9-b0cb-4368-9ff0-b0f921f2c4ff": {
+          "type": "link",
+          "settings": {
+            "title": "Mémoire \/ Focus",
+            "link": "",
+            "bg_color": "#c2e3df",
+            "color": "#00555a"
+          }
+        },
+        "84013011-9beb-4b47-ae1b-ca229d7fdb36": {
+          "type": "link",
+          "settings": {
+            "title": "Sport",
+            "link": "",
+            "bg_color": "#cbe7e6",
+            "color": "#2f52a0"
+          }
+        },
+        "b5258c83-0d53-4e2f-bcf0-7ca3823d5595": {
+          "type": "link",
+          "settings": {
+            "title": "Sommeil",
+            "link": "",
+            "bg_color": "#b7e1f5",
+            "color": "#2f2870"
+          }
+        },
+        "03783510-f23c-418d-ad0e-65b8f61594f6": {
+          "type": "link",
+          "settings": {
+            "title": "Féminin",
+            "link": "",
+            "bg_color": "#f9cddb",
+            "color": "#9d1553"
+          }
+        },
+        "cec790cc-a3d8-47f0-b127-45acf88de471": {
+          "type": "link",
+          "settings": {
+            "title": "Peau",
+            "link": "",
+            "bg_color": "#fbdbdc",
+            "color": "#e4003a"
+          }
+        },
+        "1cc249af-223a-4b50-9bfb-86b3cba596e7": {
+          "type": "link",
+          "settings": {
+            "title": "Énergie",
+            "link": "",
+            "bg_color": "#fee5c6",
+            "color": "#ea5b0c"
+          }
+        }
+      },
+      "block_order": [
+        "5504e0f6-90ab-4922-9493-68da2d254498",
+        "b66550d2-2594-46ea-ac78-8f45c0feb68a",
+        "e35c17b5-47be-4cd7-a9b5-830aba66e885",
+        "af33b9c9-b0cb-4368-9ff0-b0f921f2c4ff",
+        "84013011-9beb-4b47-ae1b-ca229d7fdb36",
+        "b5258c83-0d53-4e2f-bcf0-7ca3823d5595",
+        "03783510-f23c-418d-ad0e-65b8f61594f6",
+        "cec790cc-a3d8-47f0-b127-45acf88de471",
+        "1cc249af-223a-4b50-9bfb-86b3cba596e7"
+      ],
+      "settings": {
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "show_collection_image": true,
+        "show_collection_title": false,
+        "show_breadcrumbs": false,
+        "show_collection_description": false,
+        "show_collection_size": false,
+        "show_collection_grid": true,
+        "show_secondary_image": true,
+        "show_cta": true,
+        "enable_filtering": false,
+        "enable_sorting": false,
+        "filters_background": "#fcf9f3"
+      }
+    },
+    "56708d9b-03c8-4b06-85a5-d99bc492bcc6": {
+      "type": "section-title",
+      "disabled": true,
+      "settings": {
+        "heading_size": 1.5,
+        "heading_size_mobile": 1.5,
+        "title": "SUIVEZ-NOUS SUR INSTA"
+      }
+    },
+    "d27639b0-62ba-48a8-b124-8ab554659809": {
+      "type": "featured-blog-carousel",
+      "settings": {
+        "blog": "infos",
+        "post_limit": 7,
+        "show_dots": true,
+        "heading": "Notre blog",
+        "color": "#4b9b7d",
+        "show_title": true,
+        "show_tag": true,
+        "show_content": true,
+        "show_author": false,
+        "show_date": true,
+        "show_button": true
+      }
+    },
+    "7871f33c-c56f-48f1-b633-0119a0eaa797": {
+      "type": "featured-blog-grid",
+      "disabled": true,
+      "settings": {
+        "blog": "infos",
+        "heading": "À LIRE...",
+        "post_limit": 6,
+        "show_date": false,
+        "show_author": false,
+        "show_button": true
+      }
+    }
+  },
+  "order": [
+    "collection-header",
+    "collection-links",
+    "product-grid",
+    "56708d9b-03c8-4b06-85a5-d99bc492bcc6",
+    "d27639b0-62ba-48a8-b124-8ab554659809",
+    "7871f33c-c56f-48f1-b633-0119a0eaa797"
+  ]
+}
