@@ -30,7 +30,7 @@
 
         </div>
         {%- if form.errors -%}
-          <small id="RecoverEmail-email-error" class="text-sm text-red-300 my-2">
+          <small id="RecoverEmail-email-error" class="text-sm text-red-300 my-2 errors">
             {{ form.errors.messages['form'] }}
           </small>
         {%- endif -%}
@@ -169,6 +169,13 @@
       {%- endif -%}
     {% endcomment %}</div>
 </div>
+<style>
+  .errors ul li{
+    color: red;
+    margin-bottom:10px;
+    font-size:14px;
+  }
+</style>
 <script>
   var password_button = document.querySelector('#passwordButton');
   var cancel_button = document.querySelector('#cancelButton');
