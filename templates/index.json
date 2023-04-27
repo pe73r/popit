@@ -42,7 +42,8 @@
         "16635863695bdbafb2-0"
       ],
       "settings": {
-        "show_dots": false
+        "show_dots": false,
+        "gradient": true
       }
     },
     "7e893ba1-ec47-4d9b-9864-cb4555706f15": {
@@ -418,6 +419,7 @@
     },
     "a11b1585-0a12-4fa7-b722-9bd6997a108a": {
       "type": "newsletter",
+      "disabled": true,
       "settings": {
         "section_style": "default",
         "title": "Newsletter",
@@ -427,6 +429,19 @@
         "bg_color": "#faf5ef",
         "color": "#4b9b7d",
         "button_color": "#4b9b7d"
+      }
+    },
+    "78a05fcd-b1cf-4706-8e34-f45ebd94551e": {
+      "type": "newsletter-klaviyo",
+      "settings": {
+        "section_style": "boxed",
+        "title": "NEWSLETTER KLAVIYO",
+        "text": "<p>Inscrivez-vous à notre newsletter et recevez des offres exclusives ! <\/p>",
+        "text_button": "S'inscrire",
+        "show_checkbox": true,
+        "bg_color": "#FAF5EF",
+        "color": "#4B9B7D",
+        "button_color": "#4B9B7D"
       }
     },
     "1680777446de6b452b": {
@@ -467,6 +482,7 @@
     "14368ae4-5afa-4f4c-b849-04c106bf8a0a",
     "167845847058516467",
     "a11b1585-0a12-4fa7-b722-9bd6997a108a",
+    "78a05fcd-b1cf-4706-8e34-f45ebd94551e",
     "1680777446de6b452b"
   ]
 }
