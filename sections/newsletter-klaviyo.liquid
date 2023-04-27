@@ -11,86 +11,25 @@
       {% endif %}
     </div>
     <!-- newsletter form -->
-    <div class="text-center">
-      {% form 'customer', class: 'mt-5' %}
-        <input
-          type="hidden"
-          name="contact[tags]"
-          value="newsletter">
-        <div class="flex items-center max-w-[480px] md:mx-auto bg-white rounded-lg border border-gray-300 p-2">
-          <input
-            id="NewsletterForm--{{ section.id }}"
-            type="email"
-            name="contact[email]"
-            class="text-gray-300 text-sm block w-full mx-auto placeholder-gray-300 appearance-none outline-none pb-1"
-            size="40"
-            value="{{ form.email }}"
-            aria-required="true"
-            autocorrect="off"
-            autocapitalize="off"
-            autocomplete="email"
-            {% if form.errors %}
-            autofocus
-            aria-invalid="true"
-            aria-describedby="Newsletter-error--{{ section.id }}"
-            {% elsif form.posted_successfully? %}
-            aria-describedby="Newsletter-success--{{ section.id }}"
-            {% endif %}
-            placeholder="votremail@gmail.com"
-            required>
-
-          <button
-            type="submit"
-            data-newsletter
-            class="px-3 md:px-4 py-3 text-base rounded-lg text-white flex justify-center items-center min-w-fit"
-            style="background-color: {{ section.settings.button_color }}"
-            name="commit"
-            id="Subscribe"
-            aria-label="{{ 'newsletter.button_label' | t }}">
-            <span class="block md:hidden">{% render 'icon-newsletter-arrow' %}</span>
-            <span class="hidden md:block">{{ section.settings.text_button }}</span>
-          </button>
+    <div class="klaviyo-form-DIVID">
+      <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="post" class="klaviyo-form" target="_blank">
+        <input type="hidden" name="g" value="LIST_ID">
+        <input type="hidden" name="$fields" value="EMAIL,FNAME,LNAME">
+        <input type="hidden" name="$list_fields" value="$email,$first_name,$last_name">
+        <div class="klaviyo-form-field">
+          <label for="k_id_email">Correo electrónico</label>
+          <input type="email" name="email" id="k_id_email" placeholder="correo@ejemplo.com" required>
         </div>
-
-        {% if section.settings.show_checkbox %}
-          <label class="flex items-center relative justify-center text-center w-fit mx-auto mt-5">
-            <input
-              type="checkbox"
-              name="newsletter"
-              value="subscribe"
-              class="rounded border border-green focus:ring-2 focus:ring-green appearance-none w-5 h-5 checked:bg-green checked:border-transparent focus:outline-none">
-            <span class="ml-2 text-xs md:text-sm" style="color: {{ section.settings.color }}">J'accepte la politique de confidentialité</span>
-            <svg
-              viewBox="0 0 20 20"
-              fill="#ffffff"
-              class="checkmark w-3 h-3 ml-2 hidden absolute left-[-4px]">
-              <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-            </svg>
-          </label>
-        {% endif %}
-
-
-        {%- if form.errors -%}
-          <h3 class="flex jsutify-center text-sm items-center text-red-700 mt-3" id="Newsletter-error--{{ section.id }}">
-            <span class="max-w-[80px] mr-2">{% render 'icon-error' %}</span>
-            <span>
-              {{ form.errors.translated_fields['email'] | capitalize }}
-              {{ form.errors.messages['email'] }}</span>
-          </h3>
-        {%- endif -%}
-
-        {%- if form.posted_successfully? -%}
-          <h3
-            class="flex justify-center text-sm items-center mt-5"
-            id="Newsletter-success--{{ section.id }}"
-            tabindex="-1"
-            autofocus
-            style="color: {{ section.settings.color }}">
-            <span class="max-w-[80px] mr-2">{% render 'icon-success' %}</span>
-            <span>{{ 'newsletter.success' | t }}</span>
-          </h3>
-        {%- endif -%}
-      {% endform %}
+        <div class="klaviyo-form-field">
+          <label for="k_id_fname">Nombre</label>
+          <input type="text" name="first_name" id="k_id_fname" placeholder="Tu nombre">
+        </div>
+        <div class="klaviyo-form-field">
+          <label for="k_id_lname">Apellido</label>
+          <input type="text" name="last_name" id="k_id_lname" placeholder="Tu apellido">
+        </div>
+        <button type="submit" class="klaviyo-submit-button">Suscribirse</button>
+      </form>
     </div>
   </div>
 </div>
