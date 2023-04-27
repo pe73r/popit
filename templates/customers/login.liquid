@@ -30,7 +30,7 @@
 
         </div>
         {%- if form.errors -%}
-          <small id="RecoverEmail-email-error" class="text-sm text-red-300 my-2 errors">
+          <small id="RecoverEmail-email-error" class="text-sm  my-2 errors">
             {{ form.errors.messages['form'] }}
           </small>
         {%- endif -%}
@@ -62,7 +62,7 @@
         <!-- errors -->
         {%- if form.errors -%}
           <h2
-            class="text-sm text-red-300 my-2"
+            class="text-sm  my-2"
             tabindex="-1"
             autofocus>
             <span class="visually-hidden">{{ 'accessibility.error' | t }}
