@@ -130,6 +130,7 @@
     },
     "56708d9b-03c8-4b06-85a5-d99bc492bcc6": {
       "type": "section-title",
+      "disabled": true,
       "settings": {
         "heading_size": 1.5,
         "heading_size_mobile": 1.5,
