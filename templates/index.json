@@ -419,7 +419,6 @@
     },
     "a11b1585-0a12-4fa7-b722-9bd6997a108a": {
       "type": "newsletter",
-      "disabled": true,
       "settings": {
         "section_style": "default",
         "title": "Newsletter",
