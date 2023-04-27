@@ -6,7 +6,7 @@
         "display": true,
         "show_breadcrumbs": false,
         "title": "Gélules",
-        "description": "À",
+        "description": "À l'enveloppe végétale",
         "bg_color": "#e3f2ed",
         "color": "#4b9b7d"
       }
@@ -143,6 +143,7 @@
         "post_limit": 7,
         "show_dots": true,
         "heading": "",
+        "color": "",
         "show_title": false,
         "show_tag": false,
         "show_content": true,
