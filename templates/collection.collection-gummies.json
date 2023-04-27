@@ -130,6 +130,7 @@
     },
     "56708d9b-03c8-4b06-85a5-d99bc492bcc6": {
       "type": "section-title",
+      "disabled": true,
       "settings": {
         "heading_size": 1.5,
         "heading_size_mobile": 1.5,
@@ -142,9 +143,10 @@
         "blog": "infos",
         "post_limit": 7,
         "show_dots": true,
-        "heading": "",
-        "show_title": false,
-        "show_tag": false,
+        "heading": "Notre blog",
+        "color": "#4b9b7d",
+        "show_title": true,
+        "show_tag": true,
         "show_content": true,
         "show_author": false,
         "show_date": true,
