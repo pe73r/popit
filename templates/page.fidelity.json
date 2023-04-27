@@ -22,10 +22,19 @@
       ],
       "settings": {
       }
+    },
+    "d7cb4c90-9163-4419-8300-e0f2c4ac6fa0": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
-    "168259212759eeee6c"
+    "168259212759eeee6c",
+    "d7cb4c90-9163-4419-8300-e0f2c4ac6fa0"
   ]
 }
