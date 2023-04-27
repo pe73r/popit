@@ -18,7 +18,7 @@
             </accordion-header>
           </accordion-trigger>
           <accordion-content>
-            <div class="grid grid-cols-5 gap-3 overflow-scroll scroller snap-mandatory items-center">
+            <div class="grid grid-cols-5 gap-3 overflow-scroll scroller snap-mandatory">
               {% for sublinks in links.links limit: 4 %}
                 <div class="block">
                   <a href="{{ child_link.url }}" class="flex flex-col items-center gap-2 mt-4">
@@ -65,8 +65,8 @@
                   </a>
                 </div>
               {% endfor %}
-                <a href="/collections/all" class="flex items-center justify-center">
-                 <div class="block bg-green rounded-md p-5 h-8 w-8 flex items-center justify-center">
+                <a href="/collections/all" class="flex items-center">
+                 <div class="block bg-green rounded-md h-8 w-8 flex items-center justify-center">
                     {%  render 'icon-plus', color: 'white' %}
                  </div>
                 </a>
