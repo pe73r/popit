@@ -2,7 +2,7 @@
   <tabs-buttons class="z-50 p-5 justify-start gap-6 bg-white border-b border-gray-300 shadow-sm">
     {% for tab in elements %}
       <div class="block relative group transition-all cursor-pointer {% unless  tab.settings.title contains "pack" or tab.settings.title contains "PACK" %} selected:font-bold hover:text-green {% endunless %}">
-        <p class="text-sm uppercase {% if tab.settings.title contains "pack" or tab.settings.title contains "PACK" %} link-pack rounded-lg p-1 hover:text-white {% endif %}">{{ tab.settings.title }}</p>
+        <p class="text-sm uppercase Fredoka {% if tab.settings.title contains "pack" or tab.settings.title contains "PACK" %} link-pack rounded-lg p-1 hover:text-white {% endif %}">{{ tab.settings.title }}</p>
       </div>
     {% endfor %}
   </tabs-buttons>
