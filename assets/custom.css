@@ -214,3 +214,7 @@ accordion-element[data-open="true"].faq .icon-minus {
   border-radius: 50%;
   margin-right: 12px;
 }
+
+.loyalty.popup{
+  display:none !important;
+}
