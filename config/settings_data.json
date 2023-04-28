@@ -298,10 +298,10 @@
           "f65f635c-b1d7-4b70-a151-f77c70a30220": {
             "type": "Step",
             "settings": {
-              "text": "Label",
-              "text_before": "Text before",
-              "text_after": "Text after",
-              "amount": 20,
+              "text": "Un pilulier offert pour 100 euros d'achat",
+              "text_before": "Plus que ((rest)) avant votre cadeau offert",
+              "text_after": "Vous avez débloqué votre cadeau offert",
+              "amount": 100,
               "product": "pilulier"
             }
           }

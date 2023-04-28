@@ -40,7 +40,7 @@
           <!-- Share to do -->
           {% for tag in article.tags %}
             <div class="my-3 md:hidden">
-              {% render 'article-tags', tag: tag %}
+              {% render 'article-tags', tag: tag, class: "py-2" %}
             </div>
           {% endfor %}
         </div>
