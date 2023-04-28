@@ -73,18 +73,9 @@
             </div>
           </accordion-content>
         </accordion-element>
-      hehehe
-        {{  links.title }}
+
         {% if forloop.last %}
-          {% if links.title contains "gelule" %}
-            <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir toutes les gélules</a>
-         {% elsif  links.title contains "gummies" %}
-           <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les gummies</a>
-         {% elsif  links.title contains "accessoires" %} 
-            <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les accesoires</a>
-         {% else %}
           <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les produits</a>
-          {% endif %}
         {% endif %}
       {% endfor %}
     </accordion-group>
