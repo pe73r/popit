@@ -16,7 +16,7 @@
         {%- assign article_handle = article.handle -%}
         {%- unless handle_complete == article_handle -%}
           <div class="w-1/2 lg:w-1/4 block snap-start px-4 mb-6">
-            {% render 'article-card', blog: section.settings.blog, article: article, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author, show_author: section.settings.show_author, show_button: section.settings.show_button, show_tag: section.settings.show_tag, show_date: section.settings.show_date, show_button: section.settings.show_button %}
+            {% render 'article-card', blog: section.settings.blog, article: article, show_title: section.settings.show_title, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author, show_author: section.settings.show_author, show_button: section.settings.show_button, show_tag: section.settings.show_tag, show_date: section.settings.show_date, show_button: section.settings.show_button %}
           </div>
         {%- endunless -%}
       {%- endfor -%}
@@ -27,7 +27,7 @@
         {%- assign article_handle = article.handle -%}
         {%- unless handle_complete == article_handle -%}
           <div class="min-w-[250px]">
-            {% render 'article-card', blog: section.settings.blog, article: article, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author, show_author: section.settings.show_author, show_button: section.settings.show_button, show_tag: section.settings.show_tag, show_date: section.settings.show_date, show_button: section.settings.show_button %}
+            {% render 'article-card', blog: section.settings.blog, article: article, show_title: section.settings.show_title, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author, show_author: section.settings.show_author, show_button: section.settings.show_button, show_tag: section.settings.show_tag, show_date: section.settings.show_date, show_button: section.settings.show_button %}
           </div>
         {% endunless %}
       {%- endfor -%}
