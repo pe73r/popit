@@ -249,6 +249,7 @@
     },
     "ca7fac8e-53d2-41fb-9a5b-446c1b05dc60": {
       "type": "products-snap-slider",
+      "disabled": true,
       "settings": {
         "collection": "frontpage",
         "title": "Ce produit existe aussi en gélules",
