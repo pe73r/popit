@@ -103,7 +103,7 @@
       "type": "products-carousel",
       "settings": {
         "container": "5xl",
-        "collection": "beaute",
+        "collection": "frontpage",
         "title": "Tous nos produits",
         "limit": 25,
         "collection_2": "gelules",
