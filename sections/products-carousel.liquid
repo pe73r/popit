@@ -16,13 +16,6 @@
             </h3>
           {% endif %}
         </div>
-        {% if s.collection_2 != blank %}
-          <div class="tab block relative group transition-all !border-[0] pb-3 cursor-pointer selected:border-b-2 selected:after:content-['']  selected:text-green selected:after:block selected:after:bg-green selected:after:w-[70%] selected:after:h-[3px] selected:after:absolute selected:after:bottom-[5px] selected:after:left-[50%] selected:after:translate-x-[-50%] selected:after:mx-auto">
-            <h3 class="text-xl md:text-2xl group:selected:font-bold text-green group:selected:text-green group:selected:text-3xl">
-              {{ s.collection_2.title }}
-            </h3>
-          </div>
-        {% endif %}
       </tabs-buttons>
       <tabs-panels>
         {% if collection %}
