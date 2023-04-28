@@ -47,7 +47,7 @@
               <li class="">
                 <a
                   href="{{ link.url }}"
-                  class="uppercase:first-letter md:text-xs lg:text-sm font-light {% if link.title contains "commande" %} hidden md:block rounded-lg !text-white bg-green p-2 mt-3 font-semibold {% endif %} {% if link.active %} font-bold {% endif %}"
+                  class="uppercase:first-letter md:text-xs lg:text-sm font-light {% if link.title contains "suivre ma commande" %} hidden md:block rounded-lg !text-white bg-green p-2 mt-3 font-semibold {% endif %} {% if link.active %} font-bold {% endif %}"
                   style="color:{{ section.settings.color }}">
                   {{ link.title }}
                 </a>
@@ -76,7 +76,7 @@
               <accordion-content>
                 <ul class="mb-5 list-none">
                   {%- for link in block.settings.menu.links -%}
-                    <li class="mb-2 {% if link.title contains "commande" %} hidden {% endif %}">
+                    <li class="mb-2 {% if link.title contains "suivre ma commande" %} hidden {% endif %}">
                       <a
                         href="{{ link.url }}"
                         class="uppercase:first-letter text-sm font-light {% if link.active %} font-bold {% endif %}"
