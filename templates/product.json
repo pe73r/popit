@@ -257,6 +257,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "card-product": "inline",
         "title": "Complètez votre routine",
