@@ -260,7 +260,7 @@
       "type": "product-recommendations",
       "settings": {
         "card-product": "inline",
-        "title": "Complètez votre routine",
+        "title": "Complétez votre routine",
         "show_secondary_image": true,
         "bg_color": "#d7e6af",
         "color": "#4b9b7d"
