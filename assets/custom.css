@@ -225,5 +225,5 @@ accordion-element[data-open="true"].faq .icon-minus {
 }
 
 .section-template--18869175812436__d7cb4c90-9163-4419-8300-e0f2c4ac6fa0-padding{
-  padding-top:0;
+  padding-top:0 !important;
 }
