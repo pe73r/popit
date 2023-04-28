@@ -102,11 +102,11 @@
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01": {
       "type": "products-carousel",
       "settings": {
-        "container": "5xl",
+        "container": "7xl",
         "collection": "frontpage",
         "title": "Tous nos produits",
         "limit": 25,
-        "collection_2": "beaute",
+        "collection_2": "",
         "limit_2": 6,
         "show_secondary_image": true,
         "show_quantity": false,
