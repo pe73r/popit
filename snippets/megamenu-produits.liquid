@@ -36,13 +36,13 @@
           </div>
         
           {% if links.title contains "Gélules" %}
-            <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir toutes les gélules</a>
+            <a class="block h-fit mt-2 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir toutes les gélules</a>
          {% elsif  links.title contains "Gummies" %}
-           <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les gummies</a>
+           <a class="block h-fit mt-2 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les gummies</a>
          {% elsif  links.title contains "Accessoires" %} 
-            <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les accesoires</a>
+            <a class="block h-fit mt-2 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les accesoires</a>
          {% else %}
-          <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les produits</a>
+          <a class="block h-fit mt-2 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les produits</a>
           {% endif %}
         </div>
       {% endfor %}
