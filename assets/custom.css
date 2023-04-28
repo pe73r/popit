@@ -215,6 +215,11 @@ accordion-element[data-open="true"].faq .icon-minus {
   margin-right: 12px;
 }
 
+/* yotpo */
 .loyalty.popup{
+  display:none !important;
+}
+
+.swell-tab{
   display:none !important;
 }
