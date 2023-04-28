@@ -20,11 +20,16 @@
       echo 'featured_link_button_' | append: i
     endcapture
 
+     capture  label
+      echo 'label_' | append: i
+    endcapture
+
     assign link = block[linkPath]
     assign image = block[imagePath]
     assign title = block[titlePath]
     assign subtitle = block[subtitlePath]
     assign cta = block[ctaPath]
+    assign label = block[label]
   -%}
 
   {% if image != blank and title != blank %}
