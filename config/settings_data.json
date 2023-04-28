@@ -284,12 +284,34 @@
               "image": "shopify:\/\/shop_images\/picto-paiement-securise.png",
               "text": "Paiement 100% sécurisé"
             }
+          },
+          "661212a7-e4cd-48b0-be23-48251e530a71": {
+            "type": "Step",
+            "settings": {
+              "text": "Livraison gratuite à partir de 60 euros",
+              "text_before": "Plus que ((rest)) avant la livraison gratuite",
+              "text_after": "Vous avez débloqué la livraison gratuite",
+              "amount": 60,
+              "product": ""
+            }
+          },
+          "f65f635c-b1d7-4b70-a151-f77c70a30220": {
+            "type": "Step",
+            "settings": {
+              "text": "Label",
+              "text_before": "Text before",
+              "text_after": "Text after",
+              "amount": 20,
+              "product": "pilulier"
+            }
           }
         },
         "block_order": [
           "429d0e67-9527-40e3-909c-41a156b9cf9f",
           "1c9c5b5b-c1c9-4a69-9b95-8db25c19a069",
-          "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4"
+          "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4",
+          "661212a7-e4cd-48b0-be23-48251e530a71",
+          "f65f635c-b1d7-4b70-a151-f77c70a30220"
         ],
         "settings": {
           "cart_title": "Votre panier",
