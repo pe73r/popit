@@ -102,11 +102,11 @@
     "ec1c9248-3ca2-483d-8370-8f7e3ce48d01": {
       "type": "products-carousel",
       "settings": {
-        "container": "7xl",
-        "collection": "frontpage",
+        "container": "5xl",
+        "collection": "beaute",
         "title": "Tous nos produits",
         "limit": 25,
-        "collection_2": "",
+        "collection_2": "gelules",
         "limit_2": 6,
         "show_secondary_image": true,
         "show_quantity": false,
