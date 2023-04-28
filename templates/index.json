@@ -106,7 +106,7 @@
         "collection": "frontpage",
         "title": "Tous nos produits",
         "limit": 25,
-        "collection_2": "gummies",
+        "collection_2": "",
         "limit_2": 6,
         "show_secondary_image": true,
         "show_quantity": false,
