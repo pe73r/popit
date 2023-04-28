@@ -34,7 +34,15 @@
               {% endfor %}
             </ul>
           </div>
-          <a class="w-full block text-xs mt-4 p-2 border border-green rounded-md text-green text-center" href="/collections">Voir tous les produits</a>
+          {% if links.title contains "gelule" %}
+            <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir toutes les gélules</a>
+         {% elsif  links.title contains "gummies" %}
+           <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les gummies</a>
+         {% elsif  links.title contains "accessoires" %} 
+            <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les accesoires</a>
+         {% else %}
+          <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les produits</a>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
