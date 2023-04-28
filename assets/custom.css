@@ -96,10 +96,6 @@ accordion-element[data-open="true"].faq .icon-minus {
   font-size: 14px;
 }
 
-/* workaround for the home with the announcement bar */
-.drawer-with-announcement {
-  top: 35px;
-}
 
 /* menu list before */
 /*
