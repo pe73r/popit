@@ -95,7 +95,7 @@
     <!-- close flex -->
     <!-- follow order button -->
     {% if section.settings.show_follow_order %}
-      <a href="{{ section.settings.follow_button_url }}" class="block md:hidden {% render "button", color: product-color, size: "medium", fullWidth: true %}">
+      <a href="{{ section.settings.follow_button_url }}" class="block md:hidden btn-primary {% render "button", color: product-color, size: "medium", fullWidth: true %}">
         {{ section.settings.follow_button }}
       </a>
     {% endif %}
