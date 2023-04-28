@@ -34,6 +34,7 @@
               {% endfor %}
             </ul>
           </div>
+        {{ links.title }}
           {% if links.title contains "gelule" %}
             <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir toutes les gélules</a>
          {% elsif  links.title contains "gummies" %}
