@@ -1,87 +1,72 @@
 <megamenu-sub class="flex gap-5 max-h-[80vh] overflow-y-auto overflow-y-auto-hidden ">
-  {%- assign submenu_columns = 0 -%}
-  {% if submenu != blank %}
-    <accordion-group class="w-2/3 grid gap-x-5 gap-y-4 grid-cols-2 h-fit">
-      {% for links in submenu.links %}
-        <accordion-element class="p-3 pr-0 rounded-lg shadow-lg w-full h-fit">
-          <accordion-trigger class="group">
-            <accordion-header class="flex justify-between items-center">
-              <div class="flex-1">
-                <h3 class="flex gap-2 items-center">
-                  {% render 'megamenu-title-icons', title: links.title %}
-                  <span class="{{ class }} text-sm first-letter:uppercase">{{ links.title }}</span>
-                </h3>
-              </div>
-              <accordion-icon class="group-expanded:rotate-180 transition-all origin-center h-[fit-content] relative right-4">
-                {% render 'icon-arrow-accordion' %}
-              </accordion-icon>
-            </accordion-header>
-          </accordion-trigger>
-          <accordion-content>
-            <div class="flex gap-3 overflow-hidden overflow-x-scroll snap-mandatory snap-x scroller pr-5">
-              {% for sublinks in links.links limit: 3 %}
-                <div class="block min-w-[100px]">
-                  <a href="{{ sublinks.url }}" class="flex flex-col items-center gap-2 mt-4">
-                    {% assign list_magnesium = settings.list_magnesium | split: ", " %}
-                    {% for name in list_magnesium %}
-                      {% if sublinks.title contains name %}
-                        {% assign magnesium = true %}
-                      {% endif %}
-                    {% endfor %}
-
-                    {% if sublinks.title contains "Grossesse" or sublinks.title contains "Magnésium" %}
-                      <img
-                        class="max-w-[60px]"
-                        src="{{ settings.menu_product_magnesium | img_url:'master'}}"
-                        alt="">
-                    {% elsif sublinks.title contains "Multivitamines" or sublinks.title contains "Multivitamins" %}
-                      <img
-                        class="max-w-[60px]"
-                        src="{{ settings.menu_product_vitamins | img_url:'master'}}"
-                        alt="">
-                    {% elsif sublinks.title contains "Sommeil" or sublinks.title contains "sommeil" %}
-                      <img
-                        class="max-w-[60px]"
-                        src="{{ settings.menu_product_sommeil | img_url:'master'}}"
-                        alt="">
-                    {% elsif sublinks.title contains "Allaitement" or sublinks.title contains "Ménopause" or sublinks.title contains "Biotine" or sublinks.title contains "Pousse Cheveux" %}
-                      <img
-                        class="max-w-[60px]"
-                        src="{{ settings.menu_product_allaitement | img_url:'master'}}"
-                        alt="">
-                    {% elsif sublinks.title contains "D3" %}
-                      <img
-                        class="max-w-[60px]"
-                        src="{{ settings.menu_product_vitamine_d3 | img_url:'master'}}"
-                        alt="">
-                    {% else %}
-                      <img
-                        class="max-w-[60px]"
-                        src="{{ settings.menu_product_default | img_url:'master'}}"
-                        alt="">
-                    {% endif %}
-
-                    <span class="text-xs text-center">{{ sublinks.title }}</span>
-                  </a>
+    {%- assign submenu_columns = 0 -%}
+    {% if submenu != blank %}
+      <accordion-group class="w-2/3 grid gap-x-5 gap-y-4 grid-cols-2 h-fit">
+        {% for links in submenu.links %}
+          <accordion-element class="p-3 pr-0 rounded-lg shadow-lg w-full h-fit">
+            <accordion-trigger class="group">
+              <accordion-header class="flex justify-between items-center">
+                <div class="flex-1">
+                  <h3 class="flex gap-2 items-center">
+                    {% render 'megamenu-title-icons', title: links.title %}
+                    <span class="{{ class }} text-sm first-letter:uppercase">{{ links.title }}</span>
+                  </h3>
                 </div>
-              {% endfor %}
-                <a href="/collections/all" class="flex items-center">
-                 <div class="block bg-green rounded-md h-8 w-8 flex items-center justify-center">
-                    {%  render 'icon-plus', color: 'white' %}
-                 </div>
+                <accordion-icon class="group-expanded:rotate-180 transition-all origin-center h-[fit-content] relative right-4">
+                  {% render 'icon-arrow-accordion' %}
+                </accordion-icon>
+              </accordion-header>
+            </accordion-trigger>
+            <accordion-content>
+              <div class="flex gap-3 overflow-hidden overflow-x-scroll snap-mandatory snap-x scroller pr-5">
+                {% for sublinks in links.links limit: 3 %}
+                  <div class="block min-w-[100px]">
+                    <a href="{{ sublinks.url }}" class="flex flex-col items-center gap-2 mt-4">
+                      {% assign list_magnesium = settings.list_magnesium | split: ", " %}
+                      {% for name in list_magnesium %}
+                        {% if sublinks.title contains name %}
+                          {% assign magnesium = true %}
+                        {% endif %}
+                      {% endfor %}
+
+                      {% assign megamenu_link = sublinks.url | remove: '/products/' | handleize %}
+
+                      {% assign is_product = false %}
+                      {% for product in collections.all.products %}
+                        {% if product.handle == megamenu_link %}
+                          {% assign is_product = true %}
+                          {% assign product_image = product.featured_image %}
+                          {% break %}
+                        {% endif %}
+                      {% endfor %}
+
+                      {% if is_product %}
+                        <img
+                          class="max-w-[75px]"
+                          src="{{ product_image | img_url:'master'}}"
+                          alt="">
+                      {% endif %}
+                      <span class="text-xs text-center line-clamp-1">{{ sublinks.title }}</span>
+                    </a>
+                  </div>
+                {% endfor %}
+                <a href="{{ links.url }}" class="flex items-center">
+                  <div class="bg-green rounded-md h-8 w-8 flex items-center justify-center">
+                    {% render 'icon-plus', color: 'white' %}
+                  </div>
                 </a>
-            </div>
-          </accordion-content>
-        </accordion-element>
+              </div>
+            </accordion-content>
+          </accordion-element>
 
-        {% if forloop.last %}
-          <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les produits</a>
-        {% endif %}
-      {% endfor %}
-    </accordion-group>
-  {% endif %}
-  <div class="w-1/3">
-    {% render 'header-menu-featured-links', block: block, limit: 1 %}
-  </div>
+          {% if forloop.last %}
+            <a class="block h-fit {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les produits</a>
+          {% endif %}
+        {% endfor %}
+      </accordion-group>
+    {% endif %}
+    <div class="w-1/3">
+      {% render 'header-menu-featured-links', block: block, limit: 1 %}
+    </div>
 
-</megamenu-sub>
+  </megamenu-sub>

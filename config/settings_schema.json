@@ -206,41 +206,6 @@
     ]
   },
   {
-    "name": "Menu products",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "menu_product_magnesium",
-        "label": "Product magnesium"
-      },
-      {
-        "type": "image_picker",
-        "id": "menu_product_vitamins",
-        "label": "Product vitamins"
-      },
-      {
-        "type": "image_picker",
-        "id": "menu_product_sommeil",
-        "label": "Product sommeil"
-      },
-      {
-        "type": "image_picker",
-        "id": "menu_product_allaitement",
-        "label": "Product allaitement"
-      },
-      {
-        "type": "image_picker",
-        "id": "menu_product_vitamine_d3",
-        "label": "Product vitamine d3"
-      },
-      {
-        "type": "image_picker",
-        "id": "menu_product_default",
-        "label": "Product default"
-      }
-    ]
-  },
-  {
     "name": "Customer account",
     "settings": [
       {
