@@ -1,61 +1,59 @@
 <megamenu-sub class="flex gap-5 max-h-[80vh] overflow-y-auto overflow-y-auto-hidden ">
-  {%- assign submenu_columns = 0 -%}
-  {% if submenu != blank %}
-    <div class="w-2/3 grid gap-x-5 gap-y-4 grid-cols-3 h-fit">
-      {% for links in submenu.links %}
-        <div class="flex flex-col justify-between shadow-lg rounded-lg p-5">
-          <div>
-            <ul class="leading-6">
-              <li class="menu-list text-sm uppercase font-bold mb-2 Fredoka">
-                <a href="{{ links.url }}" class="flex items-center">
-                  {% if links.title contains "Gélules" %}
-                    {% render 'icon-gelule' %}
-                    <span>{{ links.title }}</span>
-                  {% elsif links.title contains "Gummies" %} 
-                    {% render 'icon-gummy' %}
-                    <span>{{ links.title }}</span>
-                  {% elsif links.title contains "Accessoires" %} 
-                     <span class="block mr-2 mt-1">
+    {%- assign submenu_columns = 0 -%}
+    {% if submenu != blank %}
+      <div class="w-2/3 grid gap-x-5 gap-y-4 grid-cols-3 h-fit">
+        {% for links in submenu.links %}
+          <div class="flex flex-col justify-between shadow-lg rounded-lg p-5">
+            <div>
+              <ul class="leading-6">
+                <li class="menu-list text-sm uppercase font-bold mb-2 Fredoka">
+                  <a href="{{ links.url }}" class="flex items-center">
+                    {% if links.title contains "Gélules" %}
+                      {% render 'icon-gelule' %}
+                      <span>{{ links.title }}</span>
+                    {% elsif links.title contains "Gummies" %}
+                      {% render 'icon-gummy' %}
+                      <span>{{ links.title }}</span>
+                    {% elsif links.title contains "Accessoires" %}
+                      <span class="block mr-2 mt-1">
                         {% render 'icon-pilulier' %}
-                     </span>
-                     <span class="block mt-1">{{ links.title }}</span>
-                  {% else %} 
-                    {{ links.title }}
-                  {% endif %}
-                </a>
-              </li>
-              {% for sublinks in links.links limit: 5 %}
-                <li class="menu-list">
-                  <a href="{{ sublinks.url }}">
-                    <span class="text-sm">{{ sublinks.title }}</span>
+                      </span>
+                      <span class="block mt-1">{{ links.title }}</span>
+                    {% else %}
+                      {{ links.title }}
+                    {% endif %}
                   </a>
                 </li>
-              {% endfor %}
-            </ul>
+                {% for sublinks in links.links limit: 5 %}
+                  <li class="menu-list">
+                    <a href="{{ sublinks.url }}">
+                      <span class="text-sm">{{ sublinks.title }}</span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            {% if links.title contains "Gélules" %}
+              <a class="block h-fit mt-4 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="{{ links.url }}">Voir toutes les gélules</a>
+            {% elsif links.title contains "Gummies" %}
+              <a class="block h-fit mt-4 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="{{ links.url }}">Voir tous les gummies</a>
+            {% elsif links.title contains "Accessoires" %}
+              <a class="block h-fit mt-4 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="{{ links.url }}">Voir tous les accesoires</a>
+            {% else %}
+              <a class="block h-fit mt-4 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="{{ links.url }}">Voir tous les produits</a>
+            {% endif %}
           </div>
-        
-          {% if links.title contains "Gélules" %}
-            <a class="block h-fit mt-4 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir toutes les gélules</a>
-         {% elsif  links.title contains "Gummies" %}
-           <a class="block h-fit mt-4 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les gummies</a>
-         {% elsif  links.title contains "Accessoires" %} 
-            <a class="block h-fit mt-4 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les accesoires</a>
-         {% else %}
-          <a class="block h-fit mt-4 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="/collections">Voir tous les produits</a>
-          {% endif %}
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="w-1/3">
+      {% render 'header-menu-featured-links', block: block, limit: 1 %}
     </div>
-  {% endif %}
-  <div class="w-1/3">
-    {% render 'header-menu-featured-links', block: block, limit: 1 %}
-  </div>
 
-</megamenu-sub>
+  </megamenu-sub>
 
-<style>
-
-  /* .menu-list::before {
+  <style>/* .menu-list::before {
     content: '';
     display: inline-block;
     width: 24px;
