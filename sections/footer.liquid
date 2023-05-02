@@ -1,6 +1,6 @@
 <footer
   id="footer"
-  class="py-10 {% if template == "product" %} pb-20 {% endif %}"
+  class="py-10 {% if template == "product" %} pb-44 {% endif %}"
   style="background-color: {{ section.settings.bg_color }}">
   <div class="w-11/12 max-w-6xl mx-auto">
     <div class="flex justify-between items-center flex-col-reverse md:flex-row mb-7">
@@ -140,11 +140,22 @@
     {% endif %}
 
     {%- if section.settings.show_payment_icons -%}
-      <div class="text-center flex  justify-center gap-1">
+      <ul class="text-center flex  items-center justify-center gap-1 list-none">
         {% for type in shop.enabled_payment_types %}
           {{ type | payment_type_svg_tag }}
         {% endfor %}
-      </div>
+        {% comment %}
+          <li class="rounded-[3px] bg-white border border-gray-300 px-[4px]">
+          {% render 'icon-mollie' %}
+          </li>
+        {% endcomment %}
+        <li class="rounded-[3px] bg-white border border-gray-300 px-[5px] py-[7px]">
+          <img
+            class="max-w-[30px]"
+            src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/MollieLogo23-Black.png?v=1683018676"
+            alt="">
+        </li>
+      </ul>
     {%- endif -%}
   </div>
 </footer>
