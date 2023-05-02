@@ -291,8 +291,8 @@
           "94cb0d1f-27e0-4bff-be99-8e357d34d14a": {
             "type": "reassurances",
             "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/lock.svg?v=1674126625",
-              "image": "shopify:\/\/shop_images\/picto-main.svg",
+              "svg": "",
+              "image": "shopify:\/\/shop_images\/picto-livraison-gratuite.png",
               "text": "Livraison offerte dès 60€ d'achats"
             }
           },
