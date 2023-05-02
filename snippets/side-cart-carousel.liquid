@@ -36,7 +36,7 @@
   {%- endif -%}
 {% endcomment %}
 
-<tail-marquee class="flex relative overflow-x-hidden bg-green-light min-h-[50px]">
+<tail-marquee class="flex relative overflow-x-hidden bg-green-light side-cart-carousel">
   <marquee-content style="animation-duration:30s " class="items-center flex py-3 animate-marquee whitespace-nowrap gap-10 pr-10">
     {%- for block in section.blocks -%}
       {%- if block.type == "reassurances" -%}
@@ -60,6 +60,11 @@
     {%- endfor -%}
   </marquee-content>
 </tail-marquee>
+<style>
+  .side-cart-carousel{
+    min-width: 50px;
+  }
+</style>
 
 {% comment %}
   <div class="w-full py-4 bg-green-light">
