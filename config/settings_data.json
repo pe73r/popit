@@ -288,6 +288,14 @@
               "text": "Paiement 100% sécurisé"
             }
           },
+          "94cb0d1f-27e0-4bff-be99-8e357d34d14a": {
+            "type": "reassurances",
+            "settings": {
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/lock.svg?v=1674126625",
+              "image": "shopify:\/\/shop_images\/picto-main.svg",
+              "text": "Livraison offerte dès 60€ d'achats"
+            }
+          },
           "661212a7-e4cd-48b0-be23-48251e530a71": {
             "type": "Step",
             "settings": {
@@ -308,12 +316,12 @@
               "product": "pilulier"
             }
           },
-          "94cb0d1f-27e0-4bff-be99-8e357d34d14a": {
+          "52b26ce4-60bb-410e-b124-d8ce6735550e": {
             "type": "reassurances",
             "settings": {
               "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/lock.svg?v=1674126625",
-              "image": "shopify:\/\/shop_images\/picto-main.svg",
-              "text": "Livraison offerte dès 60€ d'achats"
+              "image": "shopify:\/\/shop_images\/picto-livraison-rapide.png",
+              "text": "Livraison sous 2 à 3 jours ouvrés"
             }
           }
         },
@@ -321,9 +329,10 @@
           "429d0e67-9527-40e3-909c-41a156b9cf9f",
           "1c9c5b5b-c1c9-4a69-9b95-8db25c19a069",
           "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4",
+          "94cb0d1f-27e0-4bff-be99-8e357d34d14a",
           "661212a7-e4cd-48b0-be23-48251e530a71",
           "f65f635c-b1d7-4b70-a151-f77c70a30220",
-          "94cb0d1f-27e0-4bff-be99-8e357d34d14a"
+          "52b26ce4-60bb-410e-b124-d8ce6735550e"
         ],
         "settings": {
           "cart_title": "Votre panier",
