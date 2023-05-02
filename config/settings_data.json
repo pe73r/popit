@@ -267,7 +267,6 @@
           "429d0e67-9527-40e3-909c-41a156b9cf9f": {
             "type": "reassurances",
             "settings": {
-              "svg": "",
               "image": "shopify:\/\/shop_images\/picto-livraison-gratuite.png",
               "text": "Livraison offerte dès 60€ d'achats"
             }
@@ -275,7 +274,6 @@
           "1c9c5b5b-c1c9-4a69-9b95-8db25c19a069": {
             "type": "reassurances",
             "settings": {
-              "svg": "",
               "image": "shopify:\/\/shop_images\/picto-livraison-rapide.png",
               "text": "Livraison sous 2 à 3 jours ouvrés"
             }
@@ -283,7 +281,6 @@
           "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4": {
             "type": "reassurances",
             "settings": {
-              "svg": "",
               "image": "shopify:\/\/shop_images\/picto-paiement-securise.png",
               "text": "Paiement 100% sécurisé"
             }
@@ -291,7 +288,6 @@
           "94cb0d1f-27e0-4bff-be99-8e357d34d14a": {
             "type": "reassurances",
             "settings": {
-              "svg": "",
               "image": "shopify:\/\/shop_images\/picto-livraison-gratuite.png",
               "text": "Livraison offerte dès 60€ d'achats"
             }
@@ -319,7 +315,6 @@
           "52b26ce4-60bb-410e-b124-d8ce6735550e": {
             "type": "reassurances",
             "settings": {
-              "svg": "",
               "image": "shopify:\/\/shop_images\/picto-livraison-rapide.png",
               "text": "Livraison sous 2 à 3 jours ouvrés"
             }
@@ -327,7 +322,6 @@
           "78feec69-9247-41f4-a672-de512014a092": {
             "type": "reassurances",
             "settings": {
-              "svg": "",
               "image": "shopify:\/\/shop_images\/picto-paiement-securise_718a4110-6591-4ab4-b08c-8da2a2e654e7.png",
               "text": "Paiement 100% sécurisé"
             }
