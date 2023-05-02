@@ -15,7 +15,7 @@
                   show_vendor: section.settings.show_vendor,
                   show_rating: section.settings.show_rating,
                   show_quick_add: true,
-                  class: "min-w-[350px] max-w-[350px] xl:min-w-none"
+                  class: "min-w-[350px] max-w-[350px] xl:min-w-none card-product-inline"
                 %} 
              {% else %}
                 {% render 'card-product',
@@ -25,7 +25,7 @@
                     show_vendor: section.settings.show_vendor,
                     show_rating: section.settings.show_rating,
                     show_quick_add: true,
-                    class: "min-w-[350px]  max-w-[350px] xl:min-w-none"
+                    class: "min-w-[350px]  max-w-[350px] xl:min-w-none card-product-inline"
                   %} 
               {% endif %}   
           {% endfor %}
@@ -34,6 +34,11 @@
   </div>
  </section>
  <style>
+
+ .card-product-inline{
+  max-width: 350px;
+ } 
+ 
   {% if product.tags contains "sommeil" %}
     .product-recommendations {
       background-color: #4F2674;
