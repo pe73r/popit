@@ -1,5 +1,5 @@
 
- <div class="py-10 md:py-12" style="background-color: {{ section.settings.bg_color}}">
+ <div class="py-10 md:py-12 product-recommendations">
    <div class="xl:w-11/12 xl:mx-auto max-w-7xl">
      {% if section.settings.title != blank %}
         <h2 class="w-11/12 md:w-full mx-auto text-2xl leading-8 lg:text-3xl lg:leading-10 mb-8 text-center product-ingredients-title" style="color:{{ section.settings.color }}">{{ section.settings.title }}</h2>
@@ -33,6 +33,46 @@
     </product-recommendations>
   </div>
  </section>
+ <style>
+  {% if product.tags contains "sommeil" %}
+    .product-recommendations {
+      background-color: #4F2674;
+    }
+  {% elsif product.tags contains "energie" %}
+    .product-recommendations {
+      background-color: #EA5B0C;
+    }
+  {% elsif product.tags contains "alimentation" %}
+    .product-recommendations {
+      background-color: #D7E6AF;
+    }
+  {% elsif product.tags contains "sport" %}
+    .product-recommendations {
+      background-color: #CBE7E6;
+    }
+  {% elsif product.tags contains "stress" %}
+    .product-recommendations {
+      background-color: #2D286E;
+    }
+  {% elsif product.tags contains "feminin" %}
+    .product-recommendations {
+      background-color: #FACDDC;
+    }
+  {% elsif product.tags contains "focus" %}
+    .product-recommendations {
+      background-color: #C3E6DC;
+    }
+  {% elsif product.tags contains "hair" or product.tags contains "peau" or product.tags contains "beaute" %}
+    .product-recommendations {
+      background-color: #E4003A;
+    }
+  {% else %}
+    .product-recommendations {
+      background-color: {{ section.settings.bg_color }}
+      ;
+    }
+  {% endif %}
+</style>
 
 {% javascript %}
   class ProductRecommendations extends HTMLElement {
