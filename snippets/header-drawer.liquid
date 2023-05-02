@@ -3,7 +3,7 @@
     <drawer-content class="w-full bg-transparent relative">
 
       <drawer-inner class="bg-gray-100 relative">
-        <drawer-close class="absolute z-10 right-[20px] top-[27px] flex justify-end">
+        <drawer-close class="absolute drawer-close right-[20px] top-[27px] flex justify-end">
           {% render 'icon-close' %}
         </drawer-close>
         {%- liquid
@@ -23,8 +23,8 @@
   </drawer-trigger>
 </tail-drawer>
 <style>
-  .top-[35px] {
-    top: 35px;
+  .drawer-close {
+    z-index: 999;
   }
 </style>
 <script>

@@ -1,8 +1,8 @@
 <tail-tabs class="relative">
-  <tabs-buttons class="z-50 p-5 justify-start gap-6 bg-white border-b border-gray-300 shadow-sm">
+  <tabs-buttons class="z-50 py-5 pl-5 pr-16 justify-start bg-white border-b border-gray-300 shadow-sm relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-6 scrollbar">
     {% for tab in elements %}
       <div class="block relative group transition-all cursor-pointer {% unless  tab.settings.title contains "pack" or tab.settings.title contains "PACK" %} selected:font-bold hover:text-green {% endunless %}">
-        <p class="text-sm uppercase Fredoka {% if tab.settings.title contains "pack" or tab.settings.title contains "PACK" %} link-pack rounded-lg p-1 hover:text-white text-white px-2{% endif %}">{{ tab.settings.title }}</p>
+        <p class="text-sm uppercase Fredoka {% if tab.settings.title contains "pack" or tab.settings.title contains "PACK" %} text-center min-w-max link-pack rounded-lg p-1 hover:text-white text-white px-2{% endif %}">{{ tab.settings.title }}</p>
       </div>
     {% endfor %}
   </tabs-buttons>
@@ -46,6 +46,10 @@
                             </a>
                           </div>
                         {% endfor %}
+
+                        {% if links.title contains "Besoins" or links.title contains "BESOINS" or links.title contains "besoins" %}
+                          <a class="block h-fit mt-4 {% render "button", size:"small", color:"green", fullWidth: true, variation: "outlined" %}" href="{{ links.url }}">Voir tous les besoins</a>
+                        {% endif %}
                       </div>
                     </accordion-content>
                   </accordion-element>
@@ -92,7 +96,16 @@
                   {% endfor %}
                 </ul>
               </div>
-              <a class="block underline text-xs mt-5 text-right" href="/collections/all">Voir tous les produits</a>
+              {% if links.title contains "Gélules" %}
+                <a class="block underline text-xs mt-5 text-right" href="{{ links.url }}">Voir toutes les gélules</a>
+              {% elsif links.title contains "Gummies" %}
+                <a class="block underline text-xs mt-5 text-right" href="{{ links.url }}">Voir tous les gummies</a>
+              {% elsif links.title contains "Accessoires" %}
+                <a class="block underline text-xs mt-5 text-right" href="{{ links.url }}">Voir tous les accesoires</a>
+              {% else %}
+                <a class="block underline text-xs mt-5 text-right" href="{{ links.url }}">Voir tous les produits</a>
+              {% endif %}
+
             </div>
           {% endfor %}
         {% endif %}
