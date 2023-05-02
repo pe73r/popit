@@ -323,6 +323,14 @@
               "image": "shopify:\/\/shop_images\/picto-livraison-rapide.png",
               "text": "Livraison sous 2 à 3 jours ouvrés"
             }
+          },
+          "78feec69-9247-41f4-a672-de512014a092": {
+            "type": "reassurances",
+            "settings": {
+              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/lock.svg?v=1674126625",
+              "image": "shopify:\/\/shop_images\/picto-paiement-securise_718a4110-6591-4ab4-b08c-8da2a2e654e7.png",
+              "text": "Paiement 100% sécurisé"
+            }
           }
         },
         "block_order": [
@@ -332,7 +340,8 @@
           "94cb0d1f-27e0-4bff-be99-8e357d34d14a",
           "661212a7-e4cd-48b0-be23-48251e530a71",
           "f65f635c-b1d7-4b70-a151-f77c70a30220",
-          "52b26ce4-60bb-410e-b124-d8ce6735550e"
+          "52b26ce4-60bb-410e-b124-d8ce6735550e",
+          "78feec69-9247-41f4-a672-de512014a092"
         ],
         "settings": {
           "cart_title": "Votre panier",
