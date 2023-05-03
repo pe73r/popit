@@ -81,7 +81,7 @@
           "type": "link",
           "settings": {
             "title": "Tous",
-            "link": "",
+            "link": "#tous",
             "bg_color": "#e3f2ed",
             "color": "#4b9b7d"
           }
