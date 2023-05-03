@@ -69,7 +69,8 @@
       ],
       "settings": {
         "show_dots_mobile": true,
-        "show_benefits": true
+        "show_benefits": true,
+        "title_join": "Ce que vous en pensez"
       }
     },
     "product-marquee": {
@@ -347,7 +348,6 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
-      "disabled": true,
       "settings": {
         "card-product": "inline",
         "title": "Complètez votre routine",
