@@ -52,16 +52,16 @@
       {% endunless %}
       <!-- Price -->
       <div class="mt-1 ml-auto text-sm" data-cart-price={{item.variant_id }}>
-        {% if product.compare_at_price == nil %}
+        {% if variant.compare_at_price == nil %}
           <span class="font-bold">
-            {{ item.original_line_price | money_without_trailing_zeros }}
+            {{ variant.price | money_without_trailing_zeros }}
           </span>
         {% else %}
           <span class="font-bold">
-            {{ item.final_line_price | money_without_trailing_zeros }}
+            {{ variant.price | money_without_trailing_zeros }}
           </span>
           <span class="line-through text-[-1px]">
-            {{ product.price | money_without_trailing_zeros }}
+            {{ variant.compare_at_price | money_without_trailing_zeros }}
           </span>
         {% endif %}
       </div>
