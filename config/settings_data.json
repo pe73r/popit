@@ -290,7 +290,7 @@
             "settings": {
               "text": "Livraison gratuite dès 60€ d'achats",
               "text_before": "Plus que ((rest)) pour avoir la livraison gratuite.",
-              "text_after": "Vous avez débloqué la livraison gratuite 🤗 !",
+              "text_after": "Vous avez débloqué la livraison gratuite 🤗",
               "amount": 60,
               "product": ""
             }
