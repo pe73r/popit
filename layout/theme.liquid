@@ -2,21 +2,24 @@
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
 
-<meta name="google-site-verification" content="BB5Kt6C-BODXhTz0drc0KvC0hUs78A2N6H4Ahk6fp-o" />
-    
-<!-- Just Button  -->
-<script src="https://checkout-button-shopify.vercel.app/just-pay-button.js" type="module"></script>
-<link  href="https://checkout-button-shopify.vercel.app/styles.css" rel="stylesheet" crossorigin>
-<style>
+    <meta name="google-site-verification" content="BB5Kt6C-BODXhTz0drc0KvC0hUs78A2N6H4Ahk6fp-o" />
+
+    <!-- Just Button  -->
+    <script src="https://checkout-button-shopify.vercel.app/just-pay-button.js" type="module"></script>
+    <link
+      href="https://checkout-button-shopify.vercel.app/styles.css"
+      rel="stylesheet"
+      crossorigin>
+    <style>
       #just-frame-payment {
         z-index: 9999999999;
       }
-       .btn-success{
-          border-radius: 10px;
-        }
-</style>
-<!-- End of Just Button  -->
-    
+      .btn-success {
+        border-radius: 10px;
+      }
+    </style>
+    <!-- End of Just Button  -->
+
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width,initial-scale=1" name="viewport">
@@ -74,29 +77,29 @@
     {{ 'custom.css' | asset_url | stylesheet_tag }}
 
     <!-- TAILWIND CONFIGURATION -->
-    {% if theme.name != "staging" and theme.name != "production" %}
+    {% if theme.name != "staging" and theme.name != "production" and false %}
 
       {{ 'critical.css' | asset_url | stylesheet_tag }}
       <script rel="preconnect" src="https://cdn.tailwindcss.com"></script>
       <script preload>
         (async () => {
         const [configRes, layoutRes, styleRes] = await Promise.all([
-                                                                                                                                                                                                                                                                                                                                                                                                                            fetch("{{ 'tailwind.config.js' | asset_url }}"),
+                                                                                                                                                                                                                                                                                                                                                                                                                                    fetch("{{ 'tailwind.config.js' | asset_url }}"),
         fetch("{{ 'tail.layout.css' | asset_url }}"),
         fetch("{{ 'tail.style.css' | asset_url }}")
         ]);
-                                                                                                                                                                                                                                                                                                                                                                                                                          const text = await configRes.text()
-                                                                                                                                                                                                                                                                                                                                                                                                                          console.log({text});
-                                                                                                                                                                                                                                                                                                                                                                                                                          tailwind.config = eval(`(${
-                                                                                                                                                                                                                                                                                                                                                                                                                            text.replace("module.exports = ", "").replace("module.exports=", "").replace("};", "}")
-                                                                                                                                                                                                                                                                                                                                                                                                                          })`);
-                                                                                                                                                                                                                                                                                                                                                                                                                          const apply = document.createElement("style");
-                                                                                                                                                                                                                                                                                                                                                                                                                          apply.setAttribute("type", "text/tailwindcss");
-                                                                                                                                                                                                                                                                                                                                                                                                                          apply.innerHTML = `${
-                                                                                                                                                                                                                                                                                                                                                                                                                            (await Promise.all([layoutRes.text(), styleRes.text()])).join("\n")
-                                                                                                                                                                                                                                                                                                                                                                                                                          }`;
-                                                                                                                                                                                                                                                                                                                                                                                                                          document.head.appendChild(apply);
-                                                                                                                                                                                                                                                                                                                                                                                                                        })()
+                                                                                                                                                                                                                                                                                                                                                                                                                                  const text = await configRes.text()
+                                                                                                                                                                                                                                                                                                                                                                                                                                  console.log({text});
+                                                                                                                                                                                                                                                                                                                                                                                                                                  tailwind.config = eval(`(${
+                                                                                                                                                                                                                                                                                                                                                                                                                                    text.replace("module.exports = ", "").replace("module.exports=", "").replace("};", "}")
+                                                                                                                                                                                                                                                                                                                                                                                                                                  })`);
+                                                                                                                                                                                                                                                                                                                                                                                                                                  const apply = document.createElement("style");
+                                                                                                                                                                                                                                                                                                                                                                                                                                  apply.setAttribute("type", "text/tailwindcss");
+                                                                                                                                                                                                                                                                                                                                                                                                                                  apply.innerHTML = `${
+                                                                                                                                                                                                                                                                                                                                                                                                                                    (await Promise.all([layoutRes.text(), styleRes.text()])).join("\n")
+                                                                                                                                                                                                                                                                                                                                                                                                                                  }`;
+                                                                                                                                                                                                                                                                                                                                                                                                                                  document.head.appendChild(apply);
+                                                                                                                                                                                                                                                                                                                                                                                                                                })()
       </script>
 
 
@@ -213,9 +216,40 @@
       type="text/javascript"
       src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=UXEdS7"></script>
 
-     <!-- klaviyo back in stock -->
+    <!-- klaviyo back in stock -->
     <script src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
-    <script>    var klaviyo = klaviyo || [];    klaviyo.init({      account: "UXEdS7",      platform: "shopify"    });    klaviyo.enable("backinstock",{     trigger: {      product_page_text: "Notify Me When Available",      product_page_class: "btn",      product_page_text_align: "center",      product_page_margin: "0px",      replace_anchor: false    },    modal: {     headline: "{product_name}",     body_content: "Inscrivez-vous pour être avertie de son retour en stock en avant première",     email_field_label: "Email",     button_label: "Prévenez-moi",     subscription_success_label: "Votre inscription à bien été prise en compte ! À très vite",     footer_content: '',     additional_styles: "@import url('https://fonts.googleapis.com/css?family=Helvetica+Neue');",     drop_background_color: "#000",     background_color: "#fff",     text_color: "#222",     button_text_color: "#fff",     button_background_color: "#4B9B7D",     close_button_color: "#ccc",     error_background_color: "#fcd6d7",     error_text_color: "#C72E2F",     success_background_color: "#d3efcd",     success_text_color: "#1B9500"    }  });</script>
+    <script>
+      var klaviyo = klaviyo || [];
+      klaviyo.init({account: "UXEdS7", platform: "shopify"});
+      klaviyo.enable("backinstock", {
+        trigger: {
+          product_page_text: "Notify Me When Available",
+          product_page_class: "btn",
+          product_page_text_align: "center",
+          product_page_margin: "0px",
+          replace_anchor: false
+        },
+        modal: {
+          headline: "{product_name}",
+          body_content: "Inscrivez-vous pour être avertie de son retour en stock en avant première",
+          email_field_label: "Email",
+          button_label: "Prévenez-moi",
+          subscription_success_label: "Votre inscription à bien été prise en compte ! À très vite",
+          footer_content: '',
+          additional_styles: "@import url('https://fonts.googleapis.com/css?family=Helvetica+Neue');",
+          drop_background_color: "#000",
+          background_color: "#fff",
+          text_color: "#222",
+          button_text_color: "#fff",
+          button_background_color: "#4B9B7D",
+          close_button_color: "#ccc",
+          error_background_color: "#fcd6d7",
+          error_text_color: "#C72E2F",
+          success_background_color: "#d3efcd",
+          success_text_color: "#1B9500"
+        }
+      });
+    </script>
 
     <script>
       window.shopUrl = '{{ request.origin }}';
@@ -264,8 +298,8 @@
 
     <style>
       .jdgm-rev__icon {
-    display: none !important;
-}
-    </style>  
+        display: none !important;
+      }
+    </style>
   </body>
 </html>

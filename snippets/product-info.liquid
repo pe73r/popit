@@ -220,7 +220,7 @@
           {{ form | payment_button }}
         {% endif %}
 
-        
+
       </div>
     </div>
   </div>
@@ -229,16 +229,16 @@
 
 
 <div class="w-11/12 mx-auto lg:mx-0 lg:w-full pr-0 lg:pr-10">
-
-  <!-- product blocks -->
-  {%- for block in section.blocks -%}
-    {%- case block.type -%}
+  {% comment %}
+    <div  class="bg-red-hair bg-orange-energy  bg-violet text-violet bg-orange-energy text-orange-energy bg-green-alimentation text-green-alimentation bg-red-hair text-red-hair bg-blue text-blue bg-blue-stress text-blue-stress bg-red-feminin text-red-feminin bg-green-focus text-green-focus bg-green text-green "> </div>
+  {% endcomment %}<!-- product blocks -->
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
       {%- when '@app' -%}
       {% render block %}
 
       {%- when 'subtitle' -%}
-      <p class="my-2 text-base text-{{ product-color }} italic" {{ block.shopify_attributes }}>
-        {{ product.metafields.product.sub_title }}
+        <p class="my-2 text-base text-{{ product-color }} italic" {{ block.shopify_attributes }}> {{ product.metafields.product.sub_title }}
       </p>
       {%- when 'vendor' -%}
       <h5 class="my-2 text-sm uppercase md:block" {{ block.shopify_attributes }}>
@@ -592,7 +592,7 @@
           </add-to-cart>
 
           <!-- Just Button  -->
-         {% if product.available %}
+          {% if product.available %}
             <just-pay-button
               theme="default"
               default_variant="{{product.selected_or_first_available_variant.id}}"
@@ -613,7 +613,7 @@
                 height: 48px;
                 letter-spacing: normal;
               }
-          </style>
+            </style>
           {% endif %}
           <!-- End Of Just Button  -->
 
@@ -624,7 +624,7 @@
           {% unless product.available %}
             <a class="klaviyo-bis-trigger !block btn-primary !w-full !my-2 text-white mb-3 text-center {% render "button", size: "large", color:"primary" %}" href="#">Créer une alerte</a>
             <style>
-              .btn-success{
+              .btn-success {
                 border-radius: 10px;
               }
             </style>
