@@ -168,7 +168,7 @@
                 data-price="{{ card_product.selected_or_first_available_variant.price | divided_by: 100.00 }}"
                 data-variant="{{ card_product.selected_or_first_available_variant.id }}">
                 <button class="btn-primary {% render "button", size:"medium", fullWidth: true %} flex justify-center items-center">
-                    <span class="block mr-1 text-xs sm:text-sm">Ajouter </span>
+                    <span class="block mr-1 text-sm">Ajouter </span>
                     <span class="hidden sm:block mx-1">-</span>
                     {% assign first_variant = card_product.first_available_variant %}
                       {% if first_variant.compare_at_price == nil %}
