@@ -338,76 +338,6 @@
         "show_button": true
       }
     },
-    "414f3324-4b76-488e-95ee-4e8f2002ed15": {
-      "type": "home-cards",
-      "blocks": {
-        "38534204-35d1-4945-9338-a00f1e6703c7": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "outside",
-            "image": "shopify:\/\/shop_images\/jellybee-dTCSkD-oLNE-unsplash.jpg",
-            "title": "Rôle de la Biotine : Quels sont les Bienfaits et les Sources Alimentaires ?",
-            "text": "<p>La biotine, également connue sous le nom de vitamine B8, joue un rôle important pour la santé des cheveux, de la peau et des ongles. Quel est le rôle de la biotine pour notre santé ? Où trouver de la biotine dans notre alimentation ?<\/p>",
-            "cta": "Je lis l'article",
-            "button_link": "shopify:\/\/blogs\/infos\/role-biotine-bienfaits-sources-alimentaires",
-            "color": "#ffffff"
-          }
-        },
-        "e2995a60-e69f-4c89-bc88-c5e11c797b05": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "outside",
-            "image": "shopify:\/\/shop_images\/batch-by-wisconsin-hemp-scientific-NDPUzuo5a8M-unsplash.jpg",
-            "title": "Compléments alimentaires pour femmes enceintes : Est-il sûr de prendre des gummies MAMA ?",
-            "text": "<p>Vous êtes enceinte et vous vous demandez si vous pouvez prendre des gummies pour votre complément alimentaire ? Découvrez l'avis de notre expert sur l'utilisation de ces produits pendant la grossesse !<\/p>",
-            "cta": "Je lis l'article",
-            "button_link": "shopify:\/\/blogs\/infos\/complements-alimentaires-femmes-enceintes-sur-prendre-gummies-mama",
-            "color": "#ffffff"
-          }
-        },
-        "ff245f0b-487c-4e86-9fe9-08ce793e647c": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "outside",
-            "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
-            "title": "Peut-on prendre de la mélatonine et des somnifères ? Avantages et inconvénients",
-            "text": "<p>Vous vous demandez si vous pouvez prendre de la mélatonine et des somnifères en même temps ? Nous vous informons sur le dosage, les effets secondaires et les risques associés à la prise de mélatonine et de somnifères.<\/p>",
-            "cta": "Je lis l'article",
-            "button_link": "shopify:\/\/blogs\/infos\/peut-on-prendre-melatonine-somniferes-avantages-inconvenients",
-            "color": "#ffffff"
-          }
-        },
-        "2044cc22-1df4-4522-8d9f-ebee347a36c8": {
-          "type": "card",
-          "settings": {
-            "card_width": "1\/2",
-            "content": "outside",
-            "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
-            "title": "Complémentation en Magnésium : quel type et pourquoi ?",
-            "text": "<p>Vous vous demandez quel magnésium prendre et pourquoi ? Il existe différentes formes de magnésium aux avantages variés, qui doivent être choisies en fonction de vos besoins. Découvrez la source qu'il vous faut !<\/p>",
-            "cta": "Je lis l'article",
-            "button_link": "shopify:\/\/blogs\/infos\/complementation-magnesium-type-pourquoi",
-            "color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "38534204-35d1-4945-9338-a00f1e6703c7",
-        "e2995a60-e69f-4c89-bc88-c5e11c797b05",
-        "ff245f0b-487c-4e86-9fe9-08ce793e647c",
-        "2044cc22-1df4-4522-8d9f-ebee347a36c8"
-      ],
-      "custom_css": [
-
-      ],
-      "settings": {
-        "container": "7xl",
-        "title": "Découvrez tous nos articles"
-      }
-    },
     "14368ae4-5afa-4f4c-b849-04c106bf8a0a": {
       "type": "section-title",
       "settings": {
@@ -503,7 +433,6 @@
     "98024d9b-c4cd-4f22-ba7c-cd26563f99bb",
     "a6890697-da8c-4795-b963-7882f6d2dcbe",
     "6a1db9a1-353a-4751-bbaa-32b08b253ecf",
-    "414f3324-4b76-488e-95ee-4e8f2002ed15",
     "14368ae4-5afa-4f4c-b849-04c106bf8a0a",
     "167845847058516467",
     "a11b1585-0a12-4fa7-b722-9bd6997a108a",
