@@ -202,10 +202,11 @@ const reRenderCartIndicators = (newSections) => {
   return newDom;
 };
 
-const openSideCart = () => {
-  const event = new CustomEvent("openSideCart");
-  document.dispatchEvent(event);
-};
+// const openSideCart = () => {
+//   const event = new CustomEvent("openSideCart");
+//   console.log("hello");
+//   document.dispatchEvent(event);
+// };
 const clearCart = () => {
   const updates = {};
   window.cart.items.forEach((item) => {
