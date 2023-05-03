@@ -144,13 +144,10 @@
         {% for type in shop.enabled_payment_types %}
           {{ type | payment_type_svg_tag }}
         {% endfor %}
-        {% comment %}
-          <li class="rounded-[3px] bg-white border border-gray-300 px-[4px]">
-          {% render 'icon-mollie' %}
-          </li>
-        {% endcomment %}
+        {% render 'icon-visa' %}
+        {% render 'icon-mastercard' %}
         {% render 'icon-amex' %}
-         {% render 'icon-apple-pay' %}
+        {% render 'icon-cb' %}
         <li class="bg-white border border-gray-300 mollie-logo">
           <img
             src="https://cdn.shopify.com/s/files/1/0681/5494/9926/files/MollieLogo23-Black.png?v=1683018676"
