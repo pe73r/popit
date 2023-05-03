@@ -322,6 +322,22 @@
         "background_color": "#faf5ef"
       }
     },
+    "6a1db9a1-353a-4751-bbaa-32b08b253ecf": {
+      "type": "featured-blog-carousel",
+      "settings": {
+        "blog": "",
+        "post_limit": 4,
+        "show_dots": true,
+        "heading": "Découvrez tous nos articles",
+        "color": "#4b9b7d",
+        "show_title": false,
+        "show_tag": false,
+        "show_content": true,
+        "show_author": false,
+        "show_date": true,
+        "show_button": true
+      }
+    },
     "414f3324-4b76-488e-95ee-4e8f2002ed15": {
       "type": "home-cards",
       "blocks": {
@@ -486,6 +502,7 @@
     "1db7442e-0ee1-495a-96a1-01f3969e95f2",
     "98024d9b-c4cd-4f22-ba7c-cd26563f99bb",
     "a6890697-da8c-4795-b963-7882f6d2dcbe",
+    "6a1db9a1-353a-4751-bbaa-32b08b253ecf",
     "414f3324-4b76-488e-95ee-4e8f2002ed15",
     "14368ae4-5afa-4f4c-b849-04c106bf8a0a",
     "167845847058516467",
