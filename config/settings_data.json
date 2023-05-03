@@ -479,12 +479,12 @@
           "text": "Shop",
           "link": "shopify:\/\/collections\/frontpage",
           "image_2": "shopify:\/\/shop_images\/Sale.svg",
-          "text_2": "Fidelité",
+          "text_2": "Fidélité",
           "link_2": "shopify:\/\/pages\/fidelite",
           "image_3": "shopify:\/\/shop_images\/User.svg",
           "text_3": "Compte",
           "image_4": "shopify:\/\/shop_images\/Cart_3.svg",
-          "text_4": "Panier",
+          "text_4": "",
           "image_5": "shopify:\/\/shop_images\/Menu.svg",
           "text_5": "Menu"
         }
