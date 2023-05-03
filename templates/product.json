@@ -69,7 +69,8 @@
       ],
       "settings": {
         "show_dots_mobile": true,
-        "show_benefits": true
+        "show_benefits": true,
+        "title_join": "Découvrez en stories"
       }
     },
     "product-marquee": {
