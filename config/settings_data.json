@@ -559,14 +559,14 @@
           "page_cartSubtotal": "",
           "page_cartOriginalTotal": "",
           "page_checkoutButton": "",
-          "drawer_cartItemBox": "",
-          "drawer_cartItem": "",
+          "drawer_cartItemBox": "side-cart-inner  #line-items",
+          "drawer_cartItem": "side-cart-inner  #line-items [data-line-item-variant]",
           "drawer_cartSubtotal": "",
           "drawer_cartOriginalTotal": "",
           "drawer_checkoutButton": "",
           "cartItemPrice": "",
           "cartItemLinePrice": "",
-          "cartItemQuantity": "",
+          "cartItemQuantity": "side-cart-inner  #line-items [data-line-item-variant] cart-item-quantity input",
           "observeTargets": ""
         }
       }
