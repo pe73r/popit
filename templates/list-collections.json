@@ -58,6 +58,24 @@
             "color": "#e6003c"
           }
         },
+        "18664160-e607-446d-87c7-bfd186ac6a0c": {
+          "type": "link",
+          "settings": {
+            "title": "Sport",
+            "link": "",
+            "bg_color": "#cbe7e6",
+            "color": "#2d50a0"
+          }
+        },
+        "bb8ff87c-2182-4eed-a98b-8645e14ee355": {
+          "type": "link",
+          "settings": {
+            "title": "Accessoires",
+            "link": "",
+            "bg_color": "#D9E6B1",
+            "color": "#3D925C"
+          }
+        },
         "d78b76bd-bfd5-4686-8bc3-2f7b415fa9d8": {
           "type": "link",
           "settings": {
@@ -87,16 +105,6 @@
             "color": "#00555a"
           }
         },
-        "18664160-e607-446d-87c7-bfd186ac6a0c": {
-          "type": "link",
-          "disabled": true,
-          "settings": {
-            "title": "Sport",
-            "link": "",
-            "bg_color": "#cbe7e6",
-            "color": "#2f52a0"
-          }
-        },
         "514021bb-ded5-4de8-a40d-199880159fe9": {
           "type": "link",
           "disabled": true,
@@ -114,10 +122,11 @@
         "2731d2f7-59bd-4bcb-98f7-08eb18d6d782",
         "11b69bb8-9ab4-4301-92c4-00573aad36e0",
         "b73bc100-1214-473a-b5ca-3f5a23892a94",
+        "18664160-e607-446d-87c7-bfd186ac6a0c",
+        "bb8ff87c-2182-4eed-a98b-8645e14ee355",
         "d78b76bd-bfd5-4686-8bc3-2f7b415fa9d8",
         "c49ef8ab-847c-4816-896c-bf7586dee89f",
         "87487d8f-15a5-407a-82b8-3ac2f4bd95f6",
-        "18664160-e607-446d-87c7-bfd186ac6a0c",
         "514021bb-ded5-4de8-a40d-199880159fe9"
       ],
       "custom_css": [
