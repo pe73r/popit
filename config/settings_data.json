@@ -300,7 +300,7 @@
             "settings": {
               "text": "Un pilulier offert dès 40€ d'achats",
               "text_before": "Plus que ((rest)) pour avoir votre pilulier offert !",
-              "text_after": "Youhou! Le pilulier offert est ajouté à votre panier.",
+              "text_after": "Youhou! Le pilulier offert est ajouté à votre panier 👌",
               "amount": 40,
               "product": "pilulier"
             }
