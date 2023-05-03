@@ -256,13 +256,13 @@
         "show_secondary_image": false,
         "show_quantity": false,
         "show_cta": true,
-        "show_collection_card": true,
+        "show_collection_card": false,
         "label": "JUSQU’À -25%",
         "subtitle": "Personnalisez votre pack",
         "title": "<p>Économisez jusqu’à -25% en achetant un pack de 3, 4 ou 5 produits.<\/p>",
         "cta": "Personnaliser mon pack",
         "ctaLink": "",
-        "title_color": "#4B9B7D",
+        "title_color": "#4b9b7d",
         "color": "#343434"
       }
     },
