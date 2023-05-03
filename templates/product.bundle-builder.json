@@ -6,76 +6,8 @@
       }
     },
     "main": {
-      "type": "main-product",
-      "blocks": {
-        "2123d97f-146b-49e9-846e-386171adb4af": {
-          "type": "product-type",
-          "settings": {
-          }
-        },
-        "bb4f17d7-4ef4-4c4a-8040-e4d1ab5254ed": {
-          "type": "title",
-          "settings": {
-          }
-        },
-        "2077e0aa-65e5-437c-a933-775b9bf1bc85": {
-          "type": "subtitle",
-          "settings": {
-          }
-        },
-        "09df8643-814c-47b7-915b-2710485c5804": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
-        },
-        "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea": {
-          "type": "variant_picker",
-          "settings": {
-          }
-        },
-        "ce287ddd-56b4-4eae-92cf-5e6f08239886": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_quantity": false
-          }
-        },
-        "e7c38b55-666d-42db-a0e0-bc393527f6cc": {
-          "type": "klarna",
-          "disabled": true,
-          "settings": {
-            "text": "<b>18,33 € <\/b> aujourd’hui grâce au <italic><b>3x sans frais<\/b><\/italic>"
-          }
-        },
-        "1e425230-6800-49eb-922c-18eab7fbfd55": {
-          "type": "delivery_note",
-          "settings": {
-            "text": "<b>LIVRAISON RAPIDE<\/b> sous 2 à 3 jours ouvrés",
-            "truck": "shopify:\/\/shop_images\/picto-livraison-rapide_351a6b45-9442-4a56-a7e1-93b97a818b3f.png",
-            "text_2": "<b>LIVRAISON GRATUITE<\/b> dès 60€ d'achats",
-            "oclock": "shopify:\/\/shop_images\/picto-livraison-gratuite_02ef0ef2-8acf-4b39-bade-4e025b79a2b7.png",
-            "text_3": "<b>PAIEMENT 100% SÉCURISÉ <\/b> ultra facile",
-            "image_3": "shopify:\/\/shop_images\/picto-paiement-securise_718a4110-6591-4ab4-b08c-8da2a2e654e7.png"
-          }
-        }
-      },
-      "block_order": [
-        "2123d97f-146b-49e9-846e-386171adb4af",
-        "bb4f17d7-4ef4-4c4a-8040-e4d1ab5254ed",
-        "2077e0aa-65e5-437c-a933-775b9bf1bc85",
-        "09df8643-814c-47b7-915b-2710485c5804",
-        "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea",
-        "ce287ddd-56b4-4eae-92cf-5e6f08239886",
-        "e7c38b55-666d-42db-a0e0-bc393527f6cc",
-        "1e425230-6800-49eb-922c-18eab7fbfd55"
-      ],
-      "custom_css": [
-        ".just-button-main-label {font-size: 14px;}"
-      ],
+      "type": "bundle-builder",
       "settings": {
-        "show_dots_mobile": true,
-        "show_benefits": true,
-        "title_join": "Découvrez notre produit"
       }
     }
   },
