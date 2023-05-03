@@ -238,3 +238,6 @@ bundle-builder-line-card [data-bb-selector="line-item-card-thumnail-wrapper"] {
 display: none
 }
 
+bundle-builder-line-card [data-bb-selector="line-item-card-title-price"] {
+  padding-left: 8px
+}
