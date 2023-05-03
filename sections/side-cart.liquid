@@ -61,7 +61,9 @@
           </div>
         {% else %}
           <div id="line-items" class="pt-4 px-4 pb-6 bg-white">
-            {% render "side-cart" %}
+            {% unless item.id == "46534059557204" %}
+              {% render "side-cart" %}
+            {% endunless %}
           </div>
         {% endif %}
       </side-cart-inner>
