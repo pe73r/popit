@@ -29,7 +29,7 @@
                         <div class="flex-1">
                           <p class="text-sm font-normal">{{ links.title }}</p>
                         </div>
-                        <accordion-icon class="{% unless forloop.first %} group-expanded:rotate-180 {% endunless %} transition-all origin-center h-[fit-content]">
+                        <accordion-icon class="{% if forloop.first %} rotate-180 {% endif %} group-expanded:rotate-180  transition-all origin-center h-[fit-content]">
                           {% render 'icon-arrow-accordion' %}
                         </accordion-icon>
                       </accordion-header>
