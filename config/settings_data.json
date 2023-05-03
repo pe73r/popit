@@ -523,27 +523,6 @@
         "settings": {
         }
       },
-      "14044569291296200651": {
-        "type": "shopify:\/\/apps\/bundle-builder\/blocks\/bb-cart-integration-custom\/78802baf-205d-4d1d-908c-fae911f24e36",
-        "disabled": false,
-        "settings": {
-          "theme_override": "",
-          "page_cartItemBox": "",
-          "page_cartItem": "",
-          "page_cartSubtotal": "",
-          "page_cartOriginalTotal": "",
-          "page_checkoutButton": "",
-          "drawer_cartItemBox": "",
-          "drawer_cartItem": "",
-          "drawer_cartSubtotal": "",
-          "drawer_cartOriginalTotal": "",
-          "drawer_checkoutButton": "",
-          "cartItemPrice": "",
-          "cartItemLinePrice": "",
-          "cartItemQuantity": "",
-          "observeTargets": ""
-        }
-      },
       "1386531382474587334": {
         "type": "shopify:\/\/apps\/bundle-builder\/blocks\/bb-cart-integration\/78802baf-205d-4d1d-908c-fae911f24e36",
         "disabled": false,
@@ -563,11 +542,32 @@
           "modal_title": "Your bundle summary",
           "modal_font_color": "#000000",
           "modal_background": "#FFFFFF",
-          "modal_border_color": "#C4C4C4",
+          "modal_border_color": "#c4c4c4",
           "modal_item_background": "",
-          "modal_item_content_background": "#F1F1F1",
-          "modal_item_product_background": "#FFFFFF",
+          "modal_item_content_background": "#f1f1f1",
+          "modal_item_product_background": "#ffffff",
           "custom_css": ""
+        }
+      },
+      "14044569291296200651": {
+        "type": "shopify:\/\/apps\/bundle-builder\/blocks\/bb-cart-integration-custom\/78802baf-205d-4d1d-908c-fae911f24e36",
+        "disabled": false,
+        "settings": {
+          "theme_override": "887",
+          "page_cartItemBox": "",
+          "page_cartItem": "",
+          "page_cartSubtotal": "",
+          "page_cartOriginalTotal": "",
+          "page_checkoutButton": "",
+          "drawer_cartItemBox": "",
+          "drawer_cartItem": "",
+          "drawer_cartSubtotal": "",
+          "drawer_cartOriginalTotal": "",
+          "drawer_checkoutButton": "",
+          "cartItemPrice": "",
+          "cartItemLinePrice": "",
+          "cartItemQuantity": "",
+          "observeTargets": ""
         }
       }
     }
