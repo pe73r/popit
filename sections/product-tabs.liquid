@@ -98,7 +98,7 @@
                 </div>
               {% endif %}
               {% if product.metafields.product.description_text_2 != blank %}
-                <div class="flex items-center gap-2 pb-3 border-b border-{{ product-color }} mt-4">
+                <div class="flex items-center gap-2 pb-3 border-b border-{{ product-color }} border-tab-product mt-4">
                   <img
                     class="max-w-[80px]"
                     src="{{ product.metafields.product.description_image_2.value | img_url:'master' }}"
@@ -144,7 +144,7 @@
                 </div>
               {% endif %}
               {% if product.metafields.product.use_text_2 != blank %}
-                <div class="flex items-center gap-2 py-2 border-t border-{{ product-color }}">
+                <div class="flex items-center gap-2 py-2 border-t border-{{ product-color }} border-tab-product">
                   {% if product.metafields.product.use_image_2 != blank %}
                     <img
                       class="max-w-[80px]"
@@ -158,7 +158,7 @@
                 </div>
               {% endif %}
               {% if product.metafields.product.use_text_3 != blank %}
-                <div class="flex items-center gap-2 py-3 border-t border-{{ product-color }}">
+                <div class="flex items-center gap-2 py-3 border-t border-{{ product-color }} border-tab-product">
                   {% if product.metafields.product.use_image_3 != blank %}
                     <img
                       class="max-w-[80px]"
@@ -186,7 +186,7 @@
                 </div>
               {% endif %}
               {% if product.metafields.product.use_text_5 != blank %}
-                <div class="flex items-center gap-2 py-3 border-t border-{{ product-color }}">
+                <div class="flex items-center gap-2 py-3 border-t border-{{ product-color }} border-tab-product">
                   {% if product.metafields.product.use_image_5 != blank %}
                     <img
                       class="max-w-[80px]"
