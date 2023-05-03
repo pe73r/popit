@@ -22,21 +22,23 @@
         echo 'featured_link_subtitle_' | append: i
       endcapture
 
+      capture  labelPath
+        echo 'label_' | append: i
+      endcapture
+
       assign link = block[linkPath]
       assign image = block[imagePath]
       assign title = block[titlePath]
       assign subtitle = block[subtitlePath]
+      assign label = block[labelPath]
     -%}
       {% if image != blank %}
       <!--<p class="text-sm text-gray-400">NOS OFFRES</p>-->
-      <div class="drawer-card relative bg-gradiant rounded-lg p-2 sm:p-3 md:p-5 text-center flex flex-col justify-center items-center mb-4">
-        {% if label != blank %}
-          <div class="absolute top-3 right-3 text-[10px] py-1 px-2 text-white font-bold bg-orange w-fit rounded-md mb-2 mx-auto md:mx-0">{{ label }}</div>
-        {% endif %}
-        <div class="w-full">
+      <div class="drawer-card relative bg-gradiant rounded-lg p-2 sm:p-3 md:p-5 flex items-center mb-4 gap-6">
+        <div class="max-w-[80px]">
           {% if image != blank %}
             <img
-              class="lazy mx-auto max-w-[250px]"
+              class="lazy max-w-[80px]"
               src="{{ image | img_url: 'master'}}"
               alt="{{ image.alt }}"
               loading="lazy"
@@ -44,19 +46,23 @@
           {% else %}
             {{ 'image' | placeholder_svg_tag }}
           {% endif %}
-          <div class="text-center mt-3">
-            {% if subtitle != blank %}
-              <h4 class="text-base font-bold">{{ subtitle }}</h4>
-            {% endif %}
+        </div>
+        <div class="">
+          {% if subtitle != blank %}
+            <h4 class="text-sm font-bold mb-2">{{ subtitle }}</h4>
+          {% endif %}
 
-            {% if title != blank %}
-              <div class="text-sm font-light mt-3 drawer-card-title" style="color:{{ section.settings.color }}">{{ title }}</div>
-            {% endif %}
+          {% if title != blank %}
+            <div class="text-sm font-light mb-2 drawer-card-title" style="color:{{ section.settings.color }}">{{ title }}</div>
+          {% endif %}
 
-            {% if cta != blank %}
-              <a class="block mt-3 md:mt-5 {% render "button", size:"medium", color:"green", fullWidth: true %}" href="{{ link }}">{{ cta }}</a>
-            {% endif %}
-          </div>
+          {% if label != blank %}
+            <div class="text-[10px] py-1 px-2 text-white font-bold bg-orange w-fit rounded-md">{{ label }}</div>
+          {% endif %}
+
+          {% if link != blank %}
+            <a class="absolute bg-white p-2 bottom-2 right-2 rounded-md block" href="{{ link }}">{% render 'icon-arrow-green' %}</a>
+          {% endif %}
         </div>
       </div>
     {% endif %}
