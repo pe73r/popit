@@ -42,6 +42,9 @@
   {% assign bg_color = section.settings.bg_color %}
 {% endif %}
 
+{% comment %}
+  <div  class="border-red-hair border-violet border-orange border-green border-pink border-blue"></div>
+{% endcomment %}
 <section class="w-11/12 lg:w-full py-5 lg:py-10 mx-auto my-5 lg:my-0 rounded-lg lg:rounded-none" style=" background-color: {{ bg_color }}">
   <div class="w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row gap-4">
     <div class="w-full lg:w-1/2">
@@ -248,23 +251,23 @@
                 {% endif %}
               {% endif %}
 
-            {% if product.metafields.product.compo_popup_ingredient != blank %}
-              <tail-popup class="relative">
-                <popup-trigger class="block mt-5 text-sm text-center underline cursor-pointer font-light">
-                  Voir la liste complète des ingrédients
-                </popup-trigger>
-                <popup-content class="bg-white top-3 translate-x[-15px] translate-y-[-50%] p-5 max-w-[600px] shadow-lg rounded-lg mx-auto text-sm overflow-hidden">
-                  <div class="relative w-full">
-                    <popup-trigger class="absolute top-0 right-0">
-                      {% render 'icon-cart-close' %}
-                    </popup-trigger>
-                  </div>
-                  <h4 class="mb-3 text-green text-xl text-center">Liste des ingrédients</h4>
-                  <div class="text-xs sm:text-sm">
-                    {{ product.metafields.product.compo_popup_ingredient.value }}
-                  </div>
-                </popup-content>
-              </tail-popup>
+              {% if product.metafields.product.compo_popup_ingredient != blank %}
+                <tail-popup class="relative">
+                  <popup-trigger class="block mt-5 text-sm text-center underline cursor-pointer font-light">
+                    Voir la liste complète des ingrédients
+                  </popup-trigger>
+                  <popup-content class="bg-white top-3 translate-x[-15px] translate-y-[-50%] p-5 max-w-[600px] shadow-lg rounded-lg mx-auto text-sm overflow-hidden">
+                    <div class="relative w-full">
+                      <popup-trigger class="absolute top-0 right-0">
+                        {% render 'icon-cart-close' %}
+                      </popup-trigger>
+                    </div>
+                    <h4 class="mb-3 text-green text-xl text-center">Liste des ingrédients</h4>
+                    <div class="text-xs sm:text-sm">
+                      {{ product.metafields.product.compo_popup_ingredient.value }}
+                    </div>
+                  </popup-content>
+                </tail-popup>
               {% endif %}
             </div>
           {% else %}
