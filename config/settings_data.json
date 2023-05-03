@@ -288,7 +288,7 @@
           "661212a7-e4cd-48b0-be23-48251e530a71": {
             "type": "Step",
             "settings": {
-              "text": "Livraison gratuite dès 60€ d'achats",
+              "text": "Livraison gratuite dès 60€ d'achats 🚚",
               "text_before": "Plus que ((rest)) pour avoir la livraison gratuite.",
               "text_after": "Vous avez débloqué la livraison gratuite 🤗",
               "amount": 60,
