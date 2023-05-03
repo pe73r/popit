@@ -86,7 +86,7 @@
                 {% endif %}
               </div>
               {% if product.metafields.product.description_text_1 != blank %}
-                <div class="flex items-center gap-2 pb-3 border-b border-{{ product-color }} mt-5">
+                <div class="flex items-center gap-2 pb-3 border-b border-{{ product-color }} border-tab-product mt-5">
                   <img
                     class="max-w-[80px]"
                     src="{{ product.metafields.product.description_image_1.value | img_url:'master' }}"
@@ -299,6 +299,48 @@
   .tab-button[aria-selected="true"] span {
     font-weight: bold;
   }
+
+  {% if product.tags contains "sommeil" %}
+  .border-tab-product{
+    border-color: "#4F2674";
+  }
+
+{% elsif product.tags contains "energie" %}
+  .border-tab-product{
+    border-color: "#EA5B0C"
+  }
+{% elsif product.tags contains "alimentation" %}
+  .border-tab-product{
+    border-color: "#3C915A";
+  }
+{% elsif product.tags contains "sport" %}
+  .border-tab-product{
+    border-color: "#2F52A0";
+  }
+{% elsif product.tags contains "stress" %}
+  .border-tab-product{
+    border-color: "#2F2870";
+  }
+
+{% elsif product.tags contains "feminim" %}
+   .border-tab-product{
+    border-color: "#9D1553";
+  }
+
+{% elsif product.tags contains "peau" or product.tags contains "hair" or product.tags contains "beaute" %}
+  .border-tab-product{
+    border-color: ""#E4003A";
+  }
+
+{% elsif product.tags contains "focus" %}
+  .border-tab-product{
+    border-color: "#00555A";
+  }
+{% else %}
+  .border-tab-product{
+    border-color: {{ section.settings.color }};
+  }
+{% endif %}
 </style>
 {% schema %}
   {
