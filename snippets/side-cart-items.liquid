@@ -17,6 +17,21 @@
       <p class="font-body-text mb-1 text-xs line-clamp-1 max-w-[90%]">{{ variant.title }}</p>
     {% endif %}
 
+    {%- unless item.properties == empty %}
+      {% for property in item.properties %}
+        {% assign first_character_in_key = property.first | truncate: 1, '' %}
+        {% unless property.last == blank or first_character_in_key == '_' %}
+          <p>{{ property.first }}:
+          {% if property.last contains '/uploads/' %}
+            <a href="{{ property.last }}">{{ property.last | split: '/' | last }}</a>
+          {% else %}
+            {{ property.last }}
+          {% endif %}
+          </p>
+        {% endunless %}
+      {% endfor %}
+    {% endunless -%}
+
     {% comment %} <span onclick="removeKdo()" class="absolute top-2 right-2 text-sm cursor-pointer hover:ring-1 ring-0 transition-all rounded-full p-1.5">
       {% render 'icon-trash-can' %}
     </span> {% endcomment %}
