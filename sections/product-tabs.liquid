@@ -248,6 +248,7 @@
                 {% endif %}
               {% endif %}
 
+            {% if product.metafields.product.compo_popup_ingredient != blank %}
               <tail-popup class="relative">
                 <popup-trigger class="block mt-5 text-sm text-center underline cursor-pointer font-light">
                   Voir la liste complète des ingrédients
@@ -264,6 +265,7 @@
                   </div>
                 </popup-content>
               </tail-popup>
+              {% endif %}
             </div>
           {% else %}
             <div class="block mt-8 text-sm">
