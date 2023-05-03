@@ -24,7 +24,7 @@
                     {% endif %}
                   </a>
                 </li>
-                {% for sublinks in links.links limit: 5 %}
+                {% for sublinks in links.links %}
                   <li class="menu-list">
                     <a href="{{ sublinks.url }}">
                       <span class="text-sm">{{ sublinks.title }}</span>
