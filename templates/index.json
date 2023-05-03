@@ -325,13 +325,13 @@
     "6a1db9a1-353a-4751-bbaa-32b08b253ecf": {
       "type": "featured-blog-carousel",
       "settings": {
-        "blog": "",
+        "blog": "infos",
         "post_limit": 4,
         "show_dots": true,
         "heading": "Découvrez tous nos articles",
         "color": "#4b9b7d",
         "show_title": false,
-        "show_tag": false,
+        "show_tag": true,
         "show_content": true,
         "show_author": false,
         "show_date": true,
