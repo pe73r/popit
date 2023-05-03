@@ -1,14 +1,20 @@
 {% assign product = item.product %}
+{% assign variant = item.variant %}
+
 <div data-line-item-variant="{{ item.variant_id }}" class="flex items-center py-5 bg-white border-b border-gray-300 relative gap-4">
   <div class="rounded-md w-[100px] flex items-center justify-center py-2">
     <img
-      src="{{product.featured_image | image_url: width: 400 }}"
-      alt="{{product.featured_image.alt}}"
+      src="{{variant.featured_image | image_url: width: 400 }}"
+      alt="{{variant.featured_image.alt}}"
       class="max-w-[100px] object-cover rounded-l-md lazy"
       loading="lazy">
   </div>
   <div class="flex-1">
+
     <span class="font-body-text mb-1 text-base font-bold line-clamp-1 max-w-[90%]">{{ product.title }}</span>
+    {% if product.has_only_default_variant == false %}
+      <p class="font-body-text mb-1 text-xs line-clamp-1 max-w-[90%]">{{ variant.title }}</p>
+    {% endif %}
 
     {% comment %} <span onclick="removeKdo()" class="absolute top-2 right-2 text-sm cursor-pointer hover:ring-1 ring-0 transition-all rounded-full p-1.5">
       {% render 'icon-trash-can' %}
