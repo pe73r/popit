@@ -12,9 +12,9 @@
   </div>
   <div class="flex-1">
 
-    <span class="font-body-text mb-1 text-base font-bold line-clamp-1 max-w-[90%]">{{ product.title }}</span>
+    <span data-title class="font-body-text mb-1 text-base font-bold line-clamp-1 max-w-[90%]">{{ product.title }}</span>
     {% if product.has_only_default_variant == false %}
-      <p class="font-body-text mb-1 text-xs line-clamp-1 max-w-[90%]">{{ variant.title }}</p>
+      <p data-variant class="font-body-text mb-1 text-xs line-clamp-1 max-w-[90%]">{{ variant.title }}</p>
     {% endif %}
 
     {%- unless item.properties == empty %}
@@ -70,21 +70,21 @@
       {% if isFree != true %}
         <div class="mt-1 ml-auto text-sm" data-cart-price={{item.variant_id }}>
           {% if variant.compare_at_price == nil %}
-            <span class="font-bold">
+            <span data-price class="font-bold">
               {{ variant.price | money_without_trailing_zeros }}
             </span>
           {% else %}
-            <span class="font-bold">
+            <span data-price class="font-bold">
               {{ variant.price | money_without_trailing_zeros }}
             </span>
-            <span class="line-through text-[-1px]">
+            <span data-compare-price class="line-through text-[-1px]">
               {{ variant.compare_at_price | money_without_trailing_zeros }}
             </span>
 
           {% endif %}
         </div>
       {% else %}
-        <div class="mt-1 ml-auto text-sm font-bold">
+        <div data-price class="mt-1 ml-auto text-sm font-bold">
           {{ item.price | money_without_trailing_zeros }}
         </div>
       {% endif %}
