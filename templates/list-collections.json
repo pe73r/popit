@@ -69,6 +69,7 @@
         },
         "bb8ff87c-2182-4eed-a98b-8645e14ee355": {
           "type": "link",
+          "disabled": true,
           "settings": {
             "title": "Accessoires",
             "link": "",
