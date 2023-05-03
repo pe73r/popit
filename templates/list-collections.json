@@ -17,7 +17,7 @@
           "type": "link",
           "settings": {
             "title": "Énergie & Immunité",
-            "link": "#Énergie & Immunité",
+            "link": "",
             "bg_color": "#ffe6b4",
             "color": "#eb5a0a"
           }
@@ -72,8 +72,8 @@
           "settings": {
             "title": "Accessoires",
             "link": "",
-            "bg_color": "#D9E6B1",
-            "color": "#3D925C"
+            "bg_color": "#d9e6b1",
+            "color": "#3d925c"
           }
         },
         "d78b76bd-bfd5-4686-8bc3-2f7b415fa9d8": {
