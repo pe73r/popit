@@ -234,7 +234,7 @@ bundle-builder-line-card [data-bb-line-item-card-action] span,
 bundle-builder-item-modal [data-bb-selector="done"] {
 font-size : 14px }
 
-bundle-builder-line-card [data-bb-selector="line-item-card-thumnail-wrapper"]:empty {
+bundle-builder-line-card [data-bb-selector="line-item-card-thumnail-wrapper"] {
 display: none
 }
 
