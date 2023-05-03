@@ -285,17 +285,10 @@
               "text": "Paiement 100% sécurisé"
             }
           },
-          "94cb0d1f-27e0-4bff-be99-8e357d34d14a": {
-            "type": "reassurances",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/picto-livraison-gratuite.png",
-              "text": "Livraison offerte dès 60€ d'achats"
-            }
-          },
           "661212a7-e4cd-48b0-be23-48251e530a71": {
             "type": "Step",
             "settings": {
-              "text": "Livraison gratuite à partir de 60 euros",
+              "text": "Livraison gratuite à partir de 60€ d'achats",
               "text_before": "Plus que ((rest)) avant la livraison gratuite",
               "text_after": "Vous avez débloqué la livraison gratuite",
               "amount": 60,
@@ -305,10 +298,10 @@
           "f65f635c-b1d7-4b70-a151-f77c70a30220": {
             "type": "Step",
             "settings": {
-              "text": "Un pilulier offert pour 100 euros d'achat",
-              "text_before": "Plus que ((rest)) avant votre cadeau offert",
-              "text_after": "Vous avez débloqué votre cadeau offert",
-              "amount": 100,
+              "text": "Un pilulier offert dès 40€ d'achats",
+              "text_before": "Plus que ((rest)) pour avoir votre pilulier offert",
+              "text_after": "Youhou! Le pilulier offert est ajouté à votre panier",
+              "amount": 40,
               "product": "pilulier"
             }
           },
@@ -331,7 +324,6 @@
           "429d0e67-9527-40e3-909c-41a156b9cf9f",
           "1c9c5b5b-c1c9-4a69-9b95-8db25c19a069",
           "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4",
-          "94cb0d1f-27e0-4bff-be99-8e357d34d14a",
           "661212a7-e4cd-48b0-be23-48251e530a71",
           "f65f635c-b1d7-4b70-a151-f77c70a30220",
           "52b26ce4-60bb-410e-b124-d8ce6735550e",
