@@ -21,7 +21,7 @@
       {% for property in item.properties %}
         {% assign first_character_in_key = property.first | truncate: 1, '' %}
         {% unless property.last == blank or first_character_in_key == '_' %}
-          <p>{{ property.first }}:
+          <p class="font-body-text mb-1 text-xs line-clamp-1 max-w-[90%]">{{ property.first }}:
           {% if property.last contains '/uploads/' %}
             <a href="{{ property.last }}">{{ property.last | split: '/' | last }}</a>
           {% else %}
