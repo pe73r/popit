@@ -227,3 +227,14 @@ accordion-element[data-open="true"].faq .icon-minus {
 .section-template--18869175812436__d7cb4c90-9163-4419-8300-e0f2c4ac6fa0-padding{
   padding-top:0 !important;
 }
+
+
+/* Bundle app */
+.bundle-builder-line-card [data-bb-selector="line-item-card-actions"],
+bundle-builder-item-modal [data-bb-selector="done"] {
+font-size : 14px }
+
+bundle-builder-line-card [data-bb-selector="line-item-card-thumnail-wrapper"]:empty {
+display: none
+}
+
