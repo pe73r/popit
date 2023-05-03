@@ -230,6 +230,10 @@ accordion-element[data-open="true"].faq .icon-minus {
 
 
 /* Bundle app */
+[data-line-item-variant="46534059557204"] {
+  display: none
+}
+
 bundle-builder-line-card [data-bb-line-item-card-action] span,
 bundle-builder-item-modal [data-bb-selector="done"] {
 font-size : 14px }
