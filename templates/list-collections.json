@@ -62,7 +62,7 @@
           "type": "link",
           "settings": {
             "title": "Sport",
-            "link": "",
+            "link": "#Sport",
             "bg_color": "#c8e6e6",
             "color": "#2d50a0"
           }
