@@ -23,7 +23,7 @@
               {% for links in tab.settings.menu.links %}
 
                 {% if links.links.size > 0 %}
-                  <accordion-element class="w-full bg-white rounded-lg shadow-lg p-3 {% unless forloop.last %} mb-5 {% endunless %} {% if previous == 'link' %}mt-6{% endif %}">
+                  <accordion-element data-open="true" class="w-full bg-white rounded-lg shadow-lg p-3 {% unless forloop.last %} mb-5 {% endunless %} {% if previous == 'link' %}mt-6{% endif %}">
                     <accordion-trigger class="group">
                       <accordion-header class="flex flex-row items-center justify-between">
                         <div class="flex-1">
