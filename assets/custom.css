@@ -244,12 +244,13 @@ bundle-builder-cart-box {
 
 bundle-builder-line-card [data-bb-line-item-card-action] span,
 bundle-builder-item-modal [data-bb-selector="done"] {
-font-size : 14px }
+  font-size : 14px
+}
 
 bundle-builder-line-card [data-bb-selector="line-item-card-thumnail-wrapper"] {
-display: none
+  display: none
 }
 
 bundle-builder-line-card [data-bb-selector="line-item-card-title-price"] {
-  padding-left: 8px
+  padding-left: 16px
 }
