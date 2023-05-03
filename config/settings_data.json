@@ -304,6 +304,27 @@
               "amount": 40,
               "product": "pilulier"
             }
+          },
+          "c99c42b7-af3a-4929-9b1c-6c30e628f578": {
+            "type": "reassurances",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/picto-livraison-gratuite.png",
+              "text": "Livraison offerte dès 60€ d'achats"
+            }
+          },
+          "3ececba4-83f6-4f21-b622-65de788db8df": {
+            "type": "reassurances",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/picto-livraison-rapide.png",
+              "text": "Livraison sous 2 à 3 jours ouvrés"
+            }
+          },
+          "48d2b094-b27d-42bb-94d7-98a6b03ffcf2": {
+            "type": "reassurances",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/picto-paiement-securise.png",
+              "text": "Paiement 100% sécurisé"
+            }
           }
         },
         "block_order": [
@@ -311,7 +332,10 @@
           "712fc898-0f81-44b6-a6d0-c461cb3fff0f",
           "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4",
           "661212a7-e4cd-48b0-be23-48251e530a71",
-          "f65f635c-b1d7-4b70-a151-f77c70a30220"
+          "f65f635c-b1d7-4b70-a151-f77c70a30220",
+          "c99c42b7-af3a-4929-9b1c-6c30e628f578",
+          "3ececba4-83f6-4f21-b622-65de788db8df",
+          "48d2b094-b27d-42bb-94d7-98a6b03ffcf2"
         ],
         "settings": {
           "cart_title": "Votre panier",
