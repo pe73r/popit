@@ -241,7 +241,9 @@ accordion-element[data-open="true"].faq .icon-minus {
 bundle-builder-cart-box {
   margin-top: 0 !important;
   border-left: 0 !important;
-  border-right: 0 !important
+  border-right: 0 !important;
+  border-color: #4B9B7D;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.05);
 }
 
 bundle-builder-line-card [data-bb-line-item-card-action] span,
