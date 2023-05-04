@@ -39,6 +39,15 @@ defineCustomElement(
       }
     }
 
+    reRenderBundleProduct = () => {
+      let bundle_price = document.querySelector('side-cart [data-bb-selector="bb-price"]')
+
+      if(bundle_price) {
+        let bundle_number = parseInt(document.querySelector('side-cart [data-bb-selector="bb-title"]').innerText.match(/\d+/)[0]);
+            cart_total_price = document.querySelector('[data-cart-indicator]').innerText.replace(",", ".").replace('€', '');
+      }
+    }
+
     toggleLoading = (loading) => {
       this.setAttribute("data-loading", String(loading));
       const button = this.querySelector("button");
@@ -88,12 +97,14 @@ defineCustomElement(
         quantity.quantity = 1;
         quantity.querySelector("input").value = 1;
       }
+
       if (Number(this.getAttribute("data-max-quantity") > 1)) {
         this.parentElement.setAttribute("aria-selected", "true");
       } else {
         const button = this.querySelector("button");
         button.disabled = true;
       }
+
       if (lightReRender) {
         reRenderCartIndicators(response.sections);
         reRenderLineItems(response.sections);
@@ -103,6 +114,8 @@ defineCustomElement(
           openSideCart();
         }, 1);
       }
+      
+      this.reRenderBundleProduct();
       this.toggleLoading(false);
     };
   }
