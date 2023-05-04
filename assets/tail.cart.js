@@ -118,13 +118,15 @@ window.fetch = new Proxy(window.fetch, {
         if (Object.keys(remove).length > 0) {
           fetchers.push(f("update", remove));
         }
-        if (add.length > 0) {
+        if (add.length > 0) { 
           fetchers.push(f("add", add));
         }
         if (fetchers.length) {
           const [{ sections }] = await Promise.all(fetchers);
           reRenderCartIndicators(sections);
         }
+
+        reRenderBundleProduct();
       }
     });
 
@@ -211,13 +213,13 @@ const getCart = async () => {
 const reRenderBundleProduct = () => {
   let bundle_price = document.querySelector('tail-side-cart [data-bb-selector="bb-price"]')
 
-  console.log(bundle_price)
   if(bundle_price) {
     let bundle_number = parseInt(document.querySelector('tail-side-cart [data-bb-selector="bb-title"]').innerText.match(/\d+/)[0]);
-        cart_total_price = document.querySelector('tail-side-cart side-cart-footer [data-cart-indicator]').innerText.replace(",", ".").replace(/.$/, "");
+        cart_price = document.querySelector('tail-side-cart side-cart-footer [data-cart-indicator]').innerText.replace("€", "").replace(",", ".").trim(),
+        cart_total_price = parseFloat(cart_price - (16.98 * bundle_number) + parseFloat(bundle_price.innerText.replace("€", "").replace(",", ".").trim(), 2), 2).toFixed(2);
 
-    console.log(`${(cart_total_price - (16.98 * bundle_number) + parseFloat(bundle_price.innerText.replace(",", ".").replace(/.$/, "")).replace('.', ','), 2)}€`)
-    document.querySelector('side-cart-footer [data-cart-indicator]').innerText = `${(cart_total_price - (16.98 * bundle_number) + bundle_price.innerText.replace(",", ".").replace(/.$/, "")).replace('.', ',')}€`;
+        console.log(`${cart_total_price.toString().replace('.', ',')}€`)
+    document.querySelector('side-cart-footer [data-cart-indicator]').innerText = `${cart_total_price.toString().replace('.', ',')}€`;
   }
 }
 
@@ -546,6 +548,8 @@ defineCustomElement(
             element.parentElement.parentElement.setAttribute("aria-selected", "false");
           }
         });
+
+      reRenderBundleProduct();
 
       this.toggleLoading(false);
     };

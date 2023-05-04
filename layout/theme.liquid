@@ -85,7 +85,7 @@
           const [configRes, layoutRes, styleRes] = await Promise.all([
             fetch("{{ 'tailwind.config.js' | asset_url }}"),
             fetch("{{ 'tail.layout.css' | asset_url }}"),
-            fetch("{{ 'tail.style.css' | asset_url }}")
+            fetch("{{ 'tail.style.css' | asset_url }}") 
           ]);
           const text = await configRes.text()
           console.log({text});
