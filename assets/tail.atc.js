@@ -94,6 +94,9 @@ defineCustomElement(
         .catch((e) => {
           return { sections: [] };
         });
+
+        
+      console.log('ok1')
       const quantity = document.querySelector(`product-quantity[data-product="${this.getAttribute("data-product")}"]`);
 
       if (quantity) {
