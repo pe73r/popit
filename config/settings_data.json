@@ -560,7 +560,7 @@
           "page_cartOriginalTotal": "",
           "page_checkoutButton": "",
           "drawer_cartItemBox": "side-cart-inner  #line-items",
-          "drawer_cartItem": "side-cart-inner  #line-items > div [data-title]",
+          "drawer_cartItem": "side-cart-inner  #line-items a[data-title]",
           "drawer_cartSubtotal": "side-cart-footer [data-cart-indicator]",
           "drawer_cartOriginalTotal": "",
           "drawer_checkoutButton": "side-cart-footer [name=\"checkout\"]",
