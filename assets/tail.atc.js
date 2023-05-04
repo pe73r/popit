@@ -44,7 +44,7 @@ defineCustomElement(
 
       if(bundle_price) {
         let bundle_number = parseInt(document.querySelector('side-cart [data-bb-selector="bb-title"]').innerText.match(/\d+/)[0]);
-            cart_total_price = document.querySelector('[data-cart-indicator]').innerText.replace(",", ".").replace('€', '');
+            cart_total_price = document.querySelector('[data-cart-indicator]').innerText.replace(",", ".").replace(/.$/, "");
       }
     }
 
