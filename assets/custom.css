@@ -1,4 +1,17 @@
-html {
+
+
+[data-bb-selector="bb-view"]{
+  color: #4B9B7D;
+  border: 1px solid #4B9B7D;
+  border-radius: 12px;
+  width: 100%;
+  padding: 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  white-space: nowrap;
+}html {
   scroll-behavior: smooth;
 }
 
@@ -253,4 +266,17 @@ bundle-builder-line-card [data-bb-selector="line-item-card-thumnail-wrapper"] {
 
 bundle-builder-line-card [data-bb-selector="line-item-card-title-price"] {
   padding-left: 16px
+}
+
+[data-bb-selector="bb-view"]{
+  color: #4B9B7D;
+  border: 1px solid #4B9B7D;
+  border-radius: 12px;
+  width: 100%;
+  padding: 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  white-space: nowrap;
 }
