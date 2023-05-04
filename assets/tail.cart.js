@@ -8,13 +8,6 @@ window.fetch = new Proxy(window.fetch, {
       const isRemove = endpoint.endsWith("/cart/remove.js");
 
       if (isUpdate || isAdd || isRemove) {
-        console.log("fetch completed!", {
-          body,
-          endpoint,
-          isUpdate,
-          isAdd,
-          isRemove
-        });
         const isGiftCard = (item) => {
           return item.title.toLowerCase().includes("carte") && item.title.toLowerCase().includes("cadeau");
         };
@@ -81,8 +74,6 @@ window.fetch = new Proxy(window.fetch, {
         /** @type {CartConfig} */
         const { steps } = JSON.parse(document.getElementById("cart-progress").textContent);
 
-        console.log({ steps });
-
         const hasFreeItem = (id) => {
           return items.some((item) => item.variant_id === id && item.properties.is === "free");
         };
@@ -124,8 +115,6 @@ window.fetch = new Proxy(window.fetch, {
         });
         let fetchers = [];
 
-        console.log({ total_price, add, remove });
-
         if (Object.keys(remove).length > 0) {
           fetchers.push(f("update", remove));
         }
@@ -134,7 +123,6 @@ window.fetch = new Proxy(window.fetch, {
         }
         if (fetchers.length) {
           const [{ sections }] = await Promise.all(fetchers);
-          console.log({ sections });
           reRenderCartIndicators(sections);
         }
       }
@@ -161,7 +149,6 @@ const reRenderSections = (sections, newSections) => {
       selectors.forEach((selector) => {
         const element = document.querySelector(`${selector}`);
         const newElement = newDom.querySelector(selector);
-        console.log({ element: element.innerHTML, newElement: newElement.innerHTML });
         if (element && newElement) {
           document.querySelector(`${selector}`).innerHTML = newElement.innerHTML;
         }
@@ -175,7 +162,6 @@ const reRenderSections = (sections, newSections) => {
 };
 
 const reRenderLineItems = (newSections) => {
-  console.log({ newSections });
   if (!newSections || (newSections && !Object.keys(newSections).length)) {
     return;
   }
@@ -225,7 +211,7 @@ const getCart = async () => {
 const reRenderBundleProduct = () => {
   let bundle_price = document.querySelector('side-cart [data-bb-selector="bb-price"]')
 
-  console.log('ok')
+  console.log(bundle_price)
   if(bundle_price) {
     let bundle_number = parseInt(document.querySelector('side-cart [data-bb-selector="bb-title"]').innerText.match(/\d+/)[0]);
         cart_total_price = document.querySelector('[data-cart-indicator]').innerText.replace(",", ".").replace(/.$/, "");
@@ -442,9 +428,7 @@ defineCustomElement(
      * @param {KeyboardEvent} e
      */
     onInputChange = (e) => {
-      console.log(e.key);
       if (e.key === "Enter") {
-        console.log("enter");
         this.input.blur();
       }
     };
@@ -629,7 +613,6 @@ defineCustomElement(
       this.label.addEventListener("mousedown", this.onClick);
       const note = this.getAttribute("data-cart-note") || "";
       const [content = "", name = ""] = note.split(" ----- ");
-      console.log(note.split(" ----- "));
       inputs.forEach((input) => {
         if (input.name === "message") {
           input.value = content;
@@ -641,7 +624,6 @@ defineCustomElement(
       });
     };
     save = debounce(async () => {
-      console.log({ note: `${this.message} ----- ${this.name} ` });
       await fetch("/cart/update.js", {
         method: "POST",
         headers: {
