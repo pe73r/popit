@@ -166,11 +166,14 @@ const reRenderSections = (sections, newSections) => {
           document.querySelector(`${selector}`).innerHTML = newElement.innerHTML;
         }
       });
+      
+      reRenderBundleProduct();
       const reRenderEnd = new CustomEvent("reRenderEnd");
       document.dispatchEvent(reRenderEnd);
     }
   });
 };
+
 const reRenderLineItems = (newSections) => {
   console.log({ newSections });
   if (!newSections || (newSections && !Object.keys(newSections).length)) {
