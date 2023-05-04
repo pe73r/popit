@@ -599,6 +599,8 @@ defineCustomElement(
       } else {
         reRenderSections(["side-cart"], response.sections);
       }
+      
+      reRenderBundleProduct();
       lineItem.remove();
     };
   }
