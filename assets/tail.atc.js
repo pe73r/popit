@@ -95,7 +95,6 @@ defineCustomElement(
           return { sections: [] };
         });
 
-      console.log('ok1')
       const quantity = document.querySelector(`product-quantity[data-product="${this.getAttribute("data-product")}"]`);
 
       if (quantity) {
@@ -120,7 +119,7 @@ defineCustomElement(
         }, 1);
       }
       
-      this.reRenderBundleProduct();
+      reRenderBundleProduct();
       this.toggleLoading(false);
     };
   }
