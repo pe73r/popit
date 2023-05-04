@@ -29,7 +29,6 @@ defineCustomElement(
           const priceStroke = newValue.replace("€", "").replace(",", ".").trim();
           const quantity = this.getAttribute("data-quantity") || "1";
           const newPriceStroke = Number(quantity) * Number(priceStroke);
-          console.log({ priceStroke, quantity, newPriceStroke, newValue, q: Number(quantity), p: Number(priceStroke) });
           if (priceStroke > 0) {
             priceStrokeElement.textContent = `${newPriceStroke}€`;
           } else {
@@ -237,7 +236,6 @@ defineCustomElement(
     };
 
     GTM_ATC = (event, quantity, price, discount, title, id, currency, collection) => {
-      console.log("ok");
       dataLayer.push({
         event: event,
         ecommerce: {
