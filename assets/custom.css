@@ -259,6 +259,14 @@ bundle-builder-line-card [data-bb-selector="line-item-card-title-price"] {
   padding-left: 16px
 }
 
+bundle-builder-item-modal [data-bb-selector="modal-header"] {
+  background: #e3f2ed !important;
+}
+
+bundle-builder-item-modal [data-bb-selector="modal-title"] {
+  color: #4b9b7d !important
+}
+
 [data-bb-selector="bb-view"]{
   color: #4b9b7d !important;
   border: 1px solid #4B9B7D !important;
