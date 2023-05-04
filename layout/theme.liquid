@@ -78,7 +78,6 @@
 
     <!-- TAILWIND CONFIGURATION -->
     {% if theme.name != "staging" and theme.name != "production" and false %}
-
       {{ 'critical.css' | asset_url | stylesheet_tag }}
       <script rel="preconnect" src="https://cdn.tailwindcss.com"></script>
       <script preload>
