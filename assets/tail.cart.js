@@ -216,7 +216,7 @@ const reRenderBundleProduct = () => {
     let bundle_number = parseInt(document.querySelector('tail-side-cart [data-bb-selector="bb-title"]').innerText.match(/\d+/)[0]);
         cart_total_price = document.querySelector('tail-side-cart side-cart-footer [data-cart-indicator]').innerText.replace(",", ".").replace(/.$/, "");
 
-    console.log(`${(cart_total_price - (16.98 * bundle_number) + bundle_price.innerText.replace(",", ".").replace(/.$/, "")).replace('.', ',')}€`)
+    console.log(`${(cart_total_price - (16.98 * bundle_number) + parseFloat(bundle_price.innerText.replace(",", ".").replace(/.$/, "")).replace('.', ','), 2)}€`)
     document.querySelector('side-cart-footer [data-cart-indicator]').innerText = `${(cart_total_price - (16.98 * bundle_number) + bundle_price.innerText.replace(",", ".").replace(/.$/, "")).replace('.', ',')}€`;
   }
 }
