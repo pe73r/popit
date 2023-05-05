@@ -6,7 +6,7 @@
      {% endif %}
       <product-recommendations class="product-recommendations isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4">  
         <div class="flex lg:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 lg:gap-6 scrollbar-none pl-10 pr-4">
-          {% for recommendation in recommendations.products %}
+          {% for recommendation in recommendations.products limit:3 %}
               {% if section.settings.card-product == "inline" %}
                   {% render 'card-product-inline',
                   card_product: recommendation,
