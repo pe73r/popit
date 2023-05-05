@@ -279,3 +279,7 @@ bundle-builder-item-modal [data-bb-selector="modal-title"] {
   text-align: center;
   white-space: nowrap; 
 }
+
+side-cart-content:has(bundle-builder-cart-box) just-pay-button {
+  display: none !important
+}
