@@ -211,7 +211,7 @@
           "type": "category_5",
           "settings": {
             "question": "Comment créer un compte ?",
-            "answer": "<p><strong>Cliquez-ici<\/strong> pour créer un compte client et renseignez votre adresse mail et mot de passe.<\/p>"
+            "answer": "<p><a href=\"https:\/\/www.we-pop-it.co\/account\/register\" title=\"https:\/\/www.we-pop-it.co\/account\/register\"><strong>Cliquez-ici<\/strong><\/a> pour créer un compte client et renseignez votre adresse mail et mot de passe.<\/p>"
           }
         },
         "7e07e48c-33ce-4141-b25d-bd70e8b4001c": {
