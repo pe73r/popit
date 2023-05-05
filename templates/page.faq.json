@@ -22,7 +22,7 @@
           "type": "category_1",
           "settings": {
             "question": "J'ai un souci de livraison, que faire ?",
-            "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co<\/strong><\/a>, sur le chat du site ou via notre <a href=\"https:\/\/www.we-pop-it.co\/pages\/contact\" title=\"https:\/\/www.we-pop-it.co\/pages\/contact\"><strong>formulaire de contact<\/strong><\/a>.<\/p>"
+            "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co<\/strong><\/a>, sur le chat du site ou via notre <a href=\"\/pages\/contact\" title=\"Contact\"><strong>formulaire de contact<\/strong><\/a>.<\/p>"
           }
         },
         "25172bc4-ca1f-451f-bca2-ac945fa6ecb2": {
