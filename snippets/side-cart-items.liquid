@@ -12,25 +12,30 @@
         height="100"
         class="max-w-[100px] object-cover rounded-l-md lazy"
         loading="lazy">
-    </div> 
+    </div>
     <div class="flex-1">
 
-      <a href="{{ product.url }}" data-title class="font-body-text mb-1 text-base font-bold line-clamp-1 max-w-[90%]">{{ product.title }}</a>
+      <a
+        href="{{ product.url }}"
+        data-title
+        class="font-body-text mb-1 text-base font-bold line-clamp-1 max-w-[90%]">{{ product.title }}</a>
       {% if product.has_only_default_variant == false %}
         <p data-variant class="font-body-text mb-1 text-xs line-clamp-1 max-w-[90%]">{{ variant.title }}</p>
       {% endif %}
 
       {%- unless item.properties == empty %}
         {% for property in item.properties %}
-          {% assign first_character_in_key = property.first | truncate: 1, '' %}
-          {% unless property.last == blank or first_character_in_key == '_' %}
-            <p class="font-body-text mb-1 text-xs line-clamp-1 max-w-[90%]">{{ property.first }}:
-            {% if property.last contains '/uploads/' %}
-              <a href="{{ property.last }}">{{ property.last | split: '/' | last }}</a>
-            {% else %}
-              {{ property.last }}
-            {% endif %}
-            </p>
+          {% unless item.properties.is == "free" %}
+            {% assign first_character_in_key = property.first | truncate: 1, '' %}
+            {% unless property.last == blank or first_character_in_key == '_' %}
+              <p class="font-body-text mb-1 text-xs line-clamp-1 max-w-[90%]">{{ property.first }}:
+                {% if property.last contains '/uploads/' %}
+                  <a href="{{ property.last }}">{{ property.last | split: '/' | last }}</a>
+                {% else %}
+                  {{ property.last }}
+                {% endif %}
+              </p>
+            {% endunless %}
           {% endunless %}
         {% endfor %}
       {% endunless -%}

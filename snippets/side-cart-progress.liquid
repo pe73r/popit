@@ -3,8 +3,22 @@
 {%- assign cartTotal = 0 -%}
 {% assign total = 0 %}
 
-<script id="cart-progress">
+
+{% for i in cart.items %}
+  {% if i.product.gift_card? == false %}
+    {% assign total = total | plus: i.final_line_price %}
+    {% assign cartTotal = cartTotal | plus: i.final_line_price %}
+  {% endif %}
+{% endfor %}
+
+{% assign total = total | divided_by: 100 %}
+{% assign previousAmount = 0 %}
+{% assign progression = 0 %}
+
+
+<script id="cart-progress" data-cart-indicator>
   {
+  "total": {{ cart.total_price | floor }},
   "steps": [
   {% for step in steps %}
     {
@@ -20,23 +34,11 @@
 </script>
 
 
-{% for i in cart.items %}
-  {% if i.product.gift_card? == false %}
-    {% assign total = total | plus: i.final_line_price %}
-    {% assign cartTotal = cartTotal | plus: i.final_line_price %}
-  {% endif %}
-{% endfor %}
-
-{% assign total = total | divided_by: 100 %}
-{% assign previousAmount = 0 %}
-{% assign progression = 0 %}
-
-
 <div class="flex flex-col flex-col-reverse p-2">
 
 
-  <div data-cart-indicator class="w-full mt-2 ">
-    <div class="text-sm text-center text-sauge mt-2">
+  <div class="w-full mt-2 ">
+    <div class="text-sm text-center text-sauge mt-2" data-side-cart-progression-text>
 
       {% for step in steps %}
         {% assign amount = step.amount | floor %}
@@ -68,10 +70,16 @@
 
   <div class="w-full relative  flex items-center">
     <div class="w-full bg-[#81baa4] rounded-md overflow-hidden relative h-1">
-      <div class="absolute w-full h-1 origin-left rounded-md bg-white progress-bar" style="transform: scaleX({{progression}}%);"></div>
+      <div
+        data-side-cart-progression-bar
+        class="absolute w-full h-1 origin-left rounded-md bg-white progress-bar"
+        style="transform: scaleX({{progression}}%);"></div>
     </div>
     <div class="flex w-full absolute items-center justify-around"></div>
-    <div style="left: {{progression| minus: 5 }}%;" class="rounded-full -translate-x-2 absolute  bg-white border-[1px] border-white w-7 h-7 flex items-center justify-center">
+    <div
+      data-side-cart-progression-cart
+      style="left: {{progression | minus: 5 }}%;"
+      class="rounded-full -translate-x-2 absolute  bg-white border-[1px] border-white w-7 h-7 flex items-center justify-center">
       {% render 'icon-progress-cart' %}
     </div>
   </div>
