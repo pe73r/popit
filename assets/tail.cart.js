@@ -173,6 +173,7 @@ const reRenderLineItems = (newSections) => {
   lineItems.innerHTML = newDom.getElementById("line-items").innerHTML;
   return newDom;
 };
+
 const reRenderCartIndicators = (newSections) => {
   if (!newSections || (newSections && !Object.keys(newSections).length)) {
     return;
