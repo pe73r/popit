@@ -171,8 +171,8 @@
               "featured_link_image_1": "shopify:\/\/shop_images\/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
               "featured_link_subtitle_1": "Personnalisez votre pack",
               "featured_link_title_1": "<p>Économisez jusqu’à <strong>-15%<\/strong> en achetant un pack de 3, 4 ou 5 produits.<\/p>",
-              "featured_link_button_1": "",
-              "featured_link_1": "https:\/\/www.we-pop-it.co\/apps\/bundles\/bundle\/132349"
+              "featured_link_button_1": "Je crée mon pack",
+              "featured_link_1": ""
             }
           },
           "821b51b7-27dd-4a1b-9036-4f3a51fe987f": {
@@ -305,7 +305,7 @@
               "text_before": "Plus que ((rest)) pour avoir votre pilulier offert !",
               "text_after": "Youhou! Le pilulier offert est ajouté à votre panier 👌",
               "amount": 40,
-              "product": "pilulier"
+              "product": "pilulier-offert"
             }
           },
           "c99c42b7-af3a-4929-9b1c-6c30e628f578": {

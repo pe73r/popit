@@ -15,14 +15,14 @@
           "type": "category_1",
           "settings": {
             "question": "Comment suivre mon colis ?",
-            "answer": "<p>Lorsque votre colis sera expédié et pris en charge par le transporteur, <strong>vous recevrez un mail contenant un lien de suivi pour savoir où est votre commande<\/strong>. Vous pouvez aussi suivre votre commande à tout moment en <strong>cliquant ici<\/strong>.<\/p>"
+            "answer": "<p>Lorsque votre colis sera expédié et pris en charge par le transporteur, <strong>vous recevrez un mail contenant un lien de suivi pour savoir où est votre commande<\/strong>. Vous pouvez aussi suivre votre commande à tout moment en <a href=\"https:\/\/track.bigblue.co\/pop-it\" title=\"https:\/\/track.bigblue.co\/pop-it\"><strong>cliquant ici<\/strong><\/a>.<\/p>"
           }
         },
         "8474b469-f201-4a4f-afff-6df338d8a35e": {
           "type": "category_1",
           "settings": {
             "question": "J'ai un souci de livraison, que faire ?",
-            "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co<\/strong><\/a>, sur le chat du site ou via notre <strong>formulaire de contact<\/strong>.<\/p>"
+            "answer": "<p>Vous pouvez joindre Adélaïde de notre équipe en écrivant à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co<\/strong><\/a>, sur le chat du site ou via notre <a href=\"\/pages\/contact\" title=\"Contact\"><strong>formulaire de contact<\/strong><\/a>.<\/p>"
           }
         },
         "25172bc4-ca1f-451f-bca2-ac945fa6ecb2": {
@@ -169,7 +169,7 @@
           "type": "category_4",
           "settings": {
             "question": "Les compléments Pop it conviennent-ils aux enfants ?",
-            "answer": "<p>Parce que petits et grands ont des besoins bien spécifiques, Pop it a lancé <strong>une gamme KIDS pour vous permettre de prendre soin d'eux avec des formules adaptées<\/strong>. Pour le reste de nos formules, certaines ne conviennent pas aux enfants ! Sur chacun de nos produits, vous retrouverez des <strong>informations précises à ce sujet avec des dosages à adapter<\/strong> selon leurs âges.<\/p>"
+            "answer": "<p>Parce que petits et grands ont des besoins bien spécifiques, Pop it a lancé <strong>une gamme KIDS <\/strong>pour vous permettre de prendre soin d'eux avec<strong> des formules adaptées<\/strong>. Pour le reste de nos formules, certaines ne conviennent pas aux enfants ! Sur chacun de nos produits, vous retrouverez des <strong>informations précises à ce sujet avec des dosages à adapter<\/strong> selon leurs âges. <\/p><p><a href=\"\/collections\/kids\" title=\"Kids\"><strong>Cliquez-ici<\/strong><\/a> pour la découvrir !<\/p>"
           }
         },
         "561859f6-fd33-48f6-a6de-531779844cd9": {
@@ -197,21 +197,21 @@
           "type": "category_4",
           "settings": {
             "question": "Comment utiliser vos produits ?",
-            "answer": "<p>Vous trouverez les <strong>conseils d'utilisation détaillés<\/strong> pour chacun de nos produits, <strong>sur l'étiquette et sur notre site Internet. <\/strong><\/p><p>Contactez notre équipe par email à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co<\/strong><\/a>, sur le chat du site ou via notre formulaire de contact si vous avez des questions ou besoin de conseils personnalisés. <\/p><p><strong>Nous revenons vers vous sous 24h maximum<\/strong> (hors weekends et jours fériés) avec une routine adaptée à vos besoins !<\/p>"
+            "answer": "<p>Vous trouverez les <strong>conseils d'utilisation détaillés<\/strong> pour chacun de nos produits, <strong>sur l'étiquette et sur notre site Internet. <\/strong><\/p><p>Contactez notre équipe par email à <a href=\"mailto:hello@we-pop-it.co\" title=\"mailto:hello@we-pop-it.co\"><strong>hello@we-pop-it.co<\/strong><\/a>, sur le chat du site ou via notre <a href=\"\/pages\/contact\" title=\"Contact\"><strong>formulaire de contact<\/strong><\/a> si vous avez des questions ou besoin de conseils personnalisés. <\/p><p><strong>Nous revenons vers vous sous 24h maximum<\/strong> (hors weekends et jours fériés) avec une routine adaptée à vos besoins !<\/p>"
           }
         },
         "cc5d6ada-6f6f-4890-8e0d-d0ad28951347": {
           "type": "category_4",
           "settings": {
             "question": "Où trouver vos produits ?",
-            "answer": "<p>Nos produits sont vendus sur <strong>notre site web et sur Amazon<\/strong> en Europe !<\/p>"
+            "answer": "<p>Nos produits sont vendus sur notre site web,<strong> <\/strong>juste<strong> <\/strong><a href=\"\/collections\" title=\"All collections\"><strong>ici<\/strong><\/a><strong>, <\/strong>et sur Amazon en Europe !<\/p>"
           }
         },
         "0bd4fabf-b44f-4129-a014-788739e9841f": {
           "type": "category_5",
           "settings": {
             "question": "Comment créer un compte ?",
-            "answer": "<p><strong>Cliquez-ici<\/strong> pour créer un compte client et renseignez votre adresse mail et mot de passe.<\/p>"
+            "answer": "<p><a href=\"https:\/\/www.we-pop-it.co\/account\/register\" title=\"https:\/\/www.we-pop-it.co\/account\/register\"><strong>Cliquez-ici<\/strong><\/a> pour créer un compte client et renseignez votre adresse mail et mot de passe.<\/p>"
           }
         },
         "7e07e48c-33ce-4141-b25d-bd70e8b4001c": {

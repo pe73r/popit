@@ -1,11 +1,11 @@
 {% assign item_count = cart.item_count %}
 {% assign s = section.settings %}
 
-
 {% assign item_count = cart.item_count %}
 
 <tail-side-cart
   class="group"
+  id="cart"
   data-transition="out"
   data-full-height="true">
   <side-cart-overlay id="side-cart" class="{% if template == "index" %} drawer-with-announcement {% endif %} group-in:opacity-100 group-exiting:opacity-0 group-out:hidden group-entering:block group-entering:opacity-0 z-[50]">

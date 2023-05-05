@@ -3,6 +3,12 @@
     "collection-header": {
       "type": "collection-header",
       "settings": {
+        "display": true,
+        "show_breadcrumbs": true,
+        "title": "Tous nos produits",
+        "description": "",
+        "bg_color": "#E3F2ED",
+        "color": "#005F3B"
       }
     },
     "bundle-builder": {

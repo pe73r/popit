@@ -261,6 +261,7 @@ const getCart = async () => {
   return (await fetch("/cart.js")).json();
 };
 
+
 const getCartPrice = () => {
   let bundle_price = document.querySelector('tail-side-cart [data-bb-selector="bb-price"]');
   const { total } = JSON.parse(document.querySelector("#cart-progress").innerHTML);
@@ -281,8 +282,7 @@ const getCartPrice = () => {
     return cart_total_price;
   } else {
     return total / 100;
-  }
-};
+}
 const reRenderBundleProduct = () => {
   setTimeout(() => {
     const price = getCartPrice();

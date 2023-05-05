@@ -1,12 +1,12 @@
 
  <div class="py-10 md:py-12 product-recommendations">
-   <div class="xl:w-11/12 xl:mx-auto max-w-7xl">
+   <div class="">
      {% if section.settings.title != blank %}
         <h2 class="w-11/12 md:w-full mx-auto text-2xl leading-8 lg:text-3xl lg:leading-10 mb-8 text-center product-ingredients-title" style="color:{{ section.settings.color }}">{{ section.settings.title }}</h2>
      {% endif %}
       <product-recommendations class="product-recommendations isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4">  
-        <div class="flex lg:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 lg:gap-6 scrollbar-none px-4">
-          {% for recommendation in recommendations.products %}
+        <div class="flex lg:justify-center items-center relative overflow-hidden overflow-x-scroll snap-mandatory snap-x gap-4 lg:gap-6 scrollbar-none pl-10 pr-4">
+          {% for recommendation in recommendations.products limit:3 %}
               {% if section.settings.card-product == "inline" %}
                   {% render 'card-product-inline',
                   card_product: recommendation,
