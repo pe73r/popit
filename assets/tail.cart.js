@@ -4,16 +4,23 @@ window.fetch = new Proxy(window.fetch, {
     result.then(async (response) => {
       const [endpoint, { body } = {}] = args;
       const isUpdate = endpoint.endsWith("/cart/update.js");
+      const isChange = endpoint.endsWith("/cart/change.js");
       const isAdd = endpoint.endsWith("/cart/add.js");
       const isRemove = endpoint.endsWith("/cart/remove.js");
 
-      if (isUpdate || isAdd || isRemove) {
+      if (isUpdate || isAdd || isRemove || isChange) {
         const isGiftCard = (item) => {
-          return item.title.toLowerCase().includes("carte") && item.title.toLowerCase().includes("cadeau");
+          return (
+            (item.title.toLowerCase().includes("carte") && item.title.toLowerCase().includes("cadeau")) ||
+            item.properties?.is === "free"
+          );
         };
         const { items } = await (await fetch("/cart.js")).json();
 
-        const total_price = items.reduce((acc, item) => (acc += isGiftCard(item) ? 0 : item.final_line_price), 0);
+        const giftCardsPrice = items.reduce((acc, item) => (acc += !isGiftCard(item) ? 0 : item.final_line_price), 0);
+        const total_price = getCartPrice() * 100 - giftCardsPrice;
+
+        console.log({ giftCardsPrice, total_price });
 
         const isOnlyGift = items.every((item) => {
           return isGiftCard(item);
@@ -73,6 +80,7 @@ window.fetch = new Proxy(window.fetch, {
 
         /** @type {CartConfig} */
         const { steps } = JSON.parse(document.getElementById("cart-progress").textContent);
+        console.log({ steps });
 
         const hasFreeItem = (id) => {
           return items.some((item) => item.variant_id === id && item.properties.is === "free");
@@ -96,13 +104,13 @@ window.fetch = new Proxy(window.fetch, {
 
         let add = [];
         let remove = {};
+        console.log({ steps });
+        let text;
+        let percentage;
 
-        steps.forEach(({ amount, product_title, variants }) => {
+        [...steps].forEach(({ amount, product_title, variants, textBefore, textAfter }) => {
           const [{ id }] = variants || [{ id: "auto" }];
-          if (id === "auto") {
-            return;
-          }
-
+          if (id === "auto") return;
           if (total_price <= amount || isOnlyGift) {
             if (hasFreeItem(id)) {
               Object.assign(remove, { [id]: 0 });
@@ -113,12 +121,36 @@ window.fetch = new Proxy(window.fetch, {
             }
           }
         });
+        let previousAmount = 0;
+
+        steps.forEach(({ amount, product_title, variants, textBefore, textAfter }, i) => {
+          const isLast = i === steps.length - 1;
+          console.log({ amount, product_title, variants, textBefore, textAfter, previousAmount, total_price });
+          if ((total_price >= previousAmount && total_price <= amount) || (!text && isLast)) {
+            if (total_price <= amount) {
+              const restRounded = Math.ceil((amount - total_price) / 100);
+              text = textBefore.replace("((rest))", restRounded + "€");
+            } else {
+              text = textAfter.replace("((rest))", (amount - total_price) / 100 + "€");
+            }
+            percentage = Math.round((total_price / amount) * 100);
+            if (percentage > 100) {
+              percentage = 100;
+            }
+          }
+          previousAmount = amount;
+        });
+
+        console.log({
+          text,
+          percentage
+        });
         let fetchers = [];
 
         if (Object.keys(remove).length > 0) {
           fetchers.push(f("update", remove));
         }
-        if (add.length > 0) { 
+        if (add.length > 0) {
           fetchers.push(f("add", add));
         }
         if (fetchers.length) {
@@ -127,6 +159,14 @@ window.fetch = new Proxy(window.fetch, {
         }
 
         reRenderBundleProduct();
+
+        const bar = document.querySelector("[data-side-cart-progression-bar]");
+        const barCart = document.querySelector("[data-side-cart-progression-cart]");
+        const barText = document.querySelector("[data-side-cart-progression-text]");
+
+        bar.style.transform = `scaleX(${percentage}%)`;
+        barCart.style.left = `${percentage - 5}%`;
+        barText.textContent = text;
       }
     });
 
@@ -147,16 +187,26 @@ const reRenderSections = (sections, newSections) => {
   sections.forEach((section) => {
     const newDom = new DOMParser().parseFromString(newSections[section], "text/html");
     if (section === "side-cart") {
-      const selectors = ["side-cart-trigger", "side-cart-content", "side-cart-footer"];
+      const isEmpty = document.querySelector(".empty-card") !== null;
+
+      console.log({ isEmpty });
+      const selectors = ["side-cart-trigger", "side-cart-header", "side-cart-footer"];
+
+      if (isEmpty) {
+        selectors.push("side-cart-content");
+      } else {
+        selectors.push("#line-items");
+      }
+
       selectors.forEach((selector) => {
         const element = document.querySelector(`${selector}`);
         const newElement = newDom.querySelector(selector);
+        console.log(selector, element, newElement);
         if (element && newElement) {
           document.querySelector(`${selector}`).innerHTML = newElement.innerHTML;
         }
       });
-      
-      reRenderBundleProduct();
+
       const reRenderEnd = new CustomEvent("reRenderEnd");
       document.dispatchEvent(reRenderEnd);
     }
@@ -211,19 +261,38 @@ const getCart = async () => {
   return (await fetch("/cart.js")).json();
 };
 
-const reRenderBundleProduct = () => {
-  let bundle_price = document.querySelector('tail-side-cart [data-bb-selector="bb-price"]')
+const getCartPrice = () => {
+  let bundle_price = document.querySelector('tail-side-cart [data-bb-selector="bb-price"]');
+  const { total } = JSON.parse(document.querySelector("#cart-progress").innerHTML);
+  if (bundle_price) {
+    let bundle_number = parseInt(
+      document.querySelector('tail-side-cart [data-bb-selector="bb-title"]').innerText.match(/\d+/)[0]
+    );
 
-  if(bundle_price) {
-    let bundle_number = parseInt(document.querySelector('tail-side-cart [data-bb-selector="bb-title"]').innerText.match(/\d+/)[0]);
-        cart_price = document.querySelector('tail-side-cart side-cart-footer [data-cart-indicator]').innerText.replace("€", "").replace(",", ".").trim(),
-        cart_total_price = parseFloat(cart_price - (16.98 * bundle_number) + parseFloat(bundle_price.innerText.replace("€", "").replace(",", ".").trim(), 2), 2).toFixed(2);
+    const cart_price = total / 100;
 
-        console.log(cart_price, 16.98 * bundle_number, parseFloat(bundle_price.innerText.replace("€", "").replace(",", ".").trim(), 2))
-        console.log(`${cart_total_price.toString().replace('.', ',')}€`)
-    document.querySelector('side-cart-footer [data-cart-indicator]').innerText = `${cart_total_price.toString().replace('.', ',')}€`;
+    const cart_total_price = parseFloat(
+      cart_price -
+        16.98 * bundle_number +
+        parseFloat(bundle_price.innerText.replace("€", "").replace(",", ".").trim(), 2),
+      2
+    ).toFixed(2);
+
+    return cart_total_price;
+  } else {
+    return total / 100;
   }
-}
+};
+const reRenderBundleProduct = () => {
+  setTimeout(() => {
+    const price = getCartPrice();
+    if (price) {
+      document.querySelector("side-cart-footer [data-cart-indicator]").innerText = `${price
+        .toString()
+        .replace(".", ",")}€`;
+    }
+  }, 10);
+};
 
 /**
  *
@@ -424,6 +493,7 @@ defineCustomElement(
       const newQuantity = Number(e.target.value);
       if (this.quantity !== newQuantity) {
         this.quantity = newQuantity;
+
         this.updateQuantity();
       }
     };
@@ -459,6 +529,7 @@ defineCustomElement(
         }
         this.quantity++;
       }
+      console.log(this.quantity);
       this.updateQuantity();
     };
 
@@ -498,16 +569,18 @@ defineCustomElement(
     };
 
     updateQuantity = async () => {
+      console.log("this.quantity", this.quantity);
       this.toggleLoading(true);
       const response = await (
-        await fetch("/cart/update.js", {
+        await fetch("/cart/change.js", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json"
           },
           body: JSON.stringify({
-            updates: { [String(this.variant)]: this.quantity },
+            id: String(this.variant),
+            quantity: Number(this.quantity),
             sections: ["side-cart"],
             sections_url: window.location.pathname
           })
@@ -531,6 +604,7 @@ defineCustomElement(
       if ((!hasItemInCart && this.quantity === 0) || this.productCard) {
         reRenderSections(["side-cart"], response.sections);
       } else {
+        console.log({ response });
         reRenderCartIndicators(response.sections);
 
         const newDom = new DOMParser().parseFromString(response.sections["side-cart"], "text/html");
@@ -593,7 +667,7 @@ defineCustomElement(
       } else {
         reRenderSections(["side-cart"], response.sections);
       }
-      
+
       reRenderBundleProduct();
       lineItem.remove();
     };

@@ -1,6 +1,6 @@
 .github
 .gitignore
-node_modules/*/**
+node_modules
 node_modules
 package.json
 .pnpm-debug.log

@@ -38,7 +38,7 @@
           {% render "side-cart-carousel" %}
         {% endif %}
 
-        <div class="px-3 pt-4 pb-2 bg-green text-white">
+        <div class="px-3 pt-4 pb-2 bg-green text-white" id="side-cart-progress">
           {% render "side-cart-progress" %}
         </div>
 
@@ -66,6 +66,7 @@
         {% endif %}
       </side-cart-inner>
 
+
       {% unless item_count == 0 %}
         <side-cart-footer class="flex flex-col bg-beige pb-4">
           {% if section.settings.upSellCollection != blank %}
@@ -81,6 +82,7 @@
       {% endunless %}
 
     </side-cart-content>
+
   </side-cart-overlay>
   <side-cart-trigger class="relative flex items-center justify-center w-10 h-10 top-[2px]" data-cart-indicator>
     {% render "icon-cart" %}

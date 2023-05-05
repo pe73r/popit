@@ -231,4 +231,59 @@ accordion-element[data-open="true"].faq .icon-minus {
   padding-top:0 !important;
 }
 
+
+/* Bundle app */
+[data-line-item-variant="46534059557204"] {
+  display: none !important
+}
+
+#line-items:has([data-line-item-variant="46534059557204"]) {
+  padding: 0 !important
+}
+
+bundle-builder-cart-box {
+  margin-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-color: #4B9B7D;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+bundle-builder-line-card [data-bb-line-item-card-action] span,
+bundle-builder-item-modal [data-bb-selector="done"] {
+  font-size : 14px
+}
+
+bundle-builder-line-card [data-bb-selector="line-item-card-thumnail-wrapper"] {
+  display: none
+}
+
+bundle-builder-line-card [data-bb-selector="line-item-card-title-price"] {
+  padding-left: 16px
+}
+
+bundle-builder-item-modal [data-bb-selector="modal-header"] {
+  background: #e3f2ed !important;
+}
+
+bundle-builder-item-modal [data-bb-selector="modal-title"] {
+  color: #4b9b7d !important
+}
+
+[data-bb-selector="bb-view"]{
+  color: #4b9b7d !important;
+  border: 1px solid #4B9B7D !important;
+  border-radius: 12px !important;
+  width: 100%;
+  padding: 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  white-space: nowrap; 
+}
+
+side-cart-content:has(bundle-builder-cart-box) just-pay-button {
+  display: none !important
+}
 </style>

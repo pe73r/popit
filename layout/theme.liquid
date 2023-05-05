@@ -77,28 +77,28 @@
     {{ 'custom.css' | asset_url | stylesheet_tag }}
 
     <!-- TAILWIND CONFIGURATION -->
-    {% if theme.name != "staging" and theme.name != "production" and false %}
+    {% if theme.name != "staging" and theme.name != "production" %}
       {{ 'critical.css' | asset_url | stylesheet_tag }}
       <script rel="preconnect" src="https://cdn.tailwindcss.com"></script>
       <script preload>
         (async () => {
-          const [configRes, layoutRes, styleRes] = await Promise.all([
-            fetch("{{ 'tailwind.config.js' | asset_url }}"),
-            fetch("{{ 'tail.layout.css' | asset_url }}"),
-            fetch("{{ 'tail.style.css' | asset_url }}") 
-          ]);
-          const text = await configRes.text()
-          console.log({text});
-          tailwind.config = eval(`(${
-            text.replace("module.exports = ", "").replace("module.exports=", "").replace("};", "}")
-          })`);
-          const apply = document.createElement("style");
-          apply.setAttribute("type", "text/tailwindcss");
-          apply.innerHTML = `${
-            (await Promise.all([layoutRes.text(), styleRes.text()])).join("\n")
-          }`;
-          document.head.appendChild(apply);
-      })()
+        const [configRes, layoutRes, styleRes] = await Promise.all([
+                    fetch("{{ 'tailwind.config.js' | asset_url }}"),
+        fetch("{{ 'tail.layout.css' | asset_url }}"),
+        fetch("{{ 'tail.style.css' | asset_url }}")
+        ]);
+                  const text = await configRes.text()
+                  console.log({text});
+                  tailwind.config = eval(`(${
+                    text.replace("module.exports = ", "").replace("module.exports=", "").replace("};", "}")
+                  })`);
+                  const apply = document.createElement("style");
+                  apply.setAttribute("type", "text/tailwindcss");
+                  apply.innerHTML = `${
+                    (await Promise.all([layoutRes.text(), styleRes.text()])).join("\n")
+                  }`;
+                  document.head.appendChild(apply);
+              })()
       </script>
 
       <script src="{{ 'tail.js' | asset_url }}" preload></script>

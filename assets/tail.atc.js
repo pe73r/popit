@@ -105,8 +105,7 @@ defineCustomElement(
           openSideCart();
         }, 1);
       }
-      
-      reRenderBundleProduct();
+
       this.toggleLoading(false);
     };
   }
