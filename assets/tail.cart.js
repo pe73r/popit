@@ -12,7 +12,7 @@ window.fetch = new Proxy(window.fetch, {
         const isGiftCard = (item) => {
           return (
             (item.title.toLowerCase().includes("carte") && item.title.toLowerCase().includes("cadeau")) ||
-            item.properties.is === "free"
+            item.properties?.is === "free"
           );
         };
         const { items } = await (await fetch("/cart.js")).json();
@@ -261,7 +261,6 @@ const getCart = async () => {
   return (await fetch("/cart.js")).json();
 };
 
-
 const getCartPrice = () => {
   let bundle_price = document.querySelector('tail-side-cart [data-bb-selector="bb-price"]');
   const { total } = JSON.parse(document.querySelector("#cart-progress").innerHTML);
@@ -282,7 +281,8 @@ const getCartPrice = () => {
     return cart_total_price;
   } else {
     return total / 100;
-}
+  }
+};
 const reRenderBundleProduct = () => {
   setTimeout(() => {
     const price = getCartPrice();
