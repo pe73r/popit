@@ -15,7 +15,7 @@
           "type": "category_1",
           "settings": {
             "question": "Comment suivre mon colis ?",
-            "answer": "<p>Lorsque votre colis sera expédié et pris en charge par le transporteur, <strong>vous recevrez un mail contenant un lien de suivi pour savoir où est votre commande<\/strong>. Vous pouvez aussi suivre votre commande à tout moment en <strong>cliquant ici<\/strong>.<\/p>"
+            "answer": "<p>Lorsque votre colis sera expédié et pris en charge par le transporteur, <strong>vous recevrez un mail contenant un lien de suivi pour savoir où est votre commande<\/strong>. Vous pouvez aussi suivre votre commande à tout moment en <a href=\"https:\/\/track.bigblue.co\/pop-it\" title=\"https:\/\/track.bigblue.co\/pop-it\"><strong>cliquant ici<\/strong><\/a>.<\/p>"
           }
         },
         "8474b469-f201-4a4f-afff-6df338d8a35e": {
