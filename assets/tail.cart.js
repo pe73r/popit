@@ -219,6 +219,7 @@ const reRenderBundleProduct = () => {
         cart_price = document.querySelector('tail-side-cart side-cart-footer [data-cart-indicator]').innerText.replace("€", "").replace(",", ".").trim(),
         cart_total_price = parseFloat(cart_price - (16.98 * bundle_number) + parseFloat(bundle_price.innerText.replace("€", "").replace(",", ".").trim(), 2), 2).toFixed(2);
 
+        console.log(cart_price, 16.98 * bundle_number, parseFloat(bundle_price.innerText.replace("€", "").replace(",", ".").trim(), 2))
         console.log(`${cart_total_price.toString().replace('.', ',')}€`)
     document.querySelector('side-cart-footer [data-cart-indicator]').innerText = `${cart_total_price.toString().replace('.', ',')}€`;
   }
