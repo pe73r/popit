@@ -38,10 +38,10 @@
       "type": "rich-text-expandable",
       "settings": {
         "text_color": "#4b9b7d",
-        "title": "Prendre soin de toute sa famille n'est pas évident.",
-        "text": "<p>Marre d'avoir à passer commande dans <\/p>",
+        "title": "Y'a t'il quelque chose qui rende plus heureux que de prendre soin de celles et ceux que vous aimez ?",
+        "text": "<p>C'est aussi ce qu'on pense ! La nutrition est souvent complexe et ennuyeuse. Nous avons choisi de la rendre plus simple et fun pour vous aider à prendre soin d'eux de l'intérieur. <\/p>",
         "more_text": "",
-        "text_mobile": "<p>Pop it simplifie et égaye la nutrition pour vous aider à prendre soin de vous et de toute votre famille.<\/p>",
+        "text_mobile": "",
         "more_text_mobile": "",
         "text_link": "",
         "text_less": ""
