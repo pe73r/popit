@@ -41,6 +41,7 @@
       ],
       "settings": {
         "section_style": "default",
+        "image": "shopify:\/\/shop_images\/easy-peasy-gelules-sommeil.png",
         "title": "Y a-t-il quelque chose qui rende plus heureux que de prendre soin de celles et ceux qu'on aime ?",
         "subtitle": "<p>C'est aussi ce qu'on pense ! Leur bien-être passe par une bonne nutrition. Mais elle est souvent complexe, individualisée et ennuyeuse. Nous avons choisi de la rendre plus simple et fun pour vous aider à prendre soin des vôtres de l'intérieur. <\/p>",
         "cta": "",
@@ -474,7 +475,7 @@
         "be732546-4546-420d-bbe4-2c9498394ebe": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/muscle-gelule_7ac82139-b9bf-4c31-895d-85953b87861e.png",
+            "image": "shopify:\/\/shop_images\/muscle-gelule_3d5993ca-fb21-4cdb-9af1-b6f9634d5fa5.png",
             "subheading": "Pour des muscles d'acier et un boost de tonus",
             "heading": "Sport",
             "url": "shopify:\/\/collections\/sport"
