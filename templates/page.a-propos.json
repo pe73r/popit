@@ -42,7 +42,7 @@
       "settings": {
         "section_style": "default",
         "title": "Y a-t-il quelque chose qui rende plus heureux que de prendre soin de celles et ceux qu'on aime ?",
-        "subtitle": "<p>C'est aussi ce qu'on pense ! <\/p><p>La nutrition est souvent complexe, individualisée et ennuyeuse. Nous avons choisi de la rendre plus simple et fun pour vous aider à prendre soin d'eux de l'intérieur. <\/p>",
+        "subtitle": "<p>C'est aussi ce qu'on pense ! La nutrition est souvent complexe, individualisée et ennuyeuse. Nous avons choisi de la rendre plus simple et fun pour vous aider à prendre soin d'eux de l'intérieur. <\/p>",
         "cta": "",
         "ctaLink": "",
         "bg_color": "#fff",
@@ -427,8 +427,9 @@
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-0": {
           "type": "image",
           "settings": {
-            "subheading": "Slide title",
-            "heading": "Tell your story",
+            "image": "shopify:\/\/shop_images\/sommeil-gelule-v2.svg",
+            "subheading": "Pour des nuits calmes et reposantes",
+            "heading": "Sommeil",
             "url": ""
           }
         },
