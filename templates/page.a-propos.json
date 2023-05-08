@@ -445,17 +445,27 @@
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-2": {
           "type": "image",
           "settings": {
-            "subheading": "Slide title",
-            "heading": "Tell your story",
+            "image": "shopify:\/\/shop_images\/stress-gelule_bb01b68c-0cce-4ee8-b804-ecaa12354300.png",
+            "subheading": "Pour un esprit apaisé dans un corps sain",
+            "heading": "Stress",
             "url": ""
           }
         },
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-3": {
           "type": "image",
           "settings": {
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
+            "image": "shopify:\/\/shop_images\/beaute-gummies_e5f62aa1-738d-4a75-851c-3829dd73f8f2.png",
+            "subheading": "Pour une apparence sublimée de la tête aux pieds",
+            "heading": "Beauté",
+            "url": "shopify:\/\/collections\/beaute"
+          }
+        },
+        "0ee1cf55-b2c0-42be-bc4d-cc6c9b75f3bf": {
+          "type": "image",
+          "settings": {
+            "subheading": "Pour des petits aventuriers en plein croissance",
+            "heading": "Kids",
+            "url": "shopify:\/\/collections\/kids"
           }
         }
       },
@@ -463,7 +473,8 @@
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-0",
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-1",
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-2",
-        "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-3"
+        "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-3",
+        "0ee1cf55-b2c0-42be-bc4d-cc6c9b75f3bf"
       ],
       "settings": {
         "subheading": "",
