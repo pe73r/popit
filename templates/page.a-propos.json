@@ -38,7 +38,7 @@
       "type": "rich-text-expandable",
       "settings": {
         "text_color": "#4b9b7d",
-        "title": "Y'a t'il quelque chose qui rende plus heureux que de prendre soin de celles et ceux que vous aimez ?",
+        "title": "Y a-t-il quelque chose qui rende plus heureux que de prendre soin de celles et ceux que vous aimez ?",
         "text": "<p>C'est aussi ce qu'on pense ! La nutrition est souvent complexe, individualisée et ennuyeuse. Nous avons choisi de la rendre plus simple et fun pour vous aider à prendre soin d'eux de l'intérieur. <\/p>",
         "more_text": "",
         "text_mobile": "",
@@ -398,7 +398,7 @@
         "hide_image_mobile": false,
         "subtitle": "",
         "title": "Réalisez tous vos achats en un seul endroit !",
-        "text": "<p>Gélules, gummies, protéines végétales, barres de céréales, mélanges de noix et fruits secs... <\/p>",
+        "text": "<p><a href=\"\/collections\/gelules\" title=\"Gélules\">Gélules<\/a>, <a href=\"\/collections\/gummies\" title=\"Gummies\">gummies<\/a>, protéines végétales, barres de céréales, mélanges de noix et fruits secs... Retrouvez tous vos produits bien-être préférés dans notre boutique pour des achats pratiques sans faire exploser les frais de livraison. Vous aimeriez trouver un nouveau produit dans la gamme Pop it ? <a href=\"\/pages\/contact\" title=\"Contact\"><em><strong>Envoyez-nous un message en cliquant ici<\/strong><\/em><\/a> pour le développer avec nous !<\/p>",
         "subtitle_color": "#4B9B7D",
         "title_color": "#4B9B7D",
         "text_color": "#201a1c"
