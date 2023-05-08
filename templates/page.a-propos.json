@@ -391,22 +391,6 @@
         "background_color": "#4b9b7d"
       }
     },
-    "95996d9f-5db8-473b-9ff5-e00c701b69b9": {
-      "type": "image-text",
-      "settings": {
-        "layout": "image_right",
-        "content": "row",
-        "text_align": "left",
-        "image": "shopify:\/\/shop_images\/Pilulier-sans-BPA-4-compartiments-a-emporter-partout-valeurs-partage-famille-gelules-gummies.png",
-        "hide_image_mobile": false,
-        "subtitle": "",
-        "title": "Réalisez tous vos achats en un seul endroit !",
-        "text": "<p><a href=\"\/collections\/gelules\" title=\"Gélules\">Gélules<\/a>, <a href=\"\/collections\/gummies\" title=\"Gummies\">gummies<\/a>, protéines végétales, barres de céréales, mélanges de noix et fruits secs... Retrouvez tous vos produits bien-être préférés dans notre boutique pour des achats pratiques sans faire exploser les frais de livraison. Vous aimeriez trouver un nouveau produit dans la gamme Pop it ? <a href=\"\/pages\/contact\" title=\"Contact\"><em><strong>Envoyez-nous un message en cliquant ici<\/strong><\/em><\/a> pour le développer avec nous !<\/p>",
-        "subtitle_color": "#4B9B7D",
-        "title_color": "#4B9B7D",
-        "text_color": "#201a1c"
-      }
-    },
     "b31d03a7-5c7b-4471-910e-52781b6ff00a": {
       "type": "image-text",
       "settings": {
@@ -418,6 +402,22 @@
         "subtitle": "",
         "title": "Pour chaque besoin, il y a un produit Pop it.",
         "text": "<p>Nous vous accompagnons à chaque étape de votre vie et de celles de tous les membres de votre famille. Découvrez nos gammes spécialement conçues pour vous aider à trouver le produit idéal, toujours avec le sourire et beaucoup de plaisir ! <\/p>",
+        "subtitle_color": "#4B9B7D",
+        "title_color": "#4B9B7D",
+        "text_color": "#201a1c"
+      }
+    },
+    "95996d9f-5db8-473b-9ff5-e00c701b69b9": {
+      "type": "image-text",
+      "settings": {
+        "layout": "image_right",
+        "content": "row",
+        "text_align": "left",
+        "image": "shopify:\/\/shop_images\/Pilulier-sans-BPA-4-compartiments-a-emporter-partout-valeurs-partage-famille-gelules-gummies.png",
+        "hide_image_mobile": false,
+        "subtitle": "",
+        "title": "Réalisez tous vos achats en un seul endroit !",
+        "text": "<p><a href=\"\/collections\/gelules\" title=\"Gélules\">Gélules<\/a>, <a href=\"\/collections\/gummies\" title=\"Gummies\">gummies<\/a>, protéines végétales, barres de céréales, mélanges de noix et fruits secs... Retrouvez tous vos produits bien-être préférés dans notre boutique pour des achats pratiques sans faire exploser les frais de livraison. Vous aimeriez trouver un nouveau produit dans la gamme Pop it ? <a href=\"\/pages\/contact\" title=\"Contact\"><em><strong>Envoyez-nous un message en cliquant ici<\/strong><\/em><\/a> pour le développer avec nous !<\/p>",
         "subtitle_color": "#4B9B7D",
         "title_color": "#4B9B7D",
         "text_color": "#201a1c"
@@ -545,8 +545,8 @@
     "18ec92f4-2d90-481c-89cc-71f212687aaf",
     "b003d11a-d952-4bc9-b050-a566fd4dd43a",
     "ae3769ef-ff11-413d-aaba-d47d91676da1",
-    "95996d9f-5db8-473b-9ff5-e00c701b69b9",
     "b31d03a7-5c7b-4471-910e-52781b6ff00a",
+    "95996d9f-5db8-473b-9ff5-e00c701b69b9",
     "4992ea25-8bff-4aae-80c5-2981ae60999b",
     "42b80c11-5dbf-47fd-928d-500b27225a50",
     "14731136-8a77-4b1a-9098-807dc822a1ba"
