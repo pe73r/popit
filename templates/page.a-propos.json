@@ -39,7 +39,7 @@
       "settings": {
         "text_color": "#4b9b7d",
         "title": "Y'a t'il quelque chose qui rende plus heureux que de prendre soin de celles et ceux que vous aimez ?",
-        "text": "<p>C'est aussi ce qu'on pense ! La nutrition est souvent complexe et ennuyeuse. Nous avons choisi de la rendre plus simple et fun pour vous aider à prendre soin d'eux de l'intérieur. <\/p>",
+        "text": "<p>C'est aussi ce qu'on pense ! La nutrition est souvent complexe, individualisée et ennuyeuse. Nous avons choisi de la rendre plus simple et fun pour vous aider à prendre soin d'eux de l'intérieur. <\/p>",
         "more_text": "",
         "text_mobile": "",
         "more_text_mobile": "",
@@ -123,6 +123,7 @@
     },
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14": {
       "type": "banner-intro",
+      "disabled": true,
       "settings": {
         "section_style": "boxed",
         "image": "shopify:\/\/shop_images\/RANGEMENT-GUMMIES-FR.jpg",
@@ -136,6 +137,7 @@
     },
     "d66c9067-282e-4348-806d-e32291e3a192": {
       "type": "products-carousel",
+      "disabled": true,
       "settings": {
         "container": "7xl",
         "collection": "gummies",
@@ -150,6 +152,7 @@
     },
     "44d0ac1a-7a6f-45b2-b456-e2ea918cff59": {
       "type": "marquee",
+      "disabled": true,
       "blocks": {
         "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-0": {
           "type": "text",
@@ -223,6 +226,7 @@
     },
     "7e8538e0-4af4-4228-be79-2b167620fb1b": {
       "type": "banner-intro",
+      "disabled": true,
       "settings": {
         "section_style": "boxed",
         "image": "shopify:\/\/shop_images\/RANGEMENT-GELULES-FR.jpg",
@@ -236,6 +240,7 @@
     },
     "3dfba5a7-c12e-4b15-84b2-b12beb042642": {
       "type": "products-carousel",
+      "disabled": true,
       "settings": {
         "container": "7xl",
         "collection": "gelules",
@@ -250,6 +255,7 @@
     },
     "12d3a672-9a68-4fb7-8689-8c334aa319ee": {
       "type": "marquee",
+      "disabled": true,
       "blocks": {
         "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-0": {
           "type": "text",
@@ -313,6 +319,7 @@
     },
     "18ec92f4-2d90-481c-89cc-71f212687aaf": {
       "type": "banner-intro",
+      "disabled": true,
       "settings": {
         "section_style": "boxed",
         "title": "Des accessoires pour simplifier votre quotidien.",
@@ -325,6 +332,7 @@
     },
     "b003d11a-d952-4bc9-b050-a566fd4dd43a": {
       "type": "products-carousel",
+      "disabled": true,
       "settings": {
         "container": "7xl",
         "collection": "accessoires",
@@ -339,6 +347,7 @@
     },
     "ae3769ef-ff11-413d-aaba-d47d91676da1": {
       "type": "marquee",
+      "disabled": true,
       "blocks": {
         "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-0": {
           "type": "text",
@@ -380,10 +389,19 @@
         "background_color": "#4b9b7d"
       }
     },
-    "625cf8d8-3ae6-498e-a090-c4c74decec15": {
-      "type": "image-banner",
+    "95996d9f-5db8-473b-9ff5-e00c701b69b9": {
+      "type": "image-text",
       "settings": {
-        "container": "full"
+        "layout": "image_right",
+        "content": "row",
+        "text_align": "left",
+        "hide_image_mobile": false,
+        "subtitle": "",
+        "title": "Réalisez tous vos achats en un seul endroit !",
+        "text": "<p>Gélules, gummies, protéines végétales, barres de céréales, mélanges de noix et fruits secs... <\/p>",
+        "subtitle_color": "#4B9B7D",
+        "title_color": "#4B9B7D",
+        "text_color": "#201a1c"
       }
     }
   },
@@ -402,6 +420,6 @@
     "18ec92f4-2d90-481c-89cc-71f212687aaf",
     "b003d11a-d952-4bc9-b050-a566fd4dd43a",
     "ae3769ef-ff11-413d-aaba-d47d91676da1",
-    "625cf8d8-3ae6-498e-a090-c4c74decec15"
+    "95996d9f-5db8-473b-9ff5-e00c701b69b9"
   ]
 }
