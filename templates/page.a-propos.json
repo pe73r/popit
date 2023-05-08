@@ -486,6 +486,23 @@
         "show_arrows": true,
         "show_dots": true
       }
+    },
+    "14731136-8a77-4b1a-9098-807dc822a1ba": {
+      "type": "featured-blog-carousel",
+      "disabled": true,
+      "settings": {
+        "blog": "infos",
+        "post_limit": 4,
+        "show_dots": true,
+        "heading": "À LIRE...",
+        "color": "#4b9b7d",
+        "show_title": true,
+        "show_tag": true,
+        "show_content": true,
+        "show_author": false,
+        "show_date": true,
+        "show_button": true
+      }
     }
   },
   "order": [
@@ -506,6 +523,7 @@
     "95996d9f-5db8-473b-9ff5-e00c701b69b9",
     "b31d03a7-5c7b-4471-910e-52781b6ff00a",
     "4992ea25-8bff-4aae-80c5-2981ae60999b",
-    "42b80c11-5dbf-47fd-928d-500b27225a50"
+    "42b80c11-5dbf-47fd-928d-500b27225a50",
+    "14731136-8a77-4b1a-9098-807dc822a1ba"
   ]
 }
