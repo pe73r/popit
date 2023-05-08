@@ -465,11 +465,25 @@
       ],
       "settings": {
         "subheading": "",
-        "title": "",
+        "title": "Nos gammes",
         "show_arrows": true,
         "show_dots": true,
         "color": "#4B9B7D",
         "background_color": "#e3f2ed"
+      }
+    },
+    "42b80c11-5dbf-47fd-928d-500b27225a50": {
+      "type": "products-carousel",
+      "settings": {
+        "container": "7xl",
+        "collection": "frontpage",
+        "title": "Tous nos produits",
+        "limit": 6,
+        "show_secondary_image": false,
+        "show_quantity": false,
+        "show_cta": true,
+        "show_arrows": true,
+        "show_dots": true
       }
     }
   },
@@ -490,6 +504,7 @@
     "ae3769ef-ff11-413d-aaba-d47d91676da1",
     "95996d9f-5db8-473b-9ff5-e00c701b69b9",
     "b31d03a7-5c7b-4471-910e-52781b6ff00a",
-    "4992ea25-8bff-4aae-80c5-2981ae60999b"
+    "4992ea25-8bff-4aae-80c5-2981ae60999b",
+    "42b80c11-5dbf-47fd-928d-500b27225a50"
   ]
 }
