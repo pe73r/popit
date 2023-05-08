@@ -419,49 +419,6 @@
         "text_color": "#201a1c"
       }
     },
-    "390e8d34-f616-4540-8755-d26ad169b3f1": {
-      "type": "images-grid",
-      "blocks": {
-        "template--18292260241702__390e8d34-f616-4540-8755-d26ad169b3f1-1683543596de36b2ce-0": {
-          "type": "block",
-          "settings": {
-            "image-product": "shopify:\/\/shop_images\/vitamines-soleil-gummies.svg"
-          }
-        },
-        "template--18292260241702__390e8d34-f616-4540-8755-d26ad169b3f1-1683543596de36b2ce-1": {
-          "type": "block",
-          "settings": {
-            "image-product": "shopify:\/\/shop_images\/muscle-gelule_7ac82139-b9bf-4c31-895d-85953b87861e.png"
-          }
-        },
-        "template--18292260241702__390e8d34-f616-4540-8755-d26ad169b3f1-1683543596de36b2ce-2": {
-          "type": "block",
-          "settings": {
-          }
-        },
-        "template--18292260241702__390e8d34-f616-4540-8755-d26ad169b3f1-1683543596de36b2ce-3": {
-          "type": "block",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "template--18292260241702__390e8d34-f616-4540-8755-d26ad169b3f1-1683543596de36b2ce-0",
-        "template--18292260241702__390e8d34-f616-4540-8755-d26ad169b3f1-1683543596de36b2ce-1",
-        "template--18292260241702__390e8d34-f616-4540-8755-d26ad169b3f1-1683543596de36b2ce-2",
-        "template--18292260241702__390e8d34-f616-4540-8755-d26ad169b3f1-1683543596de36b2ce-3"
-      ],
-      "settings": {
-        "subtitle": "SUBTITLE",
-        "header": "HEADING",
-        "image": "shopify:\/\/shop_images\/Pop_it_Nutrition_43109341-0880-4789-9a45-e5719f7bbe4c.jpg",
-        "link_url": "",
-        "link": "Voir toute la gamme",
-        "bg-color": "#E8E2DB",
-        "subtitle-color": "#FFFFFF",
-        "header-color": "#FFFFFF"
-      }
-    },
     "4992ea25-8bff-4aae-80c5-2981ae60999b": {
       "type": "collection-list-carousel",
       "blocks": {
@@ -510,7 +467,7 @@
         "show_arrows": true,
         "show_dots": true,
         "color": "#4B9B7D",
-        "background_color": "#FAF5EF"
+        "background_color": "#e3f2ed"
       }
     }
   },
@@ -531,7 +488,6 @@
     "ae3769ef-ff11-413d-aaba-d47d91676da1",
     "95996d9f-5db8-473b-9ff5-e00c701b69b9",
     "b31d03a7-5c7b-4471-910e-52781b6ff00a",
-    "390e8d34-f616-4540-8755-d26ad169b3f1",
     "4992ea25-8bff-4aae-80c5-2981ae60999b"
   ]
 }
