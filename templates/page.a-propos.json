@@ -14,7 +14,7 @@
         "5daac023-9716-45e7-b58f-c74f96396acb": {
           "type": "video",
           "settings": {
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d8500a4a52b84f4c89d1a213b79ca3eb.webm",
+            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e546c126e1d7485d9f0fc885561f9f82.mp4",
             "title": "Pop it simplifie et égaye la nutrition pour vous aider<br> à prendre soin de vous et de toute votre famille.",
             "title_mobile": "Pop it simplifie et égaye la nutrition pour vous aider<br> à prendre soin de vous et de toute votre famille.",
             "text": "",
@@ -30,7 +30,8 @@
         "5daac023-9716-45e7-b58f-c74f96396acb"
       ],
       "settings": {
-        "show_dots": false
+        "show_dots": false,
+        "gradient": true
       }
     },
     "d327bd19-8143-4592-baa0-70d5aa79704b": {
@@ -140,8 +141,6 @@
         "collection": "gummies",
         "title": "",
         "limit": 6,
-        "collection_2": "",
-        "limit_2": 6,
         "show_secondary_image": false,
         "show_quantity": false,
         "show_cta": true,
@@ -242,8 +241,6 @@
         "collection": "gelules",
         "title": "",
         "limit": 6,
-        "collection_2": "",
-        "limit_2": 6,
         "show_secondary_image": false,
         "show_quantity": false,
         "show_cta": true,
@@ -333,8 +330,6 @@
         "collection": "accessoires",
         "title": "Accessoires",
         "limit": 6,
-        "collection_2": "",
-        "limit_2": 6,
         "show_secondary_image": false,
         "show_quantity": false,
         "show_cta": true,
@@ -388,7 +383,6 @@
     "625cf8d8-3ae6-498e-a090-c4c74decec15": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Sans_titre_cd3ffead-8d8d-47ac-8e3b-909d97b9aac6.png",
         "container": "full"
       }
     }
