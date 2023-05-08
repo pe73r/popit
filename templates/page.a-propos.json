@@ -427,18 +427,18 @@
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sommeil-gelule-v2.svg",
+            "image": "shopify:\/\/shop_images\/sommeil-gelule-v2_70e6d86e-2ed9-4b24-b1b8-7b65a67ef3e1.png",
             "subheading": "Pour des nuits calmes et reposantes",
             "heading": "Sommeil",
-            "url": ""
+            "url": "shopify:\/\/collections\/sommeil"
           }
         },
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-1": {
           "type": "image",
           "settings": {
-            "subheading": "Slide title",
-            "heading": "Tell your story",
-            "url": ""
+            "subheading": "Pour une forme olympique toute l'année",
+            "heading": "Énergie & Immunité",
+            "url": "shopify:\/\/collections\/energie"
           }
         },
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-2": {
@@ -469,7 +469,7 @@
         "title": "Nos gammes",
         "show_arrows": true,
         "show_dots": true,
-        "color": "#4B9B7D",
+        "color": "#201a1c",
         "background_color": "#e3f2ed"
       }
     },
