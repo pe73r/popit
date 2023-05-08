@@ -34,17 +34,16 @@
         "gradient": true
       }
     },
-    "d327bd19-8143-4592-baa0-70d5aa79704b": {
-      "type": "rich-text-expandable",
+    "4d305d9e-9942-4918-8b40-41f3774e586d": {
+      "type": "banner-intro",
       "settings": {
-        "text_color": "#4b9b7d",
+        "section_style": "default",
         "title": "Y a-t-il quelque chose qui rende plus heureux que de prendre soin de celles et ceux que vous aimez ?",
-        "text": "<p>C'est aussi ce qu'on pense ! La nutrition est souvent complexe, individualisée et ennuyeuse. Nous avons choisi de la rendre plus simple et fun pour vous aider à prendre soin d'eux de l'intérieur. <\/p>",
-        "more_text": "",
-        "text_mobile": "",
-        "more_text_mobile": "",
-        "text_link": "",
-        "text_less": ""
+        "subtitle": "<p>C'est aussi ce qu'on pense ! La nutrition est souvent complexe, individualisée et ennuyeuse. Nous avons choisi de la rendre plus simple et fun pour vous aider à prendre soin d'eux de l'intérieur. <\/p>",
+        "cta": "",
+        "ctaLink": "",
+        "bg_color": "#fff",
+        "color": "#4b9b7d"
       }
     },
     "c3651bbc-c24a-44d2-a7b1-9bac325ddff1": {
@@ -474,7 +473,7 @@
   "order": [
     "main",
     "5410ab4a-cd77-485d-9749-df7116ef3979",
-    "d327bd19-8143-4592-baa0-70d5aa79704b",
+    "4d305d9e-9942-4918-8b40-41f3774e586d",
     "c3651bbc-c24a-44d2-a7b1-9bac325ddff1",
     "53567e68-79a9-4e38-b4c7-29553918d1c0",
     "c5d2fd81-eed4-4da0-bcf7-be7a38c0ee14",
