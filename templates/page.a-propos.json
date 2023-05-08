@@ -36,14 +36,17 @@
     },
     "4d305d9e-9942-4918-8b40-41f3774e586d": {
       "type": "banner-intro",
+      "custom_css": [
+
+      ],
       "settings": {
         "section_style": "default",
-        "title": "Y a-t-il quelque chose qui rende plus heureux que de prendre soin de celles et ceux que vous aimez ?",
+        "title": "Y a-t-il quelque chose qui rende plus heureux que de prendre soin de celles et ceux qu'on aime ?",
         "subtitle": "<p>C'est aussi ce qu'on pense ! La nutrition est souvent complexe, individualisée et ennuyeuse. Nous avons choisi de la rendre plus simple et fun pour vous aider à prendre soin d'eux de l'intérieur. <\/p>",
         "cta": "",
         "ctaLink": "",
         "bg_color": "#fff",
-        "color": "#4b9b7d"
+        "color": "#201a1c"
       }
     },
     "c3651bbc-c24a-44d2-a7b1-9bac325ddff1": {
