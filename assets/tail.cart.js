@@ -157,6 +157,7 @@ const updateCartProgress = async () => {
   bar.style.transform = `scaleX(${percentage}%)`;
   barCart.style.left = `${percentage - 5}%`;
   barText.textContent = text;
+  return "ok";
 };
 
 window.fetch = new Proxy(window.fetch, {
@@ -177,11 +178,9 @@ window.fetch = new Proxy(window.fetch, {
     return result;
   }
 });
-document.addEventListener("DOMContentLoaded", () => {
+window.updateCartProgress = updateCartProgress;
+updateCartProgress().then(() => {
   console.log("cart updated");
-  updateCartProgress().then(() => {
-    console.log("cart updated");
-  });
 });
 
 const spinnerHtml = (height) => /*HTML */ `
