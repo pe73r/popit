@@ -36,18 +36,17 @@
                   </div>
                 {% endif %}
 
-                <!-- PRICE -->
                 <div class="text-xs mb-1">
-                  {% if product.compare_at_price == nil %}
+                  {% if product.first_available_variant.compare_at_price == nil %}
                     <span class="font-semibold text-base">
-                      {{ product.price | money_with_currency }}
+                      {{ product.first_available_variant.price | money_with_currency }}
                     </span>
                   {% else %}
                     <span class="line-through text-sm text-gray-400">
-                      {{ product.compare_at_price | money_with_currency }}
+                      {{ product.first_available_variant.compare_at_price | money_with_currency }}
                     </span>
                     <span class="font-semibold text-base ml-1">
-                      {{ product.price | money_with_currency }}
+                      {{ product.first_available_variant.price | money_with_currency }}
                     </span>
                   {% endif %}
                 </div>
