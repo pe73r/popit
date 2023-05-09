@@ -177,8 +177,10 @@ window.fetch = new Proxy(window.fetch, {
     return result;
   }
 });
-document.addEventListener("DOMContentLoaded", async () => {
-  await updateCartProgress();
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartProgress().then(() => {
+    console.log("cart updated");
+  });
 });
 
 const spinnerHtml = (height) => /*HTML */ `
