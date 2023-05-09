@@ -178,6 +178,7 @@ window.fetch = new Proxy(window.fetch, {
   }
 });
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("cart updated");
   updateCartProgress().then(() => {
     console.log("cart updated");
   });
