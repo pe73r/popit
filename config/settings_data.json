@@ -413,7 +413,7 @@
           "show_payment_icons": true,
           "show_follow_order": true,
           "follow_button": "Suivre ma commande",
-          "follow_button_url": "",
+          "follow_button_url": "https:\/\/track.bigblue.co\/pop-it",
           "bg_color": "#e3f2ed",
           "color": "#4b9b7d"
         }
