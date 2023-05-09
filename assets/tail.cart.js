@@ -1,3 +1,164 @@
+const updateCartProgress = async () => {
+  const isGiftCard = (item) => {
+    return (
+      (item.title.toLowerCase().includes("carte") && item.title.toLowerCase().includes("cadeau")) ||
+      item.properties?.is === "free"
+    );
+  };
+  const { items } = await (await fetch("/cart.js")).json();
+
+  const giftCardsPrice = items.reduce((acc, item) => (acc += !isGiftCard(item) ? 0 : item.final_line_price), 0);
+  const total_price = getCartPrice() * 100 - giftCardsPrice;
+
+  console.log({ giftCardsPrice, total_price });
+
+  const isOnlyGift = items.every((item) => {
+    return isGiftCard(item);
+  });
+
+  // const steps = [
+  //   [40379966455878, 6900]
+  //   // [40167046512710, 10000],
+  // ];
+
+  /**
+   * @typedef {Object} QuantityRule
+   * @property {number} min
+   * @property {?number} max
+   * @property {number} increment
+   */
+
+  /**
+   * @typedef {Object} Variant
+   * @property {number} id
+   * @property {string} title
+   * @property {string} option1
+   * @property {?string} option2
+   * @property {?string} option3
+   * @property {string} sku
+   * @property {boolean} requires_shipping
+   * @property {boolean} taxable
+   * @property {?Object} featured_image
+   * @property {boolean} available
+   * @property {string} name
+   * @property {?string} public_title
+   * @property {string[]} options
+   * @property {number} price
+   * @property {number} weight
+   * @property {?number} compare_at_price
+   * @property {string} inventory_management
+   * @property {string} barcode
+   * @property {QuantityRule} quantity_rule
+   */
+
+  /**
+   * @typedef {Object} Step
+   * @property {number} amount
+   * @property {string} product_title
+   * @property {?Variant[]} variants
+   * @property {string} textBefore
+   * @property {string} textAfter
+   */
+
+  /**
+   * @typedef {Object} CartConfig
+   * @property {Step[]} steps
+   * @property {number} firstStep
+   * @property {number} lastStep
+   * @property {number} stepWidth
+   */
+
+  /** @type {CartConfig} */
+  const { steps } = JSON.parse(document.getElementById("cart-progress").textContent);
+  console.log({ steps });
+
+  const hasFreeItem = (id) => {
+    return items.some((item) => item.variant_id === id && item.properties.is === "free");
+  };
+  const f = async (mode, data) => {
+    return (
+      await fetch(`/cart/${mode}.js`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          [mode === "add" ? "items" : "updates"]: data,
+          sections: ["side-cart"],
+          sections_url: window.location.pathname
+        })
+      })
+    ).json();
+  };
+
+  let add = [];
+  let remove = {};
+  console.log({ steps });
+  let text;
+  let percentage;
+
+  [...steps].forEach(({ amount, product_title, variants, textBefore, textAfter }) => {
+    const [{ id }] = variants || [{ id: "auto" }];
+    if (id === "auto") return;
+    if (total_price <= amount || isOnlyGift) {
+      if (hasFreeItem(id)) {
+        Object.assign(remove, { [id]: 0 });
+      }
+    } else {
+      if (!hasFreeItem(id) && !isOnlyGift) {
+        add.push({ id, properties: { is: "free" } });
+      }
+    }
+  });
+  let previousAmount = 0;
+
+  steps.forEach(({ amount, product_title, variants, textBefore, textAfter }, i) => {
+    const isLast = i === steps.length - 1;
+    console.log({ amount, product_title, variants, textBefore, textAfter, previousAmount, total_price });
+    if ((total_price >= previousAmount && total_price <= amount) || (!text && isLast)) {
+      if (total_price <= amount) {
+        const restRounded = Math.ceil((amount - total_price) / 100);
+        text = textBefore.replace("((rest))", restRounded + "€");
+      } else {
+        text = textAfter.replace("((rest))", (amount - total_price) / 100 + "€");
+      }
+      percentage = Math.round((total_price / amount) * 100);
+      if (percentage > 100) {
+        percentage = 100;
+      }
+    }
+    previousAmount = amount;
+  });
+
+  console.log({
+    text,
+    percentage
+  });
+  let fetchers = [];
+
+  if (Object.keys(remove).length > 0) {
+    fetchers.push(f("update", remove));
+  }
+  if (add.length > 0) {
+    fetchers.push(f("add", add));
+  }
+  if (fetchers.length) {
+    const [{ sections }] = await Promise.all(fetchers);
+    reRenderCartIndicators(sections);
+  }
+
+  reRenderBundleProduct();
+
+  const bar = document.querySelector("[data-side-cart-progression-bar]");
+  const barCart = document.querySelector("[data-side-cart-progression-cart]");
+  const barText = document.querySelector("[data-side-cart-progression-text]");
+
+  bar.style.transform = `scaleX(${percentage}%)`;
+  barCart.style.left = `${percentage - 5}%`;
+  barText.textContent = text;
+};
+
 window.fetch = new Proxy(window.fetch, {
   async apply(fetch, that, args) {
     const result = fetch.apply(that, args);
@@ -9,169 +170,15 @@ window.fetch = new Proxy(window.fetch, {
       const isRemove = endpoint.endsWith("/cart/remove.js");
 
       if (isUpdate || isAdd || isRemove || isChange) {
-        const isGiftCard = (item) => {
-          return (
-            (item.title.toLowerCase().includes("carte") && item.title.toLowerCase().includes("cadeau")) ||
-            item.properties?.is === "free"
-          );
-        };
-        const { items } = await (await fetch("/cart.js")).json();
-
-        const giftCardsPrice = items.reduce((acc, item) => (acc += !isGiftCard(item) ? 0 : item.final_line_price), 0);
-        const total_price = getCartPrice() * 100 - giftCardsPrice;
-
-        console.log({ giftCardsPrice, total_price });
-
-        const isOnlyGift = items.every((item) => {
-          return isGiftCard(item);
-        });
-
-        // const steps = [
-        //   [40379966455878, 6900]
-        //   // [40167046512710, 10000],
-        // ];
-
-        /**
-         * @typedef {Object} QuantityRule
-         * @property {number} min
-         * @property {?number} max
-         * @property {number} increment
-         */
-
-        /**
-         * @typedef {Object} Variant
-         * @property {number} id
-         * @property {string} title
-         * @property {string} option1
-         * @property {?string} option2
-         * @property {?string} option3
-         * @property {string} sku
-         * @property {boolean} requires_shipping
-         * @property {boolean} taxable
-         * @property {?Object} featured_image
-         * @property {boolean} available
-         * @property {string} name
-         * @property {?string} public_title
-         * @property {string[]} options
-         * @property {number} price
-         * @property {number} weight
-         * @property {?number} compare_at_price
-         * @property {string} inventory_management
-         * @property {string} barcode
-         * @property {QuantityRule} quantity_rule
-         */
-
-        /**
-         * @typedef {Object} Step
-         * @property {number} amount
-         * @property {string} product_title
-         * @property {?Variant[]} variants
-         * @property {string} textBefore
-         * @property {string} textAfter
-         */
-
-        /**
-         * @typedef {Object} CartConfig
-         * @property {Step[]} steps
-         * @property {number} firstStep
-         * @property {number} lastStep
-         * @property {number} stepWidth
-         */
-
-        /** @type {CartConfig} */
-        const { steps } = JSON.parse(document.getElementById("cart-progress").textContent);
-        console.log({ steps });
-
-        const hasFreeItem = (id) => {
-          return items.some((item) => item.variant_id === id && item.properties.is === "free");
-        };
-        const f = async (mode, data) => {
-          return (
-            await fetch(`/cart/${mode}.js`, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-              },
-              body: JSON.stringify({
-                [mode === "add" ? "items" : "updates"]: data,
-                sections: ["side-cart"],
-                sections_url: window.location.pathname
-              })
-            })
-          ).json();
-        };
-
-        let add = [];
-        let remove = {};
-        console.log({ steps });
-        let text;
-        let percentage;
-
-        [...steps].forEach(({ amount, product_title, variants, textBefore, textAfter }) => {
-          const [{ id }] = variants || [{ id: "auto" }];
-          if (id === "auto") return;
-          if (total_price <= amount || isOnlyGift) {
-            if (hasFreeItem(id)) {
-              Object.assign(remove, { [id]: 0 });
-            }
-          } else {
-            if (!hasFreeItem(id) && !isOnlyGift) {
-              add.push({ id, properties: { is: "free" } });
-            }
-          }
-        });
-        let previousAmount = 0;
-
-        steps.forEach(({ amount, product_title, variants, textBefore, textAfter }, i) => {
-          const isLast = i === steps.length - 1;
-          console.log({ amount, product_title, variants, textBefore, textAfter, previousAmount, total_price });
-          if ((total_price >= previousAmount && total_price <= amount) || (!text && isLast)) {
-            if (total_price <= amount) {
-              const restRounded = Math.ceil((amount - total_price) / 100);
-              text = textBefore.replace("((rest))", restRounded + "€");
-            } else {
-              text = textAfter.replace("((rest))", (amount - total_price) / 100 + "€");
-            }
-            percentage = Math.round((total_price / amount) * 100);
-            if (percentage > 100) {
-              percentage = 100;
-            }
-          }
-          previousAmount = amount;
-        });
-
-        console.log({
-          text,
-          percentage
-        });
-        let fetchers = [];
-
-        if (Object.keys(remove).length > 0) {
-          fetchers.push(f("update", remove));
-        }
-        if (add.length > 0) {
-          fetchers.push(f("add", add));
-        }
-        if (fetchers.length) {
-          const [{ sections }] = await Promise.all(fetchers);
-          reRenderCartIndicators(sections);
-        }
-
-        reRenderBundleProduct();
-
-        const bar = document.querySelector("[data-side-cart-progression-bar]");
-        const barCart = document.querySelector("[data-side-cart-progression-cart]");
-        const barText = document.querySelector("[data-side-cart-progression-text]");
-
-        bar.style.transform = `scaleX(${percentage}%)`;
-        barCart.style.left = `${percentage - 5}%`;
-        barText.textContent = text;
+        await updateCartProgress();
       }
     });
 
     return result;
   }
+});
+document.addEventListener("DOMContentLoaded", async () => {
+  await updateCartProgress();
 });
 
 const spinnerHtml = (height) => /*HTML */ `
