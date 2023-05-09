@@ -1,5 +1,7 @@
 {% assign exclude_product_id = 8375511548244 %}
 {% assign exclude_product_2_id = 8376899109204 %}
+
+{% unless exclude_product_id == card_product.id or exclude_product_2_id == card_product.id %}
 {%- if card_product and card_product != empty -%} 
   <div class="card-product p-1 pb-2 md:p-2 rounded-lg bg-white shadow-md">
     <a href="{{ card_product.url }}">
@@ -200,3 +202,4 @@
 
   </div>
 {%- endif -%}
+{%  endunless %}
