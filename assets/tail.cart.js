@@ -199,7 +199,7 @@ const reRenderSections = (sections, newSections) => {
       const isEmpty = document.querySelector(".empty-card") !== null;
 
       console.log({ isEmpty });
-      const selectors = ["side-cart-trigger", "side-cart-header", "side-cart-footer"];
+      const selectors = ["side-cart-trigger", "side-cart-header", "side-cart-footer", "#cart-progress"];
 
       if (isEmpty) {
         selectors.push("side-cart-content");
