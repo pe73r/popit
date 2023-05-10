@@ -10,6 +10,7 @@
               {% if section.settings.card-product == "inline" %}
                   {% render 'card-product-inline',
                   card_product: recommendation,
+                  product: recommendation,
                   media_aspect_ratio: section.settings.image_ratio,
                   show_secondary_image: section.settings.show_secondary_image,
                   show_vendor: section.settings.show_vendor,
@@ -20,6 +21,7 @@
              {% else %}
                 {% render 'card-product',
                     card_product: recommendation,
+                    product: recommendation,
                     media_aspect_ratio: section.settings.image_ratio,
                     show_secondary_image: section.settings.show_secondary_image,
                     show_vendor: section.settings.show_vendor,
