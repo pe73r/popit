@@ -1,3 +1,24 @@
+<script>
+
+  const queryParam = window.location.search;
+  console.log("hello");
+
+  const urlParams = new URLSearchParams(queryParam);
+  const tab = urlParams.get('tab');
+  console.log(tab, urlParams)
+  if (tab) {
+    setTimeout(() => {
+      const tabButtons = document.querySelectorAll(`[data-tab-index="${tab}"][data-tab-id]`);
+      console.log({tabButtons});
+      if (tabButtons) {
+        tabButtons.forEach((tabButton) => {
+          tabButton.click();
+        })
+      }
+    }, 0);
+  }
+</script>
+
 {% assign s = section.settings %}
 
   <section class="py-10 w-11/12 max-w-[1120px] m-auto">

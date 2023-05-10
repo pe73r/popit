@@ -10,8 +10,6 @@ const updateCartProgress = async () => {
   const giftCardsPrice = items.reduce((acc, item) => (acc += !isGiftCard(item) ? 0 : item.final_line_price), 0);
   const total_price = getCartPrice() * 100 - giftCardsPrice;
 
-  console.log({ giftCardsPrice, total_price });
-
   const isOnlyGift = items.every((item) => {
     return isGiftCard(item);
   });
@@ -70,7 +68,6 @@ const updateCartProgress = async () => {
 
   /** @type {CartConfig} */
   const { steps } = JSON.parse(document.getElementById("cart-progress").textContent);
-  console.log({ steps });
 
   const hasFreeItem = (id) => {
     return items.some((item) => item.variant_id === id && item.properties.is === "free");
@@ -94,7 +91,7 @@ const updateCartProgress = async () => {
 
   let add = [];
   let remove = {};
-  console.log({ steps });
+
   let text;
   let percentage;
 
@@ -115,7 +112,7 @@ const updateCartProgress = async () => {
 
   steps.forEach(({ amount, product_title, variants, textBefore, textAfter }, i) => {
     const isLast = i === steps.length - 1;
-    console.log({ amount, product_title, variants, textBefore, textAfter, previousAmount, total_price });
+
     if ((total_price >= previousAmount && total_price <= amount) || (!text && isLast)) {
       if (total_price <= amount) {
         const restRounded = Math.ceil((amount - total_price) / 100);
@@ -131,10 +128,6 @@ const updateCartProgress = async () => {
     previousAmount = amount;
   });
 
-  console.log({
-    text,
-    percentage
-  });
   let fetchers = [];
 
   if (Object.keys(remove).length > 0) {
@@ -198,7 +191,6 @@ const reRenderSections = (sections, newSections) => {
     if (section === "side-cart") {
       const isEmpty = document.querySelector(".empty-card") !== null;
 
-      console.log({ isEmpty });
       const selectors = ["side-cart-trigger", "side-cart-header", "side-cart-footer", "#cart-progress"];
 
       if (isEmpty) {
@@ -210,7 +202,7 @@ const reRenderSections = (sections, newSections) => {
       selectors.forEach((selector) => {
         const element = document.querySelector(`${selector}`);
         const newElement = newDom.querySelector(selector);
-        console.log(selector, element, newElement);
+
         if (element && newElement) {
           document.querySelector(`${selector}`).innerHTML = newElement.innerHTML;
         }
@@ -451,11 +443,8 @@ window.customElements.define(
   class TPB extends HTMLElement {
     constructor() {
       super();
-      console.log("mounted");
     }
-    connectedCallback() {
-      console.log(JSON.parse(this.dataset.steps));
-    }
+    connectedCallback() {}
   }
 );
 window.customElements.define("progress-step", class PS extends HTMLElement {});
@@ -538,7 +527,7 @@ defineCustomElement(
         }
         this.quantity++;
       }
-      console.log(this.quantity);
+
       this.updateQuantity();
     };
 
@@ -578,7 +567,6 @@ defineCustomElement(
     };
 
     updateQuantity = async () => {
-      console.log("this.quantity", this.quantity);
       this.toggleLoading(true);
       const response = await (
         await fetch("/cart/change.js", {
@@ -613,7 +601,6 @@ defineCustomElement(
       if ((!hasItemInCart && this.quantity === 0) || this.productCard) {
         reRenderSections(["side-cart"], response.sections);
       } else {
-        console.log({ response });
         reRenderCartIndicators(response.sections);
 
         const newDom = new DOMParser().parseFromString(response.sections["side-cart"], "text/html");

@@ -6,18 +6,20 @@
 
     <!-- Axeptio  -->
     <script>
-    window.axeptioSettings = {
-      clientId: "644b7b52f4fa6c9c5d5e3627",
-    };
-     
-    (function(d, s) {
-      var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
-      e.async = true; e.src = "//static.axept.io/sdk.js";
-      t.parentNode.insertBefore(e, t);
-    })(document, "script");
+      window.axeptioSettings = {
+        clientId: "644b7b52f4fa6c9c5d5e3627"
+      };
+
+      (function(d, s) {
+        var t = d.getElementsByTagName(s)[0],
+          e = d.createElement(s);
+        e.async = true;
+        e.src = "//static.axept.io/sdk.js";
+        t.parentNode.insertBefore(e, t);
+      })(document, "script");
     </script>
     <!-- End of Axeptio  -->
-    
+
     <!-- Just Button  -->
     <script src="https://checkout-button-shopify.vercel.app/just-pay-button.js" type="module"></script>
     <link
@@ -97,22 +99,22 @@
       <script preload>
         (async () => {
         const [configRes, layoutRes, styleRes] = await Promise.all([
-                    fetch("{{ 'tailwind.config.js' | asset_url }}"),
+                            fetch("{{ 'tailwind.config.js' | asset_url }}"),
         fetch("{{ 'tail.layout.css' | asset_url }}"),
         fetch("{{ 'tail.style.css' | asset_url }}")
         ]);
-                  const text = await configRes.text()
-                  console.log({text});
-                  tailwind.config = eval(`(${
-                    text.replace("module.exports = ", "").replace("module.exports=", "").replace("};", "}")
-                  })`);
-                  const apply = document.createElement("style");
-                  apply.setAttribute("type", "text/tailwindcss");
-                  apply.innerHTML = `${
-                    (await Promise.all([layoutRes.text(), styleRes.text()])).join("\n")
-                  }`;
-                  document.head.appendChild(apply);
-              })()
+                          const text = await configRes.text()
+                          console.log({text});
+                          tailwind.config = eval(`(${
+                            text.replace("module.exports = ", "").replace("module.exports=", "").replace("};", "}")
+                          })`);
+                          const apply = document.createElement("style");
+                          apply.setAttribute("type", "text/tailwindcss");
+                          apply.innerHTML = `${
+                            (await Promise.all([layoutRes.text(), styleRes.text()])).join("\n")
+                          }`;
+                          document.head.appendChild(apply);
+                      })()
       </script>
 
       <script src="{{ 'tail.js' | asset_url }}" preload></script>
@@ -137,6 +139,13 @@
       {% render "styles" %}
       {% render "scripts" %}
     {% endif %}
+    <script>
+      const openSideCart = () => {
+        const event = new CustomEvent("openSideCart");
+        console.log("hello");
+        document.dispatchEvent(event);
+      };
+    </script>
     <script>
       const url = new URL(window.location.href);
       const reset_password_url = decodeURIComponent(url.searchParams.get("reset_password_url"));
