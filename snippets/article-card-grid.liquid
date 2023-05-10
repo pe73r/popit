@@ -9,7 +9,7 @@
         loading="lazy">
       <div class="gap-4">
         {% if show_tag %}
-          <div class="w-full h-[28px] flex flex-wrap capitalize text-xs article-tags my-1">
+          <div class="w-full h-[28px] flex flex-wrap capitalize gap-2 text-xs article-tags my-1">
             {% for tag in article.tags %}
               {% render 'article-tags', tag: tag %}
             {% endfor %}
