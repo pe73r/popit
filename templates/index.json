@@ -392,7 +392,7 @@
         "title": "Newsletter",
         "text": "<p>Abonnez-vous à notre newsletter et recevez nos bons plans et actualités (promis, pas de spam !)<\/p>",
         "text_button": "Je m'inscris",
-        "show_checkbox": true,
+        "show_checkbox": false,
         "bg_color": "#faf5ef",
         "color": "#4b9b7d",
         "button_color": "#4b9b7d"
