@@ -225,7 +225,7 @@
           "type": "category_5",
           "settings": {
             "question": "J'ai perdu mon mot de passe, comment le réinitialiser ?",
-            "answer": "<p>Cela arrive à tout le monde ! <\/p><p>Vous pouvez à tout moment réinitialiser votre mot de passe en <strong>cliquant sur \"mot de passe oublié\"<\/strong>. Vous pourrez alors indiquer votre adresse mail et <strong>un mail vous sera envoyé<\/strong> pour créer un nouveau mot de passe.<\/p>"
+            "answer": "<p>Cela arrive à tout le monde ! <\/p><p>Dirigez-vous vers votre page <a href=\"https:\/\/www.we-pop-it.co\/account\" title=\"https:\/\/www.we-pop-it.co\/account\"><strong>Compte Client<\/strong><\/a>. Vous pouvez à tout moment réinitialiser votre mot de passe en <strong>cliquant sur \"mot de passe oublié\"<\/strong>. Vous pourrez alors indiquer votre adresse mail et <strong>un mail vous sera envoyé<\/strong> pour créer un nouveau mot de passe.<\/p>"
           }
         },
         "30c4cf42-b674-4506-8a8b-919e29d466e8": {
