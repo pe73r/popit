@@ -344,7 +344,7 @@
           "cart_title": "Votre panier",
           "show_counter": true,
           "show_carousel_reassurance": true,
-          "validate_text": "Je passe commande",
+          "validate_text": "Je finalise ma commande",
           "extra_text": "Livraison sous 2 à 3 jours ouvrés.",
           "extra_text_2": "Frais de livraison calculés à l’étape suivante.",
           "show_card": true,
