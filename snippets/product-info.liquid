@@ -198,7 +198,7 @@
                   class="block pl-2 text-xs line-through">
                   {%- if current_variant.compare_at_price != blank -%}
                     <span>
-                      {{ current_variant.compare_at_price }}
+                      {{ current_variant.compare_at_price | money_without_trailing_zeros }}
                       <!-- price from tail-variants.js -->
                     </span>
                   {%- endif -%}
@@ -599,7 +599,7 @@
 
                   {% if current_variant.price != current_variant.compare_at_price %}
                     <span data-price-stroke class="block ml-2 text-xs line-through"><!-- price from tail-variants.js -->
-                      {{ current_variant.compare_at_price }}
+                      {{ current_variant.compare_at_price | money_without_trailing_zeros }}
                     </span>
                   {%- endif -%}
                 </div>
