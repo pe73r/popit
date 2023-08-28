@@ -411,7 +411,7 @@
                       name="{{ option.name }}"
                       value="{{ value | escape }}"
                       form="{{ product_form_id }}"
-                      class="radio-variant-circle w-0 h-0 opacity-0 md:collapse hidden  {% if option.selected_value == value %}checked{% endif %}">
+                      class="radio-variant-circle w-0 h-0 opacity-0 md:collapse hidden  {% if counter == 1 %}checked{% endif %}">
                     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                       <div data-option-value="{{ value }}" class="variant-box block pt-3 pb-4 bg-white bg-opacity-60 text-sm rounded-lg cursor-pointer border border-{{ product-color }} text-{{ product-color }} text-center">
                         <h5 class="text-base text-{{ product-color }} leading-5 md:leading-8">{{ value }}</h5>
