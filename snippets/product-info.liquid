@@ -179,7 +179,10 @@
           data-price="{{ current_variant.price | money_without_trailing_zeros }}"
           data-product="{{current_variant.id}}"
           data-variant={{current_variant.id}}>
-          <button disabled="{% if current_variant.available %}false{% else %}true{% endif %}" class="{% unless current_variant.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}">
+          <button
+            {% unless current_variant.available %}disabled{% endunless %}
+            class="{% unless current_variant.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}"
+          >
             {% if current_variant.available %}
               <div class="px-0 md:px-16 py-3 flex justify-center items-center">
                 <span class="block font-bold">Ajouter au panier</span>
@@ -580,7 +583,10 @@
             id="referenceDesktop"
             data-product="{{ current_variant.id }}"
             data-variant="{{ current_variant.id }}">
-            <button disabled="{% if current_variant.available %}false{% else %}true{% endif %}" class="{% unless current_variant.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}">
+            <button 
+              {% unless current_variant.available %}disabled{% endunless %}
+              class="{% unless current_variant.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}"
+            >
               {% if current_variant.available %}
                 <div class="px-0 md:px-16 py-3 flex justify-center items-center">
                   <span class="block font-bold">Ajouter au panier</span>
