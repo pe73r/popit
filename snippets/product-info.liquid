@@ -172,13 +172,13 @@
         <add-to-cart
           data-product="{{ current_variant.id }}"
           class="{% unless current_variant.available %} hidden {% endunless %}"
-          data-max-quantity={{ current_variant.selected_or_first_available_variant.inventory_quantity }}
+          data-max-quantity={{ current_variant.inventory_quantity }}
           data-disabled="{% if current_variant.available %}false{% else %}true{% endif %}"
           class="flex justify-center w-full"
           data-price-stroke="{{ current_variant.compare_at_price | money_without_trailing_zeros }}"
           data-price="{{ current_variant.price | money_without_trailing_zeros }}"
           data-product="{{current_variant.id}}"
-          data-variant={{current_variant.selected_or_first_available_variant.id}}>
+          data-variant={{current_variant.id}}>
           <button disabled="{% if current_variant.available %}false{% else %}true{% endif %}" class="{% unless current_variant.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}">
             {% if current_variant.available %}
               <div class="px-0 md:px-16 py-3 flex justify-center items-center">
@@ -552,6 +552,11 @@
           id="buy-buttons"
           {{ block.shopify_attributes }}
           class="flex-1">
+          {%- unless product.has_only_default_variant -%}
+            {% assign current_variant = product.variants[1] %}
+          {% else %}
+            {% assign current_variant = product.selected_or_first_available_variant %}
+          {% endunless %}
           <add-to-cart
             class=""
             {%- comment -%}
@@ -563,32 +568,29 @@
             certains
             produits
             {%- endcomment -%}
-            data-max-quantity={{product.selected_or_first_available_variant.inventory_quantity}}
-            data-disabled="{% if product.available %}false{% else %}true{% endif %}"
-            data-price-stroke="{{ product.compare_at_price | money_without_trailing_zeros }}"
+            data-max-quantity="{{ current_variant.inventory_quantity }}"
+            data-disabled="{% if current_variant.available %}false{% else %}true{% endif %}"
+            data-price-stroke="{{ current_variant.compare_at_price | money_without_trailing_zeros }}"
             data-collection="{{ collection.title }}"
             data-currency="{{ shop.currency }}"
-            data-title="{{ product.title }}"
-            data-product="{{ product.id }}"
-            data-discount="{% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}{{ product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | divided_by: 100.00 }}{% else %}0.00{% endif %}"
-            data-price="{{ product.selected_or_first_available_variant.price | divided_by: 100.00 }}"
+            data-title="{{ current_variant.title }}"
+            data-product="{{ current_variant.id }}"
+            data-discount="{% if current_variant.compare_at_price > current_variant.price %}{{ current_variant.compare_at_price | minus: current_variant.price | divided_by: 100.00 }}{% else %}0.00{% endif %}"
+            data-price="{{ current_variant.price | divided_by: 100.00 }}"
             id="referenceDesktop"
-            data-product="{{ product.id }}"
-            data-variant="{{ product.selected_or_first_available_variant.id }}">
-            <button
-              {% unless product.available %}disabled{% endunless %}
-              class="{% unless product.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}"
-            >
-              {% if product.available %}
+            data-product="{{ current_variant.id }}"
+            data-variant="{{ current_variant.id }}">
+            <button disabled="{% if current_variant.available %}false{% else %}true{% endif %}" class="{% unless current_variant.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}">
+              {% if current_variant.available %}
                 <div class="px-0 md:px-16 py-3 flex justify-center items-center">
                   <span class="block font-bold">Ajouter au panier</span>
                   <span class="px-1">-</span>
                   <span
                     data-price
                     data-dynamic-price
-                    class="block font-bold">{{ product.price | money_without_trailing_zeros }}</span>
+                    class="block font-bold">{{ current_variant.price | money_without_trailing_zeros }}</span>
 
-                  {% if product.price != product.compare_at_price %}
+                  {% if current_variant.price != current_variant.compare_at_price %}
                     <span data-price-stroke class="block ml-2 text-xs line-through"><!-- price from tail-variants.js -->
                     </span>
                   {%- endif -%}
@@ -598,6 +600,7 @@
               {% endif %}
             </button>
           </add-to-cart>
+
 
           <!-- Just Button  -->
           {% if product.available %}
