@@ -15,6 +15,22 @@
 {% assign previousAmount = 0 %}
 {% assign progression = 0 %}
 
+<script id="cart-progress" data-cart-indicator>
+  {
+  "total": {{ cart.total_price | floor }},
+  "steps": [
+  {% for step in steps %}
+    {
+    "amount": {{ step.amount | floor | times: 100 }},
+    "product_title": "{{ step.product.title }}",
+    "variants": {{ step.product.variants | json }},
+    "textBefore": "{{ step.text_before }}",
+    "textAfter": "{{ step.text_after }}"
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ]
+  }
+</script>
 {% comment %} <script>
   document.addEventListener("DOMContentLoaded", () => {
   console.log("cart updated");
