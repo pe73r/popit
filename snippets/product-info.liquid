@@ -174,7 +174,10 @@
           data-price="{{ product.price | money_without_trailing_zeros }}"
           data-product="{{product.id}}"
           data-variant={{product.selected_or_first_available_variant.id}}>
-          <button disabled="{% if product.available %}false{% else %}true{% endif %}" class="{% unless product.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}">
+          <button
+            {% unless product.available %}disabled{% endunless %}
+            class="{% unless product.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}"
+          >
             {% if product.available %}
               <div class="px-0 md:px-16 py-3 flex justify-center items-center">
                 <span class="block font-bold">Ajouter au panier</span>
