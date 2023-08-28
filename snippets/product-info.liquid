@@ -164,34 +164,36 @@
         id="buy-buttons"
         {{ block.shopify_attributes }}
         class="flex-1 max-w-full ">
+        {%- unless product.has_only_default_variant -%}
+          {% assign current_variant = product.variants[1] %}
+        {% else %}
+          {% assign current_variant = product.selected_or_first_available_variant %}
+        {% endunless %}
         <add-to-cart
-          data-product="{{ product.id }}"
-          class="{% unless product.available %} hidden {% endunless %}"
-          data-max-quantity={{ product.selected_or_first_available_variant.inventory_quantity }}
-          data-disabled="{% if product.available %}false{% else %}true{% endif %}"
+          data-product="{{ current_variant.id }}"
+          class="{% unless current_variant.available %} hidden {% endunless %}"
+          data-max-quantity={{ current_variant.selected_or_first_available_variant.inventory_quantity }}
+          data-disabled="{% if current_variant.available %}false{% else %}true{% endif %}"
           class="flex justify-center w-full"
-          data-price-stroke="{{ product.compare_at_price | money_without_trailing_zeros }}"
-          data-price="{{ product.price | money_without_trailing_zeros }}"
-          data-product="{{product.id}}"
-          data-variant={{product.selected_or_first_available_variant.id}}>
-          <button
-            {% unless product.available %}disabled{% endunless %}
-            class="{% unless product.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}"
-          >
-            {% if product.available %}
+          data-price-stroke="{{ current_variant.compare_at_price | money_without_trailing_zeros }}"
+          data-price="{{ current_variant.price | money_without_trailing_zeros }}"
+          data-product="{{current_variant.id}}"
+          data-variant={{current_variant.selected_or_first_available_variant.id}}>
+          <button disabled="{% if current_variant.available %}false{% else %}true{% endif %}" class="{% unless current_variant.available %}  bg-gray-medium text-black  {% else %} cursor-pointer !px-0 !py-0 text-white bg-{{ product-color }}  {% endunless %} w-full my-2  {% render "button", color: product-color, size: "large" %}">
+            {% if current_variant.available %}
               <div class="px-0 md:px-16 py-3 flex justify-center items-center">
                 <span class="block font-bold">Ajouter au panier</span>
                 <span class="px-1">-</span>
                 <span
                   data-price
                   data-dynamic-price
-                  class="block font-bold">{{ product.price | money_without_trailing_zeros }}</span>
+                  class="block font-bold">{{ current_variant.price | money_without_trailing_zeros }}</span>
 
                 <span
                   data-price-stroke
                   data-dynamic-price-stroke
                   class="block pl-2 text-xs line-through">
-                  {%- if product.compare_at_price != blank -%}
+                  {%- if current_variant.compare_at_price != blank -%}
                     <span>
                       <!-- price from tail-variants.js -->
                     </span>
