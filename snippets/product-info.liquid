@@ -170,14 +170,13 @@
           {% assign current_variant = product.selected_or_first_available_variant %}
         {% endunless %}
         <add-to-cart
-          data-product="{{ current_variant.id }}"
+          data-product="{{ product.id }}"
           class="{% unless current_variant.available %} hidden {% endunless %}"
           data-max-quantity={{ current_variant.inventory_quantity }}
           data-disabled="{% if current_variant.available %}false{% else %}true{% endif %}"
           class="flex justify-center w-full"
           data-price-stroke="{{ current_variant.compare_at_price | money_without_trailing_zeros }}"
           data-price="{{ current_variant.price | money_without_trailing_zeros }}"
-          data-product="{{current_variant.id}}"
           data-variant={{current_variant.id}}>
           <button
             {% unless current_variant.available %}disabled{% endunless %}
@@ -578,11 +577,10 @@
             data-collection="{{ collection.title }}"
             data-currency="{{ shop.currency }}"
             data-title="{{ current_variant.title }}"
-            data-product="{{ current_variant.id }}"
+            data-product="{{ product.id }}"
             data-discount="{% if current_variant.compare_at_price > current_variant.price %}{{ current_variant.compare_at_price | minus: current_variant.price | divided_by: 100.00 }}{% else %}0.00{% endif %}"
             data-price="{{ current_variant.price | divided_by: 100.00 }}"
             id="referenceDesktop"
-            data-product="{{ current_variant.id }}"
             data-variant="{{ current_variant.id }}">
             <button 
               {% unless current_variant.available %}disabled{% endunless %}
