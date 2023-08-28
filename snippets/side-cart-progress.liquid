@@ -82,6 +82,7 @@
     <div class="flex w-full absolute items-center justify-around"></div>
     <div
       data-side-cart-progression-cart
+      {% if progression <= 5 %}{% assign progression = 5 %}{% endif %}
       style="left: {{progression | minus: 5 }}%;"
       class="rounded-full -translate-x-2 absolute  bg-white border-[1px] border-white w-7 h-7 flex items-center justify-center">
       {% render 'icon-progress-cart' %}
