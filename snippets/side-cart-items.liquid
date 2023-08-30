@@ -14,14 +14,10 @@
         loading="lazy">
     </div>
     <div class="flex-1">
-      {% if item.variant_id == 46538726670676 %}
-        <div class="font-body-text mb-1 text-base font-bold line-clamp-1 max-w-[90%]">{{ product.title }} </div>
-      {% else %}
         <a
-          href="{{ product.url }}"
+          href="{% if item.variant_id == 46538726670676 %}https://www.we-pop-it.co/products/pilulier{% else %}{{ product.url }}{% endif %}"
           data-title
           class="font-body-text mb-1 text-base font-bold line-clamp-1 max-w-[90%]">{{ product.title }}</a>
-      {% endif %}
       {% if product.has_only_default_variant == false %}
         <p data-variant class="font-body-text mb-1 text-xs line-clamp-1 max-w-[90%]">{{ variant.title }}</p>
       {% endif %}
