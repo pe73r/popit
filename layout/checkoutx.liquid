@@ -182,7 +182,13 @@
           }
         })();
       </script>
-    </head>
+    
+  <!-- REAMAZE INTEGRATION START - DO NOT REMOVE -->
+{% render 'reamaze-config' %}
+{% render 'reamaze-sso' %}
+<!-- REAMAZE INTEGRATION END - DO NOT REMOVE -->
+
+</head>
     {% render 'crosslog' %}
     <body>
   {% render 'elevar-checkout-end' %}
