@@ -1,9 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
-    "logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0681\/5494\/9926\/files\/Gif---popit-_1.gif?v=1679330404",
-    "benefits_stress": "shopify:\/\/shop_images\/Frame_9432.png",
-    "benefits_digestion": "shopify:\/\/shop_images\/Frame_9434.png",
-    "benefits_yeux": "shopify:\/\/shop_images\/Frame_9436.png",
+    "logo_svg": "https://cdn.shopify.com/s/files/1/0681/5494/9926/files/Gif---popit-_1.gif?v=1679330404",
+    "benefits_stress": "shopify://shop_images/Frame_9432.png",
+    "benefits_digestion": "shopify://shop_images/Frame_9434.png",
+    "benefits_yeux": "shopify://shop_images/Frame_9436.png",
     "colors_text": "#201a1c",
     "colors_heading": "#201a1c",
     "colors_background_1": "#fff",
@@ -14,29 +23,29 @@
     "type_header_font": "sans-serif",
     "type_body_font": "lato_n4",
     "social_twitter_link": "",
-    "social_facebook_link": "https:\/\/www.facebook.com\/profile.php?id=100088092823902",
+    "social_facebook_link": "https://www.facebook.com/profile.php?id=100088092823902",
     "social_pinterest_link": "",
-    "social_instagram_link": "https:\/\/www.instagram.com\/pop.it.nutrition\/",
-    "social_tiktok_link": "https:\/\/www.tiktok.com\/@pop.it.nutrition",
+    "social_instagram_link": "https://www.instagram.com/pop.it.nutrition/",
+    "social_tiktok_link": "https://www.tiktok.com/@pop.it.nutrition",
     "social_youtube_link": "",
-    "favicon": "shopify:\/\/shop_images\/favicon.svg",
-    "register_list": "<li>Rejoignez la Pop it Family et débloquez un maximum d’avantages !<\/li>\n<li>Gardez un œil sur tout l’historique de vos commandes.<\/li>\n<li>Économisez du temps précieux grâce à la mémorisation de votre adresse de livraison.<\/li>\n<li>Recevez en avant-première les dernières nouveautés, les promotions alléchantes et bien plus encore...<\/li>\n<li>On vous promet, avec nous, c’est facile de prendre soin de vous et de vos proches.<\/li>",
-    "account_image_1": "shopify:\/\/shop_images\/Banner-page-compte-client-1-desktop.jpg",
-    "account_image_2": "shopify:\/\/shop_images\/Banner-page-compte-client-2-desktop.jpg",
+    "favicon": "shopify://shop_images/favicon.svg",
+    "register_list": "<li>Rejoignez la Pop it Family et débloquez un maximum d’avantages !</li>\n<li>Gardez un œil sur tout l’historique de vos commandes.</li>\n<li>Économisez du temps précieux grâce à la mémorisation de votre adresse de livraison.</li>\n<li>Recevez en avant-première les dernières nouveautés, les promotions alléchantes et bien plus encore...</li>\n<li>On vous promet, avec nous, c’est facile de prendre soin de vous et de vos proches.</li>",
+    "account_image_1": "shopify://shop_images/Banner-page-compte-client-1-desktop.jpg",
+    "account_image_2": "shopify://shop_images/Banner-page-compte-client-2-desktop.jpg",
     "welcome_text_1": "Bienvenue dans votre espace personnel !\n\nPersonnalisez en un clin d’oeil les informations de votre compte.\nRetrouvez l’historique de vos commandes passées, découvrez vos préférences et laissez-nous vous surprendre avec des offres pour vous et toute votre famille.",
     "welcome_text_2": "Disponible prochainement : \n\nCumulez vos points pour débloquer des super réductions !",
-    "checkout_logo_image": "shopify:\/\/shop_images\/popit-logo.png",
+    "checkout_logo_image": "shopify://shop_images/popit-logo.png",
     "checkout_logo_position": "center",
     "checkout_body_background_color": "#fafafa",
     "checkout_sidebar_background_color": "#e3f2ed",
     "checkout_accent_color": "#4b9b7d",
     "checkout_button_color": "#4b9b7d",
-    "menu_product_magnesium": "shopify:\/\/shop_images\/Magnesium-bisglycinate-de-magnesium-magnesium-marin-citrate-de-magnesium-vitamine-B6-tonus-stress-muscles-gelules.png",
-    "menu_product_vitamins": "shopify:\/\/shop_images\/Multivitamines-vitamine-A-vitamines-B-vitamine-C-vitamine-D3-vitamine-E-magnesium-zinc-immunite-energie-antioxydant-gelules.png",
-    "menu_product_sommeil": "shopify:\/\/shop_images\/Sommeil-melatonine-05-mg-camomille-melisse-passiflore-endormissement-sommeil-jet-lag-gelules.png",
-    "menu_product_allaitement": "shopify:\/\/shop_images\/Multivitamines-vitamine-A-vitamines-B-vitamine-C-vitamine-D3-vitamine-E-magnesium-zinc-immunite-energie-antioxydant-gelules.png",
-    "menu_product_vitamine_d3": "shopify:\/\/shop_images\/Vitamine-D3-immunite-os-muscles-gummies.png",
-    "menu_product_default": "shopify:\/\/shop_images\/Biotine-zinc-selenium-beaute-de-la-peau-ongles-cheveux-gelules.png",
+    "menu_product_magnesium": "shopify://shop_images/Magnesium-bisglycinate-de-magnesium-magnesium-marin-citrate-de-magnesium-vitamine-B6-tonus-stress-muscles-gelules.png",
+    "menu_product_vitamins": "shopify://shop_images/Multivitamines-vitamine-A-vitamines-B-vitamine-C-vitamine-D3-vitamine-E-magnesium-zinc-immunite-energie-antioxydant-gelules.png",
+    "menu_product_sommeil": "shopify://shop_images/Sommeil-melatonine-05-mg-camomille-melisse-passiflore-endormissement-sommeil-jet-lag-gelules.png",
+    "menu_product_allaitement": "shopify://shop_images/Multivitamines-vitamine-A-vitamines-B-vitamine-C-vitamine-D3-vitamine-E-magnesium-zinc-immunite-energie-antioxydant-gelules.png",
+    "menu_product_vitamine_d3": "shopify://shop_images/Vitamine-D3-immunite-os-muscles-gummies.png",
+    "menu_product_default": "shopify://shop_images/Biotine-zinc-selenium-beaute-de-la-peau-ongles-cheveux-gelules.png",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
     "social_vimeo_link": "",
@@ -54,10 +63,10 @@
     "gradient_background_1": "",
     "colors_background_2": "#f3f3f3",
     "gradient_background_2": "",
-    "tag_france_image": "shopify:\/\/shop_images\/Frame_8305_1.png",
-    "tag_vegan_image": "shopify:\/\/shop_images\/Frame_8305_4.png",
-    "tag_no_animal_image": "shopify:\/\/shop_images\/Frame_8306.png",
-    "tag_mama_image": "shopify:\/\/shop_images\/Frame_8306_445e89a1-9209-40c5-933d-a187813c0a43.png",
+    "tag_france_image": "shopify://shop_images/Frame_8305_1.png",
+    "tag_vegan_image": "shopify://shop_images/Frame_8305_4.png",
+    "tag_no_animal_image": "shopify://shop_images/Frame_8306.png",
+    "tag_mama_image": "shopify://shop_images/Frame_8306_445e89a1-9209-40c5-933d-a187813c0a43.png",
     "page_width": 1200,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
@@ -130,7 +139,7 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
-    "aloe_image": "shopify:\/\/shop_images\/Frame_8305_1.png",
+    "aloe_image": "shopify://shop_images/Frame_8305_1.png",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -138,14 +147,14 @@
           "88832915-2123-406d-8a6a-14b2a85b4b72": {
             "type": "text",
             "settings": {
-              "text": "<p>🚚 Livraison offerte dès 60€ d'achats.<\/p>",
+              "text": "<p>🚚 Livraison offerte dès 60€ d'achats.</p>",
               "url": ""
             }
           },
           "1c8fcdae-e398-4947-9328-27ee9e919303": {
             "type": "text",
             "settings": {
-              "text": "<p>🤗 Économisez -10% dès 3 produits achetés.<\/p>",
+              "text": "<p>🤗 Économisez -10% dès 3 produits achetés.</p>",
               "url": ""
             }
           }
@@ -168,11 +177,11 @@
             "settings": {
               "megamenu": "besoins-1",
               "label_1": "JUSQU’À -15%",
-              "featured_link_image_1": "shopify:\/\/shop_images\/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
+              "featured_link_image_1": "shopify://shop_images/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
               "featured_link_subtitle_1": "Personnalisez votre pack",
-              "featured_link_title_1": "<p>Économisez jusqu’à <strong>-15%<\/strong> en achetant un pack de 3, 4 ou 5 produits.<\/p>",
+              "featured_link_title_1": "<p>Économisez jusqu’à <strong>-15%</strong> en achetant un pack de 3, 4 ou 5 produits.</p>",
               "featured_link_button_1": "Je crée mon pack",
-              "featured_link_1": "https:\/\/www.we-pop-it.co\/apps\/bundles\/bundle\/132349"
+              "featured_link_1": "https://www.we-pop-it.co/apps/bundles/bundle/132349"
             }
           },
           "821b51b7-27dd-4a1b-9036-4f3a51fe987f": {
@@ -182,10 +191,10 @@
               "menu": "menu-mobile",
               "menu_style": "accordion",
               "label_1": "JUSQU’À -15%",
-              "featured_link_image_1": "shopify:\/\/shop_images\/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
+              "featured_link_image_1": "shopify://shop_images/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
               "featured_link_subtitle_1": "Personnalisez votre pack",
               "featured_link_title_1": "",
-              "featured_link_1": "https:\/\/www.we-pop-it.co\/apps\/bundles\/bundle\/132349"
+              "featured_link_1": "https://www.we-pop-it.co/apps/bundles/bundle/132349"
             }
           },
           "bfd7dab0-fe5a-4911-9db9-a0cdcd88137d": {
@@ -193,11 +202,11 @@
             "settings": {
               "megamenu": "produits",
               "label_1": "JUSQU’À -15%",
-              "featured_link_image_1": "shopify:\/\/shop_images\/popit-gamme-gelules-magnesium-biotine-multivitamines.png",
+              "featured_link_image_1": "shopify://shop_images/popit-gamme-gelules-magnesium-biotine-multivitamines.png",
               "featured_link_subtitle_1": "Personnalisez votre pack",
-              "featured_link_title_1": "<p>Économisez jusqu’à<strong> -15%<\/strong> en achetant un pack de 3, 4 ou 5 produits.<\/p>",
+              "featured_link_title_1": "<p>Économisez jusqu’à<strong> -15%</strong> en achetant un pack de 3, 4 ou 5 produits.</p>",
               "featured_link_button_1": "Je crée mon pack",
-              "featured_link_1": "https:\/\/www.we-pop-it.co\/apps\/bundles\/bundle\/132349"
+              "featured_link_1": "https://www.we-pop-it.co/apps/bundles/bundle/132349"
             }
           },
           "a2ec93b6-297a-4fc2-bb68-f6b5357f8d38": {
@@ -207,10 +216,10 @@
               "menu": "produits",
               "menu_style": "block",
               "label_1": "JUSQU’À -15%",
-              "featured_link_image_1": "shopify:\/\/shop_images\/popit-gamme-gelules-magnesium-biotine-multivitamines.png",
+              "featured_link_image_1": "shopify://shop_images/popit-gamme-gelules-magnesium-biotine-multivitamines.png",
               "featured_link_subtitle_1": "Personnalisez votre pack",
               "featured_link_title_1": "",
-              "featured_link_1": "https:\/\/www.we-pop-it.co\/apps\/bundles\/bundle\/132349"
+              "featured_link_1": "https://www.we-pop-it.co/apps/bundles/bundle/132349"
             }
           },
           "7b909d78-4aeb-4689-abdf-286ad0fb99a5": {
@@ -226,10 +235,10 @@
               "menu": "menu-pack-mobile",
               "menu_style": "accordion",
               "label_1": "JUSQU’À -15%",
-              "featured_link_image_1": "shopify:\/\/shop_images\/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
+              "featured_link_image_1": "shopify://shop_images/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
               "featured_link_subtitle_1": "Personnalisez votre pack",
               "featured_link_title_1": "",
-              "featured_link_1": "https:\/\/www.we-pop-it.co\/apps\/bundles\/bundle\/132349"
+              "featured_link_1": "https://www.we-pop-it.co/apps/bundles/bundle/132349"
             }
           }
         },
@@ -261,8 +270,7 @@
       },
       "logo": {
         "type": "logo",
-        "settings": {
-        }
+        "settings": {}
       },
       "side-cart": {
         "type": "side-cart",
@@ -270,21 +278,21 @@
           "1c9c5b5b-c1c9-4a69-9b95-8db25c19a069": {
             "type": "reassurances",
             "settings": {
-              "image": "shopify:\/\/shop_images\/picto-livraison-gratuite.png",
+              "image": "shopify://shop_images/picto-livraison-gratuite.png",
               "text": "Livraison offerte dès 60€ d'achats"
             }
           },
           "712fc898-0f81-44b6-a6d0-c461cb3fff0f": {
             "type": "reassurances",
             "settings": {
-              "image": "shopify:\/\/shop_images\/picto-livraison-rapide.png",
+              "image": "shopify://shop_images/picto-livraison-rapide.png",
               "text": "Livraison sous 2 à 3 jours ouvrés"
             }
           },
           "5afa6dc1-80cf-4797-85cf-c5f99f7ad4c4": {
             "type": "reassurances",
             "settings": {
-              "image": "shopify:\/\/shop_images\/picto-paiement-securise.png",
+              "image": "shopify://shop_images/picto-paiement-securise.png",
               "text": "Paiement 100% sécurisé"
             }
           },
@@ -311,21 +319,21 @@
           "c99c42b7-af3a-4929-9b1c-6c30e628f578": {
             "type": "reassurances",
             "settings": {
-              "image": "shopify:\/\/shop_images\/picto-livraison-gratuite.png",
+              "image": "shopify://shop_images/picto-livraison-gratuite.png",
               "text": "Livraison offerte dès 60€ d'achats"
             }
           },
           "3ececba4-83f6-4f21-b622-65de788db8df": {
             "type": "reassurances",
             "settings": {
-              "image": "shopify:\/\/shop_images\/picto-livraison-rapide.png",
+              "image": "shopify://shop_images/picto-livraison-rapide.png",
               "text": "Livraison sous 2 à 3 jours ouvrés"
             }
           },
           "48d2b094-b27d-42bb-94d7-98a6b03ffcf2": {
             "type": "reassurances",
             "settings": {
-              "image": "shopify:\/\/shop_images\/picto-paiement-securise.png",
+              "image": "shopify://shop_images/picto-paiement-securise.png",
               "text": "Paiement 100% sécurisé"
             }
           }
@@ -348,14 +356,14 @@
           "extra_text": "Livraison sous 2 à 3 jours ouvrés.",
           "extra_text_2": "Frais de livraison calculés à l’étape suivante.",
           "show_card": true,
-          "image": "shopify:\/\/shop_images\/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
+          "image": "shopify://shop_images/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
           "label": "JUSQU’À -15%",
           "subtitle": "Personnalisez votre pack",
-          "title": "<p>Économisez jusqu’à <strong>-15%<\/strong> en achetant un pack de 3, 4 ou 5 produits.<\/p>",
+          "title": "<p>Économisez jusqu’à <strong>-15%</strong> en achetant un pack de 3, 4 ou 5 produits.</p>",
           "cta": "Je crée mon pack",
-          "ctaLink": "https:\/\/www.we-pop-it.co\/apps\/bundles\/bundle\/132349",
+          "ctaLink": "https://www.we-pop-it.co/apps/bundles/bundle/132349",
           "show_card_2": false,
-          "image_2": "shopify:\/\/shop_images\/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
+          "image_2": "shopify://shop_images/popit-gamme-gummies-sans-sucres-multivitamines-adultes-sommeil-vitamined3-pousse-cheveux.png",
           "label_2": "JUSQU’À -25%",
           "title_2": "Nos packs",
           "cta_2": "",
@@ -403,17 +411,17 @@
           "a5485402-f5d6-4184-b592-6a5bc153a500"
         ],
         "settings": {
-          "logo": "shopify:\/\/shop_images\/popit-logo.png",
+          "logo": "shopify://shop_images/popit-logo.png",
           "logo_svg": "",
-          "image_family": "shopify:\/\/shop_images\/easy-peasy-gelules-sommeil.png",
+          "image_family": "shopify://shop_images/easy-peasy-gelules-sommeil.png",
           "footer_text": "Pop it simplifie et égaye la nutrition pour vous aider à prendre soin de vous et de toute votre famille.",
           "show_social": true,
-          "mention-legal": "<p>© POP IT 2023 - TOUS DROITS RÉSERVÉS<\/p>",
+          "mention-legal": "<p>© POP IT 2023 - TOUS DROITS RÉSERVÉS</p>",
           "menu_legal": "menu-legal",
           "show_payment_icons": true,
           "show_follow_order": true,
           "follow_button": "Suivre ma commande",
-          "follow_button_url": "https:\/\/track.bigblue.co\/pop-it",
+          "follow_button_url": "https://track.bigblue.co/pop-it",
           "bg_color": "#e3f2ed",
           "color": "#4b9b7d"
         }
@@ -425,7 +433,7 @@
             "type": "block",
             "settings": {
               "svg": "",
-              "image": "shopify:\/\/shop_images\/site-livraison.png",
+              "image": "shopify://shop_images/site-livraison.png",
               "image_width": 117,
               "title": "Livraison rapide et offerte",
               "text": "dès 60€ d’achats"
@@ -435,7 +443,7 @@
             "type": "block",
             "settings": {
               "svg": "",
-              "image": "shopify:\/\/shop_images\/site-paiement.png",
+              "image": "shopify://shop_images/site-paiement.png",
               "image_width": 80,
               "title": "Paiement 100% sécurisé",
               "text": "Visa, Mastercard, PayPal, Apple Pay & Amex"
@@ -445,7 +453,7 @@
             "type": "block",
             "settings": {
               "svg": "",
-              "image": "shopify:\/\/shop_images\/site-mail.png",
+              "image": "shopify://shop_images/site-mail.png",
               "image_width": 100,
               "title": "Notre équipe à vos petits soins",
               "text": "hello@we-pop-it.co"
@@ -455,7 +463,7 @@
             "type": "block",
             "settings": {
               "svg": "",
-              "image": "shopify:\/\/shop_images\/site-satisfait.png",
+              "image": "shopify://shop_images/site-satisfait.png",
               "image_width": 106,
               "title": "Heureux ou remboursés",
               "text": "retours gratuits sous 30 jours"
@@ -478,39 +486,35 @@
       "menu-fixed": {
         "type": "menu-fixed",
         "settings": {
-          "image": "shopify:\/\/shop_images\/IMAGE_MENU_FIXE_-_SHOP_POP_IT.png",
+          "image": "shopify://shop_images/IMAGE_MENU_FIXE_-_SHOP_POP_IT.png",
           "text": "Shop",
-          "link": "shopify:\/\/collections",
-          "image_2": "shopify:\/\/shop_images\/Sale.svg",
+          "link": "shopify://collections",
+          "image_2": "shopify://shop_images/Sale.svg",
           "text_2": "Fidélité",
-          "link_2": "shopify:\/\/pages\/fidelite",
-          "image_3": "shopify:\/\/shop_images\/User.svg",
+          "link_2": "shopify://pages/fidelite",
+          "image_3": "shopify://shop_images/User.svg",
           "text_3": "Compte",
-          "image_4": "shopify:\/\/shop_images\/Cart_3.svg",
+          "image_4": "shopify://shop_images/Cart_3.svg",
           "text_4": "Panier",
-          "image_5": "shopify:\/\/shop_images\/Menu.svg",
+          "image_5": "shopify://shop_images/Menu.svg",
           "text_5": "Menu"
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "14060646107696862457": {
-        "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "type": "shopify://apps/judge-me-product-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "5871719951905634831": {
-        "type": "shopify:\/\/apps\/kwanko-tracking\/blocks\/kwanko-tracking\/82a7aed2-cf83-498c-887f-bc6c2e8db7f7",
+        "type": "shopify://apps/kwanko-tracking/blocks/kwanko-tracking/82a7aed2-cf83-498c-887f-bc6c2e8db7f7",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "8962992520437913685": {
-        "type": "shopify:\/\/apps\/yotpo-loyalty-rewards\/blocks\/loader-app-embed-block\/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+        "type": "shopify://apps/yotpo-loyalty-rewards/blocks/loader-app-embed-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
         "disabled": false,
         "settings": {
           "inject_modules_loader": true,
@@ -518,57 +522,9 @@
         }
       },
       "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
-        "settings": {
-        }
-      },
-      "1386531382474587334": {
-        "type": "shopify:\/\/apps\/bundle-builder\/blocks\/bb-cart-integration\/78802baf-205d-4d1d-908c-fae911f24e36",
-        "disabled": false,
-        "settings": {
-          "placement": "below",
-          "hide_empty_line_items": false,
-          "font_size": 16,
-          "font_color": "",
-          "button_color": "",
-          "button_background": "",
-          "button_radius": 0,
-          "border_color": "#000000",
-          "background": "",
-          "heading": "Your cart contains {count} bundle",
-          "heading_plural": "Your cart contains {count} bundles",
-          "view_text": "View Details",
-          "modal_title": "Your bundle summary",
-          "modal_font_color": "#000000",
-          "modal_background": "#FFFFFF",
-          "modal_border_color": "#c4c4c4",
-          "modal_item_background": "",
-          "modal_item_content_background": "#f1f1f1",
-          "modal_item_product_background": "#ffffff",
-          "custom_css": ""
-        }
-      },
-      "14044569291296200651": {
-        "type": "shopify:\/\/apps\/bundle-builder\/blocks\/bb-cart-integration-custom\/78802baf-205d-4d1d-908c-fae911f24e36",
-        "disabled": false,
-        "settings": {
-          "theme_override": "887",
-          "page_cartItemBox": "",
-          "page_cartItem": "",
-          "page_cartSubtotal": "",
-          "page_cartOriginalTotal": "",
-          "page_checkoutButton": "",
-          "drawer_cartItemBox": "side-cart-inner  #line-items",
-          "drawer_cartItem": "side-cart-inner  #line-items a[data-title]",
-          "drawer_cartSubtotal": "side-cart-footer [data-cart-indicator]",
-          "drawer_cartOriginalTotal": "",
-          "drawer_checkoutButton": "side-cart-footer [name=\"checkout\"]",
-          "cartItemPrice": "",
-          "cartItemLinePrice": "",
-          "cartItemQuantity": "side-cart-inner  #line-items [data-line-item-variant] cart-item-quantity input",
-          "observeTargets": ""
-        }
+        "settings": {}
       }
     }
   },
@@ -680,8 +636,7 @@
         },
         "header": {
           "type": "header",
-          "settings": {
-          }
+          "settings": {}
         }
       }
     }

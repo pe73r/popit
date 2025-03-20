@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -14,7 +23,7 @@
         "5daac023-9716-45e7-b58f-c74f96396acb": {
           "type": "video",
           "settings": {
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e546c126e1d7485d9f0fc885561f9f82.mp4",
+            "video": "https://cdn.shopify.com/videos/c/o/v/e546c126e1d7485d9f0fc885561f9f82.mp4",
             "title": "Pop it simplifie et égaye la nutrition pour vous aider<br> à prendre soin de vous et de toute votre famille.",
             "title_mobile": "Pop it simplifie et égaye la nutrition pour vous aider<br> à prendre soin de vous et de toute votre famille.",
             "text": "",
@@ -36,14 +45,12 @@
     },
     "4d305d9e-9942-4918-8b40-41f3774e586d": {
       "type": "banner-intro",
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "section_style": "default",
-        "image": "shopify:\/\/shop_images\/popit-easy-peasy-family-nutrition.png",
+        "image": "shopify://shop_images/popit-easy-peasy-family-nutrition.png",
         "title": "Y a-t-il quelque chose qui rende plus heureux que de prendre soin de celles et ceux qu'on aime ?",
-        "subtitle": "<p>C'est aussi ce qu'on pense ! Leur bien-être passe par une bonne nutrition. Mais elle est souvent complexe, individualisée et ennuyeuse. Nous avons choisi de la rendre plus simple et fun pour vous aider à prendre soin des vôtres en toute simplicité.<\/p>",
+        "subtitle": "<p>C'est aussi ce qu'on pense ! Leur bien-être passe par une bonne nutrition. Mais elle est souvent complexe, individualisée et ennuyeuse. Nous avons choisi de la rendre plus simple et fun pour vous aider à prendre soin des vôtres en toute simplicité.</p>",
         "cta": "",
         "ctaLink": "",
         "bg_color": "#ffffff",
@@ -57,11 +64,11 @@
         "layout": "image_right",
         "content": "column",
         "text_align": "center",
-        "image": "shopify:\/\/shop_images\/jellybee-dTR0x-mvI_s-unsplash.jpg",
+        "image": "shopify://shop_images/jellybee-dTR0x-mvI_s-unsplash.jpg",
         "hide_image_mobile": false,
         "subtitle": "",
         "title": "",
-        "text": "<p>La nutrition est souvent perçue comme individualisée, ennuyeuse et complexe. La création de Pop it résulte d'un constat : <\/p><p>Nombreuses sont les marques de compléments alimentaires sur le marché et pourtant aujourd'hui il est compliqué de trouver des produits sains, bons, faciles d’utilisation et adaptés à toute la famille. Alors Pop it fait le choix de simplifier et d’égayer la nutrition pour vous aider à prendre soin de vous et de toute votre famille. <\/p>",
+        "text": "<p>La nutrition est souvent perçue comme individualisée, ennuyeuse et complexe. La création de Pop it résulte d'un constat : </p><p>Nombreuses sont les marques de compléments alimentaires sur le marché et pourtant aujourd'hui il est compliqué de trouver des produits sains, bons, faciles d’utilisation et adaptés à toute la famille. Alors Pop it fait le choix de simplifier et d’égayer la nutrition pour vous aider à prendre soin de vous et de toute votre famille. </p>",
         "subtitle_color": "#4b9b7d",
         "title_color": "#4b9b7d",
         "text_color": "#201a1c"
@@ -74,7 +81,7 @@
           "type": "block",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/picto-pour-toute-la-famille_9e282773-3796-4928-ba1d-7c04393754e3.png",
+            "image": "shopify://shop_images/picto-pour-toute-la-famille_9e282773-3796-4928-ba1d-7c04393754e3.png",
             "image_width": 140,
             "title": "POUR TOUTE LA FAMILLE",
             "text": "Prenez soin de vous et de ceux que vous aimez."
@@ -84,7 +91,7 @@
           "type": "block",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/picto-simples-et-bons_b4dd2d81-55da-42bd-b3f2-ea5266fd0037.png",
+            "image": "shopify://shop_images/picto-simples-et-bons_b4dd2d81-55da-42bd-b3f2-ea5266fd0037.png",
             "image_width": 140,
             "title": "ACCESSIBLE, SIMPLE & BON",
             "text": "Des produits abordables qui simplifient votre quotidien."
@@ -94,7 +101,7 @@
           "type": "block",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/picto-vegan-cruelty-free_14949e0d-f2c4-4d89-86e8-8781b714e130.png",
+            "image": "shopify://shop_images/picto-vegan-cruelty-free_14949e0d-f2c4-4d89-86e8-8781b714e130.png",
             "image_width": 140,
             "title": "VEGAN & CRUELTY FREE",
             "text": "La qualité sans jamais faire de compromis."
@@ -104,7 +111,7 @@
           "type": "block",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/picto-fabrique-en-france_85563e3f-b24c-45d1-815a-416131fba837.png",
+            "image": "shopify://shop_images/picto-fabrique-en-france_85563e3f-b24c-45d1-815a-416131fba837.png",
             "image_width": 140,
             "title": "FABRICATION FRANÇAISE",
             "text": "Formules conçues avec soin sous le beau soleil de Nice."
@@ -129,9 +136,9 @@
       "disabled": true,
       "settings": {
         "section_style": "boxed",
-        "image": "shopify:\/\/shop_images\/RANGEMENT-GUMMIES-FR.jpg",
+        "image": "shopify://shop_images/RANGEMENT-GUMMIES-FR.jpg",
         "title": "Des gummies pour ravir petits et grands !",
-        "subtitle": "<p>xxxxxx<\/p><p><\/p><p><\/p><p><\/p>",
+        "subtitle": "<p>xxxxxx</p><p></p><p></p><p></p>",
         "cta": "",
         "ctaLink": "",
         "bg_color": "#edece6",
@@ -155,14 +162,13 @@
     },
     "44d0ac1a-7a6f-45b2-b456-e2ea918cff59": {
       "type": "marquee",
-      "disabled": true,
       "blocks": {
         "template--18292260241702__44d0ac1a-7a6f-45b2-b456-e2ea918cff59-1680866188c8cb8844-0": {
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/Vegan-Accessoire-Clair_2x_28e8a1b5-aec4-4070-8067-900413fec227.png",
-            "text": "<p>Vegan<\/p>",
+            "image": "shopify://shop_images/Vegan-Accessoire-Clair_2x_28e8a1b5-aec4-4070-8067-900413fec227.png",
+            "text": "<p>Vegan</p>",
             "url": ""
           }
         },
@@ -170,8 +176,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/Sucre-Accessoire-Clair_2x_14c5339a-3266-4aa5-87ed-66ca86e9d980.png",
-            "text": "<p>Sans sucres<\/p>",
+            "image": "shopify://shop_images/Sucre-Accessoire-Clair_2x_14c5339a-3266-4aa5-87ed-66ca86e9d980.png",
+            "text": "<p>Sans sucres</p>",
             "url": ""
           }
         },
@@ -179,8 +185,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/Colorant-pilulier-Clair_2x_8d84400a-d510-41c3-a075-eca9a6b2abf8.png",
-            "text": "<p>Sans colorants ni arômes artificiels<\/p>",
+            "image": "shopify://shop_images/Colorant-pilulier-Clair_2x_8d84400a-d510-41c3-a075-eca9a6b2abf8.png",
+            "text": "<p>Sans colorants ni arômes artificiels</p>",
             "url": ""
           }
         },
@@ -188,8 +194,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/Gluten-Accessoire-Clair_2x_c55261d4-bd29-43ef-bda6-7c4751b95b95.png",
-            "text": "<p>Sans gluten<\/p>",
+            "image": "shopify://shop_images/Gluten-Accessoire-Clair_2x_c55261d4-bd29-43ef-bda6-7c4751b95b95.png",
+            "text": "<p>Sans gluten</p>",
             "url": ""
           }
         },
@@ -197,8 +203,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/Lactose-Accessoire-Clair_2x_78f8d2dc-f0af-4a0c-9f57-adb2419297df.png",
-            "text": "<p>Sans lactose<\/p>",
+            "image": "shopify://shop_images/Lactose-Accessoire-Clair_2x_78f8d2dc-f0af-4a0c-9f57-adb2419297df.png",
+            "text": "<p>Sans lactose</p>",
             "url": ""
           }
         },
@@ -206,8 +212,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/picto-reutilisable-Clair_2x-pilulier_e9fb556a-cad1-4432-a70b-cdea01b96dd6.png",
-            "text": "<p>Packaging 100% reyclable<\/p>",
+            "image": "shopify://shop_images/picto-reutilisable-Clair_2x-pilulier_e9fb556a-cad1-4432-a70b-cdea01b96dd6.png",
+            "text": "<p>Packaging 100% reyclable</p>",
             "url": ""
           }
         }
@@ -220,6 +226,7 @@
         "33e5dc4d-7167-4ef1-9397-9c157284cc73",
         "d65990ec-4126-44ea-bcf8-0ca776127eb3"
       ],
+      "disabled": true,
       "settings": {
         "animationDuration": 21,
         "border": false,
@@ -232,9 +239,9 @@
       "disabled": true,
       "settings": {
         "section_style": "boxed",
-        "image": "shopify:\/\/shop_images\/RANGEMENT-GELULES-FR.jpg",
+        "image": "shopify://shop_images/RANGEMENT-GELULES-FR.jpg",
         "title": "Des gélules",
-        "subtitle": "<p>Lorerm ipsum 2023.<\/p>",
+        "subtitle": "<p>Lorerm ipsum 2023.</p>",
         "cta": "",
         "ctaLink": "",
         "bg_color": "#edece6",
@@ -258,14 +265,13 @@
     },
     "12d3a672-9a68-4fb7-8689-8c334aa319ee": {
       "type": "marquee",
-      "disabled": true,
       "blocks": {
         "template--18292260241702__12d3a672-9a68-4fb7-8689-8c334aa319ee-1680866188c8cb8844-0": {
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/Vegan-Accessoire-Clair_2x_28e8a1b5-aec4-4070-8067-900413fec227.png",
-            "text": "<p>Vegan<\/p>",
+            "image": "shopify://shop_images/Vegan-Accessoire-Clair_2x_28e8a1b5-aec4-4070-8067-900413fec227.png",
+            "text": "<p>Vegan</p>",
             "url": ""
           }
         },
@@ -273,8 +279,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/Gluten-Accessoire-Clair_2x_c55261d4-bd29-43ef-bda6-7c4751b95b95.png",
-            "text": "<p>Sans gluten<\/p>",
+            "image": "shopify://shop_images/Gluten-Accessoire-Clair_2x_c55261d4-bd29-43ef-bda6-7c4751b95b95.png",
+            "text": "<p>Sans gluten</p>",
             "url": ""
           }
         },
@@ -282,8 +288,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/Lactose-Accessoire-Clair_2x_78f8d2dc-f0af-4a0c-9f57-adb2419297df.png",
-            "text": "<p>Sans lactose<\/p>",
+            "image": "shopify://shop_images/Lactose-Accessoire-Clair_2x_78f8d2dc-f0af-4a0c-9f57-adb2419297df.png",
+            "text": "<p>Sans lactose</p>",
             "url": ""
           }
         },
@@ -291,8 +297,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/Colorant-pilulier-Clair_2x_8d84400a-d510-41c3-a075-eca9a6b2abf8.png",
-            "text": "<p>Sans OGM<\/p>",
+            "image": "shopify://shop_images/Colorant-pilulier-Clair_2x_8d84400a-d510-41c3-a075-eca9a6b2abf8.png",
+            "text": "<p>Sans OGM</p>",
             "url": ""
           }
         },
@@ -300,8 +306,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/picto-reutilisable-Clair_2x-pilulier_e9fb556a-cad1-4432-a70b-cdea01b96dd6.png",
-            "text": "<p>Packaging 100% recyclable<\/p>",
+            "image": "shopify://shop_images/picto-reutilisable-Clair_2x-pilulier_e9fb556a-cad1-4432-a70b-cdea01b96dd6.png",
+            "text": "<p>Packaging 100% recyclable</p>",
             "url": ""
           }
         }
@@ -313,6 +319,7 @@
         "3ce6b234-3294-43cd-b322-7b45057a93d5",
         "cd5528a4-31ee-45dd-a8bb-d4e80cb1193c"
       ],
+      "disabled": true,
       "settings": {
         "animationDuration": 16,
         "border": false,
@@ -326,7 +333,7 @@
       "settings": {
         "section_style": "boxed",
         "title": "Des accessoires pour simplifier votre quotidien.",
-        "subtitle": "<p>Lorerm ipsum 2023.<\/p>",
+        "subtitle": "<p>Lorerm ipsum 2023.</p>",
         "cta": "",
         "ctaLink": "",
         "bg_color": "#edece6",
@@ -350,14 +357,13 @@
     },
     "ae3769ef-ff11-413d-aaba-d47d91676da1": {
       "type": "marquee",
-      "disabled": true,
       "blocks": {
         "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-0": {
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/Colorant-pilulier-Clair_2x_8d84400a-d510-41c3-a075-eca9a6b2abf8.png",
-            "text": "<p>Sans BPA<\/p>",
+            "image": "shopify://shop_images/Colorant-pilulier-Clair_2x_8d84400a-d510-41c3-a075-eca9a6b2abf8.png",
+            "text": "<p>Sans BPA</p>",
             "url": ""
           }
         },
@@ -365,8 +371,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/gummies-gelules-reassurance-pilulier_46d21111-cda1-40fb-8266-6a78f2d261ea.png",
-            "text": "<p>Jusqu'à 6 gummies ou 12 gélules par compartiment<\/p>",
+            "image": "shopify://shop_images/gummies-gelules-reassurance-pilulier_46d21111-cda1-40fb-8266-6a78f2d261ea.png",
+            "text": "<p>Jusqu'à 6 gummies ou 12 gélules par compartiment</p>",
             "url": ""
           }
         },
@@ -374,8 +380,8 @@
           "type": "text",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/picto-reutilisable-Clair_2x-pilulier_e9fb556a-cad1-4432-a70b-cdea01b96dd6.png",
-            "text": "<p>Étui 100% recyclable<\/p>",
+            "image": "shopify://shop_images/picto-reutilisable-Clair_2x-pilulier_e9fb556a-cad1-4432-a70b-cdea01b96dd6.png",
+            "text": "<p>Étui 100% recyclable</p>",
             "url": ""
           }
         }
@@ -385,6 +391,7 @@
         "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-1",
         "template--18292260241702__ae3769ef-ff11-413d-aaba-d47d91676da1-1680866188c8cb8844-2"
       ],
+      "disabled": true,
       "settings": {
         "animationDuration": 12,
         "border": false,
@@ -398,11 +405,11 @@
         "layout": "image_left",
         "content": "row",
         "text_align": "left",
-        "image": "shopify:\/\/shop_images\/Popit-complements-alimentaires-famille.png",
+        "image": "shopify://shop_images/Popit-complements-alimentaires-famille.png",
         "hide_image_mobile": false,
         "subtitle": "",
         "title": "Pour chaque besoin, il y a un produit Pop it.",
-        "text": "<p>Nous vous accompagnons à chaque étape de votre vie et de celles de tous les membres de votre famille.<a href=\"\/collections\" title=\"All collections\"><em><strong> Découvrez nos gammes <\/strong><\/em><\/a>spécialement conçues pour vous aider à trouver le produit idéal, toujours avec le sourire et beaucoup de plaisir ! <\/p>",
+        "text": "<p>Nous vous accompagnons à chaque étape de votre vie et de celles de tous les membres de votre famille.<a href=\"/collections\" title=\"All collections\"><em><strong> Découvrez nos gammes </strong></em></a>spécialement conçues pour vous aider à trouver le produit idéal, toujours avec le sourire et beaucoup de plaisir ! </p>",
         "subtitle_color": "#4b9b7d",
         "title_color": "#4b9b7d",
         "text_color": "#201a1c"
@@ -414,11 +421,11 @@
         "layout": "image_right",
         "content": "row",
         "text_align": "left",
-        "image": "shopify:\/\/shop_images\/Popit-complements-alimentaires-gamme-gummies-gelules.png",
+        "image": "shopify://shop_images/Popit-complements-alimentaires-gamme-gummies-gelules.png",
         "hide_image_mobile": false,
         "subtitle": "",
         "title": "Réalisez tous vos achats en un seul endroit !",
-        "text": "<p><a href=\"\/collections\/gelules\" title=\"Gélules\">Gélules<\/a>, <a href=\"\/collections\/gummies\" title=\"Gummies\">gummies<\/a>, protéines végétales, barres de céréales, mélanges de noix et fruits secs... Retrouvez tous vos produits bien-être préférés dans notre boutique pour des achats pratiques sans faire exploser les frais de livraison. Vous aimeriez trouver un nouveau produit dans la gamme Pop it ? <a href=\"\/pages\/contact\" title=\"Contact\"><em><strong>Envoyez-nous un message en cliquant ici<\/strong><\/em><\/a> pour le développer avec nous !<\/p>",
+        "text": "<p><a href=\"/collections/gelules\" title=\"Gélules\">Gélules</a>, <a href=\"/collections/gummies\" title=\"Gummies\">gummies</a>, protéines végétales, barres de céréales, mélanges de noix et fruits secs... Retrouvez tous vos produits bien-être préférés sur notre <a href=\"https://www.amazon.fr/stores/Popit/page/7256D592-74C2-40FF-988A-C947B707C47F?ref_=ast_bln&store_ref=bl_ast_dp_brandLogo_sto\" title=\"https://www.amazon.fr/stores/Popit/page/7256D592-74C2-40FF-988A-C947B707C47F?ref_=ast_bln&store_ref=bl_ast_dp_brandLogo_sto\">boutique Amazon</a> pour des achats pratiques sans faire exploser les frais de livraison. Vous aimeriez trouver un nouveau produit dans la gamme Pop it ? <a href=\"/pages/contact\" title=\"Contact\"><em><strong>Envoyez-nous un message en cliquant ici</strong></em></a> pour le développer avec nous !</p>",
         "subtitle_color": "#4b9b7d",
         "title_color": "#4b9b7d",
         "text_color": "#201a1c"
@@ -430,55 +437,55 @@
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sommeil-gelule-v2_70e6d86e-2ed9-4b24-b1b8-7b65a67ef3e1.png",
+            "image": "shopify://shop_images/sommeil-gelule-v2_70e6d86e-2ed9-4b24-b1b8-7b65a67ef3e1.png",
             "subheading": "Pour des nuits calmes et reposantes",
             "heading": "Sommeil",
-            "url": "shopify:\/\/collections\/sommeil"
+            "url": "shopify://collections/sommeil"
           }
         },
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vitamines-soleil-gummies_636be0c5-4734-4321-9e32-efd479682295.png",
+            "image": "shopify://shop_images/vitamines-soleil-gummies_636be0c5-4734-4321-9e32-efd479682295.png",
             "subheading": "Pour une forme olympique toute l'année",
             "heading": "Énergie & Immunité",
-            "url": "shopify:\/\/collections\/energie"
+            "url": "shopify://collections/energie"
           }
         },
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/stress-gelule_bb01b68c-0cce-4ee8-b804-ecaa12354300.png",
+            "image": "shopify://shop_images/stress-gelule_bb01b68c-0cce-4ee8-b804-ecaa12354300.png",
             "subheading": "Pour un esprit apaisé dans un corps sain",
             "heading": "Stress",
-            "url": "shopify:\/\/collections\/stress"
+            "url": "shopify://collections/stress"
           }
         },
         "template--18292260241702__4992ea25-8bff-4aae-80c5-2981ae60999b-168354372290011718-3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/beaute-gummies_e5f62aa1-738d-4a75-851c-3829dd73f8f2.png",
+            "image": "shopify://shop_images/beaute-gummies_e5f62aa1-738d-4a75-851c-3829dd73f8f2.png",
             "subheading": "Pour une apparence sublimée de la tête aux pieds",
             "heading": "Beauté",
-            "url": "shopify:\/\/collections\/beaute"
+            "url": "shopify://collections/beaute"
           }
         },
         "0ee1cf55-b2c0-42be-bc4d-cc6c9b75f3bf": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/croissance-gummies_b6911c0d-45ec-42a6-a506-671df8105427.png",
+            "image": "shopify://shop_images/croissance-gummies_b6911c0d-45ec-42a6-a506-671df8105427.png",
             "subheading": "Pour des petits aventuriers en pleine croissance",
             "heading": "Kids",
-            "url": "shopify:\/\/collections\/kids"
+            "url": "shopify://collections/kids"
           }
         },
         "be732546-4546-420d-bbe4-2c9498394ebe": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/muscle-gelule_3d5993ca-fb21-4cdb-9af1-b6f9634d5fa5.png",
+            "image": "shopify://shop_images/muscle-gelule_3d5993ca-fb21-4cdb-9af1-b6f9634d5fa5.png",
             "subheading": "Pour des muscles d'acier et un boost de tonus",
             "heading": "Sport",
-            "url": "shopify:\/\/collections\/sport"
+            "url": "shopify://collections/sport"
           }
         }
       },
