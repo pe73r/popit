@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -5,28 +14,23 @@
       "blocks": {
         "2123d97f-146b-49e9-846e-386171adb4af": {
           "type": "product-type",
-          "settings": {
-          }
+          "settings": {}
         },
         "bb4f17d7-4ef4-4c4a-8040-e4d1ab5254ed": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "2077e0aa-65e5-437c-a933-775b9bf1bc85": {
           "type": "subtitle",
-          "settings": {
-          }
+          "settings": {}
         },
         "09df8643-814c-47b7-915b-2710485c5804": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         },
         "07de2fcc-7c1f-4c36-9315-5a4ac13bbcea": {
           "type": "variant_picker",
-          "settings": {
-          }
+          "settings": {}
         },
         "ce287ddd-56b4-4eae-92cf-5e6f08239886": {
           "type": "buy_buttons",
@@ -39,18 +43,18 @@
           "type": "klarna",
           "disabled": true,
           "settings": {
-            "text": "<b>18,33 € <\/b> aujourd’hui grâce au <italic><b>3x sans frais<\/b><\/italic>"
+            "text": "<b>18,33 € </b> aujourd’hui grâce au <italic><b>3x sans frais</b></italic>"
           }
         },
         "1e425230-6800-49eb-922c-18eab7fbfd55": {
           "type": "delivery_note",
           "settings": {
-            "text": "<b>LIVRAISON RAPIDE<\/b> sous 2 à 3 jours ouvrés",
-            "truck": "shopify:\/\/shop_images\/picto-livraison-rapide_351a6b45-9442-4a56-a7e1-93b97a818b3f.png",
-            "text_2": "<b>LIVRAISON GRATUITE<\/b> dès 60€ d'achats",
-            "oclock": "shopify:\/\/shop_images\/picto-livraison-gratuite_02ef0ef2-8acf-4b39-bade-4e025b79a2b7.png",
-            "text_3": "<b>PAIEMENT 100% SÉCURISÉ <\/b> ultra facile",
-            "image_3": "shopify:\/\/shop_images\/picto-paiement-securise_718a4110-6591-4ab4-b08c-8da2a2e654e7.png"
+            "text": "<b>LIVRAISON RAPIDE</b> sous 2 à 3 jours ouvrés",
+            "truck": "shopify://shop_images/picto-livraison-rapide_351a6b45-9442-4a56-a7e1-93b97a818b3f.png",
+            "text_2": "<b>LIVRAISON GRATUITE</b> dès 60€ d'achats",
+            "oclock": "shopify://shop_images/picto-livraison-gratuite_02ef0ef2-8acf-4b39-bade-4e025b79a2b7.png",
+            "text_3": "<b>PAIEMENT 100% SÉCURISÉ </b> ultra facile",
+            "image_3": "shopify://shop_images/picto-paiement-securise_718a4110-6591-4ab4-b08c-8da2a2e654e7.png"
           }
         }
       },
@@ -81,7 +85,7 @@
           "disabled": true,
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/popit-sticker-mure.png",
+            "image": "shopify://shop_images/popit-sticker-mure.png",
             "text": "Non testé sur des animaux"
           }
         },
@@ -90,7 +94,7 @@
           "disabled": true,
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/popit-sticker-gummies.png",
+            "image": "shopify://shop_images/popit-sticker-gummies.png",
             "text": "Non testé sur des animaux"
           }
         },
@@ -99,7 +103,7 @@
           "disabled": true,
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/popit-sticker-feuille.png",
+            "image": "shopify://shop_images/popit-sticker-feuille.png",
             "text": "Non testé sur des animaux"
           }
         },
@@ -108,7 +112,7 @@
           "disabled": true,
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/popit-sticker-gummies-sommeil.png",
+            "image": "shopify://shop_images/popit-sticker-gummies-sommeil.png",
             "text": "Non testé sur des animaux"
           }
         }
@@ -141,7 +145,7 @@
           "settings": {
             "title": "CONSEILS D’UTILISATION",
             "title_mobile": "UTILISATION",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
           }
         },
         "1f939024-352b-461d-b3cd-534b112ecee0": {
@@ -159,7 +163,7 @@
         "1f939024-352b-461d-b3cd-534b112ecee0"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/VALEURS_-_OK.png",
+        "image": "shopify://shop_images/VALEURS_-_OK.png",
         "bg_color": "#e6f0eb",
         "color": "#4b9b7d"
       }
@@ -259,6 +263,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "card-product": "inline",
         "title": "Complétez votre routine",
@@ -271,69 +276,60 @@
       "type": "apps",
       "blocks": {
         "c2fed4fe-70ea-4833-bdbd-46783f591c72": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200
           }
         }
       },
       "block_order": [
         "c2fed4fe-70ea-4833-bdbd-46783f591c72"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "07a37119-270e-432c-8a6f-4eaeab0ff9e1": {
       "type": "faq-product",
       "blocks": {
         "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-0": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-1": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "template--17232714531110__07a37119-270e-432c-8a6f-4eaeab0ff9e1-1673955792a11b9229-2": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "ad9e812f-9f19-498a-a4ee-c1358e269a06": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "0c5c0f1b-8df0-4e1a-875b-9ac284c88cb0": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "4463b4b5-871c-45d9-bf53-bee0ea86933d": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "0b304882-3095-40a7-b21b-e44202b604fd": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "3468e914-ba02-405a-93c0-97dccbf9bd8b": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "17052a0f-907b-4d8e-b411-2b3d4b8757a5": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         },
         "bfe8ec1f-cf78-49ea-b797-242e32e010af": {
           "type": "block",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -361,16 +357,16 @@
         "68559418-eb2e-4bf9-a79f-f97de8962e5b": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/9.png",
-            "text": "Appelez-nous au<br>04 89 74 09 34",
-            "url": "tel:0489740934"
+            "image": "shopify://shop_images/9.png",
+            "text": "Appelez-nous au 06 68 07 98 62",
+            "url": "tel:0668079862"
           }
         },
         "fdbe05cc-c480-4415-9f77-fbb6afcd0fda": {
           "type": "block",
           "settings": {
             "text": "Envoyez-nous<br>un message",
-            "url": "shopify:\/\/pages\/contact"
+            "url": "shopify://pages/contact"
           }
         }
       },
@@ -381,7 +377,7 @@
       "settings": {
         "section_style": "boxed",
         "title": "Des questions sur ce produit ?",
-        "text": "<p>Contactez-nous pour en savoir plus !<\/p>",
+        "text": "<p>Contactez-nous pour en savoir plus !</p>",
         "bg_color": "#faf5ef",
         "color": "#4b9b7d"
       }
@@ -391,7 +387,7 @@
       "settings": {
         "section_style": "default",
         "title": "Newsletter",
-        "text": "<p>Abonnez-vous à notre newsletter et recevez nos bons plans et actualités (promis, pas de spam !)<\/p>",
+        "text": "<p>Abonnez-vous à notre newsletter et recevez nos bons plans et actualités (promis, pas de spam !)</p>",
         "text_button": "Je m'inscris",
         "show_checkbox": true,
         "bg_color": "#faf5ef",
@@ -406,7 +402,7 @@
           "type": "block",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
+            "image": "shopify://shop_images/site-livraison_eea90d15-157e-4cfd-b533-6c53bc87f6fb.png",
             "image_width": 99,
             "title": "Livraison rapide et offerte",
             "text": "dès 60€ d'achats"
@@ -416,7 +412,7 @@
           "type": "block",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/site-paiement_f99ac933-80b6-4c9d-8121-b925aaddf8df.png",
+            "image": "shopify://shop_images/site-paiement_f99ac933-80b6-4c9d-8121-b925aaddf8df.png",
             "image_width": 64,
             "title": "Paiement 100% sécurisé",
             "text": "Visa, Mastercard, PayPal, Apple Pay & Amex"
@@ -426,7 +422,7 @@
           "type": "block",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/site-mail_e309fb07-3714-4e54-a31f-3e6e289a3d4c.png",
+            "image": "shopify://shop_images/site-mail_e309fb07-3714-4e54-a31f-3e6e289a3d4c.png",
             "image_width": 80,
             "title": "Notre équipe à vos petits soins",
             "text": "hello@we-pop-it.co"
@@ -436,7 +432,7 @@
           "type": "block",
           "settings": {
             "svg": "",
-            "image": "shopify:\/\/shop_images\/site-satisfait_77043e29-3345-4662-b294-456277b6d971.png",
+            "image": "shopify://shop_images/site-satisfait_77043e29-3345-4662-b294-456277b6d971.png",
             "image_width": 87,
             "title": "Heureux ou remboursés",
             "text": "retours gratuits sous 30 jours"
